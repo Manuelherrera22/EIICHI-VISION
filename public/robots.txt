@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eiichi-vision.netlify.app/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important pages
+Allow: /projects/
+Allow: /about/
+Allow: /contact/
+Allow: /journal/
+Allow: /process/
+Allow: /3d-viewer/
+Allow: /model-viewer/
+
+# Crawl delay (optional)
+Crawl-delay: 1
