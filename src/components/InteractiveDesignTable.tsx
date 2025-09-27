@@ -311,38 +311,41 @@ const InteractiveDesignTable = () => {
   return (
     <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
       {/* Header */}
-      <div className="bg-black/50 backdrop-blur-sm border-b border-white/10 p-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div>
-              <h1 className="text-2xl font-serif font-bold text-white">
-                Mesa de Diseño Interactiva
-              </h1>
-              <p className="text-white/70">
-                Co-diseña tu proyecto en tiempo real
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">En Vivo</span>
+      <div className="bg-black/50 backdrop-blur-sm border-b border-white/10 p-3 sm:p-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
+              <div>
+                <h1 className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-white">
+                  Mesa de Diseño Interactiva
+                </h1>
+                <p className="text-white/70 text-xs sm:text-sm">
+                  Co-diseña tu proyecto en tiempo real
+                </p>
+              </div>
             </div>
 
-            <button
-              onClick={() => setIsFullscreen(!isFullscreen)}
-              className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-            >
-              {isFullscreen ? <Minimize2 className="w-5 h-5 text-white" /> : <Maximize2 className="w-5 h-5 text-white" />}
-            </button>
+            <div className="flex items-center space-x-2 sm:space-x-4 w-full sm:w-auto justify-between sm:justify-end">
+              <div className="flex items-center space-x-2 bg-white/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-white text-xs sm:text-sm">En Vivo</span>
+              </div>
+
+              <button
+                onClick={() => setIsFullscreen(!isFullscreen)}
+                className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              >
+                {isFullscreen ? <Minimize2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="flex h-[calc(100vh-80px)]">
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)]">
         {/* Left Sidebar - Tools */}
-        <div className="w-80 bg-black/30 backdrop-blur-sm border-r border-white/10 p-4 overflow-y-auto">
+        <div className="w-full lg:w-80 bg-black/30 backdrop-blur-sm border-b lg:border-b-0 lg:border-r border-white/10 p-3 sm:p-4 overflow-y-auto lg:h-full max-h-64 lg:max-h-none">
           {/* Room Selection */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-3">Habitaciones</h3>
@@ -494,80 +497,80 @@ const InteractiveDesignTable = () => {
         </div>
 
         {/* Main Canvas Area */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-h-0">
           {/* Toolbar */}
-          <div className="bg-black/30 backdrop-blur-sm border-b border-white/10 p-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
+          <div className="bg-black/30 backdrop-blur-sm border-b border-white/10 p-2 sm:p-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0">
+              <div className="flex items-center space-x-2 sm:space-x-4 overflow-x-auto scrollbar-hide">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <button
                     onClick={undo}
                     disabled={historyIndex <= 0}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50"
                   >
-                    <Undo className="w-5 h-5 text-white" />
+                    <Undo className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </button>
                   <button
                     onClick={redo}
                     disabled={historyIndex >= history.length - 1}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50"
                   >
-                    <Redo className="w-5 h-5 text-white" />
+                    <Redo className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </button>
                 </div>
 
-                <div className="w-px h-6 bg-white/20"></div>
+                <div className="w-px h-4 sm:h-6 bg-white/20"></div>
 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <button
                     onClick={() => setViewMode('2d')}
-                    className={`p-2 rounded-lg transition-colors ${
+                    className={`p-1.5 sm:p-2 rounded-lg transition-colors ${
                       viewMode === '2d' ? 'bg-yellow-400/20 text-yellow-400' : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
-                    <Grid className="w-5 h-5" />
+                    <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                   <button
                     onClick={() => setViewMode('3d')}
-                    className={`p-2 rounded-lg transition-colors ${
+                    className={`p-1.5 sm:p-2 rounded-lg transition-colors ${
                       viewMode === '3d' ? 'bg-yellow-400/20 text-yellow-400' : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
-                    <Layers className="w-5 h-5" />
+                    <Layers className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
 
-                <div className="w-px h-6 bg-white/20"></div>
+                <div className="w-px h-4 sm:h-6 bg-white/20"></div>
 
                 <button
                   onClick={() => setShowGrid(!showGrid)}
-                  className={`p-2 rounded-lg transition-colors ${
+                  className={`p-1.5 sm:p-2 rounded-lg transition-colors ${
                     showGrid ? 'bg-yellow-400/20 text-yellow-400' : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
-                  <Grid className="w-5 h-5" />
+                  <Grid className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <button className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <Save className="w-5 h-5 text-white" />
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <button className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <Save className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </button>
-                <button className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <Download className="w-5 h-5 text-white" />
+                <button className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </button>
-                <button className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                  <Share className="w-5 h-5 text-white" />
+                <button className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                  <Share className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Canvas */}
-          <div className="flex-1 relative overflow-hidden">
+          <div className="flex-1 relative overflow-hidden min-h-0">
             <div
               ref={containerRef}
-              className="w-full h-full relative bg-gray-100"
+              className="w-full h-full relative bg-gray-100 overflow-auto"
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
             >
@@ -623,8 +626,8 @@ const InteractiveDesignTable = () => {
               ))}
 
               {/* Canvas Info */}
-              <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-lg p-3">
-                <div className="text-white text-sm">
+              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 backdrop-blur-sm rounded-lg p-2 sm:p-3">
+                <div className="text-white text-xs sm:text-sm">
                   <p>Habitación: {currentRoom?.name}</p>
                   <p>Elementos: {currentRoom?.elements.length}</p>
                   <p>Vista: {viewMode.toUpperCase()}</p>
@@ -636,48 +639,48 @@ const InteractiveDesignTable = () => {
 
         {/* Right Sidebar - Transform Controls */}
         {selectedElementData && (
-          <div className="w-80 bg-black/30 backdrop-blur-sm border-l border-white/10 p-4">
-            <h3 className="text-lg font-semibold text-white mb-4">Transformar</h3>
+          <div className="w-full lg:w-80 bg-black/30 backdrop-blur-sm border-t lg:border-t-0 lg:border-l border-white/10 p-3 sm:p-4 lg:h-full max-h-64 lg:max-h-none overflow-y-auto">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Transformar</h3>
             
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {/* Rotation */}
               <div>
-                <label className="text-white/70 text-sm mb-2 block">Rotación</label>
-                <div className="flex items-center space-x-2">
+                <label className="text-white/70 text-xs sm:text-sm mb-1 sm:mb-2 block">Rotación</label>
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <button
                     onClick={() => rotateElement(selectedElementData.id, -15)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <RotateCcw className="w-4 h-4 text-white" />
+                    <RotateCcw className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </button>
                   <input
                     type="range"
                     min="0"
                     max="360"
                     value={selectedElementData.rotation}
-                    className="flex-1"
+                    className="flex-1 h-2"
                     onChange={(e) => {
                       // Update rotation
                     }}
                   />
                   <button
                     onClick={() => rotateElement(selectedElementData.id, 15)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <RotateCw className="w-4 h-4 text-white" />
+                    <RotateCw className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </button>
                 </div>
               </div>
 
               {/* Scale */}
               <div>
-                <label className="text-white/70 text-sm mb-2 block">Escala</label>
-                <div className="flex items-center space-x-2">
+                <label className="text-white/70 text-xs sm:text-sm mb-1 sm:mb-2 block">Escala</label>
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <button
                     onClick={() => scaleElement(selectedElementData.id, -0.1)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <Minus className="w-4 h-4 text-white" />
+                    <Minus className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </button>
                   <input
                     type="range"
@@ -685,45 +688,45 @@ const InteractiveDesignTable = () => {
                     max="3"
                     step="0.1"
                     value={selectedElementData.scale}
-                    className="flex-1"
+                    className="flex-1 h-2"
                     onChange={(e) => {
                       // Update scale
                     }}
                   />
                   <button
                     onClick={() => scaleElement(selectedElementData.id, 0.1)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
-                    <Plus className="w-4 h-4 text-white" />
+                    <Plus className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </button>
                 </div>
               </div>
 
               {/* Quick Actions */}
               <div>
-                <label className="text-white/70 text-sm mb-2 block">Acciones Rápidas</label>
-                <div className="grid grid-cols-2 gap-2">
+                <label className="text-white/70 text-xs sm:text-sm mb-1 sm:mb-2 block">Acciones Rápidas</label>
+                <div className="grid grid-cols-2 gap-1 sm:gap-2">
                   <button
                     onClick={() => rotateElement(selectedElementData.id, 90)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-sm"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-xs sm:text-sm"
                   >
                     Rotar 90°
                   </button>
                   <button
                     onClick={() => scaleElement(selectedElementData.id, 0.5)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-sm"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-xs sm:text-sm"
                   >
                     Escala 0.5x
                   </button>
                   <button
                     onClick={() => scaleElement(selectedElementData.id, 1)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-sm"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-xs sm:text-sm"
                   >
                     Escala 1x
                   </button>
                   <button
                     onClick={() => scaleElement(selectedElementData.id, 2)}
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-sm"
+                    className="p-1.5 sm:p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-white text-xs sm:text-sm"
                   >
                     Escala 2x
                   </button>
@@ -732,15 +735,15 @@ const InteractiveDesignTable = () => {
 
               {/* Color Picker */}
               <div>
-                <label className="text-white/70 text-sm mb-2 block">Color</label>
-                <div className="grid grid-cols-6 gap-2">
+                <label className="text-white/70 text-xs sm:text-sm mb-1 sm:mb-2 block">Color</label>
+                <div className="grid grid-cols-6 gap-1 sm:gap-2">
                   {['#f5f5f5', '#8b4513', '#87ceeb', '#654321', '#228b22', '#ff6b6b'].map((color) => (
                     <button
                       key={color}
                       onClick={() => {
                         // Update color
                       }}
-                      className="w-8 h-8 rounded-lg border-2 border-white/20 hover:border-white/40 transition-colors"
+                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg border-2 border-white/20 hover:border-white/40 transition-colors"
                       style={{ backgroundColor: color }}
                     />
                   ))}
