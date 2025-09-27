@@ -122,7 +122,40 @@ const BlueprintEcosystem = () => {
       case 'portal':
         return <BlueprintPortal />;
       case 'ar':
-        return <ARPropertyViewer />;
+        return (
+          <ARPropertyViewer 
+            property={{
+              id: 'demo-property',
+              title: 'Casa Tradicional Japonesa',
+              location: 'Kusatsu, Gunma',
+              currentImages: ['/api/placeholder/400/300'],
+              renderOptions: [
+                {
+                  id: 'original',
+                  name: 'Estado Original',
+                  description: 'Vista actual de la propiedad',
+                  image: '/api/placeholder/400/300',
+                  features: ['Estructura original', 'Materiales tradicionales']
+                },
+                {
+                  id: 'renovated',
+                  name: 'Renovación Moderna',
+                  description: 'Propiedad renovada con comodidades modernas',
+                  image: '/api/placeholder/400/300',
+                  features: ['Cocina moderna', 'Baño actualizado', 'Aislamiento mejorado']
+                },
+                {
+                  id: 'luxury',
+                  name: 'Lujo Tradicional',
+                  description: 'Renovación de lujo manteniendo la tradición',
+                  image: '/api/placeholder/400/300',
+                  features: ['Materiales premium', 'Diseño exclusivo', 'Tecnología integrada']
+                }
+              ]
+            }}
+            onClose={() => setCurrentPhase('portal')}
+          />
+        );
       case 'design':
         return <InteractiveDesignTable />;
       case 'control':

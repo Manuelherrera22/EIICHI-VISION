@@ -276,39 +276,39 @@ const ProjectControlCenter = () => {
   if (!currentProject) return null;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+    <div className={`min-h-screen bg-background ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
       {/* Header */}
-      <div className="bg-black/50 backdrop-blur-sm border-b border-white/10 p-4">
+      <div className="bg-white/95 backdrop-blur-sm border-b border-border p-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div>
-              <h1 className="text-2xl font-serif font-bold text-white">
+              <h1 className="text-2xl font-serif font-bold text-primary">
                 Centro de Control del Proyecto
               </h1>
-              <p className="text-white/70">
+              <p className="text-secondary">
                 {currentProject.title} • {currentProject.location}
               </p>
             </div>
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">En Vivo</span>
+            <div className="flex items-center space-x-2 bg-accent/10 rounded-full px-4 py-2">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-primary text-sm">En Vivo</span>
             </div>
 
             <button
               onClick={() => setIsFullscreen(!isFullscreen)}
-              className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
             >
-              {isFullscreen ? <Minimize2 className="w-5 h-5 text-white" /> : <Maximize2 className="w-5 h-5 text-white" />}
+              {isFullscreen ? <Minimize2 className="w-5 h-5 text-primary" /> : <Maximize2 className="w-5 h-5 text-primary" />}
             </button>
 
             <div className="relative">
-              <button className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                <Bell className="w-5 h-5 text-white" />
+              <button className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+                <Bell className="w-5 h-5 text-primary" />
                 {notifications > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-xs rounded-full flex items-center justify-center">
                     {notifications}
                   </span>
                 )}
@@ -319,7 +319,7 @@ const ProjectControlCenter = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="bg-black/30 backdrop-blur-sm border-b border-white/10">
+      <div className="bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex space-x-8">
             {[
@@ -334,8 +334,8 @@ const ProjectControlCenter = () => {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`flex items-center space-x-2 py-4 px-2 border-b-2 transition-colors ${
                   activeTab === tab.id
-                    ? 'border-yellow-400 text-yellow-400'
-                    : 'border-transparent text-white/70 hover:text-white'
+                    ? 'border-accent text-accent'
+                    : 'border-transparent text-secondary hover:text-primary'
                 }`}
               >
                 {tab.icon && <tab.icon className="w-5 h-5" />}
@@ -359,66 +359,66 @@ const ProjectControlCenter = () => {
             >
               {/* Progress Overview */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Progreso General</h3>
-                    <span className="text-2xl font-bold text-yellow-400">{currentProject.progress}%</span>
+                    <h3 className="text-lg font-semibold text-primary">Progreso General</h3>
+                    <span className="text-2xl font-bold text-accent">{currentProject.progress}%</span>
                   </div>
-                  <div className="w-full bg-white/20 rounded-full h-3 mb-2">
+                  <div className="w-full bg-muted rounded-full h-3 mb-2">
                     <div
-                      className="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-accent to-accent/80 h-3 rounded-full transition-all duration-500"
                       style={{ width: `${currentProject.progress}%` }}
                     />
                   </div>
-                  <p className="text-white/70 text-sm">{currentProject.timeline.currentPhase}</p>
+                  <p className="text-secondary text-sm">{currentProject.timeline.currentPhase}</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Presupuesto</h3>
-                    <DollarSign className="w-6 h-6 text-green-400" />
+                    <h3 className="text-lg font-semibold text-primary">Presupuesto</h3>
+                    <DollarSign className="w-6 h-6 text-accent" />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Total:</span>
-                      <span className="text-white">{formatCurrency(currentProject.budget.total)}</span>
+                      <span className="text-secondary">Total:</span>
+                      <span className="text-primary">{formatCurrency(currentProject.budget.total)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Gastado:</span>
-                      <span className="text-yellow-400">{formatCurrency(currentProject.budget.spent)}</span>
+                      <span className="text-secondary">Gastado:</span>
+                      <span className="text-accent">{formatCurrency(currentProject.budget.spent)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Restante:</span>
-                      <span className="text-green-400">{formatCurrency(currentProject.budget.remaining)}</span>
+                      <span className="text-secondary">Restante:</span>
+                      <span className="text-green-600">{formatCurrency(currentProject.budget.remaining)}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Cronograma</h3>
-                    <Calendar className="w-6 h-6 text-blue-400" />
+                    <h3 className="text-lg font-semibold text-primary">Cronograma</h3>
+                    <Calendar className="w-6 h-6 text-accent" />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Inicio:</span>
-                      <span className="text-white">{formatDate(currentProject.timeline.startDate)}</span>
+                      <span className="text-secondary">Inicio:</span>
+                      <span className="text-primary">{formatDate(currentProject.timeline.startDate)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Fin:</span>
-                      <span className="text-white">{formatDate(currentProject.timeline.endDate)}</span>
+                      <span className="text-secondary">Fin:</span>
+                      <span className="text-primary">{formatDate(currentProject.timeline.endDate)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Estado:</span>
-                      <span className="text-yellow-400">En Progreso</span>
+                      <span className="text-secondary">Estado:</span>
+                      <span className="text-accent">En Progreso</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Acciones Rápidas</h3>
+              <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
+                <h3 className="text-lg font-semibold text-primary mb-4">Acciones Rápidas</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
                     { label: 'Ver Cámaras', icon: Camera, action: () => setActiveTab('cameras') },
@@ -429,10 +429,10 @@ const ProjectControlCenter = () => {
                     <button
                       key={index}
                       onClick={action.action}
-                      className="p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors text-center"
+                      className="p-4 bg-muted/50 rounded-xl hover:bg-muted transition-colors text-center"
                     >
-                      {action.icon && <action.icon className="w-8 h-8 text-white mx-auto mb-2" />}
-                      <span className="text-white text-sm">{action.label}</span>
+                      {action.icon && <action.icon className="w-8 h-8 text-primary mx-auto mb-2" />}
+                      <span className="text-primary text-sm">{action.label}</span>
                     </button>
                   ))}
                 </div>
