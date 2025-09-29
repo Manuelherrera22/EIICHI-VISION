@@ -1,12 +1,37 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { Calendar, User, ArrowRight, Tag, Search, Filter } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Journal() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const { t } = useLanguage();
+
+  // Actualizar el título y metadatos de la página
+  useEffect(() => {
+    // Usar un pequeño delay para asegurar que se ejecute después de DynamicMetadata
+    const timer = setTimeout(() => {
+      // Actualizar título
+        document.title = 'Journal - Tabiji House | Historias y Conocimiento de Japón';
+      
+      // Actualizar meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Descubre historias fascinantes sobre cultura japonesa, artesanía tradicional, arquitectura y vida en Gunma. Artículos sobre inversión inmobiliaria y renovación de propiedades.');
+      }
+      
+      // Actualizar meta keywords
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', 'journal, cultura japonesa, arquitectura tradicional, artesanía, Gunma, Kusatsu, inversión inmobiliaria, propiedades japonesas');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = [
     { id: 'all', name: 'Todos', count: 24 },
@@ -18,10 +43,10 @@ export default function Journal() {
   const articles = [
     {
       id: 1,
-      title: "La Filosofía Gapponshugi en el Siglo XXI",
-      excerpt: "Cómo los principios de la arquitectura tradicional japonesa siguen siendo relevantes en el diseño moderno y cómo los aplicamos en Komorebi House.",
+      title: t('journal.philosophyGapponshugi'),
+      excerpt: t('journal.philosophyExcerpt'),
       category: "legacy",
-      author: "Dr. Tanaka Hiroshi",
+      author: t('journal.philosophyAuthor'),
       date: "2024-01-15",
       readTime: "8 min",
       image: "/article-1.jpg",
@@ -29,10 +54,10 @@ export default function Journal() {
     },
     {
       id: 2,
-      title: "Artesanos de Gunma: Los Guardianes de la Tradición",
-      excerpt: "Conoce a los maestros artesanos que preservan técnicas centenarias y cómo trabajan en nuestros proyectos de renovación.",
+      title: t('journal.artisansGunma'),
+      excerpt: t('journal.artisansExcerpt'),
       category: "craftsmanship",
-      author: "María González",
+      author: t('journal.artisansAuthor'),
       date: "2024-01-12",
       readTime: "6 min",
       image: "/article-2.jpg",
@@ -40,10 +65,10 @@ export default function Journal() {
     },
     {
       id: 3,
-      title: "Vivir en Kusatsu: Una Guía Completa",
-      excerpt: "Todo lo que necesitas saber sobre la vida diaria en Kusatsu, desde servicios básicos hasta eventos culturales.",
+      title: t('journal.livingKusatsu'),
+      excerpt: t('journal.livingExcerpt'),
       category: "lifestyle",
-      author: "James Wilson",
+      author: t('journal.livingAuthor'),
       date: "2024-01-10",
       readTime: "12 min",
       image: "/article-3.jpg",
@@ -51,10 +76,10 @@ export default function Journal() {
     },
     {
       id: 4,
-      title: "El Arte del Diseño Japonés: Principios Fundamentales",
-      excerpt: "Exploramos los principios de diseño que hacen única la arquitectura japonesa y cómo los aplicamos en nuestras renovaciones.",
+      title: t('journal.japaneseDesign'),
+      excerpt: t('journal.japaneseDesignExcerpt'),
       category: "craftsmanship",
-      author: "Yuki Nakamura",
+      author: t('journal.japaneseDesignAuthor'),
       date: "2024-01-08",
       readTime: "10 min",
       image: "/article-4.jpg",
@@ -62,10 +87,10 @@ export default function Journal() {
     },
     {
       id: 5,
-      title: "Rongo to Soroban: Ética y Negocios en la Práctica",
-      excerpt: "Un análisis profundo de los principios de la arquitectura tradicional japonesa y su aplicación en el desarrollo inmobiliario moderno.",
+      title: t('journal.rongoSoroban'),
+      excerpt: t('journal.rongoSorobanExcerpt'),
       category: "legacy",
-      author: "Dr. Tanaka Hiroshi",
+      author: t('journal.rongoSorobanAuthor'),
       date: "2024-01-05",
       readTime: "9 min",
       image: "/article-5.jpg",
@@ -73,10 +98,10 @@ export default function Journal() {
     },
     {
       id: 6,
-      title: "Las Cuatro Estaciones en Gunma: Un Calendario Visual",
-      excerpt: "Descubre cómo cambia Gunma a lo largo del año y qué actividades puedes disfrutar en cada temporada.",
+      title: t('journal.fourSeasons'),
+      excerpt: t('journal.fourSeasonsExcerpt'),
       category: "lifestyle",
-      author: "Sarah Chen",
+      author: t('journal.fourSeasonsAuthor'),
       date: "2024-01-03",
       readTime: "7 min",
       image: "/article-6.jpg",
@@ -84,10 +109,10 @@ export default function Journal() {
     },
     {
       id: 7,
-      title: "Técnicas de Construcción Tradicional Japonesa",
-      excerpt: "Una mirada detallada a las técnicas de construcción que han resistido el paso del tiempo y cómo las preservamos.",
+      title: t('journal.traditionalConstruction'),
+      excerpt: t('journal.traditionalConstructionExcerpt'),
       category: "craftsmanship",
-      author: "Takeshi Sato",
+      author: t('journal.traditionalConstructionAuthor'),
       date: "2024-01-01",
       readTime: "11 min",
       image: "/article-7.jpg",
@@ -95,10 +120,10 @@ export default function Journal() {
     },
     {
       id: 8,
-      title: "Integración Cultural: Consejos para Nuevos Residentes",
-      excerpt: "Cómo adaptarse a la vida en Japón y construir relaciones significativas con la comunidad local.",
+      title: t('journal.culturalIntegration'),
+      excerpt: t('journal.culturalIntegrationExcerpt'),
       category: "lifestyle",
-      author: "Emma Thompson",
+      author: t('journal.culturalIntegrationAuthor'),
       date: "2023-12-28",
       readTime: "8 min",
       image: "/article-8.jpg",
@@ -173,7 +198,7 @@ export default function Journal() {
               <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
               <input
                 type="text"
-                placeholder="Buscar artículos..."
+                placeholder={t('journal.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
@@ -362,7 +387,7 @@ export default function Journal() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Tu correo electrónico"
+              placeholder={t('journal.emailPlaceholder')}
               className="flex-1 px-6 py-3 border border-border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
             <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold">

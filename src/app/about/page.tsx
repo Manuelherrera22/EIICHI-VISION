@@ -1,7 +1,28 @@
+'use client';
+
+import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { ArrowRight, Users, Target, Heart } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        document.title = 'About - Tabiji House | The Story of Shibusawa Eiichi\'s Legacy';
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Discover the story of Tabiji House and our connection to Shibusawa Eiichi\'s legacy. A new generation continues the tradition of ethical business and community revitalization in Japan.');
+      }
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', 'Tabiji House, Shibusawa Eiichi, Japanese business ethics, Gapponshugi, family legacy, real estate investment, Japan');
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -9,16 +30,15 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              De la Industria a la Revitalización
+              {t('about.heroSubtitle')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              La Historia de
+              {t('about.heroTitle')}
               <br />
-              <span className="text-accent">Komorebi House</span>
+              <span className="text-accent">{t('about.heroTitleAccent')}</span>
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Una nueva generación continúa el legado de la arquitectura tradicional japonesa, 
-              conectando el patrimonio cultural con ciudadanos globales visionarios.
+              {t('about.heroDescription')}
             </p>
           </div>
         </div>
@@ -31,49 +51,45 @@ export default function About() {
             <div className="space-y-8">
               <div>
                 <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-                  Parte 1: El Visionario
+                  {t('about.visionaryPart')}
                 </div>
                 <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-                  Shibusawa Eiichi
+                  {t('about.visionaryTitle')}
                 </h2>
                 <div className="text-lg text-accent font-mono mb-6">
-                  渋沢栄一 - El Arquitecto del Japón Moderno
+                  {t('about.visionarySubtitle')}
                 </div>
               </div>
 
               <div className="space-y-6 text-foreground leading-relaxed">
                 <p className="text-lg">
-                  Nacido en 1840 en la provincia de Musashi (actual Saitama), 
-                  Shibusawa Eiichi fue un visionario que transformó Japón de una 
-                  sociedad feudal a una potencia económica moderna.
+                  {t('about.visionaryDescription1')}
                 </p>
                 
                 <p>
-                  Su filosofía única, <strong>Gapponshugi</strong>, combinaba 
-                  principios confucianos con eficiencia empresarial, estableciendo 
-                  que el éxito comercial debe estar fundamentado en valores éticos sólidos.
+                  {t('about.visionaryDescription2')}
                 </p>
 
                 <div className="bg-muted p-6 rounded-xl">
                   <h3 className="font-serif text-lg font-semibold text-primary mb-3">
-                    Su Impacto Transformador
+                    {t('about.transformativeImpact')}
                   </h3>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>Fundó más de 500 empresas modernas</span>
+                      <span>{t('about.impact1')}</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>Estableció el sistema bancario japonés</span>
+                      <span>{t('about.impact2')}</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>Promovió la educación y filantropía</span>
+                      <span>{t('about.impact3')}</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>Creó el modelo de responsabilidad social empresarial</span>
+                      <span>{t('about.impact4')}</span>
                     </li>
                   </ul>
                 </div>
@@ -88,7 +104,7 @@ export default function About() {
               
               <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg border border-border max-w-xs">
                 <div className="text-primary font-serif text-lg leading-relaxed">
-                  "La moralidad y la economía deben ir de la mano"
+                  "{t('about.moralityEconomy')}"
                 </div>
                 <div className="text-secondary text-sm mt-2 font-mono">
                   - Shibusawa Eiichi, 1910
@@ -104,14 +120,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Parte 2: La Nueva Generación
+              {t('about.newGenerationPart')}
             </div>
             <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
-              Presentación de los Socios
+              {t('about.newGenerationTitle')}
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Una conexión familiar única y una misión compartida que honra el legado 
-              mientras construye el futuro.
+              {t('about.newGenerationDescription')}
             </p>
           </div>
 
@@ -122,29 +137,27 @@ export default function About() {
                   <Users size={40} className="text-primary" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-primary mb-2">
-                  Conexión Familiar
+                  {t('about.familyConnection')}
                 </h3>
                 <div className="text-accent font-mono text-sm">
-                  Descendientes Directos
+                  {t('about.directDescendants')}
                 </div>
               </div>
               <p className="text-foreground leading-relaxed mb-6">
-                Los socios fundadores de Komorebi House son descendientes directos de 
-                Shibusawa Eiichi, heredando no solo el nombre sino también la visión 
-                transformadora y los valores éticos que definieron su legado.
+                {t('about.familyDescription')}
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-sm text-foreground">Herencia de valores éticos</span>
+                  <span className="text-sm text-foreground">{t('about.heritageValues')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-sm text-foreground">Compromiso con la comunidad</span>
+                  <span className="text-sm text-foreground">{t('about.communityCommitment')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-sm text-foreground">Visión de largo plazo</span>
+                  <span className="text-sm text-foreground">{t('about.longTermVision')}</span>
                 </div>
               </div>
             </div>
@@ -155,29 +168,27 @@ export default function About() {
                   <Target size={40} className="text-accent" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-primary mb-2">
-                  Misión Compartida
+                  {t('about.sharedMission')}
                 </h3>
                 <div className="text-accent font-mono text-sm">
-                  Propósito Común
+                  {t('about.commonPurpose')}
                 </div>
               </div>
               <p className="text-foreground leading-relaxed mb-6">
-                Nuestra misión es continuar el trabajo de revitalización comunitaria 
-                iniciado por Shibusawa Eiichi, adaptándolo a las necesidades del siglo XXI 
-                y conectando culturas a través del patrimonio inmobiliario.
+                {t('about.missionDescription')}
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-foreground">Revitalización sostenible</span>
+                  <span className="text-sm text-foreground">{t('about.sustainableRevitalization')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-foreground">Conexión cultural global</span>
+                  <span className="text-sm text-foreground">{t('about.globalCulturalConnection')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-foreground">Desarrollo comunitario</span>
+                  <span className="text-sm text-foreground">{t('about.communityDevelopment')}</span>
                 </div>
               </div>
             </div>
@@ -190,12 +201,12 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Parte 3: Nuestra Promesa
+              {t('about.promisePart')}
             </div>
             <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
-              Valores del Pasado,
+              {t('about.promiseTitle')}
               <br />
-              <span className="text-accent">Servicio del Presente</span>
+              <span className="text-accent">{t('about.promiseTitleAccent')}</span>
             </h2>
           </div>
 
@@ -205,11 +216,10 @@ export default function About() {
                 <Heart size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-serif font-bold text-primary mb-4">
-                Transparencia Absoluta
+                {t('about.absoluteTransparency')}
               </h3>
               <p className="text-foreground leading-relaxed">
-                Operamos con completa transparencia en cada transacción, proceso legal 
-                y comunicación, manteniendo los más altos estándares éticos.
+                {t('about.transparencyDescription')}
               </p>
             </div>
 
@@ -218,11 +228,10 @@ export default function About() {
                 <Users size={32} className="text-accent" />
               </div>
               <h3 className="text-xl font-serif font-bold text-primary mb-4">
-                Apoyo Integral
+                {t('about.integralSupport')}
               </h3>
               <p className="text-foreground leading-relaxed">
-                Proporcionamos soporte completo desde la adquisición hasta la renovación, 
-                asegurando que cada cliente tenga éxito en su proyecto.
+                {t('about.supportDescription')}
               </p>
             </div>
 
@@ -231,11 +240,10 @@ export default function About() {
                 <Target size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-serif font-bold text-primary mb-4">
-                Servicio Ético
+                {t('about.ethicalService')}
               </h3>
               <p className="text-foreground leading-relaxed">
-                Cada decisión está guiada por principios éticos sólidos, beneficiando 
-                tanto a nuestros clientes como a la comunidad local.
+                {t('about.ethicalDescription')}
               </p>
             </div>
           </div>
@@ -243,14 +251,13 @@ export default function About() {
           {/* Call to Action */}
           <div className="mt-16 text-center bg-muted p-12 rounded-2xl">
             <h3 className="text-3xl font-serif font-bold text-primary mb-4">
-              ¿Listo para Ser Parte de la Historia?
+              {t('about.ctaTitle')}
             </h3>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-              Únete a nosotros en esta misión de revitalización y conviértete en parte 
-              del legado continuo de Shibusawa Eiichi.
+              {t('about.ctaDescription')}
             </p>
             <button className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg flex items-center space-x-2 mx-auto">
-              <span>Inicia tu Visión</span>
+              <span>{t('about.ctaButton')}</span>
               <ArrowRight size={20} />
             </button>
           </div>

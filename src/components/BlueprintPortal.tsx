@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   User, 
   Target, 
@@ -58,82 +59,83 @@ const BlueprintPortal = () => {
   });
   const [matches, setMatches] = useState<PropertyMatch[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useLanguage();
 
   const steps = [
     {
       id: 'goals',
-      title: 'Metas de Inversión',
-      subtitle: '¿Qué buscas lograr con tu inversión?',
+      title: t('blueprint.investmentGoals'),
+      subtitle: t('blueprint.whatDoYouSeek'),
       icon: Target,
       options: [
-        { id: 'roi', label: 'ROI a Corto Plazo', icon: TrendingUp, description: 'Maximizar retorno en 2-3 años' },
-        { id: 'vacation', label: 'Casa de Vacaciones', icon: Heart, description: 'Lugar para escapar y relajarse' },
-        { id: 'residence', label: 'Residencia Principal', icon: Home, description: 'Mudarse a Japón permanentemente' },
-        { id: 'rental', label: 'Propiedad de Alquiler', icon: Building, description: 'Generar ingresos pasivos' },
-        { id: 'heritage', label: 'Preservar Patrimonio', icon: Award, description: 'Restaurar y conservar tradición' }
+        { id: 'roi', label: t('blueprint.shortTermROI'), icon: TrendingUp, description: t('blueprint.maximizeReturn') },
+        { id: 'vacation', label: t('blueprint.vacationHome'), icon: Heart, description: t('blueprint.placeToEscape') },
+        { id: 'residence', label: t('blueprint.primaryResidence'), icon: Home, description: t('blueprint.moveToJapan') },
+        { id: 'rental', label: t('blueprint.rentalProperty'), icon: Building, description: t('blueprint.generatePassiveIncome') },
+        { id: 'heritage', label: t('blueprint.preserveHeritage'), icon: Award, description: t('blueprint.restoreAndPreserve') }
       ]
     },
     {
       id: 'lifestyle',
-      title: 'Estilo de Vida',
-      subtitle: '¿Cómo te gustaría vivir en Japón?',
+      title: t('blueprint.lifestyle'),
+      subtitle: t('blueprint.lifestyleQuestion'),
       icon: User,
       options: [
-        { id: 'tranquil', label: 'Tranquilidad y Silencio', icon: TreePine, description: 'Ambiente rural y pacífico' },
-        { id: 'active', label: 'Cerca de Ski Resorts', icon: Mountain, description: 'Acceso a deportes de invierno' },
-        { id: 'cultural', label: 'Vida Cultural', icon: Users, description: 'Eventos, festivales y tradiciones' },
-        { id: 'onsen', label: 'Experiencia Onsen', icon: Waves, description: 'Aguas termales y relajación' },
-        { id: 'modern', label: 'Conveniencia Moderna', icon: Zap, description: 'Servicios y tecnología actual' }
+        { id: 'tranquil', label: t('blueprint.tranquilitySilence'), icon: TreePine, description: t('blueprint.ruralPeaceful') },
+        { id: 'active', label: t('blueprint.nearSkiResorts'), icon: Mountain, description: t('blueprint.winterSportsAccess') },
+        { id: 'cultural', label: t('blueprint.culturalLife'), icon: Users, description: t('blueprint.eventsFestivals') },
+        { id: 'onsen', label: t('blueprint.onsenExperience'), icon: Waves, description: t('blueprint.thermalWatersRelaxation') },
+        { id: 'modern', label: t('blueprint.modernConvenience'), icon: Zap, description: t('blueprint.currentServicesTechnology') }
       ]
     },
     {
       id: 'architecture',
-      title: 'Diseño Arquitectónico',
-      subtitle: 'Selecciona los estilos que te inspiran',
+      title: t('blueprint.architecturalDesign'),
+      subtitle: t('blueprint.selectStylesInspire'),
       icon: Palette,
       options: [
-        { id: 'minimalist', label: 'Minimalista', icon: Home, description: 'Líneas limpias y espacios abiertos' },
-        { id: 'wabi-sabi', label: 'Wabi-Sabi', icon: TreePine, description: 'Belleza en la imperfección' },
-        { id: 'traditional', label: 'Tradicional Japonés', icon: Building, description: 'Elementos clásicos auténticos' },
-        { id: 'modern-japanese', label: 'Moderno-Japonés', icon: Star, description: 'Fusión de tradición y modernidad' },
-        { id: 'contemporary', label: 'Contemporáneo', icon: Zap, description: 'Diseño vanguardista' }
+        { id: 'minimalist', label: t('blueprint.minimalist'), icon: Home, description: t('blueprint.cleanLinesOpenSpaces') },
+        { id: 'wabi-sabi', label: t('blueprint.wabiSabi'), icon: TreePine, description: t('blueprint.beautyInImperfection') },
+        { id: 'traditional', label: t('blueprint.traditionalJapanese'), icon: Building, description: t('blueprint.authenticClassicElements') },
+        { id: 'modern-japanese', label: t('blueprint.modernJapanese'), icon: Star, description: t('blueprint.fusionTraditionModernity') },
+        { id: 'contemporary', label: t('blueprint.contemporary'), icon: Zap, description: t('blueprint.avantGardeDesign') }
       ]
     },
     {
       id: 'location',
-      title: 'Ubicación Preferida',
-      subtitle: '¿Dónde te gustaría estar?',
+      title: t('blueprint.preferredLocation'),
+      subtitle: t('blueprint.whereWouldYouLike'),
       icon: MapPin,
       options: [
-        { id: 'gunma-mountains', label: 'Montañas de Gunma', icon: Mountain, description: 'Vistas panorámicas y naturaleza' },
-        { id: 'hot-springs', label: 'Zona de Aguas Termales', icon: Waves, description: 'Acceso a onsens tradicionales' },
-        { id: 'cultural-heritage', label: 'Patrimonio Cultural', icon: Award, description: 'Cerca de templos y sitios históricos' },
-        { id: 'ski-resorts', label: 'Cerca de Estaciones de Ski', icon: Mountain, description: 'Acceso a deportes de invierno' },
-        { id: 'rural-village', label: 'Pueblo Rural Auténtico', icon: TreePine, description: 'Vida tradicional japonesa' }
+        { id: 'gunma-mountains', label: t('blueprint.gunmaMountains'), icon: Mountain, description: t('blueprint.panoramicViewsNature') },
+        { id: 'hot-springs', label: t('blueprint.hotSpringsZone'), icon: Waves, description: t('blueprint.accessTraditionalOnsens') },
+        { id: 'cultural-heritage', label: t('blueprint.culturalHeritage'), icon: Award, description: t('blueprint.nearTemplesHistoricSites') },
+        { id: 'ski-resorts', label: t('blueprint.nearSkiStations'), icon: Mountain, description: t('blueprint.winterSportsAccess') },
+        { id: 'rural-village', label: t('blueprint.authenticRuralVillage'), icon: TreePine, description: t('blueprint.traditionalJapaneseLife') }
       ]
     },
     {
       id: 'budget',
-      title: 'Presupuesto',
-      subtitle: '¿Cuál es tu rango de inversión?',
+      title: t('blueprint.budget'),
+      subtitle: t('blueprint.whatInvestmentRange'),
       icon: TrendingUp,
       options: [
-        { id: '50k-100k', label: '$50K - $100K USD', description: 'Proyecto de renovación básica' },
-        { id: '100k-200k', label: '$100K - $200K USD', description: 'Renovación completa con acabados premium' },
-        { id: '200k-300k', label: '$200K - $300K USD', description: 'Transformación total con diseño personalizado' },
-        { id: '300k-plus', label: '$300K+ USD', description: 'Proyecto de lujo con todas las comodidades' }
+        { id: '50k-100k', label: '$50K - $100K USD', description: t('blueprint.basicRenovationProject') },
+        { id: '100k-200k', label: '$100K - $200K USD', description: t('blueprint.completeRenovationPremium') },
+        { id: '200k-300k', label: '$200K - $300K USD', description: t('blueprint.totalTransformationCustom') },
+        { id: '300k-plus', label: '$300K+ USD', description: t('blueprint.luxuryProjectAllAmenities') }
       ]
     },
     {
       id: 'timeline',
-      title: 'Cronograma',
-      subtitle: '¿Cuándo te gustaría completar el proyecto?',
+      title: t('blueprint.schedule'),
+      subtitle: t('blueprint.whenCompleteProject'),
       icon: Clock,
       options: [
-        { id: '6-months', label: '6 Meses', description: 'Proyecto acelerado' },
-        { id: '12-months', label: '12 Meses', description: 'Cronograma estándar' },
-        { id: '18-months', label: '18 Meses', description: 'Proyecto detallado' },
-        { id: 'flexible', label: 'Flexible', description: 'Sin prisa, calidad primero' }
+        { id: '6-months', label: t('blueprint.timeline6Months'), description: t('blueprint.acceleratedProject') },
+        { id: '12-months', label: t('blueprint.timeline12Months'), description: t('blueprint.standardSchedule') },
+        { id: '18-months', label: t('blueprint.timeline18Months'), description: t('blueprint.detailedProject') },
+        { id: 'flexible', label: t('blueprint.flexible'), description: t('blueprint.noRushQualityFirst') }
       ]
     }
   ];
@@ -163,35 +165,35 @@ const BlueprintPortal = () => {
     const mockMatches: PropertyMatch[] = [
       {
         id: '1',
-        title: 'Casa Tradicional en Kusatsu',
-        location: 'Kusatsu, Gunma',
+        title: t('blueprint.property1.title'),
+        location: t('blueprint.property1.location'),
         price: 85000,
         matchScore: 95,
         images: ['https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'],
-        features: ['Onsen privado', 'Jardín tradicional', '3 habitaciones'],
-        potential: 'Transformación completa en casa de lujo con diseño wabi-sabi',
+        features: [t('blueprint.property1.feature1'), t('blueprint.property1.feature2'), t('blueprint.property1.feature3')],
+        potential: t('blueprint.property1.potential'),
         render: 'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
       },
       {
         id: '2',
-        title: 'Akiya en Minakami',
-        location: 'Minakami, Gunma',
+        title: t('blueprint.property2.title'),
+        location: t('blueprint.property2.location'),
         price: 65000,
         matchScore: 88,
         images: ['https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'],
-        features: ['Cerca de ski resorts', 'Vista a montañas', '2 habitaciones'],
-        potential: 'Casa moderna-japonesa con acceso a deportes de invierno',
+        features: [t('blueprint.property2.feature1'), t('blueprint.property2.feature2'), t('blueprint.property2.feature3')],
+        potential: t('blueprint.property2.potential'),
         render: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
       },
       {
         id: '3',
-        title: 'Propiedad Heritage en Takasaki',
-        location: 'Takasaki, Gunma',
+        title: t('blueprint.property3.title'),
+        location: t('blueprint.property3.location'),
         price: 120000,
         matchScore: 92,
         images: ['https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'],
-        features: ['Patrimonio cultural', 'Arquitectura tradicional', '4 habitaciones'],
-        potential: 'Restauración auténtica con comodidades modernas',
+        features: [t('blueprint.property3.feature1'), t('blueprint.property3.feature2'), t('blueprint.property3.feature3')],
+        potential: t('blueprint.property3.potential'),
         render: 'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
       }
     ];
@@ -237,20 +239,20 @@ const BlueprintPortal = () => {
             >
               <div className="inline-flex items-center space-x-2 bg-accent/10 px-4 py-2 rounded-full mb-4">
                 <Sparkles className="w-5 h-5 text-accent" />
-                <span className="text-primary font-medium">Blueprint Digital</span>
+                <span className="text-primary font-medium">{t('blueprint.title')}</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-4">
-                Portal de Visión
+                {t('blueprint.visionPortal')}
               </h1>
               <p className="text-xl text-secondary max-w-3xl mx-auto">
-                Co-crea tu visión personal antes de poner un pie en Japón
+                {t('blueprint.coCreatePersonalVision')}
               </p>
             </motion.div>
 
             {/* Progress Bar */}
             <div className="max-w-2xl mx-auto mb-8">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-secondary">Paso {currentStep + 1} de {steps.length}</span>
+                <span className="text-sm text-secondary">{t('blueprint.step1Of6').replace('1', (currentStep + 1).toString()).replace('6', steps.length.toString())}</span>
                 <span className="text-sm text-secondary">{Math.round(((currentStep + 1) / steps.length) * 100)}%</span>
               </div>
               <div className="w-full bg-muted rounded-full h-2">
@@ -347,7 +349,7 @@ const BlueprintPortal = () => {
                     disabled={currentStep === 0}
                     className="px-6 py-3 rounded-full border border-border text-primary hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                   >
-                    Anterior
+                    {t('blueprint.previous')}
                   </button>
 
                   <button
@@ -356,7 +358,7 @@ const BlueprintPortal = () => {
                     className="px-8 py-3 bg-gradient-to-r from-accent to-accent/80 text-white rounded-full hover:shadow-lg hover:shadow-accent/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center space-x-2"
                   >
                     <span>
-                      {currentStep === steps.length - 1 ? 'Generar Matches' : 'Siguiente'}
+                      {currentStep === steps.length - 1 ? t('blueprint.generateMatches') : t('blueprint.next')}
                     </span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -375,10 +377,10 @@ const BlueprintPortal = () => {
                   <Sparkles className="w-10 h-10 text-white animate-pulse" />
                 </div>
                 <h3 className="text-2xl font-serif font-bold text-primary mb-4">
-                  Procesando tu Perfil
+                  {t('blueprint.processingProfile')}
                 </h3>
                 <p className="text-lg text-secondary mb-6">
-                  Nuestra IA está analizando tus preferencias para encontrar las propiedades perfectas...
+                  {t('blueprint.aiAnalyzingPreferences')}
                 </p>
                 <div className="flex justify-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
@@ -395,10 +397,10 @@ const BlueprintPortal = () => {
               >
                 <div className="text-center">
                   <h2 className="text-3xl font-serif font-bold text-primary mb-4">
-                    Tu Portafolio Preliminar
+                    {t('blueprint.preliminaryPortfolio')}
                   </h2>
                   <p className="text-lg text-secondary">
-                    Propiedades seleccionadas especialmente para ti
+                    {t('blueprint.propertiesSelectedForYou')}
                   </p>
                 </div>
 
@@ -443,7 +445,7 @@ const BlueprintPortal = () => {
                             <div className="flex items-center space-x-1 bg-accent/20 px-3 py-1 rounded-full">
                               <Star className="w-4 h-4 text-accent" />
                               <span className="text-accent font-semibold">
-                                {match.matchScore}% Match
+                                {match.matchScore}% {t('blueprint.matchScore')}
                               </span>
                             </div>
                           </div>
@@ -454,7 +456,7 @@ const BlueprintPortal = () => {
                         </div>
 
                         <div>
-                          <h4 className="text-lg font-semibold text-primary mb-3">Características</h4>
+                          <h4 className="text-lg font-semibold text-primary mb-3">{t('blueprint.characteristics')}</h4>
                           <div className="flex flex-wrap gap-2">
                             {match.features.map((feature, i) => (
                               <span
@@ -468,7 +470,7 @@ const BlueprintPortal = () => {
                         </div>
 
                         <div>
-                          <h4 className="text-lg font-semibold text-primary mb-3">Potencial</h4>
+                          <h4 className="text-lg font-semibold text-primary mb-3">{t('blueprint.potential')}</h4>
                           <p className="text-secondary">{match.potential}</p>
                         </div>
 
@@ -477,13 +479,13 @@ const BlueprintPortal = () => {
                             <p className="text-2xl font-bold text-accent">
                               ${match.price.toLocaleString()} USD
                             </p>
-                            <p className="text-secondary text-sm">Precio base + renovación</p>
+                            <p className="text-secondary text-sm">{t('blueprint.basePriceRenovation')}</p>
                           </div>
                           <a
                             href={`/property/${match.id}`}
                             className="px-6 py-3 bg-gradient-to-r from-accent to-accent/80 text-white rounded-full hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 inline-block"
                           >
-                            Ver Detalles
+                            {t('blueprint.viewDetails')}
                           </a>
                         </div>
                       </div>
@@ -496,7 +498,7 @@ const BlueprintPortal = () => {
                     href="/kusatsu-project"
                     className="px-8 py-4 bg-gradient-to-r from-accent to-accent/80 text-white rounded-full hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 text-lg font-semibold inline-block"
                   >
-                    Continuar al Proyecto Kusatsu
+                    {t('blueprint.continueToKusatsuProject')}
                   </a>
                 </div>
               </motion.div>

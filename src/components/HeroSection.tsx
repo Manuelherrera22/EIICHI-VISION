@@ -3,8 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video Placeholder */}
@@ -23,21 +26,20 @@ const HeroSection = () => {
             間
           </div>
           <div className="text-sm text-white/60 font-mono tracking-wider">
-            MA - The Space Between
+            {t('hero.maSpaceBetween')}
           </div>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-          Build Your Future.
+          {t('hero.title')}
           <br />
-          <span className="text-accent">Honor The Past.</span>
+          <span className="text-accent">{t('hero.subtitle')}</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Invest in Japan's heritage homes, guided by the legacy of a visionary. 
-          Transform akiya properties in Gunma into valuable assets and dream homes.
+          {t('hero.description')}
         </p>
 
         {/* CTA Buttons */}
@@ -46,7 +48,7 @@ const HeroSection = () => {
             href="/projects"
             className="group bg-white text-primary px-8 py-4 rounded-full hover:bg-accent hover:text-white transition-all duration-300 font-semibold text-lg flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            <span>Descubre los Proyectos</span>
+            <span>{t('hero.cta')}</span>
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
           
@@ -54,7 +56,7 @@ const HeroSection = () => {
             <div className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
               <Play size={16} className="ml-1" />
             </div>
-            <span className="font-medium">Ver Nuestra Historia</span>
+            <span className="font-medium">{t('hero.watchVideo')}</span>
           </button>
         </div>
 

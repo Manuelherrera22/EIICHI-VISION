@@ -16,6 +16,7 @@ import {
   Users,
   Clock
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente de imagen optimizada con fallback
 const OptimizedImage = ({ src, fallbackSrc, alt, className, ...props }: {
@@ -64,45 +65,46 @@ const OptimizedImage = ({ src, fallbackSrc, alt, className, ...props }: {
 
 const TourismSection = () => {
   const [activeTab, setActiveTab] = useState('attractions');
+  const { t } = useLanguage();
 
   const attractions = [
     {
       id: 1,
-      name: "Kusatsu Onsen",
-      description: "Uno de los onsen más famosos de Japón, con aguas termales de 95°C",
+      name: t('tourism.kusatsuOnsen'),
+      description: t('tourism.kusatsuOnsenDescription'),
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      type: "Onsen",
+      type: t('tourism.onsen'),
       rating: 4.9,
       distance: "5 min"
     },
     {
       id: 2,
-      name: "Monte Shirane",
-      description: "Volcán activo con cráter de azufre y vistas espectaculares",
+      name: t('tourism.mountShirane'),
+      description: t('tourism.mountShiraneDescription'),
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1464822759844-d150baec5b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      type: "Naturaleza",
+      type: t('tourism.nature'),
       rating: 4.8,
       distance: "30 min"
     },
     {
       id: 3,
-      name: "Templo Zenko-ji",
-      description: "Templo budista histórico con arquitectura tradicional",
+      name: t('tourism.zenkojiTemple'),
+      description: t('tourism.zenkojiTempleDescription'),
       image: "https://images.unsplash.com/photo-1542640244-a3d2c4b0a0a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      type: "Cultura",
+      type: t('tourism.culture'),
       rating: 4.7,
       distance: "15 min"
     },
     {
       id: 4,
-      name: "Parque Nacional Joshin'etsukogen",
-      description: "Reserva natural con senderos, cascadas y fauna local",
+      name: t('tourism.joshinetsukogenPark'),
+      description: t('tourism.joshinetsukogenParkDescription'),
       image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      type: "Naturaleza",
+      type: t('tourism.nature'),
       rating: 4.9,
       distance: "45 min"
     }
@@ -111,64 +113,64 @@ const TourismSection = () => {
   const culturalEvents = [
     {
       id: 1,
-      name: "Festival de Kusatsu Onsen",
-      date: "Agosto",
-      description: "Celebración tradicional con danzas, música y comida local",
+      name: t('tourism.kusatsuOnsenFestival'),
+      date: t('tourism.august'),
+      description: t('tourism.kusatsuOnsenFestivalDescription'),
       image: "https://images.unsplash.com/photo-1550951109-c317990b7e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1550951109-c317990b7e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Festival"
+      type: t('tourism.festival')
     },
     {
       id: 2,
-      name: "Ceremonia del Té",
-      description: "Experiencia auténtica de ceremonia del té japonesa",
+      name: t('tourism.teaCeremony'),
+      description: t('tourism.teaCeremonyDescription'),
       image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Cultura",
-      date: "Todo el año"
+      type: t('tourism.culture'),
+      date: t('tourism.allYear')
     },
     {
       id: 3,
-      name: "Mercado Tradicional",
-      description: "Productos locales, artesanías y delicias regionales",
+      name: t('tourism.traditionalMarket'),
+      description: t('tourism.traditionalMarketDescription'),
       image: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Mercado",
-      date: "Fines de semana"
+      type: t('tourism.market'),
+      date: t('tourism.weekends')
     }
   ];
 
   const localCuisine = [
     {
       id: 1,
-      name: "Soba de Gunma",
-      description: "Fideos de trigo sarraceno tradicionales de la región",
+      name: t('tourism.gunmaSoba'),
+      description: t('tourism.gunmaSobaDescription'),
       image: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Plato Principal"
+      type: t('tourism.mainDish')
     },
     {
       id: 2,
-      name: "Manju de Kusatsu",
-      description: "Dulces tradicionales rellenos de pasta de frijol rojo",
+      name: t('tourism.kusatsuManju'),
+      description: t('tourism.kusatsuManjuDescription'),
       image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Postre"
+      type: t('tourism.dessert')
     },
     {
       id: 3,
-      name: "Sake Local",
-      description: "Sake artesanal elaborado con agua pura de montaña",
+      name: t('tourism.localSake'),
+      description: t('tourism.localSakeDescription'),
       image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: "Bebida"
+      type: t('tourism.drink')
     }
   ];
 
   const tabs = [
-    { id: 'attractions', label: 'Atracciones', icon: Mountain },
-    { id: 'events', label: 'Eventos', icon: Calendar },
-    { id: 'cuisine', label: 'Gastronomía', icon: Utensils }
+    { id: 'attractions', label: t('tourism.attractions'), icon: Mountain },
+    { id: 'events', label: t('tourism.events'), icon: Calendar },
+    { id: 'cuisine', label: t('tourism.cuisine'), icon: Utensils }
   ];
 
   const renderContent = () => {
@@ -203,7 +205,7 @@ const TourismSection = () => {
                   </div>
                   <p className="text-gray-600 mb-4 leading-relaxed">{attraction.description}</p>
                   <button className="group/btn flex items-center space-x-2 text-primary hover:text-accent transition-colors duration-200">
-                    <span className="font-semibold">Explorar</span>
+                    <span className="font-semibold">{t('tourism.explore')}</span>
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </button>
                 </div>
@@ -236,7 +238,7 @@ const TourismSection = () => {
                   <h3 className="text-lg font-serif font-bold text-primary mb-3">{event.name}</h3>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">{event.description}</p>
                   <button className="group/btn flex items-center space-x-2 text-primary hover:text-accent transition-colors duration-200">
-                    <span className="font-semibold text-sm">Más información</span>
+                    <span className="font-semibold text-sm">{t('tourism.moreInformation')}</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </button>
                 </div>
@@ -265,7 +267,7 @@ const TourismSection = () => {
                   <h3 className="text-lg font-serif font-bold text-primary mb-3">{food.name}</h3>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">{food.description}</p>
                   <button className="group/btn flex items-center space-x-2 text-primary hover:text-accent transition-colors duration-200">
-                    <span className="font-semibold text-sm">Probar</span>
+                    <span className="font-semibold text-sm">{t('tourism.try')}</span>
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </button>
                 </div>
@@ -286,13 +288,13 @@ const TourismSection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
             <Mountain size={20} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Descubre Gunma</span>
+            <span className="text-sm font-medium text-primary">{t('tourism.discoverGunma')}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-6">
-            Turismo en Gunma
+            {t('tourism.tourismInGunma')}
           </h2>
           <p className="text-lg sm:text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            Explora la rica cultura, naturaleza espectacular y experiencias únicas que hacen de Gunma un destino incomparable para vivir e invertir.
+            {t('tourism.tourismDescription')}
           </p>
         </div>
 
@@ -326,24 +328,24 @@ const TourismSection = () => {
         <div className="text-center bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-primary mb-4">
-              ¿Listo para vivir en Gunma?
+              {t('tourism.readyToLiveInGunma')}
             </h3>
             <p className="text-lg text-secondary mb-6 leading-relaxed">
-              Descubre cómo puedes ser parte de esta comunidad única mientras inviertes en el futuro de Japón.
+              {t('tourism.ctaDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
                 className="group bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <span>Iniciar mi Proyecto</span>
+                <span>{t('tourism.startMyProject')}</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
               <a 
                 href="/projects" 
                 className="group border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center"
               >
-                <span>Ver Propiedades</span>
+                <span>{t('tourism.viewProperties')}</span>
                 <MapPin size={20} className="group-hover:scale-110 transition-transform duration-200" />
               </a>
             </div>

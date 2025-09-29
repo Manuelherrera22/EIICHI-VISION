@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { CRMService, NotificationService } from '@/lib/crm';
 
 interface BookingData {
@@ -34,6 +35,7 @@ const BookingSystem = () => {
   const [errors, setErrors] = useState<BookingErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBooked, setIsBooked] = useState(false);
+  const { t } = useLanguage();
 
   const timeSlots = [
     '09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
@@ -41,24 +43,24 @@ const BookingSystem = () => {
   ];
 
   const timezones = [
-    { value: 'JST', label: 'JST (Japón)' },
-    { value: 'EST', label: 'EST (Nueva York)' },
-    { value: 'PST', label: 'PST (Los Ángeles)' },
-    { value: 'CST', label: 'CST (Chicago)' },
-    { value: 'GMT', label: 'GMT (Londres)' },
-    { value: 'CET', label: 'CET (Madrid)' },
-    { value: 'BRT', label: 'BRT (São Paulo)' },
-    { value: 'ART', label: 'ART (Buenos Aires)' }
+    { value: 'JST', label: `JST (${t('booking.japan')})` },
+    { value: 'EST', label: `EST (${t('booking.newYork')})` },
+    { value: 'PST', label: `PST (${t('booking.losAngeles')})` },
+    { value: 'CST', label: `CST (${t('booking.chicago')})` },
+    { value: 'GMT', label: `GMT (${t('booking.london')})` },
+    { value: 'CET', label: `CET (${t('booking.madrid')})` },
+    { value: 'BRT', label: `BRT (${t('booking.saoPaulo')})` },
+    { value: 'ART', label: `ART (${t('booking.buenosAires')})` }
   ];
 
   const interests = [
-    'Consulta General',
-    'Inversión Inmobiliaria',
-    'Residencia Personal',
-    'Casa de Vacaciones',
-    'Negocio/Turismo',
-    'Asesoría Legal',
-    'Renovación de Propiedades'
+    t('booking.generalConsultation'),
+    t('booking.realEstateInvestment'),
+    t('booking.personalResidence'),
+    t('booking.vacationHome'),
+    t('booking.businessTourism'),
+    t('booking.legalAdvice'),
+    t('booking.propertyRenovation')
   ];
 
   const validateBooking = (): boolean => {
@@ -231,7 +233,7 @@ const BookingSystem = () => {
                 className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                   errors.name ? 'border-red-300 bg-red-50' : 'border-border'
                 }`}
-                placeholder="Tu nombre completo"
+                placeholder={t('booking.fullNamePlaceholder')}
               />
             </div>
             {errors.name && (
@@ -382,7 +384,7 @@ const BookingSystem = () => {
         {/* Área de Interés */}
         <div>
           <label htmlFor="interest" className="block text-sm font-medium text-primary mb-2">
-            Área de Interés *
+            {t('booking.interests')} *
           </label>
           <select
             id="interest"
@@ -393,7 +395,7 @@ const BookingSystem = () => {
               errors.interest ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
           >
-            <option value="">Selecciona tu área de interés</option>
+            <option value="">{t('booking.selectInterest')}</option>
             {interests.map((interest) => (
               <option key={interest} value={interest}>
                 {interest}
@@ -411,7 +413,7 @@ const BookingSystem = () => {
         {/* Mensaje */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-            Mensaje Adicional
+            {t('booking.additionalMessage')}
           </label>
           <textarea
             id="message"
@@ -420,7 +422,7 @@ const BookingSystem = () => {
             onChange={handleInputChange}
             rows={4}
             className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-            placeholder="Cuéntanos más sobre tu proyecto, presupuesto, timeline y cualquier pregunta específica..."
+            placeholder={t('booking.messagePlaceholder')}
           />
         </div>
 

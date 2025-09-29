@@ -152,7 +152,7 @@ const VirtualTour: React.FC<VirtualTourProps> = ({ propertyId, className = '' })
             Reservar Visita
           </button>
           <button className="px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors duration-200 text-sm">
-            Más Información
+            {t('virtualTour.moreInfo')}
           </button>
         </div>
       </div>

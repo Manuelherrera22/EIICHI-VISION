@@ -1,4 +1,4 @@
-// CRM Integration for Komorebi House
+// CRM Integration for Tabiji House
 // This file handles lead management and CRM integration
 
 export interface Lead {
@@ -10,11 +10,12 @@ export interface Lead {
   budget?: string;
   interest: string;
   message?: string;
-  source: 'website' | 'booking' | 'contact_form';
+  source: 'website' | 'booking' | 'contact_form' | 'auth_registration';
   status: 'new' | 'contacted' | 'qualified' | 'converted' | 'lost';
   createdAt: Date;
   updatedAt: Date;
   notes?: string;
+  userId?: string; // Link to authenticated user
 }
 
 export interface BookingLead extends Lead {
@@ -45,6 +46,21 @@ export class CRMService {
     
     console.log('Lead created:', newLead);
     return newLead;
+  }
+
+  // Create lead from user registration
+  static async createLeadFromUser(user: { id: string; email: string; user_metadata?: { full_name?: string } }): Promise<Lead> {
+    const leadData: Omit<Lead, 'id' | 'createdAt' | 'updatedAt'> = {
+      name: user.user_metadata?.full_name || user.email.split('@')[0],
+      email: user.email,
+      phone: '', // Will be filled later
+      interest: 'General Inquiry',
+      source: 'auth_registration',
+      status: 'new',
+      userId: user.id,
+    };
+
+    return this.createLead(leadData);
   }
 
   // Create a booking lead

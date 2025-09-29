@@ -2,20 +2,23 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send, X, Bot, User } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AIChat = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [inputText, setInputText] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
   const [messages, setMessages] = useState([
     {
       id: 1,
       type: 'bot',
-      text: '¡Hola! Soy tu asistente de Komorebi House. ¿En qué puedo ayudarte con tu inversión en propiedades japonesas?',
+      text: t('ai.welcomeMessage'),
       timestamp: new Date()
     }
   ]);
-  const [inputText, setInputText] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -42,11 +45,11 @@ const AIChat = () => {
     // Simulate AI response
     setTimeout(() => {
       const responses = [
-        "Las propiedades akiya en Gunma ofrecen excelentes oportunidades de inversión. ¿Te interesa conocer más sobre el proceso de compra?",
-        "El ROI promedio en propiedades japonesas renovadas es del 8-12% anual. ¿Quieres que calculemos tu inversión específica?",
-        "Kusatsu Onsen es una ubicación premium con alta demanda turística. ¿Te gustaría ver propiedades disponibles en esa zona?",
-        "El proceso de renovación típicamente toma 3-6 meses. ¿Tienes alguna pregunta específica sobre el timeline?",
-        "Las propiedades japonesas tradicionales mantienen su valor histórico. ¿Te interesa conocer más sobre la preservación cultural?"
+        t('ai.responses.propertyOpportunities'),
+        t('ai.responses.roiCalculation'),
+        t('ai.responses.premiumLocation'),
+        t('ai.responses.renovationTimeline'),
+        t('ai.responses.culturalPreservation')
       ];
 
       const randomResponse = responses[Math.floor(Math.random() * responses.length)];
@@ -94,8 +97,8 @@ const AIChat = () => {
                   <Bot size={16} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-primary">Komorebi Assistant</h3>
-                  <p className="text-xs text-secondary">En línea</p>
+                  <h3 className="font-semibold text-primary">{t('ai.assistantName')}</h3>
+                  <p className="text-xs text-secondary">{t('ai.online')}</p>
                 </div>
               </div>
               <button
@@ -162,7 +165,7 @@ const AIChat = () => {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Escribe tu pregunta..."
+                  placeholder={t('ai.placeholder')}
                   className="flex-1 px-4 py-2 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
                 <button

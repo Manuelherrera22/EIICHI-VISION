@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import YouTubeVideo from './YouTubeVideo';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const VideoBackground = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,22 +12,23 @@ const VideoBackground = () => {
   const [useYouTube, setUseYouTube] = useState(true); // Restaurado a true para usar YouTube
   const [youtubeUrl, setYoutubeUrl] = useState('https://www.youtube.com/watch?v=05SfPsxR1SY');
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useLanguage();
 
   const videoSources = [
     {
       src: "/videos/hero-video.mp4",
       type: "video/mp4",
-      label: "Tu Video Local"
+      label: t('video.localVideo')
     },
     {
       src: "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=165&oauth2_token_id=57447761",
       type: "video/mp4",
-      label: "Video Profesional"
+      label: t('video.professionalVideo')
     },
     {
       src: "https://drive.google.com/uc?id=188GYOWXfcdok2Xwh_U2TIoaJ6il2S1o0",
       type: "video/mp4", 
-      label: "Tu Video Google Drive"
+      label: t('video.googleDriveVideo')
     }
   ];
 

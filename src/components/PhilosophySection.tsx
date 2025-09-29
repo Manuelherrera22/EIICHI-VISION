@@ -1,22 +1,24 @@
 import React from 'react';
 import { BookOpen, Calculator, Heart, TrendingUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const PhilosophySection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-            Nuestra Filosofía en Acción
+            {t('philosophy.ourPhilosophyInAction')}
           </div>
           <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
-            Las Analectas y el Ábaco
+            {t('philosophy.analectsAndAbacus')}
           </h2>
           <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
             <span className="font-serif text-2xl text-primary">論語と算盤</span> - 
-            La combinación perfecta entre ética confuciana y eficiencia empresarial que 
-            guía cada decisión en Komorebi House.
+            {t('philosophy.philosophyDescription')}
           </p>
         </div>
 
@@ -29,10 +31,10 @@ const PhilosophySection = () => {
                 <BookOpen size={40} className="text-primary" />
               </div>
               <h3 className="text-3xl font-serif font-bold text-primary mb-4">
-                Las Analectas
+                {t('philosophy.analects')}
               </h3>
               <div className="text-lg text-accent font-mono mb-4">
-                論語 - Nuestra Ética y Propósito
+                {t('philosophy.analectsSubtitle')}
               </div>
             </div>
 
@@ -42,11 +44,10 @@ const PhilosophySection = () => {
                   <Heart size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Transparencia Absoluta
+                      {t('philosophy.absoluteTransparency')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Operamos con completa transparencia en cada transacción, 
-                      proceso legal y comunicación con nuestros clientes.
+                      {t('philosophy.transparencyDescription')}
                     </p>
                   </div>
                 </div>
@@ -57,11 +58,10 @@ const PhilosophySection = () => {
                   <BookOpen size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Respeto Cultural
+                      {t('philosophy.culturalRespect')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Cada restauración es un acto de preservación cultural que 
-                      beneficia directamente a artesanos y la economía local.
+                      {t('philosophy.culturalRespectDescription')}
                     </p>
                   </div>
                 </div>
@@ -72,11 +72,10 @@ const PhilosophySection = () => {
                   <Heart size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Propósito Comunitario
+                      {t('philosophy.communityPurpose')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Nuestro objetivo no es la especulación, sino la revitalización 
-                      sostenible de la comunidad de Kusatsu.
+                      {t('philosophy.communityPurposeDescription')}
                     </p>
                   </div>
                 </div>
@@ -91,10 +90,10 @@ const PhilosophySection = () => {
                 <Calculator size={40} className="text-accent" />
               </div>
               <h3 className="text-3xl font-serif font-bold text-primary mb-4">
-                El Ábaco
+                {t('philosophy.abacus')}
               </h3>
               <div className="text-lg text-accent font-mono mb-4">
-                算盤 - Nuestro Negocio y Valor
+                {t('philosophy.abacusSubtitle')}
               </div>
             </div>
 
@@ -104,11 +103,10 @@ const PhilosophySection = () => {
                   <TrendingUp size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Oportunidad Tangible
+                      {t('philosophy.tangibleOpportunity')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Ofrecemos inversiones económicamente sólidas con potencial 
-                      real de crecimiento y valorización.
+                      {t('philosophy.tangibleOpportunityDescription')}
                     </p>
                   </div>
                 </div>
@@ -119,11 +117,10 @@ const PhilosophySection = () => {
                   <Calculator size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Transformación de Valor
+                      {t('philosophy.valueTransformation')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Convertimos propiedades infravaloradas en valiosos activos 
-                      y hogares de ensueño con retorno medible.
+                      {t('philosophy.valueTransformationDescription')}
                     </p>
                   </div>
                 </div>
@@ -134,11 +131,10 @@ const PhilosophySection = () => {
                   <TrendingUp size={24} className="text-accent mt-1" />
                   <div>
                     <h4 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Sostenibilidad Rentable
+                      {t('philosophy.profitableSustainability')}
                     </h4>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Aseguramos que la visión sea sostenible y rentable tanto 
-                      para nuestros clientes como para la comunidad.
+                      {t('philosophy.profitableSustainabilityDescription')}
                     </p>
                   </div>
                 </div>
@@ -150,24 +146,23 @@ const PhilosophySection = () => {
         {/* Call to Action */}
         <div className="text-center bg-white p-12 rounded-2xl shadow-lg border border-border">
           <h3 className="text-3xl font-serif font-bold text-primary mb-4">
-            Únete a la Visión
+            {t('philosophy.joinVision')}
           </h3>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-            Descubre cómo la filosofía de Shibusawa Eiichi puede transformar 
-            tu perspectiva sobre la inversión inmobiliaria y el propósito empresarial.
+            {t('philosophy.joinVisionDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <input
               type="email"
-              placeholder="Tu correo electrónico"
+              placeholder={t('philosophy.emailPlaceholder')}
               className="px-6 py-3 border border-border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary min-w-80"
             />
             <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold">
-              Suscribirse al Boletín
+              {t('philosophy.subscribeNewsletter')}
             </button>
           </div>
           <p className="text-xs text-secondary mt-4">
-            Recibe historias inspiradoras y nuevas propiedades directamente en tu correo.
+            {t('philosophy.newsletterDescription')}
           </p>
         </div>
       </div>

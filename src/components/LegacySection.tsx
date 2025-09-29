@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const LegacySection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="legacy-section" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,10 +29,10 @@ const LegacySection = () => {
             {/* Floating Quote */}
             <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg border border-border max-w-xs">
               <div className="text-primary font-serif text-lg leading-relaxed">
-                "Where tradition meets tomorrow"
+                "{t('legacy.quote')}"
               </div>
               <div className="text-secondary text-sm mt-2 font-mono">
-                伝統と未来の出会い
+                {t('legacy.japaneseText')}
               </div>
             </div>
           </div>
@@ -38,34 +41,30 @@ const LegacySection = () => {
           <div className="space-y-8">
             <div>
               <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-                Descubre el Patrimonio de Gunma
+                {t('legacy.discoverHeritage')}
               </div>
               <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
-                Tradición Japonesa
+                {t('legacy.japaneseTradition')}
                 <br />
-                <span className="text-accent">en el Corazón de Gunma</span>
+                <span className="text-accent">{t('legacy.inHeartOfGunma')}</span>
               </h2>
             </div>
 
             <div className="space-y-6 text-foreground leading-relaxed">
               <p className="text-lg">
-                Gunma es una prefectura única en Japón, donde la tradición milenaria se encuentra 
-                con la modernidad. Sus <strong>onsen naturales</strong>, montañas majestuosas y 
-                arquitectura tradicional crean un ambiente incomparable para vivir e invertir.
+                {t('legacy.description1')}
               </p>
               
               <p>
-                Cada propiedad en Gunma cuenta una historia única. Desde casas tradicionales 
-                <em>minka</em> hasta templos centenarios, estas propiedades representan 
-                la esencia auténtica del Japón que muchos buscan experimentar.
+                {t('legacy.description2')}
               </p>
 
               <div className="bg-muted p-6 rounded-xl border-l-4 border-accent">
                 <div className="text-primary font-serif text-lg mb-2">
-                  "Donde cada piedra cuenta una historia"
+                  "{t('legacy.quote')}"
                 </div>
                 <div className="text-secondary text-sm font-mono">
-                  - Gunma Heritage
+                  {t('legacy.quoteAuthor')}
                 </div>
               </div>
             </div>
@@ -73,21 +72,21 @@ const LegacySection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">1000+</div>
-                <div className="text-sm text-secondary">Onsen Naturales</div>
+                <div className="text-sm text-secondary">{t('legacy.naturalHotSprings')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">2000+</div>
-                <div className="text-sm text-secondary">Años de Historia</div>
+                <div className="text-sm text-secondary">{t('legacy.yearsOfHistory')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">∞</div>
-                <div className="text-sm text-secondary">Belleza Natural</div>
+                <div className="text-sm text-secondary">{t('legacy.naturalBeauty')}</div>
               </div>
             </div>
 
             <div className="pt-4">
               <button className="text-primary hover:text-accent transition-colors duration-200 font-semibold flex items-center space-x-2">
-                <span>Descubre Más Sobre Gunma</span>
+                <span>{t('legacy.discoverMore')}</span>
                 <ArrowRight size={16} />
               </button>
             </div>

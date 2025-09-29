@@ -23,6 +23,7 @@ import {
   Eye,
   EyeOff
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente del modelo con efectos avanzados
 const PremiumModel = ({ url }: { url: string }) => {
@@ -127,7 +128,7 @@ const PremiumControls = () => {
             >
               {isPlaying ? <Pause size={14} /> : <Play size={14} />}
             </button>
-            <span className="text-xs text-secondary">Auto-rotación</span>
+            <span className="text-xs text-secondary">{t('premium.autoRotation')}</span>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -137,7 +138,7 @@ const PremiumControls = () => {
             >
               {lightMode === 'day' ? <Sun size={14} /> : <Moon size={14} />}
             </button>
-            <span className="text-xs text-secondary">Iluminación</span>
+            <span className="text-xs text-secondary">{t('premium.lighting')}</span>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -147,7 +148,7 @@ const PremiumControls = () => {
             >
               <Info size={14} />
             </button>
-            <span className="text-xs text-secondary">Información</span>
+            <span className="text-xs text-secondary">{t('premium.information')}</span>
           </div>
         </div>
       </div>
@@ -162,29 +163,29 @@ const PremiumInfo = () => {
       <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20 max-w-sm">
         <div className="flex items-center space-x-2 mb-3">
           <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-          <h3 className="font-serif font-bold text-primary text-sm">Casa Japonesa Premium</h3>
+          <h3 className="font-serif font-bold text-primary text-sm">{t('premium.premiumJapaneseHouse')}</h3>
         </div>
         
         <div className="space-y-2 text-xs text-secondary">
           <div className="flex justify-between">
             <span>📍 Ubicación:</span>
-            <span className="text-primary font-semibold">Kusatsu, Gunma</span>
+            <span className="text-primary font-semibold">{t('premium.location')}</span>
           </div>
           <div className="flex justify-between">
             <span>🏠 Área:</span>
-            <span className="text-primary font-semibold">120 m²</span>
+            <span className="text-primary font-semibold">{t('premium.area')}</span>
           </div>
           <div className="flex justify-between">
             <span>📅 Año:</span>
-            <span className="text-primary font-semibold">1925</span>
+            <span className="text-primary font-semibold">{t('premium.year')}</span>
           </div>
           <div className="flex justify-between">
             <span>💰 Precio:</span>
-            <span className="text-primary font-semibold">¥8,500,000</span>
+            <span className="text-primary font-semibold">{t('premium.price')}</span>
           </div>
           <div className="flex justify-between">
             <span>🎌 Estilo:</span>
-            <span className="text-primary font-semibold">Minka Tradicional</span>
+            <span className="text-primary font-semibold">{t('premium.style')}</span>
           </div>
         </div>
         
@@ -209,13 +210,16 @@ const PremiumInfo = () => {
 // Componente principal del visualizador premium
 const PremiumModelViewer = ({ 
   modelUrl, 
-  modelName = "Casa Japonesa Premium"
+  modelName
 }: { 
   modelUrl: string; 
   modelName?: string;
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const { t } = useLanguage();
+  
+  const displayName = modelName || t('premium.premiumJapaneseHouse');
   const [errorMessage, setErrorMessage] = useState('');
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showControls, setShowControls] = useState(true);

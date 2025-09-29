@@ -7,6 +7,7 @@ import BlueprintPortal from '@/components/BlueprintPortal';
 import ARPropertyViewer from '@/components/ARPropertyViewer';
 import InteractiveDesignTable from '@/components/InteractiveDesignTable';
 import ProjectControlCenter from '@/components/ProjectControlCenter';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Sparkles, 
   Camera, 
@@ -75,40 +76,41 @@ type BlueprintPhase = 'portal' | 'ar' | 'design' | 'control';
 const BlueprintEcosystem = () => {
   const [currentPhase, setCurrentPhase] = useState<BlueprintPhase>('portal');
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const { t } = useLanguage();
 
   const phases = [
     {
       id: 'portal',
-      title: 'Portal de Visión',
-      subtitle: 'Co-crea tu visión personal',
-      description: 'Onboarding interactivo con matching con IA para encontrar las propiedades perfectas',
+      title: t('blueprint.visionPortal'),
+      subtitle: t('blueprint.coCreateVision'),
+      description: t('blueprint.interactiveOnboarding'),
       icon: Sparkles,
       color: 'from-accent to-accent/80',
       bgColor: 'bg-muted'
     },
     {
       id: 'ar',
-      title: 'Realidad Aumentada',
-      subtitle: 'Visitas a propiedades 2.0',
-      description: 'Ve las propiedades transformadas en tiempo real con tecnología AR',
+      title: t('blueprint.augmentedReality'),
+      subtitle: t('blueprint.propertyVisits20'),
+      description: t('blueprint.arDescription'),
       icon: Camera,
       color: 'from-primary to-primary/80',
       bgColor: 'bg-muted'
     },
     {
       id: 'design',
-      title: 'Mesa de Diseño',
-      subtitle: 'Co-diseño en tiempo real',
-      description: 'Mesa interactiva para modificar diseños en 3D durante las sesiones',
+      title: t('blueprint.designTable'),
+      subtitle: t('blueprint.realTimeCoDesign'),
+      description: t('blueprint.designDescription'),
       icon: Settings,
       color: 'from-accent to-accent/80',
       bgColor: 'bg-muted'
     },
     {
       id: 'control',
-      title: 'Centro de Control',
-      subtitle: 'Control total del proyecto',
-      description: 'Dashboard en tiempo real con cámaras, cronograma y decisiones',
+      title: t('blueprint.controlCenter'),
+      subtitle: t('blueprint.totalProjectControl'),
+      description: t('blueprint.controlDescription'),
       icon: HomeIcon,
       color: 'from-primary to-primary/80',
       bgColor: 'bg-muted'
@@ -122,7 +124,40 @@ const BlueprintEcosystem = () => {
       case 'portal':
         return <BlueprintPortal />;
       case 'ar':
-        return <ARPropertyViewer />;
+        return (
+          <ARPropertyViewer 
+            property={{
+              id: 'demo-property',
+              title: t('blueprint.traditionalJapaneseHouse'),
+              location: 'Kusatsu, Gunma',
+              currentImages: ['/api/placeholder/400/300'],
+              renderOptions: [
+                {
+                  id: 'original',
+                  name: t('blueprint.originalState'),
+                  description: 'Vista actual de la propiedad',
+                  image: '/api/placeholder/400/300',
+                  features: ['Estructura original', 'Materiales tradicionales']
+                },
+                {
+                  id: 'renovated',
+                  name: t('blueprint.modernRenovation'),
+                  description: 'Propiedad renovada con comodidades modernas',
+                  image: '/api/placeholder/400/300',
+                  features: ['Cocina moderna', 'Baño actualizado', 'Aislamiento mejorado']
+                },
+                {
+                  id: 'luxury',
+                  name: t('blueprint.traditionalLuxury'),
+                  description: 'Renovación de lujo manteniendo la tradición',
+                  image: '/api/placeholder/400/300',
+                  features: ['Materiales premium', 'Diseño exclusivo', 'Tecnología integrada']
+                }
+              ]
+            }}
+            onClose={() => setCurrentPhase('portal')}
+          />
+        );
       case 'design':
         return <InteractiveDesignTable />;
       case 'control':
@@ -141,20 +176,20 @@ const BlueprintEcosystem = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 space-y-2 sm:space-y-0">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
               <Link href="/" className="text-primary hover:text-accent transition-colors font-medium text-sm">
-                ← Volver
+                ← {t('common.back')}
               </Link>
               <div className="flex items-center space-x-3 sm:space-x-4 text-xs sm:text-sm">
                 <Link href="/projects" className="text-secondary hover:text-primary transition-colors">
-                  Proyectos
+                  {t('navigation.projects')}
                 </Link>
                 <Link href="/process" className="text-secondary hover:text-primary transition-colors">
-                  El Camino
+                  {t('navigation.process')}
                 </Link>
                 <Link href="/journal" className="text-secondary hover:text-primary transition-colors">
-                  Journal
+                  {t('navigation.journal')}
                 </Link>
                 <Link href="/contact" className="text-secondary hover:text-primary transition-colors">
-                  Contacto
+                  {t('navigation.contact')}
                 </Link>
               </div>
             </div>
@@ -162,7 +197,7 @@ const BlueprintEcosystem = () => {
             <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="flex items-center space-x-2 bg-accent/10 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                <span className="text-primary text-xs sm:text-sm">Sistema Activo</span>
+                <span className="text-primary text-xs sm:text-sm">{t('blueprint.activeSystem')}</span>
               </div>
 
               <button
@@ -178,7 +213,7 @@ const BlueprintEcosystem = () => {
           <div className="flex items-center space-x-3 sm:space-x-4">
             <div>
               <h1 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-primary">
-                Blueprint Digital
+                {t('blueprint.title')}
               </h1>
               <p className="text-secondary text-xs sm:text-sm">
                 Ecosistema Komorebi House

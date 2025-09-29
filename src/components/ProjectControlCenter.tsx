@@ -40,6 +40,7 @@ import {
   Maximize2,
   Minimize2
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Project {
   id: string;
@@ -94,12 +95,13 @@ const ProjectControlCenter = () => {
   const [selectedCamera, setSelectedCamera] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState(false);
   const [notifications, setNotifications] = useState(3);
+  const { t } = useLanguage();
 
   const projects: Project[] = [
     {
       id: '1',
-      title: 'Casa Tradicional Kusatsu',
-      location: 'Kusatsu, Gunma',
+      title: t('pcc.traditionalKusatsuHouse'),
+      location: t('pcc.kusatsuGunma'),
       status: 'structure',
       progress: 65,
       budget: {
@@ -110,27 +112,27 @@ const ProjectControlCenter = () => {
       timeline: {
         startDate: '2024-01-15',
         endDate: '2024-08-30',
-        currentPhase: 'Estructura y Techado'
+        currentPhase: t('pcc.structureAndRoofing')
       },
       cameras: [
         {
           id: 'cam1',
-          name: 'Vista Frontal',
-          location: 'Entrada principal',
+          name: t('pcc.frontView'),
+          location: t('pcc.mainEntrance'),
           isLive: true,
           lastUpdate: '2024-03-15T10:30:00Z'
         },
         {
           id: 'cam2',
-          name: 'Área de Trabajo',
-          location: 'Interior - Sala principal',
+          name: t('pcc.workArea'),
+          location: t('pcc.mainRoom'),
           isLive: true,
           lastUpdate: '2024-03-15T10:28:00Z'
         },
         {
           id: 'cam3',
-          name: 'Jardín Trasero',
-          location: 'Exterior - Zona de jardín',
+          name: t('pcc.backyardGarden'),
+          location: t('pcc.exteriorGarden'),
           isLive: false,
           lastUpdate: '2024-03-15T09:45:00Z'
         }
@@ -138,66 +140,66 @@ const ProjectControlCenter = () => {
       milestones: [
         {
           id: 'milestone1',
-          title: 'Demolición Completa',
+          title: t('pcc.completeDemolition'),
           status: 'completed',
           dueDate: '2024-02-15',
-          description: 'Remoción de elementos estructurales dañados'
+          description: t('pcc.demolitionDescription')
         },
         {
           id: 'milestone2',
-          title: 'Cimientos y Base',
+          title: t('pcc.foundationsAndBase'),
           status: 'completed',
           dueDate: '2024-03-01',
-          description: 'Construcción de cimientos y base estructural'
+          description: t('pcc.foundationsDescription')
         },
         {
           id: 'milestone3',
-          title: 'Estructura Principal',
+          title: t('pcc.mainStructure'),
           status: 'in-progress',
           dueDate: '2024-04-15',
-          description: 'Construcción de estructura principal y techado'
+          description: t('pcc.structureDescription')
         },
         {
           id: 'milestone4',
-          title: 'Instalaciones',
+          title: t('pcc.installations'),
           status: 'pending',
           dueDate: '2024-05-30',
-          description: 'Instalación eléctrica, plomería y climatización'
+          description: t('pcc.installationsDescription')
         },
         {
           id: 'milestone5',
-          title: 'Acabados Interiores',
+          title: t('pcc.interiorFinishes'),
           status: 'pending',
           dueDate: '2024-07-15',
-          description: 'Pisos, paredes, pintura y detalles finales'
+          description: t('pcc.finishesDescription')
         }
       ],
       decisions: [
         {
           id: 'decision1',
-          title: 'Tipo de Madera para Pisos',
-          description: 'Selecciona el tipo de madera para los pisos principales',
+          title: t('pcc.floorWoodType'),
+          description: t('pcc.selectFloorWood'),
           options: [
             {
               id: 'option1',
-              name: 'Cedro Japonés',
+              name: t('pcc.japaneseCedar'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 4500,
-              description: 'Madera tradicional, duradera y auténtica'
+              description: t('pcc.traditionalDurable')
             },
             {
               id: 'option2',
-              name: 'Bambú Premium',
+              name: t('pcc.premiumBamboo'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 3200,
-              description: 'Sostenible, moderno y fácil mantenimiento'
+              description: t('pcc.sustainableModern')
             },
             {
               id: 'option3',
-              name: 'Roble Europeo',
+              name: t('pcc.europeanOak'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 3800,
-              description: 'Clásico, elegante y de alta calidad'
+              description: t('pcc.classicElegant')
             }
           ],
           dueDate: '2024-03-20',
@@ -205,29 +207,29 @@ const ProjectControlCenter = () => {
         },
         {
           id: 'decision2',
-          title: 'Color de Pintura Exterior',
-          description: 'Elige el color para la fachada principal',
+          title: t('pcc.exteriorPaintColor'),
+          description: t('pcc.chooseFacadeColor'),
           options: [
             {
               id: 'option1',
-              name: 'Blanco Tradicional',
+              name: t('pcc.traditionalWhite'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 1200,
-              description: 'Clásico y atemporal'
+              description: t('pcc.classicTimeless')
             },
             {
               id: 'option2',
-              name: 'Gris Moderno',
+              name: t('pcc.modernGray'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 1200,
-              description: 'Contemporáneo y elegante'
+              description: t('pcc.contemporaryElegant')
             },
             {
               id: 'option3',
-              name: 'Beige Natural',
+              name: t('pcc.naturalBeige'),
               image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
               price: 1200,
-              description: 'Armonioso con el entorno'
+              description: t('pcc.harmoniousEnvironment')
             }
           ],
           dueDate: '2024-03-25',
@@ -276,39 +278,39 @@ const ProjectControlCenter = () => {
   if (!currentProject) return null;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
+    <div className={`min-h-screen bg-background ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}>
       {/* Header */}
-      <div className="bg-black/50 backdrop-blur-sm border-b border-white/10 p-4">
+      <div className="bg-white/95 backdrop-blur-sm border-b border-border p-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div>
-              <h1 className="text-2xl font-serif font-bold text-white">
-                Centro de Control del Proyecto
+              <h1 className="text-2xl font-serif font-bold text-primary">
+                {t('pcc.projectControlCenter')}
               </h1>
-              <p className="text-white/70">
+              <p className="text-secondary">
                 {currentProject.title} • {currentProject.location}
               </p>
             </div>
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm">En Vivo</span>
+            <div className="flex items-center space-x-2 bg-accent/10 rounded-full px-4 py-2">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-primary text-sm">{t('pcc.live')}</span>
             </div>
 
             <button
               onClick={() => setIsFullscreen(!isFullscreen)}
-              className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
             >
-              {isFullscreen ? <Minimize2 className="w-5 h-5 text-white" /> : <Maximize2 className="w-5 h-5 text-white" />}
+              {isFullscreen ? <Minimize2 className="w-5 h-5 text-primary" /> : <Maximize2 className="w-5 h-5 text-primary" />}
             </button>
 
             <div className="relative">
-              <button className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                <Bell className="w-5 h-5 text-white" />
+              <button className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+                <Bell className="w-5 h-5 text-primary" />
                 {notifications > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-xs rounded-full flex items-center justify-center">
                     {notifications}
                   </span>
                 )}
@@ -319,23 +321,23 @@ const ProjectControlCenter = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="bg-black/30 backdrop-blur-sm border-b border-white/10">
+      <div className="bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex space-x-8">
             {[
-              { id: 'overview', label: 'Resumen', icon: Home },
-              { id: 'cameras', label: 'Cámaras', icon: Camera },
-              { id: 'timeline', label: 'Cronograma', icon: Calendar },
-              { id: 'decisions', label: 'Decisiones', icon: MessageSquare },
-              { id: 'finances', label: 'Finanzas', icon: DollarSign }
+              { id: 'overview', label: t('pcc.overview'), icon: Home },
+              { id: 'cameras', label: t('pcc.cameras'), icon: Camera },
+              { id: 'timeline', label: t('pcc.timeline'), icon: Calendar },
+              { id: 'decisions', label: t('pcc.decisions'), icon: MessageSquare },
+              { id: 'finances', label: t('pcc.finances'), icon: DollarSign }
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`flex items-center space-x-2 py-4 px-2 border-b-2 transition-colors ${
                   activeTab === tab.id
-                    ? 'border-yellow-400 text-yellow-400'
-                    : 'border-transparent text-white/70 hover:text-white'
+                    ? 'border-accent text-accent'
+                    : 'border-transparent text-secondary hover:text-primary'
                 }`}
               >
                 {tab.icon && <tab.icon className="w-5 h-5" />}
@@ -359,80 +361,80 @@ const ProjectControlCenter = () => {
             >
               {/* Progress Overview */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Progreso General</h3>
-                    <span className="text-2xl font-bold text-yellow-400">{currentProject.progress}%</span>
+                    <h3 className="text-lg font-semibold text-primary">{t('pcc.generalProgress')}</h3>
+                    <span className="text-2xl font-bold text-accent">{currentProject.progress}%</span>
                   </div>
-                  <div className="w-full bg-white/20 rounded-full h-3 mb-2">
+                  <div className="w-full bg-muted rounded-full h-3 mb-2">
                     <div
-                      className="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-accent to-accent/80 h-3 rounded-full transition-all duration-500"
                       style={{ width: `${currentProject.progress}%` }}
                     />
                   </div>
-                  <p className="text-white/70 text-sm">{currentProject.timeline.currentPhase}</p>
+                  <p className="text-secondary text-sm">{currentProject.timeline.currentPhase}</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Presupuesto</h3>
-                    <DollarSign className="w-6 h-6 text-green-400" />
+                    <h3 className="text-lg font-semibold text-primary">{t('pcc.budget')}</h3>
+                    <DollarSign className="w-6 h-6 text-accent" />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Total:</span>
-                      <span className="text-white">{formatCurrency(currentProject.budget.total)}</span>
+                      <span className="text-secondary">{t('pcc.total')}</span>
+                      <span className="text-primary">{formatCurrency(currentProject.budget.total)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Gastado:</span>
-                      <span className="text-yellow-400">{formatCurrency(currentProject.budget.spent)}</span>
+                      <span className="text-secondary">{t('pcc.spent')}</span>
+                      <span className="text-accent">{formatCurrency(currentProject.budget.spent)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Restante:</span>
-                      <span className="text-green-400">{formatCurrency(currentProject.budget.remaining)}</span>
+                      <span className="text-secondary">{t('pcc.remaining')}</span>
+                      <span className="text-green-600">{formatCurrency(currentProject.budget.remaining)}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Cronograma</h3>
-                    <Calendar className="w-6 h-6 text-blue-400" />
+                    <h3 className="text-lg font-semibold text-primary">{t('pcc.schedule')}</h3>
+                    <Calendar className="w-6 h-6 text-accent" />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Inicio:</span>
-                      <span className="text-white">{formatDate(currentProject.timeline.startDate)}</span>
+                      <span className="text-secondary">{t('pcc.start')}</span>
+                      <span className="text-primary">{formatDate(currentProject.timeline.startDate)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Fin:</span>
-                      <span className="text-white">{formatDate(currentProject.timeline.endDate)}</span>
+                      <span className="text-secondary">{t('pcc.end')}</span>
+                      <span className="text-primary">{formatDate(currentProject.timeline.endDate)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Estado:</span>
-                      <span className="text-yellow-400">En Progreso</span>
+                      <span className="text-secondary">{t('pcc.status')}</span>
+                      <span className="text-accent">{t('pcc.inProgress')}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Acciones Rápidas</h3>
+              <div className="bg-white rounded-2xl p-6 border border-border shadow-lg">
+                <h3 className="text-lg font-semibold text-primary mb-4">{t('pcc.quickActions')}</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
-                    { label: 'Ver Cámaras', icon: Camera, action: () => setActiveTab('cameras') },
-                    { label: 'Revisar Decisiones', icon: MessageSquare, action: () => setActiveTab('decisions') },
-                    { label: 'Ver Cronograma', icon: Calendar, action: () => setActiveTab('timeline') },
-                    { label: 'Reporte Financiero', icon: DollarSign, action: () => setActiveTab('finances') }
+                    { label: t('pcc.viewCameras'), icon: Camera, action: () => setActiveTab('cameras') },
+                    { label: t('pcc.reviewDecisions'), icon: MessageSquare, action: () => setActiveTab('decisions') },
+                    { label: t('pcc.viewTimeline'), icon: Calendar, action: () => setActiveTab('timeline') },
+                    { label: t('pcc.financialReport'), icon: DollarSign, action: () => setActiveTab('finances') }
                   ].map((action, index) => (
                     <button
                       key={index}
                       onClick={action.action}
-                      className="p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors text-center"
+                      className="p-4 bg-muted/50 rounded-xl hover:bg-muted transition-colors text-center"
                     >
-                      {action.icon && <action.icon className="w-8 h-8 text-white mx-auto mb-2" />}
-                      <span className="text-white text-sm">{action.label}</span>
+                      {action.icon && <action.icon className="w-8 h-8 text-primary mx-auto mb-2" />}
+                      <span className="text-primary text-sm">{action.label}</span>
                     </button>
                   ))}
                 </div>
@@ -451,7 +453,7 @@ const ProjectControlCenter = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Camera List */}
                 <div className="lg:col-span-1 space-y-4">
-                  <h3 className="text-lg font-semibold text-white">Cámaras Disponibles</h3>
+                  <h3 className="text-lg font-semibold text-white">{t('pcc.availableCameras')}</h3>
                   {currentProject.cameras.map((camera) => (
                     <div
                       key={camera.id}
@@ -470,7 +472,7 @@ const ProjectControlCenter = () => {
                       </div>
                       <p className="text-white/70 text-sm mb-2">{camera.location}</p>
                       <p className="text-white/50 text-xs">
-                        Última actualización: {new Date(camera.lastUpdate).toLocaleString()}
+                        {t('pcc.lastUpdate')} {new Date(camera.lastUpdate).toLocaleString()}
                       </p>
                     </div>
                   ))}
@@ -483,7 +485,7 @@ const ProjectControlCenter = () => {
                       <div className="aspect-video bg-gray-900 flex items-center justify-center relative">
                         <div className="text-center">
                           <Camera className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                          <p className="text-white/70 mb-4">Feed de Cámara en Vivo</p>
+                          <p className="text-white/70 mb-4">{t('pcc.liveCameraFeed')}</p>
                           <div className="flex items-center justify-center space-x-4">
                             <button
                               onClick={() => setIsMuted(!isMuted)}
@@ -503,7 +505,7 @@ const ProjectControlCenter = () => {
                         {/* Live Indicator */}
                         <div className="absolute top-4 left-4 flex items-center space-x-2 bg-red-500 px-3 py-1 rounded-full">
                           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                          <span className="text-white text-sm font-medium">EN VIVO</span>
+                          <span className="text-white text-sm font-medium">{t('pcc.liveIndicator')}</span>
                         </div>
 
                         {/* Camera Controls */}
@@ -520,7 +522,7 @@ const ProjectControlCenter = () => {
                   ) : (
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 border border-white/20 text-center">
                       <Camera className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                      <p className="text-white/70">Selecciona una cámara para ver el feed en vivo</p>
+                      <p className="text-white/70">{t('pcc.selectCamera')}</p>
                     </div>
                   )}
                 </div>
@@ -537,7 +539,7 @@ const ProjectControlCenter = () => {
               className="space-y-6"
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-6">Hitos del Proyecto</h3>
+                <h3 className="text-lg font-semibold text-white mb-6">{t('pcc.projectMilestones')}</h3>
                 <div className="space-y-4">
                   {currentProject.milestones.map((milestone, index) => {
                     const StatusIcon = getStatusIcon(milestone.status);
@@ -579,7 +581,7 @@ const ProjectControlCenter = () => {
                       <h3 className="text-lg font-semibold text-white mb-2">{decision.title}</h3>
                       <p className="text-white/70 mb-2">{decision.description}</p>
                       <p className="text-white/50 text-sm">
-                        Fecha límite: {formatDate(decision.dueDate)}
+                        {t('pcc.deadline')} {formatDate(decision.dueDate)}
                       </p>
                     </div>
                     <div className={`px-3 py-1 rounded-full text-sm ${
@@ -587,7 +589,7 @@ const ProjectControlCenter = () => {
                         ? 'bg-yellow-400/20 text-yellow-400' 
                         : 'bg-green-400/20 text-green-400'
                     }`}>
-                      {decision.status === 'pending' ? 'Pendiente' : 'Aprobado'}
+                      {decision.status === 'pending' ? t('pcc.pending') : t('pcc.approved')}
                     </div>
                   </div>
 
@@ -611,7 +613,7 @@ const ProjectControlCenter = () => {
                             {formatCurrency(option.price)}
                           </span>
                           <button className="px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-colors text-sm font-medium">
-                            Seleccionar
+                            {t('pcc.select')}
                           </button>
                         </div>
                       </div>
@@ -632,18 +634,18 @@ const ProjectControlCenter = () => {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <h3 className="text-lg font-semibold text-white mb-4">Resumen Financiero</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">{t('pcc.financialSummary')}</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-white/70">Presupuesto Total:</span>
+                      <span className="text-white/70">{t('pcc.totalBudget')}</span>
                       <span className="text-white font-semibold">{formatCurrency(currentProject.budget.total)}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-white/70">Gastado:</span>
+                      <span className="text-white/70">{t('pcc.spent')}</span>
                       <span className="text-yellow-400 font-semibold">{formatCurrency(currentProject.budget.spent)}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-white/70">Restante:</span>
+                      <span className="text-white/70">{t('pcc.remaining')}</span>
                       <span className="text-green-400 font-semibold">{formatCurrency(currentProject.budget.remaining)}</span>
                     </div>
                     <div className="w-full bg-white/20 rounded-full h-2 mt-4">
@@ -656,14 +658,14 @@ const ProjectControlCenter = () => {
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <h3 className="text-lg font-semibold text-white mb-4">Gastos por Categoría</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">{t('pcc.expensesByCategory')}</h3>
                   <div className="space-y-3">
                     {[
-                      { category: 'Demolición', amount: 15000, percentage: 13 },
-                      { category: 'Cimientos', amount: 25000, percentage: 21 },
-                      { category: 'Estructura', amount: 35000, percentage: 30 },
-                      { category: 'Instalaciones', amount: 20000, percentage: 17 },
-                      { category: 'Acabados', amount: 22000, percentage: 19 }
+                      { category: t('pcc.demolition'), amount: 15000, percentage: 13 },
+                      { category: t('pcc.foundations'), amount: 25000, percentage: 21 },
+                      { category: t('pcc.structure'), amount: 35000, percentage: 30 },
+                      { category: t('pcc.installations'), amount: 20000, percentage: 17 },
+                      { category: t('pcc.finishes'), amount: 22000, percentage: 19 }
                     ].map((item, index) => (
                       <div key={index} className="flex items-center justify-between">
                         <span className="text-white/70 text-sm">{item.category}</span>
@@ -685,13 +687,13 @@ const ProjectControlCenter = () => {
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">Transacciones Recientes</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">{t('pcc.recentTransactions')}</h3>
                 <div className="space-y-3">
                   {[
-                    { date: '2024-03-15', description: 'Materiales de construcción', amount: 8500, type: 'expense' },
-                    { date: '2024-03-14', description: 'Servicios de albañilería', amount: 3200, type: 'expense' },
-                    { date: '2024-03-13', description: 'Permisos municipales', amount: 450, type: 'expense' },
-                    { date: '2024-03-12', description: 'Inspección estructural', amount: 800, type: 'expense' }
+                    { date: '2024-03-15', description: t('pcc.constructionMaterials'), amount: 8500, type: 'expense' },
+                    { date: '2024-03-14', description: t('pcc.masonryServices'), amount: 3200, type: 'expense' },
+                    { date: '2024-03-13', description: t('pcc.municipalPermits'), amount: 450, type: 'expense' },
+                    { date: '2024-03-12', description: t('pcc.structuralInspection'), amount: 800, type: 'expense' }
                   ].map((transaction, index) => (
                     <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-white/5">
                       <div>

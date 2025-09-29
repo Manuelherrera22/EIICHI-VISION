@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import Advanced3DNavigation from '@/components/Advanced3DNavigation';
 import { ArrowLeft, Share2, Download, Heart, Star } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Viewer3DPage() {
   const [isFavorite, setIsFavorite] = useState(false);
   const [rating, setRating] = useState(0);
+  const { t } = useLanguage();
 
   const handleShare = () => {
     if (navigator.share) {
@@ -62,7 +64,7 @@ export default function Viewer3DPage() {
                   Casa Tradicional Kusatsu
                 </h1>
                 <p className="text-secondary">
-                  Experiencia 3D interactiva • Kusatsu, Gunma, Japón
+                  {t('3dViewer.interactiveExperience')}
                 </p>
               </div>
             </div>
@@ -93,7 +95,7 @@ export default function Viewer3DPage() {
                     ? 'bg-red-100 text-red-600' 
                     : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-600'
                 }`}
-                title="Agregar a favoritos"
+                title={t('viewer3d.addToFavorites')}
               >
                 <Heart size={20} fill={isFavorite ? 'currentColor' : 'none'} />
               </button>
@@ -101,7 +103,7 @@ export default function Viewer3DPage() {
               <button
                 onClick={handleShare}
                 className="p-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-                title="Compartir"
+                title={t('viewer3d.share')}
               >
                 <Share2 size={20} />
               </button>
@@ -109,7 +111,7 @@ export default function Viewer3DPage() {
               <button
                 onClick={handleDownload}
                 className="p-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
-                title="Descargar información"
+                title={t('viewer3d.downloadInfo')}
               >
                 <Download size={20} />
               </button>
@@ -142,7 +144,7 @@ export default function Viewer3DPage() {
           <Advanced3DNavigation />
         </div>
 
-        {/* Información adicional */}
+        {/* {t('3dViewer.additionalInfo')} */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Características */}

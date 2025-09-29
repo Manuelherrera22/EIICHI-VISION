@@ -3,11 +3,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import VideoBackground from './VideoBackground';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const VideoHero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useLanguage();
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -42,25 +44,25 @@ const VideoHero = () => {
             間
           </div>
           <div className="text-xs sm:text-sm text-white/60 font-mono tracking-wider">
-            MA - The Space Between
+            {t('videoHero.maSpaceBetween')}
           </div>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-serif font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-tight drop-shadow-2xl px-2">
-          Discover Japan&apos;s Hidden Treasures.
+          {t('videoHero.discoverTreasures')}
           <br className="block sm:hidden" />
           <br className="hidden sm:block" />
           <span className="text-accent bg-gradient-to-r from-accent to-yellow-400 bg-clip-text text-transparent drop-shadow-lg">
-            Create Your Legacy.
+            {t('videoHero.createLegacy')}
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/95 mb-6 sm:mb-8 md:mb-10 max-w-5xl mx-auto leading-relaxed font-light drop-shadow-lg px-4">
-          Transform traditional Japanese homes in Gunma into your dream retreat.
+          {t('videoHero.transformHomes')}
           <br className="hidden sm:block" />
-          Experience authentic Japan while building valuable real estate investments.
+          {t('videoHero.experienceJapan')}
         </p>
 
         {/* CTA Buttons Premium */}
@@ -69,7 +71,7 @@ const VideoHero = () => {
             href="/projects" 
             className="group bg-white/95 text-primary px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full hover:bg-white hover:text-primary transition-all duration-300 font-bold text-base sm:text-lg md:text-xl flex items-center space-x-2 sm:space-x-3 shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 md:hover:-translate-y-2 border border-white/20 w-full sm:w-auto justify-center min-h-[48px] sm:min-h-[56px]"
           >
-            <span>Descubre los Proyectos</span>
+            <span>{t('videoHero.startJourney')}</span>
             <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -85,7 +87,7 @@ const VideoHero = () => {
             <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full border-2 border-white/40 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/20 transition-all duration-300 backdrop-blur-sm bg-white/10">
               <Play size={14} className="ml-0.5 sm:ml-1 group-hover:scale-110 transition-transform duration-300" />
             </div>
-            <span className="font-semibold text-sm sm:text-base md:text-lg">Ver Nuestra Historia</span>
+            <span className="font-semibold text-sm sm:text-base md:text-lg">{t('videoHero.watchStory')}</span>
           </button>
         </div>
 

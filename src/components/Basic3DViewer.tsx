@@ -152,10 +152,10 @@ const Basic3DViewer = () => {
       <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border max-w-sm">
         <h3 className="font-serif font-bold text-primary text-sm mb-2">Casa Tradicional Kusatsu</h3>
         <div className="space-y-1 text-xs text-secondary">
-          <p>📍 Ubicación: Kusatsu, Gunma</p>
-          <p>🏠 Área: 120 m²</p>
-          <p>📅 Año: 1925</p>
-          <p>💰 Precio: ¥8,500,000</p>
+          <p>📍 {t('basic3d.location')}</p>
+          <p>🏠 {t('basic3d.area')}</p>
+          <p>📅 {t('basic3d.year')}</p>
+          <p>💰 {t('basic3d.price')}</p>
         </div>
       </div>
 

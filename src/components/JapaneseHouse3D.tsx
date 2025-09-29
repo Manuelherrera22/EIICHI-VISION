@@ -4,11 +4,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, Environment, Html } from '@react-three/drei';
 import * as THREE from 'three';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente de la casa japonesa
 const JapaneseHouse = ({ position = [0, 0, 0] }: { position?: [number, number, number] }) => {
   const meshRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
+  const { t } = useLanguage();
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -97,7 +99,7 @@ const JapaneseHouse = ({ position = [0, 0, 0] }: { position?: [number, number, n
         anchorY="middle"
         font="/fonts/inter.woff2"
       >
-        Casa Tradicional Japonesa
+        {t('japanese3d.traditionalJapaneseHouse')}
       </Text>
     </group>
   );
@@ -119,6 +121,7 @@ const InfoPanel = ({ position, title, description }: { position: [number, number
 const House3DViewer = () => {
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
@@ -131,7 +134,7 @@ const House3DViewer = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="w-12 h-12 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-secondary font-medium">Cargando experiencia 3D...</p>
+            <p className="text-secondary font-medium">{t('japanese3d.loading3D')}</p>
           </div>
         </div>
       </div>
@@ -155,14 +158,14 @@ const House3DViewer = () => {
         {/* Paneles de información */}
         <InfoPanel 
           position={[0, 2, 3]} 
-          title="Arquitectura Tradicional" 
-          description="Diseño basado en principios japoneses de armonía y funcionalidad"
+          title={t('japanese3d.traditionalArchitecture')} 
+          description={t('japanese3d.architectureDescription')}
         />
         
         <InfoPanel 
           position={[-3, 1, 0]} 
-          title="Jardín Zen" 
-          description="Espacio de meditación y contemplación siguiendo principios wabi-sabi"
+          title={t('japanese3d.zenGarden')} 
+          description={t('japanese3d.zenGardenDescription')}
         />
 
         {/* Controles de órbita */}
@@ -182,29 +185,29 @@ const House3DViewer = () => {
 
       {/* Controles de UI */}
       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border">
-        <h3 className="font-serif font-bold text-primary text-sm mb-2">Controles</h3>
+        <h3 className="font-serif font-bold text-primary text-sm mb-2">{t('japanese3d.controls')}</h3>
         <div className="space-y-1 text-xs text-secondary">
-          <p>🖱️ Click + arrastrar: Rotar</p>
-          <p>🔍 Scroll: Zoom</p>
-          <p>🖱️ Click derecho: Pan</p>
+          <p>🖱️ {t('japanese3d.clickDrag')}</p>
+          <p>🔍 {t('japanese3d.scrollZoom')}</p>
+          <p>🖱️ {t('japanese3d.rightClickPan')}</p>
         </div>
       </div>
 
       {/* Información de la propiedad */}
       <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border max-w-sm">
-        <h3 className="font-serif font-bold text-primary text-sm mb-2">Casa Tradicional Kusatsu</h3>
+        <h3 className="font-serif font-bold text-primary text-sm mb-2">{t('japanese3d.traditionalKusatsu')}</h3>
         <div className="space-y-1 text-xs text-secondary">
-          <p>📍 Ubicación: Kusatsu, Gunma</p>
-          <p>🏠 Área: 120 m²</p>
-          <p>📅 Año: 1925</p>
-          <p>💰 Precio: ¥8,500,000</p>
+          <p>📍 {t('japanese3d.location')}</p>
+          <p>🏠 {t('japanese3d.area')}</p>
+          <p>📅 {t('japanese3d.year')}</p>
+          <p>💰 {t('japanese3d.price')}</p>
         </div>
       </div>
 
       {/* Botón de acción */}
       <div className="absolute bottom-4 right-4">
         <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold text-sm shadow-lg">
-          Ver Detalles
+          {t('japanese3d.viewDetails')}
         </button>
       </div>
     </div>

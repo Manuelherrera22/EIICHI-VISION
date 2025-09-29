@@ -5,8 +5,10 @@ import Layout from '@/components/Layout';
 import AutoModelLoader from '@/components/AutoModelLoader';
 import Link from 'next/link';
 import { ArrowLeft, Download, Share2, Info } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ModelViewerPage() {
+  const { t } = useLanguage();
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-muted to-white py-20">
@@ -59,7 +61,7 @@ export default function ModelViewerPage() {
               <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mb-4">
                 <Info size={24} className="text-green-500" />
               </div>
-              <h3 className="text-xl font-serif font-bold text-primary mb-2">Información Técnica</h3>
+              <h3 className="text-xl font-serif font-bold text-primary mb-2">{t('modelViewer.technicalInfo')}</h3>
               <p className="text-secondary text-sm">
                 Formato GLB optimizado para web con materiales PBR y sombras
               </p>

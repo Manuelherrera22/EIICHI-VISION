@@ -3,6 +3,7 @@
 import React, { useState, use } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Layout from '@/components/Layout';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   ArrowLeft, 
   MapPin, 
@@ -78,6 +79,7 @@ interface PropertyDetails {
 
 const PropertyDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = use(params);
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -90,8 +92,8 @@ const PropertyDetailPage = ({ params }: { params: Promise<{ id: string }> }) => 
   // Mock data - en producción vendría de una API
   const property: PropertyDetails = {
     id: resolvedParams.id,
-    title: 'Casa Tradicional en Kusatsu',
-    location: 'Kusatsu, Gunma',
+    title: t('blueprint.property1.title'),
+    location: t('blueprint.property1.location'),
     price: 85000,
     matchScore: 95,
     images: [
@@ -100,8 +102,8 @@ const PropertyDetailPage = ({ params }: { params: Promise<{ id: string }> }) => 
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
-    features: ['Onsen privado', 'Jardín tradicional', '3 habitaciones', 'Arquitectura auténtica'],
-    potential: 'Transformación completa en casa de lujo con diseño wabi-sabi',
+    features: [t('blueprint.property1.feature1'), t('blueprint.property1.feature2'), t('blueprint.property1.feature3'), 'Arquitectura auténtica'],
+    potential: t('blueprint.property1.potential'),
     description: 'Esta encantadora casa tradicional japonesa en Kusatsu ofrece una oportunidad única de poseer una propiedad auténtica en una de las zonas de aguas termales más famosas de Japón. Con su arquitectura tradicional preservada y ubicación privilegiada, representa una inversión excepcional.',
     specifications: {
       rooms: 3,
@@ -146,7 +148,7 @@ const PropertyDetailPage = ({ params }: { params: Promise<{ id: string }> }) => 
 
   return (
     <Layout>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         {/* Header */}
         <div className="bg-white/95 backdrop-blur-sm border-b border-border p-4">
           <div className="max-w-7xl mx-auto">
@@ -802,7 +804,7 @@ const PropertyDetailPage = ({ params }: { params: Promise<{ id: string }> }) => 
                     </label>
                     <input
                       type="text"
-                      placeholder="Tu nombre"
+                      placeholder={t('property.namePlaceholder')}
                       className="w-full px-2 sm:px-3 py-2 text-xs sm:text-sm md:text-base border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
                     />
                   </div>

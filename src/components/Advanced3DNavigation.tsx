@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, Environment, Html, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { Play, Pause, RotateCcw, Maximize, Minimize, Home, Eye, EyeOff } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente de casa japonesa más detallada
 const DetailedJapaneseHouse = ({ 
@@ -155,7 +156,7 @@ const DetailedJapaneseHouse = ({
         anchorY="middle"
         font="/fonts/inter.woff2"
       >
-        Casa Tradicional Japonesa
+        {t('3d.traditionalJapaneseHouse')}
       </Text>
 
       {/* Indicadores de habitaciones */}
@@ -167,7 +168,7 @@ const DetailedJapaneseHouse = ({
           anchorX="center"
           anchorY="middle"
         >
-          {selectedRoom === 'entrada' ? 'Entrada Principal' : selectedRoom}
+          {selectedRoom === 'entrada' ? t('3d.mainEntranceText') : selectedRoom}
         </Text>
       )}
     </group>
@@ -208,7 +209,7 @@ const AdvancedControls = ({
         <button
           onClick={onReset}
           className="p-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-colors"
-          title="Resetear vista"
+          title={t('advanced3d.resetView')}
         >
           <RotateCcw size={16} />
         </button>
@@ -228,7 +229,7 @@ const AdvancedControls = ({
               ? 'bg-primary text-white' 
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
-          title="Alternar wireframe"
+          title={t('advanced3d.toggleWireframe')}
         >
           {isWireframe ? <EyeOff size={16} /> : <Eye size={16} />}
         </button>
@@ -240,6 +241,7 @@ const AdvancedControls = ({
 // Componente principal del navegador 3D avanzado
 const Advanced3DNavigation = () => {
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isWireframe, setIsWireframe] = useState(false);
@@ -341,47 +343,47 @@ const Advanced3DNavigation = () => {
       {selectedRoom && (
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border max-w-sm">
           <h3 className="font-serif font-bold text-primary text-sm mb-2">
-            {selectedRoom === 'entrada' ? 'Entrada Principal' : selectedRoom}
+            {selectedRoom === 'entrada' ? t('3d.mainEntrance') : selectedRoom}
           </h3>
           <div className="space-y-1 text-xs text-secondary">
-            <p>🏠 Área: 25 m²</p>
-            <p>🪟 Ventanas: 2</p>
-            <p>🚪 Acceso: Principal</p>
-            <p>💡 Iluminación: Natural + LED</p>
+            <p>🏠 {t('3d.area')}: 25 m²</p>
+            <p>🪟 {t('3d.windows')}: 2</p>
+            <p>🚪 {t('3d.access')}: {t('3d.mainEntrance')}</p>
+            <p>💡 {t('3d.lighting')}: {t('3d.naturalLed')}</p>
           </div>
         </div>
       )}
 
       {/* Información de la propiedad */}
       <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border max-w-sm">
-        <h3 className="font-serif font-bold text-primary text-sm mb-2">Casa Tradicional Kusatsu</h3>
+        <h3 className="font-serif font-bold text-primary text-sm mb-2">{t('3d.traditionalKusatsu')}</h3>
         <div className="space-y-1 text-xs text-secondary">
-          <p>📍 Ubicación: Kusatsu, Gunma</p>
-          <p>🏠 Área total: 120 m²</p>
-          <p>🏢 Pisos: 2</p>
-          <p>🛏️ Habitaciones: 4</p>
-          <p>📅 Año construcción: 1925</p>
-          <p>💰 Precio: ¥8,500,000</p>
+          <p>📍 {t('3d.location')}: Kusatsu, Gunma</p>
+          <p>🏠 {t('3d.totalArea')}: 120 m²</p>
+          <p>🏢 {t('3d.floors')}: 2</p>
+          <p>🛏️ {t('3d.rooms')}: 4</p>
+          <p>📅 {t('3d.yearBuilt')}: 1925</p>
+          <p>💰 {t('3d.price')}: ¥8,500,000</p>
         </div>
       </div>
 
       {/* Botones de acción */}
       <div className="absolute bottom-4 right-4 space-y-2">
         <button className="block w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold text-sm shadow-lg">
-          Ver Detalles Completos
+          {t('3d.viewFullDetails')}
         </button>
         <button className="block w-full bg-accent text-white px-6 py-3 rounded-full hover:bg-accent/90 transition-colors font-semibold text-sm shadow-lg">
-          Agendar Visita Virtual
+          {t('3d.scheduleVirtualVisit')}
         </button>
       </div>
 
       {/* Instrucciones */}
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-border">
-        <h4 className="font-semibold text-primary text-xs mb-2">Controles 3D</h4>
+        <h4 className="font-semibold text-primary text-xs mb-2">{t('3d.instructions')}</h4>
         <div className="space-y-1 text-xs text-secondary">
-          <p>🖱️ Click + arrastrar: Rotar</p>
-          <p>🔍 Scroll: Zoom</p>
-          <p>🖱️ Click derecho: Pan</p>
+          <p>🖱️ {t('3d.clickDrag')}</p>
+          <p>🔍 {t('3d.scrollZoom')}</p>
+          <p>🖱️ {t('3d.rightClickPan')}</p>
           <p>🏠 Click en habitaciones: Info</p>
         </div>
       </div>

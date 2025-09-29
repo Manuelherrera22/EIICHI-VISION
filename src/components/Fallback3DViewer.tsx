@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Fallback3DViewer = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [rotation, setRotation] = useState(0);
   const [zoom, setZoom] = useState(1);
+  const { t } = useLanguage();
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -111,19 +113,19 @@ const Fallback3DViewer = () => {
 
       {/* Información */}
       <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border max-w-sm">
-        <h3 className="font-serif font-bold text-primary text-sm mb-2">Casa Tradicional Kusatsu</h3>
+        <h3 className="font-serif font-bold text-primary text-sm mb-2">{t('3d.traditionalKusatsu')}</h3>
         <div className="space-y-1 text-xs text-secondary">
-          <p>📍 Ubicación: Kusatsu, Gunma</p>
-          <p>🏠 Área: 120 m²</p>
-          <p>📅 Año: 1925</p>
-          <p>💰 Precio: ¥8,500,000</p>
+          <p>📍 {t('3d.location')}: Kusatsu, Gunma</p>
+          <p>🏠 {t('3d.area')}: 120 m²</p>
+          <p>📅 {t('3d.yearBuilt')}: 1925</p>
+          <p>💰 {t('3d.price')}: ¥8,500,000</p>
         </div>
       </div>
 
       {/* Botón de acción */}
       <div className="absolute bottom-4 right-4">
         <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold text-sm shadow-lg">
-          Ver Detalles
+          {t('3d.viewDetails')}
         </button>
       </div>
 

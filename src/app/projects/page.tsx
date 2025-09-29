@@ -1,104 +1,121 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { Search, Filter, MapPin, Home, Calendar, ArrowRight, Eye } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [selectedPriceRange, setSelectedPriceRange] = useState('all');
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        document.title = 'Projects - Tabiji House | Available Properties in Japan';
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Discover unique properties with history in Japan. Browse our portfolio of traditional houses, tea houses, and mountain retreats available for investment and renovation.');
+      }
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', 'Japanese properties, traditional houses, investment, akiya, renovation, Kusatsu, Gunma, tea house, mountain retreat');
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const projects = [
     {
       id: 1,
-      name: "El Retiro del Calígrafo",
-      location: "Kusatsu, Gunma",
+      name: t('projects.calliographerRetreat'),
+      location: t('projects.kusatsuGunma'),
       price: 8500000,
       size: "120 m²",
       year: "1925",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
-      description: "Una casa tradicional con vistas espectaculares a las montañas. Perfecta para un estudio de arte o retiro creativo.",
-      renovation: "Básico: ¥2,500,000",
+      description: t('projects.traditionalHouseMountainViews'),
+      renovation: t('projects.basicRenovation') + ": ¥2,500,000",
       bedrooms: 3,
       bathrooms: 1,
-      features: ["Vista a montañas", "Jardín tradicional", "Cerca de onsen"]
+      features: [t('projects.mountainViews'), t('projects.traditionalGarden'), t('projects.nearOnsen')]
     },
     {
       id: 2,
-      name: "La Casa con Vistas al Onsen",
-      location: "Kusatsu, Gunma",
+      name: t('projects.onsenViewHouse'),
+      location: t('projects.kusatsuGunma'),
       price: 12000000,
       size: "180 m²",
       year: "1918",
-      status: "En Renovación",
+      status: t('projects.inRenovation'),
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description: "Ubicada cerca de los famosos baños termales, esta propiedad ofrece acceso directo a la cultura onsen local.",
-      renovation: "Premium: ¥4,200,000",
+      description: t('projects.onsenCultureAccess'),
+      renovation: t('projects.premiumRenovation') + ": ¥4,200,000",
       bedrooms: 4,
       bathrooms: 2,
-      features: ["Acceso a onsen", "Jardín privado", "Cerca del centro"]
+      features: [t('projects.onsenAccess'), t('projects.privateGarden'), t('projects.nearCenter')]
     },
     {
       id: 3,
-      name: "El Jardín de los Cerezos",
-      location: "Kusatsu, Gunma",
+      name: t('projects.cherryGarden'),
+      location: t('projects.kusatsuGunma'),
       price: 6800000,
       size: "95 m²",
       year: "1932",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description: "Una casa compacta rodeada de cerezos centenarios. Ideal para una segunda residencia o inversión.",
-      renovation: "Básico: ¥1,800,000",
+      description: t('projects.compactCherryHouse'),
+      renovation: t('projects.basicRenovation') + ": ¥1,800,000",
       bedrooms: 2,
       bathrooms: 1,
-      features: ["Cerezos centenarios", "Jardín zen", "Tranquilidad"]
+      features: [t('projects.centuryCherries'), t('projects.zenGarden'), t('projects.tranquility')]
     },
     {
       id: 4,
-      name: "La Residencia del Artesano",
-      location: "Kusatsu, Gunma",
+      name: t('projects.artisanResidence'),
+      location: t('projects.kusatsuGunma'),
       price: 15500000,
       size: "220 m²",
       year: "1905",
-      status: "Vendida",
+      status: t('projects.sold'),
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description: "Una casa histórica completamente restaurada que combina tradición japonesa con comodidades modernas.",
-      renovation: "De Lujo: ¥6,500,000",
+      description: t('projects.historicRestoredHouse'),
+      renovation: t('projects.luxuryRenovation') + ": ¥6,500,000",
       bedrooms: 5,
       bathrooms: 3,
-      features: ["Restauración completa", "Arquitectura tradicional", "Jardín paisajístico"]
+      features: [t('projects.completeRestoration'), t('projects.traditionalArchitecture'), t('projects.landscapedGarden')]
     },
     {
       id: 5,
-      name: "La Casa del Té",
-      location: "Kusatsu, Gunma",
+      name: t('projects.teaHouse'),
+      location: t('projects.kusatsuGunma'),
       price: 7200000,
       size: "110 m²",
       year: "1928",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
-      description: "Una casa tradicional con una sala de té original. Perfecta para quienes buscan autenticidad cultural.",
-      renovation: "Básico: ¥2,200,000",
+      description: t('projects.traditionalTeaHouse'),
+      renovation: t('projects.basicRenovation') + ": ¥2,200,000",
       bedrooms: 3,
       bathrooms: 1,
-      features: ["Sala de té original", "Arquitectura tradicional", "Jardín zen"]
+      features: [t('projects.originalTeaRoom'), t('projects.traditionalArchitecture'), t('projects.zenGarden')]
     },
     {
       id: 6,
-      name: "El Refugio de Montaña",
-      location: "Kusatsu, Gunma",
+      name: t('projects.mountainRefuge'),
+      location: t('projects.kusatsuGunma'),
       price: 9800000,
       size: "150 m²",
       year: "1915",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      description: "Ubicada en las montañas, esta casa ofrece privacidad total y vistas panorámicas espectaculares.",
-      renovation: "Premium: ¥3,500,000",
+      description: t('projects.mountainPrivacyHouse'),
+      renovation: t('projects.premiumRenovation') + ": ¥3,500,000",
       bedrooms: 4,
       bathrooms: 2,
-      features: ["Vista panorámica", "Privacidad total", "Acceso a senderos"]
+      features: [t('projects.panoramicView'), t('projects.totalPrivacy'), t('projects.trailAccess')]
     }
   ];
 
@@ -128,16 +145,15 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              El Portafolio Visionario
+              {t('projects.heroSubtitle')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              Proyectos
+              {t('projects.heroTitle')}
               <br />
-              <span className="text-accent">Disponibles</span>
+              <span className="text-accent">{t('projects.heroTitleAccent')}</span>
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Descubre propiedades únicas con historia, cada una con potencial extraordinario 
-              para convertirse en tu hogar de ensueño en Japón.
+              {t('projects.heroDescription')}
             </p>
           </div>
         </div>
@@ -152,7 +168,7 @@ export default function Projects() {
               <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
               <input
                 type="text"
-                placeholder="Buscar propiedades..."
+                placeholder={t('projects.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
@@ -166,10 +182,10 @@ export default function Projects() {
                 onChange={(e) => setSelectedStatus(e.target.value)}
                 className="px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white"
               >
-                <option value="all">Todos los Estados</option>
-                <option value="Disponible">Disponible</option>
-                <option value="En Renovación">En Renovación</option>
-                <option value="Vendida">Vendida</option>
+                <option value="all">{t('projects.allStatuses')}</option>
+                <option value={t('projects.available')}>{t('projects.available')}</option>
+                <option value={t('projects.inRenovation')}>{t('projects.inRenovation')}</option>
+                <option value={t('projects.sold')}>{t('projects.sold')}</option>
               </select>
 
               <select
@@ -177,10 +193,10 @@ export default function Projects() {
                 onChange={(e) => setSelectedPriceRange(e.target.value)}
                 className="px-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white"
               >
-                <option value="all">Todos los Precios</option>
-                <option value="low">Menos de ¥8M</option>
-                <option value="medium">¥8M - ¥12M</option>
-                <option value="high">Más de ¥12M</option>
+                <option value="all">{t('projects.allPrices')}</option>
+                <option value="low">{t('projects.priceLow')}</option>
+                <option value="medium">{t('projects.priceMedium')}</option>
+                <option value="high">{t('projects.priceHigh')}</option>
               </select>
             </div>
           </div>
@@ -192,10 +208,10 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-2xl font-serif font-bold text-primary mb-2">
-              {filteredProjects.length} Propiedades Encontradas
+              {filteredProjects.length} {t('projects.propertiesFound')}
             </h2>
             <p className="text-foreground">
-              Resultados filtrados según tus criterios de búsqueda
+              {t('projects.filteredResults')}
             </p>
           </div>
 
@@ -215,9 +231,9 @@ export default function Projects() {
                   
                   {/* Status Badge */}
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
-                    project.status === 'Disponible' 
+                    project.status === t('projects.available') 
                       ? 'bg-green-100 text-green-800' 
-                      : project.status === 'En Renovación'
+                      : project.status === t('projects.inRenovation')
                       ? 'bg-blue-100 text-blue-800'
                       : 'bg-gray-100 text-gray-800'
                   }`}>
@@ -228,7 +244,7 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <button className="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors duration-300 flex items-center space-x-2">
                       <Eye size={16} />
-                      <span>Ver Detalles</span>
+                      <span>{t('projects.viewDetails')}</span>
                     </button>
                   </div>
                 </div>
@@ -261,17 +277,17 @@ export default function Projects() {
                     </div>
                     <div className="flex items-center text-secondary">
                       <span className="mr-2">🛏️</span>
-                      {project.bedrooms} dormitorios
+                      {project.bedrooms} {t('projects.bedrooms')}
                     </div>
                     <div className="flex items-center text-secondary">
                       <span className="mr-2">🚿</span>
-                      {project.bathrooms} baños
+                      {project.bathrooms} {t('projects.bathrooms')}
                     </div>
                   </div>
 
                   {/* Features */}
                   <div className="mb-4">
-                    <div className="text-xs text-secondary mb-2">Características destacadas:</div>
+                    <div className="text-xs text-secondary mb-2">{t('projects.highlightedFeatures')}</div>
                     <div className="flex flex-wrap gap-1">
                       {project.features.slice(0, 2).map((feature, index) => (
                         <span
@@ -283,7 +299,7 @@ export default function Projects() {
                       ))}
                       {project.features.length > 2 && (
                         <span className="px-2 py-1 bg-muted text-xs text-secondary rounded-full">
-                          +{project.features.length - 2} más
+                          +{project.features.length - 2} {t('projects.moreFeatures')}
                         </span>
                       )}
                     </div>
@@ -297,7 +313,7 @@ export default function Projects() {
                           {formatPrice(project.price)}
                         </div>
                         <div className="text-xs text-secondary">
-                          Precio de compra
+                          {t('projects.purchasePrice')}
                         </div>
                       </div>
                       <div className="text-right">
@@ -305,7 +321,7 @@ export default function Projects() {
                           {project.renovation}
                         </div>
                         <div className="text-xs text-secondary">
-                          Renovación estimada
+                          {t('projects.estimatedRenovation')}
                         </div>
                       </div>
                     </div>
@@ -319,10 +335,10 @@ export default function Projects() {
             <div className="text-center py-16">
               <div className="text-6xl mb-4">🏠</div>
               <h3 className="text-2xl font-serif font-bold text-primary mb-4">
-                No se encontraron propiedades
+                {t('projects.noPropertiesFound')}
               </h3>
               <p className="text-foreground mb-8">
-                Intenta ajustar tus filtros de búsqueda para encontrar más opciones.
+                {t('projects.noPropertiesDescription')}
               </p>
               <button
                 onClick={() => {
@@ -332,7 +348,7 @@ export default function Projects() {
                 }}
                 className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold"
               >
-                Limpiar Filtros
+                {t('projects.clearFilters')}
               </button>
             </div>
           )}
@@ -343,14 +359,13 @@ export default function Projects() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-            ¿No Encuentras lo que Buscas?
+            {t('projects.ctaTitle')}
           </h2>
           <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-            Contáctanos para conocer propiedades adicionales que podrían no estar 
-            listadas públicamente o para discutir proyectos personalizados.
+            {t('projects.ctaDescription')}
           </p>
           <button className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg flex items-center space-x-2 mx-auto">
-            <span>Contactar Asesor</span>
+            <span>{t('projects.contactAdvisor')}</span>
             <ArrowRight size={20} />
           </button>
         </div>

@@ -1,66 +1,95 @@
+'use client';
+
+import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { Search, FileText, Hammer, Users, ArrowRight, CheckCircle, Clock, MapPin } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Process() {
+  const { t } = useLanguage();
+
+  // Actualizar el título y metadatos de la página
+  useEffect(() => {
+    // Usar un pequeño delay para asegurar que se ejecute después de DynamicMetadata
+    const timer = setTimeout(() => {
+      // Actualizar título
+        document.title = 'Process - Tabiji House | Your Path to Japanese Investment';
+      
+      // Actualizar meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Discover our transparent and guided process for investing in Japanese properties. From initial consultation to community integration, we guide you every step of the way.');
+      }
+      
+      // Actualizar meta keywords
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', 'process, Japanese investment, property acquisition, renovation process, community integration, Gunma, Kusatsu');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+  
   const steps = [
     {
       number: 1,
-      title: "Descubrimiento",
+      title: t('process.discoveryTitle'),
       japanese: "発見 - Hakken",
       icon: Search,
-      description: "Consulta inicial y selección de proyectos",
+      description: t('process.discoveryDescription'),
       details: [
-        "Evaluación de necesidades y presupuesto",
-        "Presentación de propiedades disponibles",
-        "Análisis de potencial de inversión",
-        "Visita virtual o presencial"
+        t('process.discoveryStep1'),
+        t('process.discoveryStep2'),
+        t('process.discoveryStep3'),
+        t('process.discoveryStep4')
       ],
       duration: "1-2 semanas",
       color: "primary"
     },
     {
       number: 2,
-      title: "Adquisición",
+      title: t('process.acquisitionTitle'),
       japanese: "取得 - Shutoku",
       icon: FileText,
-      description: "Proceso legal para extranjeros",
+      description: t('process.acquisitionDescription'),
       details: [
-        "Asesoría legal especializada",
-        "Documentación requerida",
-        "Proceso de compra simplificado",
-        "Transferencia de propiedad"
+        t('process.acquisitionStep1'),
+        t('process.acquisitionStep2'),
+        t('process.acquisitionStep3'),
+        t('process.acquisitionStep4')
       ],
       duration: "4-6 semanas",
       color: "accent"
     },
     {
       number: 3,
-      title: "Creación",
+      title: t('process.creationTitle'),
       japanese: "創造 - Sozo",
       icon: Hammer,
-      description: "Diseño y renovación con artesanos locales",
+      description: t('process.creationDescription'),
       details: [
-        "Diseño personalizado",
-        "Selección de artesanos locales",
-        "Supervisión de construcción",
-        "Control de calidad"
+        t('process.creationStep1'),
+        t('process.creationStep2'),
+        t('process.creationStep3'),
+        t('process.creationStep4')
       ],
       duration: "3-6 meses",
       color: "primary"
     },
     {
       number: 4,
-      title: "Comunidad",
+      title: t('process.communityTitle'),
       japanese: "共同体 - Kyodotai",
       icon: Users,
-      description: "Integración en la vida de Gunma",
+      description: t('process.communityDescription'),
       details: [
-        "Conexión con la comunidad local",
-        "Acceso a servicios y amenidades",
-        "Eventos culturales y sociales",
-        "Soporte continuo"
+        t('process.communityStep1'),
+        t('process.communityStep2'),
+        t('process.communityStep3'),
+        t('process.communityStep4')
       ],
-      duration: "Ongoing",
+      duration: t('process.ongoing'),
       color: "accent"
     }
   ];
@@ -72,16 +101,15 @@ export default function Process() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Tu Camino para Echar Raíces en Japón
+              {t('process.heroSubtitle')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              El Camino
+              {t('process.heroTitle')}
               <br />
-              <span className="text-accent">道 - Michi</span>
+              <span className="text-accent">{t('process.heroTitleJapanese')}</span>
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Un proceso transparente y guiado que te lleva desde el sueño inicial 
-              hasta convertirte en parte de la comunidad japonesa.
+              {t('process.heroDescription')}
             </p>
           </div>
         </div>
@@ -92,10 +120,10 @@ export default function Process() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-              Infografía Visual Paso a Paso
+              {t('process.overviewTitle')}
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Cada paso está diseñado para ser transparente, eficiente y centrado en tus necesidades.
+              {t('process.overviewDescription')}
             </p>
           </div>
 
@@ -119,7 +147,7 @@ export default function Process() {
                       </div>
                       <div>
                         <div className="text-sm text-accent font-mono tracking-wider uppercase">
-                          Paso {step.number}
+                          {t('process.stepPrefix')} {step.number}
                         </div>
                         <h3 className="text-3xl font-serif font-bold text-primary">
                           {step.title}
@@ -153,7 +181,7 @@ export default function Process() {
                       {step.number === 1 && (
                         <div className="flex items-center space-x-2 text-secondary">
                           <MapPin size={16} />
-                          <span>Virtual o Presencial</span>
+                          <span>{t('process.virtualOrPresential')}</span>
                         </div>
                       )}
                     </div>
@@ -201,10 +229,10 @@ export default function Process() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-              Cronograma del Proceso
+              {t('process.timelineTitle')}
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Un timeline claro que te permite planificar tu inversión con confianza.
+              {t('process.timelineDescription')}
             </p>
           </div>
 
@@ -233,7 +261,7 @@ export default function Process() {
                         {step.description}
                       </p>
                       <div className="text-sm text-secondary">
-                        Duración: {step.duration}
+                        {t('process.durationPrefix')} {step.duration}
                       </div>
                     </div>
                   </div>
@@ -258,12 +286,10 @@ export default function Process() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-                Soporte Integral en Cada Paso
+                {t('process.supportTitle')}
               </h2>
               <p className="text-lg text-foreground mb-8 leading-relaxed">
-                No estás solo en este proceso. Nuestro equipo de expertos te acompaña 
-                en cada etapa, desde la consulta inicial hasta tu integración completa 
-                en la comunidad japonesa.
+                {t('process.supportDescription')}
               </p>
 
               <div className="space-y-6">
@@ -273,11 +299,10 @@ export default function Process() {
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Equipo Multidisciplinario
+                      {t('process.teamTitle')}
                     </h3>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Abogados, arquitectos, artesanos locales y especialistas en 
-                      integración cultural trabajando juntos por tu éxito.
+                      {t('process.teamDescription')}
                     </p>
                   </div>
                 </div>
@@ -288,11 +313,10 @@ export default function Process() {
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Proceso Simplificado
+                      {t('process.simplifiedTitle')}
                     </h3>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Hemos simplificado los procesos legales complejos para que 
-                      puedas enfocarte en tu visión, no en la burocracia.
+                      {t('process.simplifiedDescription')}
                     </p>
                   </div>
                 </div>
@@ -303,11 +327,10 @@ export default function Process() {
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-semibold text-primary mb-2">
-                      Conexión Local
+                      {t('process.connectionTitle')}
                     </h3>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Te conectamos con la comunidad local, facilitando tu integración 
-                      y acceso a servicios y eventos culturales.
+                      {t('process.connectionDescription')}
                     </p>
                   </div>
                 </div>
@@ -328,14 +351,13 @@ export default function Process() {
       <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-            ¿Listo para Comenzar tu Camino?
+            {t('process.ctaTitle')}
           </h2>
           <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-            Agenda una consulta inicial gratuita de 30 minutos para discutir tu visión 
-            y cómo podemos ayudarte a hacerla realidad.
+            {t('process.ctaDescription')}
           </p>
           <button className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg flex items-center space-x-2 mx-auto">
-            <span>Agendar Consulta Gratuita</span>
+            <span>{t('process.ctaButton')}</span>
             <ArrowRight size={20} />
           </button>
         </div>

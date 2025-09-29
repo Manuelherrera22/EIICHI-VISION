@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Calculator, TrendingUp, Home, DollarSign } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ROICalculator = () => {
   const [purchasePrice, setPurchasePrice] = useState(8500000);
@@ -9,6 +10,7 @@ const ROICalculator = () => {
   const [rentalIncome, setRentalIncome] = useState(150000);
   const [appreciationRate, setAppreciationRate] = useState(3);
   const [years, setYears] = useState(5);
+  const { t } = useLanguage();
 
   const totalInvestment = purchasePrice + renovationCost;
   const annualRentalYield = (rentalIncome * 12) / totalInvestment * 100;
@@ -24,8 +26,8 @@ const ROICalculator = () => {
           <Calculator size={24} className="text-primary" />
         </div>
         <div>
-          <h3 className="text-2xl font-serif font-bold text-primary">Calculadora de ROI</h3>
-          <p className="text-secondary">Calcula el retorno de tu inversión en propiedades japonesas</p>
+          <h3 className="text-2xl font-serif font-bold text-primary">{t('roi.title')}</h3>
+          <p className="text-secondary">{t('roi.subtitle')}</p>
         </div>
       </div>
 
@@ -34,7 +36,7 @@ const ROICalculator = () => {
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-semibold text-primary mb-2">
-              Precio de Compra (¥)
+              {t('roi.purchasePrice')}
             </label>
             <input
               type="number"
@@ -46,7 +48,7 @@ const ROICalculator = () => {
 
           <div>
             <label className="block text-sm font-semibold text-primary mb-2">
-              Costo de Renovación (¥)
+              {t('roi.renovationCost')}
             </label>
             <input
               type="number"
@@ -58,7 +60,7 @@ const ROICalculator = () => {
 
           <div>
             <label className="block text-sm font-semibold text-primary mb-2">
-              Ingreso Mensual por Renta (¥)
+              {t('roi.monthlyRentalIncome')}
             </label>
             <input
               type="number"
@@ -70,7 +72,7 @@ const ROICalculator = () => {
 
           <div>
             <label className="block text-sm font-semibold text-primary mb-2">
-              Tasa de Apreciación Anual (%)
+              {t('roi.annualAppreciationRate')}
             </label>
             <input
               type="number"
@@ -82,7 +84,7 @@ const ROICalculator = () => {
 
           <div>
             <label className="block text-sm font-semibold text-primary mb-2">
-              Período de Inversión (años)
+              {t('roi.investmentPeriod')}
             </label>
             <input
               type="number"
@@ -96,32 +98,32 @@ const ROICalculator = () => {
         {/* Results */}
         <div className="space-y-6">
           <div className="bg-muted p-6 rounded-xl">
-            <h4 className="text-lg font-serif font-bold text-primary mb-4">Resultados del Análisis</h4>
+            <h4 className="text-lg font-serif font-bold text-primary mb-4">{t('roi.analysisResults')}</h4>
             
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-secondary">Inversión Total:</span>
+                <span className="text-secondary">{t('roi.totalInvestment')}</span>
                 <span className="font-semibold text-primary">¥{(totalInvestment / 1000000).toFixed(1)}M</span>
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="text-secondary">Rendimiento Anual:</span>
+                <span className="text-secondary">{t('roi.annualYield')}</span>
                 <span className="font-semibold text-green-600">{annualRentalYield.toFixed(1)}%</span>
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="text-secondary">Ingresos por Renta ({years} años):</span>
+                <span className="text-secondary">{t('roi.rentalIncome')} ({years} años):</span>
                 <span className="font-semibold text-primary">¥{(totalRentalIncome / 1000000).toFixed(1)}M</span>
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="text-secondary">Valor de Propiedad ({years} años):</span>
+                <span className="text-secondary">{t('roi.propertyValue')} ({years} años):</span>
                 <span className="font-semibold text-primary">¥{(propertyValue / 1000000).toFixed(1)}M</span>
               </div>
               
               <div className="border-t border-border pt-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-primary">ROI Total:</span>
+                  <span className="text-lg font-semibold text-primary">{t('roi.totalROI')}</span>
                   <span className="text-2xl font-bold text-accent">{roiPercentage.toFixed(1)}%</span>
                 </div>
               </div>
@@ -132,12 +134,12 @@ const ROICalculator = () => {
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-xl">
             <div className="flex items-center space-x-2 mb-4">
               <TrendingUp size={20} className="text-primary" />
-              <span className="font-semibold text-primary">Proyección de Valor</span>
+              <span className="font-semibold text-primary">{t('roi.valueProjection')}</span>
             </div>
             
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span>Inversión Inicial</span>
+                <span>{t('roi.initialInvestment')}</span>
                 <span>¥{(totalInvestment / 1000000).toFixed(1)}M</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
@@ -145,7 +147,7 @@ const ROICalculator = () => {
               </div>
               
               <div className="flex justify-between text-sm">
-                <span>Valor Proyectado</span>
+                <span>{t('roi.projectedValue')}</span>
                 <span>¥{(propertyValue / 1000000).toFixed(1)}M</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">

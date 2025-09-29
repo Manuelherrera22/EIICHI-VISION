@@ -4,8 +4,11 @@ import React from 'react';
 import { MapPin, Clock, Train, Mountain } from 'lucide-react';
 import SimpleGoogleMap from './SimpleGoogleMap';
 import { MAPS_CONFIG } from '@/config/maps';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AestheticMapSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-20 bg-gradient-to-br from-muted via-white to-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,18 +16,17 @@ const AestheticMapSection = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
             <MapPin size={20} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Ubicación Estratégica</span>
+            <span className="text-sm font-medium text-primary">{t('map.strategicLocation')}</span>
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary mb-6">
-            En el Corazón de
+            {t('map.inTheHeartOf')}
             <br />
-            <span className="text-accent">Japón</span>
+            <span className="text-accent">{t('map.japan')}</span>
           </h2>
           
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            Gunma Prefecture, donde la tradición se encuentra con la modernidad. 
-            Una ubicación privilegiada que conecta el pasado con el futuro.
+            {t('map.gunmaDescription')}
           </p>
         </div>
 
@@ -38,18 +40,18 @@ const AestheticMapSection = () => {
               markers={[
                 {
                   position: MAPS_CONFIG.LOCATIONS.KUSATSU,
-                  title: 'Kusatsu Onsen',
-                  info: 'Famosos baños termales de Kusatsu, reconocidos mundialmente por sus propiedades curativas.'
+                  title: t('map.kusatsuOnsen'),
+                  info: t('map.kusatsuOnsenInfo')
                 },
                 {
                   position: MAPS_CONFIG.LOCATIONS.TOKYO,
-                  title: 'Tokio',
-                  info: 'Capital de Japón - 3 horas en tren desde Kusatsu'
+                  title: t('map.tokyo'),
+                  info: t('map.tokyoInfo')
                 },
                 {
                   position: MAPS_CONFIG.LOCATIONS.NAGANO,
-                  title: 'Nagano',
-                  info: 'Ciudad histórica - 1 hora en tren desde Kusatsu'
+                  title: t('map.nagano'),
+                  info: t('map.naganoInfo')
                 }
               ]}
               className="h-full"
@@ -66,36 +68,36 @@ const AestheticMapSection = () => {
                 <Mountain size={24} className="text-primary" />
               </div>
               <div>
-                <h3 className="font-serif font-bold text-primary">Gunma Prefecture</h3>
-                <p className="text-sm text-secondary">Prefectura de montañas y aguas termales</p>
+                <h3 className="font-serif font-bold text-primary">{t('map.gunmaPrefecture')}</h3>
+                <p className="text-sm text-secondary">{t('map.prefectureMountains')}</p>
               </div>
             </div>
             
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Clock size={16} className="text-accent" />
-                <span className="text-sm text-secondary">3 horas a Tokio</span>
+                <span className="text-sm text-secondary">{t('map.threeHoursTokyo')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Train size={16} className="text-accent" />
-                <span className="text-sm text-secondary">Acceso directo en tren</span>
+                <span className="text-sm text-secondary">{t('map.directTrainAccess')}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-accent" />
-                <span className="text-sm text-secondary">Centro de Honshu</span>
+                <span className="text-sm text-secondary">{t('map.centerHonshu')}</span>
               </div>
             </div>
           </div>
 
           {/* Distance Info - Hidden on mobile */}
           <div className="hidden lg:block absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-border/20">
-            <h3 className="font-serif font-bold text-primary mb-4">Distancias Clave</h3>
+            <h3 className="font-serif font-bold text-primary mb-4">{t('map.keyDistances')}</h3>
             
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm text-secondary">Tokio</span>
+                  <span className="text-sm text-secondary">{t('map.tokyo')}</span>
                 </div>
                 <span className="font-semibold text-primary">3h</span>
               </div>
@@ -103,7 +105,7 @@ const AestheticMapSection = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-sm text-secondary">Nagano</span>
+                  <span className="text-sm text-secondary">{t('map.nagano')}</span>
                 </div>
                 <span className="font-semibold text-primary">1h</span>
               </div>
@@ -111,7 +113,7 @@ const AestheticMapSection = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-secondary">Osaka</span>
+                  <span className="text-sm text-secondary">{t('map.osaka')}</span>
                 </div>
                 <span className="font-semibold text-primary">4h</span>
               </div>
@@ -125,9 +127,9 @@ const AestheticMapSection = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mountain size={32} className="text-primary" />
             </div>
-            <h3 className="font-serif font-bold text-primary mb-2">Montañas Sagradas</h3>
+            <h3 className="font-serif font-bold text-primary mb-2">{t('map.sacredMountains')}</h3>
             <p className="text-secondary">
-              Rodeado por las montañas de Gunma, un paisaje que inspira tranquilidad y conexión con la naturaleza.
+              {t('map.sacredMountainsDescription')}
             </p>
           </div>
           
@@ -135,9 +137,9 @@ const AestheticMapSection = () => {
             <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Train size={32} className="text-accent" />
             </div>
-            <h3 className="font-serif font-bold text-primary mb-2">Conectividad Perfecta</h3>
+            <h3 className="font-serif font-bold text-primary mb-2">{t('map.perfectConnectivity')}</h3>
             <p className="text-secondary">
-              Acceso directo a las principales ciudades de Japón a través de la red ferroviaria de alta velocidad.
+              {t('map.perfectConnectivityDescription')}
             </p>
           </div>
           
@@ -145,9 +147,9 @@ const AestheticMapSection = () => {
             <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <MapPin size={32} className="text-green-500" />
             </div>
-            <h3 className="font-serif font-bold text-primary mb-2">Ubicación Estratégica</h3>
+            <h3 className="font-serif font-bold text-primary mb-2">{t('map.strategicLocationTitle')}</h3>
             <p className="text-secondary">
-              En el centro de Honshu, equidistante de las principales metrópolis y regiones turísticas de Japón.
+              {t('map.strategicLocationDescription')}
             </p>
           </div>
         </div>

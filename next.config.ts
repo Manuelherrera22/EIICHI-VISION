@@ -8,8 +8,7 @@ const nextConfig: NextConfig = {
   
   // Deshabilitar overlay de desarrollo
   devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
+    position: 'bottom-right',
   },
   
   // Deshabilitar ESLint durante el build

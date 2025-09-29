@@ -13,6 +13,7 @@ import DebugModelViewer from '@/components/DebugModelViewer';
 import { Sparkles, Camera, Settings, Home as HomeIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Lazy load heavy components
 const ROICalculator = dynamic(() => import('@/components/ROICalculator'), {
@@ -29,6 +30,8 @@ const AIChat = dynamic(() => import('@/components/AIChat'), {
 
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <Layout>
       {/* Hero con Video Cinematográfico */}
@@ -50,10 +53,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-                Calcula tu Inversión
+                {t('roi.title')}
               </h2>
               <p className="text-xl text-secondary max-w-2xl mx-auto">
-                Descubre el potencial de retorno de tu inversión en propiedades japonesas
+                {t('roi.subtitle')}
               </p>
             </div>
             <ROICalculator />
@@ -67,13 +70,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <div className="inline-flex items-center space-x-2 bg-primary/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6">
-                <span className="text-xs sm:text-sm font-medium text-primary">✨ Experiencia Premium</span>
+                <span className="text-xs sm:text-sm font-medium text-primary">✨ {t('3d.premium')}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary mb-3 sm:mb-4">
-                Navegación 3D Interactiva
+                {t('3d.title')}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-secondary max-w-3xl mx-auto px-4">
-                Explora cada detalle de nuestras casas tradicionales japonesas con tecnología 3D de última generación
+                {t('3d.subtitle')}
               </p>
             </div>
             
@@ -83,17 +86,17 @@ export default function Home() {
             <div className="mt-8 sm:mt-10 md:mt-12 text-center">
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-primary/20">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary mb-3 sm:mb-4">
-                  ¿Te gusta lo que ves?
+                  {t('3d.likeWhatYouSee')}
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg text-secondary mb-4 sm:mb-6 max-w-3xl mx-auto px-4">
-                  Esta es solo una muestra de lo que podemos crear juntos. Cada casa tiene su propia historia esperando ser contada.
+                  {t('3d.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-2xl mx-auto">
                   <a 
                     href="/contact" 
                     className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-base sm:text-lg flex items-center space-x-2 justify-center min-h-[48px] sm:min-h-[56px]"
                   >
-                    <span>Iniciar mi Proyecto</span>
+                    <span>{t('3d.startProject')}</span>
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -102,7 +105,7 @@ export default function Home() {
                     href="/projects" 
                     className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary hover:text-white transition-colors duration-300 font-semibold text-base sm:text-lg justify-center min-h-[48px] sm:min-h-[56px] flex items-center"
                   >
-                    Ver Más Proyectos
+                    {t('3d.viewMoreProjects')}
                   </a>
                 </div>
               </div>
@@ -139,37 +142,36 @@ export default function Home() {
                 <span className="text-primary font-medium">Blueprint Digital</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6">
-                El Ecosistema del Futuro
+                {t('blueprint.title')}
               </h2>
               <p className="text-xl text-secondary max-w-4xl mx-auto mb-8">
-                No es solo una página web con un tour. Es un ecosistema digital y físico integrado 
-                que acompaña al inversor desde la primera chispa de curiosidad hasta que recibe las llaves y más allá.
+                {t('blueprint.subtitle')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
                 {
-                  title: 'Portal de Visión',
-                  description: 'Onboarding interactivo con matching con IA',
+                  title: t('blueprint.visionPortal'),
+                  description: t('blueprint.visionDescription'),
                   icon: Sparkles,
                   color: 'from-accent to-accent/80'
                 },
                 {
-                  title: 'Realidad Aumentada',
-                  description: 'Visitas a propiedades 2.0 con tecnología AR',
+                  title: t('blueprint.augmentedReality'),
+                  description: t('blueprint.arDescription'),
                   icon: Camera,
                   color: 'from-primary to-primary/80'
                 },
                 {
-                  title: 'Mesa de Diseño',
-                  description: 'Co-diseño en tiempo real durante las sesiones',
+                  title: t('blueprint.designTable'),
+                  description: t('blueprint.designDescription'),
                   icon: Settings,
                   color: 'from-accent to-accent/80'
                 },
                 {
-                  title: 'Centro de Control',
-                  description: 'Control total del proyecto con cámaras en vivo',
+                  title: t('blueprint.controlCenter'),
+                  description: t('blueprint.controlDescription'),
                   icon: HomeIcon,
                   color: 'from-primary to-primary/80'
                 }
@@ -198,16 +200,16 @@ export default function Home() {
             <div className="text-center">
               <div className="bg-white rounded-3xl p-8 border border-border shadow-sm max-w-4xl mx-auto">
                 <h3 className="text-2xl font-serif font-bold text-primary mb-4">
-                  ¿Listo para experimentar el futuro?
+                  {t('blueprint.readyForFuture')}
                 </h3>
                 <p className="text-secondary mb-6">
-                  Descubre cómo la tecnología de punta transforma la experiencia de inversión en propiedades japonesas
+                  {t('blueprint.futureDescription')}
                 </p>
                 <a
                   href="/blueprint"
                   className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-semibold text-lg"
                 >
-                  <span>Explorar Blueprint Digital</span>
+                  <span>{t('blueprint.exploreBlueprint')}</span>
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </div>

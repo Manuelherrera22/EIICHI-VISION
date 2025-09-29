@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { CRMService, NotificationService } from '@/lib/crm';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FormData {
   name: string;
@@ -32,43 +33,44 @@ const ContactForm = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
     // Validación de nombre
     if (!formData.name.trim()) {
-      newErrors.name = 'El nombre es requerido';
+      newErrors.name = t('contact.nameRequired');
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'El nombre debe tener al menos 2 caracteres';
+      newErrors.name = t('contact.nameMinLength');
     }
 
     // Validación de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = 'El email es requerido';
+      newErrors.email = t('contact.emailRequired');
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Ingresa un email válido';
+      newErrors.email = t('contact.emailInvalid');
     }
 
     // Validación de teléfono
     if (!formData.phone.trim()) {
-      newErrors.phone = 'El teléfono es requerido';
+      newErrors.phone = t('contact.phoneRequired');
     }
 
     // Validación de país
     if (!formData.country.trim()) {
-      newErrors.country = 'El país es requerido';
+      newErrors.country = t('contact.countryRequired');
     }
 
     // Validación de presupuesto
     if (!formData.budget) {
-      newErrors.budget = 'Selecciona un rango de presupuesto';
+      newErrors.budget = t('contact.budgetRequired');
     }
 
     // Validación de interés
     if (!formData.interest) {
-      newErrors.interest = 'Selecciona tu área de interés';
+      newErrors.interest = t('contact.interestRequired');
     }
 
     setErrors(newErrors);
@@ -142,16 +144,16 @@ const ContactForm = () => {
           <CheckCircle size={32} className="text-green-600" />
         </div>
         <h3 className="text-2xl font-serif font-bold text-primary mb-2">
-          ¡Mensaje Enviado!
+          {t('contact.messageSent')}
         </h3>
         <p className="text-secondary mb-6">
-          Gracias por tu interés en Komorebi House. Nos pondremos en contacto contigo en las próximas 24 horas.
+          {t('contact.thankYou')}
         </p>
         <button
           onClick={() => setIsSubmitted(false)}
           className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
         >
-          Enviar Otro Mensaje
+          {t('contact.sendAnother')}
         </button>
       </div>
     );
@@ -161,10 +163,10 @@ const ContactForm = () => {
     <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
       <div className="text-center mb-8">
         <h3 className="text-3xl font-serif font-bold text-primary mb-2">
-          Inicia tu Viaje
+          {t('contact.startJourney')}
         </h3>
         <p className="text-secondary">
-          Completa el formulario y nos pondremos en contacto contigo
+          {t('contact.completeForm')}
         </p>
       </div>
 
@@ -172,7 +174,7 @@ const ContactForm = () => {
         {/* Nombre */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
-            Nombre Completo *
+            {t('contact.fullName')} *
           </label>
           <input
             type="text"
@@ -183,7 +185,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
               errors.name ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
-            placeholder="Tu nombre completo"
+            placeholder={t('contact.namePlaceholder')}
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -197,7 +199,7 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-              Email *
+              {t('contact.email')} *
             </label>
             <input
               type="email"
@@ -208,7 +210,7 @@ const ContactForm = () => {
               className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.email ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
-              placeholder="tu@email.com"
+              placeholder={t('contact.emailPlaceholder')}
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -220,7 +222,7 @@ const ContactForm = () => {
 
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-              Teléfono *
+              {t('contact.phone')} *
             </label>
             <input
               type="tel"
@@ -231,7 +233,7 @@ const ContactForm = () => {
               className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.phone ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
-              placeholder="+1 (555) 123-4567"
+              placeholder={t('contact.phonePlaceholder')}
             />
             {errors.phone && (
               <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -246,7 +248,7 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label htmlFor="country" className="block text-sm font-medium text-primary mb-2">
-              País *
+              {t('contact.country')} *
             </label>
             <select
               id="country"
@@ -257,16 +259,16 @@ const ContactForm = () => {
                 errors.country ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
-              <option value="">Selecciona tu país</option>
-              <option value="US">Estados Unidos</option>
-              <option value="CA">Canadá</option>
-              <option value="MX">México</option>
-              <option value="BR">Brasil</option>
-              <option value="AR">Argentina</option>
-              <option value="CL">Chile</option>
-              <option value="CO">Colombia</option>
-              <option value="PE">Perú</option>
-              <option value="other">Otro</option>
+              <option value="">{t('contact.selectCountry')}</option>
+              <option value="US">{t('contact.countries.us')}</option>
+              <option value="CA">{t('contact.countries.ca')}</option>
+              <option value="MX">{t('contact.countries.mx')}</option>
+              <option value="BR">{t('contact.countries.br')}</option>
+              <option value="AR">{t('contact.countries.ar')}</option>
+              <option value="CL">{t('contact.countries.cl')}</option>
+              <option value="CO">{t('contact.countries.co')}</option>
+              <option value="PE">{t('contact.countries.pe')}</option>
+              <option value="other">{t('contact.countries.other')}</option>
             </select>
             {errors.country && (
               <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -278,7 +280,7 @@ const ContactForm = () => {
 
           <div>
             <label htmlFor="budget" className="block text-sm font-medium text-primary mb-2">
-              Presupuesto *
+              {t('contact.budget')} *
             </label>
             <select
               id="budget"
@@ -289,7 +291,7 @@ const ContactForm = () => {
                 errors.budget ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
-              <option value="">Selecciona tu presupuesto</option>
+              <option value="">{t('contact.selectBudget')}</option>
               <option value="50k-100k">$50,000 - $100,000</option>
               <option value="100k-200k">$100,000 - $200,000</option>
               <option value="200k-500k">$200,000 - $500,000</option>
@@ -308,7 +310,7 @@ const ContactForm = () => {
         {/* Área de Interés */}
         <div>
           <label htmlFor="interest" className="block text-sm font-medium text-primary mb-2">
-            Área de Interés *
+            {t('contact.interest')} *
           </label>
           <select
             id="interest"
@@ -319,12 +321,12 @@ const ContactForm = () => {
               errors.interest ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
           >
-            <option value="">Selecciona tu interés</option>
-            <option value="investment">Inversión Inmobiliaria</option>
-            <option value="residence">Residencia Personal</option>
-            <option value="vacation">Casa de Vacaciones</option>
-            <option value="business">Negocio/Turismo</option>
-            <option value="consultation">Consulta General</option>
+            <option value="">{t('contact.selectInterest')}</option>
+            <option value="investment">{t('contact.interests.investment')}</option>
+            <option value="residence">{t('contact.interests.residence')}</option>
+            <option value="vacation">{t('contact.interests.vacation')}</option>
+            <option value="business">{t('contact.interests.business')}</option>
+            <option value="consultation">{t('contact.interests.consultation')}</option>
           </select>
           {errors.interest && (
             <p className="mt-1 text-sm text-red-600 flex items-center">
@@ -337,7 +339,7 @@ const ContactForm = () => {
         {/* Mensaje */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
-            Mensaje
+            {t('contact.message')}
           </label>
           <textarea
             id="message"
@@ -346,7 +348,7 @@ const ContactForm = () => {
             onChange={handleInputChange}
             rows={4}
             className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-            placeholder="Cuéntanos más sobre tu proyecto o intereses..."
+            placeholder={t('contact.messagePlaceholder')}
           />
         </div>
 
@@ -359,12 +361,12 @@ const ContactForm = () => {
           {isSubmitting ? (
             <>
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              <span>Enviando...</span>
+              <span>{t('contact.sending')}</span>
             </>
           ) : (
             <>
               <Send size={20} />
-              <span>Enviar Mensaje</span>
+              <span>{t('contact.sendMessage')}</span>
             </>
           )}
         </button>

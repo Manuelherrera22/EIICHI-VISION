@@ -13,6 +13,7 @@ import {
   Crown,
   Eye
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AutoModelLoader = () => {
   const [modelUrl, setModelUrl] = useState('');
@@ -21,6 +22,7 @@ const AutoModelLoader = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [showPremium, setShowPremium] = useState(false);
+  const { t } = useLanguage();
 
   // URL de tu modelo GLB en Google Drive
   const googleDriveUrl = 'https://drive.google.com/file/d/1BZJgv1QRwttFGINI0-7iFg0YHVWE3JvU/view?usp=sharing';
@@ -57,7 +59,7 @@ const AutoModelLoader = () => {
         setShowPremium(true);
       } else {
         setHasError(true);
-        setErrorMessage('Por favor, selecciona un archivo GLB o GLTF válido.');
+        setErrorMessage(t('aml.pleaseSelectValidFile'));
       }
     }
   };
@@ -67,7 +69,7 @@ const AutoModelLoader = () => {
   };
 
   const handleLoadFromUrl = () => {
-    const url = prompt('Ingresa la URL directa de tu modelo GLB/GLTF:');
+    const url = prompt(t('aml.enterDirectURL'));
     if (url) {
       setModelUrl(url);
       setHasError(false);
@@ -84,15 +86,15 @@ const AutoModelLoader = () => {
         <div className="text-center">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-accent/20 to-primary/20 px-6 py-3 rounded-full mb-6 border border-accent/30">
             <Crown size={20} className="text-accent" />
-            <span className="text-sm font-medium text-accent">Experiencia Premium Activada</span>
+            <span className="text-sm font-medium text-accent">{t('aml.premiumExperienceActivated')}</span>
             <Sparkles size={16} className="text-accent animate-pulse" />
           </div>
           
           <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-            Visualizador 3D Premium
+            {t('aml.premium3DViewer')}
           </h2>
           <p className="text-xl text-secondary max-w-2xl mx-auto">
-            Tu casa japonesa con tecnología Three.js de última generación
+            {t('aml.premiumDescription')}
           </p>
         </div>
 
@@ -105,7 +107,7 @@ const AutoModelLoader = () => {
             <div className="flex items-center space-x-3">
               <CheckCircle size={24} className="text-green-500" />
               <div>
-                <h3 className="font-semibold text-green-700">Modelo Cargado Exitosamente</h3>
+                <h3 className="font-semibold text-green-700">{t('aml.modelLoadedSuccessfully')}</h3>
                 <p className="text-sm text-green-600">
                   {uploadedFile.name} ({(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
                 </p>
@@ -124,21 +126,21 @@ const AutoModelLoader = () => {
       <div className="text-center">
         <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
           <Star size={20} className="text-primary" />
-          <span className="text-sm font-medium text-primary">Cargar Modelo 3D</span>
+          <span className="text-sm font-medium text-primary">{t('aml.load3DModel')}</span>
         </div>
         
         <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-          🏠 Cargar tu Casa Japonesa
+          {t('aml.loadJapaneseHouse')}
         </h2>
         <p className="text-xl text-secondary max-w-3xl mx-auto">
-          Sube tu modelo GLB personalizado y disfruta de una experiencia 3D premium con Three.js
+          {t('aml.loadDescription')}
         </p>
       </div>
 
       {/* Opciones de carga premium */}
       <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-3xl shadow-xl border border-blue-100">
         <h3 className="font-serif font-bold text-primary text-2xl mb-6 text-center">
-          ✨ Opciones de Carga Premium
+          {t('aml.premiumLoadOptions')}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -147,10 +149,10 @@ const AutoModelLoader = () => {
             <label className="cursor-pointer">
               <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-8 rounded-2xl hover:from-primary/20 hover:to-primary/30 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg border border-primary/20">
                 <Upload size={48} className="text-primary mx-auto mb-4 group-hover:animate-bounce" />
-                <h4 className="font-bold text-primary text-lg mb-2">Subir Archivo</h4>
-                <p className="text-sm text-secondary">Selecciona tu archivo GLB/GLTF local</p>
+                <h4 className="font-bold text-primary text-lg mb-2">{t('aml.uploadFile')}</h4>
+                <p className="text-sm text-secondary">{t('aml.selectLocalFile')}</p>
                 <div className="mt-4 text-xs text-primary/70">
-                  ⚡ Carga instantánea
+                  {t('aml.instantLoad')}
                 </div>
               </div>
               <input
@@ -169,10 +171,10 @@ const AutoModelLoader = () => {
               className="w-full bg-gradient-to-br from-accent/10 to-accent/20 p-8 rounded-2xl hover:from-accent/20 hover:to-accent/30 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg border border-accent/20"
             >
               <Download size={48} className="text-accent mx-auto mb-4 group-hover:animate-bounce" />
-              <h4 className="font-bold text-accent text-lg mb-2">Google Drive</h4>
-              <p className="text-sm text-secondary">Descargar desde tu Drive</p>
+              <h4 className="font-bold text-accent text-lg mb-2">{t('aml.googleDrive')}</h4>
+              <p className="text-sm text-secondary">{t('aml.downloadFromDrive')}</p>
               <div className="mt-4 text-xs text-accent/70">
-                🔗 Enlace directo
+                {t('aml.directLink')}
               </div>
             </button>
           </div>
@@ -184,10 +186,10 @@ const AutoModelLoader = () => {
               className="w-full bg-gradient-to-br from-green-500/10 to-green-500/20 p-8 rounded-2xl hover:from-green-500/20 hover:to-green-500/30 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg border border-green-500/20"
             >
               <Zap size={48} className="text-green-500 mx-auto mb-4 group-hover:animate-bounce" />
-              <h4 className="font-bold text-green-500 text-lg mb-2">URL Directa</h4>
-              <p className="text-sm text-secondary">Pegar enlace directo</p>
+              <h4 className="font-bold text-green-500 text-lg mb-2">{t('aml.directURL')}</h4>
+              <p className="text-sm text-secondary">{t('aml.pasteDirectLink')}</p>
               <div className="mt-4 text-xs text-green-500/70">
-                🌐 Carga remota
+                {t('aml.remoteLoad')}
               </div>
             </button>
           </div>
@@ -199,7 +201,7 @@ const AutoModelLoader = () => {
             <div className="flex items-center space-x-3">
               <CheckCircle size={20} className="text-green-500" />
               <span className="text-sm text-green-700 font-semibold">
-                Archivo cargado: {uploadedFile.name} ({(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
+                {t('aml.fileUploaded')} {uploadedFile.name} ({(uploadedFile.size / 1024 / 1024).toFixed(2)} MB)
               </span>
             </div>
           </div>
@@ -219,53 +221,53 @@ const AutoModelLoader = () => {
       {/* Instrucciones premium */}
       <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-3xl shadow-lg border border-slate-200">
         <h3 className="font-serif font-bold text-primary text-2xl mb-6 text-center">
-          🎯 Casa de Bambú Premium
+          {t('aml.premiumBambooHouse')}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h4 className="font-bold text-primary mb-4 flex items-center space-x-2">
               <Crown size={20} />
-              <span>Modelo Automático Cargado</span>
+              <span>{t('aml.automaticModelLoaded')}</span>
             </h4>
             <ol className="space-y-2 text-sm text-secondary">
-              <li>✅ Tu casa de bambú está lista</li>
-              <li>✅ Modelo GLB optimizado cargado</li>
-              <li>✅ Efectos visuales premium activos</li>
-              <li>✅ Controles avanzados disponibles</li>
+              <li>{t('aml.bambooHouseReady')}</li>
+              <li>{t('aml.optimizedGLBLoaded')}</li>
+              <li>{t('aml.premiumVisualEffects')}</li>
+              <li>{t('aml.advancedControlsAvailable')}</li>
             </ol>
           </div>
 
           <div>
             <h4 className="font-bold text-primary mb-4 flex items-center space-x-2">
               <Sparkles size={20} />
-              <span>Características Premium</span>
+              <span>{t('aml.premiumFeatures')}</span>
             </h4>
             <ul className="space-y-2 text-sm text-secondary">
-              <li>• Iluminación realista con sombras</li>
-              <li>• Efectos de partículas interactivos</li>
-              <li>• Controles avanzados de cámara</li>
-              <li>• Modo pantalla completa</li>
-              <li>• Animaciones suaves y fluidas</li>
-              <li>• Compatible con móviles</li>
+              <li>{t('aml.realisticLighting')}</li>
+              <li>{t('aml.interactiveParticles')}</li>
+              <li>{t('aml.advancedCameraControls')}</li>
+              <li>{t('aml.fullscreenMode')}</li>
+              <li>{t('aml.smoothAnimations')}</li>
+              <li>{t('aml.mobileCompatible')}</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl border border-primary/20">
-          <h4 className="font-bold text-primary mb-3">🔗 Enlaces Útiles:</h4>
+          <h4 className="font-bold text-primary mb-3">{t('aml.usefulLinks')}</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
             <a href={googleDriveUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center space-x-2">
               <Download size={16} />
-              <span>Tu modelo en Google Drive</span>
+              <span>{t('aml.yourModelInDrive')}</span>
             </a>
             <a href="https://gltf-viewer.donmccurdy.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center space-x-2">
               <Eye size={16} />
-              <span>GLTF Viewer Online</span>
+              <span>{t('aml.gltfViewerOnline')}</span>
             </a>
             <a href="https://threejs.org/examples/#webgl_loader_gltf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center space-x-2">
               <Zap size={16} />
-              <span>Three.js Examples</span>
+              <span>{t('aml.threejsExamples')}</span>
             </a>
           </div>
         </div>

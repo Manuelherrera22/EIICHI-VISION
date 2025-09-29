@@ -5,6 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { AlertCircle, CheckCircle, Loader2, Play, Pause, RotateCcw, Maximize, Minimize, Sun, Moon, Info, Share2, Heart } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ModelDebugger = () => {
   const [modelStatus, setModelStatus] = useState<'loading' | 'success' | 'error'>('loading');
@@ -14,35 +15,36 @@ const ModelDebugger = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isDayMode, setIsDayMode] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const testModel = async () => {
       try {
-        console.log('🔍 Probando carga del modelo GLB...');
+        console.log('🔍', t('debug.testingModelLoad'));
         
         // Probar acceso al archivo
         const response = await fetch('/models/custom/japanese-house.glb');
-        console.log('📡 Respuesta del servidor:', response.status, response.statusText);
+        console.log('📡', t('debug.serverResponse'), response.status, response.statusText);
         
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
         const blob = await response.blob();
-        console.log('📦 Tamaño del archivo:', blob.size, 'bytes');
+        console.log('📦', t('debug.fileSize'), blob.size, t('debug.bytes'));
         
         if (blob.size === 0) {
-          throw new Error('El archivo está vacío');
+          throw new Error(t('debug.fileEmpty'));
         }
         
         setModelStatus('success');
         setModelData({ size: blob.size, type: blob.type });
-        console.log('✅ Modelo GLB cargado exitosamente');
+        console.log('✅', t('debug.modelLoadedSuccessfully'));
         
       } catch (error) {
-        console.error('❌ Error cargando modelo:', error);
+        console.error('❌', t('debug.errorLoadingModel'), error);
         setModelStatus('error');
-        setErrorMessage(error instanceof Error ? error.message : 'Error desconocido');
+        setErrorMessage(error instanceof Error ? error.message : t('debug.unknownError'));
       }
     };
 
@@ -85,7 +87,7 @@ const ModelDebugger = () => {
               <Html center>
                 <div className="text-center text-blue-600">
                   <Loader2 size={48} className="mx-auto mb-4 animate-spin" />
-                  <p className="text-lg font-medium">Cargando modelo 3D...</p>
+                  <p className="text-lg font-medium">{t('debug.loading3DModel')}</p>
                 </div>
               </Html>
             }>
@@ -95,7 +97,7 @@ const ModelDebugger = () => {
             <Html center>
               <div className="text-center text-gray-500">
                 <AlertCircle size={48} className="mx-auto mb-4" />
-                <p className="text-lg">Preparando visualizador...</p>
+                <p className="text-lg">{t('debug.preparingViewer')}</p>
               </div>
             </Html>
           )}
@@ -123,21 +125,21 @@ const ModelDebugger = () => {
           <button 
             onClick={() => setIsRotating(!isRotating)} 
             className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
-            title={isRotating ? "Pausar rotación" : "Iniciar rotación"}
+            title={isRotating ? t('debug.pauseRotation') : t('debug.startRotation')}
           >
             {isRotating ? <Pause size={16} className="sm:w-5 sm:h-5" /> : <Play size={16} className="sm:w-5 sm:h-5" />}
           </button>
           <button 
             onClick={() => setIsDayMode(!isDayMode)} 
             className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
-            title={isDayMode ? "Modo nocturno" : "Modo diurno"}
+            title={isDayMode ? t('debug.nightMode') : t('debug.dayMode')}
           >
             {isDayMode ? <Moon size={16} className="sm:w-5 sm:h-5" /> : <Sun size={16} className="sm:w-5 sm:h-5" />}
           </button>
           <button 
             onClick={toggleFullscreen} 
             className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
-            title={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
+            title={isFullscreen ? t('debug.exitFullscreen') : t('debug.fullscreen')}
           >
             {isFullscreen ? <Minimize size={16} className="sm:w-5 sm:h-5" /> : <Maximize size={16} className="sm:w-5 sm:h-5" />}
           </button>
@@ -149,22 +151,22 @@ const ModelDebugger = () => {
             <span className="text-xs font-mono bg-blue-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">3D</span>
             <span className="text-xs font-mono bg-green-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">GLB</span>
           </div>
-          <h3 className="text-sm sm:text-lg font-serif font-bold text-gray-800 mb-0.5 sm:mb-1">Casa Tradicional Japonesa</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">Modelo interactivo de ejemplo</p>
+          <h3 className="text-sm sm:text-lg font-serif font-bold text-gray-800 mb-0.5 sm:mb-1">{t('debug.traditionalJapaneseHouse')}</h3>
+          <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">{t('debug.interactiveExampleModel')}</p>
           
           {/* Acciones rápidas */}
           <div className="flex justify-end space-x-1 sm:space-x-2">
             <button 
               onClick={() => setShowInfo(!showInfo)}
               className="p-1.5 sm:p-2 rounded-full bg-blue-500/20 hover:bg-blue-500/30 transition-colors text-blue-600"
-              title="Información del modelo"
+              title={t('debug.modelInformation')}
             >
               <Info size={14} className="sm:w-4 sm:h-4" />
             </button>
-            <button className="p-1.5 sm:p-2 rounded-full bg-green-500/20 hover:bg-green-500/30 transition-colors text-green-600" title="Compartir">
+            <button className="p-1.5 sm:p-2 rounded-full bg-green-500/20 hover:bg-green-500/30 transition-colors text-green-600" title={t('debug.share')}>
               <Share2 size={14} className="sm:w-4 sm:h-4" />
             </button>
-            <button className="p-1.5 sm:p-2 rounded-full bg-red-500/20 hover:bg-red-500/30 transition-colors text-red-600" title="Guardar en favoritos">
+            <button className="p-1.5 sm:p-2 rounded-full bg-red-500/20 hover:bg-red-500/30 transition-colors text-red-600" title={t('debug.saveToFavorites')}>
               <Heart size={14} className="sm:w-4 sm:h-4" />
             </button>
           </div>
@@ -173,19 +175,19 @@ const ModelDebugger = () => {
         {/* Panel de información expandible */}
         {showInfo && (
           <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg max-w-[calc(100%-1rem)] sm:max-w-sm">
-            <h4 className="font-serif font-bold text-gray-800 mb-2 sm:mb-3 text-sm sm:text-base">Detalles del Modelo</h4>
+            <h4 className="font-serif font-bold text-gray-800 mb-2 sm:mb-3 text-sm sm:text-base">{t('debug.modelDetails')}</h4>
             <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-600">
-              <p><strong>Ubicación:</strong> Gunma, Japón</p>
-              <p><strong>Tipo:</strong> Casa tradicional japonesa</p>
-              <p><strong>Material:</strong> Madera y bambú</p>
-              <p><strong>Estado:</strong> Disponible para restauración</p>
-              <p><strong>Tamaño:</strong> ~80m²</p>
+              <p><strong>{t('debug.location')}</strong> {t('debug.gunmaJapan')}</p>
+              <p><strong>{t('debug.type')}</strong> {t('debug.traditionalJapaneseHouseType')}</p>
+              <p><strong>{t('debug.material')}</strong> {t('debug.woodAndBamboo')}</p>
+              <p><strong>{t('debug.status')}</strong> {t('debug.availableForRestoration')}</p>
+              <p><strong>{t('debug.size')}</strong> {t('debug.area80m2')}</p>
             </div>
             <button 
               onClick={() => setShowInfo(false)}
               className="mt-2 sm:mt-3 text-xs text-blue-600 hover:text-blue-800"
             >
-              Cerrar información
+              {t('debug.closeInformation')}
             </button>
           </div>
         )}

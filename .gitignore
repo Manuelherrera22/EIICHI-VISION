@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Security - Prevent committing secrets
+*SECRET*
+*TOKEN*
+*PASSWORD*
+*KEY*
+*CREDENTIAL*
+*OAUTH*
+*CLIENT_SECRET*
+*CLIENT_ID*
+*API_KEY*
+*PRIVATE_KEY*
+*ACCESS_TOKEN*
+*BEARER_TOKEN*
+
+# Documentation with secrets
+COMMIT_GITHUB_*.md
+*_TOKEN*.md
+*_SECRET*.md
+*_CREDENTIAL*.md
+*_OAUTH*.md

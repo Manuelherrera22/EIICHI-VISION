@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import BookingSystem from '@/components/BookingSystem';
 import { Mail, Phone, MapPin, Clock, Send, Calendar, MessageCircle, User, Building } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,30 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
+
+  // Actualizar el título y metadatos de la página
+  useEffect(() => {
+    // Usar un pequeño delay para asegurar que se ejecute después de DynamicMetadata
+    const timer = setTimeout(() => {
+      // Actualizar título
+        document.title = 'Contacto - Tabiji House | Inversión en Propiedades Japonesas';
+      
+      // Actualizar meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'Contacta con Tabiji House para iniciar tu inversión en propiedades japonesas. Consulta gratuita de 30 minutos. Expertos en akiya y propiedades tradicionales.');
+      }
+      
+      // Actualizar meta keywords
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', 'contacto, inversión Japón, propiedades japonesas, akiya, consulta gratuita, Tabiji House');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,23 +72,23 @@ export default function Contact() {
   const contactMethods = [
     {
       icon: Mail,
-      title: "Correo Electrónico",
+      title: t('contact.emailTitle'),
       value: "info@komorebihouse.com",
-      description: "Respuesta en 24 horas",
+      description: t('contact.emailDescription'),
       color: "primary"
     },
     {
       icon: Phone,
-      title: "Teléfono / WhatsApp",
+      title: t('contact.phoneTitle'),
       value: "+81 90-1234-5678",
-      description: "Disponible 9AM - 6PM JST",
+      description: t('contact.phoneDescription'),
       color: "accent"
     },
     {
       icon: MapPin,
-      title: "Oficina Principal",
-      value: "Kusatsu, Gunma, Japan",
-      description: "Visitas con cita previa",
+      title: t('contact.officeTitle'),
+      value: t('contact.officeValue'),
+      description: t('contact.officeDescription'),
       color: "primary"
     }
   ];
@@ -164,7 +189,7 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder="Tu nombre completo"
+                        placeholder={t('contact.fullNamePlaceholder')}
                       />
                     </div>
                   </div>
@@ -221,7 +246,7 @@ export default function Contact() {
                         value={formData.company}
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder="Nombre de tu empresa"
+                        placeholder={t('contact.companyPlaceholder')}
                       />
                     </div>
                   </div>
@@ -260,7 +285,7 @@ export default function Contact() {
                       required
                       rows={6}
                       className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
-                      placeholder="Cuéntanos sobre tu proyecto, presupuesto, timeline y cualquier pregunta específica que tengas..."
+                      placeholder={t('contact.projectPlaceholder')}
                     />
                   </div>
                 </div>

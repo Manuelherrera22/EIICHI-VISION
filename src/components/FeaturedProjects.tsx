@@ -1,56 +1,59 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Home, Calendar } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FeaturedProjects = () => {
+  const { t } = useLanguage();
+
   const projects = [
     {
       id: 1,
-      name: "El Retiro del Calígrafo",
-      location: "Kusatsu, Gunma",
+      name: t('projects.calligrapherRetreat'),
+      location: t('projects.location'),
       price: "¥8,500,000",
       size: "120 m²",
       year: "1925",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "/project-1.jpg",
-      description: "Una casa tradicional con vistas espectaculares a las montañas. Perfecta para un estudio de arte o retiro creativo.",
-      renovation: "Básico: ¥2,500,000"
+      description: t('projects.calligrapherDescription'),
+      renovation: `${t('projects.basicRenovation')}: ¥2,500,000`
     },
     {
       id: 2,
-      name: "La Casa con Vistas al Onsen",
-      location: "Kusatsu, Gunma",
+      name: t('projects.onsenViewHouse'),
+      location: t('projects.location'),
       price: "¥12,000,000",
       size: "180 m²",
       year: "1918",
-      status: "En Renovación",
+      status: t('projects.underRenovation'),
       image: "/project-2.jpg",
-      description: "Ubicada cerca de los famosos baños termales, esta propiedad ofrece acceso directo a la cultura onsen local.",
-      renovation: "Premium: ¥4,200,000"
+      description: t('projects.onsenDescription'),
+      renovation: `${t('projects.premiumRenovation')}: ¥4,200,000`
     },
     {
       id: 3,
-      name: "El Jardín de los Cerezos",
-      location: "Kusatsu, Gunma",
+      name: t('projects.cherryGarden'),
+      location: t('projects.location'),
       price: "¥6,800,000",
       size: "95 m²",
       year: "1932",
-      status: "Disponible",
+      status: t('projects.available'),
       image: "/project-3.jpg",
-      description: "Una casa compacta rodeada de cerezos centenarios. Ideal para una segunda residencia o inversión.",
-      renovation: "Básico: ¥1,800,000"
+      description: t('projects.cherryDescription'),
+      renovation: `${t('projects.basicRenovation')}: ¥1,800,000`
     },
     {
       id: 4,
-      name: "La Residencia del Artesano",
-      location: "Kusatsu, Gunma",
+      name: t('projects.artisanResidence'),
+      location: t('projects.location'),
       price: "¥15,500,000",
       size: "220 m²",
       year: "1905",
-      status: "Vendida",
+      status: t('projects.sold'),
       image: "/project-4.jpg",
-      description: "Una casa histórica completamente restaurada que combina tradición japonesa con comodidades modernas.",
-      renovation: "De Lujo: ¥6,500,000"
+      description: t('projects.artisanDescription'),
+      renovation: `${t('projects.luxuryRenovation')}: ¥6,500,000`
     }
   ];
 
@@ -60,14 +63,13 @@ const FeaturedProjects = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-            El Portafolio Visionario
+            {t('projects.visionaryPortfolio')}
           </div>
           <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
-            Proyectos Destacados
+            {t('projects.featuredProjects')}
           </h2>
           <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-            Cada propiedad cuenta una historia única y ofrece un potencial extraordinario 
-            para crear tu hogar de ensueño en Japón.
+            {t('projects.description')}
           </p>
         </div>
 
@@ -85,9 +87,9 @@ const FeaturedProjects = () => {
                 
                 {/* Status Badge */}
                 <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
-                  project.status === 'Disponible' 
+                  project.status === t('projects.available')
                     ? 'bg-green-100 text-green-800' 
-                    : project.status === 'En Renovación'
+                    : project.status === t('projects.underRenovation')
                     ? 'bg-blue-100 text-blue-800'
                     : 'bg-gray-100 text-gray-800'
                 }`}>
@@ -100,7 +102,7 @@ const FeaturedProjects = () => {
                     href={`/projects/${project.id}`}
                     className="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors duration-300 flex items-center space-x-2"
                   >
-                    <span>Ver Detalles</span>
+                    <span>{t('projects.viewDetails')}</span>
                     <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -142,7 +144,7 @@ const FeaturedProjects = () => {
                         {project.price}
                       </div>
                       <div className="text-xs text-secondary">
-                        Precio de compra
+                        {t('projects.purchasePrice')}
                       </div>
                     </div>
                     <div className="text-right">
@@ -150,7 +152,7 @@ const FeaturedProjects = () => {
                         {project.renovation}
                       </div>
                       <div className="text-xs text-secondary">
-                        Renovación estimada
+                        {t('projects.estimatedRenovation')}
                       </div>
                     </div>
                   </div>
@@ -166,7 +168,7 @@ const FeaturedProjects = () => {
             href="/projects"
             className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg"
           >
-            <span>Ver Todos los Proyectos</span>
+            <span>{t('projects.viewAllProjects')}</span>
             <ArrowRight size={20} />
           </Link>
         </div>
