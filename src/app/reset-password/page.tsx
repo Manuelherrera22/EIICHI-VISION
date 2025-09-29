@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
 import Layout from '@/components/Layout'
 import { Eye, EyeOff, Lock, CheckCircle, AlertCircle } from 'lucide-react'
 
-export default function ResetPasswordPage() {
+function ResetPasswordContent() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -191,5 +191,27 @@ export default function ResetPasswordPage() {
         </div>
       </div>
     </Layout>
+  )
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={
+      <Layout>
+        <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-md">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+              </div>
+              <h1 className="text-3xl font-bold text-primary">Tabiji House</h1>
+              <p className="text-secondary mt-2">Cargando...</p>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    }>
+      <ResetPasswordContent />
+    </Suspense>
   )
 }
