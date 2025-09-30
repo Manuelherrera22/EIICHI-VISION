@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { ArquitectoProvider, useArquitecto } from '@/contexts/ArquitectoContext'
+import { ArquitectoProvider } from '@/contexts/ArquitectoContext'
 import ArquitectoOnboarding from '@/components/ArquitectoOnboarding'
 import ModularDashboard from '@/components/ModularDashboard'
 import ProtectedRoute from '@/components/ProtectedRoute'
@@ -45,3 +45,4 @@ function DashboardContent() {
   // Si el onboarding está completo, mostrar el dashboard modular
   return <ModularDashboard />
 }
+

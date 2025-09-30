@@ -9,7 +9,7 @@ export type Language = 'en' | 'ja' | 'ar' | 'es';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, variables?: Record<string, string>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -35,6 +35,9 @@ const translations = {
     'common.edit': 'Edit',
     'common.delete': 'Delete',
     'common.back': 'Back',
+    'common.today': 'Today',
+    'common.tomorrow': 'Tomorrow',
+    'common.friday': 'Friday',
     'common.next': 'Next',
     'common.previous': 'Previous',
     'common.close': 'Close',
@@ -62,6 +65,171 @@ const translations = {
     'navigation.terms': 'Terms',
     'navigation.login': 'Login',
     'navigation.dashboard': 'Dashboard',
+    
+    // Dashboard translations
+    'dashboard.investor.title': 'Investment Opportunities Command Center',
+    'dashboard.migration.title': 'Your Migration Route to Japan',
+    'dashboard.lifestyle.title': 'Your Personal Sanctuary',
+    'dashboard.default.title': 'Dashboard',
+    'dashboard.investor.welcome': 'Good morning, {userName}. Here is the summary of your Investment Project.',
+    'dashboard.migration.welcome': 'Good morning, {userName}. Here is the summary of your Migration Route.',
+    'dashboard.lifestyle.welcome': 'Good morning, {userName}. Here is the summary of your Personal Sanctuary.',
+    'dashboard.default.welcome': 'Good morning, {userName}.',
+    'dashboard.description': 'Your personalized experience is ready. Explore the specialized modules for your objective.',
+    'dashboard.nextSteps.title': 'Key Next Steps',
+    'dashboard.nextSteps.dueDate': 'Due',
+    'dashboard.nextSteps.viewAll': 'View All Steps',
+    'dashboard.myTeam': 'My Team',
+    'dashboard.investor.portfolio.title': 'My Investment Portfolio',
+    'dashboard.investor.portfolio.description': 'Visual pipeline of properties under analysis',
+    'dashboard.investor.portfolio.addProperty': 'Add Property',
+    'common.user': 'User',
+    'common.viewDetails': 'View Details',
+    
+    // Migration Dashboard
+    'dashboard.migration.simulator.title': 'Life Simulator in Japan',
+    'dashboard.migration.simulator.description': 'Cost calculator and integration map',
+    'dashboard.migration.simulator.viewTimeline': 'View Complete Timeline',
+    'dashboard.migration.simulator.costCalculator': 'Monthly Cost Calculator',
+    'dashboard.migration.simulator.integrationMap': 'Integration Map',
+    
+    // Lifestyle Dashboard
+    'dashboard.lifestyle.designTable.title': 'My 3D/AR Design Table',
+    'dashboard.lifestyle.designTable.description': 'Visual space for your property',
+    'dashboard.lifestyle.designTable.viewRender': 'View Personalized Render',
+    'dashboard.lifestyle.materials.title': 'Materials Catalog',
+    'dashboard.lifestyle.materials.description': 'Visual library of materials and finishes',
+    'dashboard.lifestyle.materials.viewCatalog': 'View Complete Catalog',
+    'dashboard.lifestyle.concierge.title': 'Experience Concierge',
+    'dashboard.lifestyle.concierge.description': 'Interactive calendar to book experiences',
+    
+    // Onboarding
+    'onboarding.welcome.title': 'Welcome to Tabiji House',
+    'onboarding.welcome.description': 'We are here to build your future in Japan. Let\'s start designing your path.',
+    'onboarding.welcome.startButton': 'Start My Master Path',
+    'onboarding.welcome.instruction': 'Click the button to continue',
+    
+    'onboarding.question.title': 'The Key Question',
+    'onboarding.question.description': 'What is the main driver of your journey to Japan?',
+    
+    'onboarding.options.invest.title': 'INVEST',
+    'onboarding.options.invest.description': 'I seek to build a portfolio, generate returns, and explore business opportunities such as franchises or startups.',
+    'onboarding.options.invest.target': 'Aimed primarily at the Latin profile',
+    
+    'onboarding.options.migrate.title': 'MIGRATE',
+    'onboarding.options.migrate.description': 'My objective is to establish a new life in Japan, either as a professional, entrepreneur, or for my family.',
+    'onboarding.options.migrate.target': 'General interest, long-term commitment',
+    
+    'onboarding.options.live.title': 'LIVE',
+    'onboarding.options.live.description': 'I wish to find a second home, a vacation house, or a refuge to enjoy the lifestyle, culture, and nature.',
+    'onboarding.options.live.target': 'Aimed at European and Arab profiles',
+    
+    'onboarding.complete.title': 'Perfect!',
+    'onboarding.complete.description': 'We have created your initial "Blueprint". Your dashboard has been personalized to accelerate your objective.',
+    'onboarding.complete.blueprintTitle': 'Your Blueprint',
+    'onboarding.complete.finalButton': 'Welcome to your Command Center in Japan',
+    
+    // Question progress
+    'onboarding.question.progress': 'Question {current} of {total}',
+    
+    // Investment questions
+    'onboarding.questions.invest.businessType.question': 'What type of business opportunity interests you most?',
+    'onboarding.questions.invest.businessType.franquicia': 'Franchise',
+    'onboarding.questions.invest.businessType.inmuebles': 'Rental Properties',
+    'onboarding.questions.invest.businessType.startup': 'Tech Startup',
+    'onboarding.questions.invest.businessType.otros': 'Others',
+    
+    'onboarding.questions.invest.investmentRange.question': 'What is your initial investment range?',
+    'onboarding.questions.invest.investmentRange.50k-100k': '$50K - $100K',
+    'onboarding.questions.invest.investmentRange.100k-500k': '$100K - $500K',
+    'onboarding.questions.invest.investmentRange.500k-1m': '$500K - $1M',
+    'onboarding.questions.invest.investmentRange.1m+': '$1M+',
+    
+    'onboarding.questions.invest.investmentObjective.question': 'What is your main objective?',
+    'onboarding.questions.invest.investmentObjective.flujo-caja': 'Cash Flow',
+    'onboarding.questions.invest.investmentObjective.valorizacion': 'Long-term Appreciation',
+    'onboarding.questions.invest.investmentObjective.diversificacion': 'Portfolio Diversification',
+    
+    // Migration questions
+    'onboarding.questions.migrate.migrationStatus.question': 'What would be your main status in Japan?',
+    'onboarding.questions.migrate.migrationStatus.nomada': 'Digital Nomad',
+    'onboarding.questions.migrate.migrationStatus.inversionista': 'Investor with Visa',
+    'onboarding.questions.migrate.migrationStatus.empleado': 'Company Employee',
+    'onboarding.questions.migrate.migrationStatus.emprendedor': 'Entrepreneur',
+    
+    'onboarding.questions.migrate.familySize.question': 'Do you plan to migrate alone or with family?',
+    'onboarding.questions.migrate.familySize.solo': 'Alone',
+    'onboarding.questions.migrate.familySize.pareja': 'With Partner',
+    'onboarding.questions.migrate.familySize.familia': 'With Complete Family',
+    
+    'onboarding.questions.migrate.professionalField.question': 'What is your professional or study field?',
+    'onboarding.questions.migrate.professionalField.tecnologia': 'Technology',
+    'onboarding.questions.migrate.professionalField.negocios': 'Business',
+    'onboarding.questions.migrate.professionalField.arte': 'Arts/Culture',
+    'onboarding.questions.migrate.professionalField.otros': 'Others',
+    
+    // Lifestyle questions
+    'onboarding.questions.live.propertyQuality.question': 'What quality do you value most in a home?',
+    'onboarding.questions.live.propertyQuality.privacidad': 'Privacy and Luxury',
+    'onboarding.questions.live.propertyQuality.naturaleza': 'Connection with Nature',
+    'onboarding.questions.live.propertyQuality.diseno': 'Design and Authenticity',
+    'onboarding.questions.live.propertyQuality.ubicacion': 'Strategic Location',
+    
+    'onboarding.questions.live.familySize.question': 'How many people would make up your family or group?',
+    'onboarding.questions.live.familySize.solo': '1-2 people',
+    'onboarding.questions.live.familySize.pareja': '3-4 people',
+    'onboarding.questions.live.familySize.familia': '5+ people',
+    
+    'onboarding.questions.live.propertyUse.question': 'Main use of the property?',
+    'onboarding.questions.live.propertyUse.ski': 'Ski Vacations',
+    'onboarding.questions.live.propertyUse.verano': 'Summer Retreat',
+    'onboarding.questions.live.propertyUse.tiempo-parcial': 'Part-time Residence',
+    'onboarding.questions.live.propertyUse.permanente': 'Permanent Residence',
+    
+    // Weekly Pulse Widget
+    'dashboard.weeklyPulse.title': 'Your Weekly Pulse',
+    'dashboard.weeklyPulse.description': 'Personalized content for your journey',
+    'dashboard.weeklyPulse.thisWeek': 'This week',
+    'dashboard.weeklyPulse.opportunity.title': 'The Opportunity of the Week',
+    'dashboard.weeklyPulse.wisdom.title': 'Financial Wisdom Pill',
+    'dashboard.weeklyPulse.story.title': 'The Story of the Week',
+    'dashboard.weeklyPulse.stepByStep.title': 'Step by Step',
+    'dashboard.weeklyPulse.calm.title': 'Your Moment of Calm from Japan',
+    'dashboard.weeklyPulse.inspiration.title': 'Inspiration for your Sanctuary',
+    'dashboard.weeklyPulse.viewAnalysis': 'View Complete Analysis',
+    'dashboard.weeklyPulse.viewTestimonial': 'View Testimonial',
+    'dashboard.weeklyPulse.exploreMaterials': 'Explore Materials',
+    
+    // Investor Dashboard
+    'dashboard.investor.marketplace.title': 'Business Marketplace',
+    'dashboard.investor.marketplace.description': 'Business opportunities and franchises',
+    'dashboard.investor.financialCenter.title': 'Financial Center',
+    'dashboard.investor.financialCenter.description': 'Budget and cash flow projections',
+    'dashboard.investor.financialCenter.totalBudget': 'Total Budget',
+    'dashboard.investor.financialCenter.availableForInvestment': 'Available for investment',
+    'dashboard.investor.financialCenter.averageROI': 'Average ROI',
+    'dashboard.investor.financialCenter.projectedAnnualReturn': 'Projected annual return',
+    'dashboard.investor.financialCenter.monthlyFlow': 'Monthly Flow',
+    'dashboard.investor.financialCenter.rentalIncome': 'Rental income',
+    'dashboard.investor.investment': 'Investment',
+    'dashboard.investor.projectedROI': 'Projected ROI',
+    'dashboard.investor.status.exploring': 'Exploring',
+    'dashboard.investor.status.inAnalysis': 'In Analysis (3D/AR)',
+    'dashboard.investor.status.roiSimulation': 'ROI Simulation',
+    'dashboard.investor.status.readyForOffer': 'Ready for Offer',
+    'dashboard.investor.opportunities.artisanCafe.title': 'Artisan Coffee Franchise',
+    'dashboard.investor.opportunities.artisanCafe.type': 'Franchise',
+    'dashboard.investor.opportunities.artisanCafe.description': 'Specialized coffee in downtown Kusatsu',
+    'dashboard.investor.opportunities.localCrafts.title': 'Local Crafts Store',
+    'dashboard.investor.opportunities.localCrafts.type': 'Retail',
+    'dashboard.investor.opportunities.localCrafts.description': 'Sale of traditional Japanese products',
+    'dashboard.investor.nextSteps.review3DAnalysis': 'Review 3D Analysis',
+    'dashboard.investor.nextSteps.traditionalHouseAnalysis': 'Traditional Kusatsu House - Complete analysis available',
+    'dashboard.investor.nextSteps.calculateROI': 'Calculate Combined ROI',
+    'dashboard.investor.nextSteps.simulateSynergy': 'Simulate synergy with coffee franchise',
+    'dashboard.investor.nextSteps.meetingWithAnalyst': 'Meeting with Analyst',
+    'dashboard.investor.nextSteps.sessionWithMaría': 'Session with María Tanaka on new opportunities',
+    
     'navigation.discoverProjects': 'Discover Projects',
     'navigation.admin': 'Admin',
     'navigation.blueprint': 'Blueprint',
@@ -1184,6 +1352,9 @@ const translations = {
     'common.edit': '編集',
     'common.delete': '削除',
     'common.back': '戻る',
+    'common.today': '今日',
+    'common.tomorrow': '明日',
+    'common.friday': '金曜日',
     'common.next': '次へ',
     'common.previous': '前へ',
     'common.close': '閉じる',
@@ -1211,6 +1382,171 @@ const translations = {
     'navigation.terms': '利用規約',
     'navigation.login': 'ログイン',
     'navigation.dashboard': 'ダッシュボード',
+    
+    // Dashboard translations
+    'dashboard.investor.title': '投資機会コマンドセンター',
+    'dashboard.migration.title': '日本への移住ルート',
+    'dashboard.lifestyle.title': 'あなたの個人的な聖域',
+    'dashboard.default.title': 'ダッシュボード',
+    'dashboard.investor.welcome': 'おはようございます、{userName}さん。投資プロジェクトの概要です。',
+    'dashboard.migration.welcome': 'おはようございます、{userName}さん。移住ルートの概要です。',
+    'dashboard.lifestyle.welcome': 'おはようございます、{userName}さん。個人的な聖域の概要です。',
+    'dashboard.default.welcome': 'おはようございます、{userName}さん。',
+    'dashboard.description': 'あなたのパーソナライズされた体験の準備ができました。目標に特化したモジュールを探索してください。',
+    'dashboard.nextSteps.title': '重要な次のステップ',
+    'dashboard.nextSteps.dueDate': '期限',
+    'dashboard.nextSteps.viewAll': 'すべてのステップを表示',
+    'dashboard.myTeam': 'マイチーム',
+    'dashboard.investor.portfolio.title': '私の投資ポートフォリオ',
+    'dashboard.investor.portfolio.description': '分析中の物件のビジュアルパイプライン',
+    'dashboard.investor.portfolio.addProperty': '物件を追加',
+    'common.user': 'ユーザー',
+    'common.viewDetails': '詳細を見る',
+    
+    // Migration Dashboard
+    'dashboard.migration.simulator.title': '日本での生活シミュレーター',
+    'dashboard.migration.simulator.description': 'コスト計算機と統合マップ',
+    'dashboard.migration.simulator.viewTimeline': '完全なタイムラインを見る',
+    'dashboard.migration.simulator.costCalculator': '月額コスト計算機',
+    'dashboard.migration.simulator.integrationMap': '統合マップ',
+    
+    // Lifestyle Dashboard
+    'dashboard.lifestyle.designTable.title': '私の3D/ARデザインテーブル',
+    'dashboard.lifestyle.designTable.description': 'あなたの物件のためのビジュアルスペース',
+    'dashboard.lifestyle.designTable.viewRender': 'パーソナライズされたレンダリングを見る',
+    'dashboard.lifestyle.materials.title': 'マテリアルカタログ',
+    'dashboard.lifestyle.materials.description': 'マテリアルと仕上げのビジュアルライブラリ',
+    'dashboard.lifestyle.materials.viewCatalog': '完全なカタログを見る',
+    'dashboard.lifestyle.concierge.title': 'エクスペリエンスコンシェルジュ',
+    'dashboard.lifestyle.concierge.description': '体験を予約するためのインタラクティブカレンダー',
+    
+    // Onboarding
+    'onboarding.welcome.title': 'タビジハウスへようこそ',
+    'onboarding.welcome.description': '私たちはあなたの日本の未来を築くためにここにいます。あなたの道を設計しましょう。',
+    'onboarding.welcome.startButton': 'マスターパスを開始',
+    'onboarding.welcome.instruction': '続行するにはボタンをクリックしてください',
+    
+    'onboarding.question.title': '重要な質問',
+    'onboarding.question.description': '日本への旅の主な動機は何ですか？',
+    
+    'onboarding.options.invest.title': '投資',
+    'onboarding.options.invest.description': 'ポートフォリオを構築し、リターンを生み出し、フランチャイズやスタートアップなどのビジネス機会を探求したい。',
+    'onboarding.options.invest.target': '主にラテンプロファイル向け',
+    
+    'onboarding.options.migrate.title': '移住',
+    'onboarding.options.migrate.description': '私の目標は、プロフェッショナル、起業家、または家族のために日本で新しい生活を築くことです。',
+    'onboarding.options.migrate.target': '一般的な関心、長期的なコミットメント',
+    
+    'onboarding.options.live.title': '生活',
+    'onboarding.options.live.description': 'ライフスタイル、文化、自然を楽しむための第二の家、バケーション用の家、または避難所を見つけたい。',
+    'onboarding.options.live.target': 'ヨーロッパとアラブのプロファイル向け',
+    
+    'onboarding.complete.title': '完璧です！',
+    'onboarding.complete.description': '初期の「ブループリント」を作成しました。ダッシュボードは目標を加速するためにパーソナライズされています。',
+    'onboarding.complete.blueprintTitle': 'あなたのブループリント',
+    'onboarding.complete.finalButton': '日本のコマンドセンターへようこそ',
+    
+    // Question progress
+    'onboarding.question.progress': '質問 {current} / {total}',
+    
+    // Investment questions
+    'onboarding.questions.invest.businessType.question': 'どのようなビジネス機会に最も興味がありますか？',
+    'onboarding.questions.invest.businessType.franquicia': 'フランチャイズ',
+    'onboarding.questions.invest.businessType.inmuebles': '賃貸物件',
+    'onboarding.questions.invest.businessType.startup': 'テックスタートアップ',
+    'onboarding.questions.invest.businessType.otros': 'その他',
+    
+    'onboarding.questions.invest.investmentRange.question': '初期投資の範囲はどれくらいですか？',
+    'onboarding.questions.invest.investmentRange.50k-100k': '$50K - $100K',
+    'onboarding.questions.invest.investmentRange.100k-500k': '$100K - $500K',
+    'onboarding.questions.invest.investmentRange.500k-1m': '$500K - $1M',
+    'onboarding.questions.invest.investmentRange.1m+': '$1M+',
+    
+    'onboarding.questions.invest.investmentObjective.question': '主な目標は何ですか？',
+    'onboarding.questions.invest.investmentObjective.flujo-caja': 'キャッシュフロー',
+    'onboarding.questions.invest.investmentObjective.valorizacion': '長期的な価値向上',
+    'onboarding.questions.invest.investmentObjective.diversificacion': 'ポートフォリオの多様化',
+    
+    // Migration questions
+    'onboarding.questions.migrate.migrationStatus.question': '日本での主なステータスは何になりますか？',
+    'onboarding.questions.migrate.migrationStatus.nomada': 'デジタルノマド',
+    'onboarding.questions.migrate.migrationStatus.inversionista': 'ビザを持つ投資家',
+    'onboarding.questions.migrate.migrationStatus.empleado': '企業の従業員',
+    'onboarding.questions.migrate.migrationStatus.emprendedor': '起業家',
+    
+    'onboarding.questions.migrate.familySize.question': '一人で移住する予定ですか、それとも家族と一緒ですか？',
+    'onboarding.questions.migrate.familySize.solo': '一人で',
+    'onboarding.questions.migrate.familySize.pareja': 'パートナーと',
+    'onboarding.questions.migrate.familySize.familia': '完全な家族と',
+    
+    'onboarding.questions.migrate.professionalField.question': '専門分野や研究分野は何ですか？',
+    'onboarding.questions.migrate.professionalField.tecnologia': 'テクノロジー',
+    'onboarding.questions.migrate.professionalField.negocios': 'ビジネス',
+    'onboarding.questions.migrate.professionalField.arte': 'アート/文化',
+    'onboarding.questions.migrate.professionalField.otros': 'その他',
+    
+    // Lifestyle questions
+    'onboarding.questions.live.propertyQuality.question': '家で最も価値を置く品質は何ですか？',
+    'onboarding.questions.live.propertyQuality.privacidad': 'プライバシーと贅沢',
+    'onboarding.questions.live.propertyQuality.naturaleza': '自然とのつながり',
+    'onboarding.questions.live.propertyQuality.diseno': 'デザインと本物性',
+    'onboarding.questions.live.propertyQuality.ubicacion': '戦略的な立地',
+    
+    'onboarding.questions.live.familySize.question': '家族やグループは何人になりますか？',
+    'onboarding.questions.live.familySize.solo': '1-2人',
+    'onboarding.questions.live.familySize.pareja': '3-4人',
+    'onboarding.questions.live.familySize.familia': '5人以上',
+    
+    'onboarding.questions.live.propertyUse.question': '物件の主な用途は？',
+    'onboarding.questions.live.propertyUse.ski': 'スキー休暇',
+    'onboarding.questions.live.propertyUse.verano': '夏の避暑地',
+    'onboarding.questions.live.propertyUse.tiempo-parcial': 'パートタイム居住',
+    'onboarding.questions.live.propertyUse.permanente': '永住',
+    
+    // Weekly Pulse Widget
+    'dashboard.weeklyPulse.title': 'あなたの週間パルス',
+    'dashboard.weeklyPulse.description': 'あなたの旅路に合わせたパーソナライズされたコンテンツ',
+    'dashboard.weeklyPulse.thisWeek': '今週',
+    'dashboard.weeklyPulse.opportunity.title': '今週の機会',
+    'dashboard.weeklyPulse.wisdom.title': '金融の知恵のピル',
+    'dashboard.weeklyPulse.story.title': '今週のストーリー',
+    'dashboard.weeklyPulse.stepByStep.title': 'ステップバイステップ',
+    'dashboard.weeklyPulse.calm.title': '日本からのあなたの静寂の瞬間',
+    'dashboard.weeklyPulse.inspiration.title': 'あなたの聖域へのインスピレーション',
+    'dashboard.weeklyPulse.viewAnalysis': '完全な分析を見る',
+    'dashboard.weeklyPulse.viewTestimonial': '証言を見る',
+    'dashboard.weeklyPulse.exploreMaterials': '素材を探索',
+    
+    // Investor Dashboard
+    'dashboard.investor.marketplace.title': 'ビジネスマーケットプレイス',
+    'dashboard.investor.marketplace.description': 'ビジネス機会とフランチャイズ',
+    'dashboard.investor.financialCenter.title': '金融センター',
+    'dashboard.investor.financialCenter.description': '予算とキャッシュフロー予測',
+    'dashboard.investor.financialCenter.totalBudget': '総予算',
+    'dashboard.investor.financialCenter.availableForInvestment': '投資可能',
+    'dashboard.investor.financialCenter.averageROI': '平均ROI',
+    'dashboard.investor.financialCenter.projectedAnnualReturn': '年間予想リターン',
+    'dashboard.investor.financialCenter.monthlyFlow': '月間フロー',
+    'dashboard.investor.financialCenter.rentalIncome': '賃貸収入',
+    'dashboard.investor.investment': '投資',
+    'dashboard.investor.projectedROI': '予想ROI',
+    'dashboard.investor.status.exploring': '探索中',
+    'dashboard.investor.status.inAnalysis': '分析中（3D/AR）',
+    'dashboard.investor.status.roiSimulation': 'ROIシミュレーション',
+    'dashboard.investor.status.readyForOffer': 'オファー準備完了',
+    'dashboard.investor.opportunities.artisanCafe.title': 'アーティザンコーヒーフランチャイズ',
+    'dashboard.investor.opportunities.artisanCafe.type': 'フランチャイズ',
+    'dashboard.investor.opportunities.artisanCafe.description': '草津中心部の専門コーヒー',
+    'dashboard.investor.opportunities.localCrafts.title': '地元工芸品店',
+    'dashboard.investor.opportunities.localCrafts.type': '小売',
+    'dashboard.investor.opportunities.localCrafts.description': '伝統的な日本製品の販売',
+    'dashboard.investor.nextSteps.review3DAnalysis': '3D分析を確認',
+    'dashboard.investor.nextSteps.traditionalHouseAnalysis': '伝統的な草津の家 - 完全な分析が利用可能',
+    'dashboard.investor.nextSteps.calculateROI': '複合ROIを計算',
+    'dashboard.investor.nextSteps.simulateSynergy': 'コーヒーフランチャイズとのシナジーをシミュレート',
+    'dashboard.investor.nextSteps.meetingWithAnalyst': 'アナリストとの会議',
+    'dashboard.investor.nextSteps.sessionWithMaría': '新しい機会についての田中マリアとのセッション',
+    
     'navigation.discoverProjects': 'プロジェクトを発見',
     'navigation.admin': '管理',
     'navigation.blueprint': 'ブループリント',
@@ -2349,6 +2685,9 @@ const translations = {
     'common.edit': 'تعديل',
     'common.delete': 'حذف',
     'common.back': 'رجوع',
+    'common.today': 'اليوم',
+    'common.tomorrow': 'غداً',
+    'common.friday': 'الجمعة',
     'common.next': 'التالي',
     'common.previous': 'السابق',
     'common.close': 'إغلاق',
@@ -2376,6 +2715,171 @@ const translations = {
     'navigation.terms': 'الشروط',
     'navigation.login': 'تسجيل الدخول',
     'navigation.dashboard': 'لوحة التحكم',
+    
+    // Dashboard translations
+    'dashboard.investor.title': 'مركز قيادة فرص الاستثمار',
+    'dashboard.migration.title': 'طريقك للهجرة إلى اليابان',
+    'dashboard.lifestyle.title': 'ملاذك الشخصي',
+    'dashboard.default.title': 'لوحة التحكم',
+    'dashboard.investor.welcome': 'صباح الخير، {userName}. إليك ملخص مشروعك الاستثماري.',
+    'dashboard.migration.welcome': 'صباح الخير، {userName}. إليك ملخص طريقك للهجرة.',
+    'dashboard.lifestyle.welcome': 'صباح الخير، {userName}. إليك ملخص ملاذك الشخصي.',
+    'dashboard.default.welcome': 'صباح الخير، {userName}.',
+    'dashboard.description': 'تجربتك المخصصة جاهزة. استكشف الوحدات المتخصصة لهدفك.',
+    'dashboard.nextSteps.title': 'الخطوات التالية المهمة',
+    'dashboard.nextSteps.dueDate': 'الموعد النهائي',
+    'dashboard.nextSteps.viewAll': 'عرض جميع الخطوات',
+    'dashboard.myTeam': 'فريقي',
+    'dashboard.investor.portfolio.title': 'محفظتي الاستثمارية',
+    'dashboard.investor.portfolio.description': 'خط أنابيب بصري للعقارات قيد التحليل',
+    'dashboard.investor.portfolio.addProperty': 'إضافة عقار',
+    'common.user': 'المستخدم',
+    'common.viewDetails': 'عرض التفاصيل',
+    
+    // Migration Dashboard
+    'dashboard.migration.simulator.title': 'محاكي الحياة في اليابان',
+    'dashboard.migration.simulator.description': 'حاسبة التكاليف وخريطة التكامل',
+    'dashboard.migration.simulator.viewTimeline': 'عرض الجدول الزمني الكامل',
+    'dashboard.migration.simulator.costCalculator': 'حاسبة التكاليف الشهرية',
+    'dashboard.migration.simulator.integrationMap': 'خريطة التكامل',
+    
+    // Lifestyle Dashboard
+    'dashboard.lifestyle.designTable.title': 'طاولة التصميم ثلاثية الأبعاد/الواقع المعزز',
+    'dashboard.lifestyle.designTable.description': 'مساحة بصرية لعقارك',
+    'dashboard.lifestyle.designTable.viewRender': 'عرض العرض المخصص',
+    'dashboard.lifestyle.materials.title': 'كتالوج المواد',
+    'dashboard.lifestyle.materials.description': 'مكتبة بصرية للمواد واللمسات النهائية',
+    'dashboard.lifestyle.materials.viewCatalog': 'عرض الكتالوج الكامل',
+    'dashboard.lifestyle.concierge.title': 'كونسيرج التجارب',
+    'dashboard.lifestyle.concierge.description': 'تقويم تفاعلي لحجز التجارب',
+    
+    // Onboarding
+    'onboarding.welcome.title': 'مرحباً بك في تاجي هاوس',
+    'onboarding.welcome.description': 'نحن هنا لبناء مستقبلك في اليابان. دعنا نبدأ في تصميم طريقك.',
+    'onboarding.welcome.startButton': 'ابدأ مساري الرئيسي',
+    'onboarding.welcome.instruction': 'انقر على الزر للمتابعة',
+    
+    'onboarding.question.title': 'السؤال الرئيسي',
+    'onboarding.question.description': 'ما هو المحرك الرئيسي لرحلتك إلى اليابان؟',
+    
+    'onboarding.options.invest.title': 'استثمار',
+    'onboarding.options.invest.description': 'أبحث عن بناء محفظة، توليد عوائد، واستكشاف فرص تجارية مثل الامتيازات أو الشركات الناشئة.',
+    'onboarding.options.invest.target': 'موجه بشكل أساسي للملف الشخصي اللاتيني',
+    
+    'onboarding.options.migrate.title': 'هجرة',
+    'onboarding.options.migrate.description': 'هدفي هو إقامة حياة جديدة في اليابان، سواء كمحترف، رائد أعمال، أو لعائلتي.',
+    'onboarding.options.migrate.target': 'اهتمام عام، التزام طويل الأجل',
+    
+    'onboarding.options.live.title': 'عيش',
+    'onboarding.options.live.description': 'أرغب في العثور على منزل ثانٍ، منزل عطلة، أو ملاذ للاستمتاع بأسلوب الحياة والثقافة والطبيعة.',
+    'onboarding.options.live.target': 'موجه للملفات الشخصية الأوروبية والعربية',
+    
+    'onboarding.complete.title': 'ممتاز!',
+    'onboarding.complete.description': 'لقد أنشأنا "المخطط" الأولي الخاص بك. تم تخصيص لوحة التحكم لتسريع هدفك.',
+    'onboarding.complete.blueprintTitle': 'مخططك',
+    'onboarding.complete.finalButton': 'مرحباً بك في مركز القيادة في اليابان',
+    
+    // Question progress
+    'onboarding.question.progress': 'السؤال {current} من {total}',
+    
+    // Investment questions
+    'onboarding.questions.invest.businessType.question': 'ما نوع الفرصة التجارية التي تهمك أكثر؟',
+    'onboarding.questions.invest.businessType.franquicia': 'امتياز تجاري',
+    'onboarding.questions.invest.businessType.inmuebles': 'عقارات للإيجار',
+    'onboarding.questions.invest.businessType.startup': 'شركة ناشئة تقنية',
+    'onboarding.questions.invest.businessType.otros': 'أخرى',
+    
+    'onboarding.questions.invest.investmentRange.question': 'ما هو نطاق استثمارك الأولي؟',
+    'onboarding.questions.invest.investmentRange.50k-100k': '$50K - $100K',
+    'onboarding.questions.invest.investmentRange.100k-500k': '$100K - $500K',
+    'onboarding.questions.invest.investmentRange.500k-1m': '$500K - $1M',
+    'onboarding.questions.invest.investmentRange.1m+': '$1M+',
+    
+    'onboarding.questions.invest.investmentObjective.question': 'ما هو هدفك الرئيسي؟',
+    'onboarding.questions.invest.investmentObjective.flujo-caja': 'التدفق النقدي',
+    'onboarding.questions.invest.investmentObjective.valorizacion': 'الارتفاع طويل الأجل',
+    'onboarding.questions.invest.investmentObjective.diversificacion': 'تنويع المحفظة',
+    
+    // Migration questions
+    'onboarding.questions.migrate.migrationStatus.question': 'ما سيكون وضعك الرئيسي في اليابان؟',
+    'onboarding.questions.migrate.migrationStatus.nomada': 'رحالة رقمي',
+    'onboarding.questions.migrate.migrationStatus.inversionista': 'مستثمر بفيزا',
+    'onboarding.questions.migrate.migrationStatus.empleado': 'موظف شركة',
+    'onboarding.questions.migrate.migrationStatus.emprendedor': 'رائد أعمال',
+    
+    'onboarding.questions.migrate.familySize.question': 'هل تخطط للهجرة وحدك أم مع العائلة؟',
+    'onboarding.questions.migrate.familySize.solo': 'وحدي',
+    'onboarding.questions.migrate.familySize.pareja': 'مع الشريك',
+    'onboarding.questions.migrate.familySize.familia': 'مع العائلة الكاملة',
+    
+    'onboarding.questions.migrate.professionalField.question': 'ما هو مجالك المهني أو الدراسي؟',
+    'onboarding.questions.migrate.professionalField.tecnologia': 'التكنولوجيا',
+    'onboarding.questions.migrate.professionalField.negocios': 'الأعمال',
+    'onboarding.questions.migrate.professionalField.arte': 'الفن/الثقافة',
+    'onboarding.questions.migrate.professionalField.otros': 'أخرى',
+    
+    // Lifestyle questions
+    'onboarding.questions.live.propertyQuality.question': 'ما هي الجودة التي تقدرها أكثر في المنزل؟',
+    'onboarding.questions.live.propertyQuality.privacidad': 'الخصوصية والرفاهية',
+    'onboarding.questions.live.propertyQuality.naturaleza': 'الاتصال بالطبيعة',
+    'onboarding.questions.live.propertyQuality.diseno': 'التصميم والأصالة',
+    'onboarding.questions.live.propertyQuality.ubicacion': 'الموقع الاستراتيجي',
+    
+    'onboarding.questions.live.familySize.question': 'كم عدد الأشخاص الذين سيشكلون عائلتك أو مجموعتك؟',
+    'onboarding.questions.live.familySize.solo': '1-2 أشخاص',
+    'onboarding.questions.live.familySize.pareja': '3-4 أشخاص',
+    'onboarding.questions.live.familySize.familia': '5+ أشخاص',
+    
+    'onboarding.questions.live.propertyUse.question': 'الاستخدام الرئيسي للعقار؟',
+    'onboarding.questions.live.propertyUse.ski': 'عطلات التزلج',
+    'onboarding.questions.live.propertyUse.verano': 'ملاذ صيفي',
+    'onboarding.questions.live.propertyUse.tiempo-parcial': 'إقامة جزئية',
+    'onboarding.questions.live.propertyUse.permanente': 'إقامة دائمة',
+    
+    // Weekly Pulse Widget
+    'dashboard.weeklyPulse.title': 'نبضك الأسبوعي',
+    'dashboard.weeklyPulse.description': 'محتوى مخصص لرحلتك',
+    'dashboard.weeklyPulse.thisWeek': 'هذا الأسبوع',
+    'dashboard.weeklyPulse.opportunity.title': 'فرصة الأسبوع',
+    'dashboard.weeklyPulse.wisdom.title': 'حبة الحكمة المالية',
+    'dashboard.weeklyPulse.story.title': 'قصة الأسبوع',
+    'dashboard.weeklyPulse.stepByStep.title': 'خطوة بخطوة',
+    'dashboard.weeklyPulse.calm.title': 'لحظة الهدوء من اليابان',
+    'dashboard.weeklyPulse.inspiration.title': 'إلهام لملاذك',
+    'dashboard.weeklyPulse.viewAnalysis': 'عرض التحليل الكامل',
+    'dashboard.weeklyPulse.viewTestimonial': 'عرض الشهادة',
+    'dashboard.weeklyPulse.exploreMaterials': 'استكشاف المواد',
+    
+    // Investor Dashboard
+    'dashboard.investor.marketplace.title': 'سوق الأعمال',
+    'dashboard.investor.marketplace.description': 'فرص الأعمال والامتيازات التجارية',
+    'dashboard.investor.financialCenter.title': 'المركز المالي',
+    'dashboard.investor.financialCenter.description': 'الميزانية وتوقعات التدفق النقدي',
+    'dashboard.investor.financialCenter.totalBudget': 'الميزانية الإجمالية',
+    'dashboard.investor.financialCenter.availableForInvestment': 'متاح للاستثمار',
+    'dashboard.investor.financialCenter.averageROI': 'متوسط العائد على الاستثمار',
+    'dashboard.investor.financialCenter.projectedAnnualReturn': 'العائد السنوي المتوقع',
+    'dashboard.investor.financialCenter.monthlyFlow': 'التدفق الشهري',
+    'dashboard.investor.financialCenter.rentalIncome': 'دخل الإيجار',
+    'dashboard.investor.investment': 'الاستثمار',
+    'dashboard.investor.projectedROI': 'العائد على الاستثمار المتوقع',
+    'dashboard.investor.status.exploring': 'استكشاف',
+    'dashboard.investor.status.inAnalysis': 'قيد التحليل (3D/AR)',
+    'dashboard.investor.status.roiSimulation': 'محاكاة العائد على الاستثمار',
+    'dashboard.investor.status.readyForOffer': 'جاهز للعرض',
+    'dashboard.investor.opportunities.artisanCafe.title': 'امتياز القهوة الحرفية',
+    'dashboard.investor.opportunities.artisanCafe.type': 'امتياز تجاري',
+    'dashboard.investor.opportunities.artisanCafe.description': 'قهوة متخصصة في وسط كوساتسو',
+    'dashboard.investor.opportunities.localCrafts.title': 'متجر الحرف المحلية',
+    'dashboard.investor.opportunities.localCrafts.type': 'بيع بالتجزئة',
+    'dashboard.investor.opportunities.localCrafts.description': 'بيع المنتجات اليابانية التقليدية',
+    'dashboard.investor.nextSteps.review3DAnalysis': 'مراجعة التحليل ثلاثي الأبعاد',
+    'dashboard.investor.nextSteps.traditionalHouseAnalysis': 'منزل كوساتسو التقليدي - تحليل كامل متاح',
+    'dashboard.investor.nextSteps.calculateROI': 'حساب العائد على الاستثمار المجمع',
+    'dashboard.investor.nextSteps.simulateSynergy': 'محاكاة التآزر مع امتياز القهوة',
+    'dashboard.investor.nextSteps.meetingWithAnalyst': 'اجتماع مع المحلل',
+    'dashboard.investor.nextSteps.sessionWithMaría': 'جلسة مع ماريا تاناكا حول الفرص الجديدة',
+    
     'navigation.discoverProjects': 'اكتشف المشاريع',
     'navigation.admin': 'الإدارة',
     'navigation.blueprint': 'المخطط',
@@ -3512,6 +4016,9 @@ const translations = {
     'common.view': 'Ver',
     'common.close': 'Cerrar',
     'common.back': 'Volver',
+    'common.today': 'Hoy',
+    'common.tomorrow': 'Mañana',
+    'common.friday': 'Viernes',
     'common.next': 'Siguiente',
     'common.previous': 'Anterior',
     'common.submit': 'Enviar',
@@ -3562,6 +4069,171 @@ const translations = {
     'navigation.terms': 'Términos',
     'navigation.login': 'Iniciar Sesión',
     'navigation.dashboard': 'Dashboard',
+    
+    // Dashboard translations
+    'dashboard.investor.title': 'Centro de Mando de Oportunidades',
+    'dashboard.migration.title': 'Tu Ruta Migratoria a Japón',
+    'dashboard.lifestyle.title': 'Tu Santuario Personal',
+    'dashboard.default.title': 'Dashboard',
+    'dashboard.investor.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Proyecto de Inversión.',
+    'dashboard.migration.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Ruta Migratoria.',
+    'dashboard.lifestyle.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Santuario Personal.',
+    'dashboard.default.welcome': 'Buenos días, {userName}.',
+    'dashboard.description': 'Tu experiencia personalizada está lista. Explora los módulos especializados para tu objetivo.',
+    'dashboard.nextSteps.title': 'Próximos Pasos Clave',
+    'dashboard.nextSteps.dueDate': 'Vence',
+    'dashboard.nextSteps.viewAll': 'Ver Todos los Pasos',
+    'dashboard.myTeam': 'Mi Equipo',
+    'dashboard.investor.portfolio.title': 'Mi Portafolio de Oportunidades',
+    'dashboard.investor.portfolio.description': 'Pipeline visual de propiedades en análisis',
+    'dashboard.investor.portfolio.addProperty': 'Agregar Propiedad',
+    'common.user': 'Usuario',
+    'common.viewDetails': 'Ver Detalles',
+    
+    // Migration Dashboard
+    'dashboard.migration.simulator.title': 'Simulador de Vida en Japón',
+    'dashboard.migration.simulator.description': 'Calculadora de costos y mapa de integración',
+    'dashboard.migration.simulator.viewTimeline': 'Ver Timeline Completo',
+    'dashboard.migration.simulator.costCalculator': 'Calculadora de Costos Mensuales',
+    'dashboard.migration.simulator.integrationMap': 'Mapa de Integración',
+    
+    // Lifestyle Dashboard
+    'dashboard.lifestyle.designTable.title': 'Mi Mesa de Diseño 3D/AR',
+    'dashboard.lifestyle.designTable.description': 'Espacio visual para tu propiedad',
+    'dashboard.lifestyle.designTable.viewRender': 'Ver Render Personalizado',
+    'dashboard.lifestyle.materials.title': 'Catálogo de Materiales',
+    'dashboard.lifestyle.materials.description': 'Biblioteca visual de materiales y acabados',
+    'dashboard.lifestyle.materials.viewCatalog': 'Ver Catálogo Completo',
+    'dashboard.lifestyle.concierge.title': 'Concierge de Experiencias',
+    'dashboard.lifestyle.concierge.description': 'Calendario interactivo para reservar experiencias',
+    
+    // Onboarding
+    'onboarding.welcome.title': 'Bienvenido a Tabiji House',
+    'onboarding.welcome.description': 'Estamos aquí para construir tu futuro en Japón. Empecemos a diseñar tu camino.',
+    'onboarding.welcome.startButton': 'Comenzar Mi Ruta Maestra',
+    'onboarding.welcome.instruction': 'Haz clic en el botón para continuar',
+    
+    'onboarding.question.title': 'La Pregunta Clave',
+    'onboarding.question.description': '¿Cuál es el principal motor de tu viaje hacia Japón?',
+    
+    'onboarding.options.invest.title': 'INVERTIR',
+    'onboarding.options.invest.description': 'Busco construir un portafolio, generar rendimiento y explorar oportunidades de negocio como franquicias o startups.',
+    'onboarding.options.invest.target': 'Dirigido principalmente al perfil Latino',
+    
+    'onboarding.options.migrate.title': 'MIGRAR',
+    'onboarding.options.migrate.description': 'Mi objetivo es establecer una nueva vida en Japón, ya sea como profesional, emprendedor o para mi familia.',
+    'onboarding.options.migrate.target': 'Interés general, compromiso a largo plazo',
+    
+    'onboarding.options.live.title': 'VIVIR',
+    'onboarding.options.live.description': 'Deseo encontrar un segundo hogar, una casa de vacaciones o un refugio para disfrutar del estilo de vida, la cultura y la naturaleza.',
+    'onboarding.options.live.target': 'Dirigido a perfiles Europeo y Árabe',
+    
+    'onboarding.complete.title': '¡Perfecto!',
+    'onboarding.complete.description': 'Hemos creado tu "Blueprint" inicial. Tu dashboard ha sido personalizado para acelerar tu objetivo.',
+    'onboarding.complete.blueprintTitle': 'Tu Blueprint',
+    'onboarding.complete.finalButton': 'Bienvenido a tu Centro de Mando en Japón',
+    
+    // Question progress
+    'onboarding.question.progress': 'Pregunta {current} de {total}',
+    
+    // Investment questions
+    'onboarding.questions.invest.businessType.question': '¿Qué tipo de oportunidad de negocio te interesa más?',
+    'onboarding.questions.invest.businessType.franquicia': 'Franquicia',
+    'onboarding.questions.invest.businessType.inmuebles': 'Inmuebles para alquilar',
+    'onboarding.questions.invest.businessType.startup': 'Startup tecnológica',
+    'onboarding.questions.invest.businessType.otros': 'Otros',
+    
+    'onboarding.questions.invest.investmentRange.question': '¿Cuál es tu rango de inversión inicial?',
+    'onboarding.questions.invest.investmentRange.50k-100k': '$50K - $100K',
+    'onboarding.questions.invest.investmentRange.100k-500k': '$100K - $500K',
+    'onboarding.questions.invest.investmentRange.500k-1m': '$500K - $1M',
+    'onboarding.questions.invest.investmentRange.1m+': '$1M+',
+    
+    'onboarding.questions.invest.investmentObjective.question': '¿Cuál es tu principal objetivo?',
+    'onboarding.questions.invest.investmentObjective.flujo-caja': 'Flujo de caja',
+    'onboarding.questions.invest.investmentObjective.valorizacion': 'Valorización a largo plazo',
+    'onboarding.questions.invest.investmentObjective.diversificacion': 'Diversificación de portafolio',
+    
+    // Migration questions
+    'onboarding.questions.migrate.migrationStatus.question': '¿Cuál sería tu estatus principal en Japón?',
+    'onboarding.questions.migrate.migrationStatus.nomada': 'Nómada digital',
+    'onboarding.questions.migrate.migrationStatus.inversionista': 'Inversionista con visa',
+    'onboarding.questions.migrate.migrationStatus.empleado': 'Empleado de empresa',
+    'onboarding.questions.migrate.migrationStatus.emprendedor': 'Emprendedor',
+    
+    'onboarding.questions.migrate.familySize.question': '¿Planean migrar solos o con familia?',
+    'onboarding.questions.migrate.familySize.solo': 'Solo',
+    'onboarding.questions.migrate.familySize.pareja': 'Con pareja',
+    'onboarding.questions.migrate.familySize.familia': 'Con familia completa',
+    
+    'onboarding.questions.migrate.professionalField.question': '¿Cuál es tu campo profesional o de estudios?',
+    'onboarding.questions.migrate.professionalField.tecnologia': 'Tecnología',
+    'onboarding.questions.migrate.professionalField.negocios': 'Negocios',
+    'onboarding.questions.migrate.professionalField.arte': 'Arte/Cultura',
+    'onboarding.questions.migrate.professionalField.otros': 'Otros',
+    
+    // Lifestyle questions
+    'onboarding.questions.live.propertyQuality.question': '¿Qué cualidad valoras más en un hogar?',
+    'onboarding.questions.live.propertyQuality.privacidad': 'Privacidad y lujo',
+    'onboarding.questions.live.propertyQuality.naturaleza': 'Conexión con la naturaleza',
+    'onboarding.questions.live.propertyQuality.diseno': 'Diseño y autenticidad',
+    'onboarding.questions.live.propertyQuality.ubicacion': 'Ubicación estratégica',
+    
+    'onboarding.questions.live.familySize.question': '¿Cuántas personas conformarían tu familia o grupo?',
+    'onboarding.questions.live.familySize.solo': '1-2 personas',
+    'onboarding.questions.live.familySize.pareja': '3-4 personas',
+    'onboarding.questions.live.familySize.familia': '5+ personas',
+    
+    'onboarding.questions.live.propertyUse.question': '¿Uso principal de la propiedad?',
+    'onboarding.questions.live.propertyUse.ski': 'Vacaciones de ski',
+    'onboarding.questions.live.propertyUse.verano': 'Retiro de verano',
+    'onboarding.questions.live.propertyUse.tiempo-parcial': 'Residencia a tiempo parcial',
+    'onboarding.questions.live.propertyUse.permanente': 'Residencia permanente',
+    
+    // Weekly Pulse Widget
+    'dashboard.weeklyPulse.title': 'Tu Pulso Semanal',
+    'dashboard.weeklyPulse.description': 'Contenido personalizado para tu viaje',
+    'dashboard.weeklyPulse.thisWeek': 'Esta semana',
+    'dashboard.weeklyPulse.opportunity.title': 'La Oportunidad de la Semana',
+    'dashboard.weeklyPulse.wisdom.title': 'Píldora de Sabiduría Financiera',
+    'dashboard.weeklyPulse.story.title': 'La Historia de la Semana',
+    'dashboard.weeklyPulse.stepByStep.title': 'Paso a Paso',
+    'dashboard.weeklyPulse.calm.title': 'Tu Momento de Calma desde Japón',
+    'dashboard.weeklyPulse.inspiration.title': 'Inspiración para tu Santuario',
+    'dashboard.weeklyPulse.viewAnalysis': 'Ver Análisis Completo',
+    'dashboard.weeklyPulse.viewTestimonial': 'Ver Testimonial',
+    'dashboard.weeklyPulse.exploreMaterials': 'Explorar Materiales',
+    
+    // Investor Dashboard
+    'dashboard.investor.marketplace.title': 'Marketplace de Negocios',
+    'dashboard.investor.marketplace.description': 'Oportunidades de negocio y franquicias',
+    'dashboard.investor.financialCenter.title': 'Centro Financiero',
+    'dashboard.investor.financialCenter.description': 'Presupuesto y proyecciones de flujo de caja',
+    'dashboard.investor.financialCenter.totalBudget': 'Presupuesto Total',
+    'dashboard.investor.financialCenter.availableForInvestment': 'Disponible para inversión',
+    'dashboard.investor.financialCenter.averageROI': 'ROI Promedio',
+    'dashboard.investor.financialCenter.projectedAnnualReturn': 'Retorno anual proyectado',
+    'dashboard.investor.financialCenter.monthlyFlow': 'Flujo Mensual',
+    'dashboard.investor.financialCenter.rentalIncome': 'Ingresos por alquileres',
+    'dashboard.investor.investment': 'Inversión',
+    'dashboard.investor.projectedROI': 'ROI Proyectado',
+    'dashboard.investor.status.exploring': 'Explorando',
+    'dashboard.investor.status.inAnalysis': 'En Análisis (3D/AR)',
+    'dashboard.investor.status.roiSimulation': 'Simulación ROI',
+    'dashboard.investor.status.readyForOffer': 'Listo para Oferta',
+    'dashboard.investor.opportunities.artisanCafe.title': 'Franquicia de Café Artesanal',
+    'dashboard.investor.opportunities.artisanCafe.type': 'Franquicia',
+    'dashboard.investor.opportunities.artisanCafe.description': 'Café especializado en el centro de Kusatsu',
+    'dashboard.investor.opportunities.localCrafts.title': 'Tienda de Artesanías Locales',
+    'dashboard.investor.opportunities.localCrafts.type': 'Retail',
+    'dashboard.investor.opportunities.localCrafts.description': 'Venta de productos tradicionales japoneses',
+    'dashboard.investor.nextSteps.review3DAnalysis': 'Revisar Análisis 3D',
+    'dashboard.investor.nextSteps.traditionalHouseAnalysis': 'Casa Tradicional Kusatsu - Análisis completo disponible',
+    'dashboard.investor.nextSteps.calculateROI': 'Calcular ROI Combinado',
+    'dashboard.investor.nextSteps.simulateSynergy': 'Simular sinergia con franquicia de café',
+    'dashboard.investor.nextSteps.meetingWithAnalyst': 'Reunión con Analista',
+    'dashboard.investor.nextSteps.sessionWithMaría': 'Sesión con María Tanaka sobre nuevas oportunidades',
+    
     'navigation.discoverProjects': 'Descubrir Proyectos',
     'navigation.admin': 'Admin',
     'navigation.blueprint': 'Blueprint',
@@ -4810,8 +5482,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   });
 
   // Función para obtener traducción
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+  const t = (key: string, variables?: Record<string, string>): string => {
+    let translation = translations[language][key as keyof typeof translations[typeof language]] || key;
+    
+    // Interpolación de variables
+    if (variables) {
+      Object.entries(variables).forEach(([varKey, varValue]) => {
+        translation = translation.replace(new RegExp(`{${varKey}}`, 'g'), varValue);
+      });
+    }
+    
+    return translation;
   };
 
   // Función para cambiar idioma con persistencia

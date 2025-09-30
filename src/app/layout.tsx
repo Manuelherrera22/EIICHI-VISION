@@ -4,6 +4,7 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { ArquitectoProvider } from "@/contexts/ArquitectoContext";
 import DynamicMetadata from "@/components/DynamicMetadata";
 
 const inter = Inter({
@@ -36,9 +37,11 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <AuthProvider>
-            <DynamicMetadata />
-            <Analytics gaId="G-XXXXXXXXXX" />
-            {children}
+            <ArquitectoProvider>
+              <DynamicMetadata />
+              <Analytics gaId="G-XXXXXXXXXX" />
+              {children}
+            </ArquitectoProvider>
           </AuthProvider>
         </LanguageProvider>
       </body>
