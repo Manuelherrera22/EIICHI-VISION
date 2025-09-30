@@ -6,6 +6,20 @@
   NODE_VERSION = "18"
   NPM_VERSION = "9"
 
+# Redirección forzada de HTTP a HTTPS
+[[redirects]]
+  from = "http://tabijihouse.com/*"
+  to = "https://tabijihouse.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.tabijihouse.com/*"
+  to = "https://www.tabijihouse.com/:splat"
+  status = 301
+  force = true
+
+# Redirección para SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -19,6 +33,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "upgrade-insecure-requests"
 
 [[headers]]
   for = "/static/*"
