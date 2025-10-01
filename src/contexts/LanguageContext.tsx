@@ -60,6 +60,7 @@ const translations = {
     'navigation.contact': 'Contact',
     'navigation.guide': 'Guide',
     'navigation.process': 'Process',
+    'navigation.services': 'Services',
     'navigation.journal': 'Journal',
     'navigation.privacy': 'Privacy',
     'navigation.terms': 'Terms',
@@ -258,7 +259,7 @@ const translations = {
     'projects.underRenovation': 'Under Renovation',
     
     // Hero
-    'hero.title': 'Komorebi House',
+    'hero.title': 'Tabiji House',
     'hero.subtitle': 'Build Your Future. Honor The Past.',
     'hero.description': 'Invest in Japan\'s heritage homes, guided by the legacy of traditional architecture. Transform akiya properties in Gunma into valuable assets and dream homes.',
     'hero.cta': 'Start Your Journey',
@@ -547,7 +548,7 @@ const translations = {
     'footer.newsletterDescription': 'Stay updated with our latest projects and insights.',
     'footer.subscribe': 'Subscribe',
     'footer.emailPlaceholder': 'Enter your email',
-    'footer.copyright': '© 2024 Komorebi House. All rights reserved.',
+    'footer.copyright': '© 2024 Tabiji House. All rights reserved.',
     
     // Contact
     'contact.title': 'Get In Touch',
@@ -561,7 +562,7 @@ const translations = {
     'contact.form.error': 'Failed to send message. Please try again.',
     
     // About
-    'about.title': 'About Komorebi House',
+    'about.title': 'About Tabiji House',
     'about.subtitle': 'Preserving Heritage, Building Futures',
     'about.mission': 'Our Mission',
     'about.vision': 'Our Vision',
@@ -635,6 +636,7 @@ const translations = {
     'footer.resources': 'Resources',
     'footer.ourLegacy': 'Our Legacy',
     'footer.thePath': 'The Path',
+    'footer.services': 'Services',
     'footer.journal': 'Journal',
     'footer.contact': 'Contact',
     'footer.featuredProjects': 'Featured Projects',
@@ -681,7 +683,7 @@ const translations = {
     'contact.sending': 'Sending...',
     'contact.sendMessage': 'Send Message',
     'contact.messageSent': 'Message Sent!',
-    'contact.thankYou': 'Thank you for your interest in Komorebi House. We will get in touch with you within the next 24 hours.',
+    'contact.thankYou': 'Thank you for your interest in Tabiji House. We will get in touch with you within the next 24 hours.',
     'contact.sendAnother': 'Send Another Message',
     'contact.countries.us': 'United States',
     'contact.countries.ca': 'Canada',
@@ -699,8 +701,8 @@ const translations = {
     'contact.interests.consultation': 'General Consultation',
     
     // AI Chat
-    'ai.welcomeMessage': 'Hello! I\'m your Komorebi House assistant. How can I help you with your Japanese property investment?',
-    'ai.assistantName': 'Komorebi Assistant',
+    'ai.welcomeMessage': 'Hello! I\'m your Tabiji House assistant. How can I help you with your Japanese property investment?',
+    'ai.assistantName': 'Tabiji Assistant',
     'ai.online': 'Online',
     'ai.placeholder': 'Type your question...',
     'ai.responses.propertyOpportunities': 'Akiya properties in Gunma offer excellent investment opportunities. Are you interested in learning more about the purchase process?',
@@ -712,7 +714,7 @@ const translations = {
     // Philosophy Section
     'philosophy.ourPhilosophyInAction': 'Our Philosophy in Action',
     'philosophy.analectsAndAbacus': 'The Analects and the Abacus',
-    'philosophy.philosophyDescription': '論語と算盤 - The perfect combination between Confucian ethics and business efficiency that guides every decision at Komorebi House.',
+    'philosophy.philosophyDescription': '論語と算盤 - The perfect combination between Confucian ethics and business efficiency that guides every decision at Tabiji House.',
     'philosophy.analects': 'The Analects',
     'philosophy.analectsSubtitle': '論語 - Our Ethics and Purpose',
     'philosophy.abacus': 'The Abacus',
@@ -1001,7 +1003,7 @@ const translations = {
     'journal.searchPlaceholder': 'Search articles...',
     'journal.emailPlaceholder': 'Your email',
     'journal.philosophyGapponshugi': 'Gapponshugi Philosophy in the 21st Century',
-    'journal.philosophyExcerpt': 'How traditional Japanese architecture principles remain relevant in modern design and how we apply them at Komorebi House.',
+    'journal.philosophyExcerpt': 'How traditional Japanese architecture principles remain relevant in modern design and how we apply them at Tabiji House.',
     'journal.philosophyAuthor': 'Dr. Tanaka Hiroshi',
     'journal.artisansGunma': 'Gunma Artisans: Guardians of Tradition',
     'journal.artisansExcerpt': 'Meet the master craftsmen who preserve centuries-old techniques and how they work on our renovation projects.',
@@ -1126,7 +1128,7 @@ const translations = {
     // About Page
     'about.heroSubtitle': 'From Industry to Revitalization',
     'about.heroTitle': 'The Story of',
-    'about.heroTitleAccent': 'Komorebi House',
+    'about.heroTitleAccent': 'Tabiji House',
     'about.heroDescription': 'A new generation continues the legacy of traditional Japanese architecture, connecting cultural heritage with visionary global citizens.',
     'about.visionaryPart': 'Part 1: The Visionary',
     'about.visionaryTitle': 'Shibusawa Eiichi',
@@ -1143,7 +1145,7 @@ const translations = {
     'about.newGenerationDescription': 'A unique family connection and shared mission that honors the legacy while building the future.',
     'about.familyConnection': 'Family Connection',
     'about.directDescendants': 'Direct Descendants',
-    'about.familyDescription': 'The founding partners of Komorebi House are direct descendants of Shibusawa Eiichi, inheriting not only the name but also the transformative vision and ethical values that defined his legacy.',
+    'about.familyDescription': 'The founding partners of Tabiji House are direct descendants of Shibusawa Eiichi, inheriting not only the name but also the transformative vision and ethical values that defined his legacy.',
     'about.heritageValues': 'Heritage of ethical values',
     'about.communityCommitment': 'Community commitment',
     'about.longTermVision': 'Long-term vision',
@@ -1165,6 +1167,16 @@ const translations = {
     'about.ctaTitle': 'Ready to Be Part of History?',
     'about.ctaDescription': 'Join us in this revitalization mission and become part of Shibusawa Eiichi\'s continuing legacy.',
     'about.ctaButton': 'Start Your Vision',
+    
+    // Strategic Alliance Section
+    'about.strategicAllianceSubtitle': 'Our Strategic Alliance',
+    'about.strategicAllianceTitle': 'Global Vision and Japanese Trust',
+    'about.strategicAllianceDescription': 'The technological agility of Tabiji House joins the solidity and trust of JNI Properties, creating an alliance that combines innovation with Japanese business tradition.',
+    'about.toshinoriName': 'Toshinori Shibusawa',
+    'about.toshinoriTitle': 'Representative, JNI Properties Co., Ltd.',
+    'about.alliancePhilosophy': 'Our alliance with JNI Properties is founded on a shared philosophy: the belief that large investments must generate lasting value for the community and the individual.',
+    'about.leadershipVision': 'Under the leadership of Toshinori Shibusawa, this vision is not an echo of the past, but an active commitment to ethical development, impeccable quality, and a sustainable future.',
+    'about.guaranteeMessage': 'It is the guarantee that every Tabiji House project is built on a foundation of trust, purpose, and excellence.',
     
     // Kusatsu Project Page
     'kusatsu.fullNamePlaceholder': 'Your full name',
@@ -1377,6 +1389,7 @@ const translations = {
     'navigation.contact': 'お問い合わせ',
     'navigation.guide': 'ガイド',
     'navigation.process': 'プロセス',
+    'navigation.services': 'サービス',
     'navigation.journal': 'ジャーナル',
     'navigation.privacy': 'プライバシー',
     'navigation.terms': '利用規約',
@@ -1575,7 +1588,7 @@ const translations = {
     'projects.underRenovation': '改修中',
     
     // Hero
-    'hero.title': 'こもれびハウス',
+    'hero.title': 'タビジハウス',
     'hero.subtitle': '未来を築く。過去を敬う。',
     'hero.description': '伝統建築の遺産に導かれながら、日本の古民家に投資しましょう。群馬の空き家を価値ある資産と夢の家に変身させます。',
     'hero.cta': '旅を始める',
@@ -1968,6 +1981,7 @@ const translations = {
     'footer.resources': 'リソース',
     'footer.ourLegacy': '私たちの遺産',
     'footer.thePath': '道のり',
+    'footer.services': 'サービス',
     'footer.journal': 'ジャーナル',
     'footer.contact': 'お問い合わせ',
     'footer.featuredProjects': '注目のプロジェクト',
@@ -2334,7 +2348,7 @@ const translations = {
     'journal.searchPlaceholder': '記事を検索...',
     'journal.emailPlaceholder': 'あなたのメール',
     'journal.philosophyGapponshugi': '21世紀の合本主義哲学',
-    'journal.philosophyExcerpt': '伝統的な日本建築の原則が現代デザインでどのように関連性を保ち、Komorebi Houseでどのように適用しているか。',
+    'journal.philosophyExcerpt': '伝統的な日本建築の原則が現代デザインでどのように関連性を保ち、Tabiji Houseでどのように適用しているか。',
     'journal.philosophyAuthor': '田中博志博士',
     'journal.artisansGunma': '群馬の職人：伝統の守護者',
     'journal.artisansExcerpt': '数世紀にわたる技術を保存する職人たちと、彼らがリノベーションプロジェクトでどのように働いているかを知る。',
@@ -2498,6 +2512,16 @@ const translations = {
     'about.ctaTitle': '歴史の一部になる準備はできていますか？',
     'about.ctaDescription': 'この復興の使命に参加し、渋沢栄一の継続する遺産の一部になりましょう。',
     'about.ctaButton': 'あなたのビジョンを始める',
+    
+    // Strategic Alliance Section
+    'about.strategicAllianceSubtitle': '私たちの戦略的提携',
+    'about.strategicAllianceTitle': 'グローバルビジョンと日本の信頼性',
+    'about.strategicAllianceDescription': 'タビジハウスの技術的機動性がJNIプロパティーズの堅実性と信頼性と結びつき、革新と日本のビジネス伝統を組み合わせた提携を創出しています。',
+    'about.toshinoriName': '渋澤俊徳',
+    'about.toshinoriTitle': '代表取締役、JNIプロパティーズ株式会社',
+    'about.alliancePhilosophy': 'JNIプロパティーズとの私たちの提携は、共有された哲学に基づいています：大きな投資は、コミュニティと個人のために持続的な価値を生み出さなければならないという信念です。',
+    'about.leadershipVision': '渋澤俊徳のリーダーシップの下、このビジョンは過去の反響ではなく、倫理的な発展、完璧な品質、持続可能な未来への積極的なコミットメントです。',
+    'about.guaranteeMessage': 'これは、すべてのタビジハウスプロジェクトが信頼、目的、卓越性の基盤の上に構築されるという保証です。',
     
     // Kusatsu Project Page
     'kusatsu.fullNamePlaceholder': 'お名前',
@@ -2710,6 +2734,7 @@ const translations = {
     'navigation.contact': 'اتصل بنا',
     'navigation.guide': 'الدليل',
     'navigation.process': 'العملية',
+    'navigation.services': 'الخدمات',
     'navigation.journal': 'المجلة',
     'navigation.privacy': 'الخصوصية',
     'navigation.terms': 'الشروط',
@@ -2908,7 +2933,7 @@ const translations = {
     'projects.underRenovation': 'قيد التجديد',
     
     // Hero
-    'hero.title': 'بيت كوموريبي',
+    'hero.title': 'بيت تاباتجي',
     'hero.subtitle': 'ابن مستقبلك. أكرم ماضيك.',
     'hero.description': 'استثمر في المنازل التراثية اليابانية، مسترشداً بإرث العمارة التقليدية. حول ممتلكات أكيا في غونما إلى أصول قيمة ومنازل أحلام.',
     'hero.cta': 'ابدأ رحلتك',
@@ -3298,6 +3323,7 @@ const translations = {
     'footer.resources': 'الموارد',
     'footer.ourLegacy': 'تراثنا',
     'footer.thePath': 'الطريق',
+    'footer.services': 'الخدمات',
     'footer.journal': 'المجلة',
     'footer.contact': 'اتصل بنا',
     'footer.featuredProjects': 'المشاريع المميزة',
@@ -3344,7 +3370,7 @@ const translations = {
     'contact.sending': 'جاري الإرسال...',
     'contact.sendMessage': 'إرسال الرسالة',
     'contact.messageSent': 'تم إرسال الرسالة!',
-    'contact.thankYou': 'شكراً لاهتمامك بـ Komorebi House. سنتواصل معك خلال الـ 24 ساعة القادمة.',
+    'contact.thankYou': 'شكراً لاهتمامك بـ Tabiji House. سنتواصل معك خلال الـ 24 ساعة القادمة.',
     'contact.sendAnother': 'إرسال رسالة أخرى',
     'contact.countries.us': 'الولايات المتحدة',
     'contact.countries.ca': 'كندا',
@@ -3362,7 +3388,7 @@ const translations = {
     'contact.interests.consultation': 'استشارة عامة',
     
     // AI Chat
-    'ai.welcomeMessage': 'مرحباً! أنا مساعدك في Komorebi House. كيف يمكنني مساعدتك في استثمارك العقاري الياباني؟',
+    'ai.welcomeMessage': 'مرحباً! أنا مساعدك في Tabiji House. كيف يمكنني مساعدتك في استثمارك العقاري الياباني؟',
     'ai.assistantName': 'مساعد كوموربي',
     'ai.online': 'متصل',
     'ai.placeholder': 'اكتب سؤالك...',
@@ -3375,7 +3401,7 @@ const translations = {
     // Philosophy Section
     'philosophy.ourPhilosophyInAction': 'فلسفتنا في العمل',
     'philosophy.analectsAndAbacus': 'الأقوال والمعداد',
-    'philosophy.philosophyDescription': '論語と算盤 - المزيج المثالي بين الأخلاق الكونفوشيوسية وكفاءة الأعمال التي توجه كل قرار في Komorebi House.',
+    'philosophy.philosophyDescription': '論語と算盤 - المزيج المثالي بين الأخلاق الكونفوشيوسية وكفاءة الأعمال التي توجه كل قرار في Tabiji House.',
     'philosophy.analects': 'الأقوال',
     'philosophy.analectsSubtitle': '論語 - أخلاقنا وغرضنا',
     'philosophy.abacus': 'المعداد',
@@ -3664,7 +3690,7 @@ const translations = {
     'journal.searchPlaceholder': 'البحث في المقالات...',
     'journal.emailPlaceholder': 'بريدك الإلكتروني',
     'journal.philosophyGapponshugi': 'فلسفة جابونشوجي في القرن الحادي والعشرين',
-    'journal.philosophyExcerpt': 'كيف تبقى مبادئ العمارة اليابانية التقليدية ذات صلة في التصميم الحديث وكيف نطبقها في Komorebi House.',
+    'journal.philosophyExcerpt': 'كيف تبقى مبادئ العمارة اليابانية التقليدية ذات صلة في التصميم الحديث وكيف نطبقها في Tabiji House.',
     'journal.philosophyAuthor': 'د. تاناكا هيروشي',
     'journal.artisansGunma': 'حرفيو غونما: حراس التقاليد',
     'journal.artisansExcerpt': 'تعرف على الحرفيين المهرة الذين يحافظون على التقنيات القديمة وكيف يعملون في مشاريع التجديد لدينا.',
@@ -3828,6 +3854,16 @@ const translations = {
     'about.ctaTitle': 'هل أنت مستعد لتصبح جزءاً من التاريخ؟',
     'about.ctaDescription': 'انضم إلينا في مهمة الإحياء هذه وكن جزءاً من الإرث المستمر لشيبوساوا إييتشي.',
     'about.ctaButton': 'ابدأ رؤيتك',
+    
+    // Strategic Alliance Section
+    'about.strategicAllianceSubtitle': 'تحالفنا الاستراتيجي',
+    'about.strategicAllianceTitle': 'رؤية عالمية وثقة يابانية',
+    'about.strategicAllianceDescription': 'تتحد مرونة تاباتجي هاوس التقنية مع متانة وثقة JNI Properties، مما يخلق تحالفاً يجمع بين الابتكار والتقاليد التجارية اليابانية.',
+    'about.toshinoriName': 'توشينوري شيبوساوا',
+    'about.toshinoriTitle': 'ممثل، شركة JNI Properties المحدودة',
+    'about.alliancePhilosophy': 'تحالفنا مع JNI Properties مؤسس على فلسفة مشتركة: الاعتقاد بأن الاستثمارات الكبيرة يجب أن تولد قيمة دائمة للمجتمع والفرد.',
+    'about.leadershipVision': 'تحت قيادة توشينوري شيبوساوا، هذه الرؤية ليست صدى للماضي، بل التزام نشط بالتنمية الأخلاقية والجودة المثالية والمستقبل المستدام.',
+    'about.guaranteeMessage': 'إنها الضمانة بأن كل مشروع في تاباتجي هاوس يُبنى على أساس من الثقة والغرض والتميز.',
     
     // Kusatsu Project Page
     'kusatsu.fullNamePlaceholder': 'اسمك الكامل',
@@ -4062,6 +4098,7 @@ const translations = {
     'navigation.about': 'Acerca de',
     'navigation.projects': 'Proyectos',
     'navigation.process': 'Proceso',
+    'navigation.services': 'Servicios',
     'navigation.journal': 'Diario',
     'navigation.contact': 'Contacto',
     'navigation.guide': 'Guía',
@@ -4744,6 +4781,7 @@ const translations = {
     // Footer
     'footer.ourLegacy': 'Nuestro Legado',
     'footer.thePath': 'El Camino',
+    'footer.services': 'Servicios',
     'footer.journal': 'Diario',
     'footer.contact': 'Contacto',
     'footer.featuredProjects': 'Proyectos Destacados',
@@ -4954,7 +4992,7 @@ const translations = {
     // About Page
     'about.heroSubtitle': 'De la Industria a la Revitalización',
     'about.heroTitle': 'La Historia de',
-    'about.heroTitleAccent': 'Komorebi House',
+    'about.heroTitleAccent': 'Tabiji House',
     'about.heroDescription': 'Una nueva generación continúa el legado de la arquitectura tradicional japonesa, conectando el patrimonio cultural con ciudadanos globales visionarios.',
     'about.visionaryPart': 'Parte 1: El Visionario',
     'about.visionaryTitle': 'Shibusawa Eiichi',
@@ -4971,7 +5009,7 @@ const translations = {
     'about.newGenerationDescription': 'Una conexión familiar única y una misión compartida que honra el legado mientras construye el futuro.',
     'about.familyConnection': 'Conexión Familiar',
     'about.directDescendants': 'Descendientes Directos',
-    'about.familyDescription': 'Los socios fundadores de Komorebi House son descendientes directos de Shibusawa Eiichi, heredando no solo el nombre sino también la visión transformadora y los valores éticos que definieron su legado.',
+    'about.familyDescription': 'Los socios fundadores de Tabiji House son descendientes directos de Shibusawa Eiichi, heredando no solo el nombre sino también la visión transformadora y los valores éticos que definieron su legado.',
     'about.heritageValues': 'Herencia de valores éticos',
     'about.communityCommitment': 'Compromiso con la comunidad',
     'about.longTermVision': 'Visión de largo plazo',
@@ -4993,6 +5031,16 @@ const translations = {
     'about.ctaTitle': '¿Listo para Ser Parte de la Historia?',
     'about.ctaDescription': 'Únete a nosotros en esta misión de revitalización y conviértete en parte del legado continuo de Shibusawa Eiichi.',
     'about.ctaButton': 'Inicia tu Visión',
+
+    // Strategic Alliance Section
+    'about.strategicAllianceSubtitle': 'Nuestra Alianza Estratégica',
+    'about.strategicAllianceTitle': 'Visión Global y Confianza Japonesa',
+    'about.strategicAllianceDescription': 'La agilidad tecnológica de Tabiji House se une a la solidez y confianza de JNI Properties, creando una alianza que combina innovación con tradición empresarial japonesa.',
+    'about.toshinoriName': 'Toshinori Shibusawa',
+    'about.toshinoriTitle': 'Representante, JNI Properties Co., Ltd.',
+    'about.alliancePhilosophy': 'Nuestra alianza con JNI Properties está cimentada en una filosofía compartida: la creencia de que las grandes inversiones deben generar un valor duradero para la comunidad y el individuo.',
+    'about.leadershipVision': 'Bajo el liderazgo de Toshinori Shibusawa, esta visión no es un eco del pasado, sino un compromiso activo con un desarrollo ético, una calidad impecable y un futuro sostenible.',
+    'about.guaranteeMessage': 'Es la garantía de que cada proyecto de Tabiji House se construye sobre una base de confianza, propósito y excelencia.',
 
     // Kusatsu Project Page
     'kusatsu.fullNamePlaceholder': 'Tu nombre completo',
@@ -5034,7 +5082,7 @@ const translations = {
     'journal.searchPlaceholder': 'Buscar artículos...',
     'journal.emailPlaceholder': 'Tu correo electrónico',
     'journal.philosophyGapponshugi': 'Filosofía Gapponshugi en el Siglo XXI',
-    'journal.philosophyExcerpt': 'Cómo los principios de la arquitectura tradicional japonesa siguen siendo relevantes en el diseño moderno y cómo los aplicamos en Komorebi House.',
+    'journal.philosophyExcerpt': 'Cómo los principios de la arquitectura tradicional japonesa siguen siendo relevantes en el diseño moderno y cómo los aplicamos en Tabiji House.',
     'journal.philosophyAuthor': 'Dr. Tanaka Hiroshi',
     'journal.artisansGunma': 'Artesanos de Gunma: Guardianes de la Tradición',
     'journal.artisansExcerpt': 'Conoce a los maestros artesanos que preservan técnicas centenarias y cómo trabajan en nuestros proyectos de renovación.',

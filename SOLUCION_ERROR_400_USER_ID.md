@@ -132,3 +132,5 @@ if (!userId || userId === 'demo-user' || userId === 'mock-user') {
 
 ¿Te gustaría que probemos alguna funcionalidad específica o que configuremos Supabase para datos reales?
 
+
+

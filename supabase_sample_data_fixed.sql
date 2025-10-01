@@ -39,3 +39,5 @@ INSERT INTO design_materials (name, category, color_hex, texture_url, price, sus
 -- Mensaje de confirmación
 SELECT 'Datos de ejemplo insertados correctamente' as status;
 
+
+

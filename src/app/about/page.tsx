@@ -196,6 +196,58 @@ export default function About() {
         </div>
       </section>
 
+      {/* Strategic Alliance Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
+              {t('about.strategicAllianceSubtitle')}
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-primary mb-6">
+              {t('about.strategicAllianceTitle')}
+            </h2>
+            <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
+              {t('about.strategicAllianceDescription')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 className="text-2xl font-serif font-bold text-primary mb-4">
+                  {t('about.toshinoriName')}
+                </h3>
+                <div className="text-accent font-mono text-sm mb-6">
+                  {t('about.toshinoriTitle')}
+                </div>
+                <div className="space-y-4 text-foreground leading-relaxed">
+                  <p>
+                    {t('about.alliancePhilosophy')}
+                  </p>
+                  <p>
+                    {t('about.leadershipVision')}
+                  </p>
+                  <p className="font-semibold text-primary">
+                    {t('about.guaranteeMessage')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/澁澤写真.jpg" 
+                  alt={`${t('about.toshinoriName')} - ${t('about.toshinoriTitle')}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Promise Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

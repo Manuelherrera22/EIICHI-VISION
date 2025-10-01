@@ -60,3 +60,7 @@ COMMIT_GITHUB_*.md
 *_SECRET*.md
 *_CREDENTIAL*.md
 *_OAUTH*.md
+
+# Office temporary files
+~$*
+*.tmp

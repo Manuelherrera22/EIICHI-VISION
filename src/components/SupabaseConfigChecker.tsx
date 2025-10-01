@@ -265,3 +265,5 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key`}
 
 export default SupabaseConfigChecker
 
+
+

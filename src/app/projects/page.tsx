@@ -2,13 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import { Search, Filter, MapPin, Home, Calendar, ArrowRight, Eye } from 'lucide-react';
+import { Search, Filter, MapPin, Home, Calendar, ArrowRight, Eye, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { realProperties, getAvailableProperties, formatPrice } from '@/data/realProperties';
+import RealPropertyCard from '@/components/RealPropertyCard';
 
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [selectedPriceRange, setSelectedPriceRange] = useState('all');
+  const [showRealProperties, setShowRealProperties] = useState(true);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -175,6 +178,32 @@ export default function Projects() {
               />
             </div>
 
+            {/* Property Type Toggle */}
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setShowRealProperties(true)}
+                className={`px-4 py-2 rounded-full font-medium transition-colors ${
+                  showRealProperties
+                    ? 'bg-primary text-white'
+                    : 'bg-muted text-foreground hover:bg-muted/80'
+                }`}
+              >
+                <Star size={16} className="inline mr-2" />
+                Real Properties ({realProperties.length})
+              </button>
+              <button
+                onClick={() => setShowRealProperties(false)}
+                className={`px-4 py-2 rounded-full font-medium transition-colors ${
+                  !showRealProperties
+                    ? 'bg-primary text-white'
+                    : 'bg-muted text-foreground hover:bg-muted/80'
+                }`}
+              >
+                <Home size={16} className="inline mr-2" />
+                Concept Properties
+              </button>
+            </div>
+
             {/* Filters */}
             <div className="flex flex-wrap gap-4">
               <select
@@ -208,7 +237,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-2xl font-serif font-bold text-primary mb-2">
-              {filteredProjects.length} {t('projects.propertiesFound')}
+              {showRealProperties ? realProperties.length : filteredProjects.length} {t('projects.propertiesFound')}
             </h2>
             <p className="text-foreground">
               {t('projects.filteredResults')}
@@ -216,7 +245,21 @@ export default function Projects() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {showRealProperties ? (
+              // Real Properties
+              realProperties.map((property) => (
+                <RealPropertyCard
+                  key={property.id}
+                  property={property}
+                  onViewDetails={(property) => {
+                    // TODO: Navigate to property detail page
+                    console.log('View details for:', property.name);
+                  }}
+                />
+              ))
+            ) : (
+              // Concept Properties
+              filteredProjects.map((project) => (
               <div
                 key={project.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
@@ -328,10 +371,11 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            ))}
+              ))
+            )}
           </div>
 
-          {filteredProjects.length === 0 && (
+          {((showRealProperties && realProperties.length === 0) || (!showRealProperties && filteredProjects.length === 0)) && (
             <div className="text-center py-16">
               <div className="text-6xl mb-4">🏠</div>
               <h3 className="text-2xl font-serif font-bold text-primary mb-4">

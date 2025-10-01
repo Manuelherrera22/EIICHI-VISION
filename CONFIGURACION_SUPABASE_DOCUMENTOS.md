@@ -168,3 +168,5 @@ El gestor de documentos está **completamente funcional** con:
 
 **¡Configura Supabase y disfruta de tu gestor de documentos completamente funcional!** 🗄️✨
 
+
+

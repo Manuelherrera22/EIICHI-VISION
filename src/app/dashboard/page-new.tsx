@@ -45,4 +45,3 @@ function DashboardContent() {
   // Si el onboarding está completo, mostrar el dashboard modular
   return <ModularDashboard />
 }
-

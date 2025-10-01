@@ -33,6 +33,7 @@ const Navigation = () => {
     { name: isClient ? t('navigation.about') : 'About', href: '/about' },
     { name: isClient ? t('navigation.projects') : 'Projects', href: '/projects' },
     { name: isClient ? t('navigation.process') : 'Process', href: '/process' },
+    { name: isClient ? t('navigation.services') : 'Services', href: '/services' },
     { name: isClient ? t('navigation.journal') : 'Journal', href: '/journal' },
     { name: isClient ? t('navigation.contact') : 'Contact', href: '/contact' },
     ...(user ? [{ name: isClient ? t('navigation.dashboard') : 'Dashboard', href: '/dashboard' }] : []),
