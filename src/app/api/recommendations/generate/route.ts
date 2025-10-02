@@ -216,7 +216,8 @@ async function generatePropertyRecommendations(userProfile: any, preferences?: a
       timeframe: '3-6 meses',
       cost: userProfile.budgetMin || 200000,
       effort: 'medium',
-      tags: ['tokyo', 'apartment', 'rental', 'high-yield']
+      tags: ['tokyo', 'apartment', 'rental', 'high-yield'],
+      createdAt: new Date().toISOString()
     })
     
     recommendations.push({
@@ -232,7 +233,8 @@ async function generatePropertyRecommendations(userProfile: any, preferences?: a
       timeframe: '6-12 meses',
       cost: userProfile.budgetMin || 150000,
       effort: 'high',
-      tags: ['osaka', 'renovation', 'value-add', 'traditional']
+      tags: ['osaka', 'renovation', 'value-add', 'traditional'],
+      createdAt: new Date().toISOString()
     })
   } else if (userProfile.primaryGoal === 'vivir') {
     recommendations.push({
@@ -248,7 +250,8 @@ async function generatePropertyRecommendations(userProfile: any, preferences?: a
       timeframe: '6-12 meses',
       cost: userProfile.budgetMax || 400000,
       effort: 'medium',
-      tags: ['yokohama', 'family', 'garden', 'residential']
+      tags: ['yokohama', 'family', 'garden', 'residential'],
+      createdAt: new Date().toISOString()
     })
   }
   
@@ -271,7 +274,8 @@ async function generateLocationRecommendations(userProfile: any, preferences?: a
       impact: 'high',
       timeframe: 'Inmediato',
       effort: 'low',
-      tags: ['tokyo', 'financial', 'stable', 'premium']
+      tags: ['tokyo', 'financial', 'stable', 'premium'],
+      createdAt: new Date().toISOString()
     })
     
     recommendations.push({
@@ -286,7 +290,8 @@ async function generateLocationRecommendations(userProfile: any, preferences?: a
       impact: 'medium',
       timeframe: '3-6 meses',
       effort: 'medium',
-      tags: ['osaka', 'commercial', 'growth', 'affordable']
+      tags: ['osaka', 'commercial', 'growth', 'affordable'],
+      createdAt: new Date().toISOString()
     })
   } else if (userProfile.primaryGoal === 'migrar') {
     recommendations.push({
@@ -301,7 +306,8 @@ async function generateLocationRecommendations(userProfile: any, preferences?: a
       impact: 'high',
       timeframe: '1-3 meses',
       effort: 'low',
-      tags: ['tokyo', 'international', 'english', 'community']
+      tags: ['tokyo', 'international', 'english', 'community'],
+      createdAt: new Date().toISOString()
     })
   }
   
@@ -324,7 +330,8 @@ async function generateStrategyRecommendations(userProfile: any, preferences?: a
       impact: 'high',
       timeframe: '12-24 meses',
       effort: 'medium',
-      tags: ['diversification', 'risk-management', 'portfolio']
+      tags: ['diversification', 'risk-management', 'portfolio'],
+      createdAt: new Date().toISOString()
     })
     
     recommendations.push({
@@ -339,7 +346,8 @@ async function generateStrategyRecommendations(userProfile: any, preferences?: a
       impact: 'high',
       timeframe: '6-12 meses',
       effort: 'medium',
-      tags: ['rental', 'cash-flow', 'stability']
+      tags: ['rental', 'cash-flow', 'stability'],
+      createdAt: new Date().toISOString()
     })
   } else if (userProfile.primaryGoal === 'migrar') {
     recommendations.push({
@@ -354,7 +362,8 @@ async function generateStrategyRecommendations(userProfile: any, preferences?: a
       impact: 'high',
       timeframe: '12-18 meses',
       effort: 'high',
-      tags: ['gradual', 'visits', 'temporary', 'permanent']
+      tags: ['gradual', 'visits', 'temporary', 'permanent'],
+      createdAt: new Date().toISOString()
     })
   }
   
@@ -388,7 +397,8 @@ async function generateTimingRecommendations(userProfile: any, preferences?: any
         impact: 'high',
         timeframe: '1-3 meses',
         effort: 'low',
-        tags: ['bull-market', 'acceleration', 'opportunity']
+        tags: ['bull-market', 'acceleration', 'opportunity'],
+        createdAt: new Date().toISOString()
       })
     } else if (avgTrend < -1) {
       recommendations.push({
@@ -403,7 +413,8 @@ async function generateTimingRecommendations(userProfile: any, preferences?: any
         impact: 'medium',
         timeframe: '3-6 meses',
         effort: 'low',
-        tags: ['correction', 'wait', 'value-opportunity']
+        tags: ['correction', 'wait', 'value-opportunity'],
+        createdAt: new Date().toISOString()
       })
     }
   }
