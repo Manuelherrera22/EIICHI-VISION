@@ -196,6 +196,8 @@ const AdvancedControls = ({
   isFullscreen: boolean;
   isWireframe: boolean;
 }) => {
+  const { t } = useLanguage();
+  
   return (
     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-border">
       <div className="flex space-x-2">
