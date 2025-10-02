@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { ArquitectoProvider } from '@/contexts/ArquitectoContext'
+import { ArquitectoProvider, useArquitecto } from '@/contexts/ArquitectoContext'
 import ArquitectoOnboarding from '@/components/ArquitectoOnboarding'
 import ModularDashboard from '@/components/ModularDashboard'
 import ProtectedRoute from '@/components/ProtectedRoute'
