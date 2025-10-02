@@ -147,36 +147,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET /api/market/insights
-export async function GET(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url)
-    const region = searchParams.get('region')
-    const timeframe = searchParams.get('timeframe') || '1m'
-
-    let query = supabase
-      .from('market_insights')
-      .select('*')
-      .gte('createdAt', getTimeframeDate(timeframe))
-      .order('createdAt', { ascending: false })
-
-    if (region) query = query.eq('region', region)
-
-    const { data: insights, error } = await query
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
-
-    return NextResponse.json({ 
-      insights,
-      total: insights.length,
-      timeframe
-    })
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
-  }
-}
 
 // Funciones auxiliares
 function getTimeframeDate(timeframe: string): string {

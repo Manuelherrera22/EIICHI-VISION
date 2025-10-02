@@ -123,50 +123,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST /api/ai/chat
-export async function POST(request: NextRequest) {
-  try {
-    const { userId, message, context, chatHistory } = await request.json()
-    
-    if (!userId || !message) {
-      return NextResponse.json({ 
-        error: 'Missing required fields: userId, message' 
-      }, { status: 400 })
-    }
-
-    const startTime = Date.now()
-
-    // Generar respuesta del chatbot IA
-    const chatResponse = await generateChatResponse(userId, message, context, chatHistory)
-    
-    const processingTime = Date.now() - startTime
-
-    // Guardar conversación en la base de datos
-    const { error: saveError } = await supabase
-      .from('ai_chat_history')
-      .insert({
-        userId,
-        message,
-        response: chatResponse.response,
-        context: context || {},
-        processingTime,
-        createdAt: new Date().toISOString()
-      })
-
-    if (saveError) {
-      console.error('Error saving chat history:', saveError)
-    }
-
-    return NextResponse.json({ 
-      response: chatResponse,
-      processingTime,
-      timestamp: new Date().toISOString()
-    })
-  } catch (error) {
-    console.error('AI Chat error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
-  }
-}
 
 // Funciones auxiliares
 async function performAIAnalysis(analysisType: string, data: any, context?: any): Promise<any> {

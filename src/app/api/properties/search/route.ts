@@ -201,62 +201,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// POST /api/properties/recommendations
-export async function POST(request: NextRequest) {
-  try {
-    const { userId, userProfile, preferences }: PropertyRecommendationRequest = await request.json()
-    
-    if (!userId || !userProfile || !preferences) {
-      return NextResponse.json({ 
-        error: 'Missing required fields: userId, userProfile, preferences' 
-      }, { status: 400 })
-    }
-
-    // Obtener propiedades base
-    const { data: allProperties, error } = await supabase
-      .from('properties')
-      .select('*')
-      .eq('status', 'available')
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
-
-    // Generar recomendaciones personalizadas
-    const recommendations = await generatePersonalizedRecommendations(
-      userId, 
-      userProfile, 
-      preferences, 
-      allProperties
-    )
-
-    // Guardar recomendaciones en la base de datos
-    const { error: saveError } = await supabase
-      .from('property_recommendations')
-      .insert({
-        userId,
-        recommendations: recommendations.map(r => r.id),
-        preferences,
-        createdAt: new Date().toISOString()
-      })
-
-    if (saveError) {
-      console.error('Error saving recommendations:', saveError)
-    }
-
-    return NextResponse.json({ 
-      recommendations,
-      total: recommendations.length,
-      userProfile: {
-        primaryGoal: userProfile.primaryGoal,
-        budget: preferences.budget,
-        timeline: preferences.timeline
-      }
-    })
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
-  }
-}
 
 // Funciones auxiliares
 async function calculateRelevance(userId: string, properties: any[]): Promise<any[]> {
