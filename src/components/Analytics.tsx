@@ -3,6 +3,13 @@
 import { useEffect } from 'react';
 import Script from 'next/script';
 
+// Extend Window interface to include gtag
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 interface AnalyticsProps {
   gaId?: string;
 }
