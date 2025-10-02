@@ -8,13 +8,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
-const CategoryPage = ({ params }: CategoryPageProps) => {
-  const category = params.category;
+const CategoryPage = async ({ params }: CategoryPageProps) => {
+  const { category } = await params;
 
   const categoryData = {
     design: {
@@ -82,7 +82,7 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
     },
     {
       id: 4,
-      title: category === 'design' ? t('journal.naturalLighting') :
+      title: category === 'design' ? 'Iluminación Natural en Arquitectura Japonesa' :
              category === 'culture' ? 'Gastronomía Local de Gunma' :
              'Conectividad Internet en Zonas Rurales',
       excerpt: category === 'design' ? 'Cómo maximizar la iluminación natural respetando la arquitectura tradicional japonesa.' :

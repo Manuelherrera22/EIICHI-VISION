@@ -21,13 +21,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface ProjectDetailProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-const ProjectDetail = ({ params }: ProjectDetailProps) => {
-  const projectId = params.id;
+const ProjectDetail = async ({ params }: ProjectDetailProps) => {
+  const { id: projectId } = await params;
 
   // Mock data - in a real app this would come from an API
   const project = {
