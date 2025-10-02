@@ -45,6 +45,13 @@ export async function POST(request: NextRequest) {
     // Calcular scores inteligentes
     const intelligentScores = calculateIntelligentScores(userData)
     
+    // Verificar que los scores se calcularon correctamente
+    if (!intelligentScores) {
+      return NextResponse.json({ 
+        error: 'Failed to calculate intelligent scores' 
+      }, { status: 500 })
+    }
+    
     // Generar insights basados en el análisis
     const insights = generateInsights(userData, intelligentScores, analysisType)
     
