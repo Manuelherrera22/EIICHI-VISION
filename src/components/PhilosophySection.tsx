@@ -155,9 +155,9 @@ const PhilosophySection = () => {
             <input
               type="email"
               placeholder={t('philosophy.emailPlaceholder')}
-              className="px-6 py-3 border border-border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary min-w-80"
+              className="px-6 py-3 border-2 border-gray-300 rounded-full text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary min-w-80 placeholder-gray-500"
             />
-            <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold">
+            <button className="bg-primary text-black px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold shadow-lg border border-primary/30 ring-1 ring-primary/20">
               {t('philosophy.subscribeNewsletter')}
             </button>
           </div>

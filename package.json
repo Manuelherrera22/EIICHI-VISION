@@ -28,14 +28,20 @@
     "@types/google.maps": "^3.58.1",
     "@types/mapbox-gl": "^3.4.1",
     "@types/three": "^0.180.0",
+    "date-fns": "^4.1.0",
+    "file-saver": "^2.0.5",
     "framer-motion": "^12.23.21",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
     "lucide-react": "^0.544.0",
     "mapbox-gl": "^3.15.0",
     "next": "15.5.4",
     "next-auth": "^4.24.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "three": "^0.180.0"
+    "recharts": "^3.2.1",
+    "three": "^0.180.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

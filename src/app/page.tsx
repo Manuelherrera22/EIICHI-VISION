@@ -10,6 +10,8 @@ import PhilosophySection from '@/components/PhilosophySection';
 import TourismSection from '@/components/TourismSection';
 import AnimatedSection from '@/components/AnimatedSection';
 import DebugModelViewer from '@/components/DebugModelViewer';
+import RealPropertiesSection from '@/components/RealPropertiesSection';
+import JNIStrategicAlliance from '@/components/JNIStrategicAlliance';
 import { Sparkles, Camera, Settings, Home as HomeIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
@@ -37,18 +39,23 @@ export default function Home() {
       {/* Hero con Video Cinematográfico */}
       <VideoHero />
       
-      {/* Sección Legacy con Animaciones */}
+      {/* Alianza Estratégica JNI Properties */}
       <AnimatedSection delay={0.2}>
+        <JNIStrategicAlliance />
+      </AnimatedSection>
+      
+      {/* Sección Legacy con Animaciones */}
+      <AnimatedSection delay={0.4}>
         <LegacySection />
       </AnimatedSection>
       
-      {/* Proyectos Destacados */}
-      <AnimatedSection delay={0.4}>
-        <FeaturedProjects />
+      {/* Propiedades Reales con Análisis IA */}
+      <AnimatedSection delay={0.6}>
+        <RealPropertiesSection />
       </AnimatedSection>
       
       {/* Calculadora de ROI */}
-      <AnimatedSection delay={0.6}>
+      <AnimatedSection delay={0.8}>
         <section className="py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -65,7 +72,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* Experiencia 3D Premium */}
-      <AnimatedSection delay={0.8}>
+      <AnimatedSection delay={1.0}>
         <section className="py-12 sm:py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
@@ -94,7 +101,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-2xl mx-auto">
                   <a 
                     href="/contact" 
-                    className="bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-base sm:text-lg flex items-center space-x-2 justify-center min-h-[48px] sm:min-h-[56px]"
+                    className="bg-primary text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-base sm:text-lg flex items-center space-x-2 justify-center min-h-[48px] sm:min-h-[56px]"
                   >
                     <span>{t('3d.startProject')}</span>
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +110,7 @@ export default function Home() {
                   </a>
                   <a 
                     href="/projects" 
-                    className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary hover:text-white transition-colors duration-300 font-semibold text-base sm:text-lg justify-center min-h-[48px] sm:min-h-[56px] flex items-center"
+                    className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary hover:text-black transition-colors duration-300 font-semibold text-base sm:text-lg justify-center min-h-[48px] sm:min-h-[56px] flex items-center"
                   >
                     {t('3d.viewMoreProjects')}
                   </a>
@@ -115,17 +122,17 @@ export default function Home() {
       </AnimatedSection>
       
       {/* Sección de Turismo */}
-      <AnimatedSection delay={1.0}>
+      <AnimatedSection delay={1.2}>
         <TourismSection />
       </AnimatedSection>
       
       {/* Mapa Estético */}
-      <AnimatedSection delay={1.2}>
+      <AnimatedSection delay={1.4}>
         <AestheticMapSection />
       </AnimatedSection>
       
       {/* Filosofía */}
-      <AnimatedSection delay={1.4}>
+      <AnimatedSection delay={1.6}>
         <PhilosophySection />
       </AnimatedSection>
       
@@ -133,7 +140,7 @@ export default function Home() {
       <AIChat />
       
       {/* Blueprint Digital Ecosystem */}
-      <AnimatedSection delay={1.6}>
+      <AnimatedSection delay={1.8}>
         <section className="py-20 bg-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -155,25 +162,25 @@ export default function Home() {
                   title: t('blueprint.visionPortal'),
                   description: t('blueprint.visionDescription'),
                   icon: Sparkles,
-                  color: 'from-accent to-accent/80'
+                  color: 'from-yellow-500 to-orange-500'
                 },
                 {
                   title: t('blueprint.augmentedReality'),
                   description: t('blueprint.arDescription'),
                   icon: Camera,
-                  color: 'from-primary to-primary/80'
+                  color: 'from-blue-600 to-blue-700'
                 },
                 {
                   title: t('blueprint.designTable'),
                   description: t('blueprint.designDescription'),
                   icon: Settings,
-                  color: 'from-accent to-accent/80'
+                  color: 'from-purple-600 to-purple-700'
                 },
                 {
                   title: t('blueprint.controlCenter'),
                   description: t('blueprint.controlDescription'),
                   icon: HomeIcon,
-                  color: 'from-primary to-primary/80'
+                  color: 'from-green-600 to-green-700'
                 }
               ].map((feature, index) => (
                 <motion.a
@@ -181,11 +188,11 @@ export default function Home() {
                   href="/blueprint"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.8 + index * 0.1 }}
+                  transition={{ delay: 2.0 + index * 0.1 }}
                   className="bg-white rounded-2xl p-6 border border-border hover:border-accent hover:shadow-xl transition-all duration-300 group shadow-lg cursor-pointer block hover:scale-105"
                 >
-                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-r ${feature.color} rounded-full mb-4 shadow-lg`}>
-                    <feature.icon className="w-7 h-7 text-white drop-shadow-sm" />
+                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-r ${feature.color} rounded-full mb-4 shadow-lg ring-2 ring-white/20`}>
+                    <feature.icon className="w-7 h-7 text-black drop-shadow-lg filter brightness-110" />
                   </div>
                   <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
                     {feature.title}
@@ -207,7 +214,7 @@ export default function Home() {
                 </p>
                 <a
                   href="/blueprint"
-                  className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-semibold text-lg"
+                  className="inline-flex items-center space-x-2 bg-primary text-black px-8 py-4 rounded-full hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-semibold text-lg"
                 >
                   <span>{t('blueprint.exploreBlueprint')}</span>
                   <ArrowRight className="w-5 h-5" />

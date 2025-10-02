@@ -73,7 +73,7 @@ const Navigation = () => {
             ) : (
               <Link
                 href="/auth"
-                className="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium text-sm xl:text-base"
+                className="bg-primary text-black px-4 xl:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 {isClient ? t('navigation.login') : 'Login'}
               </Link>
@@ -116,7 +116,7 @@ const Navigation = () => {
               ) : (
                 <Link
                   href="/auth"
-                  className="block mx-3 my-2 bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium text-center"
+                  className="block mx-3 my-2 bg-primary text-black px-4 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {isClient ? t('navigation.login') : 'Login'}

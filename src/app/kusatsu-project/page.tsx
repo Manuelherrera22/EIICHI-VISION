@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import HydrationSafeMotion from '@/components/HydrationSafeMotion';
+import { formatPrice } from '@/utils/numberFormat';
 import { 
   Calendar, 
   Users, 
@@ -328,23 +330,28 @@ const KusatsuProjectPage = () => {
           {/* Floating Particles Effect */}
           <div className="absolute inset-0 overflow-hidden">
             {[...Array(15)].map((_, i) => (
-              <motion.div
+              <HydrationSafeMotion
                 key={i}
                 className="absolute w-1 h-1 bg-primary/30 rounded-full"
                 initial={{ 
-                  x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200), 
-                  y: (typeof window !== 'undefined' ? window.innerHeight : 800) + 100,
+                  x: 0, 
+                  y: 0,
                   opacity: 0 
                 }}
                 animate={{ 
                   y: -100,
                   opacity: [0, 0.6, 0],
-                  x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)
+                  x: 0
                 }}
                 transition={{
-                  duration: Math.random() * 15 + 20,
+                  duration: 15 + (i * 2),
                   repeat: Infinity,
-                  delay: Math.random() * 5
+                  delay: i * 0.5,
+                  ease: "linear"
+                }}
+                style={{
+                  left: `${(i * 7) % 100}%`,
+                  top: '100%'
                 }}
               />
             ))}
@@ -667,16 +674,16 @@ const KusatsuProjectPage = () => {
                     >
                       Filosofía Wabi-Sabi
                     </motion.h3>
-                    <motion.p 
+                    <motion.div 
                       className="text-lg text-secondary italic mb-6 max-w-3xl mx-auto relative"
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1.0 }}
                     >
                       <div className="absolute -left-3 -top-2 text-3xl text-secondary/30">"</div>
-                      {projectDetails.culturalElements.philosophy}
+                      <p className="mb-0">{projectDetails.culturalElements.philosophy}</p>
                       <div className="absolute -right-3 -bottom-2 text-3xl text-secondary/30">"</div>
-                    </motion.p>
+                    </motion.div>
                     <motion.p 
                       className="text-base text-secondary/80 max-w-4xl mx-auto leading-relaxed"
                       initial={{ opacity: 0, y: 10 }}
@@ -701,23 +708,27 @@ const KusatsuProjectPage = () => {
                   {/* Subtle Particles */}
                   <div className="absolute inset-0 overflow-hidden">
                     {[...Array(10)].map((_, i) => (
-                      <motion.div
+                      <HydrationSafeMotion
                         key={i}
                         className="absolute w-1 h-1 bg-primary/20 rounded-full"
                         initial={{ 
-                          x: Math.random() * 400, 
-                          y: Math.random() * 200,
+                          x: 0, 
+                          y: 0,
                           opacity: 0 
                         }}
                         animate={{ 
-                          y: [null, -20, 20],
+                          y: [0, -20, 20],
                           opacity: [0, 0.4, 0],
-                          x: Math.random() * 400
+                          x: 0
                         }}
                         transition={{
-                          duration: Math.random() * 4 + 3,
+                          duration: 3 + (i * 0.5),
                           repeat: Infinity,
-                          delay: Math.random() * 2
+                          delay: i * 0.3
+                        }}
+                        style={{
+                          left: `${(i * 10) % 100}%`,
+                          top: `${(i * 20) % 100}%`
                         }}
                       />
                     ))}
@@ -751,7 +762,7 @@ const KusatsuProjectPage = () => {
                         }}
                         transition={{ duration: 3, repeat: Infinity }}
                       >
-                        ${projectDetails.price.toLocaleString()}
+                        {formatPrice(projectDetails.price)}
                       </motion.div>
                       <div className="text-lg text-secondary">{projectDetails.currency} por participante</div>
                       <div className="text-sm text-secondary/70 mt-2">Todo incluido • Sin costos ocultos</div>
@@ -1110,27 +1121,31 @@ const KusatsuProjectPage = () => {
           {/* Floating Kanji Elements */}
           <div className="absolute inset-0 overflow-hidden">
             {['和', '美', '静', '雅'].map((kanji, index) => (
-              <motion.div
+              <HydrationSafeMotion
                 key={kanji}
                 className="absolute text-primary/5 text-8xl font-serif"
                 initial={{ 
-                  x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-                  y: Math.random() * 400 + 200,
-                  rotate: Math.random() * 360
+                  x: 0,
+                  y: 0,
+                  rotate: 0
                 }}
                 animate={{ 
-                  y: [null, -30, 30],
-                  rotate: [null, 5, -5, 0],
+                  y: [0, -30, 30],
+                  rotate: [0, 5, -5, 0],
                   opacity: [0.05, 0.08, 0.05]
                 }}
                 transition={{
-                  duration: Math.random() * 15 + 20,
+                  duration: 15 + (index * 5),
                   repeat: Infinity,
                   delay: index * 3
                 }}
+                style={{
+                  left: `${(index * 25) % 100}%`,
+                  top: `${(index * 20) % 100}%`
+                }}
               >
                 {kanji}
-              </motion.div>
+              </HydrationSafeMotion>
             ))}
           </div>
           

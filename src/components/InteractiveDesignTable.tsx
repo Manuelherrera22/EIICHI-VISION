@@ -576,7 +576,7 @@ const InteractiveDesignTable = () => {
             >
               {/* Grid Background */}
               {showGrid && (
-                <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 opacity-40">
                   <svg width="100%" height="100%">
                     <defs>
                       <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">

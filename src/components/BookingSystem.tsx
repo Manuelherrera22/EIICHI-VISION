@@ -193,7 +193,7 @@ const BookingSystem = () => {
         </div>
         <button
           onClick={() => setIsBooked(false)}
-          className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
+          className="bg-primary text-black px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
         >
           Agendar Otra Consulta
         </button>
@@ -230,7 +230,7 @@ const BookingSystem = () => {
                 name="name"
                 value={bookingData.name}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+                className={`w-full pl-10 pr-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                   errors.name ? 'border-red-300 bg-red-50' : 'border-border'
                 }`}
                 placeholder={t('booking.fullNamePlaceholder')}
@@ -256,7 +256,7 @@ const BookingSystem = () => {
                 name="email"
                 value={bookingData.email}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+                className={`w-full pl-10 pr-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                   errors.email ? 'border-red-300 bg-red-50' : 'border-border'
                 }`}
                 placeholder="tu@email.com"
@@ -284,7 +284,7 @@ const BookingSystem = () => {
                 name="phone"
                 value={bookingData.phone}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+                className={`w-full pl-10 pr-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                   errors.phone ? 'border-red-300 bg-red-50' : 'border-border'
                 }`}
                 placeholder="+1 (555) 123-4567"
@@ -307,7 +307,7 @@ const BookingSystem = () => {
               name="timezone"
               value={bookingData.timezone}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.timezone ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
@@ -340,7 +340,7 @@ const BookingSystem = () => {
               value={bookingData.preferredDate}
               onChange={handleInputChange}
               min={getMinDate()}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.preferredDate ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             />
@@ -361,7 +361,7 @@ const BookingSystem = () => {
               name="preferredTime"
               value={bookingData.preferredTime}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.preferredTime ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
@@ -391,7 +391,7 @@ const BookingSystem = () => {
             name="interest"
             value={bookingData.interest}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+            className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
               errors.interest ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
           >
@@ -421,7 +421,7 @@ const BookingSystem = () => {
             value={bookingData.message}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+            className="w-full px-4 py-3 border border-border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
             placeholder={t('booking.messagePlaceholder')}
           />
         </div>
@@ -430,7 +430,7 @@ const BookingSystem = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-accent text-white py-4 px-6 rounded-xl font-semibold text-lg hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          className="w-full bg-accent text-black py-4 px-6 rounded-xl font-semibold text-lg hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
         >
           {isSubmitting ? (
             <>

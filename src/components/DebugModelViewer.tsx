@@ -121,24 +121,24 @@ const ModelDebugger = () => {
         </Canvas>
         
         {/* Controles interactivos */}
-        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 p-2 sm:p-3 bg-white/20 backdrop-blur-md rounded-lg sm:rounded-xl shadow-lg flex flex-col space-y-1 sm:space-y-2">
+        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 p-2 sm:p-3 bg-white/90 backdrop-blur-md rounded-lg sm:rounded-xl shadow-lg flex flex-col space-y-1 sm:space-y-2">
           <button 
             onClick={() => setIsRotating(!isRotating)} 
-            className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+            className="p-1.5 sm:p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             title={isRotating ? t('debug.pauseRotation') : t('debug.startRotation')}
           >
             {isRotating ? <Pause size={16} className="sm:w-5 sm:h-5" /> : <Play size={16} className="sm:w-5 sm:h-5" />}
           </button>
           <button 
             onClick={() => setIsDayMode(!isDayMode)} 
-            className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+            className="p-1.5 sm:p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             title={isDayMode ? t('debug.nightMode') : t('debug.dayMode')}
           >
             {isDayMode ? <Moon size={16} className="sm:w-5 sm:h-5" /> : <Sun size={16} className="sm:w-5 sm:h-5" />}
           </button>
           <button 
             onClick={toggleFullscreen} 
-            className="p-1.5 sm:p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+            className="p-1.5 sm:p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             title={isFullscreen ? t('debug.exitFullscreen') : t('debug.fullscreen')}
           >
             {isFullscreen ? <Minimize size={16} className="sm:w-5 sm:h-5" /> : <Maximize size={16} className="sm:w-5 sm:h-5" />}

@@ -58,10 +58,10 @@ export interface RealProperty {
 
 export const realProperties: RealProperty[] = [
   {
-    id: 'kambara-property-a',
-    name: 'Kambara Villa A - Tsumagoi Village',
+    id: 'property-a-traditional-villa',
+    name: 'Property A - Traditional Japanese Villa',
     price: 15000000, // ¥15,000,000
-    layout: '2LDK (2 Bedrooms + Spacious Living/Dining/Kitchen)',
+    layout: '2LDK',
     landArea: 471,
     landAreaTsubo: 142.47,
     floorArea: 74.14,
@@ -78,13 +78,13 @@ export const realProperties: RealProperty[] = [
       stations: [
         {
           name: 'Shinano Railway "Naka-Karuizawa Station"',
-          distance: 'Approx. 23 km',
-          timeByCar: 'about 36 minutes by car'
+          distance: '23km',
+          timeByCar: '36min by car'
         },
         {
           name: 'JR Agatsuma Line "Omae Station"',
-          distance: 'Approx. 8 km',
-          timeByCar: 'about 15 minutes by car'
+          distance: '8km',
+          timeByCar: '15min by car'
         }
       ]
     },
@@ -93,18 +93,19 @@ export const realProperties: RealProperty[] = [
       year: 1989,
       era: 'Heisei 1'
     },
-    structure: 'Charming single-story wooden residence with slate roof',
+    structure: 'Traditional Architecture',
     parking: {
       spaces: 1,
-      description: 'On-site car space for 1 vehicle'
+      description: '1 vehicle'
     },
     highlights: [
-      'Newly upgraded in May 2025: modern system kitchen, premium bidet toilet, roof refurbishment, new water heater and faucets, tatami renewal in the main Japanese room, plus a newly built deck and exterior stairs',
-      'Residents enjoy access to private tennis courts within the villa community',
-      'Community association rules in place for well-managed surroundings'
+      'Traditional Architecture',
+      'Mountain Views',
+      'Private Garden',
+      'Renovated 2025'
     ],
     renovations: {
-      date: 'May 2025',
+      date: '2025',
       items: [
         'Modern system kitchen',
         'Premium bidet toilet',
@@ -125,21 +126,25 @@ export const realProperties: RealProperty[] = [
       'Each service provided with dedicated fee'
     ],
     images: [
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/Property A/33239_1.jpg',
+      '/Property A/33239_2.gif',
+      '/Property A/33239_3.jpg',
+      '/Property A/33239_4.jpg',
+      '/Property A/33239_5.jpg',
+      '/Property A/33239_6.jpg',
+      '/Property A/33239_7.jpg',
+      '/Property A/33239_8.jpg',
+      '/Property A/33239_9.jpg',
+      '/Property A/33239_10.jpg'
     ],
     features: [
-      'Recently renovated',
-      'Private tennis courts access',
-      'Community management',
-      'Traditional Japanese elements',
-      'Modern amenities',
-      'Mountain views',
-      'Peaceful location'
+      'Traditional Architecture',
+      'Mountain Views',
+      'Private Garden',
+      'Renovated 2025'
     ],
     status: 'available',
-    category: 'renovated',
+    category: 'villa',
     investment: {
       roi: 8.5,
       rentalPotential: 'High - popular vacation rental area',
@@ -152,10 +157,10 @@ export const realProperties: RealProperty[] = [
     }
   },
   {
-    id: 'kambara-property-b',
-    name: 'Kambara Villa B - Tsumagoi Village',
+    id: 'property-b-modern-retreat',
+    name: 'Property B - Modern Mountain Retreat',
     price: 10000000, // ¥10,000,000
-    layout: '2LDK (2 Bedrooms + Living/Dining/Kitchen)',
+    layout: '2LDK',
     landArea: 307,
     landAreaTsubo: 92.86,
     floorArea: 55.48,
@@ -172,8 +177,8 @@ export const realProperties: RealProperty[] = [
       stations: [
         {
           name: 'Shinano Railway "Naka-Karuizawa Station"',
-          distance: 'Approx. 20 km',
-          timeByCar: 'about 50 minutes by car'
+          distance: '20km',
+          timeByCar: '50min by car'
         }
       ]
     },
@@ -182,11 +187,17 @@ export const realProperties: RealProperty[] = [
       year: 1989,
       era: 'Heisei 1'
     },
-    structure: 'Wooden, single-story residence with roofing',
+    structure: 'Modern Design',
     parking: {
       spaces: 2,
-      description: 'On-site car space (2 vehicles)'
+      description: '2 vehicles'
     },
+    highlights: [
+      'Modern Design',
+      'Mountain Views',
+      'Large Windows',
+      'Energy Efficient'
+    ],
     restrictions: [
       'Subject to villa district landscape regulations of Tsumagoi Village',
       'Subject to building ordinances of Tsumagoi Village',
@@ -200,27 +211,32 @@ export const realProperties: RealProperty[] = [
       'Each service provided with dedicated fee'
     ],
     images: [
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      '/Property B/33250_1.jpg',
+      '/Property B/33250_2.gif',
+      '/Property B/33250_3.jpg',
+      '/Property B/33250_4.jpg',
+      '/Property B/33250_5.jpg',
+      '/Property B/33250_6.jpg',
+      '/Property B/33250_7.jpg',
+      '/Property B/33250_9.jpg',
+      '/Property B/33250_10.jpg'
     ],
     features: [
-      'Traditional Japanese structure',
-      'Spacious parking for 2 vehicles',
-      'Villa district location',
-      'Mountain setting',
-      'Privacy and tranquility',
-      'Access to community amenities'
+      'Modern Design',
+      'Mountain Views',
+      'Large Windows',
+      'Energy Efficient'
     ],
     status: 'available',
-    category: 'traditional',
+    category: 'villa',
     investment: {
       roi: 7.2,
-      rentalPotential: 'Good - traditional charm appeals to tourists',
+      rentalPotential: 'Good - modern design appeals to tourists',
       appreciation: 'Moderate - stable area with growth potential'
     },
     lifestyle: {
       community: ['Villa community', 'Landscape regulations', 'Building ordinances'],
-      amenities: ['Double parking', 'Traditional structure', 'Mountain location'],
+      amenities: ['Double parking', 'Modern structure', 'Mountain location'],
       nearby: ['Naka-Karuizawa Station', 'Tsumagoi Village center', 'Natural areas']
     }
   }
@@ -260,5 +276,7 @@ export const m2ToTsubo = (m2: number): number => {
 export const getPropertySummary = (property: RealProperty): string => {
   return `${property.layout} • ${property.landArea}m² (${property.landAreaTsubo}坪) • ¥${(property.price / 1000000).toFixed(0)}M`;
 };
+
+
 
 

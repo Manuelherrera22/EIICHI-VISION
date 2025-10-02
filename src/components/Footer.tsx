@@ -148,9 +148,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder={isClient ? t('footer.emailPlaceholder') : 'Enter your email'}
-                className="flex-1 px-3 sm:px-4 py-2 border border-border rounded-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="flex-1 px-3 sm:px-4 py-2 border-2 border-gray-300 rounded-full text-xs sm:text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder-gray-500"
               />
-              <button className="bg-primary text-white px-4 sm:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 text-xs sm:text-sm font-medium whitespace-nowrap">
+              <button className="bg-primary text-black px-4 sm:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors duration-200 text-xs sm:text-sm font-medium whitespace-nowrap shadow-lg border border-primary/30 ring-1 ring-primary/20">
                 {isClient ? t('footer.subscribe') : 'Subscribe'}
               </button>
             </div>

@@ -10,14 +10,14 @@ export default function About() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        document.title = 'About - Tabiji House | The Story of Shibusawa Eiichi\'s Legacy';
+        document.title = 'About - Tabiji House | The Story of Our Legacy';
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', 'Discover the story of Tabiji House and our connection to Shibusawa Eiichi\'s legacy. A new generation continues the tradition of ethical business and community revitalization in Japan.');
+        metaDescription.setAttribute('content', 'Discover the story of Tabiji House and our connection to the legacy of ethical business. A new generation continues the tradition of community revitalization in Japan.');
       }
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) {
-        metaKeywords.setAttribute('content', 'Tabiji House, Shibusawa Eiichi, Japanese business ethics, Gapponshugi, family legacy, real estate investment, Japan');
+        metaKeywords.setAttribute('content', 'Tabiji House, Japanese business ethics, Gapponshugi, family legacy, real estate investment, Japan');
       }
     }, 100);
     return () => clearTimeout(timer);
@@ -107,7 +107,7 @@ export default function About() {
                   "{t('about.moralityEconomy')}"
                 </div>
                 <div className="text-secondary text-sm mt-2 font-mono">
-                  - Shibusawa Eiichi, 1910
+                  - 1910
                 </div>
               </div>
             </div>

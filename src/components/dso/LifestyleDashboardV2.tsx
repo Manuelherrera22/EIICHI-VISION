@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Home, Palette, Calendar, CheckCircle, ArrowRight, Sparkles, BookOpen, Star, Target, Search, Users, ExternalLink } from 'lucide-react';
 import { useModal } from '@/contexts/ModalContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LifestyleDashboardV2Props {
   iseScore?: {
@@ -21,6 +22,7 @@ interface LifestyleDashboardV2Props {
 
 const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore }) => {
   const { openModal } = useModal();
+  const { t } = useLanguage();
 
   // Datos por defecto si no se proporcionan
   const defaultScore = {
@@ -55,12 +57,10 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
           >
             <div className="inline-flex items-center space-x-2 bg-purple-100 px-4 py-2 rounded-full mb-6">
               <Heart className="w-5 h-5 text-purple-600" />
-              <span className="text-purple-700 font-medium">El Taller de tu Santuario</span>
+              <span className="text-purple-700 font-medium">{t('lifestyle.sanctuaryWorkshop')}</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">
-              Tu Santuario Japonés
-              <br />
-              <span className="text-purple-600">Personalizado</span>
+              {t('lifestyle.personalizedJapaneseSanctuary')}
             </h1>
           </motion.div>
         </div>
@@ -77,14 +77,14 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
             <div className="bg-gradient-to-r from-purple-500 to-pink-600 p-8 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-3xl font-bold mb-2">Índice de Sincronización de Estilo de Vida (ISE)</h2>
-                  <p className="text-purple-100">Tu puntuación de alineación con tu visión de santuario</p>
+                  <h2 className="text-3xl font-bold mb-2">{t('lifestyle.lifestyleSyncIndex')}</h2>
+                  <p className="text-purple-100">{t('lifestyle.sanctuaryVisionAlignment')}</p>
                 </div>
                 <div className="text-right">
                   <div className="text-6xl font-bold">{iseScore.percentage}%</div>
                   <div className="text-purple-100 text-sm flex items-center justify-end mt-2">
                     <Target className="w-4 h-4 mr-1" />
-                    <span>Excelente Progreso</span>
+                    <span>{t('lifestyle.excellentProgress')}</span>
                   </div>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                    Puntos Fuertes
+                    {t('lifestyle.strengths')}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {iseScore.strengths.map((strength, index) => (
@@ -115,7 +115,7 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                    Áreas de Oportunidad para llegar al 100%
+                    {t('lifestyle.opportunityAreas')}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {iseScore.opportunities.map((opportunity, index) => (
@@ -135,10 +135,10 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
         <div className="mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
-              Módulos Estratégicos para Aumentar tu ISE
+              {t('lifestyle.strategicModules')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Herramientas y recursos para crear el santuario japonés de tus sueños
+              {t('lifestyle.toolsAndResources')}
             </p>
           </div>
 
@@ -154,24 +154,24 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Home size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Descubre tu Propiedad Ideal</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('lifestyle.discoverIdealProperty')}</h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  Nuestro motor de recomendación te presenta las mejores casas que se sincronizan con tu perfil
+                  {t('lifestyle.recommendationEngine')}
                 </p>
               </div>
               
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Motor de Recomendación IA</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.aiRecommendationEngine')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Top 3 Propiedades Compatibles</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.top3CompatibleProperties')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Aprendizaje de Preferencias</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.preferenceLearning')}</span>
                 </div>
               </div>
 
@@ -180,7 +180,7 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 className="w-full bg-orange-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2"
               >
                 <Search className="w-4 h-4" />
-                <span>Buscar Propiedades</span>
+                <span>{t('lifestyle.searchProperties')}</span>
               </button>
             </motion.div>
 
@@ -195,24 +195,24 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Palette size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Diseña tu Espacio</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('lifestyle.designYourSpace')}</h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  Accede a la Mesa de Diseño 3D y gamifica el proceso creativo de tu futuro hogar
+                  {t('lifestyle.design3DTable')}
                 </p>
               </div>
               
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Mesa de Diseño 3D Interactiva</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.interactive3DDesignTable')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Gamificación del Diseño</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.designGamification')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Renderizado Fotorrealista</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.photorealisticRendering')}</span>
                 </div>
               </div>
 
@@ -221,7 +221,7 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
               >
                 <Palette className="w-4 h-4" />
-                <span>Consultoría de Diseño</span>
+                <span>{t('lifestyle.designConsultation')}</span>
               </button>
             </motion.div>
 
@@ -236,24 +236,24 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Calendar size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Crea tu Itinerario de Vida</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('lifestyle.createLifeItinerary')}</h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  Define tus experiencias culturales y actividades para completar tu visión de estilo de vida
+                  {t('lifestyle.defineCulturalExperiences')}
                 </p>
               </div>
               
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Concierge de Experiencias</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.experienceConcierge')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Agenda Inteligente (Clima Real)</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.intelligentAgenda')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm text-gray-700">Recomendaciones Personalizadas</span>
+                  <span className="text-sm text-gray-700">{t('lifestyle.personalizedRecommendations')}</span>
                 </div>
               </div>
 
@@ -262,7 +262,7 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
                 className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2"
               >
                 <Heart className="w-4 h-4" />
-                <span>Experiencias Culturales</span>
+                <span>{t('lifestyle.culturalExperiences')}</span>
               </button>
             </motion.div>
           </div>
@@ -277,16 +277,15 @@ const LifestyleDashboardV2: React.FC<LifestyleDashboardV2Props> = ({ iseScore })
         >
           <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              ¿Listo para Perfeccionar tu Santuario?
+              {t('lifestyle.readyToPerfectSanctuary')}
             </h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Cada módulo está diseñado para aumentar tu puntuación de sincronización de estilo de vida. 
-              La IA trabaja activamente para crear el santuario japonés perfecto para ti.
+              {t('lifestyle.everyModuleDesigned')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">Diseño Personalizado</span>
-              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">Experiencias Únicas</span>
-              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">Santuario Perfecto</span>
+              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">{t('lifestyle.personalizedDesign')}</span>
+              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">{t('lifestyle.uniqueExperiences')}</span>
+              <span className="px-4 py-2 bg-white/20 rounded-full text-sm">{t('lifestyle.perfectSanctuary')}</span>
             </div>
           </div>
         </motion.div>

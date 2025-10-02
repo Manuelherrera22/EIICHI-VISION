@@ -136,3 +136,5 @@ Los errores 404 que estás viendo indican que las tablas de Supabase no existen 
 
 
 
+
+

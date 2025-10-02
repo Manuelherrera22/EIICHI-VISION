@@ -78,10 +78,10 @@ const AIChat = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-primary to-accent text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50 hover:scale-110 group"
+        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-primary to-accent text-black rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50 hover:scale-110 group"
       >
         <MessageCircle size={28} />
-        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center animate-pulse">
+        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-black text-xs rounded-full flex items-center justify-center animate-pulse">
           1
         </span>
       </button>
@@ -93,8 +93,8 @@ const AIChat = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Bot size={16} className="text-primary" />
+                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-md border-2 border-blue-700">
+                  <Bot size={16} className="text-black drop-shadow-sm" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">{t('ai.assistantName')}</h3>
@@ -118,18 +118,18 @@ const AIChat = () => {
                 >
                   <div className={`flex items-start space-x-2 max-w-[80%] ${message.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      message.type === 'user' ? 'bg-primary text-white' : 'bg-muted text-primary'
+                      message.type === 'user' ? 'bg-primary text-black' : 'bg-muted text-primary'
                     }`}>
                       {message.type === 'user' ? <User size={14} /> : <Bot size={14} />}
                     </div>
                     <div className={`px-4 py-2 rounded-2xl ${
                       message.type === 'user' 
-                        ? 'bg-primary text-white' 
+                        ? 'bg-primary text-black' 
                         : 'bg-muted text-primary'
                     }`}>
                       <p className="text-sm">{message.text}</p>
                       <p className={`text-xs mt-1 ${
-                        message.type === 'user' ? 'text-white/70' : 'text-secondary'
+                        message.type === 'user' ? 'text-black/70' : 'text-secondary'
                       }`}>
                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </p>
@@ -171,7 +171,7 @@ const AIChat = () => {
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputText.trim()}
-                  className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-10 h-10 bg-primary text-black rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={16} />
                 </button>

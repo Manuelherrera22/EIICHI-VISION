@@ -3,10 +3,19 @@
 import React, { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 import { User, LogOut, Settings, ChevronDown, Home } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function UserMenu() {
+  const { t } = useLanguage()
   const { user, signOut } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
+
+  // Debug: verificar que las traducciones funcionen
+  console.log('UserMenu translations:', {
+    dashboard: t('user.dropdown.dashboard'),
+    profile: t('user.dropdown.myProfile'),
+    logout: t('user.dropdown.logout')
+  })
 
   const handleSignOut = async () => {
     try {
@@ -65,7 +74,7 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <Home className="w-4 h-4" />
-                  Dashboard
+{t('user.dropdown.dashboard')}
                 </button>
                 
                 <button
@@ -76,7 +85,7 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <Settings className="w-4 h-4" />
-                  Mi Perfil
+{t('user.dropdown.myProfile')}
                 </button>
                 
                 <button
@@ -84,7 +93,7 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
-                  Cerrar Sesión
+{t('user.dropdown.logout')}
                 </button>
               </div>
             </div>

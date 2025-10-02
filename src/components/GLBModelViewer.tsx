@@ -168,35 +168,35 @@ const GLBModelViewer: React.FC<GLBModelViewerProps> = ({ modelUrl }) => {
       </Canvas>
 
       {/* Controles UI */}
-      <div className="absolute top-4 left-4 p-3 bg-white/20 backdrop-blur-md rounded-xl shadow-lg flex flex-col space-y-2">
+      <div className="absolute top-4 left-4 p-3 bg-white/90 backdrop-blur-md rounded-xl shadow-lg flex flex-col space-y-2">
         <button 
           onClick={() => setIsRotating(!isRotating)} 
-          className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
         >
           {isRotating ? <Pause size={20} /> : <Play size={20} />}
         </button>
         <button 
           onClick={resetCamera} 
-          className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
         >
           <RotateCcw size={20} />
         </button>
         <button 
           onClick={toggleFullscreen} 
-          className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
         >
           {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
         </button>
         <button 
           onClick={() => setIsDayMode(!isDayMode)} 
-          className="p-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors text-white"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
         >
           {isDayMode ? <Moon size={20} /> : <Sun size={20} />}
         </button>
       </div>
 
       {/* Información del modelo */}
-      <div className="absolute bottom-4 right-4 p-4 bg-white/20 backdrop-blur-md rounded-xl shadow-lg text-white text-right">
+      <div className="absolute bottom-4 right-4 p-4 bg-white/90 backdrop-blur-md rounded-xl shadow-lg text-gray-900 text-right">
         <div className="flex items-center justify-end space-x-2 mb-2">
           <span className="text-xs font-mono bg-blue-500 px-2 py-1 rounded-full">Three.js</span>
           <span className="text-xs font-mono bg-green-500 px-2 py-1 rounded-full">WebGL 2.0</span>

@@ -151,7 +151,7 @@ const ContactForm = () => {
         </p>
         <button
           onClick={() => setIsSubmitted(false)}
-          className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
+          className="bg-primary text-black px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
         >
           {t('contact.sendAnother')}
         </button>
@@ -182,7 +182,7 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+            className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
               errors.name ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
             placeholder={t('contact.namePlaceholder')}
@@ -207,7 +207,7 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.email ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
               placeholder={t('contact.emailPlaceholder')}
@@ -230,7 +230,7 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.phone ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
               placeholder={t('contact.phonePlaceholder')}
@@ -255,7 +255,7 @@ const ContactForm = () => {
               name="country"
               value={formData.country}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.country ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
@@ -287,7 +287,7 @@ const ContactForm = () => {
               name="budget"
               value={formData.budget}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                 errors.budget ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
@@ -317,7 +317,7 @@ const ContactForm = () => {
             name="interest"
             value={formData.interest}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
+            className={`w-full px-4 py-3 border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
               errors.interest ? 'border-red-300 bg-red-50' : 'border-border'
             }`}
           >
@@ -347,7 +347,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleInputChange}
             rows={4}
-            className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+            className="w-full px-4 py-3 border border-border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
             placeholder={t('contact.messagePlaceholder')}
           />
         </div>
@@ -356,7 +356,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-primary text-white py-4 px-6 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          className="w-full bg-primary text-black py-4 px-6 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
         >
           {isSubmitting ? (
             <>

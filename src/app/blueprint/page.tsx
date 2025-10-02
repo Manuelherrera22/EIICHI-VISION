@@ -7,7 +7,8 @@ import BlueprintPortal from '@/components/BlueprintPortal';
 import ARPropertyViewer from '@/components/ARPropertyViewer';
 import InteractiveDesignTable from '@/components/InteractiveDesignTable';
 import ProjectControlCenter from '@/components/ProjectControlCenter';
-import { useLanguage } from '@/contexts/LanguageContext';
+import ClientOnly from '@/components/ClientOnly';
+import { useSafeLanguage } from '@/hooks/useSafeLanguage';
 import { 
   Sparkles, 
   Camera, 
@@ -76,7 +77,7 @@ type BlueprintPhase = 'portal' | 'ar' | 'design' | 'control';
 const BlueprintEcosystem = () => {
   const [currentPhase, setCurrentPhase] = useState<BlueprintPhase>('portal');
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const { t } = useLanguage();
+  const { t } = useSafeLanguage();
 
   const phases = [
     {
@@ -176,7 +177,9 @@ const BlueprintEcosystem = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 space-y-2 sm:space-y-0">
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
               <Link href="/" className="text-primary hover:text-accent transition-colors font-medium text-sm">
-                ← {t('common.back')}
+                <ClientOnly fallback="← Back">
+                  ← {t('common.back')}
+                </ClientOnly>
               </Link>
               <div className="flex items-center space-x-3 sm:space-x-4 text-xs sm:text-sm">
                 <Link href="/projects" className="text-secondary hover:text-primary transition-colors">
@@ -292,7 +295,7 @@ const BlueprintEcosystem = () => {
               className={`p-3 sm:p-4 rounded-full shadow-lg transition-all ${
                 currentPhase === phase.id
                   ? 'bg-yellow-400 text-black shadow-xl'
-                  : 'bg-white/80 text-gray-700 hover:bg-white border border-gray-200 hover:shadow-xl'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:shadow-xl'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

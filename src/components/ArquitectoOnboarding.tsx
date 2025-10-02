@@ -3,7 +3,9 @@
 import React, { useState } from 'react'
 import { useArquitecto } from '@/contexts/ArquitectoContext'
 import { ONBOARDING_QUESTIONS, generateUserBlueprint } from '@/lib/arquitecto-types'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useSafeLanguage } from '@/hooks/useSafeLanguage'
+import ClientOnly from './ClientOnly'
+import FundamentalDataOnboarding from './FundamentalDataOnboarding'
 import { 
   Building, 
   Users, 
@@ -55,7 +57,7 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
 
 export default function ArquitectoOnboarding() {
   const { userProfile, setUserProfile, onboardingStep, setOnboardingStep, completeOnboarding } = useArquitecto()
-  const { t } = useLanguage()
+  const { t } = useSafeLanguage()
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
   // Paso 0: La Gran Bienvenida
@@ -105,10 +107,10 @@ export default function ArquitectoOnboarding() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              {t('onboarding.question.title')}
+              The Key Question
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              {t('onboarding.question.description')}
+              What is the main driver of your journey to Japan?
             </p>
           </div>
 
@@ -117,20 +119,19 @@ export default function ArquitectoOnboarding() {
             <button
               onClick={() => {
                 setUserProfile(prev => ({ ...prev, primaryGoal: 'invertir' }))
-                setOnboardingStep(2)
-                setCurrentQuestionIndex(0)
+                setOnboardingStep(2.5) // Ir directamente a datos fundamentales
               }}
               className="group bg-gray-50 hover:bg-gray-100 p-8 rounded-3xl border-2 border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:scale-105 text-left"
             >
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <TrendingUp className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('onboarding.options.invest.title')}</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">INVEST</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                {t('onboarding.options.invest.description')}
+                I seek to build a portfolio, generate returns, and explore business opportunities such as franchises or startups.
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">{t('onboarding.options.invest.target')}</span>
+                <span className="text-sm text-gray-500 font-medium">Aimed primarily at the Latin profile</span>
               </div>
             </button>
 
@@ -138,20 +139,19 @@ export default function ArquitectoOnboarding() {
             <button
               onClick={() => {
                 setUserProfile(prev => ({ ...prev, primaryGoal: 'migrar' }))
-                setOnboardingStep(2)
-                setCurrentQuestionIndex(0)
+                setOnboardingStep(2.5) // Ir directamente a datos fundamentales
               }}
               className="group bg-gray-50 hover:bg-gray-100 p-8 rounded-3xl border-2 border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:scale-105 text-left"
             >
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <Users className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('onboarding.options.migrate.title')}</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">MIGRATE</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                {t('onboarding.options.migrate.description')}
+                My objective is to establish a new life in Japan, either as a professional, entrepreneur, or for my family.
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">{t('onboarding.options.migrate.target')}</span>
+                <span className="text-sm text-gray-500 font-medium">General interest, long-term commitment</span>
               </div>
             </button>
 
@@ -159,20 +159,19 @@ export default function ArquitectoOnboarding() {
             <button
               onClick={() => {
                 setUserProfile(prev => ({ ...prev, primaryGoal: 'vivir' }))
-                setOnboardingStep(2)
-                setCurrentQuestionIndex(0)
+                setOnboardingStep(2.5) // Ir directamente a datos fundamentales
               }}
               className="group bg-gray-50 hover:bg-gray-100 p-8 rounded-3xl border-2 border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:scale-105 text-left"
             >
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <Home className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('onboarding.options.live.title')}</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">LIVE</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                {t('onboarding.options.live.description')}
+                I wish to find a second home, a vacation house, or a refuge to enjoy the lifestyle, culture, and nature.
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">{t('onboarding.options.live.target')}</span>
+                <span className="text-sm text-gray-500 font-medium">Aimed at European and Arab profiles</span>
               </div>
             </button>
           </div>
@@ -187,7 +186,7 @@ export default function ArquitectoOnboarding() {
     const currentQuestion = questions[currentQuestionIndex]
 
     if (!currentQuestion) {
-      // Todas las preguntas respondidas, mostrar resultado
+      // Todas las preguntas respondidas, mostrar transición a datos fundamentales
       return (
         <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background flex items-center justify-center p-6">
           <div className="max-w-4xl mx-auto text-center">
@@ -196,23 +195,23 @@ export default function ArquitectoOnboarding() {
                 <CheckCircle className="w-12 h-12 text-gray-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                {t('onboarding.complete.title')}
+                ¡Excelente! Cuestionario Básico Completado
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                {t('onboarding.complete.description')}
+                Ahora necesitamos algunos datos adicionales para crear tu perfil inteligente personalizado
               </p>
               <div className="bg-gray-100 p-6 rounded-2xl mb-8 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('onboarding.complete.blueprintTitle')}:</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Blueprint Generado:</h3>
                 <p className="text-gray-600">{generateUserBlueprint(userProfile)}</p>
               </div>
             </div>
             
             <button
-              onClick={completeOnboarding}
+              onClick={() => setOnboardingStep(2.5)} // Ir a datos fundamentales
               className="group bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-12 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-lg hover:scale-105 relative overflow-hidden border border-gray-200 hover:border-gray-300"
             >
               <span className="relative z-10 flex items-center gap-3">
-                {t('onboarding.complete.finalButton')}
+                Continuar con Datos Fundamentales
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
@@ -283,13 +282,76 @@ export default function ArquitectoOnboarding() {
               className="flex items-center gap-2 px-6 py-3 text-secondary hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {t('common.back')}
+              <ClientOnly fallback="Back">
+                {t('common.back')}
+              </ClientOnly>
             </button>
             
             <div className="text-sm text-secondary">
               {t('onboarding.question.progress', { current: currentQuestionIndex + 1, total: questions.length })}
             </div>
           </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Paso 2.5: Datos Fundamentales
+  if (onboardingStep === 2.5) {
+    return <FundamentalDataOnboarding />
+  }
+
+  // Paso 3: Completar Onboarding
+  if (onboardingStep === 3) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background flex items-center justify-center p-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+              <CheckCircle className="w-12 h-12 text-gray-600" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              ¡Perfil Completo Generado!
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Tu análisis inteligente está listo. Accede al dashboard para ver tus resultados.
+            </p>
+            {userProfile.intelligentScores && (
+              <div className="bg-gray-100 p-6 rounded-2xl mb-8 border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Resumen de tu Perfil:</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600">{userProfile.intelligentScores.IVI?.score || 0}</div>
+                    <div className="text-sm text-gray-600">IVI Score</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-green-600">{userProfile.intelligentScores.IVM?.score || 0}</div>
+                    <div className="text-sm text-gray-600">IVM Score</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-purple-600">{userProfile.intelligentScores.ISE?.score || 0}</div>
+                    <div className="text-sm text-gray-600">ISE Score</div>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <span className="text-sm text-gray-600">Recomendación: </span>
+                  <span className="font-semibold text-gray-800 capitalize">
+                    {userProfile.intelligentScores.recommendation || 'Moderada'}
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <button
+            onClick={completeOnboarding}
+            className="group bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-12 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-lg hover:scale-105 relative overflow-hidden border border-gray-200 hover:border-gray-300"
+          >
+            <span className="relative z-10 flex items-center gap-3">
+              Acceder al Dashboard
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </button>
         </div>
       </div>
     )

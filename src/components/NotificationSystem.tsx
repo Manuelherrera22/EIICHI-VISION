@@ -224,7 +224,7 @@ const NotificationSystem: React.FC<NotificationSystemProps> = ({ userProfile, da
           <div className="max-h-96 overflow-y-auto">
             {notifications.length === 0 ? (
               <div className="p-4 text-center text-gray-500">
-                <Bell className="w-8 h-8 mx-auto mb-2 text-gray-300" />
+                <Bell className="w-8 h-8 mx-auto mb-2 text-gray-500" />
                 <p>No hay notificaciones nuevas</p>
               </div>
             ) : (

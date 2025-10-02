@@ -154,7 +154,7 @@ const PremiumControls = () => {
 
   return (
     <Html position={[0, 0, 0]} center>
-      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20">
+      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200">
         <h3 className="font-serif font-bold text-primary text-sm mb-3 flex items-center space-x-2">
           <Settings size={16} />
           <span>Controles Premium</span>
@@ -164,7 +164,7 @@ const PremiumControls = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
+              className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             >
               {isPlaying ? <Pause size={14} /> : <Play size={14} />}
             </button>
@@ -174,7 +174,7 @@ const PremiumControls = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setLightMode(lightMode === 'day' ? 'night' : 'day')}
-              className="p-2 rounded-lg bg-accent/10 hover:bg-accent/20 transition-colors"
+              className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             >
               {lightMode === 'day' ? <Sun size={14} /> : <Moon size={14} />}
             </button>
@@ -184,7 +184,7 @@ const PremiumControls = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setShowInfo(!showInfo)}
-              className="p-2 rounded-lg bg-green-500/10 hover:bg-green-500/20 transition-colors"
+              className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 transition-colors text-gray-700"
             >
               <Info size={14} />
             </button>

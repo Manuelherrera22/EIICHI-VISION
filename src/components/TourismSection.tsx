@@ -308,7 +308,7 @@ const TourismSection = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`group flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activeTab === tab.id
-                    ? 'bg-primary text-white shadow-lg'
+                    ? 'bg-primary text-black shadow-lg'
                     : 'bg-white text-primary hover:bg-primary/10 border border-primary/20'
                 }`}
               >
@@ -336,14 +336,14 @@ const TourismSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="group bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-primary text-black px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <span>{t('tourism.startMyProject')}</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
               <a 
                 href="/projects" 
-                className="group border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center"
+                className="group border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-black transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center"
               >
                 <span>{t('tourism.viewProperties')}</span>
                 <MapPin size={20} className="group-hover:scale-110 transition-transform duration-200" />
