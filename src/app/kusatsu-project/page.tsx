@@ -353,7 +353,9 @@ const KusatsuProjectPage = () => {
                   left: `${(i * 7) % 100}%`,
                   top: '100%'
                 }}
-              />
+              >
+                <div />
+              </HydrationSafeMotion>
             ))}
           </div>
 
