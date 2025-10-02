@@ -15,6 +15,7 @@ const DetailedJapaneseHouse = ({
   position?: [number, number, number];
   onRoomClick?: (room: string) => void;
 }) => {
+  const { t } = useLanguage();
   const meshRef = useRef<THREE.Group>(null);
   const [hoveredRoom, setHoveredRoom] = useState<string | null>(null);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
