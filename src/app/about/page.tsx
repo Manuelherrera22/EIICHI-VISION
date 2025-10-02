@@ -10,14 +10,14 @@ export default function About() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        document.title = 'About - Tabiji House | The Story of Our Legacy';
+        document.title = 'About - Tabiji House | Our Story and Mission';
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', 'Discover the story of Tabiji House and our connection to the legacy of ethical business. A new generation continues the tradition of community revitalization in Japan.');
+        metaDescription.setAttribute('content', 'Discover the story of Tabiji House and our mission to connect cultures through Japanese real estate heritage. A new generation continues the tradition of community revitalization.');
       }
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) {
-        metaKeywords.setAttribute('content', 'Tabiji House, Japanese business ethics, Gapponshugi, family legacy, real estate investment, Japan');
+        metaKeywords.setAttribute('content', 'Tabiji House, Japanese real estate, family legacy, cultural heritage, real estate investment, Japan');
       }
     }, 100);
     return () => clearTimeout(timer);
@@ -44,76 +44,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* The Visionary Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-                  {t('about.visionaryPart')}
-                </div>
-                <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-                  {t('about.visionaryTitle')}
-                </h2>
-                <div className="text-lg text-accent font-mono mb-6">
-                  {t('about.visionarySubtitle')}
-                </div>
-              </div>
-
-              <div className="space-y-6 text-foreground leading-relaxed">
-                <p className="text-lg">
-                  {t('about.visionaryDescription1')}
-                </p>
-                
-                <p>
-                  {t('about.visionaryDescription2')}
-                </p>
-
-                <div className="bg-muted p-6 rounded-xl">
-                  <h3 className="font-serif text-lg font-semibold text-primary mb-3">
-                    {t('about.transformativeImpact')}
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>{t('about.impact1')}</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>{t('about.impact2')}</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>{t('about.impact3')}</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-accent rounded-full"></div>
-                      <span>{t('about.impact4')}</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-80"></div>
-              </div>
-              
-              <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg border border-border max-w-xs">
-                <div className="text-primary font-serif text-lg leading-relaxed">
-                  "{t('about.moralityEconomy')}"
-                </div>
-                <div className="text-secondary text-sm mt-2 font-mono">
-                  - 1910
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* The New Generation Section */}
       <section className="py-20 bg-muted">
