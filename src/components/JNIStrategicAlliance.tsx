@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Handshake, 
@@ -217,12 +218,12 @@ const JNIStrategicAlliance: React.FC = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <Link 
                 href="/projects" 
                 className="px-8 py-4 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-xl font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
               >
                 {t('jni.cta.viewProperties')}
-              </a>
+              </Link>
               <button className="px-8 py-4 bg-white border-2 border-gray-600 text-gray-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300">
                 {t('jni.cta.learnMore')}
               </button>

@@ -15,6 +15,7 @@ import JNIStrategicAlliance from '@/components/JNIStrategicAlliance';
 import { Sparkles, Camera, Settings, Home as HomeIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Lazy load heavy components
@@ -108,12 +109,12 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>
-                  <a 
+                  <Link 
                     href="/projects" 
                     className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-primary hover:text-black transition-colors duration-300 font-semibold text-base sm:text-lg justify-center min-h-[48px] sm:min-h-[56px] flex items-center"
                   >
                     {t('3d.viewMoreProjects')}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

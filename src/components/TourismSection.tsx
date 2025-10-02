@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { 
   Mountain, 
   Waves, 
@@ -341,13 +342,13 @@ const TourismSection = () => {
                 <span>{t('tourism.startMyProject')}</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
               </a>
-              <a 
+              <Link 
                 href="/projects" 
                 className="group border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-black transition-all duration-300 font-semibold text-lg flex items-center space-x-2 justify-center"
               >
                 <span>{t('tourism.viewProperties')}</span>
                 <MapPin size={20} className="group-hover:scale-110 transition-transform duration-200" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

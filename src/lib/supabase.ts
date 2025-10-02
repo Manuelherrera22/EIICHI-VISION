@@ -1,58 +1,12 @@
-// Intentar importar Supabase, usar mock si no está disponible
-let createClient: any;
-let SUPABASE_CONFIG: any;
-
-try {
-  const supabaseModule = require('@supabase/supabase-js');
-  createClient = supabaseModule.createClient;
-  SUPABASE_CONFIG = require('./supabase-config').SUPABASE_CONFIG;
-} catch (error) {
-  console.warn('⚠️ @supabase/supabase-js no está instalado. Usando implementación mock.');
-  // Usar implementación mock
-  createClient = (url: string, key: string, options?: any) => ({
-    auth: {
-      signUp: async (options: any) => ({
-        data: { user: null, session: null },
-        error: { message: 'Instala @supabase/supabase-js para usar autenticación real' }
-      }),
-      signInWithPassword: async (options: any) => ({
-        data: { user: null, session: null },
-        error: { message: 'Instala @supabase/supabase-js para usar autenticación real' }
-      }),
-      signOut: async () => ({ error: null }),
-      getUser: async () => ({ data: { user: null }, error: null }),
-      onAuthStateChange: (callback: any) => ({
-        data: { subscription: { unsubscribe: () => {} } }
-      }),
-      resetPasswordForEmail: async (email: string, options?: any) => ({
-        data: null,
-        error: { message: 'Instala @supabase/supabase-js para usar autenticación real' }
-      }),
-      updateUser: async (options: any) => ({
-        data: null,
-        error: { message: 'Instala @supabase/supabase-js para usar autenticación real' }
-      })
-    }
-  });
-  
-  SUPABASE_CONFIG = {
-    url: 'https://kbqxdsqklqdsvfrwawjj.supabase.co',
-    projectId: 'kbqxdsqklqdsvfrwawjj',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImticXhkc3FrbHFkc3Zmcndhd2pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxMTYyNTUsImV4cCI6MjA3NDY5MjI1NX0.XheHxxVayJukawFGR6iUoCh2W_03kguWU973rZT--Ao',
-    auth: {
-      autoRefreshToken: true,
-      persistSession: true,
-      detectSessionInUrl: true,
-      flowType: 'pkce' as const
-    }
-  };
-}
+// Supabase client configuration
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
+import { SUPABASE_CONFIG } from './supabase-config';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || SUPABASE_CONFIG.url
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || SUPABASE_CONFIG.anonKey
 const supabaseProjectId = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || SUPABASE_CONFIG.projectId
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
   auth: SUPABASE_CONFIG.auth
 })
 

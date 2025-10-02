@@ -28,6 +28,7 @@ import {
   Building,
   TreePine,
   Waves,
+  X,
   Mountain,
   Zap,
   Award,

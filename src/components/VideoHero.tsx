@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import Link from 'next/link';
 import VideoBackground from './VideoBackground';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -67,7 +68,7 @@ const VideoHero = () => {
 
         {/* CTA Buttons Premium */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4 max-w-2xl mx-auto">
-          <a 
+          <Link 
             href="/projects" 
             className="group bg-white/95 text-primary px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full hover:bg-white hover:text-primary transition-all duration-300 font-bold text-base sm:text-lg md:text-xl flex items-center space-x-2 sm:space-x-3 shadow-2xl hover:shadow-white/25 transform hover:-translate-y-1 md:hover:-translate-y-2 border border-white/20 w-full sm:w-auto justify-center min-h-[48px] sm:min-h-[56px]"
           >
@@ -75,7 +76,7 @@ const VideoHero = () => {
             <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
 
           <button 
             onClick={() => {

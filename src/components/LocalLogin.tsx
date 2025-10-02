@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/services/supabase';
+import { supabase } from '@/lib/supabase';
 import {
   User,
   Lock,
