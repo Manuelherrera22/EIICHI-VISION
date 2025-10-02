@@ -193,15 +193,15 @@ const PropertyAnalysis: React.FC<PropertyAnalysisProps> = ({ property, isOpen, o
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <span>{t('propertyAnalysis.marketTrend')}:</span>
-                          <span className="font-semibold text-green-600 capitalize">{analysis.marketTrend}</span>
+                          <span className="font-semibold text-green-600">{t(`propertyAnalysis.${analysis.marketTrend}`)}</span>
                         </div>
                         <div className="flex justify-between">
                           <span>{t('propertyAnalysis.demandLevel')}:</span>
-                          <span className="font-semibold text-blue-600 capitalize">{analysis.demandLevel}</span>
+                          <span className="font-semibold text-blue-600">{t(`propertyAnalysis.${analysis.demandLevel}`)}</span>
                         </div>
                         <div className="flex justify-between">
                           <span>{t('propertyAnalysis.competition')}:</span>
-                          <span className="font-semibold text-green-600 capitalize">{analysis.competitionLevel}</span>
+                          <span className="font-semibold text-green-600">{t(`propertyAnalysis.${analysis.competitionLevel}`)}</span>
                         </div>
                       </div>
                     </div>
@@ -212,23 +212,23 @@ const PropertyAnalysis: React.FC<PropertyAnalysisProps> = ({ property, isOpen, o
               {activeTab === 'investment' && (
                 <div className="space-y-6">
                   <div className="bg-green-50 p-6 rounded-xl">
-                    <h4 className="font-semibold text-green-800 mb-4">Investment Strengths</h4>
+                    <h4 className="font-semibold text-green-800 mb-4">{t('propertyAnalysis.investmentStrengths')}</h4>
                     <ul className="space-y-2 text-green-700">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 mt-0.5" />
-                        Strong rental potential in Gunma tourism market
+                        {t('propertyAnalysis.rentalPotential')}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 mt-0.5" />
-                        Unique cultural heritage value
+                        {t('propertyAnalysis.culturalHeritage')}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 mt-0.5" />
-                        Growing foreign interest in Japanese rural properties
+                        {t('propertyAnalysis.foreignInterest')}
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 mt-0.5" />
-                        Government incentives for rural property investment
+                        {t('propertyAnalysis.governmentIncentives')}
                       </li>
                     </ul>
                   </div>
@@ -238,23 +238,23 @@ const PropertyAnalysis: React.FC<PropertyAnalysisProps> = ({ property, isOpen, o
               {activeTab === 'risks' && (
                 <div className="space-y-6">
                   <div className="bg-orange-50 p-6 rounded-xl">
-                    <h4 className="font-semibold text-orange-800 mb-4">Risk Factors</h4>
+                    <h4 className="font-semibold text-orange-800 mb-4">{t('propertyAnalysis.riskFactors')}</h4>
                     <ul className="space-y-2 text-orange-700">
                       <li className="flex items-start gap-2">
                         <AlertTriangle className="w-4 h-4 mt-0.5" />
-                        Remote location may limit accessibility
+                        {t('propertyAnalysis.remoteLocation')}
                       </li>
                       <li className="flex items-start gap-2">
                         <AlertTriangle className="w-4 h-4 mt-0.5" />
-                        Seasonal weather conditions require maintenance
+                        {t('propertyAnalysis.weatherMaintenance')}
                       </li>
                       <li className="flex items-start gap-2">
                         <AlertTriangle className="w-4 h-4 mt-0.5" />
-                        Limited English-speaking services in local area
+                        {t('propertyAnalysis.englishServices')}
                       </li>
                       <li className="flex items-start gap-2">
                         <AlertTriangle className="w-4 h-4 mt-0.5" />
-                        Property management complexity for foreign owners
+                        {t('propertyAnalysis.managementComplexity')}
                       </li>
                     </ul>
                   </div>
@@ -264,23 +264,23 @@ const PropertyAnalysis: React.FC<PropertyAnalysisProps> = ({ property, isOpen, o
               {activeTab === 'opportunities' && (
                 <div className="space-y-6">
                   <div className="bg-blue-50 p-6 rounded-xl">
-                    <h4 className="font-semibold text-blue-800 mb-4">Growth Opportunities</h4>
+                    <h4 className="font-semibold text-blue-800 mb-4">{t('propertyAnalysis.growthOpportunities')}</h4>
                     <ul className="space-y-2 text-blue-700">
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 mt-0.5" />
-                        Growing tourism industry in Gunma Prefecture
+                        {t('propertyAnalysis.tourismIndustry')}
                       </li>
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 mt-0.5" />
-                        Increasing foreign interest in Japanese rural properties
+                        {t('propertyAnalysis.ruralInterest')}
                       </li>
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 mt-0.5" />
-                        Potential for cultural tourism rental income
+                        {t('propertyAnalysis.culturalTourism')}
                       </li>
                       <li className="flex items-start gap-2">
                         <Star className="w-4 h-4 mt-0.5" />
-                        Heritage value likely to appreciate over time
+                        {t('propertyAnalysis.heritageValue')}
                       </li>
                     </ul>
                   </div>
