@@ -383,7 +383,7 @@ Basado en tu perfil actual:
                         <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
                           message.type === 'user' 
                             ? 'bg-blue-600 text-white' 
-                            : 'bg-gray-100 text-gray-600'
+                            : 'bg-gray-100 text-black'
                         }`}>
                           {message.type === 'user' ? <User className="w-3 h-3 sm:w-4 sm:h-4" /> : <Bot className="w-3 h-3 sm:w-4 sm:h-4" />}
                         </div>
@@ -391,11 +391,11 @@ Basado en tu perfil actual:
                         <div className={`rounded-2xl p-2 sm:p-3 ${
                           message.type === 'user'
                             ? 'bg-blue-600 text-white'
-                            : 'bg-gray-100 text-gray-900'
+                            : 'bg-gray-100 text-black'
                         }`}>
                           <div className="text-xs sm:text-sm whitespace-pre-wrap">{message.content}</div>
                           <div className={`text-xs mt-1 ${
-                            message.type === 'user' ? 'text-blue-100' : 'text-gray-500'
+                            message.type === 'user' ? 'text-blue-100' : 'text-black/70'
                           }`}>
                             {message.timestamp.toLocaleTimeString()}
                           </div>
@@ -427,7 +427,7 @@ Basado en tu perfil actual:
                   {/* Suggestions - Responsive */}
                   {messages.length > 0 && messages[messages.length - 1].suggestions && (
                     <div className="space-y-2">
-                      <p className="text-xs text-gray-500">{t('chatbot.suggestions')}</p>
+                      <p className="text-xs text-black">{t('chatbot.suggestions')}</p>
                       <div className="flex flex-wrap gap-1 sm:gap-2">
                         {messages[messages.length - 1].suggestions?.map((suggestion, index) => (
                           <button
@@ -489,7 +489,7 @@ Basado en tu perfil actual:
                     <div className="flex items-center space-x-1 sm:space-x-2">
                       <button
                         onClick={clearChat}
-                        className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                        className="p-1 text-black hover:text-gray-600 transition-colors"
                       >
                         <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
                       </button>
@@ -498,7 +498,7 @@ Basado en tu perfil actual:
                       </button>
                     </div>
                     
-                    <div className="text-xs text-gray-500 hidden sm:block">
+                    <div className="text-xs text-black hidden sm:block">
                       {t('chatbot.poweredByAI')}
                     </div>
                   </div>
