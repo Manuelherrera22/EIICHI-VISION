@@ -302,19 +302,19 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
 
   const getMessageIcon = (type: string) => {
     switch (type) {
-      case 'user': return <User size={16} className="text-blue-600" />;
-      case 'bot': return <Bot size={16} className="text-green-600" />;
-      case 'system': return <Info size={16} className="text-gray-600" />;
-      default: return <MessageCircle size={16} />;
+      case 'user': return <User size={16} className="text-black" />;
+      case 'bot': return <Bot size={16} className="text-black" />;
+      case 'system': return <Info size={16} className="text-black" />;
+      default: return <MessageCircle size={16} className="text-black" />;
     }
   };
 
   const getActionIcon = (actionType?: string) => {
     switch (actionType) {
-      case 'property_search': return <Home size={16} />;
-      case 'roi_calculation': return <DollarSign size={16} />;
-      case 'market_analysis': return <TrendingUp size={16} />;
-      default: return <Lightbulb size={16} />;
+      case 'property_search': return <Home size={16} className="text-black" />;
+      case 'roi_calculation': return <DollarSign size={16} className="text-black" />;
+      case 'market_analysis': return <TrendingUp size={16} className="text-black" />;
+      default: return <Lightbulb size={16} className="text-black" />;
     }
   };
 
