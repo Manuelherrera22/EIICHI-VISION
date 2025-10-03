@@ -613,7 +613,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                           className={`absolute right-3 top-1/2 transform -translate-y-1/2 p-1 rounded-full transition-colors ${
                             isListening 
                               ? 'bg-red-500 text-black' 
-                              : 'text-gray-400 hover:text-gray-600'
+                              : 'text-black hover:text-gray-600'
                           }`}
                         >
                           {isListening ? <MicOff size={16} /> : <Mic size={16} />}

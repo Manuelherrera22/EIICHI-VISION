@@ -97,7 +97,7 @@ const AIChat = () => {
                   <Bot size={16} className="text-black drop-shadow-sm" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-primary">{t('ai.assistantName')}</h3>
+                  <h3 className="font-semibold text-black">{t('ai.assistantName')}</h3>
                   <p className="text-xs text-black">{t('ai.online')}</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ const AIChat = () => {
                 >
                   <div className={`flex items-start space-x-2 max-w-[80%] ${message.type === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      message.type === 'user' ? 'bg-primary text-black' : 'bg-muted text-primary'
+                      message.type === 'user' ? 'bg-primary text-black' : 'bg-muted text-black'
                     }`}>
                       {message.type === 'user' ? <User size={14} /> : <Bot size={14} />}
                     </div>
