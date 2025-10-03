@@ -7293,11 +7293,11 @@ const translations = {
     'recommendations.traditionalJapaneseProperties': 'propiedades tradicionales japonesas con características específicas de onsen.',
     
     // Smart Alerts System Translations
-    'alerts.intelligentAlerts': 'Alertas Inteligentes',
+    'alerts.intelligentAlerts': 'Intelligent Alerts',
     'alerts.unreadCount': '{count} no leídas',
     'alerts.highPriorityCount': '{count} alta prioridad',
     'alerts.markAllAsRead': 'Marcar todas como leídas',
-    'alerts.searchPlaceholder': 'Buscar alertas...',
+    'alerts.searchPlaceholder': 'Search alerts...',
     'alerts.filters.all': 'Todas',
     'alerts.filters.unread': 'No leídas',
     'alerts.filters.highPriority': 'Alta prioridad',
@@ -7327,10 +7327,10 @@ const translations = {
     'alerts.tags.critical': 'Crítico',
     
     // AI Predictions Additional Translations
-    'predictions.title': 'Predicciones de IA',
-    'predictions.subtitle': 'Análisis predictivo avanzado con machine learning',
-    'predictions.generateNew': 'Generar Nueva',
-    'predictions.export': 'Exportar',
+    'predictions.title': 'AI Predictions',
+    'predictions.subtitle': 'Advanced predictive analysis with machine learning',
+    'predictions.generateNew': 'Generate New',
+    'predictions.export': 'Export',
     'predictions.filters.all': 'Todas',
     'predictions.filters.investment': 'Inversión',
     'predictions.filters.market': 'Mercado',
