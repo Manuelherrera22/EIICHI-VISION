@@ -9326,7 +9326,7 @@ const translations = {
 
 // Provider del contexto de idioma
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('es'); // Empezar con 'es' (español) por defecto
+  const [language, setLanguage] = useState<Language>('en'); // Empezar con 'en' (inglés) por defecto
   const [isHydrated, setIsHydrated] = useState(false);
 
   // Función para obtener traducción con fallback automático
@@ -9367,14 +9367,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Forzar español por defecto al cargar (solo en el cliente)
+  // Forzar inglés por defecto al cargar (solo en el cliente)
   useEffect(() => {
     setIsHydrated(true);
     
-    // Siempre usar español por defecto, ignorar localStorage
-    setLanguage('es');
+    // Siempre usar inglés por defecto, ignorar localStorage
+    setLanguage('en');
     if (typeof window !== 'undefined') {
-      localStorage.setItem('language', 'es');
+      localStorage.setItem('language', 'en');
     }
   }, []);
 
