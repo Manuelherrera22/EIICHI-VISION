@@ -166,7 +166,7 @@ const RealPropertiesSection: React.FC = () => {
                       <span className="font-semibold">{t('featuredProperties.age')}:</span> {property.age} {t('featuredProperties.years')}
                     </div>
                     <div>
-                      <span className="font-semibold">{t('featuredProperties.built')}:</span> October 1989
+                      <span className="font-semibold">{t('featuredProperties.built')}:</span> {t('property.builtDate')}
                     </div>
                     <div>
                       <span className="font-semibold">{t('featuredProperties.parking')}:</span> {property.id === 'property-a' ? '1' : '2'} {property.id === 'property-b' ? t('featuredProperties.vehicles') : t('featuredProperties.vehicle')}

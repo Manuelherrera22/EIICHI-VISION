@@ -65,79 +65,79 @@ interface FundamentalDataStep {
   }[]
 }
 
-const FUNDAMENTAL_DATA_STEPS: FundamentalDataStep[] = [
+const getFundamentalDataSteps = (t: any): FundamentalDataStep[] => [
   {
     id: 'basic-info',
-    title: 'Información Básica',
-    description: 'Datos personales esenciales',
+    title: t('onboarding.basicInfo.title'),
+    description: t('onboarding.basicInfo.description'),
     icon: 'User',
     fields: [
-      { id: 'fullName', type: 'text', label: 'Nombre completo', required: true },
-      { id: 'phone', type: 'text', label: 'Teléfono', placeholder: '+1 (555) 123-4567' },
-      { id: 'nationality', type: 'select', label: 'Nacionalidad', required: true, options: [
-        { value: 'mexicana', label: 'Mexicana' },
-        { value: 'estadounidense', label: 'Estadounidense' },
-        { value: 'canadiense', label: 'Canadiense' },
-        { value: 'espanola', label: 'Española' },
-        { value: 'argentina', label: 'Argentina' },
-        { value: 'colombiana', label: 'Colombiana' },
-        { value: 'otra', label: 'Otra' }
+      { id: 'fullName', type: 'text', label: t('onboarding.basicInfo.fullName'), required: true },
+      { id: 'phone', type: 'text', label: t('onboarding.basicInfo.phone'), placeholder: '+1 (555) 123-4567' },
+      { id: 'nationality', type: 'select', label: t('onboarding.basicInfo.nationality'), required: true, options: [
+        { value: 'mexicana', label: t('onboarding.nationality.mexican') },
+        { value: 'estadounidense', label: t('onboarding.nationality.american') },
+        { value: 'canadiense', label: t('onboarding.nationality.canadian') },
+        { value: 'espanola', label: t('onboarding.nationality.spanish') },
+        { value: 'argentina', label: t('onboarding.nationality.argentine') },
+        { value: 'colombiana', label: t('onboarding.nationality.colombian') },
+        { value: 'otra', label: t('onboarding.nationality.other') }
       ]},
-      { id: 'age', type: 'number', label: 'Edad', min: 18, max: 100, required: true },
-      { id: 'gender', type: 'select', label: 'Género', options: [
-        { value: 'masculino', label: 'Masculino' },
-        { value: 'femenino', label: 'Femenino' },
-        { value: 'otro', label: 'Otro' },
-        { value: 'prefiero-no-decir', label: 'Prefiero no decir' }
+      { id: 'age', type: 'number', label: t('onboarding.basicInfo.age'), min: 18, max: 100, required: true },
+      { id: 'gender', type: 'select', label: t('onboarding.basicInfo.gender'), options: [
+        { value: 'masculino', label: t('onboarding.gender.male') },
+        { value: 'femenino', label: t('onboarding.gender.female') },
+        { value: 'otro', label: t('onboarding.gender.other') },
+        { value: 'prefiero-no-decir', label: t('onboarding.gender.preferNotToSay') }
       ]},
-      { id: 'currentCountry', type: 'text', label: 'País actual', required: true },
-      { id: 'currentCity', type: 'text', label: 'Ciudad actual', required: true }
+      { id: 'currentCountry', type: 'text', label: t('onboarding.basicInfo.currentCountry'), required: true },
+      { id: 'currentCity', type: 'text', label: t('onboarding.basicInfo.currentCity'), required: true }
     ]
   },
   {
     id: 'intention-details',
-    title: 'Detalles de Intención',
-    description: 'Información específica sobre tu objetivo',
+    title: t('onboarding.intention.title'),
+    description: t('onboarding.intention.description'),
     icon: 'Target',
     fields: [
-      { id: 'timeline', type: 'select', label: 'Timeline', required: true, options: [
-        { value: 'inmediato', label: 'Inmediato (0-3 meses)' },
-        { value: '6-meses', label: '6 meses' },
-        { value: '1-ano', label: '1 año' },
-        { value: 'explorando', label: 'Solo explorando' }
+      { id: 'timeline', type: 'select', label: t('onboarding.intention.timeline'), required: true, options: [
+        { value: 'inmediato', label: t('onboarding.timeline.immediate') },
+        { value: '6-meses', label: t('onboarding.timeline.sixMonths') },
+        { value: '1-ano', label: t('onboarding.timeline.oneYear') },
+        { value: 'explorando', label: t('onboarding.timeline.exploring') }
       ]},
-      { id: 'motivation', type: 'textarea', label: '¿Por qué Japón?', placeholder: 'Cuéntanos qué te motiva a considerar Japón...', required: true },
-      { id: 'previousExperience', type: 'select', label: 'Experiencia previa con Japón', options: [
-        { value: 'ninguna', label: 'Ninguna' },
-        { value: 'limitada', label: 'Limitada (viajes cortos)' },
-        { value: 'moderada', label: 'Moderada (varios viajes)' },
-        { value: 'extensa', label: 'Extensa (vivido/trabajado)' }
+      { id: 'motivation', type: 'textarea', label: t('onboarding.intention.motivation'), placeholder: t('onboarding.intention.motivationPlaceholder'), required: true },
+      { id: 'previousExperience', type: 'select', label: t('onboarding.intention.previousExperience'), options: [
+        { value: 'ninguna', label: t('onboarding.experience.none') },
+        { value: 'limitada', label: t('onboarding.experience.limited') },
+        { value: 'moderada', label: t('onboarding.experience.moderate') },
+        { value: 'extensa', label: t('onboarding.experience.extensive') }
       ]}
     ]
   }
 ]
 
 // Campos específicos por objetivo
-const GOAL_SPECIFIC_FIELDS = {
+const getGoalSpecificFields = (t: any) => ({
   invertir: [
     {
       id: 'budgetMin',
       type: 'number' as const,
-      label: 'Presupuesto mínimo',
+      label: t('onboarding.investment.budgetMin'),
       placeholder: '50000',
       required: true
     },
     {
       id: 'budgetMax',
       type: 'number' as const,
-      label: 'Presupuesto máximo',
+      label: t('onboarding.investment.budgetMax'),
       placeholder: '500000',
       required: true
     },
     {
       id: 'budgetCurrency',
       type: 'select' as const,
-      label: 'Moneda',
+      label: t('onboarding.investment.currency'),
       options: [
         { value: 'USD', label: 'USD' },
         { value: 'EUR', label: 'EUR' },
@@ -149,39 +149,39 @@ const GOAL_SPECIFIC_FIELDS = {
     {
       id: 'annualIncome',
       type: 'number' as const,
-      label: 'Ingresos anuales',
+      label: t('onboarding.investment.annualIncome'),
       placeholder: '100000'
     },
     {
       id: 'incomeStability',
       type: 'select' as const,
-      label: 'Estabilidad de ingresos',
+      label: t('onboarding.investment.incomeStability'),
       options: [
-        { value: 'inestable', label: 'Inestable' },
-        { value: 'moderada', label: 'Moderada' },
-        { value: 'estable', label: 'Estable' }
+        { value: 'inestable', label: t('onboarding.stability.unstable') },
+        { value: 'moderada', label: t('onboarding.stability.moderate') },
+        { value: 'estable', label: t('onboarding.stability.stable') }
       ]
     },
     {
       id: 'financialExperience',
       type: 'select' as const,
-      label: 'Experiencia financiera',
+      label: t('onboarding.investment.financialExperience'),
       options: [
-        { value: 'ninguna', label: 'Ninguna' },
-        { value: 'basica', label: 'Básica' },
-        { value: 'intermedia', label: 'Intermedia' },
-        { value: 'avanzada', label: 'Avanzada' }
+        { value: 'ninguna', label: t('onboarding.level.none') },
+        { value: 'basica', label: t('onboarding.level.basic') },
+        { value: 'intermedia', label: t('onboarding.level.intermediate') },
+        { value: 'avanzada', label: t('onboarding.level.advanced') }
       ],
       required: true
     },
     {
       id: 'riskTolerance',
       type: 'select' as const,
-      label: 'Tolerancia al riesgo',
+      label: t('onboarding.investment.riskTolerance'),
       options: [
-        { value: 'conservador', label: 'Conservador' },
-        { value: 'moderado', label: 'Moderado' },
-        { value: 'agresivo', label: 'Agresivo' }
+        { value: 'conservador', label: t('onboarding.risk.conservative') },
+        { value: 'moderado', label: t('onboarding.risk.moderate') },
+        { value: 'agresivo', label: t('onboarding.risk.aggressive') }
       ],
       required: true
     }
@@ -190,36 +190,36 @@ const GOAL_SPECIFIC_FIELDS = {
     {
       id: 'familySituation.size',
       type: 'select' as const,
-      label: 'Situación familiar',
+      label: t('onboarding.migration.familySituation'),
       options: [
-        { value: 'solo', label: 'Solo' },
-        { value: 'pareja', label: 'Pareja' },
-        { value: 'familia-pequena', label: 'Familia pequeña (1-2 hijos)' },
-        { value: 'familia-grande', label: 'Familia grande (3+ hijos)' }
+        { value: 'solo', label: t('onboarding.family.single') },
+        { value: 'pareja', label: t('onboarding.family.couple') },
+        { value: 'familia-pequena', label: t('onboarding.family.smallFamily') },
+        { value: 'familia-grande', label: t('onboarding.family.largeFamily') }
       ],
       required: true
     },
     {
       id: 'professionalSituation.education',
       type: 'select' as const,
-      label: 'Nivel educativo',
+      label: t('onboarding.migration.educationLevel'),
       options: [
-        { value: 'basica', label: 'Básica' },
-        { value: 'media', label: 'Media' },
-        { value: 'universitaria', label: 'Universitaria' },
-        { value: 'postgrado', label: 'Postgrado' }
+        { value: 'basica', label: t('onboarding.education.basic') },
+        { value: 'media', label: t('onboarding.education.medium') },
+        { value: 'universitaria', label: t('onboarding.education.university') },
+        { value: 'postgrado', label: t('onboarding.education.postgraduate') }
       ],
       required: true
     },
     {
       id: 'migrationTimeline',
       type: 'select' as const,
-      label: 'Timeline de migración',
+      label: t('onboarding.migration.migrationTimeline'),
       options: [
-        { value: 'urgente', label: 'Urgente (0-6 meses)' },
-        { value: '6-meses', label: '6 meses' },
-        { value: '1-ano', label: '1 año' },
-        { value: '2-anos', label: '2 años' }
+        { value: 'urgente', label: t('onboarding.migrationTimeline.urgent') },
+        { value: '6-meses', label: t('onboarding.migrationTimeline.sixMonths') },
+        { value: '1-ano', label: t('onboarding.migrationTimeline.oneYear') },
+        { value: '2-anos', label: t('onboarding.migrationTimeline.twoYears') }
       ],
       required: true
     }
@@ -228,33 +228,33 @@ const GOAL_SPECIFIC_FIELDS = {
     {
       id: 'housingNeeds.budget',
       type: 'number' as const,
-      label: 'Presupuesto para vivienda',
+      label: t('onboarding.residence.housingBudget'),
       placeholder: '3000'
     },
     {
       id: 'housingNeeds.duration',
       type: 'select' as const,
-      label: 'Duración esperada',
+      label: t('onboarding.residence.expectedDuration'),
       options: [
-        { value: 'temporal', label: 'Temporal (1-2 años)' },
-        { value: 'permanente', label: 'Permanente' }
+        { value: 'temporal', label: t('onboarding.duration.temporary') },
+        { value: 'permanente', label: t('onboarding.duration.permanent') }
       ],
       required: true
     }
   ]
-}
+})
 
-const CULTURAL_INTERESTS = [
-  { value: 'arte', label: 'Arte', icon: 'Palette' },
-  { value: 'musica', label: 'Música', icon: 'Music' },
-  { value: 'fotografia', label: 'Fotografía', icon: 'Camera' },
-  { value: 'gastronomia', label: 'Gastronomía', icon: 'Utensils' },
-  { value: 'videojuegos', label: 'Videojuegos', icon: 'Gamepad2' },
-  { value: 'deportes', label: 'Deportes', icon: 'Dumbbell' },
-  { value: 'naturaleza', label: 'Naturaleza', icon: 'Mountain' },
-  { value: 'viajes', label: 'Viajes', icon: 'Plane' },
-  { value: 'literatura', label: 'Literatura', icon: 'BookOpen' },
-  { value: 'tecnologia', label: 'Tecnología', icon: 'Zap' }
+const getCulturalInterests = (t: any) => [
+  { value: 'arte', label: t('onboarding.interest.art'), icon: 'Palette' },
+  { value: 'musica', label: t('onboarding.interest.music'), icon: 'Music' },
+  { value: 'fotografia', label: t('onboarding.interest.photography'), icon: 'Camera' },
+  { value: 'gastronomia', label: t('onboarding.interest.gastronomy'), icon: 'Utensils' },
+  { value: 'videojuegos', label: t('onboarding.interest.videoGames'), icon: 'Gamepad2' },
+  { value: 'deportes', label: t('onboarding.interest.sports'), icon: 'Dumbbell' },
+  { value: 'naturaleza', label: t('onboarding.interest.nature'), icon: 'Mountain' },
+  { value: 'viajes', label: t('onboarding.interest.travel'), icon: 'Plane' },
+  { value: 'literatura', label: t('onboarding.interest.literature'), icon: 'BookOpen' },
+  { value: 'tecnologia', label: t('onboarding.interest.technology'), icon: 'Zap' }
 ]
 
 export default function FundamentalDataOnboarding() {
@@ -271,65 +271,22 @@ export default function FundamentalDataOnboarding() {
 
   // Crear pasos dinámicos basados en el objetivo seleccionado
   const getStepsForGoal = (goal: string) => {
-    const baseSteps = [
-      {
-        id: 'basic-info',
-        title: 'Información Básica',
-        description: 'Datos personales esenciales',
-        icon: 'User',
-        fields: [
-          { id: 'fullName', type: 'text', label: 'Nombre completo', required: true },
-          { id: 'phone', type: 'text', label: 'Teléfono', placeholder: '+1 (555) 123-4567' },
-          { id: 'nationality', type: 'select', label: 'Nacionalidad', required: true, options: [
-            { value: 'mexicana', label: 'Mexicana' },
-            { value: 'estadounidense', label: 'Estadounidense' },
-            { value: 'canadiense', label: 'Canadiense' },
-            { value: 'espanola', label: 'Española' },
-            { value: 'argentina', label: 'Argentina' },
-            { value: 'colombiana', label: 'Colombiana' },
-            { value: 'otra', label: 'Otra' }
-          ]},
-          { id: 'age', type: 'number', label: 'Edad', min: 18, max: 100, required: true },
-          { id: 'currentCountry', type: 'text', label: 'País actual', required: true },
-          { id: 'currentCity', type: 'text', label: 'Ciudad actual', required: true }
-        ]
-      },
-      {
-        id: 'intention-details',
-        title: 'Detalles de Intención',
-        description: 'Información específica sobre tu objetivo',
-        icon: 'Target',
-        fields: [
-          { id: 'timeline', type: 'select', label: 'Timeline', required: true, options: [
-            { value: 'inmediato', label: 'Inmediato (0-3 meses)' },
-            { value: '6-meses', label: '6 meses' },
-            { value: '1-ano', label: '1 año' },
-            { value: 'explorando', label: 'Solo explorando' }
-          ]},
-          { id: 'motivation', type: 'textarea', label: '¿Por qué Japón?', placeholder: 'Cuéntanos qué te motiva a considerar Japón...', required: true },
-          { id: 'previousExperience', type: 'select', label: 'Experiencia previa con Japón', options: [
-            { value: 'ninguna', label: 'Ninguna' },
-            { value: 'limitada', label: 'Limitada (viajes cortos)' },
-            { value: 'moderada', label: 'Moderada (varios viajes)' },
-            { value: 'extensa', label: 'Extensa (vivido/trabajado)' }
-          ]}
-        ]
-      }
-    ]
+    const baseSteps = getFundamentalDataSteps(t)
 
     // Agregar campos específicos según el objetivo
+    const goalSpecificFields = getGoalSpecificFields(t)
     const goalSpecificStep = {
       id: 'goal-specific',
-      title: goal === 'invertir' ? 'Datos de Inversión' : goal === 'migrar' ? 'Datos de Migración' : 'Datos de Residencia',
-      description: goal === 'invertir' ? 'Información financiera y de inversión' : goal === 'migrar' ? 'Información familiar y profesional' : 'Información de vivienda',
+      title: goal === 'invertir' ? t('onboarding.investment.title') : goal === 'migrar' ? t('onboarding.migration.title') : t('onboarding.residence.title'),
+      description: goal === 'invertir' ? t('onboarding.investment.description') : goal === 'migrar' ? t('onboarding.migration.description') : t('onboarding.residence.description'),
       icon: goal === 'invertir' ? 'DollarSign' : goal === 'migrar' ? 'Users' : 'Home',
-      fields: GOAL_SPECIFIC_FIELDS[goal as keyof typeof GOAL_SPECIFIC_FIELDS] || []
+      fields: goalSpecificFields[goal as keyof typeof goalSpecificFields] || []
     }
 
     const culturalStep = {
       id: 'cultural-analysis',
-      title: 'Análisis Cultural',
-      description: 'Tu afinidad con la cultura japonesa',
+      title: t('onboarding.cultural.title'),
+      description: t('onboarding.cultural.description'),
       icon: 'Heart',
       fields: []
     }
@@ -343,27 +300,27 @@ export default function FundamentalDataOnboarding() {
     switch (goal) {
       case 'invertir':
         return {
-          title: 'Investment Data Collection',
-          subtitle: 'Let\'s gather your investment profile information',
-          description: 'We need some specific data about your financial situation and investment goals to create your personalized investment analysis.'
+          title: t('dataCollection.investment.title'),
+          subtitle: t('dataCollection.investment.subtitle'),
+          description: t('dataCollection.investment.description')
         }
       case 'migrar':
         return {
-          title: 'Migration Data Collection',
-          subtitle: 'Let\'s gather your migration profile information',
-          description: 'We need some specific data about your family situation and professional background to create your personalized migration plan.'
+          title: t('dataCollection.migration.title'),
+          subtitle: t('dataCollection.migration.subtitle'),
+          description: t('dataCollection.migration.description')
         }
       case 'vivir':
         return {
-          title: 'Lifestyle Data Collection',
-          subtitle: 'Let\'s gather your lifestyle profile information',
-          description: 'We need some specific data about your housing needs and lifestyle preferences to create your personalized living experience.'
+          title: t('dataCollection.lifestyle.title'),
+          subtitle: t('dataCollection.lifestyle.subtitle'),
+          description: t('dataCollection.lifestyle.description')
         }
       default:
         return {
-          title: 'Profile Data Collection',
-          subtitle: 'Let\'s gather your profile information',
-          description: 'We need some specific data to create your personalized analysis.'
+          title: t('dataCollection.default.title'),
+          subtitle: t('dataCollection.default.subtitle'),
+          description: t('dataCollection.default.description')
         }
     }
   }
@@ -450,7 +407,7 @@ export default function FundamentalDataOnboarding() {
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required={field.required}
           >
-            <option value="">Selecciona una opción</option>
+            <option value="">{t('onboarding.selectOption')}</option>
             {field.options?.map((option: any) => (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -479,7 +436,7 @@ export default function FundamentalDataOnboarding() {
       <div className="space-y-8">
         {/* Conocimiento de Japón */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Conocimiento de Japón</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('onboarding.cultural.knowledge')}</h3>
           <div className="grid grid-cols-2 gap-4">
             {['ninguno', 'basico', 'intermedio', 'avanzado'].map((level) => (
               <button
@@ -492,7 +449,14 @@ export default function FundamentalDataOnboarding() {
                 }`}
               >
                 <div className="text-center">
-                  <div className="font-medium capitalize">{level}</div>
+                  <div className="font-medium capitalize">
+                    {level === 'ninguno' ? t('onboarding.level.none') :
+                     level === 'basico' ? t('onboarding.level.basic') :
+                     level === 'intermedio' ? t('onboarding.level.intermediate') :
+                     level === 'avanzado' ? t('onboarding.level.advanced') :
+                     level === 'principiante' ? t('onboarding.level.basic') :
+                     level}
+                  </div>
                 </div>
               </button>
             ))}
@@ -501,7 +465,7 @@ export default function FundamentalDataOnboarding() {
 
         {/* Nivel de japonés */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Nivel de japonés</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('onboarding.cultural.japaneseLevel')}</h3>
           <div className="grid grid-cols-2 gap-4">
             {['ninguno', 'principiante', 'intermedio', 'avanzado'].map((level) => (
               <button
@@ -514,7 +478,14 @@ export default function FundamentalDataOnboarding() {
                 }`}
               >
                 <div className="text-center">
-                  <div className="font-medium capitalize">{level}</div>
+                  <div className="font-medium capitalize">
+                    {level === 'ninguno' ? t('onboarding.level.none') :
+                     level === 'basico' ? t('onboarding.level.basic') :
+                     level === 'intermedio' ? t('onboarding.level.intermediate') :
+                     level === 'avanzado' ? t('onboarding.level.advanced') :
+                     level === 'principiante' ? t('onboarding.level.basic') :
+                     level}
+                  </div>
                 </div>
               </button>
             ))}
@@ -523,12 +494,12 @@ export default function FundamentalDataOnboarding() {
 
         {/* Valores personales */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Valores personales (1-10)</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('onboarding.cultural.personalValues')}</h3>
           <div className="space-y-4">
             {[
-              { key: 'harmony', label: 'Armonía' },
-              { key: 'respect', label: 'Respeto' },
-              { key: 'discipline', label: 'Disciplina' }
+              { key: 'harmony', label: t('onboarding.cultural.harmony') },
+              { key: 'respect', label: t('onboarding.cultural.respect') },
+              { key: 'discipline', label: t('onboarding.cultural.discipline') }
             ].map((value) => (
               <div key={value.key}>
                 <div className="flex justify-between items-center mb-2">
@@ -553,9 +524,9 @@ export default function FundamentalDataOnboarding() {
 
         {/* Intereses culturales */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Intereses culturales</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('onboarding.cultural.culturalInterests')}</h3>
           <div className="grid grid-cols-2 gap-3">
-            {CULTURAL_INTERESTS.map((interest) => {
+            {getCulturalInterests(t).map((interest) => {
               const IconComponent = iconMap[interest.icon] || Heart
               const isSelected = culturalInterests.includes(interest.value)
               
@@ -612,13 +583,13 @@ export default function FundamentalDataOnboarding() {
               className="group bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-12 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-lg hover:scale-105 relative overflow-hidden border border-gray-200 hover:border-gray-300"
             >
               <span className="relative z-10 flex items-center gap-3">
-                Start Data Collection
+                {t('dataCollection.startButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
             
             <p className="text-sm text-gray-500 animate-pulse">
-              This will take about 5-10 minutes
+              {t('dataCollection.timeEstimate')}
             </p>
           </div>
         </div>
@@ -651,7 +622,7 @@ export default function FundamentalDataOnboarding() {
             />
           </div>
           <p className="text-sm text-gray-500 mt-2">
-            Paso {currentStepIndex} de {allSteps.length}
+            {t('onboarding.step', { current: currentStepIndex + 1, total: allSteps.length })}
           </p>
         </div>
 
@@ -691,7 +662,7 @@ export default function FundamentalDataOnboarding() {
             className="group bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-semibold hover:scale-105 relative overflow-hidden border border-gray-200 hover:border-gray-300"
           >
             <span className="relative z-10 flex items-center gap-3">
-              {currentStepIndex === allSteps.length - 1 ? 'Completar' : 'Continuar'}
+              {currentStepIndex === allSteps.length - 1 ? t('onboarding.cultural.complete') : t('onboarding.continue')}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>

@@ -73,6 +73,144 @@ const translations = {
     'user.dropdown.myProfile': 'My Profile',
     'user.dropdown.logout': 'Logout',
     
+    // Onboarding steps
+    'onboarding.step': 'Step {current} of {total}',
+    'onboarding.back': 'Back',
+    'onboarding.continue': 'Continue',
+    'onboarding.selectOption': 'Select an option',
+    
+    // Basic Information
+    'onboarding.basicInfo.title': 'Basic Information',
+    'onboarding.basicInfo.description': 'Essential personal data',
+    'onboarding.basicInfo.fullName': 'Full name',
+    'onboarding.basicInfo.phone': 'Phone',
+    'onboarding.basicInfo.nationality': 'Nationality',
+    'onboarding.basicInfo.age': 'Age',
+    'onboarding.basicInfo.gender': 'Gender',
+    'onboarding.basicInfo.currentCountry': 'Current country',
+    'onboarding.basicInfo.currentCity': 'Current city',
+    
+    // Nationality options
+    'onboarding.nationality.mexican': 'Mexican',
+    'onboarding.nationality.american': 'American',
+    'onboarding.nationality.canadian': 'Canadian',
+    'onboarding.nationality.spanish': 'Spanish',
+    'onboarding.nationality.argentine': 'Argentine',
+    'onboarding.nationality.colombian': 'Colombian',
+    'onboarding.nationality.other': 'Other',
+    
+    // Gender options
+    'onboarding.gender.male': 'Male',
+    'onboarding.gender.female': 'Female',
+    'onboarding.gender.other': 'Other',
+    'onboarding.gender.preferNotToSay': 'Prefer not to say',
+    
+    // Intention Details
+    'onboarding.intention.title': 'Intention Details',
+    'onboarding.intention.description': 'Specific information about your objective',
+    'onboarding.intention.timeline': 'Timeline',
+    'onboarding.intention.motivation': 'Why Japan?',
+    'onboarding.intention.motivationPlaceholder': 'Tell us what motivates you to consider Japan...',
+    'onboarding.intention.previousExperience': 'Previous experience with Japan',
+    
+    // Timeline options
+    'onboarding.timeline.immediate': 'Immediate (0-3 months)',
+    'onboarding.timeline.sixMonths': '6 months',
+    'onboarding.timeline.oneYear': '1 year',
+    'onboarding.timeline.exploring': 'Just exploring',
+    
+    // Experience options
+    'onboarding.experience.none': 'None',
+    'onboarding.experience.limited': 'Limited (short trips)',
+    'onboarding.experience.moderate': 'Moderate (several trips)',
+    'onboarding.experience.extensive': 'Extensive (lived/worked)',
+    
+    // Investment Data
+    'onboarding.investment.title': 'Investment Data',
+    'onboarding.investment.description': 'Financial and investment information',
+    'onboarding.investment.budgetMin': 'Minimum budget',
+    'onboarding.investment.budgetMax': 'Maximum budget',
+    'onboarding.investment.currency': 'Currency',
+    'onboarding.investment.annualIncome': 'Annual income',
+    'onboarding.investment.incomeStability': 'Income stability',
+    'onboarding.investment.financialExperience': 'Financial experience',
+    'onboarding.investment.riskTolerance': 'Risk tolerance',
+    
+    // Income stability options
+    'onboarding.stability.unstable': 'Unstable',
+    'onboarding.stability.moderate': 'Moderate',
+    'onboarding.stability.stable': 'Stable',
+    
+    // Experience levels
+    'onboarding.level.none': 'None',
+    'onboarding.level.basic': 'Basic',
+    'onboarding.level.intermediate': 'Intermediate',
+    'onboarding.level.advanced': 'Advanced',
+    
+    // Risk tolerance options
+    'onboarding.risk.conservative': 'Conservative',
+    'onboarding.risk.moderate': 'Moderate',
+    'onboarding.risk.aggressive': 'Aggressive',
+    
+    // Migration Data
+    'onboarding.migration.title': 'Migration Data',
+    'onboarding.migration.description': 'Family and professional information',
+    'onboarding.migration.familySituation': 'Family situation',
+    'onboarding.migration.educationLevel': 'Education level',
+    'onboarding.migration.migrationTimeline': 'Migration timeline',
+    
+    // Family situation options
+    'onboarding.family.single': 'Single',
+    'onboarding.family.couple': 'Couple',
+    'onboarding.family.smallFamily': 'Small family (1-2 children)',
+    'onboarding.family.largeFamily': 'Large family (3+ children)',
+    
+    // Education levels
+    'onboarding.education.basic': 'Basic',
+    'onboarding.education.medium': 'Medium',
+    'onboarding.education.university': 'University',
+    'onboarding.education.postgraduate': 'Postgraduate',
+    
+    // Migration timeline options
+    'onboarding.migrationTimeline.urgent': 'Urgent (0-6 months)',
+    'onboarding.migrationTimeline.sixMonths': '6 months',
+    'onboarding.migrationTimeline.oneYear': '1 year',
+    'onboarding.migrationTimeline.twoYears': '2 years',
+    
+    // Residence Data
+    'onboarding.residence.title': 'Residence Data',
+    'onboarding.residence.description': 'Housing information',
+    'onboarding.residence.housingBudget': 'Housing budget',
+    'onboarding.residence.expectedDuration': 'Expected duration',
+    
+    // Duration options
+    'onboarding.duration.temporary': 'Temporary (1-2 years)',
+    'onboarding.duration.permanent': 'Permanent',
+    
+    // Cultural Analysis
+    'onboarding.cultural.title': 'Cultural Analysis',
+    'onboarding.cultural.description': 'Your affinity with Japanese culture',
+    'onboarding.cultural.knowledge': 'Knowledge of Japan',
+    'onboarding.cultural.japaneseLevel': 'Japanese level',
+    'onboarding.cultural.personalValues': 'Personal values (1-10)',
+    'onboarding.cultural.culturalInterests': 'Cultural interests',
+    'onboarding.cultural.harmony': 'Harmony',
+    'onboarding.cultural.respect': 'Respect',
+    'onboarding.cultural.discipline': 'Discipline',
+    'onboarding.cultural.complete': 'Complete',
+    
+    // Cultural interests
+    'onboarding.interest.art': 'Art',
+    'onboarding.interest.music': 'Music',
+    'onboarding.interest.photography': 'Photography',
+    'onboarding.interest.gastronomy': 'Gastronomy',
+    'onboarding.interest.videoGames': 'Video Games',
+    'onboarding.interest.sports': 'Sports',
+    'onboarding.interest.nature': 'Nature',
+    'onboarding.interest.travel': 'Travel',
+    'onboarding.interest.literature': 'Literature',
+    'onboarding.interest.technology': 'Technology',
+    
     // Dashboard translations
     'dashboard.investor.title': 'Investment Opportunities Command Center',
     'dashboard.migration.title': 'Your Migration Route to Japan',
@@ -2012,6 +2150,11 @@ const translations = {
     'featuredProperties.keyFeatures': 'Key Features',
     'featuredProperties.viewAIAnalysis': 'View AI Analysis',
     'featuredProperties.photos': 'View Photos',
+    'featuredProperties.age': 'Age',
+    'featuredProperties.years': 'years',
+    'featuredProperties.vehicle': 'vehicle',
+    'featuredProperties.vehicles': 'vehicles',
+    'featuredProperties.viewAllPhotos': 'View All Photos',
 
     // Photo Gallery Modal
     'photoGallery.title': 'Photo Gallery',
@@ -2094,6 +2237,7 @@ const translations = {
     'property.access.byCar': 'by car',
     'property.access.byTrain': 'by train',
     'property.access.byBus': 'by bus',
+    'property.builtDate': 'October 1989',
 
     // Property Names
     'property.name.propertyA': 'Property A - Traditional Japanese Villa',
@@ -2143,6 +2287,48 @@ const translations = {
     'contact.renovationServices': 'Renovation Services',
     'contact.legalAdvice': 'Legal Advice',
     'contact.other': 'Other',
+
+    // Common Navigation
+    'common.backToHome': 'Back to Home',
+
+    // The Key Question Section
+    'keyQuestion.title': 'The Key Question',
+    'keyQuestion.subtitle': 'What is the main driver of your journey to Japan?',
+    'keyQuestion.invest.title': 'INVEST',
+    'keyQuestion.invest.description': 'I seek to build a portfolio, generate returns, and explore business opportunities such as franchises or startups.',
+    'keyQuestion.invest.audience': 'Aimed primarily at the Latin profile',
+    'keyQuestion.migrate.title': 'MIGRATE',
+    'keyQuestion.migrate.description': 'My objective is to establish a new life in Japan, either as a professional, entrepreneur, or for my family.',
+    'keyQuestion.migrate.audience': 'General interest, long-term commitment',
+    'keyQuestion.live.title': 'LIVE',
+    'keyQuestion.live.description': 'I wish to find a second home, a vacation house, or a refuge to enjoy the lifestyle, culture, and nature.',
+    'keyQuestion.live.audience': 'Aimed at European and Arab profiles',
+
+    // Profile Completion Section
+    'profileComplete.title': 'Profile Complete Generated!',
+    'profileComplete.subtitle': 'Your intelligent analysis is ready. Access the dashboard to see your results.',
+    'profileComplete.summary': 'Summary of your Profile:',
+    'profileComplete.iviScore': 'IVI Score',
+    'profileComplete.ivmScore': 'IVM Score',
+    'profileComplete.iseScore': 'ISE Score',
+    'profileComplete.recommendation': 'Recommendation:',
+    'profileComplete.accessDashboard': 'Access Dashboard',
+
+    // Data Collection Welcome Messages
+    'dataCollection.investment.title': 'Investment Data Collection',
+    'dataCollection.investment.subtitle': 'Let\'s gather your investment profile information',
+    'dataCollection.investment.description': 'We need some specific data about your financial situation and investment goals to create your personalized investment analysis.',
+    'dataCollection.migration.title': 'Migration Data Collection',
+    'dataCollection.migration.subtitle': 'Let\'s gather your migration profile information',
+    'dataCollection.migration.description': 'We need some specific data about your family situation and professional background to create your personalized migration plan.',
+    'dataCollection.lifestyle.title': 'Lifestyle Data Collection',
+    'dataCollection.lifestyle.subtitle': 'Let\'s gather your lifestyle profile information',
+    'dataCollection.lifestyle.description': 'We need some specific data about your housing needs and lifestyle preferences to create your personalized living experience.',
+    'dataCollection.default.title': 'Profile Data Collection',
+    'dataCollection.default.subtitle': 'Let\'s gather your profile information',
+    'dataCollection.default.description': 'We need some specific data to create your personalized analysis.',
+    'dataCollection.startButton': 'Start Data Collection',
+    'dataCollection.timeEstimate': 'This will take about 5-10 minutes',
   },
   
   ja: {
@@ -2191,6 +2377,144 @@ const translations = {
     'user.dropdown.dashboard': 'ダッシュボード',
     'user.dropdown.myProfile': 'マイプロフィール',
     'user.dropdown.logout': 'ログアウト',
+    
+    // Onboarding steps
+    'onboarding.step': '{total}ステップ中{current}ステップ',
+    'onboarding.back': '戻る',
+    'onboarding.continue': '続行',
+    'onboarding.selectOption': 'オプションを選択',
+    
+    // Basic Information
+    'onboarding.basicInfo.title': '基本情報',
+    'onboarding.basicInfo.description': '重要な個人データ',
+    'onboarding.basicInfo.fullName': '氏名',
+    'onboarding.basicInfo.phone': '電話番号',
+    'onboarding.basicInfo.nationality': '国籍',
+    'onboarding.basicInfo.age': '年齢',
+    'onboarding.basicInfo.gender': '性別',
+    'onboarding.basicInfo.currentCountry': '現在の国',
+    'onboarding.basicInfo.currentCity': '現在の都市',
+    
+    // Nationality options
+    'onboarding.nationality.mexican': 'メキシコ人',
+    'onboarding.nationality.american': 'アメリカ人',
+    'onboarding.nationality.canadian': 'カナダ人',
+    'onboarding.nationality.spanish': 'スペイン人',
+    'onboarding.nationality.argentine': 'アルゼンチン人',
+    'onboarding.nationality.colombian': 'コロンビア人',
+    'onboarding.nationality.other': 'その他',
+    
+    // Gender options
+    'onboarding.gender.male': '男性',
+    'onboarding.gender.female': '女性',
+    'onboarding.gender.other': 'その他',
+    'onboarding.gender.preferNotToSay': '回答しない',
+    
+    // Intention Details
+    'onboarding.intention.title': '意図の詳細',
+    'onboarding.intention.description': 'あなたの目標に関する具体的な情報',
+    'onboarding.intention.timeline': 'タイムライン',
+    'onboarding.intention.motivation': 'なぜ日本？',
+    'onboarding.intention.motivationPlaceholder': '日本を検討する動機を教えてください...',
+    'onboarding.intention.previousExperience': '日本の経験',
+    
+    // Timeline options
+    'onboarding.timeline.immediate': '即座（0-3ヶ月）',
+    'onboarding.timeline.sixMonths': '6ヶ月',
+    'onboarding.timeline.oneYear': '1年',
+    'onboarding.timeline.exploring': '探索中',
+    
+    // Experience options
+    'onboarding.experience.none': 'なし',
+    'onboarding.experience.limited': '限定的（短期旅行）',
+    'onboarding.experience.moderate': '中程度（複数回旅行）',
+    'onboarding.experience.extensive': '豊富（居住/就労経験）',
+    
+    // Investment Data
+    'onboarding.investment.title': '投資データ',
+    'onboarding.investment.description': '金融・投資情報',
+    'onboarding.investment.budgetMin': '最小予算',
+    'onboarding.investment.budgetMax': '最大予算',
+    'onboarding.investment.currency': '通貨',
+    'onboarding.investment.annualIncome': '年間収入',
+    'onboarding.investment.incomeStability': '収入の安定性',
+    'onboarding.investment.financialExperience': '金融経験',
+    'onboarding.investment.riskTolerance': 'リスク許容度',
+    
+    // Income stability options
+    'onboarding.stability.unstable': '不安定',
+    'onboarding.stability.moderate': '中程度',
+    'onboarding.stability.stable': '安定',
+    
+    // Experience levels
+    'onboarding.level.none': 'なし',
+    'onboarding.level.basic': '基本',
+    'onboarding.level.intermediate': '中級',
+    'onboarding.level.advanced': '上級',
+    
+    // Risk tolerance options
+    'onboarding.risk.conservative': '保守的',
+    'onboarding.risk.moderate': '中程度',
+    'onboarding.risk.aggressive': '積極的',
+    
+    // Migration Data
+    'onboarding.migration.title': '移住データ',
+    'onboarding.migration.description': '家族・職業情報',
+    'onboarding.migration.familySituation': '家族構成',
+    'onboarding.migration.educationLevel': '教育レベル',
+    'onboarding.migration.migrationTimeline': '移住タイムライン',
+    
+    // Family situation options
+    'onboarding.family.single': '独身',
+    'onboarding.family.couple': 'カップル',
+    'onboarding.family.smallFamily': '小家族（子供1-2人）',
+    'onboarding.family.largeFamily': '大家族（子供3人以上）',
+    
+    // Education levels
+    'onboarding.education.basic': '基本',
+    'onboarding.education.medium': '中等',
+    'onboarding.education.university': '大学',
+    'onboarding.education.postgraduate': '大学院',
+    
+    // Migration timeline options
+    'onboarding.migrationTimeline.urgent': '緊急（0-6ヶ月）',
+    'onboarding.migrationTimeline.sixMonths': '6ヶ月',
+    'onboarding.migrationTimeline.oneYear': '1年',
+    'onboarding.migrationTimeline.twoYears': '2年',
+    
+    // Residence Data
+    'onboarding.residence.title': '居住データ',
+    'onboarding.residence.description': '住宅情報',
+    'onboarding.residence.housingBudget': '住宅予算',
+    'onboarding.residence.expectedDuration': '予想期間',
+    
+    // Duration options
+    'onboarding.duration.temporary': '一時的（1-2年）',
+    'onboarding.duration.permanent': '永続的',
+    
+    // Cultural Analysis
+    'onboarding.cultural.title': '文化的分析',
+    'onboarding.cultural.description': '日本文化との親和性',
+    'onboarding.cultural.knowledge': '日本に関する知識',
+    'onboarding.cultural.japaneseLevel': '日本語レベル',
+    'onboarding.cultural.personalValues': '個人的価値観（1-10）',
+    'onboarding.cultural.culturalInterests': '文化的関心',
+    'onboarding.cultural.harmony': '調和',
+    'onboarding.cultural.respect': '尊敬',
+    'onboarding.cultural.discipline': '規律',
+    'onboarding.cultural.complete': '完了',
+    
+    // Cultural interests
+    'onboarding.interest.art': '芸術',
+    'onboarding.interest.music': '音楽',
+    'onboarding.interest.photography': '写真',
+    'onboarding.interest.gastronomy': '美食',
+    'onboarding.interest.videoGames': 'ビデオゲーム',
+    'onboarding.interest.sports': 'スポーツ',
+    'onboarding.interest.nature': '自然',
+    'onboarding.interest.travel': '旅行',
+    'onboarding.interest.literature': '文学',
+    'onboarding.interest.technology': 'テクノロジー',
     
     // Dashboard translations
     'dashboard.investor.title': '投資機会コマンドセンター',
@@ -3843,6 +4167,11 @@ const translations = {
     'featuredProperties.keyFeatures': '主な特徴',
     'featuredProperties.viewAIAnalysis': 'AI分析を見る',
     'featuredProperties.photos': '写真を見る',
+    'featuredProperties.age': '築年',
+    'featuredProperties.years': '年',
+    'featuredProperties.vehicle': '台',
+    'featuredProperties.vehicles': '台',
+    'featuredProperties.viewAllPhotos': 'すべての写真を見る',
 
     // Photo Gallery Modal
     'photoGallery.title': 'フォトギャラリー',
@@ -3925,6 +4254,7 @@ const translations = {
     'property.access.byCar': '車で',
     'property.access.byTrain': '電車で',
     'property.access.byBus': 'バスで',
+    'property.builtDate': '1989年10月',
 
     // Property Names
     'property.name.propertyA': '物件A - 伝統的な日本のヴィラ',
@@ -3974,6 +4304,48 @@ const translations = {
     'contact.renovationServices': 'リノベーションサービス',
     'contact.legalAdvice': '法的アドバイス',
     'contact.other': 'その他',
+
+    // Common Navigation
+    'common.backToHome': 'ホームに戻る',
+
+    // The Key Question Section
+    'keyQuestion.title': '重要な質問',
+    'keyQuestion.subtitle': '日本への旅の主な動機は何ですか？',
+    'keyQuestion.invest.title': '投資',
+    'keyQuestion.invest.description': 'ポートフォリオを構築し、リターンを生み出し、フランチャイズやスタートアップなどのビジネス機会を探求したいと考えています。',
+    'keyQuestion.invest.audience': '主にラテン系プロファイル向け',
+    'keyQuestion.migrate.title': '移住',
+    'keyQuestion.migrate.description': 'プロフェッショナル、起業家、または家族のために、日本で新しい生活を築くことを目標としています。',
+    'keyQuestion.migrate.audience': '一般的な関心、長期的なコミットメント',
+    'keyQuestion.live.title': '居住',
+    'keyQuestion.live.description': 'ライフスタイル、文化、自然を楽しむためのセカンドハウス、バケーション用の家、または避難所を見つけたいと考えています。',
+    'keyQuestion.live.audience': 'ヨーロッパとアラブのプロファイル向け',
+
+    // Profile Completion Section
+    'profileComplete.title': 'プロファイル完成生成！',
+    'profileComplete.subtitle': 'あなたのインテリジェント分析が準備できました。ダッシュボードにアクセスして結果を確認してください。',
+    'profileComplete.summary': 'あなたのプロファイルの要約：',
+    'profileComplete.iviScore': 'IVIスコア',
+    'profileComplete.ivmScore': 'IVMスコア',
+    'profileComplete.iseScore': 'ISEスコア',
+    'profileComplete.recommendation': '推奨：',
+    'profileComplete.accessDashboard': 'ダッシュボードにアクセス',
+
+    // Data Collection Welcome Messages
+    'dataCollection.investment.title': '投資データ収集',
+    'dataCollection.investment.subtitle': 'あなたの投資プロファイル情報を収集しましょう',
+    'dataCollection.investment.description': 'パーソナライズされた投資分析を作成するために、あなたの財務状況と投資目標について特定のデータが必要です。',
+    'dataCollection.migration.title': '移住データ収集',
+    'dataCollection.migration.subtitle': 'あなたの移住プロファイル情報を収集しましょう',
+    'dataCollection.migration.description': 'パーソナライズされた移住計画を作成するために、あなたの家族状況と職業背景について特定のデータが必要です。',
+    'dataCollection.lifestyle.title': 'ライフスタイルデータ収集',
+    'dataCollection.lifestyle.subtitle': 'あなたのライフスタイルプロファイル情報を収集しましょう',
+    'dataCollection.lifestyle.description': 'パーソナライズされた生活体験を作成するために、あなたの住宅ニーズとライフスタイルの好みについて特定のデータが必要です。',
+    'dataCollection.default.title': 'プロファイルデータ収集',
+    'dataCollection.default.subtitle': 'あなたのプロファイル情報を収集しましょう',
+    'dataCollection.default.description': 'パーソナライズされた分析を作成するために特定のデータが必要です。',
+    'dataCollection.startButton': 'データ収集を開始',
+    'dataCollection.timeEstimate': '約5-10分かかります',
   },
   
   ar: {
@@ -4022,6 +4394,144 @@ const translations = {
     'user.dropdown.dashboard': 'لوحة التحكم',
     'user.dropdown.myProfile': 'ملفي الشخصي',
     'user.dropdown.logout': 'تسجيل الخروج',
+    
+    // Onboarding steps
+    'onboarding.step': 'الخطوة {current} من {total}',
+    'onboarding.back': 'رجوع',
+    'onboarding.continue': 'متابعة',
+    'onboarding.selectOption': 'اختر خياراً',
+    
+    // Basic Information
+    'onboarding.basicInfo.title': 'المعلومات الأساسية',
+    'onboarding.basicInfo.description': 'البيانات الشخصية الأساسية',
+    'onboarding.basicInfo.fullName': 'الاسم الكامل',
+    'onboarding.basicInfo.phone': 'رقم الهاتف',
+    'onboarding.basicInfo.nationality': 'الجنسية',
+    'onboarding.basicInfo.age': 'العمر',
+    'onboarding.basicInfo.gender': 'الجنس',
+    'onboarding.basicInfo.currentCountry': 'البلد الحالي',
+    'onboarding.basicInfo.currentCity': 'المدينة الحالية',
+    
+    // Nationality options
+    'onboarding.nationality.mexican': 'مكسيكي',
+    'onboarding.nationality.american': 'أمريكي',
+    'onboarding.nationality.canadian': 'كندي',
+    'onboarding.nationality.spanish': 'إسباني',
+    'onboarding.nationality.argentine': 'أرجنتيني',
+    'onboarding.nationality.colombian': 'كولومبي',
+    'onboarding.nationality.other': 'أخرى',
+    
+    // Gender options
+    'onboarding.gender.male': 'ذكر',
+    'onboarding.gender.female': 'أنثى',
+    'onboarding.gender.other': 'أخرى',
+    'onboarding.gender.preferNotToSay': 'أفضل عدم الإجابة',
+    
+    // Intention Details
+    'onboarding.intention.title': 'تفاصيل النية',
+    'onboarding.intention.description': 'معلومات محددة حول هدفك',
+    'onboarding.intention.timeline': 'الجدول الزمني',
+    'onboarding.intention.motivation': 'لماذا اليابان؟',
+    'onboarding.intention.motivationPlaceholder': 'أخبرنا ما يحفزك للتفكير في اليابان...',
+    'onboarding.intention.previousExperience': 'التجربة السابقة مع اليابان',
+    
+    // Timeline options
+    'onboarding.timeline.immediate': 'فوري (0-3 أشهر)',
+    'onboarding.timeline.sixMonths': '6 أشهر',
+    'onboarding.timeline.oneYear': 'سنة واحدة',
+    'onboarding.timeline.exploring': 'استكشاف فقط',
+    
+    // Experience options
+    'onboarding.experience.none': 'لا يوجد',
+    'onboarding.experience.limited': 'محدودة (رحلات قصيرة)',
+    'onboarding.experience.moderate': 'متوسطة (عدة رحلات)',
+    'onboarding.experience.extensive': 'واسعة (عشت/عملت)',
+    
+    // Investment Data
+    'onboarding.investment.title': 'بيانات الاستثمار',
+    'onboarding.investment.description': 'المعلومات المالية والاستثمارية',
+    'onboarding.investment.budgetMin': 'الحد الأدنى للميزانية',
+    'onboarding.investment.budgetMax': 'الحد الأقصى للميزانية',
+    'onboarding.investment.currency': 'العملة',
+    'onboarding.investment.annualIncome': 'الدخل السنوي',
+    'onboarding.investment.incomeStability': 'استقرار الدخل',
+    'onboarding.investment.financialExperience': 'التجربة المالية',
+    'onboarding.investment.riskTolerance': 'تحمل المخاطر',
+    
+    // Income stability options
+    'onboarding.stability.unstable': 'غير مستقر',
+    'onboarding.stability.moderate': 'متوسط',
+    'onboarding.stability.stable': 'مستقر',
+    
+    // Experience levels
+    'onboarding.level.none': 'لا يوجد',
+    'onboarding.level.basic': 'أساسي',
+    'onboarding.level.intermediate': 'متوسط',
+    'onboarding.level.advanced': 'متقدم',
+    
+    // Risk tolerance options
+    'onboarding.risk.conservative': 'محافظ',
+    'onboarding.risk.moderate': 'متوسط',
+    'onboarding.risk.aggressive': 'عدواني',
+    
+    // Migration Data
+    'onboarding.migration.title': 'بيانات الهجرة',
+    'onboarding.migration.description': 'المعلومات العائلية والمهنية',
+    'onboarding.migration.familySituation': 'الوضع العائلي',
+    'onboarding.migration.educationLevel': 'المستوى التعليمي',
+    'onboarding.migration.migrationTimeline': 'الجدول الزمني للهجرة',
+    
+    // Family situation options
+    'onboarding.family.single': 'أعزب',
+    'onboarding.family.couple': 'زوجين',
+    'onboarding.family.smallFamily': 'عائلة صغيرة (1-2 أطفال)',
+    'onboarding.family.largeFamily': 'عائلة كبيرة (3+ أطفال)',
+    
+    // Education levels
+    'onboarding.education.basic': 'أساسي',
+    'onboarding.education.medium': 'متوسط',
+    'onboarding.education.university': 'جامعي',
+    'onboarding.education.postgraduate': 'دراسات عليا',
+    
+    // Migration timeline options
+    'onboarding.migrationTimeline.urgent': 'عاجل (0-6 أشهر)',
+    'onboarding.migrationTimeline.sixMonths': '6 أشهر',
+    'onboarding.migrationTimeline.oneYear': 'سنة واحدة',
+    'onboarding.migrationTimeline.twoYears': 'سنتان',
+    
+    // Residence Data
+    'onboarding.residence.title': 'بيانات الإقامة',
+    'onboarding.residence.description': 'معلومات السكن',
+    'onboarding.residence.housingBudget': 'ميزانية السكن',
+    'onboarding.residence.expectedDuration': 'المدة المتوقعة',
+    
+    // Duration options
+    'onboarding.duration.temporary': 'مؤقت (1-2 سنوات)',
+    'onboarding.duration.permanent': 'دائم',
+    
+    // Cultural Analysis
+    'onboarding.cultural.title': 'التحليل الثقافي',
+    'onboarding.cultural.description': 'انتماؤك للثقافة اليابانية',
+    'onboarding.cultural.knowledge': 'المعرفة عن اليابان',
+    'onboarding.cultural.japaneseLevel': 'مستوى اليابانية',
+    'onboarding.cultural.personalValues': 'القيم الشخصية (1-10)',
+    'onboarding.cultural.culturalInterests': 'الاهتمامات الثقافية',
+    'onboarding.cultural.harmony': 'الانسجام',
+    'onboarding.cultural.respect': 'الاحترام',
+    'onboarding.cultural.discipline': 'الانضباط',
+    'onboarding.cultural.complete': 'إكمال',
+    
+    // Cultural interests
+    'onboarding.interest.art': 'الفن',
+    'onboarding.interest.music': 'الموسيقى',
+    'onboarding.interest.photography': 'التصوير',
+    'onboarding.interest.gastronomy': 'الطبخ',
+    'onboarding.interest.videoGames': 'ألعاب الفيديو',
+    'onboarding.interest.sports': 'الرياضة',
+    'onboarding.interest.nature': 'الطبيعة',
+    'onboarding.interest.travel': 'السفر',
+    'onboarding.interest.literature': 'الأدب',
+    'onboarding.interest.technology': 'التكنولوجيا',
     
     // Dashboard translations
     'dashboard.investor.title': 'مركز قيادة فرص الاستثمار',
@@ -5671,6 +6181,11 @@ const translations = {
     'featuredProperties.keyFeatures': 'الميزات الرئيسية',
     'featuredProperties.viewAIAnalysis': 'عرض التحليل بالذكاء الاصطناعي',
     'featuredProperties.photos': 'عرض الصور',
+    'featuredProperties.age': 'العمر',
+    'featuredProperties.years': 'سنوات',
+    'featuredProperties.vehicle': 'مركبة',
+    'featuredProperties.vehicles': 'مركبات',
+    'featuredProperties.viewAllPhotos': 'عرض جميع الصور',
 
     // Photo Gallery Modal
     'photoGallery.title': 'معرض الصور',
@@ -5753,6 +6268,7 @@ const translations = {
     'property.access.byCar': 'بالسيارة',
     'property.access.byTrain': 'بالقطار',
     'property.access.byBus': 'بالحافلة',
+    'property.builtDate': 'أكتوبر 1989',
 
     // Property Names
     'property.name.propertyA': 'العقار A - فيلا يابانية تقليدية',
@@ -5802,6 +6318,48 @@ const translations = {
     'contact.renovationServices': 'خدمات التجديد',
     'contact.legalAdvice': 'النصائح القانونية',
     'contact.other': 'أخرى',
+
+    // Common Navigation
+    'common.backToHome': 'العودة للصفحة الرئيسية',
+
+    // The Key Question Section
+    'keyQuestion.title': 'السؤال الرئيسي',
+    'keyQuestion.subtitle': 'ما هو الدافع الرئيسي لرحلتك إلى اليابان؟',
+    'keyQuestion.invest.title': 'استثمر',
+    'keyQuestion.invest.description': 'أبحث عن بناء محفظة استثمارية وتحقيق عوائد واستكشاف فرص الأعمال مثل الامتيازات التجارية أو الشركات الناشئة.',
+    'keyQuestion.invest.audience': 'موجهة أساساً للشخصية اللاتينية',
+    'keyQuestion.migrate.title': 'هاجر',
+    'keyQuestion.migrate.description': 'هدفي هو إنشاء حياة جديدة في اليابان، سواء كمحترف أو رائد أعمال أو لعائلتي.',
+    'keyQuestion.migrate.audience': 'اهتمام عام، التزام طويل الأجل',
+    'keyQuestion.live.title': 'عش',
+    'keyQuestion.live.description': 'أرغب في العثور على منزل ثانٍ أو منزل لقضاء العطلات أو ملاذ للاستمتاع بأسلوب الحياة والثقافة والطبيعة.',
+    'keyQuestion.live.audience': 'موجهة للشخصيات الأوروبية والعربية',
+
+    // Profile Completion Section
+    'profileComplete.title': 'تم إنشاء الملف الشخصي بالكامل!',
+    'profileComplete.subtitle': 'تحليلك الذكي جاهز. ادخل إلى لوحة التحكم لرؤية نتائجك.',
+    'profileComplete.summary': 'ملخص ملفك الشخصي:',
+    'profileComplete.iviScore': 'درجة IVI',
+    'profileComplete.ivmScore': 'درجة IVM',
+    'profileComplete.iseScore': 'درجة ISE',
+    'profileComplete.recommendation': 'التوصية:',
+    'profileComplete.accessDashboard': 'الوصول إلى لوحة التحكم',
+
+    // Data Collection Welcome Messages
+    'dataCollection.investment.title': 'جمع بيانات الاستثمار',
+    'dataCollection.investment.subtitle': 'دعنا نجمع معلومات ملفك الشخصي للاستثمار',
+    'dataCollection.investment.description': 'نحتاج إلى بعض البيانات المحددة حول وضعك المالي وأهداف الاستثمار لإنشاء تحليل استثماري مخصص لك.',
+    'dataCollection.migration.title': 'جمع بيانات الهجرة',
+    'dataCollection.migration.subtitle': 'دعنا نجمع معلومات ملفك الشخصي للهجرة',
+    'dataCollection.migration.description': 'نحتاج إلى بعض البيانات المحددة حول وضع عائلتك وخلفيتك المهنية لإنشاء خطة هجرة مخصصة لك.',
+    'dataCollection.lifestyle.title': 'جمع بيانات نمط الحياة',
+    'dataCollection.lifestyle.subtitle': 'دعنا نجمع معلومات ملفك الشخصي لنمط الحياة',
+    'dataCollection.lifestyle.description': 'نحتاج إلى بعض البيانات المحددة حول احتياجاتك السكنية وتفضيلات نمط الحياة لإنشاء تجربة معيشة مخصصة لك.',
+    'dataCollection.default.title': 'جمع بيانات الملف الشخصي',
+    'dataCollection.default.subtitle': 'دعنا نجمع معلومات ملفك الشخصي',
+    'dataCollection.default.description': 'نحتاج إلى بعض البيانات المحددة لإنشاء تحليل مخصص لك.',
+    'dataCollection.startButton': 'بدء جمع البيانات',
+    'dataCollection.timeEstimate': 'سيستغرق هذا حوالي 5-10 دقائق',
   },
   es: {
     // Common
@@ -5874,6 +6432,144 @@ const translations = {
     'user.dropdown.dashboard': 'Panel de Control',
     'user.dropdown.myProfile': 'Mi Perfil',
     'user.dropdown.logout': 'Cerrar Sesión',
+    
+    // Onboarding steps
+    'onboarding.step': 'Paso {current} de {total}',
+    'onboarding.back': 'Atrás',
+    'onboarding.continue': 'Continuar',
+    'onboarding.selectOption': 'Selecciona una opción',
+    
+    // Basic Information
+    'onboarding.basicInfo.title': 'Información Básica',
+    'onboarding.basicInfo.description': 'Datos personales esenciales',
+    'onboarding.basicInfo.fullName': 'Nombre completo',
+    'onboarding.basicInfo.phone': 'Teléfono',
+    'onboarding.basicInfo.nationality': 'Nacionalidad',
+    'onboarding.basicInfo.age': 'Edad',
+    'onboarding.basicInfo.gender': 'Género',
+    'onboarding.basicInfo.currentCountry': 'País actual',
+    'onboarding.basicInfo.currentCity': 'Ciudad actual',
+    
+    // Nationality options
+    'onboarding.nationality.mexican': 'Mexicana',
+    'onboarding.nationality.american': 'Estadounidense',
+    'onboarding.nationality.canadian': 'Canadiense',
+    'onboarding.nationality.spanish': 'Española',
+    'onboarding.nationality.argentine': 'Argentina',
+    'onboarding.nationality.colombian': 'Colombiana',
+    'onboarding.nationality.other': 'Otra',
+    
+    // Gender options
+    'onboarding.gender.male': 'Masculino',
+    'onboarding.gender.female': 'Femenino',
+    'onboarding.gender.other': 'Otro',
+    'onboarding.gender.preferNotToSay': 'Prefiero no decir',
+    
+    // Intention Details
+    'onboarding.intention.title': 'Detalles de Intención',
+    'onboarding.intention.description': 'Información específica sobre tu objetivo',
+    'onboarding.intention.timeline': 'Timeline',
+    'onboarding.intention.motivation': '¿Por qué Japón?',
+    'onboarding.intention.motivationPlaceholder': 'Cuéntanos qué te motiva a considerar Japón...',
+    'onboarding.intention.previousExperience': 'Experiencia previa con Japón',
+    
+    // Timeline options
+    'onboarding.timeline.immediate': 'Inmediato (0-3 meses)',
+    'onboarding.timeline.sixMonths': '6 meses',
+    'onboarding.timeline.oneYear': '1 año',
+    'onboarding.timeline.exploring': 'Solo explorando',
+    
+    // Experience options
+    'onboarding.experience.none': 'Ninguna',
+    'onboarding.experience.limited': 'Limitada (viajes cortos)',
+    'onboarding.experience.moderate': 'Moderada (varios viajes)',
+    'onboarding.experience.extensive': 'Extensa (vivido/trabajado)',
+    
+    // Investment Data
+    'onboarding.investment.title': 'Datos de Inversión',
+    'onboarding.investment.description': 'Información financiera y de inversión',
+    'onboarding.investment.budgetMin': 'Presupuesto mínimo',
+    'onboarding.investment.budgetMax': 'Presupuesto máximo',
+    'onboarding.investment.currency': 'Moneda',
+    'onboarding.investment.annualIncome': 'Ingresos anuales',
+    'onboarding.investment.incomeStability': 'Estabilidad de ingresos',
+    'onboarding.investment.financialExperience': 'Experiencia financiera',
+    'onboarding.investment.riskTolerance': 'Tolerancia al riesgo',
+    
+    // Income stability options
+    'onboarding.stability.unstable': 'Inestable',
+    'onboarding.stability.moderate': 'Moderada',
+    'onboarding.stability.stable': 'Estable',
+    
+    // Experience levels
+    'onboarding.level.none': 'Ninguna',
+    'onboarding.level.basic': 'Básica',
+    'onboarding.level.intermediate': 'Intermedia',
+    'onboarding.level.advanced': 'Avanzada',
+    
+    // Risk tolerance options
+    'onboarding.risk.conservative': 'Conservador',
+    'onboarding.risk.moderate': 'Moderado',
+    'onboarding.risk.aggressive': 'Agresivo',
+    
+    // Migration Data
+    'onboarding.migration.title': 'Datos de Migración',
+    'onboarding.migration.description': 'Información familiar y profesional',
+    'onboarding.migration.familySituation': 'Situación familiar',
+    'onboarding.migration.educationLevel': 'Nivel educativo',
+    'onboarding.migration.migrationTimeline': 'Timeline de migración',
+    
+    // Family situation options
+    'onboarding.family.single': 'Solo',
+    'onboarding.family.couple': 'Pareja',
+    'onboarding.family.smallFamily': 'Familia pequeña (1-2 hijos)',
+    'onboarding.family.largeFamily': 'Familia grande (3+ hijos)',
+    
+    // Education levels
+    'onboarding.education.basic': 'Básica',
+    'onboarding.education.medium': 'Media',
+    'onboarding.education.university': 'Universitaria',
+    'onboarding.education.postgraduate': 'Postgrado',
+    
+    // Migration timeline options
+    'onboarding.migrationTimeline.urgent': 'Urgente (0-6 meses)',
+    'onboarding.migrationTimeline.sixMonths': '6 meses',
+    'onboarding.migrationTimeline.oneYear': '1 año',
+    'onboarding.migrationTimeline.twoYears': '2 años',
+    
+    // Residence Data
+    'onboarding.residence.title': 'Datos de Residencia',
+    'onboarding.residence.description': 'Información de vivienda',
+    'onboarding.residence.housingBudget': 'Presupuesto para vivienda',
+    'onboarding.residence.expectedDuration': 'Duración esperada',
+    
+    // Duration options
+    'onboarding.duration.temporary': 'Temporal (1-2 años)',
+    'onboarding.duration.permanent': 'Permanente',
+    
+    // Cultural Analysis
+    'onboarding.cultural.title': 'Análisis Cultural',
+    'onboarding.cultural.description': 'Tu afinidad con la cultura japonesa',
+    'onboarding.cultural.knowledge': 'Conocimiento de Japón',
+    'onboarding.cultural.japaneseLevel': 'Nivel de japonés',
+    'onboarding.cultural.personalValues': 'Valores personales (1-10)',
+    'onboarding.cultural.culturalInterests': 'Intereses culturales',
+    'onboarding.cultural.harmony': 'Armonía',
+    'onboarding.cultural.respect': 'Respeto',
+    'onboarding.cultural.discipline': 'Disciplina',
+    'onboarding.cultural.complete': 'Completar',
+    
+    // Cultural interests
+    'onboarding.interest.art': 'Arte',
+    'onboarding.interest.music': 'Música',
+    'onboarding.interest.photography': 'Fotografía',
+    'onboarding.interest.gastronomy': 'Gastronomía',
+    'onboarding.interest.videoGames': 'Videojuegos',
+    'onboarding.interest.sports': 'Deportes',
+    'onboarding.interest.nature': 'Naturaleza',
+    'onboarding.interest.travel': 'Viajes',
+    'onboarding.interest.literature': 'Literatura',
+    'onboarding.interest.technology': 'Tecnología',
     
     // Dashboard translations
     'dashboard.investor.title': 'Centro de Mando de Oportunidades',
@@ -7927,6 +8623,11 @@ const translations = {
     'featuredProperties.keyFeatures': 'Características Clave',
     'featuredProperties.viewAIAnalysis': 'Ver Análisis IA',
     'featuredProperties.photos': 'Ver Fotos',
+    'featuredProperties.age': 'Edad',
+    'featuredProperties.years': 'años',
+    'featuredProperties.vehicle': 'vehículo',
+    'featuredProperties.vehicles': 'vehículos',
+    'featuredProperties.viewAllPhotos': 'Ver Todas las Fotos',
 
     // Photo Gallery Modal
     'photoGallery.title': 'Galería de Fotos',
@@ -8009,6 +8710,7 @@ const translations = {
     'property.access.byCar': 'en auto',
     'property.access.byTrain': 'en tren',
     'property.access.byBus': 'en autobús',
+    'property.builtDate': 'Octubre 1989',
 
     // Property Names
     'property.name.propertyA': 'Propiedad A - Villa Japonesa Tradicional',
@@ -8058,6 +8760,48 @@ const translations = {
     'contact.renovationServices': 'Servicios de Renovación',
     'contact.legalAdvice': 'Asesoría Legal',
     'contact.other': 'Otro',
+
+    // Common Navigation
+    'common.backToHome': 'Volver al Inicio',
+
+    // The Key Question Section
+    'keyQuestion.title': 'La Pregunta Clave',
+    'keyQuestion.subtitle': '¿Cuál es el principal impulsor de tu viaje a Japón?',
+    'keyQuestion.invest.title': 'INVERTIR',
+    'keyQuestion.invest.description': 'Busco construir una cartera, generar retornos y explorar oportunidades de negocio como franquicias o startups.',
+    'keyQuestion.invest.audience': 'Dirigido principalmente al perfil latino',
+    'keyQuestion.migrate.title': 'MIGRAR',
+    'keyQuestion.migrate.description': 'Mi objetivo es establecer una nueva vida en Japón, ya sea como profesional, emprendedor o para mi familia.',
+    'keyQuestion.migrate.audience': 'Interés general, compromiso a largo plazo',
+    'keyQuestion.live.title': 'VIVIR',
+    'keyQuestion.live.description': 'Deseo encontrar una segunda casa, una casa de vacaciones o un refugio para disfrutar del estilo de vida, la cultura y la naturaleza.',
+    'keyQuestion.live.audience': 'Dirigido a perfiles europeos y árabes',
+
+    // Profile Completion Section
+    'profileComplete.title': '¡Perfil Completo Generado!',
+    'profileComplete.subtitle': 'Tu análisis inteligente está listo. Accede al dashboard para ver tus resultados.',
+    'profileComplete.summary': 'Resumen de tu Perfil:',
+    'profileComplete.iviScore': 'IVI Score',
+    'profileComplete.ivmScore': 'IVM Score',
+    'profileComplete.iseScore': 'ISE Score',
+    'profileComplete.recommendation': 'Recomendación:',
+    'profileComplete.accessDashboard': 'Acceder al Dashboard',
+
+    // Data Collection Welcome Messages
+    'dataCollection.investment.title': 'Recopilación de Datos de Inversión',
+    'dataCollection.investment.subtitle': 'Recopilemos la información de tu perfil de inversión',
+    'dataCollection.investment.description': 'Necesitamos algunos datos específicos sobre tu situación financiera y objetivos de inversión para crear tu análisis de inversión personalizado.',
+    'dataCollection.migration.title': 'Recopilación de Datos de Migración',
+    'dataCollection.migration.subtitle': 'Recopilemos la información de tu perfil de migración',
+    'dataCollection.migration.description': 'Necesitamos algunos datos específicos sobre tu situación familiar y antecedentes profesionales para crear tu plan de migración personalizado.',
+    'dataCollection.lifestyle.title': 'Recopilación de Datos de Estilo de Vida',
+    'dataCollection.lifestyle.subtitle': 'Recopilemos la información de tu perfil de estilo de vida',
+    'dataCollection.lifestyle.description': 'Necesitamos algunos datos específicos sobre tus necesidades de vivienda y preferencias de estilo de vida para crear tu experiencia de vida personalizada.',
+    'dataCollection.default.title': 'Recopilación de Datos del Perfil',
+    'dataCollection.default.subtitle': 'Recopilemos la información de tu perfil',
+    'dataCollection.default.description': 'Necesitamos algunos datos específicos para crear tu análisis personalizado.',
+    'dataCollection.startButton': 'Iniciar Recopilación de Datos',
+    'dataCollection.timeEstimate': 'Esto tomará aproximadamente 5-10 minutos',
   }
 };
 

@@ -16,6 +16,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import JNILogo from './JNILogo';
 
 const JNIStrategicAlliance: React.FC = () => {
   const { t } = useLanguage();
@@ -94,16 +95,13 @@ const JNIStrategicAlliance: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* JNI Logo Placeholder */}
+            {/* JNI Logo */}
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">JNI</span>
-                </div>
+                <JNILogo size="lg" showTagline={true} />
               </div>
               
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('jni.companyName')}</h3>
                 <p className="text-gray-600 mb-4">{t('jni.companyTagline')}</p>
                 
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-500">

@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { ArrowRight, Users, Target, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import JNILogo from '@/components/JNILogo';
 
 export default function About() {
   const { t } = useLanguage();
@@ -144,6 +145,9 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex items-center justify-center mb-6">
+                  <JNILogo size="md" showTagline={true} />
+                </div>
                 <h3 className="text-2xl font-serif font-bold text-primary mb-4">
                   {t('about.toshinoriName')}
                 </h3>

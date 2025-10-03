@@ -49,9 +49,10 @@ const nextConfig: NextConfig = {
   // Optimizaciones para Netlify y configuración experimental
   experimental: {
     optimizePackageImports: ['mapbox-gl', 'three', '@react-three/fiber', '@react-three/drei'],
-    typedRoutes: false,
-    esmExternals: false,
   },
+  
+  // Mover typedRoutes fuera de experimental (nueva ubicación en Next.js 15)
+  typedRoutes: false,
   
   // Configuración de imágenes optimizada para Netlify
   images: {
@@ -115,6 +116,8 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  
+  // Configuración de Turbopack se maneja automáticamente
   
 };
 

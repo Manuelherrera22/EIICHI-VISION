@@ -107,10 +107,10 @@ export default function ArquitectoOnboarding() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              The Key Question
+              {t('keyQuestion.title')}
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              What is the main driver of your journey to Japan?
+              {t('keyQuestion.subtitle')}
             </p>
           </div>
 
@@ -126,12 +126,12 @@ export default function ArquitectoOnboarding() {
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <TrendingUp className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">INVEST</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('keyQuestion.invest.title')}</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                I seek to build a portfolio, generate returns, and explore business opportunities such as franchises or startups.
+                {t('keyQuestion.invest.description')}
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">Aimed primarily at the Latin profile</span>
+                <span className="text-sm text-gray-500 font-medium">{t('keyQuestion.invest.audience')}</span>
               </div>
             </button>
 
@@ -146,12 +146,12 @@ export default function ArquitectoOnboarding() {
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <Users className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">MIGRATE</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('keyQuestion.migrate.title')}</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                My objective is to establish a new life in Japan, either as a professional, entrepreneur, or for my family.
+                {t('keyQuestion.migrate.description')}
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">General interest, long-term commitment</span>
+                <span className="text-sm text-gray-500 font-medium">{t('keyQuestion.migrate.audience')}</span>
               </div>
             </button>
 
@@ -166,12 +166,12 @@ export default function ArquitectoOnboarding() {
               <div className="w-20 h-20 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
                 <Home className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">LIVE</h3>
+              <h3 className="font-bold text-gray-800 text-2xl mb-4 text-center">{t('keyQuestion.live.title')}</h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                I wish to find a second home, a vacation house, or a refuge to enjoy the lifestyle, culture, and nature.
+                {t('keyQuestion.live.description')}
               </p>
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-500 font-medium">Aimed at European and Arab profiles</span>
+                <span className="text-sm text-gray-500 font-medium">{t('keyQuestion.live.audience')}</span>
               </div>
             </button>
           </div>
@@ -311,30 +311,30 @@ export default function ArquitectoOnboarding() {
               <CheckCircle className="w-12 h-12 text-gray-600" />
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              ¡Perfil Completo Generado!
+              {t('profileComplete.title')}
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Tu análisis inteligente está listo. Accede al dashboard para ver tus resultados.
+              {t('profileComplete.subtitle')}
             </p>
             {userProfile.intelligentScores && (
               <div className="bg-gray-100 p-6 rounded-2xl mb-8 border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Resumen de tu Perfil:</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('profileComplete.summary')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                   <div className="bg-white p-4 rounded-lg">
                     <div className="text-2xl font-bold text-blue-600">{userProfile.intelligentScores.IVI?.score || 0}</div>
-                    <div className="text-sm text-gray-600">IVI Score</div>
+                    <div className="text-sm text-gray-600">{t('profileComplete.iviScore')}</div>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <div className="text-2xl font-bold text-green-600">{userProfile.intelligentScores.IVM?.score || 0}</div>
-                    <div className="text-sm text-gray-600">IVM Score</div>
+                    <div className="text-sm text-gray-600">{t('profileComplete.ivmScore')}</div>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <div className="text-2xl font-bold text-purple-600">{userProfile.intelligentScores.ISE?.score || 0}</div>
-                    <div className="text-sm text-gray-600">ISE Score</div>
+                    <div className="text-sm text-gray-600">{t('profileComplete.iseScore')}</div>
                   </div>
                 </div>
                 <div className="mt-4">
-                  <span className="text-sm text-gray-600">Recomendación: </span>
+                  <span className="text-sm text-gray-600">{t('profileComplete.recommendation')} </span>
                   <span className="font-semibold text-gray-800 capitalize">
                     {userProfile.intelligentScores.recommendation || 'Moderada'}
                   </span>
@@ -348,7 +348,7 @@ export default function ArquitectoOnboarding() {
             className="group bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 px-12 py-4 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-lg hover:scale-105 relative overflow-hidden border border-gray-200 hover:border-gray-300"
           >
             <span className="relative z-10 flex items-center gap-3">
-              Acceder al Dashboard
+              {t('profileComplete.accessDashboard')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>

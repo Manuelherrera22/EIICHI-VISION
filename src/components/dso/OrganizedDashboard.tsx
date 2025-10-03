@@ -46,8 +46,10 @@ import {
   List,
   Columns,
   Map as MapIcon,
-  Building2
+  Building2,
+  ArrowLeft
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface Section {
   id: string;
@@ -479,6 +481,16 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
       {/* Header Simplificado */}
       <header className="bg-white border-b border-gray-200 px-6 py-4">
         <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <Link 
+              href="/"
+              className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-200 group"
+            >
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
+              <span className="text-sm font-medium">{t('common.backToHome')}</span>
+            </Link>
+          </div>
+          
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-black font-bold text-sm">TH</span>
