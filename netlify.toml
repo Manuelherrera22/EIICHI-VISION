@@ -61,6 +61,16 @@
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
 
+[[headers]]
+  for = "/Property A/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/Property B/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [dev]
   command = "npm run dev"
   port = 3000

@@ -12,6 +12,8 @@
 /images/* /images/:splat 200
 /models/* /models/:splat 200
 /videos/* /videos/:splat 200
+/Property A/* /Property A/:splat 200
+/Property B/* /Property B/:splat 200
 
 # Main pages
 /projects /projects/ 200

@@ -53,9 +53,11 @@ const nextConfig: NextConfig = {
     esmExternals: false,
   },
   
-  // Configuración de imágenes optimizada
+  // Configuración de imágenes optimizada para Netlify
   images: {
-    // unoptimized: true, // Necesario para export estático
+    // Habilitar optimización de imágenes para Netlify
+    unoptimized: false,
+    // Configurar dominios remotos permitidos
     remotePatterns: [
       {
         protocol: 'https',
@@ -80,8 +82,32 @@ const nextConfig: NextConfig = {
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tabijihouse.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.netlify.app',
+        port: '',
+        pathname: '/**',
       }
     ],
+    // Configuración de formatos de imagen
+    formats: ['image/webp', 'image/avif'],
+    // Tamaños de dispositivo para optimización
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Tamaños de imagen
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // TTL mínimo de caché
+    minimumCacheTTL: 60,
+    // Permitir SVG
+    dangerouslyAllowSVG: true,
+    // Política de seguridad de contenido
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
   
