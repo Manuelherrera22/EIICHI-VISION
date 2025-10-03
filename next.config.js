@@ -7,7 +7,6 @@ const nextConfig = {
   images: {
     domains: [
       'images.unsplash.com',
-      'cdn.tabijihouse.com',
       'api.tabijiexport.com',
       'maps.googleapis.com'
     ],
@@ -183,8 +182,8 @@ const nextConfig = {
   // Configuración de distDir
   distDir: '.next',
 
-  // Configuración de assetPrefix
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.tabijihouse.com' : '',
+  // Configuración de assetPrefix - Comentado porque cdn.tabijihouse.com no está configurado
+  // assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.tabijihouse.com' : '',
 
   // Configuración de basePath
   basePath: '',
