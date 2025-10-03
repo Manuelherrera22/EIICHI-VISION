@@ -55,8 +55,8 @@ const nextConfig: NextConfig = {
   
   // Configuración de imágenes optimizada para Netlify
   images: {
-    // Habilitar optimización de imágenes para Netlify
-    unoptimized: false,
+    // Deshabilitar optimización para evitar errores 500 en Netlify
+    unoptimized: true,
     // Configurar dominios remotos permitidos
     remotePatterns: [
       {

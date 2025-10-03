@@ -23,16 +23,16 @@ const RealPropertiesSection: React.FC = () => {
       age: 36,
       layout: '2LDK',
       images: [
-        '/Property A/33239_1.jpg',
-        '/Property A/33239_2.gif',
-        '/Property A/33239_3.jpg',
-        '/Property A/33239_4.jpg',
-        '/Property A/33239_5.jpg',
-        '/Property A/33239_6.jpg',
-        '/Property A/33239_7.jpg',
-        '/Property A/33239_8.jpg',
-        '/Property A/33239_9.jpg',
-        '/Property A/33239_10.jpg'
+        '/property-a/33239_1.jpg',
+        '/property-a/33239_2.gif',
+        '/property-a/33239_3.jpg',
+        '/property-a/33239_4.jpg',
+        '/property-a/33239_5.jpg',
+        '/property-a/33239_6.jpg',
+        '/property-a/33239_7.jpg',
+        '/property-a/33239_8.jpg',
+        '/property-a/33239_9.jpg',
+        '/property-a/33239_10.jpg'
       ],
       features: [
         t('property.features.traditionalArchitecture'),
@@ -56,15 +56,15 @@ const RealPropertiesSection: React.FC = () => {
       age: 36,
       layout: '2LDK',
       images: [
-        '/Property B/33250_1.jpg',
-        '/Property B/33250_2.gif',
-        '/Property B/33250_3.jpg',
-        '/Property B/33250_4.jpg',
-        '/Property B/33250_5.jpg',
-        '/Property B/33250_6.jpg',
-        '/Property B/33250_7.jpg',
-        '/Property B/33250_9.jpg',
-        '/Property B/33250_10.jpg'
+        '/property-b/33250_1.jpg',
+        '/property-b/33250_2.gif',
+        '/property-b/33250_3.jpg',
+        '/property-b/33250_4.jpg',
+        '/property-b/33250_5.jpg',
+        '/property-b/33250_6.jpg',
+        '/property-b/33250_7.jpg',
+        '/property-b/33250_9.jpg',
+        '/property-b/33250_10.jpg'
       ],
       features: [
         t('property.features.modernDesign'),
