@@ -105,7 +105,7 @@ const AIChat = () => {
                 onClick={() => setIsOpen(false)}
                 className="p-2 hover:bg-muted rounded-full transition-colors duration-200"
               >
-                <X size={16} className="text-secondary" />
+                <X size={16} className="text-black" />
               </button>
             </div>
 
@@ -125,11 +125,11 @@ const AIChat = () => {
                     <div className={`px-4 py-2 rounded-2xl ${
                       message.type === 'user' 
                         ? 'bg-primary text-black' 
-                        : 'bg-muted text-primary'
+                        : 'bg-muted text-black'
                     }`}>
                       <p className="text-sm">{message.text}</p>
                       <p className={`text-xs mt-1 ${
-                        message.type === 'user' ? 'text-black/70' : 'text-secondary'
+                        message.type === 'user' ? 'text-black/70' : 'text-black/70'
                       }`}>
                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </p>
@@ -141,14 +141,14 @@ const AIChat = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="flex items-start space-x-2">
-                    <div className="w-8 h-8 bg-muted text-primary rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-muted text-black rounded-full flex items-center justify-center">
                       <Bot size={14} />
                     </div>
-                    <div className="bg-muted text-primary px-4 py-2 rounded-2xl">
+                    <div className="bg-muted text-black px-4 py-2 rounded-2xl">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-black rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
