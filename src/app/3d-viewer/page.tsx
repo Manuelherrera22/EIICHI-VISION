@@ -14,7 +14,7 @@ export default function Viewer3DPage() {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'Komorebi House - Casa Tradicional Japonesa',
+        title: 'Tabiji House - Casa Tradicional Japonesa',
         text: 'Explora esta increíble casa tradicional japonesa en 3D',
         url: window.location.href,
       });

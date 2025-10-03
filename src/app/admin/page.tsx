@@ -110,7 +110,7 @@ export default function AdminDashboard() {
               Dashboard de Administración
             </h1>
             <p className="text-sm sm:text-base text-secondary">
-              Gestiona leads, reservas y analiza el rendimiento de Komorebi House
+              Gestiona leads, reservas y analiza el rendimiento de Tabiji House
             </p>
           </div>
 

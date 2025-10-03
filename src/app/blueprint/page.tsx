@@ -219,7 +219,7 @@ const BlueprintEcosystem = () => {
                 {t('blueprint.title')}
               </h1>
               <p className="text-secondary text-xs sm:text-sm">
-                Ecosistema Komorebi House
+                Ecosistema Tabiji House
               </p>
             </div>
           </div>
@@ -319,7 +319,7 @@ const BlueprintEcosystem = () => {
       <footer className="bg-white border-t border-border p-4 mt-auto">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-secondary text-sm">
-            &copy; {new Date().getFullYear()} Komorebi House. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Tabiji House. Todos los derechos reservados.
           </p>
         </div>
       </footer>

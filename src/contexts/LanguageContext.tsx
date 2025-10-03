@@ -3773,7 +3773,7 @@ const translations = {
     'footer.newsletterDescription': '最新のプロジェクトとインサイトで更新情報を受け取る。',
     'footer.subscribe': '購読',
     'footer.emailPlaceholder': 'メールアドレスを入力',
-    'footer.copyright': '© 2024 こもれびハウス。全著作権所有。',
+    'footer.copyright': '© 2024 タビジハウス。全著作権所有。',
     
     // Contact
     'contact.title': 'お問い合わせ',
@@ -5814,7 +5814,7 @@ const translations = {
     'footer.newsletterDescription': 'ابق على اطلاع بأحدث مشاريعنا ورؤانا.',
     'footer.subscribe': 'اشترك',
     'footer.emailPlaceholder': 'أدخل بريدك الإلكتروني',
-    'footer.copyright': '© 2024 بيت كوموريبي. جميع الحقوق محفوظة.',
+    'footer.copyright': '© 2024 بيت تابيجي. جميع الحقوق محفوظة.',
     
     // Contact
     'contact.title': 'تواصل معنا',
@@ -8410,7 +8410,7 @@ const translations = {
     'footer.newsletterDescription': 'Mantente al día con las últimas propiedades y oportunidades de inversión.',
     'footer.emailPlaceholder': 'Tu correo electrónico',
     'footer.subscribe': 'Suscribirse',
-    'footer.copyright': 'Todos los derechos reservados.',
+    'footer.copyright': '© 2024 Tabiji House. Todos los derechos reservados.',
     'footer.privacy': 'Privacidad',
     'footer.terms': 'Términos',
     'footer.links.home': 'Inicio',

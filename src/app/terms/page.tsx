@@ -69,7 +69,7 @@ const TermsPage = () => {
               </h1>
               <p className="text-lg text-secondary max-w-2xl mx-auto">
                 Estos términos rigen el uso de nuestros servicios y la relación entre 
-                Komorebi House y nuestros clientes.
+                Tabiji House y nuestros clientes.
               </p>
               <p className="text-sm text-secondary mt-4">
                 Última actualización: {new Date().toLocaleDateString('es-ES')}
@@ -169,7 +169,7 @@ const TermsPage = () => {
               </h3>
               <p className="text-secondary text-sm leading-relaxed">
                 Estos términos y condiciones están sujetos a las leyes japonesas. 
-                Komorebi House se reserva el derecho de modificar estos términos en cualquier momento. 
+                Tabiji House se reserva el derecho de modificar estos términos en cualquier momento. 
                 Los cambios serán efectivos inmediatamente después de su publicación en este sitio web.
               </p>
             </div>

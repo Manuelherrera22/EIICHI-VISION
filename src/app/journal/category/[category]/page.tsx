@@ -47,7 +47,7 @@ const CategoryPage = async ({ params }: CategoryPageProps) => {
                category === 'culture' ? 'Explora las celebraciones más importantes de la prefectura de Gunma y su significado cultural.' :
                'Consejos prácticos para expatriados que deciden vivir en el campo japonés.',
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      author: 'Equipo Komorebi House',
+      author: 'Equipo Tabiji House',
       date: '2024-03-15',
       readTime: '8 min',
       featured: true

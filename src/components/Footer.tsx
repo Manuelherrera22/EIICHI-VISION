@@ -175,7 +175,7 @@ const Footer = () => {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border">
           <div className="flex flex-col space-y-4 lg:flex-row lg:justify-between lg:items-center lg:space-y-0">
             <div className="text-xs sm:text-sm text-secondary text-center lg:text-left">
-              © {currentYear} Komorebi House. {isClient ? t('footer.copyright') : 'All rights reserved.'}
+              © {currentYear} Tabiji House. {isClient ? t('footer.copyright') : 'All rights reserved.'}
             </div>
             
             {/* Social Links */}
