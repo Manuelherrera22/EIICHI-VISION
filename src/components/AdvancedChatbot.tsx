@@ -349,7 +349,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
             } flex flex-col overflow-hidden`}
           >
             {/* Header */}
-            <div className="bg-white border-b border-gray-200 text-black p-4 flex items-center justify-between">
+            <div className="bg-white border-b border-gray-200 p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-black/20 rounded-full flex items-center justify-center">
                   <Bot size={16} className="text-black" />
@@ -366,29 +366,29 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setShowHistory(!showHistory)}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                   title={t('chatbot.history')}
                 >
-                  <History size={16} />
+                  <History size={16} className="text-black" />
                 </button>
                 <button
                   onClick={() => setShowSettings(!showSettings)}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                   title={t('chatbot.settings')}
                 >
-                  <Settings size={16} />
+                  <Settings size={16} className="text-black" />
                 </button>
                 <button
                   onClick={() => setIsMinimized(!isMinimized)}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                 >
-                  {isMinimized ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  {isMinimized ? <ChevronUp size={16} className="text-black" /> : <ChevronDown size={16} className="text-black" />}
                 </button>
                 <button
                   onClick={onToggle}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                 >
-                  <XCircle size={16} />
+                  <XCircle size={16} className="text-black" />
                 </button>
               </div>
             </div>
@@ -521,24 +521,24 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                                 <div className="flex items-center space-x-1">
                                   <button
                                     onClick={() => handleCopyMessage(message.content)}
-                                    className="p-1 hover:bg-white/20 rounded transition-colors"
+                                    className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                                     title={t('chatbot.copy')}
                                   >
-                                    <Copy size={12} />
+                                    <Copy size={12} className="text-black" />
                                   </button>
                                   <button
                                     onClick={() => handleRateMessage(message.id, 'up')}
-                                    className="p-1 hover:bg-white/20 rounded transition-colors"
+                                    className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                                     title={t('chatbot.rateUp')}
                                   >
-                                    <ThumbsUp size={12} />
+                                    <ThumbsUp size={12} className="text-black" />
                                   </button>
                                   <button
                                     onClick={() => handleRateMessage(message.id, 'down')}
-                                    className="p-1 hover:bg-white/20 rounded transition-colors"
+                                    className="p-1 hover:bg-gray-200 rounded transition-colors text-black"
                                     title={t('chatbot.rateDown')}
                                   >
-                                    <ThumbsDown size={12} />
+                                    <ThumbsDown size={12} className="text-black" />
                                   </button>
                                 </div>
                               )}
