@@ -349,16 +349,16 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
             } flex flex-col overflow-hidden`}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary to-accent text-black p-4 flex items-center justify-between">
+            <div className="bg-white border-b border-gray-200 text-black p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-black/20 rounded-full flex items-center justify-center">
                   <Bot size={16} className="text-black" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm">
+                  <h3 className="font-semibold text-sm text-black">
                     {t('chatbot.title')}
                   </h3>
-                  <p className="text-xs opacity-90">
+                  <p className="text-xs text-black opacity-90">
                     {t('chatbot.subtitle')}
                   </p>
                 </div>
