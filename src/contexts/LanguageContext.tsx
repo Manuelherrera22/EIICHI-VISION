@@ -7027,7 +7027,7 @@ const translations = {
     'onboarding.interest.technology': 'Tecnología',
     
     // Dashboard translations
-    'dashboard.investor.title': 'Centro de Mando de Oportunidades',
+    'dashboard.investor.title': 'Investment Opportunity Command Center',
     'dashboard.migration.title': 'Tu Ruta Migratoria a Japón',
     'dashboard.lifestyle.title': 'Tu Santuario Personal',
     'dashboard.default.title': 'Dashboard',
@@ -7087,7 +7087,7 @@ const translations = {
     'onboarding.complete.title': '¡Perfecto!',
     'onboarding.complete.description': 'Hemos creado tu "Blueprint" inicial. Tu dashboard ha sido personalizado para acelerar tu objetivo.',
     'onboarding.complete.blueprintTitle': 'Tu Blueprint',
-    'onboarding.complete.finalButton': 'Bienvenido a tu Centro de Mando en Japón',
+    'onboarding.complete.finalButton': 'Welcome to your Japan Command Center',
     
     // Question progress
     'onboarding.question.progress': 'Pregunta {current} de {total}',
@@ -7191,20 +7191,20 @@ const translations = {
     'dashboard.investor.nextSteps.sessionWithMaría': 'Sesión con María Tanaka sobre nuevas oportunidades',
     
     // Intelligent Dashboard
-    'dashboard.intelligent.title': 'Centro de Mando Inteligente',
-    'dashboard.intelligent.welcome': '¡Bienvenido, {userName}! 👋',
-    'dashboard.intelligent.description': 'Tu análisis inteligente está listo. Aquí tienes un resumen de tu perfil de inversión.',
-    'dashboard.intelligent.profileCompleteness': 'Completitud del Perfil',
+    'dashboard.intelligent.title': 'Intelligent Command Center',
+    'dashboard.intelligent.welcome': 'Welcome, {userName}! 👋',
+    'dashboard.intelligent.description': 'Your intelligent analysis is ready. Here is a summary of your investment profile.',
+    'dashboard.intelligent.profileCompleteness': 'Profile Completion',
     'dashboard.intelligent.ivi': 'IVI',
-    'dashboard.intelligent.iviDescription': 'Índice de Viabilidad de Inversión',
+    'dashboard.intelligent.iviDescription': 'Investment Viability Index',
     'dashboard.intelligent.ivm': 'IVM',
-    'dashboard.intelligent.ivmDescription': 'Índice de Viabilidad Migratoria',
+    'dashboard.intelligent.ivmDescription': 'Migration Viability Index',
     'dashboard.intelligent.ise': 'ISE',
-    'dashboard.intelligent.iseDescription': 'Índice de Sincronización de Estilo de Vida',
-    'dashboard.intelligent.quickActions': 'Acciones Rápidas',
-    'dashboard.intelligent.viewMetrics': 'Ver Métricas',
-    'dashboard.intelligent.alerts': 'Alertas',
-    'dashboard.intelligent.predictions': 'Predicciones',
+    'dashboard.intelligent.iseDescription': 'Lifestyle Synchronization Index',
+    'dashboard.intelligent.quickActions': 'Quick Actions',
+    'dashboard.intelligent.viewMetrics': 'View Metrics',
+    'dashboard.intelligent.alerts': 'Alerts',
+    'dashboard.intelligent.predictions': 'Predictions',
     'dashboard.intelligent.tabijiExport': 'TabijiExport',
     'dashboard.intelligent.openTabijiExport': 'Abrir TabijiExport Integration',
     'dashboard.intelligent.openGlobalSearch': 'Abrir Búsqueda Global',
@@ -7224,8 +7224,8 @@ const translations = {
     'dashboard.sections.topoexport.description': 'Análisis topográfico avanzado',
     
     // Dashboard Navigation Groups
-    'dashboard.navigation.mainAnalysis': 'Análisis Principal',
-    'dashboard.navigation.tools': 'Herramientas',
+    'dashboard.navigation.mainAnalysis': 'Main Analysis',
+    'dashboard.navigation.tools': 'Tools',
     'dashboard.navigation.advancedConfig': 'Configuración Avanzada',
     
     // Dashboard Component Texts
@@ -7466,10 +7466,10 @@ const translations = {
     'migration.machineLearning': 'Machine Learning',
     
     // Navigation Translations
-    'navigation.commandCenter': 'Centro de Mando',
-    'navigation.organizedByFunctionality': 'Navegación organizada por funcionalidad',
-    'navigation.systemActive': 'Sistema activo',
-    'navigation.sectionsVisible': 'secciones visibles',
+    'navigation.commandCenter': 'Command Center',
+    'navigation.organizedByFunctionality': 'Navigation organized by functionality',
+    'navigation.systemActive': 'System active',
+    'navigation.sectionsVisible': 'visible sections',
     'navigation.searchDashboard': 'Buscar en todo el dashboard',
     
     // Additional Dashboard Translations
