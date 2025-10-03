@@ -2120,8 +2120,8 @@ const translations = {
     'about.strategicAllianceDescription': 'The technological agility of Tabiji House joins the solidity and trust of JNI Properties, creating an alliance that combines innovation with Japanese business tradition.',
     'about.toshinoriName': 'Toshinori Shibusawa',
     'about.toshinoriTitle': 'Representative, JNI Properties Co., Ltd.',
-    'about.alliancePhilosophy': 'Our alliance with JNI Properties is founded on a shared philosophy: the belief that large investments must generate lasting value for the community and the individual.',
-    'about.leadershipVision': 'Under the leadership of Toshinori Shibusawa, this vision is not an echo of the past, but an active commitment to ethical development, impeccable quality, and a sustainable future.',
+    'about.alliancePhilosophy': 'In my hometown of Gunma, we are blessed with hot springs, beautiful natural scenery throughout the four seasons, and abundant resources that support a rich lifestyle.',
+    'about.leadershipVision': 'Japan has many attractions that are still relatively unknown to the world. I hope to share the charm of Gunma, and Japan more broadly, with international audiences.',
     'about.guaranteeMessage': 'It is the guarantee that every Tabiji House project is built on a foundation of trust, purpose, and excellence.',
     
     // Kusatsu Project Page
@@ -2316,7 +2316,7 @@ const translations = {
     'jni.cta.learnMore': 'Contact Our Team',
     'jni.leadership.name': 'Toshinori Shibusawa',
     'jni.leadership.title': 'Representative, JNI Properties Co., Ltd.',
-    'jni.leadership.message': 'Our alliance with JNI Properties is founded on a shared philosophy: the belief that large investments must generate lasting value for the community and the individual. Under our leadership, this vision is not an echo of the past, but an active commitment to ethical development, impeccable quality, and a sustainable future.',
+    'jni.leadership.message': 'In my hometown of Gunma, we are blessed with hot springs, beautiful natural scenery throughout the four seasons, and abundant resources that support a rich lifestyle. Japan has many attractions that are still relatively unknown to the world. I hope to share the charm of Gunma, and Japan more broadly, with international audiences. Beyond the simple buying and selling of real estate, I aim to create opportunities for people to experience "a new lifestyle made possible by living in Japan," and to let as many people as possible feel its unique appeal.',
 
     // Property Opportunities Section (Dashboard)
     'propertyOpportunities.title': 'Property Opportunities',
