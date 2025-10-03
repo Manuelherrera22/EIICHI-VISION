@@ -4387,8 +4387,8 @@ const translations = {
     'about.strategicAllianceDescription': 'タビジハウスの技術的機動性がJNIプロパティーズの堅実性と信頼性と結びつき、革新と日本のビジネス伝統を組み合わせた提携を創出しています。',
     'about.toshinoriName': '渋澤俊徳',
     'about.toshinoriTitle': '代表取締役、JNIプロパティーズ株式会社',
-    'about.alliancePhilosophy': 'JNIプロパティーズとの私たちの提携は、共有された哲学に基づいています：大きな投資は、コミュニティと個人のために持続的な価値を生み出さなければならないという信念です。',
-    'about.leadershipVision': '渋澤俊徳のリーダーシップの下、このビジョンは過去の反響ではなく、倫理的な発展、完璧な品質、持続可能な未来への積極的なコミットメントです。',
+    'about.alliancePhilosophy': '私の故郷である群馬には、四季折々の美しい自然や豊富な資源、そして恵まれた温泉があります。',
+    'about.leadershipVision': '日本にはまだ世界に十分知られていない魅力が数多く存在します。私は、群馬、そして日本全体の魅力を世界の皆さまに発信していきたいと考えています。',
     'about.guaranteeMessage': 'これは、すべてのタビジハウスプロジェクトが信頼、目的、卓越性の基盤の上に構築されるという保証です。',
     
     // Kusatsu Project Page
@@ -4583,7 +4583,7 @@ const translations = {
     'jni.cta.learnMore': 'チームに連絡する',
     'jni.leadership.name': '渋澤俊徳',
     'jni.leadership.title': '代表取締役、JNIプロパティーズ株式会社',
-    'jni.leadership.message': 'JNIプロパティーズとの私たちの提携は、共有された哲学に基づいています：大きな投資は、コミュニティと個人のために持続的な価値を生み出さなければならないという信念です。私たちのリーダーシップの下、このビジョンは過去の反響ではなく、倫理的な発展、完璧な品質、持続可能な未来への積極的なコミットメントです。',
+    'jni.leadership.message': '私の故郷である群馬には、四季折々の美しい自然や豊富な資源、そして恵まれた温泉があります。これらは豊かな暮らしを支えており、日本にはまだ世界に十分知られていない魅力が数多く存在します。私は、群馬、そして日本全体の魅力を世界の皆さまに発信していきたいと考えています。不動産の単なる売買にとどまらず、「日本で暮らすことで実現できる新しいライフスタイル」を体験していただく機会を創出し、その独自の魅力をできるだけ多くの方に感じていただきたいと思っています。',
 
     // Property Opportunities Section (Dashboard)
     'propertyOpportunities.title': '物件機会',
@@ -6428,8 +6428,8 @@ const translations = {
     'about.strategicAllianceDescription': 'تتحد مرونة تاباتجي هاوس التقنية مع متانة وثقة JNI Properties، مما يخلق تحالفاً يجمع بين الابتكار والتقاليد التجارية اليابانية.',
     'about.toshinoriName': 'توشينوري شيبوساوا',
     'about.toshinoriTitle': 'ممثل، شركة JNI Properties المحدودة',
-    'about.alliancePhilosophy': 'تحالفنا مع JNI Properties مؤسس على فلسفة مشتركة: الاعتقاد بأن الاستثمارات الكبيرة يجب أن تولد قيمة دائمة للمجتمع والفرد.',
-    'about.leadershipVision': 'تحت قيادة توشينوري شيبوساوا، هذه الرؤية ليست صدى للماضي، بل التزام نشط بالتنمية الأخلاقية والجودة المثالية والمستقبل المستدام.',
+    'about.alliancePhilosophy': 'في مسقط رأسي غونما، نحن محظوظون بالينابيع الساخنة والمناظر الطبيعية الجميلة على مدار الفصول الأربعة والموارد الوفيرة التي تدعم نمط حياة غني.',
+    'about.leadershipVision': 'اليابان لديها العديد من المعالم التي لا تزال غير معروفة نسبياً للعالم. آمل في مشاركة سحر غونما، واليابان بشكل أوسع، مع الجماهير الدولية.',
     'about.guaranteeMessage': 'إنها الضمانة بأن كل مشروع في تاباتجي هاوس يُبنى على أساس من الثقة والغرض والتميز.',
     
     // Kusatsu Project Page
@@ -6619,6 +6619,9 @@ const translations = {
     'jni.cta.description': 'اتصل بنا اليوم لاستكشاف الفرص الحصرية',
     'jni.cta.viewProperties': 'عرض العقارات المتاحة',
     'jni.cta.learnMore': 'تعرف على المزيد',
+    'jni.leadership.name': 'توشينوري شيبوساوا',
+    'jni.leadership.title': 'ممثل، شركة JNI Properties المحدودة',
+    'jni.leadership.message': 'في مسقط رأسي غونما، نحن محظوظون بالينابيع الساخنة والمناظر الطبيعية الجميلة على مدار الفصول الأربعة والموارد الوفيرة التي تدعم نمط حياة غني. اليابان لديها العديد من المعالم التي لا تزال غير معروفة نسبياً للعالم. آمل في مشاركة سحر غونما، واليابان بشكل أوسع، مع الجماهير الدولية. إلى جانب مجرد بيع وشراء العقارات، أهدف إلى خلق فرص للناس لتجربة "نمط حياة جديد ممكن من خلال العيش في اليابان" وجعل أكبر عدد ممكن من الناس يشعر بجاذبيتها الفريدة.',
 
     // Featured Properties Section
     'featuredProperties.title': 'عقارات مميزة في غونما',
@@ -8626,8 +8629,8 @@ const translations = {
     'about.strategicAllianceDescription': 'La agilidad tecnológica de Tabiji House se une a la solidez y confianza de JNI Properties, creando una alianza que combina innovación con tradición empresarial japonesa.',
     'about.toshinoriName': 'Toshinori Shibusawa',
     'about.toshinoriTitle': 'Representante, JNI Properties Co., Ltd.',
-    'about.alliancePhilosophy': 'Nuestra alianza con JNI Properties está cimentada en una filosofía compartida: la creencia de que las grandes inversiones deben generar un valor duradero para la comunidad y el individuo.',
-    'about.leadershipVision': 'Bajo el liderazgo de Toshinori Shibusawa, esta visión no es un eco del pasado, sino un compromiso activo con un desarrollo ético, una calidad impecable y un futuro sostenible.',
+    'about.alliancePhilosophy': 'En mi ciudad natal de Gunma, tenemos la bendición de aguas termales, hermosos paisajes naturales durante las cuatro estaciones y recursos abundantes que apoyan un estilo de vida rico.',
+    'about.leadershipVision': 'Japón tiene muchas atracciones que aún son relativamente desconocidas para el mundo. Espero compartir el encanto de Gunma, y de Japón en general, con audiencias internacionales.',
     'about.guaranteeMessage': 'Es la garantía de que cada proyecto de Tabiji House se construye sobre una base de confianza, propósito y excelencia.',
 
     // Kusatsu Project Page
@@ -9125,6 +9128,9 @@ const translations = {
     'jni.cta.description': 'Contáctanos hoy para explorar oportunidades exclusivas',
     'jni.cta.viewProperties': 'Ver Propiedades Disponibles',
     'jni.cta.learnMore': 'Más Información',
+    'jni.leadership.name': 'Toshinori Shibusawa',
+    'jni.leadership.title': 'Representante, JNI Properties Co., Ltd.',
+    'jni.leadership.message': 'En mi ciudad natal de Gunma, tenemos la bendición de aguas termales, hermosos paisajes naturales durante las cuatro estaciones y recursos abundantes que apoyan un estilo de vida rico. Japón tiene muchas atracciones que aún son relativamente desconocidas para el mundo. Espero compartir el encanto de Gunma, y de Japón en general, con audiencias internacionales. Más allá de la simple compra y venta de bienes raíces, mi objetivo es crear oportunidades para que las personas experimenten "un nuevo estilo de vida hecho posible al vivir en Japón" y hacer que la mayor cantidad de personas posible sienta su atractivo único.',
 
     // Featured Properties Section
     'featuredProperties.title': 'Propiedades Destacadas en Gunma',
