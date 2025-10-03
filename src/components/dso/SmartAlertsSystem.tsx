@@ -280,22 +280,22 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100">
-      {/* Header */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
+      {/* Header - Responsive */}
+      <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-              <Bell className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+              <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900">{t('alerts.intelligentAlerts')}</h3>
-              <p className="text-sm text-gray-500">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">{t('alerts.intelligentAlerts')}</h3>
+              <p className="text-xs sm:text-sm text-gray-500">
                 {t('alerts.unreadCount', { count: String(unreadCount) })} • {t('alerts.highPriorityCount', { count: String(highPriorityCount) })}
               </p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 sm:space-x-2">
             {/* Sound Toggle */}
             <button
               onClick={() => setSoundEnabled(!soundEnabled)}
@@ -324,9 +324,10 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                className="px-2 sm:px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm"
               >
-                {t('alerts.markAllAsRead')}
+                <span className="hidden sm:inline">{t('alerts.markAllAsRead')}</span>
+                <span className="sm:hidden">Marcar</span>
               </button>
             )}
             
@@ -341,43 +342,45 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
         </div>
       </div>
 
-      {/* Filters */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center space-x-4 mb-4">
+      {/* Filters - Responsive */}
+      <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex flex-col space-y-4 mb-4">
           {/* Search */}
-          <div className="relative flex-1 max-w-md">
+          <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
               placeholder={t('alerts.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             />
           </div>
           
           {/* Filter Buttons */}
-          <div className="flex space-x-1">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id as any)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeFilter === filter.id
-                    ? 'bg-blue-100 text-blue-700 border border-blue-200'
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                {filter.label}
-                {filter.count > 0 && (
-                  <span className={`ml-1 px-1.5 py-0.5 text-xs rounded-full ${
-                    activeFilter === filter.id ? 'bg-blue-200' : 'bg-gray-200'
-                  }`}>
-                    {filter.count}
-                  </span>
-                )}
-              </button>
-            ))}
+          <div className="flex overflow-x-auto scrollbar-hide">
+            <div className="flex space-x-1 min-w-max">
+              {filters.map((filter) => (
+                <button
+                  key={filter.id}
+                  onClick={() => setActiveFilter(filter.id as any)}
+                  className={`px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
+                    activeFilter === filter.id
+                      ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                >
+                  {filter.label}
+                  {filter.count > 0 && (
+                    <span className={`ml-1 px-1 sm:px-1.5 py-0.5 text-xs rounded-full ${
+                      activeFilter === filter.id ? 'bg-blue-200' : 'bg-gray-200'
+                    }`}>
+                      {filter.count}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -402,20 +405,20 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ delay: index * 0.1 }}
-                className={`p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors ${
+                className={`p-3 sm:p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors ${
                   !alert.isRead ? 'bg-blue-50/50' : ''
                 }`}
               >
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-2 sm:space-x-3">
                   {/* Icon */}
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${getAlertColor(alert.type, alert.priority)}`}>
+                  <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center ${getAlertColor(alert.type, alert.priority)}`}>
                     {getAlertIcon(alert.type)}
                   </div>
                   
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between mb-1">
-                      <h4 className={`font-medium ${!alert.isRead ? 'text-gray-900' : 'text-gray-700'}`}>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1 space-y-1 sm:space-y-0">
+                      <h4 className={`font-medium text-sm sm:text-base ${!alert.isRead ? 'text-gray-900' : 'text-gray-700'}`}>
                         {alert.title}
                       </h4>
                       <div className="flex items-center space-x-2">
@@ -428,10 +431,10 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
                       </div>
                     </div>
                     
-                    <p className="text-sm text-gray-600 mb-2">{alert.message}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mb-2">{alert.message}</p>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
+                      <div className="flex flex-wrap items-center gap-2">
                         <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
                           {alert.category}
                         </span>
@@ -447,9 +450,9 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
                         </span>
                       </div>
                       
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-1 sm:space-x-2">
                         {alert.actionRequired && alert.actionText && (
-                          <button className="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors">
+                          <button className="px-2 sm:px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700 transition-colors">
                             {alert.actionText}
                           </button>
                         )}
@@ -459,7 +462,7 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
                             onClick={() => markAsRead(alert.id)}
                             className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
                           >
-                            <Eye className="w-4 h-4" />
+                            <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                           </button>
                         )}
                         
@@ -467,14 +470,14 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
                           onClick={() => archiveAlert(alert.id)}
                           className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
                         >
-                          <Archive className="w-4 h-4" />
+                          <Archive className="w-3 h-3 sm:w-4 sm:h-4" />
                         </button>
                         
                         <button
                           onClick={() => deleteAlert(alert.id)}
                           className="p-1 text-gray-400 hover:text-red-600 transition-colors"
                         >
-                          <Trash2 className="w-4 h-4" />
+                          <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
                         </button>
                       </div>
                     </div>

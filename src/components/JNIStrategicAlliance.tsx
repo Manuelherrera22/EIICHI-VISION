@@ -13,7 +13,11 @@ import {
   Users,
   MapPin,
   Building2,
-  CheckCircle
+  CheckCircle,
+  Building,
+  Home,
+  BarChart3,
+  Globe
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import JNILogo from './JNILogo';
@@ -45,10 +49,33 @@ const JNIStrategicAlliance: React.FC = () => {
   ];
 
   const stats = [
-    { number: '500+', label: t('jni.stats.propertiesAvailable') },
+    { number: '1000+', label: t('jni.stats.propertiesAvailable') },
     { number: '15+', label: t('jni.stats.yearsExperience') },
-    { number: '98%', label: t('jni.stats.clientSatisfaction') },
-    { number: '¥50B+', label: t('jni.stats.totalTransactions') }
+    { number: '98.3%', label: t('jni.stats.clientSatisfaction') },
+    { number: '¥100B+', label: t('jni.stats.totalTransactions') }
+  ];
+
+  const achievements = [
+    {
+      title: '宅地建物取引業',
+      subtitle: '国土交通大臣(2)第9062号',
+      description: 'Licensed Real Estate Brokerage'
+    },
+    {
+      title: '建設業許可',
+      subtitle: '東京都知事許可(般-2)第155783号',
+      description: 'Licensed Construction Business'
+    },
+    {
+      title: '従業員数',
+      subtitle: '100人以上',
+      description: 'More than 100 employees'
+    },
+    {
+      title: '年間取扱物件',
+      subtitle: '1000件以上',
+      description: '1,000+ properties annually'
+    }
   ];
 
   return (
@@ -160,6 +187,27 @@ const JNIStrategicAlliance: React.FC = () => {
               ))}
             </div>
 
+            {/* Achievements */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">Achievements & Trust</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {achievements.map((achievement, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="p-4 bg-gray-50 rounded-lg"
+                  >
+                    <h5 className="font-semibold text-gray-900 text-sm mb-1">{achievement.title}</h5>
+                    <p className="text-xs text-gray-600 mb-1">{achievement.subtitle}</p>
+                    <p className="text-xs text-gray-500 italic">{achievement.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
             {/* Key Features */}
             <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 border border-gray-200">
               <h4 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
@@ -191,10 +239,71 @@ const JNIStrategicAlliance: React.FC = () => {
                     <p className="text-sm text-gray-600">{t('jni.endToEndSupport.description')}</p>
                   </div>
                 </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h5 className="font-semibold text-gray-900">{t('jni.assetMaximization.title')}</h5>
+                    <p className="text-sm text-gray-600">{t('jni.assetMaximization.description')}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Leadership Section - Toshinori Shibusawa */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* Photo */}
+              <div className="flex-shrink-0">
+                <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/澁澤写真.jpg"
+                    alt="Toshinori Shibusawa - Representative, JNI Properties Co., Ltd."
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1 text-center lg:text-left">
+                <div className="mb-4">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                    {t('jni.leadership.name')}
+                  </h3>
+                  <p className="text-lg text-gray-600 font-medium">
+                    {t('jni.leadership.title')}
+                  </p>
+                </div>
+                
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 mb-6">
+                  <blockquote className="text-gray-700 italic text-base lg:text-lg leading-relaxed">
+                    "{t('jni.leadership.message')}"
+                  </blockquote>
+                </div>
+                
+                <div className="text-sm text-gray-500">
+                  <p className="mb-2">
+                    <strong>Licensed Real Estate Brokerage:</strong> Minister of Land, Infrastructure, Transport and Tourism (2) No. 9062
+                  </p>
+                  <p>
+                    <strong>Licensed Construction Business:</strong> Tokyo Governor Permit (般-2) No. 155783
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div

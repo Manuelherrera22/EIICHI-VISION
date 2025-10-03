@@ -21,11 +21,13 @@ import {
   Home
 } from 'lucide-react';
 import { useArquitecto } from '@/contexts/ArquitectoContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import PropertyAnalysis from '@/components/PropertyAnalysis';
 import PhotoGallery from '@/components/PhotoGallery';
 
 const PropertyOpportunities: React.FC = () => {
   const { userProfile } = useArquitecto();
+  const { t } = useLanguage();
   const [selectedProperty, setSelectedProperty] = useState<string | null>(null);
   const [analysisOpen, setAnalysisOpen] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -171,21 +173,21 @@ const PropertyOpportunities: React.FC = () => {
 
   return (
     <>
-      <div className="space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
+      <div className="space-y-4 sm:space-y-6">
+        {/* Header - Responsive */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900">Property Opportunities</h3>
-            <p className="text-gray-600">AI-analyzed properties matching your profile</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{t('propertyOpportunities.title')}</h3>
+            <p className="text-sm sm:text-base text-gray-600">{t('propertyOpportunities.subtitle')}</p>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
             <BarChart3 className="w-4 h-4" />
-            <span>Real-time analysis</span>
+            <span>{t('propertyOpportunities.realTimeAnalysis')}</span>
           </div>
         </div>
 
-        {/* Properties Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Properties Grid - Responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {properties.map((property, index) => (
             <motion.div
               key={property.id}
@@ -194,28 +196,29 @@ const PropertyOpportunities: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* Image with Photo Count */}
-              <div className="relative h-48 overflow-hidden group">
+              {/* Image with Photo Count - Responsive */}
+              <div className="relative h-40 sm:h-48 overflow-hidden group">
                 <Image
                   src={property.images[0]}
                   alt={property.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute top-3 right-3">
-                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                    AI Matched
+                <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
+                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
+                    {t('propertyOpportunities.aiMatched')}
                   </div>
                 </div>
-                <div className="absolute bottom-3 left-3">
-                  <div className={`px-3 py-1 rounded-full text-xs font-medium ${getScoreColor(property.compatibilityScore)}`}>
-                    {property.compatibilityScore}% Match
+                <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3">
+                  <div className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${getScoreColor(property.compatibilityScore)}`}>
+                    {property.compatibilityScore}% {t('propertyOpportunities.match')}
                   </div>
                 </div>
-                <div className="absolute bottom-3 right-3">
+                <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3">
                   <div className="bg-black/70 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                     <Eye className="w-3 h-3" />
-                    {property.images.length} photos
+                    <span className="hidden sm:inline">{property.images.length} {t('propertyOpportunities.photos')}</span>
+                    <span className="sm:hidden">{property.images.length}</span>
                   </div>
                 </div>
                 
@@ -223,28 +226,29 @@ const PropertyOpportunities: React.FC = () => {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <button
                     onClick={() => handleGalleryClick(property.id)}
-                    className="bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-full font-semibold hover:bg-white transition-colors flex items-center gap-2"
+                    className="bg-white/90 backdrop-blur-sm text-gray-900 px-3 sm:px-4 py-2 rounded-full font-semibold hover:bg-white transition-colors flex items-center gap-2 text-sm"
                   >
                     <Eye className="w-4 h-4" />
-                    <span>View All Photos</span>
+                    <span className="hidden sm:inline">{t('propertyOpportunities.viewAllPhotos')}</span>
+                    <span className="sm:hidden">{t('propertyOpportunities.photos')}</span>
                   </button>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">
+              {/* Content - Responsive */}
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 space-y-3 sm:space-y-0">
+                  <div className="flex-1">
+                    <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
                       {property.name}
                     </h4>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <MapPin className="w-4 h-4 mr-1" />
+                    <div className="flex items-center text-gray-600 text-xs sm:text-sm">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                       {property.location}
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-blue-600">
+                  <div className="text-left sm:text-right">
+                    <div className="text-xl sm:text-2xl font-bold text-blue-600">
                       ¥{(property.price / 1000000).toFixed(0)}M
                     </div>
                     <div className="text-xs text-gray-500">
@@ -256,7 +260,7 @@ const PropertyOpportunities: React.FC = () => {
                 {/* Compatibility Score */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Profile Compatibility</span>
+                    <span className="text-sm font-medium text-gray-700">{t('propertyOpportunities.profileCompatibility')}</span>
                     <span className="text-sm font-bold text-gray-900">{property.compatibilityScore}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -271,19 +275,19 @@ const PropertyOpportunities: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Key Metrics */}
-                <div className="grid grid-cols-3 gap-3 mb-4">
+                {/* Key Metrics - Responsive */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                   <div className="text-center p-2 bg-gray-50 rounded-lg">
-                    <div className="text-sm font-bold text-green-600">{property.roi}%</div>
-                    <div className="text-xs text-gray-600">ROI</div>
+                    <div className="text-xs sm:text-sm font-bold text-green-600">{property.roi}%</div>
+                    <div className="text-xs text-gray-600">{t('propertyOpportunities.roi')}</div>
                   </div>
                   <div className="text-center p-2 bg-gray-50 rounded-lg">
-                    <div className="text-sm font-bold text-blue-600">{property.rentalYield}%</div>
-                    <div className="text-xs text-gray-600">Rental</div>
+                    <div className="text-xs sm:text-sm font-bold text-blue-600">{property.rentalYield}%</div>
+                    <div className="text-xs text-gray-600">{t('propertyOpportunities.rental')}</div>
                   </div>
                   <div className="text-center p-2 bg-gray-50 rounded-lg">
-                    <div className="text-sm font-bold text-purple-600">{property.breakEvenYears}y</div>
-                    <div className="text-xs text-gray-600">Break-even</div>
+                    <div className="text-xs sm:text-sm font-bold text-purple-600">{property.breakEvenYears}y</div>
+                    <div className="text-xs text-gray-600">{t('propertyOpportunities.breakEven')}</div>
                   </div>
                 </div>
 
@@ -300,30 +304,31 @@ const PropertyOpportunities: React.FC = () => {
                     ))}
                     {property.features.length > 3 && (
                       <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                        +{property.features.length - 3} more
+                        +{property.features.length - 3} {t('propertyOpportunities.more')}
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-2">
+                {/* Action Buttons - Responsive */}
+                <div className="flex flex-col sm:flex-row gap-2">
                   <button
                     onClick={() => handleAnalysisClick(property.id)}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors text-sm flex items-center justify-center gap-1"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 sm:px-4 rounded-lg font-medium transition-colors text-xs sm:text-sm flex items-center justify-center gap-1"
                   >
-                    <Target className="w-4 h-4" />
-                    Analyze
+                    <Target className="w-3 h-3 sm:w-4 sm:h-4" />
+                    {t('propertyOpportunities.analyze')}
                   </button>
                   <button
                     onClick={() => handleGalleryClick(property.id)}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg font-medium transition-colors text-sm flex items-center gap-1"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 sm:px-4 rounded-lg font-medium transition-colors text-xs sm:text-sm flex items-center justify-center gap-1"
                   >
-                    <Eye className="w-4 h-4" />
-                    {property.images.length} Photos
+                    <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">{property.images.length} {t('propertyOpportunities.photos')}</span>
+                    <span className="sm:hidden">{t('propertyOpportunities.photos')}</span>
                   </button>
                   <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded-lg transition-colors">
-                    <Heart className="w-4 h-4" />
+                    <Heart className="w-3 h-3 sm:w-4 sm:h-4" />
                   </button>
                 </div>
               </div>
@@ -331,25 +336,25 @@ const PropertyOpportunities: React.FC = () => {
           ))}
         </div>
 
-        {/* Summary Stats */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
-          <h4 className="text-lg font-semibold text-gray-900 mb-4">Investment Summary</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Summary Stats - Responsive */}
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 sm:p-6">
+          <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">{t('propertyOpportunities.investmentSummary')}</h4>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">2</div>
-              <div className="text-sm text-gray-600">Properties</div>
+              <div className="text-xl sm:text-2xl font-bold text-blue-600">2</div>
+              <div className="text-xs sm:text-sm text-gray-600">{t('propertyOpportunities.properties')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">4.0%</div>
-              <div className="text-sm text-gray-600">Avg ROI</div>
+              <div className="text-xl sm:text-2xl font-bold text-green-600">4.0%</div>
+              <div className="text-xs sm:text-sm text-gray-600">{t('propertyOpportunities.avgRoi')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">8.5y</div>
-              <div className="text-sm text-gray-600">Avg Break-even</div>
+              <div className="text-xl sm:text-2xl font-bold text-purple-600">8.5y</div>
+              <div className="text-xs sm:text-sm text-gray-600">{t('propertyOpportunities.avgBreakEven')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">85%</div>
-              <div className="text-sm text-gray-600">Avg Match</div>
+              <div className="text-xl sm:text-2xl font-bold text-orange-600">85%</div>
+              <div className="text-xs sm:text-sm text-gray-600">{t('propertyOpportunities.avgMatch')}</div>
             </div>
           </div>
         </div>

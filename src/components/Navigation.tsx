@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/contexts/AuthContext';
@@ -51,8 +52,18 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-xl sm:text-2xl font-serif font-bold text-primary">
-              Tabiji House
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+              <Image
+                src="/tabijihouse-removebg-preview.png"
+                alt="Tabiji House"
+                width={160}
+                height={60}
+                className="h-10 sm:h-12 w-auto"
+                priority
+              />
+              <span className="text-xl sm:text-2xl font-serif font-bold text-primary">
+                Tabiji House
+              </span>
             </Link>
           </div>
 

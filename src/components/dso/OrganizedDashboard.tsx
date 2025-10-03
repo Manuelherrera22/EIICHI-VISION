@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import OrganizedNavigation from './OrganizedNavigation';
 import RealtimeMetrics from './RealtimeMetrics';
@@ -18,6 +19,7 @@ import SecurityManager from '../SecurityManager';
 import QuickAccess from '../QuickAccess';
 import TabijiExportIntegration from '../TabijiExportIntegration';
 import PropertyOpportunities from './PropertyOpportunities';
+import JNIPartnership from './JNIPartnership';
 import {
   BarChart3,
   Bell,
@@ -47,7 +49,8 @@ import {
   Columns,
   Map as MapIcon,
   Building2,
-  ArrowLeft
+  ArrowLeft,
+  Handshake
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -126,30 +129,39 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
     // === GRUPO HERRAMIENTAS: PRODUCTIVIDAD ===
     {
       id: 'properties',
-      title: 'Property Opportunities',
+      title: t('propertyOpportunities.title'),
       icon: Building2,
-      description: 'AI-analyzed properties matching your profile',
+      description: t('propertyOpportunities.subtitle'),
       color: 'bg-emerald-600',
       isVisible: true,
       order: 5
     },
     {
+      id: 'jni-partnership',
+      title: t('jni.partnershipTitle'),
+      icon: Handshake,
+      description: t('jni.partnershipDescription'),
+      color: 'bg-blue-600',
+      isVisible: true,
+      order: 6
+    },
+    {
       id: 'search',
       title: t('dashboard.intelligent.openGlobalSearch'),
       icon: Search,
-      description: 'Buscar en todo el dashboard',
+      description: t('quickAccess.searchDescription'),
       color: 'bg-teal-600',
       isVisible: true,
-      order: 6
+      order: 7
     },
     {
       id: 'favorites',
       title: t('dashboard.intelligent.openFavoritesManager'),
       icon: Star,
-      description: 'Elementos marcados como importantes',
+      description: t('quickAccess.favoritesDescription'),
       color: 'bg-yellow-600',
       isVisible: true,
-      order: 7
+      order: 8
     },
     {
       id: 'topoexport',
@@ -158,16 +170,16 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
       description: t('dashboard.sections.topoexport.description'),
       color: 'bg-green-600',
       isVisible: true,
-      order: 8
+      order: 9
     },
     {
       id: 'export',
-      title: 'Exportar Reportes',
+      title: t('quickAccess.export'),
       icon: Download,
-      description: 'Generar documentos',
+      description: t('quickAccess.exportDescription'),
       color: 'bg-indigo-600',
       isVisible: true,
-      order: 9
+      order: 10
     },
 
     // === GRUPO AVANZADO: CONFIGURACIÓN ===
@@ -175,19 +187,19 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
       id: 'customize',
       title: t('dashboard.intelligent.customizeDashboard'),
       icon: Layout,
-      description: 'Configurar layout del dashboard',
+      description: t('quickAccess.customizeDescription'),
       color: 'bg-pink-600',
       isVisible: false,
-      order: 10
+      order: 11
     },
     {
       id: 'advanced-ai',
       title: t('dashboard.intelligent.openAdvancedAI'),
       icon: Zap,
-      description: 'Predicciones inteligentes avanzadas',
+      description: t('quickAccess.advancedAIDescription'),
       color: 'bg-violet-600',
       isVisible: false,
-      order: 11
+      order: 12
     },
     {
       id: 'pwa',
@@ -339,7 +351,7 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
                   className="flex items-center space-x-3 p-3 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors"
                 >
                   <Building2 className="w-5 h-5 text-emerald-600" />
-                  <span className="text-sm font-medium text-emerald-700">Properties</span>
+                  <span className="text-sm font-medium text-emerald-700">{t('propertyOpportunities.title')}</span>
                 </button>
                 <button
                   onClick={() => setShowTopoExport(true)}
@@ -364,6 +376,9 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
 
       case 'properties':
         return <PropertyOpportunities />;
+
+      case 'jni-partnership':
+        return <JNIPartnership />;
 
       case 'topoexport':
         return (
@@ -474,40 +489,73 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
     }
   };
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className={`min-h-screen bg-gray-50 transition-all duration-300 ${
       isFullscreen ? 'fixed inset-0 z-50' : ''
     }`}>
-      {/* Header Simplificado */}
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
+      {/* Header Responsive */}
+      <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
+          {/* Mobile Menu Button */}
           <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
             <Link 
               href="/"
               className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-200 group"
             >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
-              <span className="text-sm font-medium">{t('common.backToHome')}</span>
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform duration-200" />
+              <span className="text-xs sm:text-sm font-medium hidden sm:inline">{t('common.backToHome')}</span>
             </Link>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-sm">TH</span>
+          {/* Center Logo - Responsive */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="hidden sm:block">
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Image
+                  src="/tabijihouse-removebg-preview.png"
+                  alt="Tabiji House"
+                  width={160}
+                  height={60}
+                  className="h-10 sm:h-12 w-auto"
+                  priority
+                />
+                <h1 className="text-lg sm:text-xl font-semibold text-gray-900">Tabiji House</h1>
+              </div>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">{t('dashboard.intelligent.title')} • {userName}</p>
             </div>
-            <div>
-              <h1 className="text-xl font-semibold text-gray-900">Tabiji House</h1>
-              <p className="text-sm text-gray-500">{t('dashboard.intelligent.title')} • {userName}</p>
+            <div className="sm:hidden">
+              <div className="flex items-center space-x-2">
+                <Image
+                  src="/tabijihouse-removebg-preview.png"
+                  alt="Tabiji House"
+                  width={120}
+                  height={45}
+                  className="h-8 w-auto"
+                  priority
+                />
+                <h1 className="text-sm font-semibold text-gray-900">Tabiji House</h1>
+              </div>
             </div>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <div className="text-right">
+          {/* User Info - Responsive */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="hidden sm:block text-right">
               <div className="text-sm font-medium text-gray-900">{userName}</div>
               <div className="text-xs text-gray-500">{userEmail}</div>
             </div>
-            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-              <span className="text-sm font-semibold text-blue-600">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <span className="text-xs sm:text-sm font-semibold text-blue-600">
                 {userName?.charAt(0) || 'U'}
               </span>
             </div>
@@ -515,20 +563,37 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Main Content - Responsive */}
       <div className="flex h-[calc(100vh-80px)]">
-        {/* Navigation Sidebar */}
-        <div className="w-80 p-6">
+        {/* Mobile Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Navigation Sidebar - Responsive */}
+        <div className={`
+          fixed lg:relative lg:translate-x-0 transition-transform duration-300 z-50
+          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+          w-80 lg:w-80 h-full lg:h-auto
+          bg-white lg:bg-transparent
+          p-4 lg:p-6
+        `}>
           <OrganizedNavigation
             activeSection={activeSection}
-            onSectionChange={handleSectionChange}
+            onSectionChange={(sectionId) => {
+              handleSectionChange(sectionId);
+              setIsMobileMenuOpen(false); // Close mobile menu when section is selected
+            }}
             onToggleSection={handleToggleSection}
             sections={sections}
           />
         </div>
 
-        {/* Content Area */}
-        <div className="flex-1 p-6 overflow-y-auto">
+        {/* Content Area - Responsive */}
+        <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSection}

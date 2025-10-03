@@ -1,20 +1,7 @@
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo beige -->
-  <rect width="32" height="32" fill="#F5F5DC" rx="4"/>
-  
-  <!-- Marco dorado -->
-  <rect x="4" y="4" width="24" height="24" fill="none" stroke="#DAA520" stroke-width="2" rx="3"/>
-  
-  <!-- Casa azul oscuro -->
-  <path d="M12 20 L16 14 L20 20 Z" fill="#1E3A8A"/>
-  <rect x="14" y="20" width="4" height="6" fill="#1E3A8A"/>
-  
-  <!-- Chimenea -->
-  <rect x="18" y="16" width="2" height="4" fill="#1E3A8A"/>
-  
-  <!-- Carácter japonés dorado -->
-  <text x="16" y="26" font-family="serif" font-size="8" fill="#DAA520" text-anchor="middle">采</text>
-  
-  <!-- Destello en esquina -->
-  <path d="M26 6 L28 4 L30 6 L28 8 Z" fill="#DAA520" opacity="0.7"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="#3B82F6"/>
+  <path d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h12v2H8v-2z" fill="white"/>
+  <circle cx="16" cy="8" r="2" fill="white"/>
+  <path d="M6 20h20v8H6v-8z" fill="white"/>
+  <path d="M8 22h16v4H8v-4z" fill="#3B82F6"/>
 </svg>

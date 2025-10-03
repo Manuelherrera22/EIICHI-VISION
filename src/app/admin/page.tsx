@@ -102,58 +102,58 @@ export default function AdminDashboard() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-muted via-white to-muted pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-4xl font-serif font-bold text-primary mb-2">
+      <div className="min-h-screen bg-gradient-to-br from-muted via-white to-muted pt-16 sm:pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-20">
+          {/* Header - Responsive */}
+          <div className="mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary mb-2">
               Dashboard de Administración
             </h1>
-            <p className="text-secondary">
+            <p className="text-sm sm:text-base text-secondary">
               Gestiona leads, reservas y analiza el rendimiento de Komorebi House
             </p>
           </div>
 
-          {/* Analytics Cards */}
+          {/* Analytics Cards - Responsive */}
           {analytics && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-border">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-secondary">Total Leads</p>
-                    <p className="text-2xl font-bold text-primary">{analytics.totalLeads}</p>
+                    <p className="text-xs sm:text-sm text-secondary">Total Leads</p>
+                    <p className="text-xl sm:text-2xl font-bold text-primary">{analytics.totalLeads}</p>
                   </div>
-                  <Users size={24} className="text-primary" />
+                  <Users size={20} className="text-primary sm:w-6 sm:h-6" />
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-border">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-secondary">Leads Nuevos</p>
-                    <p className="text-2xl font-bold text-primary">{analytics.newLeads}</p>
+                    <p className="text-xs sm:text-sm text-secondary">Leads Nuevos</p>
+                    <p className="text-xl sm:text-2xl font-bold text-primary">{analytics.newLeads}</p>
                   </div>
-                  <TrendingUp size={24} className="text-accent" />
+                  <TrendingUp size={20} className="text-accent sm:w-6 sm:h-6" />
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-border">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-secondary">Reservas Totales</p>
-                    <p className="text-2xl font-bold text-primary">{analytics.totalBookings}</p>
+                    <p className="text-xs sm:text-sm text-secondary">Reservas Totales</p>
+                    <p className="text-xl sm:text-2xl font-bold text-primary">{analytics.totalBookings}</p>
                   </div>
-                  <Calendar size={24} className="text-green-500" />
+                  <Calendar size={20} className="text-green-500 sm:w-6 sm:h-6" />
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-lg border border-border">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-border">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-secondary">Conversiones</p>
-                    <p className="text-2xl font-bold text-primary">{analytics.convertedLeads}</p>
+                    <p className="text-xs sm:text-sm text-secondary">Conversiones</p>
+                    <p className="text-xl sm:text-2xl font-bold text-primary">{analytics.convertedLeads}</p>
                   </div>
-                  <TrendingUp size={24} className="text-green-500" />
+                  <TrendingUp size={20} className="text-green-500 sm:w-6 sm:h-6" />
                 </div>
               </div>
             </div>
@@ -162,41 +162,43 @@ export default function AdminDashboard() {
           {/* Tabs */}
           <div className="bg-white rounded-2xl shadow-lg border border-border mb-8">
             <div className="border-b border-border">
-              <nav className="flex space-x-8 px-6">
-                <button
-                  onClick={() => setActiveTab('analytics')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'analytics'
-                      ? 'border-primary text-primary'
-                      : 'border-transparent text-secondary hover:text-primary'
-                  }`}
-                >
-                  Analytics
-                </button>
-                <button
-                  onClick={() => setActiveTab('leads')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'leads'
-                      ? 'border-primary text-primary'
-                      : 'border-transparent text-secondary hover:text-primary'
-                  }`}
-                >
-                  Leads ({leads.length})
-                </button>
-                <button
-                  onClick={() => setActiveTab('bookings')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm ${
-                    activeTab === 'bookings'
-                      ? 'border-primary text-primary'
-                      : 'border-transparent text-secondary hover:text-primary'
-                  }`}
-                >
-                  Reservas ({bookingLeads.length})
-                </button>
+              <nav className="flex overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-2 sm:space-x-8 px-4 sm:px-6 min-w-max">
+                  <button
+                    onClick={() => setActiveTab('analytics')}
+                    className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
+                      activeTab === 'analytics'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-secondary hover:text-primary'
+                    }`}
+                  >
+                    Analytics
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('leads')}
+                    className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
+                      activeTab === 'leads'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-secondary hover:text-primary'
+                    }`}
+                  >
+                    Leads ({leads.length})
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('bookings')}
+                    className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap ${
+                      activeTab === 'bookings'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-secondary hover:text-primary'
+                    }`}
+                  >
+                    Reservas ({bookingLeads.length})
+                  </button>
+                </div>
               </nav>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               {/* Analytics Tab */}
               {activeTab === 'analytics' && analytics && (
                 <div className="space-y-6">

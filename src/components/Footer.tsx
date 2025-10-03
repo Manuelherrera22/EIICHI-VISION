@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -49,8 +50,18 @@ const Footer = () => {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-6 sm:mb-8">
-              <div className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-primary mb-2">
-                Komorebi House
+              <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                <Image
+                  src="/tabijihouse-removebg-preview.png"
+                  alt="Tabiji House"
+                  width={180}
+                  height={70}
+                  className="h-12 sm:h-16 lg:h-20 w-auto"
+                  priority
+                />
+                <div className="text-lg sm:text-xl lg:text-2xl font-serif font-bold text-primary">
+                  Tabiji House
+                </div>
               </div>
               <div className="text-xs sm:text-sm text-secondary font-mono mb-3 sm:mb-4">
                 こもれび・ハウス

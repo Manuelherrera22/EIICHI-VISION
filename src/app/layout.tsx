@@ -46,6 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon-new.ico?v=3" sizes="any" />
+        <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/tabijihouse-removebg-preview.png?v=2" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -480,7 +480,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                     ) : (
                       <>
                         <Link className="w-5 h-5" />
-                        <span>Iniciar Conexión</span>
+                        <span>{t('tabijiexport.connect')}</span>
                       </>
                     )}
                   </button>
@@ -567,7 +567,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                             <span className="font-semibold text-gray-900">{data.propertyId}</span>
                           </div>
                           <span className={`text-xs px-2 py-1 rounded-full ${getSuitabilityColor(data.analysis.suitabilityScore)}`}>
-                            {data.analysis.suitabilityScore}% adecuado
+                            {data.analysis.suitabilityScore}% {t('tabijiexport.suitable')}
                           </span>
                         </div>
 
@@ -656,7 +656,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                 className="w-96 border-l border-gray-200 p-6 overflow-y-auto"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Detalles Topográficos</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">{t('tabijiexport.topographicDetails')}</h3>
                   <button
                     onClick={() => setShowDetails(false)}
                     className="p-1 hover:bg-gray-100 rounded"
@@ -670,19 +670,19 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center space-x-2">
                       <Mountain className="w-4 h-4 text-green-600" />
-                      <span>Topografía</span>
+                      <span>{t('tabijiexport.topography')}</span>
                     </h4>
                     <div className="bg-gray-50 rounded-lg p-3 space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Pendiente:</span>
+                        <span className="text-gray-600">{t('tabijiexport.slope')}:</span>
                         <span className="font-medium">{selectedData.topography.slope}°</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Orientación:</span>
+                        <span className="text-gray-600">{t('tabijiexport.aspect')}:</span>
                         <span className="font-medium">{selectedData.topography.aspect}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Tipo de terreno:</span>
+                        <span className="text-gray-600">{t('tabijiexport.terrainType')}:</span>
                         <span className="font-medium">{selectedData.topography.terrainType}</span>
                       </div>
                     </div>
@@ -692,19 +692,19 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center space-x-2">
                       <Sun className="w-4 h-4 text-yellow-600" />
-                      <span>Ambiental</span>
+                      <span>{t('tabijiexport.environmental')}</span>
                     </h4>
                     <div className="bg-gray-50 rounded-lg p-3 space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Temperatura:</span>
+                        <span className="text-gray-600">{t('tabijiexport.temperature')}:</span>
                         <span className="font-medium">{selectedData.environmental.temperature}°C</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Humedad:</span>
+                        <span className="text-gray-600">{t('tabijiexport.humidity')}:</span>
                         <span className="font-medium">{selectedData.environmental.humidity}%</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Precipitación:</span>
+                        <span className="text-gray-600">{t('tabijiexport.precipitation')}:</span>
                         <span className="font-medium">{selectedData.environmental.precipitation}mm</span>
                       </div>
                     </div>
@@ -714,7 +714,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center space-x-2">
                       <Target className="w-4 h-4 text-blue-600" />
-                      <span>Recomendaciones</span>
+                      <span>{t('tabijiexport.recommendations')}</span>
                     </h4>
                     <div className="space-y-2">
                       {selectedData.analysis.recommendations.map((rec, index) => (
@@ -732,7 +732,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                       onClick={() => importData(selectedData)}
                       className="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                     >
-                      Importar a Tabiji House
+                      {t('tabijiexport.importToTabijiHouse')}
                     </button>
                   </div>
                 </div>

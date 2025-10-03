@@ -342,20 +342,20 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-20"
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-10 sm:pt-20"
       onClick={onClose}
     >
       <motion.div
         initial={{ opacity: 0, y: -20, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -20, scale: 0.95 }}
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl mx-4"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl mx-2 sm:mx-4"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="p-6 border-b border-gray-200">
-          <div className="flex items-center space-x-3 mb-4">
-            <Search className="w-6 h-6 text-gray-500" />
+        {/* Header - Responsive */}
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+            <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" />
             <input
               ref={inputRef}
               type="text"
@@ -363,46 +363,48 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder={t('search.placeholder')}
-              className="flex-1 text-lg border-none outline-none placeholder-gray-400"
+              className="flex-1 text-base sm:text-lg border-none outline-none placeholder-gray-400"
             />
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
-              <X className="w-5 h-5 text-gray-500" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
             </button>
           </div>
 
-          {/* Filters and Sort */}
-          <div className="flex items-center space-x-4">
-            <div className="flex space-x-1">
-              {[
-                { id: 'all', label: t('search.filters.all') },
-                { id: 'sections', label: t('search.filters.sections') },
-                { id: 'metrics', label: t('search.filters.metrics') },
-                { id: 'alerts', label: t('search.filters.alerts') },
-                { id: 'predictions', label: t('search.filters.predictions') }
-              ].map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setActiveFilter(filter.id as any)}
-                  className={`px-3 py-1 text-sm rounded-lg transition-colors ${
-                    activeFilter === filter.id
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
+          {/* Filters and Sort - Responsive */}
+          <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <div className="flex overflow-x-auto scrollbar-hide">
+              <div className="flex space-x-1 min-w-max">
+                {[
+                  { id: 'all', label: t('search.filters.all') },
+                  { id: 'sections', label: t('search.filters.sections') },
+                  { id: 'metrics', label: t('search.filters.metrics') },
+                  { id: 'alerts', label: t('search.filters.alerts') },
+                  { id: 'predictions', label: t('search.filters.predictions') }
+                ].map((filter) => (
+                  <button
+                    key={filter.id}
+                    onClick={() => setActiveFilter(filter.id as any)}
+                    className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-lg transition-colors whitespace-nowrap ${
+                      activeFilter === filter.id
+                        ? 'bg-blue-100 text-blue-700'
+                        : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-gray-500">{t('search.sortBy')}</span>
+              <span className="text-xs sm:text-sm text-gray-500">{t('search.sortBy')}</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="text-sm border border-gray-300 rounded px-2 py-1"
+                className="text-xs sm:text-sm border border-gray-300 rounded px-2 py-1"
               >
                 <option value="relevance">{t('search.sortBy.relevance')}</option>
                 <option value="alphabetical">{t('search.sortBy.alphabetical')}</option>
@@ -412,20 +414,20 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
           </div>
         </div>
 
-        {/* Results */}
-        <div className="max-h-96 overflow-y-auto">
+        {/* Results - Responsive */}
+        <div className="max-h-80 sm:max-h-96 overflow-y-auto">
           {query.trim() === '' ? (
-            /* Search History */
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-gray-900 flex items-center space-x-2">
+            /* Search History - Responsive */
+            <div className="p-4 sm:p-6">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="font-semibold text-gray-900 flex items-center space-x-2 text-sm sm:text-base">
                   <History className="w-4 h-4" />
                   <span>{t('search.recentSearches')}</span>
                 </h3>
                 {searchHistory.length > 0 && (
                   <button
                     onClick={clearHistory}
-                    className="text-sm text-gray-500 hover:text-gray-700"
+                    className="text-xs sm:text-sm text-gray-500 hover:text-gray-700"
                   >
                     {t('search.clearHistory')}
                   </button>
@@ -433,51 +435,51 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
               </div>
               
               {searchHistory.length === 0 ? (
-                <p className="text-gray-500 text-sm">{t('search.noRecentSearches')}</p>
+                <p className="text-gray-500 text-xs sm:text-sm">{t('search.noRecentSearches')}</p>
               ) : (
-                <div className="space-y-2">
+                <div className="space-y-1 sm:space-y-2">
                   {searchHistory.map((historyQuery, index) => (
                     <button
                       key={index}
                       onClick={() => handleHistoryClick(historyQuery)}
-                      className="w-full flex items-center space-x-3 p-2 hover:bg-gray-50 rounded-lg transition-colors text-left"
+                      className="w-full flex items-center space-x-2 sm:space-x-3 p-2 hover:bg-gray-50 rounded-lg transition-colors text-left"
                     >
                       <Clock className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-700">{historyQuery}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">{historyQuery}</span>
                     </button>
                   ))}
                 </div>
               )}
             </div>
           ) : (
-            /* Search Results */
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-gray-900">
+            /* Search Results - Responsive */
+            <div className="p-4 sm:p-6">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="font-semibold text-gray-900 text-sm sm:text-base">
                   {filteredResults.length} {filteredResults.length === 1 ? t('search.results') : t('search.resultsPlural')}
                 </h3>
-                <span className="text-sm text-gray-500">
+                <span className="text-xs sm:text-sm text-gray-500">
                   {query.length > 0 && `${t('search.for')} "${query}"`}
                 </span>
               </div>
 
               {filteredResults.length === 0 ? (
-                <div className="text-center py-8">
-                  <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-500">{t('search.noResults')}</p>
-                  <p className="text-sm text-gray-400 mt-1">
+                <div className="text-center py-6 sm:py-8">
+                  <Search className="w-10 h-10 sm:w-12 sm:h-12 text-gray-300 mx-auto mb-3 sm:mb-4" />
+                  <p className="text-gray-500 text-sm sm:text-base">{t('search.noResults')}</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">
                     {t('search.tryDifferentTerms')}
                   </p>
                 </div>
               ) : (
-                <div className="space-y-2">
+                <div className="space-y-1 sm:space-y-2">
                   {filteredResults.map((result, index) => {
                     const Icon = result.icon;
                     return (
                       <motion.button
                         key={result.id}
                         onClick={() => handleSelect(result)}
-                        className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-colors text-left ${
+                        className={`w-full flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 rounded-lg transition-colors text-left ${
                           index === selectedIndex
                             ? 'bg-blue-50 border border-blue-200'
                             : 'hover:bg-gray-50'
@@ -485,24 +487,24 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                       >
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center ${
                           result.priority === 'high' ? 'bg-red-100 text-red-600' :
                           result.priority === 'medium' ? 'bg-yellow-100 text-yellow-600' :
                           'bg-gray-100 text-gray-600'
                         }`}>
-                          <Icon className="w-4 h-4" />
+                          <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
                         </div>
                         
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center space-x-2 mb-1">
-                            <h4 className="font-medium text-gray-900 truncate">
+                            <h4 className="font-medium text-gray-900 truncate text-xs sm:text-sm">
                               {result.title}
                             </h4>
                             {result.isFavorite && (
-                              <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                              <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
                             )}
                           </div>
-                          <p className="text-sm text-gray-600 mb-1">
+                          <p className="text-xs sm:text-sm text-gray-600 mb-1">
                             {result.description}
                           </p>
                           <div className="flex items-center space-x-2">
@@ -510,14 +512,14 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
                               {result.category}
                             </span>
                             {result.lastAccessed && (
-                              <span className="text-xs text-gray-400">
+                              <span className="text-xs text-gray-400 hidden sm:inline">
                                 {result.lastAccessed.toLocaleTimeString()}
                               </span>
                             )}
                           </div>
                         </div>
                         
-                        <ArrowRight className="w-4 h-4 text-gray-400" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
                       </motion.button>
                     );
                   })}
@@ -527,10 +529,10 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
           )}
         </div>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
-          <div className="flex items-center justify-between text-sm text-gray-500">
-            <div className="flex items-center space-x-4">
+        {/* Footer - Responsive */}
+        <div className="p-3 sm:p-4 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-gray-500 space-y-2 sm:space-y-0">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <span>{t('search.navigation.navigate')}</span>
               <span>{t('search.navigation.select')}</span>
               <span>{t('search.navigation.close')}</span>

@@ -434,7 +434,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                   ) : (
                     <>
                       <Link className="w-4 h-4" />
-                      <span>Conectar con TabijiExport</span>
+                      <span>{t('tabijiexport.connect')}</span>
                     </>
                   )}
                 </button>
@@ -725,7 +725,7 @@ const TabijiExportIntegration: React.FC<TabijiExportIntegrationProps> = ({
                       onClick={() => importData(selectedData)}
                       className="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                     >
-                      Importar a Tabiji House
+                      {t('tabijiexport.importToTabijiHouse')}
                     </button>
                   </div>
                 </div>

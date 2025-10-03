@@ -274,20 +274,20 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100">
-      {/* Header */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
+      {/* Header - Responsive */}
+      <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+              <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900">{t('predictions.title')}</h3>
-              <p className="text-sm text-gray-500">{t('predictions.subtitle')}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">{t('predictions.title')}</h3>
+              <p className="text-xs sm:text-sm text-gray-500">{t('predictions.subtitle')}</p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 sm:space-x-2">
             {/* Expired Toggle */}
             <button
               onClick={() => setShowExpired(!showExpired)}
@@ -304,55 +304,57 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
             <button
               onClick={generateNewPrediction}
               disabled={isGenerating}
-              className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
+              className="flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
             >
               {isGenerating ? (
                 <RefreshCw className="w-4 h-4 animate-spin" />
               ) : (
                 <Zap className="w-4 h-4" />
               )}
-              <span className="text-sm">
+              <span className="text-xs sm:text-sm hidden sm:inline">
                 {isGenerating ? t('export.generating') : t('predictions.generateNew')}
               </span>
             </button>
             
             {/* Export */}
-            <button className="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+            <button className="flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
               <Download className="w-4 h-4" />
-              <span className="text-sm">{t('predictions.export')}</span>
+              <span className="text-xs sm:text-sm hidden sm:inline">{t('predictions.export')}</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex space-x-1">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                activeTab === tab.id
-                  ? 'bg-purple-100 text-purple-700 border border-purple-200'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              <span className="text-sm font-medium">{tab.label}</span>
-              {tab.count > 0 && (
-                <span className={`px-1.5 py-0.5 text-xs rounded-full ${
-                  activeTab === tab.id ? 'bg-purple-200' : 'bg-gray-200'
-                }`}>
-                  {tab.count}
-                </span>
-              )}
-            </button>
-          ))}
+      {/* Tabs - Responsive */}
+      <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex overflow-x-auto scrollbar-hide">
+          <div className="flex space-x-1 min-w-max">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 rounded-lg transition-colors whitespace-nowrap ${
+                  activeTab === tab.id
+                    ? 'bg-purple-100 text-purple-700 border border-purple-200'
+                    : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                <span className="text-xs sm:text-sm font-medium">{tab.label}</span>
+                {tab.count > 0 && (
+                  <span className={`px-1 sm:px-1.5 py-0.5 text-xs rounded-full ${
+                    activeTab === tab.id ? 'bg-purple-200' : 'bg-gray-200'
+                  }`}>
+                    {tab.count}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Predictions */}
-      <div className="p-6">
+      {/* Predictions - Responsive */}
+      <div className="p-4 sm:p-6">
         <AnimatePresence>
           {filteredPredictions.length === 0 ? (
             <motion.div
@@ -372,16 +374,16 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: index * 0.1 }}
-                  className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+                  className="border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-md transition-shadow"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${getTypeColor(prediction.type)}`}>
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 space-y-3 sm:space-y-0">
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center ${getTypeColor(prediction.type)}`}>
                         {getTypeIcon(prediction.type)}
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900">{prediction.title}</h4>
-                        <p className="text-sm text-gray-600">{prediction.description}</p>
+                        <h4 className="text-base sm:text-lg font-semibold text-gray-900">{prediction.title}</h4>
+                        <p className="text-xs sm:text-sm text-gray-600">{prediction.description}</p>
                       </div>
                     </div>
                     
@@ -396,12 +398,12 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                     </div>
                   </div>
 
-                  {/* Metrics */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  {/* Metrics - Responsive */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4">
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-gray-600">{t('predictions.confidence')}</span>
-                        <span className="text-sm font-medium text-gray-900">{prediction.confidence}%</span>
+                        <span className="text-xs sm:text-sm text-gray-600">{t('predictions.confidence')}</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-900">{prediction.confidence}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
@@ -413,8 +415,8 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                     
                     <div className="bg-gray-50 rounded-lg p-3">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-gray-600">{t('predictions.probability')}</span>
-                        <span className="text-sm font-medium text-gray-900">{prediction.probability}%</span>
+                        <span className="text-xs sm:text-sm text-gray-600">{t('predictions.probability')}</span>
+                        <span className="text-xs sm:text-sm font-medium text-gray-900">{prediction.probability}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
@@ -424,10 +426,10 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="bg-gray-50 rounded-lg p-3 sm:col-span-2 lg:col-span-1">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-gray-600">{t('predictions.predictedChange')}</span>
-                        <span className={`text-sm font-medium ${
+                        <span className="text-xs sm:text-sm text-gray-600">{t('predictions.predictedChange')}</span>
+                        <span className={`text-xs sm:text-sm font-medium ${
                           prediction.metrics.change > 0 ? 'text-green-600' : 'text-red-600'
                         }`}>
                           {prediction.metrics.change > 0 ? '+' : ''}{prediction.metrics.change}%
@@ -444,23 +446,23 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                     </div>
                   </div>
 
-                  {/* Recommendation */}
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                  {/* Recommendation - Responsive */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4 mb-4">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mt-0.5" />
                       <div>
-                        <h5 className="font-medium text-blue-900 mb-1">{t('predictions.recommendation')}</h5>
-                        <p className="text-sm text-blue-800">{prediction.recommendation}</p>
+                        <h5 className="font-medium text-blue-900 mb-1 text-sm sm:text-base">{t('predictions.recommendation')}</h5>
+                        <p className="text-xs sm:text-sm text-blue-800">{prediction.recommendation}</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Reasoning */}
+                  {/* Reasoning - Responsive */}
                   <div className="mb-4">
-                    <h5 className="font-medium text-gray-900 mb-2">{t('predictions.reasoning')}</h5>
+                    <h5 className="font-medium text-gray-900 mb-2 text-sm sm:text-base">{t('predictions.reasoning')}</h5>
                     <ul className="space-y-1">
                       {prediction.reasoning.map((reason, idx) => (
-                        <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
+                        <li key={idx} className="flex items-start space-x-2 text-xs sm:text-sm text-gray-600">
                           <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2"></div>
                           <span>{reason}</span>
                         </li>
@@ -468,9 +470,9 @@ const AIPredictions: React.FC<AIPredictionsProps> = ({ userId, analysis }) => {
                     </ul>
                   </div>
 
-                  {/* Tags */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-wrap gap-2">
+                  {/* Tags - Responsive */}
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {prediction.tags.map((tag, idx) => (
                         <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
                           {tag}

@@ -153,7 +153,7 @@ const FeaturedProjects = () => {
             href="/projects"
             className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg"
           >
-            <span>View All Properties</span>
+            <span>{t('projects.viewAllProjects')}</span>
             <ArrowRight size={20} />
           </Link>
         </div>

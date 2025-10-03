@@ -320,36 +320,38 @@ const ProjectControlCenter = () => {
         </div>
       </div>
 
-      {/* Navigation Tabs */}
+      {/* Navigation Tabs - Responsive */}
       <div className="bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex space-x-8">
-            {[
-              { id: 'overview', label: t('pcc.overview'), icon: Home },
-              { id: 'cameras', label: t('pcc.cameras'), icon: Camera },
-              { id: 'timeline', label: t('pcc.timeline'), icon: Calendar },
-              { id: 'decisions', label: t('pcc.decisions'), icon: MessageSquare },
-              { id: 'finances', label: t('pcc.finances'), icon: DollarSign }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center space-x-2 py-4 px-2 border-b-2 transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-accent text-accent'
-                    : 'border-transparent text-secondary hover:text-primary'
-                }`}
-              >
-                {tab.icon && <tab.icon className="w-5 h-5" />}
-                <span className="font-medium">{tab.label}</span>
-              </button>
-            ))}
+          <div className="flex overflow-x-auto scrollbar-hide">
+            <div className="flex space-x-2 sm:space-x-8 min-w-max">
+              {[
+                { id: 'overview', label: t('pcc.overview'), icon: Home },
+                { id: 'cameras', label: t('pcc.cameras'), icon: Camera },
+                { id: 'timeline', label: t('pcc.timeline'), icon: Calendar },
+                { id: 'decisions', label: t('pcc.decisions'), icon: MessageSquare },
+                { id: 'finances', label: t('pcc.finances'), icon: DollarSign }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`flex items-center space-x-1 sm:space-x-2 py-3 sm:py-4 px-2 sm:px-2 border-b-2 transition-colors whitespace-nowrap ${
+                    activeTab === tab.id
+                      ? 'border-accent text-accent'
+                      : 'border-transparent text-secondary hover:text-primary'
+                  }`}
+                >
+                  {tab.icon && <tab.icon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                  <span className="font-medium text-sm sm:text-base">{tab.label}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto p-4">
+      {/* Main Content - Responsive */}
+      <div className="max-w-7xl mx-auto p-4 sm:p-6">
         <AnimatePresence mode="wait">
           {activeTab === 'overview' && (
             <motion.div

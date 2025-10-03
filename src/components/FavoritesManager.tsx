@@ -292,16 +292,16 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
         initial={{ opacity: 0, y: 20, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[80vh] flex flex-col"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[80vh] sm:h-[85vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="p-6 border-b border-gray-200">
+        {/* Header - Responsive */}
+        <div className="p-4 sm:p-6 border-b border-gray-200">
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-3">
-              <Star className="w-6 h-6 text-yellow-500" />
-              <h2 className="text-xl font-bold text-gray-900">{t('favorites.title')}</h2>
-              <span className="bg-yellow-100 text-yellow-800 text-sm px-2 py-1 rounded-full">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900">{t('favorites.title')}</h2>
+              <span className="bg-yellow-100 text-yellow-800 text-xs sm:text-sm px-2 py-1 rounded-full">
                 {favorites.length} {t('favorites.elements')}
               </span>
             </div>
@@ -309,12 +309,12 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
-              <X className="w-5 h-5 text-gray-500" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
             </button>
           </div>
 
-          {/* Search and Filters */}
-          <div className="flex items-center space-x-4">
+          {/* Search and Filters - Responsive */}
+          <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
@@ -322,58 +322,60 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={t('favorites.searchPlaceholder')}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
               />
             </div>
 
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="all">{t('favorites.allCategories')}</option>
-              {Array.from(new Set(favorites.map(f => f.category))).map(category => (
-                <option key={category} value={category}>{category}</option>
-              ))}
-            </select>
-
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="recent">{t('favorites.sortBy.recent')}</option>
-              <option value="alphabetical">{t('favorites.sortBy.alphabetical')}</option>
-              <option value="access">{t('favorites.sortBy.access')}</option>
-              <option value="priority">{t('favorites.sortBy.priority')}</option>
-            </select>
-
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'grid' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-100'
-                }`}
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="px-2 sm:px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
               >
-                <Grid className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setViewMode('list')}
-                className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'list' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-100'
-                }`}
+                <option value="all">{t('favorites.allCategories')}</option>
+                {Array.from(new Set(favorites.map(f => f.category))).map(category => (
+                  <option key={category} value={category}>{category}</option>
+                ))}
+              </select>
+
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className="px-2 sm:px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-sm"
               >
-                <List className="w-4 h-4" />
-              </button>
+                <option value="recent">{t('favorites.sortBy.recent')}</option>
+                <option value="alphabetical">{t('favorites.sortBy.alphabetical')}</option>
+                <option value="access">{t('favorites.sortBy.access')}</option>
+                <option value="priority">{t('favorites.sortBy.priority')}</option>
+              </select>
+
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'grid' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-100'
+                  }`}
+                >
+                  <Grid className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setViewMode('list')}
+                  className={`p-2 rounded-lg transition-colors ${
+                    viewMode === 'list' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-100'
+                  }`}
+                >
+                  <List className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Content */}
+        {/* Content - Responsive */}
         <div className="flex-1 overflow-hidden">
-          <div className="h-full flex">
-            {/* Sidebar */}
-            <div className="w-64 border-r border-gray-200 p-4 overflow-y-auto">
+          <div className="h-full flex flex-col lg:flex-row">
+            {/* Sidebar - Responsive */}
+            <div className="w-full lg:w-64 border-r border-gray-200 p-3 sm:p-4 overflow-y-auto lg:block hidden lg:block">
               <div className="space-y-4">
                 {/* Folders */}
                 <div>
@@ -437,30 +439,30 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
               </div>
             </div>
 
-            {/* Main Content */}
-            <div className="flex-1 p-4 overflow-y-auto">
+            {/* Main Content - Responsive */}
+            <div className="flex-1 p-3 sm:p-4 overflow-y-auto">
               {filteredFavorites.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full text-center">
-                  <Star className="w-16 h-16 text-gray-300 mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <div className="flex flex-col items-center justify-center h-full text-center p-4">
+                  <Star className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mb-4" />
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
                     {searchQuery ? t('favorites.noResults') : t('favorites.noFavoritesYet')}
                   </h3>
-                  <p className="text-gray-500 mb-4">
+                  <p className="text-sm sm:text-base text-gray-500 mb-4">
                     {searchQuery 
                       ? t('favorites.tryDifferentTerms')
                       : t('favorites.addImportantElements')
                     }
                   </p>
                   {!searchQuery && (
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <button className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base">
                       {t('favorites.exploreDashboard')}
                     </button>
                   )}
                 </div>
               ) : (
                 <div className={viewMode === 'grid' 
-                  ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                  : 'space-y-3'
+                  ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4'
+                  : 'space-y-2 sm:space-y-3'
                 }>
                   {filteredFavorites.map((item) => {
                     const Icon = item.icon;
@@ -471,24 +473,24 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
                         key={item.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className={`bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-all cursor-pointer ${
+                        className={`bg-white border border-gray-200 rounded-xl p-3 sm:p-4 hover:shadow-lg transition-all cursor-pointer ${
                           item.isPinned ? 'ring-2 ring-yellow-200' : ''
                         }`}
                         onClick={() => handleSelect(item)}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex items-center space-x-3">
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                        <div className="flex items-start justify-between mb-2 sm:mb-3">
+                          <div className="flex items-center space-x-2 sm:space-x-3">
+                            <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center ${
                               item.priority === 'high' ? 'bg-red-100 text-red-600' :
                               item.priority === 'medium' ? 'bg-yellow-100 text-yellow-600' :
                               'bg-green-100 text-green-600'
                             }`}>
-                              <Icon className="w-5 h-5" />
+                              <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                             </div>
                             <div>
-                              <h4 className="font-semibold text-gray-900 text-sm">
+                              <h4 className="font-semibold text-gray-900 text-xs sm:text-sm">
                                 {item.title}
                               </h4>
                               <div className="flex items-center space-x-2 mt-1">
@@ -514,7 +516,7 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
                           </div>
                         </div>
 
-                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                        <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 line-clamp-2">
                           {item.description}
                         </p>
 
@@ -562,17 +564,17 @@ const FavoritesManager: React.FC<FavoritesManagerProps> = ({ isOpen, onClose, on
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
-          <div className="flex items-center justify-between">
-            <div className="text-sm text-gray-500">
+        {/* Footer - Responsive */}
+        <div className="p-3 sm:p-4 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
+            <div className="text-xs sm:text-sm text-gray-500">
               {filteredFavorites.length} {t('favorites.of')} {favorites.length} {t('favorites.elementsCount')}
             </div>
             <div className="flex items-center space-x-2">
-              <button className="px-3 py-1 text-sm text-gray-600 hover:text-gray-800">
+              <button className="px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-600 hover:text-gray-800">
                 {t('favorites.export')}
               </button>
-              <button className="px-3 py-1 text-sm text-gray-600 hover:text-gray-800">
+              <button className="px-2 sm:px-3 py-1 text-xs sm:text-sm text-gray-600 hover:text-gray-800">
                 {t('favorites.import')}
               </button>
             </div>

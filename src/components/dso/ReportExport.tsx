@@ -343,16 +343,16 @@ Métricas Principales:
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100">
-      {/* Header */}
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
+      {/* Header - Responsive */}
+      <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <Download className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900">{t('navigation.exportReports')}</h3>
-              <p className="text-sm text-gray-500">{t('export.subtitle')}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">{t('navigation.exportReports')}</h3>
+              <p className="text-xs sm:text-sm text-gray-500">{t('export.subtitle')}</p>
             </div>
           </div>
           
@@ -367,34 +367,34 @@ Métricas Principales:
         </div>
       </div>
 
-      <div className="p-6 space-y-6">
-        {/* Export Type Selection */}
+      <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+        {/* Export Type Selection - Responsive */}
         <div>
-          <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('export.exportType')}</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">{t('export.exportType')}</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {exportTypes.map((type) => {
               const Icon = type.icon;
               return (
                 <button
                   key={type.id}
                   onClick={() => setExportType(type.id as any)}
-                  className={`p-4 rounded-xl border-2 transition-all ${
+                  className={`p-3 sm:p-4 rounded-xl border-2 transition-all ${
                     exportType === type.id
                       ? 'border-blue-500 bg-blue-50'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  <div className="flex items-center space-x-3 mb-2">
-                    <Icon className={`w-6 h-6 ${
+                  <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
+                    <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${
                       exportType === type.id ? 'text-blue-600' : 'text-gray-500'
                     }`} />
-                    <span className={`font-medium ${
+                    <span className={`font-medium text-sm sm:text-base ${
                       exportType === type.id ? 'text-blue-900' : 'text-gray-900'
                     }`}>
                       {type.label}
                     </span>
                   </div>
-                  <p className={`text-sm ${
+                  <p className={`text-xs sm:text-sm ${
                     exportType === type.id ? 'text-blue-700' : 'text-gray-600'
                   }`}>
                     {type.description}
@@ -405,33 +405,33 @@ Métricas Principales:
           </div>
         </div>
 
-        {/* Format Selection */}
+        {/* Format Selection - Responsive */}
         <div>
-          <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('export.reportFormat')}</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">{t('export.reportFormat')}</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {formatOptions.map((format) => (
               <button
                 key={format.id}
                 onClick={() => setExportFormat(format.id as any)}
-                className={`p-4 rounded-xl border-2 transition-all ${
+                className={`p-3 sm:p-4 rounded-xl border-2 transition-all ${
                   exportFormat === format.id
                     ? 'border-green-500 bg-green-50'
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
+                  <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center ${
                     exportFormat === format.id ? 'bg-green-600' : 'bg-gray-400'
                   }`}>
-                    <CheckCircle className="w-4 h-4 text-white" />
+                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className={`font-medium ${
+                  <span className={`font-medium text-sm sm:text-base ${
                     exportFormat === format.id ? 'text-green-900' : 'text-gray-900'
                   }`}>
                     {format.label}
                   </span>
                 </div>
-                <p className={`text-sm ${
+                <p className={`text-xs sm:text-sm ${
                   exportFormat === format.id ? 'text-green-700' : 'text-gray-600'
                 }`}>
                   {format.description}
@@ -441,20 +441,20 @@ Métricas Principales:
           </div>
         </div>
 
-        {/* Custom Sections Selection */}
+        {/* Custom Sections Selection - Responsive */}
         {exportFormat === 'custom' && (
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('export.sectionsToInclude')}</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">{t('export.sectionsToInclude')}</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {Object.entries(includeSections).map(([key, value]) => (
-                <label key={key} className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                <label key={key} className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={value}
                     onChange={(e) => setIncludeSections(prev => ({ ...prev, [key]: e.target.checked }))}
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <span className="text-sm font-medium text-gray-900 capitalize">
+                  <span className="text-xs sm:text-sm font-medium text-gray-900 capitalize">
                     {key === 'overview' ? t('export.executiveSummary') :
                      key === 'metrics' ? t('export.realtimeMetrics') :
                      key === 'alerts' ? t('export.intelligentAlerts') :
@@ -467,50 +467,50 @@ Métricas Principales:
           </div>
         )}
 
-        {/* Export Preview */}
-        <div className="bg-gray-50 rounded-xl p-4">
-          <h4 className="text-lg font-semibold text-gray-900 mb-3">{t('export.reportPreview')}</h4>
-          <div className="space-y-2 text-sm text-gray-600">
+        {/* Export Preview - Responsive */}
+        <div className="bg-gray-50 rounded-xl p-3 sm:p-4">
+          <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">{t('export.reportPreview')}</h4>
+          <div className="space-y-2 text-xs sm:text-sm text-gray-600">
             <div className="flex items-center space-x-2">
-              <User className="w-4 h-4" />
+              <User className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>{t('export.user')} {userName}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4" />
+              <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>{t('export.email')} {userEmail}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>{t('export.generationDate')} {new Date().toLocaleDateString('es-ES')}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <BarChart3 className="w-4 h-4" />
+              <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>{t('export.format')} {exportFormat === 'detailed' ? t('export.detailedFormat') : exportFormat === 'summary' ? t('export.summaryFormat') : t('export.customFormat')}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <FileText className="w-4 h-4" />
+              <FileText className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>{t('export.type')} {exportType.toUpperCase()}</span>
             </div>
           </div>
         </div>
 
-        {/* Export Button */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <div className="text-sm text-gray-500">
+        {/* Export Button - Responsive */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-gray-200 space-y-3 sm:space-y-0">
+          <div className="text-xs sm:text-sm text-gray-500">
             {isGenerating ? t('export.generatingReport') : t('export.readyToExport')}
           </div>
           
           <button
             onClick={handleExport}
             disabled={isGenerating || isExporting}
-            className="flex items-center space-x-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center justify-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isGenerating ? (
-              <RefreshCw className="w-5 h-5 animate-spin" />
+              <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
             ) : (
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
-            <span className="font-medium">
+            <span className="font-medium text-sm sm:text-base">
               {isGenerating ? t('export.generating') : `${t('export.exportButton')} ${exportType.toUpperCase()}`}
             </span>
           </button>

@@ -132,10 +132,10 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
 
   return (
     <div className="h-full bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-      {/* Header */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-purple-50">
+      {/* Header - Responsive */}
+      <div className="p-3 sm:p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-gray-900">{t('navigation.commandCenter')}</h2>
+          <h2 className="text-base sm:text-lg font-bold text-gray-900">{t('navigation.commandCenter')}</h2>
           <div className="flex items-center space-x-1">
             <button
               onClick={toggleAdvanced}
@@ -148,7 +148,7 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
             </button>
           </div>
         </div>
-        <p className="text-sm text-gray-600 mt-1">
+        <p className="text-xs sm:text-sm text-gray-600 mt-1">
           {t('navigation.organizedByFunctionality')}
         </p>
       </div>
@@ -163,29 +163,29 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
           
           return (
             <div key={group.id} className="border-b border-gray-100 last:border-b-0">
-              {/* Group Header */}
+              {/* Group Header - Responsive */}
               <motion.button
                 onClick={() => toggleGroup(group.id)}
-                className={`w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors ${
+                className={`w-full flex items-center justify-between p-3 sm:p-4 hover:bg-gray-50 transition-colors ${
                   group.id === 'advanced' ? 'bg-purple-50' : ''
                 }`}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
-                <div className="flex items-center space-x-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${getGroupColor(group.id)}`}>
-                    <GroupIcon className="w-4 h-4" />
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center ${getGroupColor(group.id)}`}>
+                    <GroupIcon className="w-3 h-3 sm:w-4 sm:h-4" />
                   </div>
                   <div className="text-left">
-                    <div className="font-semibold text-gray-900 text-sm">{group.title}</div>
-                    <div className="text-xs text-gray-500">
+                    <div className="font-semibold text-gray-900 text-xs sm:text-sm">{group.title}</div>
+                    <div className="text-xs text-gray-500 hidden sm:block">
                       {group.sections.length} {group.sections.length === 1 ? t('navigation.section') : t('navigation.sections')}
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-2">
-                  <span className={`text-xs px-2 py-1 rounded-full ${
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <span className={`text-xs px-1.5 sm:px-2 py-1 rounded-full ${
                     group.sections.filter(s => s.isVisible).length === group.sections.length
                       ? 'bg-green-100 text-green-700'
                       : 'bg-yellow-100 text-yellow-700'
@@ -210,14 +210,14 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-4 pb-2 space-y-1">
+                    <div className="px-3 sm:px-4 pb-2 space-y-1">
                       {group.sections.map((section) => {
                         const SectionIcon = section.icon;
                         return (
                           <motion.button
                             key={section.id}
                             onClick={() => onSectionChange(section.id)}
-                            className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-all ${
+                            className={`w-full flex items-center space-x-2 sm:space-x-3 p-2.5 sm:p-3 rounded-lg transition-all ${
                               activeSection === section.id
                                 ? 'bg-blue-600 text-white shadow-md'
                                 : 'text-gray-700 hover:bg-gray-100'
@@ -225,12 +225,12 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                           >
-                            <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${
+                            <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-lg flex items-center justify-center ${
                               activeSection === section.id
                                 ? 'bg-white/20'
                                 : section.color.replace('bg-', 'bg-').replace('-600', '-100')
                             }`}>
-                              <SectionIcon className={`w-3 h-3 ${
+                              <SectionIcon className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${
                                 activeSection === section.id
                                   ? 'text-white'
                                   : section.color.replace('bg-', 'text-').replace('-600', '-600')
@@ -238,8 +238,8 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
                             </div>
                             
                             <div className="flex-1 text-left">
-                              <div className="font-medium text-sm">{section.title}</div>
-                              <div className={`text-xs ${
+                              <div className="font-medium text-xs sm:text-sm">{section.title}</div>
+                              <div className={`text-xs hidden sm:block ${
                                 activeSection === section.id
                                   ? 'text-white/80'
                                   : 'text-gray-500'
@@ -281,15 +281,15 @@ const OrganizedNavigation: React.FC<OrganizedNavigationProps> = ({
         })}
       </div>
 
-      {/* Footer */}
-      <div className="p-4 border-t border-gray-200 bg-gray-50">
+      {/* Footer - Responsive */}
+      <div className="p-3 sm:p-4 border-t border-gray-200 bg-gray-50">
         <div className="text-xs text-gray-500 text-center">
           <div className="flex items-center justify-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span>{t('navigation.systemActive')}</span>
           </div>
-          <div className="mt-1">
-            {sections.filter(s => s.isVisible).length} de {sections.length} {t('navigation.visibleSections')}
+          <div className="mt-1 hidden sm:block">
+            {sections.filter(s => s.isVisible).length} / {sections.length} {t('navigation.visibleSections')}
           </div>
         </div>
       </div>
