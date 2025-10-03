@@ -3,8 +3,17 @@
   publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+  # Supabase Configuration
+  NEXT_PUBLIC_SUPABASE_URL = "https://kbqxdsqklqdsvfrwawjj.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImticXhkc3FrbHFkc3Zmcndhd2pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxMTYyNTUsImV4cCI6MjA3NDY5MjI1NX0.XheHxxVayJukawFGR6iUoCh2W_03kguWU973rZT--Ao"
+  NEXT_PUBLIC_SUPABASE_PROJECT_ID = "kbqxdsqklqdsvfrwawjj"
+  SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImticXhkc3FrbHFkc3Zmcndhd2pqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTExNjI1NSwiZXhwIjoyMDc0NjkyMjU1fQ.2GzBXC_7u4yCwTVzMl7W4bbLXkH6r-JlkZ--EkYc1Bg"
+  # Google OAuth Configuration
+  GOOGLE_CLIENT_ID = "40911110211-g2adems1p79qt9m9umd90hono5as8d3r.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET = "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"
+  GOOGLE_REDIRECT_URI = "https://tabijihouse.com/auth/callback"
 
 # Redirección forzada de HTTP a HTTPS
 [[redirects]]
