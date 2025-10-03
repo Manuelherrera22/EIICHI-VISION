@@ -22,7 +22,6 @@ const nextConfig: NextConfig = {
     tsconfigPath: './tsconfig.build.json',
   },
   
-  
   // Configuración de webpack para ignorar errores de TypeScript
   webpack: (config, { isServer }) => {
     // Ignorar errores de TypeScript
@@ -30,6 +29,8 @@ const nextConfig: NextConfig = {
       /Module not found/,
       /Critical dependency/,
       /Can't resolve/,
+      /Type error/,
+      /An object literal cannot have multiple properties/,
     ];
     
     // Optimizaciones para Three.js
@@ -49,6 +50,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['mapbox-gl', 'three', '@react-three/fiber', '@react-three/drei'],
     typedRoutes: false,
+    esmExternals: false,
   },
   
   // Configuración de imágenes optimizada

@@ -100,7 +100,7 @@ class IntelligentContentEngine implements ContentPersonalizationEngine {
   }
 
   generateDashboardNotifications(userProfile: any, dashboardType: string): any[] {
-    const notifications = []
+    const notifications: any[] = []
 
     // Notificaciones basadas en actividad reciente
     const lastLogin = new Date(userProfile.lastLogin || Date.now() - 7 * 24 * 60 * 60 * 1000)

@@ -501,7 +501,7 @@ function calculateVisaEligibility(data: EnhancedOnboardingData, factors: any) {
 }
 
 function generateSmartAlerts(data: EnhancedOnboardingData) {
-  const alerts = [];
+  const alerts: any[] = [];
   
   // Alertas basadas en completitud del perfil
   if (data.profession && data.profession.length > 0) {
@@ -589,7 +589,7 @@ function calculateFinancialStability(data: EnhancedOnboardingData): number {
 
 // Funciones para generar recomendaciones
 function generateInvestmentRecommendations(data: EnhancedOnboardingData, factors: any): string[] {
-  const recommendations = [];
+  const recommendations: string[] = [];
   
   if (factors.marketKnowledge < 60) {
     recommendations.push('Completar curso de mercado inmobiliario japonés');
@@ -605,7 +605,7 @@ function generateInvestmentRecommendations(data: EnhancedOnboardingData, factors
 }
 
 function generateMigrationRecommendations(data: EnhancedOnboardingData, factors: any): string[] {
-  const recommendations = [];
+  const recommendations: string[] = [];
   
   if (factors.languageProficiency < 70) {
     recommendations.push('Mejorar nivel de japonés antes de la migración');
@@ -621,7 +621,7 @@ function generateMigrationRecommendations(data: EnhancedOnboardingData, factors:
 }
 
 function generateUrgentMigrationActions(data: EnhancedOnboardingData, score: number): string[] {
-  const actions = [];
+  const actions: string[] = [];
   
   if (score < 60) {
     actions.push('Apostillar documentos educativos');

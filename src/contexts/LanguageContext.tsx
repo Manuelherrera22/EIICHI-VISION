@@ -25,7 +25,6 @@ export function useLanguage() {
 }
 
 // Traducciones
-// @ts-nocheck - Ignorar todos los errores de TypeScript en este archivo para duplicados en traducciones
 const translations = {
   en: {
     // Common
@@ -667,7 +666,6 @@ const translations = {
     // Lifestyle Dashboard V2 Translations
     'lifestyle.sanctuaryWorkshop': 'Your Sanctuary Workshop',
     'lifestyle.personalizedJapaneseSanctuary': 'Your Personalized Japanese Sanctuary',
-    'lifestyle.lifestyleSyncIndex': 'Lifestyle Synchronization Index (ISE)',
     'lifestyle.sanctuaryVisionAlignment': 'Your sanctuary vision alignment score',
     'lifestyle.excellentProgress': 'Excellent Progress',
     'lifestyle.strengths': 'Strengths',
@@ -675,21 +673,15 @@ const translations = {
     'lifestyle.strategicModules': 'Strategic Modules to Increase your ISE',
     'lifestyle.toolsAndResources': 'Tools and resources to create your dream Japanese sanctuary',
     'lifestyle.discoverIdealProperty': 'Discover your Ideal Property',
-    'lifestyle.recommendationEngine': 'Our recommendation engine presents you with the best houses that synchronize with your profile',
     'lifestyle.aiRecommendationEngine': 'AI Recommendation Engine',
     'lifestyle.top3CompatibleProperties': 'Top 3 Compatible Properties',
     'lifestyle.preferenceLearning': 'Preference Learning',
     'lifestyle.searchProperties': 'Search Properties',
-    'lifestyle.designYourSpace': 'Design Your Space',
     'lifestyle.design3DTable': 'Access the 3D Design Table and gamify the creative process of your future home',
     'lifestyle.interactive3DDesignTable': 'Interactive 3D Design Table',
-    'lifestyle.designGamification': 'Design Gamification',
-    'lifestyle.photorealisticRendering': 'Photorealistic Rendering',
     'lifestyle.designConsultation': 'Design Consultation',
     'lifestyle.createLifeItinerary': 'Create your Life Itinerary',
     'lifestyle.defineCulturalExperiences': 'Define your cultural experiences and activities to complete your lifestyle vision',
-    'lifestyle.experienceConcierge': 'Experience Concierge',
-    'lifestyle.intelligentAgenda': 'Intelligent Agenda (Real Weather)',
     'lifestyle.personalizedRecommendations': 'Personalized Recommendations',
     'lifestyle.culturalExperiences': 'Cultural Experiences',
     'lifestyle.readyToPerfectSanctuary': 'Ready to Perfect your Sanctuary?',
@@ -708,8 +700,6 @@ const translations = {
     'migration.opportunityAreas': 'Opportunity Areas to Improve your IVM',
     'migration.strategicModules': 'Strategic Modules to Increase your IVM',
     'migration.keySteps': 'Key steps to strengthen your visa application and secure your future in Japan',
-    'migration.accelerateDocumentation': 'Accelerate your Documentation',
-    'migration.intelligentDocumentManager': 'Use our Intelligent Document Manager to identify and validate what you need',
     'migration.intelligentDocumentManagerFeature': 'Intelligent Document Manager',
     'migration.ocrValidation': 'OCR Validation with AI',
     'migration.instantFeedback': 'Instant Feedback',
@@ -733,9 +723,6 @@ const translations = {
     'migration.absoluteConfidence': 'Absolute Confidence',
     
     // Dashboard Titles
-    'dashboard.lifestyle.title': 'Lifestyle Dashboard',
-    'dashboard.migration.title': 'Smart Migration Dashboard',
-    'dashboard.investor.title': 'Investor Command Center',
     'dashboard.investor.subtitle': 'Your Smart Investment Dashboard',
     'dashboard.investor.strategy': 'Your Investment Strategy',
     'dashboard.opportunity.title': 'Opportunity Command Center',
@@ -800,7 +787,6 @@ const translations = {
     'export.user': 'User:',
     'export.email': 'Email:',
     'export.generationDate': 'Generation date:',
-    'export.format': 'Format:',
     'export.type': 'Type:',
     'export.detailedFormat': 'Detailed',
     'export.summaryFormat': 'Summary',
@@ -817,11 +803,8 @@ const translations = {
     'export.chartsVisualizations': 'Charts and Visualizations',
     
     // Organized Navigation Translations
-    'navigation.commandCenter': 'Command Center',
-    'navigation.organizedByFunctionality': 'Navigation organized by functionality',
     'navigation.sections': 'sections',
     'navigation.section': 'section',
-    'navigation.systemActive': 'System active',
     'navigation.visibleSections': 'visible sections',
     'navigation.showAdvanced': 'Show advanced',
     'navigation.hideAdvanced': 'Hide advanced',
@@ -858,41 +841,21 @@ const translations = {
     'chatbot.suggestions.openBankAccount': 'How to open a bank account?',
     'chatbot.suggestions.analyzeProfile': 'Analyze my profile',
     'chatbot.suggestions.investmentOpportunities': 'Investment opportunities',
-    'chatbot.suggestions.buyingProcess': 'Buying process',
     'chatbot.suggestions.marketTrends': 'Market trends',
     'index.ivi': 'Investment Viability Index (IVI)',
     'index.ivm': 'Migration Viability Index (IVM)',
     'index.ise': 'Lifestyle Synchronization Index (ISE)',
     
     // Report Export Translations
-    'export.executiveSummary': 'Executive Summary',
-    'export.realtimeMetrics': 'Real-time Metrics',
-    'export.aiPredictions': 'AI Predictions',
     'export.engagementLevel': 'Engagement Level',
-    'export.userParticipation': 'User participation level',
-    'export.detailed': 'Detailed',
-    'export.summary': 'Summary',
-    'export.custom': 'Custom',
-    'export.generating': 'Generating...',
     'export.exportFormat': 'Format',
     
     // AI Predictions Translations
     'predictions.aiPredictions': 'AI Predictions',
     'predictions.emergingInvestment': 'Emerging Investment Opportunity',
-    'predictions.updatedData': 'Updated data',
-    'predictions.emergingTrends': 'Emerging trends',
-    'predictions.behaviorAnalysis': 'Behavior analysis',
     
     // Chatbot Translations
     'chatbot.greeting': 'Hello {userName}! 👋 I am your AI assistant specialized in real estate investments in Japan. I can help you with:',
-    'chatbot.investmentAnalysis': 'Investment profile analysis',
-    'chatbot.propertyRecommendations': 'Property recommendations',
-    'chatbot.marketTrends': 'Market trends',
-    'chatbot.answerQuestions': 'Answer your questions',
-    'chatbot.howCanIHelp': 'How can I help you today?',
-    'chatbot.currentIVI': 'Your current **Investment Viability Index (IVI)** is **{score}%**.',
-    'chatbot.longTermInvestment': 'Long-term investment',
-    'chatbot.marketTrends': 'Market trends',
     
     // TabijiExport Translations
     'tabijiexport.title': 'TabijiExport Integration',
@@ -930,7 +893,6 @@ const translations = {
     'navigation.3dViewer': '3D Viewer',
     'navigation.modelViewer': 'Model Viewer',
     'navigation.kusatsuProject': 'Kusatsu Project',
-    'navigation.discoverProjects': 'Discover Projects',
 
     // Legacy Section
     'legacy.discoverHeritage': 'Discover the Heritage of Gunma',
@@ -992,7 +954,6 @@ const translations = {
     'blueprint.exploreBlueprint': 'Explore Blueprint Digital',
 
     // Blueprint Portal Vision
-    'blueprint.visionPortal': 'Vision Portal',
     'blueprint.coCreateVision': 'Co-create your personal vision',
     'blueprint.interactiveOnboarding': 'Interactive onboarding with AI matching to find the perfect properties',
     'blueprint.coCreatePersonalVision': 'Co-create your personal vision before setting foot in Japan',
@@ -1011,11 +972,8 @@ const translations = {
     'blueprint.restoreAndPreserve': 'Restore and preserve tradition',
     'blueprint.previous': 'Previous',
     'blueprint.next': 'Next →',
-    'blueprint.augmentedReality': 'Augmented Reality',
     'blueprint.propertyVisits20': 'Property visits 2.0',
-    'blueprint.designTable': 'Design Table',
     'blueprint.realTimeCoDesign': 'Real-time co-design',
-    'blueprint.controlCenter': 'Control Center',
     'blueprint.totalProjectControl': 'Total project control',
     'blueprint.activeSystem': 'Active System',
     
@@ -1088,9 +1046,6 @@ const translations = {
     'blueprint.continueToKusatsuProject': 'Continue to Kusatsu Project',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'See properties transformed in real time with AR technology',
-    'blueprint.designDescription': 'Interactive table to modify 3D designs during sessions',
-    'blueprint.controlDescription': 'Real-time dashboard with cameras, timeline and decisions',
     
     // Blueprint Property Options
     'blueprint.traditionalJapaneseHouse': 'Traditional Japanese House',
@@ -1175,17 +1130,6 @@ const translations = {
     'videoHero.scheduleVisit': 'Schedule Visit',
     
     // LegacySection
-    'legacy.discoverHeritage': 'Discover the Heritage of Gunma',
-    'legacy.japaneseTradition': 'Japanese Tradition',
-    'legacy.inHeartOfGunma': 'in the Heart of Gunma',
-    'legacy.description1': 'Gunma is a unique prefecture in Japan, where millenary tradition meets modernity. Its natural hot springs, majestic mountains and traditional architecture create an incomparable environment for living and investing.',
-    'legacy.description2': 'Each property in Gunma tells a unique story. From traditional minka houses to centennial temples, these properties represent the authentic essence of Japan that many seek to experience.',
-    'legacy.quote': 'Where every stone tells a story',
-    'legacy.quoteAuthor': '- Gunma Heritage',
-    'legacy.naturalHotSprings': 'Natural Hot Springs',
-    'legacy.yearsOfHistory': 'Years of History',
-    'legacy.naturalBeauty': 'Natural Beauty',
-    'legacy.discoverMore': 'Discover More About Gunma',
     
     // 3D Components
     '3d.mainEntrance': 'Main Entrance',
@@ -1341,10 +1285,6 @@ const translations = {
     'footer.japaneseCulture': 'Japanese Culture',
     'footer.lifeInGunma': 'Life in Gunma',
     'footer.joinVision': 'Join the Vision',
-    'footer.newsletterDescription': 'Receive inspiring stories and new properties directly in your email.',
-    'footer.emailPlaceholder': 'Your email address',
-    'footer.subscribe': 'Subscribe',
-    'footer.copyright': 'All rights reserved.',
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',
     
@@ -1397,7 +1337,6 @@ const translations = {
     'ai.welcomeMessage': 'Hello! I\'m your Tabiji House assistant. How can I help you with your Japanese property investment?',
     'ai.assistantName': 'Tabiji Assistant',
     'ai.online': 'Online',
-    'ai.placeholder': 'Type your question...',
     'ai.responses.propertyOpportunities': 'Akiya properties in Gunma offer excellent investment opportunities. Are you interested in learning more about the purchase process?',
     'ai.responses.roiCalculation': 'The average ROI on renovated Japanese properties is 8-12% annually. Would you like us to calculate your specific investment?',
     'ai.responses.premiumLocation': 'Kusatsu Onsen is a premium location with high tourist demand. Would you like to see available properties in that area?',
@@ -1449,16 +1388,12 @@ const translations = {
     'japanese3d.loading3D': 'Loading 3D experience...',
     
     // Featured Projects
-    'projects.visionaryPortfolio': 'The Visionary Portfolio',
-    'projects.featuredProjects': 'Featured Projects',
-    'projects.description': 'Each property tells a unique story and offers extraordinary potential to create your dream home in Japan.',
     'projects.calligrapherRetreat': 'The Calligrapher\'s Retreat',
     'projects.onsenViewHouse': 'The House with Onsen Views',
     'projects.cherryGarden': 'The Cherry Garden',
     'projects.artisanResidence': 'The Artisan\'s Residence',
     'projects.location': 'Kusatsu, Gunma',
     'projects.available': 'Available',
-    'projects.underRenovation': 'Under Renovation',
     'projects.sold': 'Sold',
     'projects.viewDetails': 'View Details',
     'projects.calligrapherDescription': 'A traditional house with spectacular mountain views. Perfect for an art studio or creative retreat.',
@@ -1808,9 +1743,6 @@ const translations = {
     'projects.bathrooms': 'bathrooms',
     'projects.highlightedFeatures': 'Highlighted features:',
     'projects.moreFeatures': 'more',
-    'projects.purchasePrice': 'Purchase price',
-    'projects.estimatedRenovation': 'Estimated renovation',
-    'projects.viewDetails': 'View Details',
     'projects.noPropertiesFound': 'No properties found',
     'projects.noPropertiesDescription': 'Try adjusting your search filters to find more options.',
     'projects.clearFilters': 'Clear Filters',
@@ -1909,13 +1841,8 @@ const translations = {
     
     // Projects Page
     'projects.searchPlaceholder': 'Search properties...',
-    'projects.available': 'Available',
     'projects.inRenovation': 'In Renovation',
-    'projects.sold': 'Sold',
     'projects.calliographerRetreat': 'The Calligrapher\'s Retreat',
-    'projects.onsenViewHouse': 'The House with Onsen Views',
-    'projects.cherryGarden': 'The Cherry Garden',
-    'projects.artisanResidence': 'The Artisan\'s Residence',
     'projects.teaHouse': 'The Tea House',
     'projects.mountainRefuge': 'The Mountain Refuge',
     'projects.kusatsuGunma': 'Kusatsu, Gunma',
@@ -1935,9 +1862,6 @@ const translations = {
     'projects.panoramicView': 'Panoramic view',
     'projects.totalPrivacy': 'Total privacy',
     'projects.trailAccess': 'Trail access',
-    'projects.basicRenovation': 'Basic renovation',
-    'projects.premiumRenovation': 'Premium renovation',
-    'projects.luxuryRenovation': 'Luxury renovation',
     'projects.traditionalHouseMountainViews': 'A traditional house with spectacular mountain views. Perfect for an art studio or creative retreat.',
     'projects.onsenCultureAccess': 'Located near the famous hot springs, this property offers direct access to local onsen culture.',
     'projects.compactCherryHouse': 'A compact house surrounded by century-old cherry trees. Ideal for a second residence or investment.',
@@ -1954,10 +1878,7 @@ const translations = {
     'video.googleDriveVideo': 'Your Google Drive Video',
     
     // ROI Calculator
-    'roi.title': 'ROI Calculator',
-    'roi.subtitle': 'Calculate the return on your investment in Japanese properties',
     'roi.purchasePrice': 'Purchase Price (¥)',
-    'roi.renovationCost': 'Renovation Cost (¥)',
     'roi.monthlyRentalIncome': 'Monthly Rental Income (¥)',
     'roi.annualAppreciationRate': 'Annual Appreciation Rate (%)',
     'roi.investmentPeriod': 'Investment Period (years)',
@@ -1965,7 +1886,6 @@ const translations = {
     'roi.totalInvestment': 'Total Investment:',
     'roi.annualYield': 'Annual Yield:',
     'roi.rentalIncome': 'Rental Income',
-    'roi.propertyValue': 'Property Value',
     'roi.totalROI': 'Total ROI:',
     'roi.valueProjection': 'Value Projection',
     'roi.initialInvestment': 'Initial Investment',
@@ -1987,13 +1907,7 @@ const translations = {
 
     // 3D Viewer Controls
     '3d.autoRotation': 'Auto-rotation',
-    '3d.lighting': 'Lighting',
     '3d.information': 'Information',
-    '3d.location': 'Kusatsu, Gunma',
-    '3d.area': '120 m²',
-    '3d.yearBuilt': '1925',
-    '3d.price': '¥8,500,000',
-    '3d.totalArea': '120 m²',
 
     // Legacy Section Japanese Text
     'legacy.japaneseText': '伝統と未来の出会い',
@@ -2201,19 +2115,12 @@ const translations = {
     
     // Contact Page
     'contact.startYourVision': 'Start Your Vision',
-    'contact.title': 'Contact',
     'contact.description': 'We are here to help you make your vision of investing in Japan a reality. Schedule a free 30-minute consultation to discuss your project.',
     'contact.contactMethods': 'Contact Methods',
     'contact.chooseMethod': 'Choose the method that best suits you to start the conversation.',
-    'contact.sendMessage': 'Send us a Message',
     'contact.formDescription': 'Complete the form and we will contact you to discuss your project and answer all your questions.',
-    'contact.fullName': 'Full Name',
-    'contact.email': 'Email Address',
-    'contact.phone': 'Phone',
     'contact.company': 'Company',
     'contact.interestArea': 'Area of Interest',
-    'contact.message': 'Message',
-    'contact.sending': 'Sending...',
     'contact.sendMessageButton': 'Send Message',
     'contact.officeHours': 'Office Hours',
     'contact.mondayFriday': 'Monday - Friday',
@@ -2225,22 +2132,12 @@ const translations = {
     'contact.urgentInquiries': 'For urgent inquiries, you can contact us directly via WhatsApp:',
     'contact.whatsapp': 'WhatsApp',
     'contact.thankYouMessage': 'Thank you for your message! We will contact you soon.',
-    'contact.fullNamePlaceholder': 'Your full name',
-    'contact.companyPlaceholder': 'Your company name',
-    'contact.projectPlaceholder': 'Tell us about your project and how we can help you...',
     'contact.generalInquiry': 'General Inquiry',
     'contact.viewProperties': 'View Properties',
     'contact.investmentOpportunities': 'Investment Opportunities',
     'contact.renovationServices': 'Renovation Services',
     'contact.legalAdvice': 'Legal Advice',
     'contact.other': 'Other',
-    'contact.emailTitle': 'Email',
-    'contact.emailDescription': 'Send us an email and we will respond within 24 hours',
-    'contact.phoneTitle': 'Phone',
-    'contact.phoneDescription': 'Call us for immediate assistance',
-    'contact.officeTitle': 'Office',
-    'contact.officeValue': 'Tokyo, Japan',
-    'contact.officeDescription': 'Visit our office for a personal consultation',
   },
   
   ja: {
@@ -2627,9 +2524,6 @@ const translations = {
     'navigation.backToCommandCenter': 'コマンドセンターに戻る',
     
     // Dashboard Titles
-    'dashboard.lifestyle.title': 'ライフスタイルダッシュボード',
-    'dashboard.migration.title': 'スマート移住ダッシュボード',
-    'dashboard.investor.title': '投資家コマンドセンター',
     'dashboard.investor.subtitle': 'スマート投資ダッシュボード',
     'dashboard.investor.strategy': '投資戦略',
     'dashboard.opportunity.title': '機会コマンドセンター',
@@ -2711,11 +2605,8 @@ const translations = {
     'export.chartsVisualizations': 'チャートとビジュアライゼーション',
     
     // Organized Navigation Translations
-    'navigation.commandCenter': 'コマンドセンター',
-    'navigation.organizedByFunctionality': '機能別に整理されたナビゲーション',
     'navigation.sections': 'セクション',
     'navigation.section': 'セクション',
-    'navigation.systemActive': 'システム稼働中',
     'navigation.visibleSections': '表示セクション',
     'navigation.showAdvanced': '高度な設定を表示',
     'navigation.hideAdvanced': '高度な設定を非表示',
@@ -2752,7 +2643,6 @@ const translations = {
     'chatbot.suggestions.openBankAccount': '銀行口座を開くには？',
     'chatbot.suggestions.analyzeProfile': 'プロフィール分析',
     'chatbot.suggestions.investmentOpportunities': '投資機会',
-    'chatbot.suggestions.buyingProcess': '購入プロセス',
     'chatbot.suggestions.marketTrends': '市場トレンド',
     'index.ivi': '投資実現可能性指数（IVI）',
     'index.ivm': '移住実現可能性指数（IVM）',
@@ -2787,7 +2677,6 @@ const translations = {
     'chatbot.howCanIHelp': '今日はどのようにお手伝いできますか？',
     'chatbot.currentIVI': '現在の**投資実現可能性指数（IVI）**は**{score}%**です。',
     'chatbot.longTermInvestment': '長期投資',
-    'chatbot.marketTrends': '市場トレンド',
     
     // TabijiExport Translations
     'tabijiexport.title': 'TabijiExport統合',
@@ -2825,7 +2714,6 @@ const translations = {
     'navigation.3dViewer': '3Dビューアー',
     'navigation.modelViewer': 'モデルビューアー',
     'navigation.kusatsuProject': '草津プロジェクト',
-    'navigation.discoverProjects': 'プロジェクトを発見',
 
     // Legacy Section
     'legacy.discoverHeritage': '群馬の遺産を発見',
@@ -2921,9 +2809,6 @@ const translations = {
     'blueprint.continueToKusatsuProject': '草津プロジェクトに続く',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'AR技術でリアルタイムに変身した物件を見る',
-    'blueprint.designDescription': 'セッション中に3Dデザインを修正するインタラクティブテーブル',
-    'blueprint.controlDescription': 'カメラ、タイムライン、決定事項を含むリアルタイムダッシュボード',
     
     // Blueprint Property Options
     'blueprint.traditionalJapaneseHouse': '伝統的な日本家屋',
@@ -3054,25 +2939,10 @@ const translations = {
     'blueprint.aiAnalyzingPreferences': '私たちのAIがあなたの好みを分析して、完璧な物件を見つけています...',
     
     // Blueprint Portfolio Results
-    'blueprint.preliminaryPortfolio': 'あなたの予備ポートフォリオ',
-    'blueprint.propertiesSelectedForYou': 'あなたのために特別に選ばれた物件',
-    'blueprint.matchScore': 'マッチ',
-    'blueprint.characteristics': '特徴',
-    'blueprint.potential': 'ポテンシャル',
-    'blueprint.basePriceRenovation': '基本価格 + リノベーション',
-    'blueprint.viewDetails': '詳細を見る',
-    'blueprint.continueToKusatsuProject': '草津プロジェクトに続く',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'AR技術でリアルタイムに変身した物件を見る',
-    'blueprint.designDescription': 'セッション中に3Dデザインを修正するインタラクティブテーブル',
-    'blueprint.controlDescription': 'カメラ、タイムライン、決定事項を含むリアルタイムダッシュボード',
     
     // Blueprint Property Options
-    'blueprint.traditionalJapaneseHouse': '伝統的な日本家屋',
-    'blueprint.originalState': '元の状態',
-    'blueprint.modernRenovation': 'モダンリノベーション',
-    'blueprint.traditionalLuxury': '伝統的ラグジュアリー',
     
     // VideoHero
     'videoHero.maSpaceBetween': '間 - 空間の間',
@@ -3086,17 +2956,6 @@ const translations = {
     'videoHero.scheduleVisit': '訪問を予約',
     
     // LegacySection
-    'legacy.discoverHeritage': '群馬の遺産を発見',
-    'legacy.japaneseTradition': '日本の伝統',
-    'legacy.inHeartOfGunma': '群馬の心臓部で',
-    'legacy.description1': '群馬は日本で独特な県で、千年の伝統が現代と出会います。その自然の温泉、雄大な山々、伝統的な建築は、生活と投資に比類のない環境を作り出します。',
-    'legacy.description2': '群馬の各物件は独自の物語を語ります。伝統的な民家から百年の寺院まで、これらの物件は多くの人が体験を求める日本の本質を表しています。',
-    'legacy.quote': 'すべての石が物語を語る場所',
-    'legacy.quoteAuthor': '- 群馬遺産',
-    'legacy.naturalHotSprings': '自然の温泉',
-    'legacy.yearsOfHistory': '年の歴史',
-    'legacy.naturalBeauty': '自然の美しさ',
-    'legacy.discoverMore': '群馬についてもっと発見',
     
     // 3D Components
     '3d.mainEntrance': 'メインエントランス',
@@ -3252,10 +3111,6 @@ const translations = {
     'footer.japaneseCulture': '日本文化',
     'footer.lifeInGunma': '群馬での生活',
     'footer.joinVision': 'ビジョンに参加',
-    'footer.newsletterDescription': 'インスピレーションを与えるストーリーと新しい物件を直接メールで受け取ります。',
-    'footer.emailPlaceholder': 'メールアドレス',
-    'footer.subscribe': '購読',
-    'footer.copyright': '全著作権所有。',
     'footer.privacy': 'プライバシー',
     'footer.terms': '利用規約',
     
@@ -3308,7 +3163,6 @@ const translations = {
     'ai.welcomeMessage': 'こんにちは！私はこもれびハウスのアシスタントです。日本の不動産投資についてどのようにお手伝いできますか？',
     'ai.assistantName': 'こもれびアシスタント',
     'ai.online': 'オンライン',
-    'ai.placeholder': '質問を入力してください...',
     'ai.responses.propertyOpportunities': '群馬の空き家物件は優れた投資機会を提供します。購入プロセスについてもっと知りたいですか？',
     'ai.responses.roiCalculation': 'リノベーションされた日本物件の平均ROIは年間8-12%です。あなたの具体的な投資を計算しましょうか？',
     'ai.responses.premiumLocation': '草津温泉は観光需要の高いプレミアムロケーションです。その地域の利用可能な物件を見たいですか？',
@@ -3360,16 +3214,12 @@ const translations = {
     'japanese3d.loading3D': '3D体験を読み込み中...',
     
     // Featured Projects
-    'projects.visionaryPortfolio': 'ビジョナリーポートフォリオ',
-    'projects.featuredProjects': '注目のプロジェクト',
-    'projects.description': '各物件は独特のストーリーを語り、日本で夢の家を作るための特別な可能性を提供します。',
     'projects.calligrapherRetreat': '書道家の隠れ家',
     'projects.onsenViewHouse': '温泉の景色の家',
     'projects.cherryGarden': '桜の庭',
     'projects.artisanResidence': '職人の住居',
     'projects.location': '群馬県草津',
     'projects.available': '利用可能',
-    'projects.underRenovation': '改修中',
     'projects.sold': '売却済み',
     'projects.viewDetails': '詳細を見る',
     'projects.calligrapherDescription': '壮大な山の景色を持つ伝統的な家。アートスタジオや創造的な隠れ家に最適です。',
@@ -3719,9 +3569,6 @@ const translations = {
     'projects.bathrooms': 'バスルーム',
     'projects.highlightedFeatures': '特徴的な機能:',
     'projects.moreFeatures': 'さらに',
-    'projects.purchasePrice': '購入価格',
-    'projects.estimatedRenovation': '推定リノベーション',
-    'projects.viewDetails': '詳細を見る',
     'projects.noPropertiesFound': '物件が見つかりませんでした',
     'projects.noPropertiesDescription': '検索フィルターを調整してより多くのオプションを見つけてみてください。',
     'projects.clearFilters': 'フィルターをクリア',
@@ -3820,13 +3667,8 @@ const translations = {
     
     // Projects Page
     'projects.searchPlaceholder': '物件を検索...',
-    'projects.available': '利用可能',
     'projects.inRenovation': 'リノベーション中',
-    'projects.sold': '売却済み',
     'projects.calliographerRetreat': '書道家の隠れ家',
-    'projects.onsenViewHouse': '温泉が見える家',
-    'projects.cherryGarden': '桜の庭',
-    'projects.artisanResidence': '職人の住居',
     'projects.teaHouse': '茶室',
     'projects.mountainRefuge': '山の隠れ家',
     'projects.kusatsuGunma': '草津、群馬',
@@ -3846,9 +3688,6 @@ const translations = {
     'projects.panoramicView': 'パノラマビュー',
     'projects.totalPrivacy': '完全プライバシー',
     'projects.trailAccess': 'トレイルアクセス',
-    'projects.basicRenovation': '基本リノベーション',
-    'projects.premiumRenovation': 'プレミアムリノベーション',
-    'projects.luxuryRenovation': 'ラグジュアリーリノベーション',
     'projects.traditionalHouseMountainViews': '壮観な山の景色を望む伝統的な家。アートスタジオやクリエイティブな隠れ家に最適。',
     'projects.onsenCultureAccess': '有名な温泉の近くに位置し、この物件は地元の温泉文化への直接アクセスを提供します。',
     'projects.compactCherryHouse': '百年桜に囲まれたコンパクトな家。セカンドハウスや投資に理想的。',
@@ -3865,10 +3704,7 @@ const translations = {
     'video.googleDriveVideo': 'あなたのGoogleドライブビデオ',
     
     // ROI Calculator
-    'roi.title': 'ROI計算機',
-    'roi.subtitle': '日本の不動産投資のリターンを計算',
     'roi.purchasePrice': '購入価格 (¥)',
-    'roi.renovationCost': 'リノベーション費用 (¥)',
     'roi.monthlyRentalIncome': '月額賃貸収入 (¥)',
     'roi.annualAppreciationRate': '年間価値上昇率 (%)',
     'roi.investmentPeriod': '投資期間 (年)',
@@ -3876,7 +3712,6 @@ const translations = {
     'roi.totalInvestment': '総投資額:',
     'roi.annualYield': '年間利回り:',
     'roi.rentalIncome': '賃貸収入',
-    'roi.propertyValue': '物件価値',
     'roi.totalROI': '総ROI:',
     'roi.valueProjection': '価値予測',
     'roi.initialInvestment': '初期投資',
@@ -3898,13 +3733,7 @@ const translations = {
 
     // 3D Viewer Controls
     '3d.autoRotation': '自動回転',
-    '3d.lighting': '照明',
     '3d.information': '情報',
-    '3d.location': '草津、群馬',
-    '3d.area': '120 m²',
-    '3d.yearBuilt': '1925',
-    '3d.price': '¥8,500,000',
-    '3d.totalArea': '120 m²',
 
     // Legacy Section Japanese Text
     'legacy.japaneseText': '伝統と未来の出会い',
@@ -4112,19 +3941,12 @@ const translations = {
     
     // Contact Page
     'contact.startYourVision': 'ビジョンを始める',
-    'contact.title': 'お問い合わせ',
     'contact.description': '日本への投資のビジョンを実現するお手伝いをします。30分間の無料相談を予約して、あなたのプロジェクトについて話し合いましょう。',
     'contact.contactMethods': '連絡方法',
     'contact.chooseMethod': '会話を始めるのに最適な方法を選択してください。',
-    'contact.sendMessage': 'メッセージを送信',
     'contact.formDescription': 'フォームに記入していただければ、あなたのプロジェクトについて話し合い、すべての質問にお答えするためにご連絡いたします。',
-    'contact.fullName': '氏名',
-    'contact.email': 'メールアドレス',
-    'contact.phone': '電話番号',
     'contact.company': '会社名',
     'contact.interestArea': '興味のある分野',
-    'contact.message': 'メッセージ',
-    'contact.sending': '送信中...',
     'contact.sendMessageButton': 'メッセージを送信',
     'contact.officeHours': '営業時間',
     'contact.mondayFriday': '月曜日 - 金曜日',
@@ -4136,22 +3958,12 @@ const translations = {
     'contact.urgentInquiries': '緊急のお問い合わせは、WhatsAppで直接ご連絡ください：',
     'contact.whatsapp': 'WhatsApp',
     'contact.thankYouMessage': 'メッセージをありがとうございます！すぐにご連絡いたします。',
-    'contact.fullNamePlaceholder': 'お名前',
-    'contact.companyPlaceholder': '会社名',
-    'contact.projectPlaceholder': 'あなたのプロジェクトについて、どのようにお手伝いできるかお聞かせください...',
     'contact.generalInquiry': '一般的なお問い合わせ',
     'contact.viewProperties': '物件を見る',
     'contact.investmentOpportunities': '投資機会',
     'contact.renovationServices': 'リノベーションサービス',
     'contact.legalAdvice': '法的アドバイス',
     'contact.other': 'その他',
-    'contact.emailTitle': 'メール',
-    'contact.emailDescription': 'メールを送信していただければ、24時間以内にお答えします',
-    'contact.phoneTitle': '電話',
-    'contact.phoneDescription': '即座のサポートのためにお電話ください',
-    'contact.officeTitle': 'オフィス',
-    'contact.officeValue': '東京、日本',
-    'contact.officeDescription': '個人的な相談のためにオフィスにお越しください',
   },
   
   ar: {
@@ -4538,9 +4350,6 @@ const translations = {
     'navigation.backToCommandCenter': 'العودة إلى مركز القيادة',
     
     // Dashboard Titles
-    'dashboard.lifestyle.title': 'لوحة تحكم نمط الحياة',
-    'dashboard.migration.title': 'لوحة تحكم الهجرة الذكية',
-    'dashboard.investor.title': 'مركز قيادة المستثمر',
     'dashboard.investor.subtitle': 'لوحة تحكم الاستثمار الذكية',
     'dashboard.investor.strategy': 'استراتيجية الاستثمار',
     'dashboard.opportunity.title': 'مركز قيادة الفرص',
@@ -4622,11 +4431,8 @@ const translations = {
     'export.chartsVisualizations': 'الرسوم البيانية والتصورات',
     
     // Organized Navigation Translations
-    'navigation.commandCenter': 'مركز القيادة',
-    'navigation.organizedByFunctionality': 'التنقل منظم حسب الوظيفة',
     'navigation.sections': 'أقسام',
     'navigation.section': 'قسم',
-    'navigation.systemActive': 'النظام نشط',
     'navigation.visibleSections': 'أقسام مرئية',
     'navigation.showAdvanced': 'إظهار المتقدم',
     'navigation.hideAdvanced': 'إخفاء المتقدم',
@@ -4663,7 +4469,6 @@ const translations = {
     'chatbot.suggestions.openBankAccount': 'كيف أفتح حساب بنكي؟',
     'chatbot.suggestions.analyzeProfile': 'تحليل ملفي الشخصي',
     'chatbot.suggestions.investmentOpportunities': 'فرص الاستثمار',
-    'chatbot.suggestions.buyingProcess': 'عملية الشراء',
     'chatbot.suggestions.marketTrends': 'اتجاهات السوق',
     'index.ivi': 'مؤشر جدوى الاستثمار (IVI)',
     'index.ivm': 'مؤشر جدوى الهجرة (IVM)',
@@ -4698,7 +4503,6 @@ const translations = {
     'chatbot.howCanIHelp': 'كيف يمكنني مساعدتك اليوم؟',
     'chatbot.currentIVI': 'مؤشر جدوى الاستثمار الحالي (IVI) هو **{score}%**.',
     'chatbot.longTermInvestment': 'الاستثمار طويل الأجل',
-    'chatbot.marketTrends': 'اتجاهات السوق',
     
     // TabijiExport Translations
     'tabijiexport.title': 'تكامل TabijiExport',
@@ -4736,7 +4540,6 @@ const translations = {
     'navigation.3dViewer': 'عارض ثلاثي الأبعاد',
     'navigation.modelViewer': 'عارض النماذج',
     'navigation.kusatsuProject': 'مشروع كوساتسو',
-    'navigation.discoverProjects': 'اكتشف المشاريع',
 
     // Legacy Section
     'legacy.discoverHeritage': 'اكتشف تراث غونما',
@@ -4832,9 +4635,6 @@ const translations = {
     'blueprint.continueToKusatsuProject': 'المتابعة إلى مشروع كوساتسو',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'شاهد العقارات المتحولة في الوقت الفعلي بتقنية الواقع المعزز',
-    'blueprint.designDescription': 'طاولة تفاعلية لتعديل التصاميم ثلاثية الأبعاد أثناء الجلسات',
-    'blueprint.controlDescription': 'لوحة تحكم في الوقت الفعلي مع الكاميرات والجدول الزمني والقرارات',
     
     // Blueprint Property Options
     'blueprint.traditionalJapaneseHouse': 'البيت الياباني التقليدي',
@@ -4899,25 +4699,10 @@ const translations = {
     'blueprint.aiAnalyzingPreferences': 'ذكاؤنا الاصطناعي يحلل تفضيلاتك للعثور على العقارات المثالية...',
     
     // Blueprint Portfolio Results
-    'blueprint.preliminaryPortfolio': 'محفظتك الأولية',
-    'blueprint.propertiesSelectedForYou': 'العقارات المختارة خصيصاً لك',
-    'blueprint.matchScore': 'مطابقة',
-    'blueprint.characteristics': 'الخصائص',
-    'blueprint.potential': 'الإمكانات',
-    'blueprint.basePriceRenovation': 'السعر الأساسي + التجديد',
-    'blueprint.viewDetails': 'عرض التفاصيل',
-    'blueprint.continueToKusatsuProject': 'المتابعة إلى مشروع كوساتسو',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'شاهد العقارات المتحولة في الوقت الفعلي بتقنية الواقع المعزز',
-    'blueprint.designDescription': 'طاولة تفاعلية لتعديل التصاميم ثلاثية الأبعاد أثناء الجلسات',
-    'blueprint.controlDescription': 'لوحة تحكم في الوقت الفعلي مع الكاميرات والجدول الزمني والقرارات',
     
     // Blueprint Property Options
-    'blueprint.traditionalJapaneseHouse': 'البيت الياباني التقليدي',
-    'blueprint.originalState': 'الحالة الأصلية',
-    'blueprint.modernRenovation': 'التجديد الحديث',
-    'blueprint.traditionalLuxury': 'الفخامة التقليدية',
     
     // Blueprint Mock Properties
     'blueprint.property1.title': 'بيت تقليدي في كوساتسو',
@@ -4994,17 +4779,6 @@ const translations = {
     'videoHero.scheduleVisit': 'جدولة الزيارة',
     
     // LegacySection
-    'legacy.discoverHeritage': 'اكتشف تراث غونما',
-    'legacy.japaneseTradition': 'التقليد الياباني',
-    'legacy.inHeartOfGunma': 'في قلب غونما',
-    'legacy.description1': 'غونما هي محافظة فريدة في اليابان، حيث يلتقي التقليد الألفي بالحداثة. ينابيعها الساخنة الطبيعية وجبالها المهيبة ومعمارها التقليدي تخلق بيئة لا تضاهى للعيش والاستثمار.',
-    'legacy.description2': 'كل عقار في غونما يحكي قصة فريدة. من المنازل التقليدية مينكا إلى المعابد المئوية، هذه العقارات تمثل الجوهر الأصيل لليابان الذي يسعى الكثيرون لتجربته.',
-    'legacy.quote': 'حيث كل حجر يحكي قصة',
-    'legacy.quoteAuthor': '- تراث غونما',
-    'legacy.naturalHotSprings': 'الينابيع الساخنة الطبيعية',
-    'legacy.yearsOfHistory': 'سنة من التاريخ',
-    'legacy.naturalBeauty': 'الجمال الطبيعي',
-    'legacy.discoverMore': 'اكتشف المزيد عن غونما',
     
     // 3D Components
     '3d.mainEntrance': 'المدخل الرئيسي',
@@ -5160,10 +4934,6 @@ const translations = {
     'footer.japaneseCulture': 'الثقافة اليابانية',
     'footer.lifeInGunma': 'الحياة في غونما',
     'footer.joinVision': 'انضم إلى الرؤية',
-    'footer.newsletterDescription': 'احصل على القصص الملهمة والعقارات الجديدة مباشرة في بريدك الإلكتروني.',
-    'footer.emailPlaceholder': 'عنوان بريدك الإلكتروني',
-    'footer.subscribe': 'اشترك',
-    'footer.copyright': 'جميع الحقوق محفوظة.',
     'footer.privacy': 'الخصوصية',
     'footer.terms': 'الشروط',
     
@@ -5216,7 +4986,6 @@ const translations = {
     'ai.welcomeMessage': 'مرحباً! أنا مساعدك في Tabiji House. كيف يمكنني مساعدتك في استثمارك العقاري الياباني؟',
     'ai.assistantName': 'مساعد كوموربي',
     'ai.online': 'متصل',
-    'ai.placeholder': 'اكتب سؤالك...',
     'ai.responses.propertyOpportunities': 'العقارات المهجورة في غونما تقدم فرص استثمارية ممتازة. هل أنت مهتم بمعرفة المزيد عن عملية الشراء؟',
     'ai.responses.roiCalculation': 'متوسط عائد الاستثمار على العقارات اليابانية المرممة هو 8-12% سنوياً. هل تريد أن نحسب استثمارك المحدد؟',
     'ai.responses.premiumLocation': 'كوساتسو أونسن هو موقع مميز مع طلب سياحي عالي. هل تريد رؤية العقارات المتاحة في تلك المنطقة؟',
@@ -5268,16 +5037,12 @@ const translations = {
     'japanese3d.loading3D': 'جاري تحميل التجربة ثلاثية الأبعاد...',
     
     // Featured Projects
-    'projects.visionaryPortfolio': 'المحفظة الرؤيوية',
-    'projects.featuredProjects': 'المشاريع المميزة',
-    'projects.description': 'كل عقار يحكي قصة فريدة ويقدم إمكانات استثنائية لإنشاء منزل أحلامك في اليابان.',
     'projects.calligrapherRetreat': 'ملاذ الخطاط',
     'projects.onsenViewHouse': 'المنزل مع إطلالات الينابيع الساخنة',
     'projects.cherryGarden': 'حديقة الكرز',
     'projects.artisanResidence': 'مسكن الحرفي',
     'projects.location': 'كوساتسو، غونما',
     'projects.available': 'متاح',
-    'projects.underRenovation': 'قيد التجديد',
     'projects.sold': 'مباع',
     'projects.viewDetails': 'عرض التفاصيل',
     'projects.calligrapherDescription': 'منزل تقليدي بإطلالات خلابة على الجبال. مثالي لاستوديو فني أو ملاذ إبداعي.',
@@ -5627,9 +5392,6 @@ const translations = {
     'projects.bathrooms': 'حمامات',
     'projects.highlightedFeatures': 'الميزات البارزة:',
     'projects.moreFeatures': 'المزيد',
-    'projects.purchasePrice': 'سعر الشراء',
-    'projects.estimatedRenovation': 'التجديد المقدر',
-    'projects.viewDetails': 'عرض التفاصيل',
     'projects.noPropertiesFound': 'لم يتم العثور على عقارات',
     'projects.noPropertiesDescription': 'حاول تعديل مرشحات البحث للعثور على المزيد من الخيارات.',
     'projects.clearFilters': 'مسح المرشحات',
@@ -5728,13 +5490,8 @@ const translations = {
     
     // Projects Page
     'projects.searchPlaceholder': 'البحث في العقارات...',
-    'projects.available': 'متاح',
     'projects.inRenovation': 'قيد التجديد',
-    'projects.sold': 'مباع',
     'projects.calliographerRetreat': 'ملاذ الخطاط',
-    'projects.onsenViewHouse': 'البيت مع إطلالة على الينابيع الساخنة',
-    'projects.cherryGarden': 'حديقة الكرز',
-    'projects.artisanResidence': 'مسكن الحرفي',
     'projects.teaHouse': 'بيت الشاي',
     'projects.mountainRefuge': 'ملاذ الجبل',
     'projects.kusatsuGunma': 'كوساتسو، غونما',
@@ -5754,9 +5511,6 @@ const translations = {
     'projects.panoramicView': 'إطلالة بانورامية',
     'projects.totalPrivacy': 'خصوصية كاملة',
     'projects.trailAccess': 'وصول إلى المسارات',
-    'projects.basicRenovation': 'تجديد أساسي',
-    'projects.premiumRenovation': 'تجديد مميز',
-    'projects.luxuryRenovation': 'تجديد فاخر',
     'projects.traditionalHouseMountainViews': 'بيت تقليدي مع إطلالات جبلية مذهلة. مثالي لاستوديو فني أو ملاذ إبداعي.',
     'projects.onsenCultureAccess': 'تقع بالقرب من الينابيع الساخنة الشهيرة، هذه العقار توفر وصولاً مباشراً لثقافة الينابيع الساخنة المحلية.',
     'projects.compactCherryHouse': 'بيت مدمج محاط بأشجار الكرز التي يبلغ عمرها قرناً. مثالي للمنزل الثاني أو الاستثمار.',
@@ -5773,10 +5527,7 @@ const translations = {
     'video.googleDriveVideo': 'فيديو Google Drive الخاص بك',
     
     // ROI Calculator
-    'roi.title': 'حاسبة العائد على الاستثمار',
-    'roi.subtitle': 'احسب العائد على استثمارك في العقارات اليابانية',
     'roi.purchasePrice': 'سعر الشراء (¥)',
-    'roi.renovationCost': 'تكلفة التجديد (¥)',
     'roi.monthlyRentalIncome': 'الدخل الشهري من الإيجار (¥)',
     'roi.annualAppreciationRate': 'معدل الارتفاع السنوي (%)',
     'roi.investmentPeriod': 'فترة الاستثمار (سنوات)',
@@ -5784,7 +5535,6 @@ const translations = {
     'roi.totalInvestment': 'إجمالي الاستثمار:',
     'roi.annualYield': 'العائد السنوي:',
     'roi.rentalIncome': 'دخل الإيجار',
-    'roi.propertyValue': 'قيمة العقار',
     'roi.totalROI': 'إجمالي العائد على الاستثمار:',
     'roi.valueProjection': 'توقع القيمة',
     'roi.initialInvestment': 'الاستثمار الأولي',
@@ -5806,13 +5556,7 @@ const translations = {
 
     // 3D Viewer Controls
     '3d.autoRotation': 'الدوران التلقائي',
-    '3d.lighting': 'الإضاءة',
     '3d.information': 'المعلومات',
-    '3d.location': 'كوساتسو، غونما',
-    '3d.area': '120 م²',
-    '3d.yearBuilt': '1925',
-    '3d.price': '¥8,500,000',
-    '3d.totalArea': '120 م²',
 
     // Legacy Section Japanese Text
     'legacy.japaneseText': '伝統と未来の出会い',
@@ -6020,19 +5764,12 @@ const translations = {
     
     // Contact Page
     'contact.startYourVision': 'ابدأ رؤيتك',
-    'contact.title': 'اتصل بنا',
     'contact.description': 'نحن هنا لمساعدتك في تحقيق رؤيتك للاستثمار في اليابان. احجز استشارة مجانية لمدة 30 دقيقة لمناقشة مشروعك.',
     'contact.contactMethods': 'طرق التواصل',
     'contact.chooseMethod': 'اختر الطريقة التي تناسبك لبدء المحادثة.',
-    'contact.sendMessage': 'أرسل لنا رسالة',
     'contact.formDescription': 'أكمل النموذج وسنتواصل معك لمناقشة مشروعك والإجابة على جميع أسئلتك.',
-    'contact.fullName': 'الاسم الكامل',
-    'contact.email': 'عنوان البريد الإلكتروني',
-    'contact.phone': 'الهاتف',
     'contact.company': 'الشركة',
     'contact.interestArea': 'مجال الاهتمام',
-    'contact.message': 'الرسالة',
-    'contact.sending': 'جاري الإرسال...',
     'contact.sendMessageButton': 'إرسال الرسالة',
     'contact.officeHours': 'ساعات العمل',
     'contact.mondayFriday': 'الاثنين - الجمعة',
@@ -6044,22 +5781,12 @@ const translations = {
     'contact.urgentInquiries': 'للاستفسارات العاجلة، يمكنك الاتصال بنا مباشرة عبر WhatsApp:',
     'contact.whatsapp': 'WhatsApp',
     'contact.thankYouMessage': 'شكراً لك على رسالتك! سنتواصل معك قريباً.',
-    'contact.fullNamePlaceholder': 'اسمك الكامل',
-    'contact.companyPlaceholder': 'اسم شركتك',
-    'contact.projectPlaceholder': 'أخبرنا عن مشروعك وكيف يمكننا مساعدتك...',
     'contact.generalInquiry': 'استفسار عام',
     'contact.viewProperties': 'عرض العقارات',
     'contact.investmentOpportunities': 'فرص الاستثمار',
     'contact.renovationServices': 'خدمات التجديد',
     'contact.legalAdvice': 'النصائح القانونية',
     'contact.other': 'أخرى',
-    'contact.emailTitle': 'البريد الإلكتروني',
-    'contact.emailDescription': 'أرسل لنا بريداً إلكترونياً وسنرد خلال 24 ساعة',
-    'contact.phoneTitle': 'الهاتف',
-    'contact.phoneDescription': 'اتصل بنا للحصول على مساعدة فورية',
-    'contact.officeTitle': 'المكتب',
-    'contact.officeValue': 'طوكيو، اليابان',
-    'contact.officeDescription': 'قم بزيارة مكتبنا للحصول على استشارة شخصية',
   },
   es: {
     // Common
@@ -6714,7 +6441,6 @@ const translations = {
     // Lifestyle Dashboard V2 Translations
     'lifestyle.sanctuaryWorkshop': 'El Taller de tu Santuario',
     'lifestyle.personalizedJapaneseSanctuary': 'Tu Santuario Japonés Personalizado',
-    'lifestyle.lifestyleSyncIndex': 'Índice de Sincronización de Estilo de Vida (ISE)',
     'lifestyle.sanctuaryVisionAlignment': 'Tu puntuación de alineación con tu visión de santuario',
     'lifestyle.excellentProgress': 'Excelente Progreso',
     'lifestyle.strengths': 'Puntos Fuertes',
@@ -6722,21 +6448,15 @@ const translations = {
     'lifestyle.strategicModules': 'Módulos Estratégicos para Aumentar tu ISE',
     'lifestyle.toolsAndResources': 'Herramientas y recursos para crear el santuario japonés de tus sueños',
     'lifestyle.discoverIdealProperty': 'Descubre tu Propiedad Ideal',
-    'lifestyle.recommendationEngine': 'Nuestro motor de recomendación te presenta las mejores casas que se sincronizan con tu perfil',
     'lifestyle.aiRecommendationEngine': 'Motor de Recomendación IA',
     'lifestyle.top3CompatibleProperties': 'Top 3 Propiedades Compatibles',
     'lifestyle.preferenceLearning': 'Aprendizaje de Preferencias',
     'lifestyle.searchProperties': 'Buscar Propiedades',
-    'lifestyle.designYourSpace': 'Diseña tu Espacio',
     'lifestyle.design3DTable': 'Accede a la Mesa de Diseño 3D y gamifica el proceso creativo de tu futuro hogar',
     'lifestyle.interactive3DDesignTable': 'Mesa de Diseño 3D Interactiva',
-    'lifestyle.designGamification': 'Gamificación del Diseño',
-    'lifestyle.photorealisticRendering': 'Renderizado Fotorrealista',
     'lifestyle.designConsultation': 'Consultoría de Diseño',
     'lifestyle.createLifeItinerary': 'Crea tu Itinerario de Vida',
     'lifestyle.defineCulturalExperiences': 'Define tus experiencias culturales y actividades para completar tu visión de estilo de vida',
-    'lifestyle.experienceConcierge': 'Concierge de Experiencias',
-    'lifestyle.intelligentAgenda': 'Agenda Inteligente (Clima Real)',
     'lifestyle.personalizedRecommendations': 'Recomendaciones Personalizadas',
     'lifestyle.culturalExperiences': 'Experiencias Culturales',
     'lifestyle.readyToPerfectSanctuary': '¿Listo para Perfeccionar tu Santuario?',
@@ -6755,8 +6475,6 @@ const translations = {
     'migration.opportunityAreas': 'Áreas de Oportunidad para Mejorar tu IVM',
     'migration.strategicModules': 'Módulos Estratégicos para Aumentar tu IVM',
     'migration.keySteps': 'Pasos clave para fortalecer tu solicitud de visado y asegurar tu futuro en Japón',
-    'migration.accelerateDocumentation': 'Acelera tu Documentación',
-    'migration.intelligentDocumentManager': 'Utiliza nuestro Gestor de Documentos Inteligente para identificar y validar lo que necesitas',
     'migration.intelligentDocumentManagerFeature': 'Gestor de Documentos Inteligente',
     'migration.ocrValidation': 'Validación OCR con IA',
     'migration.instantFeedback': 'Feedback Instantáneo',
@@ -6780,9 +6498,6 @@ const translations = {
     'migration.absoluteConfidence': 'Confianza Absoluta',
     
     // Dashboard Titles
-    'dashboard.lifestyle.title': 'Dashboard de Estilo de Vida',
-    'dashboard.migration.title': 'Dashboard de Migración Inteligente',
-    'dashboard.investor.title': 'Centro de Mando del Inversionista',
     'dashboard.investor.subtitle': 'Tu Dashboard de Inversión Inteligente',
     'dashboard.investor.strategy': 'Tu Estrategia de Inversión',
     'dashboard.opportunity.title': 'Centro de Mando de Oportunidades',
@@ -6847,7 +6562,6 @@ const translations = {
     'export.user': 'Usuario:',
     'export.email': 'Email:',
     'export.generationDate': 'Fecha de generación:',
-    'export.format': 'Formato:',
     'export.type': 'Tipo:',
     'export.detailedFormat': 'Detallado',
     'export.summaryFormat': 'Resumen',
@@ -6864,11 +6578,8 @@ const translations = {
     'export.chartsVisualizations': 'Gráficos y Visualizaciones',
     
     // Organized Navigation Translations
-    'navigation.commandCenter': 'Centro de Mando',
-    'navigation.organizedByFunctionality': 'Navegación organizada por funcionalidad',
     'navigation.sections': 'secciones',
     'navigation.section': 'sección',
-    'navigation.systemActive': 'Sistema activo',
     'navigation.visibleSections': 'secciones visibles',
     'navigation.showAdvanced': 'Mostrar avanzado',
     'navigation.hideAdvanced': 'Ocultar avanzado',
@@ -6905,7 +6616,6 @@ const translations = {
     'chatbot.suggestions.openBankAccount': '¿Cómo abrir cuenta bancaria?',
     'chatbot.suggestions.analyzeProfile': 'Análisis de mi perfil',
     'chatbot.suggestions.investmentOpportunities': 'Oportunidades de inversión',
-    'chatbot.suggestions.buyingProcess': 'Proceso de compra',
     'chatbot.suggestions.marketTrends': 'Tendencias del mercado',
     
     // Index Names
@@ -6914,35 +6624,15 @@ const translations = {
     'index.ise': 'Índice de Sincronización de Estilo de Vida (ISE)',
     
     // Report Export Translations
-    'export.executiveSummary': 'Resumen Ejecutivo',
-    'export.realtimeMetrics': 'Métricas en Tiempo Real',
-    'export.aiPredictions': 'Predicciones de IA',
     'export.engagementLevel': 'Nivel de Engagement',
-    'export.userParticipation': 'Nivel de participación del usuario',
-    'export.detailed': 'Detallado',
-    'export.summary': 'Resumen',
-    'export.custom': 'Personalizado',
-    'export.generating': 'Generando...',
     'export.exportFormat': 'Formato',
     
     // AI Predictions Translations
     'predictions.aiPredictions': 'Predicciones de IA',
     'predictions.emergingInvestment': 'Oportunidad de Inversión Emergente',
-    'predictions.updatedData': 'Datos actualizados',
-    'predictions.emergingTrends': 'Tendencias emergentes',
-    'predictions.behaviorAnalysis': 'Análisis de comportamiento',
     
     // Chatbot Translations
     'chatbot.greeting': '¡Hola {userName}! 👋 Soy tu asistente de IA especializado en inversiones inmobiliarias en Japón. Puedo ayudarte con:',
-    'chatbot.investmentAnalysis': 'Análisis de tu perfil de inversión',
-    'chatbot.propertyRecommendations': 'Recomendaciones de propiedades',
-    'chatbot.marketTrends': 'Tendencias del mercado',
-    'chatbot.aiPredictions': 'Predicciones de IA',
-    'chatbot.answerQuestions': 'Respuestas a tus preguntas',
-    'chatbot.howCanIHelp': '¿En qué puedo ayudarte hoy?',
-    'chatbot.currentIVI': 'Tu **Índice de Viabilidad de Inversión (IVI)** actual es del **{score}%**.',
-    'chatbot.longTermInvestment': 'Inversión a largo plazo',
-    'chatbot.marketTrends': 'Tendencias del mercado',
     
     // TabijiExport Translations
     'tabijiexport.title': 'TabijiExport Integration',
@@ -6980,7 +6670,6 @@ const translations = {
     'navigation.3dViewer': 'Visor 3D',
     'navigation.modelViewer': 'Visor de Modelos',
     'navigation.kusatsuProject': 'Proyecto Kusatsu',
-    'navigation.discoverProjects': 'Descubrir Proyectos',
 
     // Video Hero
     'videoHero.maSpaceBetween': 'MA - El Espacio Entre',
@@ -7027,7 +6716,6 @@ const translations = {
     'blueprint.exploreBlueprint': 'Explorar Blueprint',
 
     // Blueprint Portal Vision
-    'blueprint.visionPortal': 'Portal de Visión',
     'blueprint.coCreateVision': 'Co-crea tu visión personal',
     'blueprint.interactiveOnboarding': 'Onboarding interactivo con matching con IA para encontrar las propiedades perfectas',
     'blueprint.coCreatePersonalVision': 'Co-crea tu visión personal antes de poner un pie en Japón',
@@ -7046,11 +6734,8 @@ const translations = {
     'blueprint.restoreAndPreserve': 'Restaurar y conservar tradición',
     'blueprint.previous': 'Anterior',
     'blueprint.next': 'Siguiente →',
-    'blueprint.augmentedReality': 'Realidad Aumentada',
     'blueprint.propertyVisits20': 'Visitas a propiedades 2.0',
-    'blueprint.designTable': 'Mesa de Diseño',
     'blueprint.realTimeCoDesign': 'Co-diseño en tiempo real',
-    'blueprint.controlCenter': 'Centro de Control',
     'blueprint.totalProjectControl': 'Control total del proyecto',
     'blueprint.activeSystem': 'Sistema Activo',
     
@@ -7123,9 +6808,6 @@ const translations = {
     'blueprint.continueToKusatsuProject': 'Continuar al Proyecto Kusatsu',
     
     // Blueprint Phase Descriptions
-    'blueprint.arDescription': 'Ve las propiedades transformadas en tiempo real con tecnología AR',
-    'blueprint.designDescription': 'Mesa interactiva para modificar diseños en 3D durante las sesiones',
-    'blueprint.controlDescription': 'Dashboard en tiempo real con cámaras, cronograma y decisiones',
     
     // Blueprint Property Options
     'blueprint.traditionalJapaneseHouse': 'Casa Tradicional Japonesa',
@@ -7372,16 +7054,6 @@ const translations = {
     'projects.underRenovation': 'En Renovación',
 
     // Hero Section
-    'hero.maSpaceBetween': 'MA - El Espacio Entre',
-    'hero.title': 'Casas Japonesas Tradicionales',
-    'hero.subtitle': 'en el Corazón de Gunma',
-    'hero.description': 'Descubre la perfecta armonía entre la tradición japonesa y la vida moderna en propiedades únicas ubicadas en la prefectura de Gunma.',
-    'hero.cta': 'Descubre Proyectos',
-    'hero.watchVideo': 'Ver Video',
-    'hero.cta': 'Explorar Propiedades',
-    'hero.learnMore': 'Conocer Más',
-    'hero.ma': 'MA - El Espacio Intermedio',
-    'hero.maDescription': 'En la arquitectura japonesa, "Ma" representa el espacio vacío que da significado a lo que lo rodea. Nuestras casas abrazan este concepto, creando espacios que respiran y conectan con la naturaleza.',
 
     // ROI Calculator
     'roi.title': 'Calculadora de ROI',
@@ -7411,8 +7083,6 @@ const translations = {
     '3d.exitFullscreen': 'Salir de pantalla completa',
 
     // Blueprint
-    'blueprint.title': 'Portal de Planos',
-    'blueprint.subtitle': 'Explora los planos detallados de nuestras casas tradicionales',
     'blueprint.description': 'Sumérgete en la arquitectura tradicional japonesa con nuestros planos interactivos en 3D.',
     'blueprint.explore': 'Explorar en 3D',
     'blueprint.download': 'Descargar Planos',
@@ -7436,7 +7106,6 @@ const translations = {
 
     // AI Chat
     'ai.welcome': '¡Hola! Soy tu asistente de propiedades japonesas. ¿En qué puedo ayudarte hoy?',
-    'ai.placeholder': 'Escribe tu pregunta aquí...',
     'ai.send': 'Enviar',
     'ai.thinking': 'Pensando...',
     'ai.error': 'Lo siento, hubo un error. Por favor intenta de nuevo.',
@@ -7524,7 +7193,6 @@ const translations = {
     'footer.newsletter.description': 'Suscríbete para recibir las últimas propiedades y noticias.',
     'footer.newsletter.placeholder': 'Tu correo electrónico',
     'footer.newsletter.subscribe': 'Suscribirse',
-    'footer.copyright': '© 2024 Eiichi Vision. Todos los derechos reservados.',
     'footer.legal.privacy': 'Privacidad',
     'footer.legal.terms': 'Términos',
 
@@ -7647,24 +7315,6 @@ const translations = {
     'property.namePlaceholder': 'Tu nombre',
 
     // Process Page
-    'process.discoveryTitle': 'Descubrimiento',
-    'process.discoveryDescription': 'Consulta inicial y selección de proyecto',
-    'process.discoveryStep1': 'Evaluación de necesidades y presupuesto',
-    'process.discoveryStep2': 'Presentación de propiedades disponibles',
-    'process.discoveryStep3': 'Análisis del potencial de inversión',
-    'process.discoveryStep4': 'Visita virtual o presencial',
-    'process.acquisitionTitle': 'Adquisición',
-    'process.acquisitionDescription': 'Proceso legal para extranjeros',
-    'process.acquisitionStep1': 'Asesoría legal especializada',
-    'process.acquisitionStep2': 'Documentación requerida',
-    'process.acquisitionStep3': 'Proceso de compra simplificado',
-    'process.acquisitionStep4': 'Transferencia de propiedad',
-    'process.creationTitle': 'Creación',
-    'process.creationDescription': 'Diseño y renovación con artesanos locales',
-    'process.creationStep1': 'Diseño personalizado',
-    'process.creationStep2': 'Selección de artesanos locales',
-    'process.creationStep3': 'Supervisión de construcción',
-    'process.creationStep4': 'Control de calidad',
 
     // Projects Page
     'projects.heroSubtitle': 'El Portafolio Visionario',
@@ -7847,11 +7497,9 @@ const translations = {
     'japanese3d.features.shoji': 'Puertas Shoji',
     'japanese3d.features.engawa': 'Veranda Engawa',
     'japanese3d.features.garden': 'Jardín Zen',
-    'japanese3d.location': 'Ubicación: Kusatsu, Gunma',
     'japanese3d.built': 'Construida: 1925',
     'japanese3d.style': 'Estilo: Minka Tradicional',
     'japanese3d.size': 'Tamaño: 150 m²',
-    'japanese3d.year': 'Año: 1925',
 
     // Featured Projects
     'projects.featured.title': 'Proyectos Destacados',
@@ -7924,9 +7572,7 @@ const translations = {
     'tourism.cuisine.wagyu.name': 'Wagyu de Joshu',
     'tourism.cuisine.wagyu.description': 'Carne de res premium criada en los pastos de Gunma.',
     'tourism.cuisine.wagyu.type': 'Carne Premium',
-    'tourism.explore': 'Explorar',
     'tourism.moreInfo': 'Más información',
-    'tourism.try': 'Probar',
     'tourism.cta.title': 'Comienza tu Aventura en Gunma',
     'tourism.cta.description': 'Descubre propiedades únicas en una de las prefecturas más hermosas de Japón.',
     'tourism.cta.startProject': 'Iniciar mi Proyecto',
@@ -8129,9 +7775,6 @@ const translations = {
     'projects.onsenDescription': 'Ubicada cerca de las famosas aguas termales, esta propiedad ofrece acceso directo a la cultura onsen local.',
     'projects.cherryDescription': 'Una casa compacta rodeada de cerezos centenarios. Ideal para una segunda residencia o inversión.',
     'projects.artisanDescription': 'Una casa histórica completamente restaurada que combina la tradición japonesa con las comodidades modernas.',
-    'projects.viewDetails': 'Ver Detalles',
-    'projects.purchasePrice': 'Precio de Compra',
-    'projects.estimatedRenovation': 'Renovación Estimada',
     'projects.viewAllProjects': 'Ver Todos los Proyectos',
 
     // 3D Viewer Page
@@ -8372,19 +8015,12 @@ const translations = {
     
     // Contact Page
     'contact.startYourVision': 'Inicia tu Visión',
-    'contact.title': 'Contacto',
     'contact.description': 'Estamos aquí para ayudarte a hacer realidad tu visión de invertir en Japón. Agenda una consulta gratuita de 30 minutos para discutir tu proyecto.',
     'contact.contactMethods': 'Formas de Contacto',
     'contact.chooseMethod': 'Elige la forma que más te convenga para iniciar la conversación.',
-    'contact.sendMessage': 'Envíanos un Mensaje',
     'contact.formDescription': 'Completa el formulario y nos pondremos en contacto contigo para discutir tu proyecto y responder todas tus preguntas.',
-    'contact.fullName': 'Nombre Completo',
-    'contact.email': 'Correo Electrónico',
-    'contact.phone': 'Teléfono',
     'contact.company': 'Empresa',
     'contact.interestArea': 'Área de Interés',
-    'contact.message': 'Mensaje',
-    'contact.sending': 'Enviando...',
     'contact.sendMessageButton': 'Enviar Mensaje',
     'contact.officeHours': 'Horarios de Atención',
     'contact.mondayFriday': 'Lunes - Viernes',
@@ -8396,22 +8032,12 @@ const translations = {
     'contact.urgentInquiries': 'Para consultas urgentes, puedes contactarnos directamente por WhatsApp:',
     'contact.whatsapp': 'WhatsApp',
     'contact.thankYouMessage': '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.',
-    'contact.fullNamePlaceholder': 'Tu nombre completo',
-    'contact.companyPlaceholder': 'Nombre de tu empresa',
-    'contact.projectPlaceholder': 'Cuéntanos sobre tu proyecto y cómo podemos ayudarte...',
     'contact.generalInquiry': 'Consulta General',
     'contact.viewProperties': 'Ver Propiedades',
     'contact.investmentOpportunities': 'Oportunidades de Inversión',
     'contact.renovationServices': 'Servicios de Renovación',
     'contact.legalAdvice': 'Asesoría Legal',
     'contact.other': 'Otro',
-    'contact.emailTitle': 'Correo Electrónico',
-    'contact.emailDescription': 'Envíanos un correo y te responderemos dentro de 24 horas',
-    'contact.phoneTitle': 'Teléfono',
-    'contact.phoneDescription': 'Llámanos para asistencia inmediata',
-    'contact.officeTitle': 'Oficina',
-    'contact.officeValue': 'Tokio, Japón',
-    'contact.officeDescription': 'Visita nuestra oficina para una consulta personal',
   }
 };
 
@@ -8441,9 +8067,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
     
     // Interpolación de variables
-    if (variables) {
+    if (variables && translation) {
       Object.entries(variables).forEach(([varKey, varValue]) => {
-        translation = translation.replace(new RegExp(`{${varKey}}`, 'g'), varValue);
+        translation = translation!.replace(new RegExp(`{${varKey}}`, 'g'), varValue);
       });
     }
     
