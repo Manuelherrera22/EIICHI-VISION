@@ -423,7 +423,7 @@ const RealtimeMetrics: React.FC<RealtimeMetricsProps> = ({ userId, analysis }) =
                 </p>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm text-green-600 font-medium">{t('aiPredictions.confidence', { confidence: 87 })}</span>
+                  <span className="text-sm text-green-600 font-medium">{t('aiPredictions.confidence', { confidence: String(87) })}</span>
                 </div>
               </div>
               

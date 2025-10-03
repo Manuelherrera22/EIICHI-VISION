@@ -58,7 +58,7 @@ export default function Contact() {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsSubmitting(false);
-    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+    alert(t('contact.thankYouMessage'));
     setFormData({
       name: '',
       email: '',
@@ -94,12 +94,12 @@ export default function Contact() {
   ];
 
   const interests = [
-    { value: 'general', label: 'Consulta General' },
-    { value: 'property', label: 'Ver Propiedades' },
-    { value: 'investment', label: 'Oportunidades de Inversión' },
-    { value: 'renovation', label: 'Servicios de Renovación' },
-    { value: 'legal', label: 'Asesoría Legal' },
-    { value: 'other', label: 'Otro' }
+    { value: 'general', label: t('contact.generalInquiry') },
+    { value: 'property', label: t('contact.viewProperties') },
+    { value: 'investment', label: t('contact.investmentOpportunities') },
+    { value: 'renovation', label: t('contact.renovationServices') },
+    { value: 'legal', label: t('contact.legalAdvice') },
+    { value: 'other', label: t('contact.other') }
   ];
 
   return (
@@ -109,14 +109,13 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Inicia tu Visión
+              {t('contact.startYourVision')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              Contacto
+              {t('contact.title')}
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Estamos aquí para ayudarte a hacer realidad tu visión de invertir en Japón. 
-              Agenda una consulta gratuita de 30 minutos para discutir tu proyecto.
+              {t('contact.description')}
             </p>
           </div>
         </div>
@@ -127,10 +126,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-              Formas de Contacto
+              {t('contact.contactMethods')}
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Elige la forma que más te convenga para iniciar la conversación.
+              {t('contact.chooseMethod')}
             </p>
           </div>
 
@@ -165,11 +164,10 @@ export default function Contact() {
             <div>
               <div className="mb-8">
                 <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-                  Envíanos un Mensaje
+                  {t('contact.sendMessage')}
                 </h2>
                 <p className="text-lg text-foreground leading-relaxed">
-                  Completa el formulario y nos pondremos en contacto contigo 
-                  para discutir tu proyecto y responder todas tus preguntas.
+                  {t('contact.formDescription')}
                 </p>
               </div>
 
@@ -177,7 +175,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
-                      Nombre Completo *
+                      {t('contact.fullName')} *
                     </label>
                     <div className="relative">
                       <User size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -196,7 +194,7 @@ export default function Contact() {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">
-                      Correo Electrónico *
+                      {t('contact.email')} *
                     </label>
                     <div className="relative">
                       <Mail size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -217,7 +215,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-semibold text-primary mb-2">
-                      Teléfono
+                      {t('contact.phone')}
                     </label>
                     <div className="relative">
                       <Phone size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -235,7 +233,7 @@ export default function Contact() {
 
                   <div>
                     <label htmlFor="company" className="block text-sm font-semibold text-primary mb-2">
-                      Empresa
+                      {t('contact.company')}
                     </label>
                     <div className="relative">
                       <Building size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -254,7 +252,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="interest" className="block text-sm font-semibold text-primary mb-2">
-                    Área de Interés
+                    {t('contact.interestArea')}
                   </label>
                   <select
                     id="interest"
@@ -273,7 +271,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
-                    Mensaje *
+                    {t('contact.message')} *
                   </label>
                   <div className="relative">
                     <MessageCircle size={20} className="absolute left-3 top-3 text-secondary" />
@@ -298,12 +296,12 @@ export default function Contact() {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Enviando...</span>
+                      <span>{t('contact.sending')}</span>
                     </>
                   ) : (
                     <>
                       <Send size={20} />
-                      <span>Enviar Mensaje</span>
+                      <span>{t('contact.sendMessageButton')}</span>
                     </>
                   )}
                 </button>
@@ -320,29 +318,28 @@ export default function Contact() {
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock size={24} className="text-primary" />
                   <h3 className="text-xl font-serif font-bold text-primary">
-                    Horarios de Atención
+                    {t('contact.officeHours')}
                   </h3>
                 </div>
                 
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-secondary">Lunes - Viernes</span>
+                    <span className="text-secondary">{t('contact.mondayFriday')}</span>
                     <span className="text-foreground font-semibold">9:00 AM - 6:00 PM JST</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-secondary">Sábados</span>
+                    <span className="text-secondary">{t('contact.saturday')}</span>
                     <span className="text-foreground font-semibold">10:00 AM - 2:00 PM JST</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-secondary">Domingos</span>
-                    <span className="text-foreground font-semibold">Cerrado</span>
+                    <span className="text-secondary">{t('contact.sunday')}</span>
+                    <span className="text-foreground font-semibold">{t('contact.closed')}</span>
                   </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-muted rounded-lg">
                   <p className="text-sm text-foreground">
-                    <strong>Nota:</strong> Respondemos a todos los mensajes dentro de 24 horas, 
-                    incluso los fines de semana.
+                    <strong>Nota:</strong> {t('contact.responseNote')}
                   </p>
                 </div>
               </div>
@@ -350,17 +347,17 @@ export default function Contact() {
               {/* Quick Response */}
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
                 <h3 className="text-xl font-serif font-bold text-primary mb-4">
-                  Respuesta Rápida
+                  {t('contact.quickResponse')}
                 </h3>
                 <p className="text-sm text-foreground mb-4">
-                  Para consultas urgentes, puedes contactarnos directamente por WhatsApp:
+                  {t('contact.urgentInquiries')}
                 </p>
                 <a
                   href="https://wa.me/819012345678"
                   className="inline-flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300"
                 >
                   <span>💬</span>
-                  <span>WhatsApp</span>
+                  <span>{t('contact.whatsapp')}</span>
                 </a>
               </div>
             </div>

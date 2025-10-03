@@ -54,7 +54,13 @@ export class IntelligentAnalysisService {
   async performCompleteAnalysis(data: AnalysisData): Promise<AnalysisResult> {
     try {
       // 1. Calcular scores inteligentes
-      const scores = calculateIntelligentScores(data.userProfile)
+      const scores = calculateIntelligentScores(data.userProfile) || {
+        IVI: { score: 0, factors: {} },
+        IVM: { score: 0, factors: {} },
+        ISE: { score: 0, factors: {} },
+        overallScore: 0,
+        recommendation: 'moderada' as const
+      }
       
       // 2. Generar insights
       const insights = await this.generateInsights(data.userProfile, scores)
@@ -70,11 +76,23 @@ export class IntelligentAnalysisService {
       
       const result: AnalysisResult = {
         scores: {
-          IVI: { ...scores.IVI, confidence: this.calculateScoreConfidence(scores.IVI) },
-          IVM: { ...scores.IVM, confidence: this.calculateScoreConfidence(scores.IVM) },
-          ISE: { ...scores.ISE, confidence: this.calculateScoreConfidence(scores.ISE) },
-          overallScore: scores.overallScore,
-          recommendation: scores.recommendation
+          IVI: { 
+            score: scores.IVI?.score || 0, 
+            factors: scores.IVI?.factors || {}, 
+            confidence: this.calculateScoreConfidence(scores.IVI) 
+          },
+          IVM: { 
+            score: scores.IVM?.score || 0, 
+            factors: scores.IVM?.factors || {}, 
+            confidence: this.calculateScoreConfidence(scores.IVM) 
+          },
+          ISE: { 
+            score: scores.ISE?.score || 0, 
+            factors: scores.ISE?.factors || {}, 
+            confidence: this.calculateScoreConfidence(scores.ISE) 
+          },
+          overallScore: scores.overallScore || 0,
+          recommendation: scores.recommendation || 'moderada'
         },
         insights,
         predictions,

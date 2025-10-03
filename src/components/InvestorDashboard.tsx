@@ -279,7 +279,7 @@ const InvestorDashboard: React.FC<{ userProfile: any }> = ({ userProfile }) => {
                 <div className="flex space-x-2 mt-4">
                   <button 
                     className="flex-1 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors text-sm font-medium"
-                    onClick={() => router.push(`/dashboard/properties/${property.id}`)}
+                    onClick={() => router.push(`/dashboard/properties/${opportunity.id}`)}
                   >
                     {t('common.viewDetails')}
                   </button>

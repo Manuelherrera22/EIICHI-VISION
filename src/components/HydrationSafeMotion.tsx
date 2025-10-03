@@ -39,7 +39,7 @@ const HydrationSafeMotion: React.FC<HydrationSafeMotionProps> = ({
     // Usar transiciones más simples
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: "easeOut" as const,
       ...motionProps.transition
     }
   };

@@ -288,7 +288,7 @@ function calculateLifestyleScore(property: PropertyData, userProfile: UserProfil
   if (motivations?.culture && motivations.culture >= 8) score += 6;
 
   // Factor ubicación (Gunma es buena para estilo de vida tranquilo)
-  if (userProfile.motivationExpectations?.mainMotivations?.lifestyle >= 7) score += 10;
+  if (motivations?.lifestyle && motivations.lifestyle >= 7) score += 10;
 
   return Math.min(100, Math.max(0, Math.round(score)));
 }
@@ -463,7 +463,8 @@ function calculateCulturalAlignment(property: PropertyData, userProfile: UserPro
   else if (userProfile.culturalAffinity?.japanKnowledge === 'basico') score += 10;
   
   if (property.propertyType === 'traditional' && 
-      userProfile.culturalAffinity?.personalValues?.harmony >= 8) score += 10;
+      userProfile.culturalAffinity?.personalValues?.harmony && 
+      userProfile.culturalAffinity.personalValues.harmony >= 8) score += 10;
   
   return Math.min(100, score);
 }

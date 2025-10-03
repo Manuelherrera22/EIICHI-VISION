@@ -290,7 +290,7 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
             <div>
               <h3 className="text-xl font-bold text-gray-900">{t('alerts.intelligentAlerts')}</h3>
               <p className="text-sm text-gray-500">
-                {t('alerts.unreadCount', { count: unreadCount })} • {t('alerts.highPriorityCount', { count: highPriorityCount })}
+                {t('alerts.unreadCount', { count: String(unreadCount) })} • {t('alerts.highPriorityCount', { count: String(highPriorityCount) })}
               </p>
             </div>
           </div>

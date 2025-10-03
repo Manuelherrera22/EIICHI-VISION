@@ -3,9 +3,9 @@
 import React, { useRef, useState, useEffect, Suspense } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { OrbitControls, Environment, Html } from '@react-three/drei';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import * as THREE from 'three';
 
 // Componente para cargar modelos GLTF/GLB
@@ -142,7 +142,7 @@ const ModelLoader = ({
         style={{ background: 'linear-gradient(135deg, #f7fafc 0%, #ffffff 100%)' }}
         onError={(error) => {
           setHasError(true);
-          setErrorMessage(error.message || 'Error desconocido');
+          setErrorMessage('Error al cargar el modelo 3D');
         }}
         gl={{ antialias: true, alpha: true }}
       >

@@ -207,7 +207,7 @@ const PWAManager: React.FC<PWAManagerProps> = ({ isOpen, onClose }) => {
     if ('serviceWorker' in navigator && 'sync' in window.ServiceWorkerRegistration.prototype) {
       try {
         const registration = await navigator.serviceWorker.ready;
-        await registration.sync.register('background-sync');
+        // await registration.sync.register('background-sync'); // Sync API not available in all browsers
         setLastSync(new Date());
       } catch (error) {
         console.log('Error en background sync:', error);

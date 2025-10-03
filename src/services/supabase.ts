@@ -139,12 +139,7 @@ export class VisaDocumentService {
         .from('documents')
         .upload(filePath, file, {
           cacheControl: '3600',
-          upsert: true,
-          onUploadProgress: (progress) => {
-            if (onProgress) {
-              onProgress(progress.loaded / progress.total * 100)
-            }
-          }
+          upsert: true
         })
 
       if (uploadError) {
@@ -279,6 +274,7 @@ export class VisaStageService {
   static async initializeDefaultStages(userId: string): Promise<VisaStage[]> {
     const defaultStages: VisaStageInsert[] = [
       {
+        user_id: userId,
         stage_name: 'Recolección de Documentos',
         stage_order: 1,
         status: 'in_progress',
@@ -295,6 +291,7 @@ export class VisaStageService {
         ]
       },
       {
+        user_id: userId,
         stage_name: 'Validación Legal',
         stage_order: 2,
         status: 'pending',
@@ -303,6 +300,7 @@ export class VisaStageService {
         description: 'Revisión y validación de documentos por nuestro equipo legal'
       },
       {
+        user_id: userId,
         stage_name: 'Envío a Inmigración',
         stage_order: 3,
         status: 'pending',
@@ -311,6 +309,7 @@ export class VisaStageService {
         description: 'Presentación oficial de la solicitud de visa'
       },
       {
+        user_id: userId,
         stage_name: 'Procesamiento',
         stage_order: 4,
         status: 'pending',
@@ -319,6 +318,7 @@ export class VisaStageService {
         description: 'Revisión por parte de las autoridades de inmigración japonesas'
       },
       {
+        user_id: userId,
         stage_name: 'Aprobación',
         stage_order: 5,
         status: 'pending',
@@ -552,6 +552,8 @@ export class NotificationService {
     return count || 0
   }
 }
+
+
 
 
 

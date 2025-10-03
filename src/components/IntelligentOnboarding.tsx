@@ -8,8 +8,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { detectUserIntent } from '@/utils/intentDetection';
 import { UserIntent, UserProfile } from '@/types/userProfiles';
 import InvestorOnboarding from './onboarding/InvestorOnboarding';
-import MigrantOnboarding from './onboarding/MigrantOnboarding';
-import ResidentOnboarding from './onboarding/ResidentOnboarding';
+// import MigrantOnboarding from './onboarding/MigrantOnboarding';
+// import ResidentOnboarding from './onboarding/ResidentOnboarding';
 
 interface IntelligentOnboardingProps {
   onComplete: (profile: UserProfile, intent: UserIntent) => void;
@@ -244,9 +244,9 @@ const ProfileStep: React.FC<{
     case 'invest':
       return <InvestorOnboarding onComplete={onComplete} />;
     case 'migrate':
-      return <MigrantOnboarding onComplete={onComplete} />;
+      return <div>MigrantOnboarding component not available</div>;
     case 'live':
-      return <ResidentOnboarding onComplete={onComplete} />;
+      return <div>ResidentOnboarding component not available</div>;
     default:
       return null;
   }

@@ -35,7 +35,7 @@ const SafeMotion: React.FC<SafeMotionProps> = ({
     // Usar transiciones más simples para evitar diferencias de hidratación
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: "easeOut" as const,
       ...motionProps.transition
     }
   };

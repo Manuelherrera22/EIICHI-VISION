@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Eye, RotateCcw, Maximize2, Minimize2 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface VirtualTourProps {
   propertyId: string;
@@ -11,6 +12,7 @@ interface VirtualTourProps {
 const VirtualTour: React.FC<VirtualTourProps> = ({ propertyId, className = '' }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentRoom, setCurrentRoom] = useState(0);
+  const { t } = useLanguage();
 
   const rooms = [
     {

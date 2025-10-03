@@ -280,7 +280,7 @@ const DocumentManager: React.FC<DocumentManagerProps> = ({ userId }) => {
                     {document.file_url && (
                       <>
                         <button
-                          onClick={() => window.open(document.file_url, '_blank')}
+                          onClick={() => document.file_url && window.open(document.file_url, '_blank')}
                           className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
                           title="Ver documento"
                         >
@@ -288,7 +288,7 @@ const DocumentManager: React.FC<DocumentManagerProps> = ({ userId }) => {
                         </button>
                         <button
                           onClick={() => {
-                            const link = document.createElement('a')
+                            const link = window.document.createElement('a')
                             link.href = document.file_url!
                             link.download = document.document_name
                             link.click()

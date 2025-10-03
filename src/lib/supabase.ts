@@ -63,9 +63,21 @@ export const auth = {
 
   // Obtener usuario actual
   getCurrentUser: async () => {
-    const { data: { user }, error } = await supabase.auth.getUser()
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-    return { user, session, error: error || sessionError }
+    try {
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+      
+      if (sessionError) {
+        return { user: null, session: null, error: sessionError }
+      }
+      
+      if (!session) {
+        return { user: null, session: null, error: null }
+      }
+      
+      return { user: session.user, session, error: null }
+    } catch (error) {
+      return { user: null, session: null, error }
+    }
   },
 
   // Escuchar cambios de autenticación

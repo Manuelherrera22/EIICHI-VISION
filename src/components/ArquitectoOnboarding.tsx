@@ -288,7 +288,7 @@ export default function ArquitectoOnboarding() {
             </button>
             
             <div className="text-sm text-secondary">
-              {t('onboarding.question.progress', { current: currentQuestionIndex + 1, total: questions.length })}
+              {t('onboarding.question.progress', { current: String(currentQuestionIndex + 1), total: String(questions.length) })}
             </div>
           </div>
         </div>

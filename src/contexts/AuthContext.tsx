@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { User, Session, AuthError } from '@supabase/supabase-js'
-import { auth } from '@/lib/supabase'
+import { auth, supabase } from '@/lib/supabase'
 
 interface AuthContextType {
   user: User | null
@@ -26,13 +26,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Obtener sesión inicial
     const getInitialSession = async () => {
       try {
-        const { user, session, error } = await auth.getCurrentUser()
-        if (error) {
-          console.error('Error getting initial session:', error)
-        } else {
-          console.log('Initial session:', user?.email, 'Session exists:', !!session)
+        // Primero intentar obtener la sesión directamente
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+        
+        if (sessionError) {
+          console.warn('No active session found:', sessionError.message)
+        } else if (session) {
+          console.log('Initial session found:', session.user?.email)
           setSession(session)
-          setUser(user)
+          setUser(session.user)
+        } else {
+          console.log('No active session - user not logged in')
         }
       } catch (error) {
         console.error('Error in getInitialSession:', error)
@@ -66,7 +70,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (result.data?.user && !result.error) {
         try {
           const { CRMService } = await import('@/lib/crm')
-          await CRMService.createLeadFromUser(result.data.user)
+          if (result.data.user.email) {
+            await CRMService.createLeadFromUser(result.data.user as any)
+          }
         } catch (crmError) {
           console.error('CRM integration error:', crmError)
           // Don't fail the signup if CRM fails

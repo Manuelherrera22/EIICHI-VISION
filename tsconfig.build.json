@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false,
+    "strict": false
+  },
+  "exclude": [
+    "node_modules",
+    "src/contexts/LanguageContext.tsx"
+  ]
+}

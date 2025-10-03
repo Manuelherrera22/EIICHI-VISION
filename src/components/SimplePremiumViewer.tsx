@@ -292,13 +292,7 @@ const SimplePremiumViewer = () => {
         style={{ background: 'transparent' }}
         gl={{ 
           antialias: true, 
-          alpha: true,
-          shadowMap: {
-            enabled: true,
-            type: THREE.PCFSoftShadowMap
-          },
-          toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.2
+          alpha: true
         }}
       >
         {/* Iluminación premium */}

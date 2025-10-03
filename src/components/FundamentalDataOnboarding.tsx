@@ -323,7 +323,7 @@ export default function FundamentalDataOnboarding() {
       title: goal === 'invertir' ? 'Datos de Inversión' : goal === 'migrar' ? 'Datos de Migración' : 'Datos de Residencia',
       description: goal === 'invertir' ? 'Información financiera y de inversión' : goal === 'migrar' ? 'Información familiar y profesional' : 'Información de vivienda',
       icon: goal === 'invertir' ? 'DollarSign' : goal === 'migrar' ? 'Users' : 'Home',
-      fields: GOAL_SPECIFIC_FIELDS[goal] || []
+      fields: GOAL_SPECIFIC_FIELDS[goal as keyof typeof GOAL_SPECIFIC_FIELDS] || []
     }
 
     const culturalStep = {
@@ -372,7 +372,7 @@ export default function FundamentalDataOnboarding() {
   const currentStep = allSteps[currentStepIndex]
 
   const handleFieldChange = (fieldId: string, value: any) => {
-    setFormData(prev => ({
+    setFormData((prev: any) => ({
       ...prev,
       [fieldId]: value
     }))

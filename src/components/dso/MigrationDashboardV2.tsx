@@ -89,7 +89,7 @@ const MigrationDashboardV2: React.FC<MigrationDashboardV2Props> = ({ ivmScore })
                   <p className="text-blue-100">{t('migration.migrationViabilityScore')}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-6xl font-bold">{ivmScore.percentage}%</div>
+                  <div className="text-6xl font-bold">{ivmScore?.percentage || 0}%</div>
                   <div className="text-blue-100 text-sm flex items-center justify-end mt-2">
                     <Clock className="w-4 h-4 mr-1" />
                     <span>{t('migration.inProgress')}</span>
@@ -101,14 +101,14 @@ const MigrationDashboardV2: React.FC<MigrationDashboardV2Props> = ({ ivmScore })
             {/* Contenido del Widget */}
             <div className="p-8">
               {/* Puntos Fuertes */}
-              {ivmScore.strengths.length > 0 && (
+              {ivmScore?.strengths && ivmScore.strengths.length > 0 && (
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
                     {t('migration.strengths')}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {ivmScore.strengths.map((strength, index) => (
+                    {ivmScore?.strengths?.map((strength, index) => (
                       <div key={index} className="flex items-start space-x-3 p-4 bg-green-50 rounded-xl border border-green-200">
                         <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{strength}</span>
@@ -119,14 +119,14 @@ const MigrationDashboardV2: React.FC<MigrationDashboardV2Props> = ({ ivmScore })
               )}
 
               {/* Áreas de Oportunidad */}
-              {ivmScore.opportunities.length > 0 && (
+              {ivmScore?.opportunities && ivmScore.opportunities.length > 0 && (
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                     <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
                     {t('migration.opportunityAreas')}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {ivmScore.opportunities.map((opportunity, index) => (
+                    {ivmScore?.opportunities?.map((opportunity, index) => (
                       <div key={index} className="flex items-start space-x-3 p-4 bg-orange-50 rounded-xl border border-orange-200">
                         <AlertCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{opportunity}</span>

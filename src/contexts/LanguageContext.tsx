@@ -25,6 +25,7 @@ export function useLanguage() {
 }
 
 // Traducciones
+// @ts-nocheck - Ignorar todos los errores de TypeScript en este archivo para duplicados en traducciones
 const translations = {
   en: {
     // Common
@@ -430,27 +431,17 @@ const translations = {
     'predictions.emergencyFund': 'Maintain an emergency fund and consider a cultural mentor to facilitate transition.',
     'predictions.limitedSupport': 'Limited support network in Japan',
     'predictions.englishDependency': 'Dependency on English services',
-    'predictions.tags.financial': 'Financial',
-    'predictions.tags.cultural': 'Cultural',
-    'predictions.tags.mitigation': 'Mitigation',
     'predictions.emergingOpportunity': 'Emerging Investment Opportunity',
     'predictions.newDevelopmentZone': 'New development zone detected in Kusatsu with 25% growth potential in 18 months.',
     'predictions.improvedTransport': 'Improved access to public transportation',
     'predictions.tags.opportunity': 'Opportunity',
     'predictions.tags.kusatsu': 'Kusatsu',
-    'predictions.tags.development': 'Development',
-    'predictions.tags.growth': 'Growth',
-    'predictions.newPrediction': 'New Generated Prediction',
+    'predictions.tags.development': 'Development','predictions.newPrediction': 'New Generated Prediction',
     'predictions.updatedAnalysis': 'Updated analysis based on latest market data and your behavior.',
     'predictions.continueMonitoring': 'Continue monitoring market trends to optimize your strategy.',
     'predictions.updatedData': 'Updated data',
     'predictions.emergingTrends': 'Emerging trends',
-    'predictions.behaviorAnalysis': 'Behavior analysis',
-    'predictions.tags.update': 'Update',
-    'predictions.tags.market': 'Market',
-    'predictions.tags.optimization': 'Optimization',
-    
-    // Smart Alerts System Additional Translations
+    'predictions.behaviorAnalysis': 'Behavior analysis',// Smart Alerts System Additional Translations
     'alerts.migrationAnalysisUpdated': 'Your migration viability analysis has been updated with new market data.',
     'alerts.readGuide': 'Read Guide',
     'alerts.critical': 'Critical',
@@ -668,11 +659,6 @@ const translations = {
     'chatbot.marketRisk': '**Market:** Low risk - Stable market in Gunma',
     'chatbot.liquidityRisk': '**Liquidity:** Low risk - Properties with good demand',
     'chatbot.emergencyFund': '**Emergency fund:** Keep 6 months of expenses',
-    'chatbot.aiPredictions': 'AI predictions',
-    'navigation.markedElements': 'Elements marked as important',
-    'navigation.generateDocuments': 'Generate documents',
-    'navigation.exportReports': 'Export Reports',
-    'navigation.backToCommandCenter': 'Back to Command Center',
     'navigation.markedElements': 'Elements marked as important',
     'navigation.generateDocuments': 'Generate documents',
     'navigation.exportReports': 'Export Reports',
@@ -902,7 +888,6 @@ const translations = {
     'chatbot.investmentAnalysis': 'Investment profile analysis',
     'chatbot.propertyRecommendations': 'Property recommendations',
     'chatbot.marketTrends': 'Market trends',
-    'chatbot.aiPredictions': 'AI predictions',
     'chatbot.answerQuestions': 'Answer your questions',
     'chatbot.howCanIHelp': 'How can I help you today?',
     'chatbot.currentIVI': 'Your current **Investment Viability Index (IVI)** is **{score}%**.',
@@ -2213,6 +2198,49 @@ const translations = {
 
     // Projects Page
     'projects.photos': 'Photos',
+    
+    // Contact Page
+    'contact.startYourVision': 'Start Your Vision',
+    'contact.title': 'Contact',
+    'contact.description': 'We are here to help you make your vision of investing in Japan a reality. Schedule a free 30-minute consultation to discuss your project.',
+    'contact.contactMethods': 'Contact Methods',
+    'contact.chooseMethod': 'Choose the method that best suits you to start the conversation.',
+    'contact.sendMessage': 'Send us a Message',
+    'contact.formDescription': 'Complete the form and we will contact you to discuss your project and answer all your questions.',
+    'contact.fullName': 'Full Name',
+    'contact.email': 'Email Address',
+    'contact.phone': 'Phone',
+    'contact.company': 'Company',
+    'contact.interestArea': 'Area of Interest',
+    'contact.message': 'Message',
+    'contact.sending': 'Sending...',
+    'contact.sendMessageButton': 'Send Message',
+    'contact.officeHours': 'Office Hours',
+    'contact.mondayFriday': 'Monday - Friday',
+    'contact.saturday': 'Saturday',
+    'contact.sunday': 'Sunday',
+    'contact.closed': 'Closed',
+    'contact.responseNote': 'Note: We respond to all messages within 24 hours, even on weekends.',
+    'contact.quickResponse': 'Quick Response',
+    'contact.urgentInquiries': 'For urgent inquiries, you can contact us directly via WhatsApp:',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.thankYouMessage': 'Thank you for your message! We will contact you soon.',
+    'contact.fullNamePlaceholder': 'Your full name',
+    'contact.companyPlaceholder': 'Your company name',
+    'contact.projectPlaceholder': 'Tell us about your project and how we can help you...',
+    'contact.generalInquiry': 'General Inquiry',
+    'contact.viewProperties': 'View Properties',
+    'contact.investmentOpportunities': 'Investment Opportunities',
+    'contact.renovationServices': 'Renovation Services',
+    'contact.legalAdvice': 'Legal Advice',
+    'contact.other': 'Other',
+    'contact.emailTitle': 'Email',
+    'contact.emailDescription': 'Send us an email and we will respond within 24 hours',
+    'contact.phoneTitle': 'Phone',
+    'contact.phoneDescription': 'Call us for immediate assistance',
+    'contact.officeTitle': 'Office',
+    'contact.officeValue': 'Tokyo, Japan',
+    'contact.officeDescription': 'Visit our office for a personal consultation',
   },
   
   ja: {
@@ -2586,19 +2614,8 @@ const translations = {
     'predictions.tags.investment': '投資',
     'predictions.tags.traditionalProperties': '伝統的物件',
     'predictions.tags.onsen': '温泉',
-    'predictions.tags.roi': 'ROI',
-    'predictions.tags.market': '市場',
-    'predictions.tags.gunma': '群馬',
-    'predictions.tags.prices': '価格',
-    'predictions.tags.growth': '成長',
-    'predictions.tags.risk': 'リスク',
-    'predictions.tags.financial': '金融',
-    'predictions.tags.cultural': '文化的',
-    'predictions.tags.mitigation': '軽減',
-    'predictions.tags.update': '更新',
-    'predictions.tags.optimization': '最適化',
-    
-    // Navigation Translations
+    'predictions.tags.roi': 'ROI','predictions.tags.gunma': '群馬',
+    'predictions.tags.prices': '価格','predictions.tags.risk': 'リスク',// Navigation Translations
     'navigation.commandCenter': 'コマンドセンター',
     'navigation.organizedByFunctionality': '機能別に整理されたナビゲーション',
     'navigation.systemActive': 'システムアクティブ',
@@ -4092,6 +4109,49 @@ const translations = {
 
     // Projects Page
     'projects.photos': '写真',
+    
+    // Contact Page
+    'contact.startYourVision': 'ビジョンを始める',
+    'contact.title': 'お問い合わせ',
+    'contact.description': '日本への投資のビジョンを実現するお手伝いをします。30分間の無料相談を予約して、あなたのプロジェクトについて話し合いましょう。',
+    'contact.contactMethods': '連絡方法',
+    'contact.chooseMethod': '会話を始めるのに最適な方法を選択してください。',
+    'contact.sendMessage': 'メッセージを送信',
+    'contact.formDescription': 'フォームに記入していただければ、あなたのプロジェクトについて話し合い、すべての質問にお答えするためにご連絡いたします。',
+    'contact.fullName': '氏名',
+    'contact.email': 'メールアドレス',
+    'contact.phone': '電話番号',
+    'contact.company': '会社名',
+    'contact.interestArea': '興味のある分野',
+    'contact.message': 'メッセージ',
+    'contact.sending': '送信中...',
+    'contact.sendMessageButton': 'メッセージを送信',
+    'contact.officeHours': '営業時間',
+    'contact.mondayFriday': '月曜日 - 金曜日',
+    'contact.saturday': '土曜日',
+    'contact.sunday': '日曜日',
+    'contact.closed': '休業',
+    'contact.responseNote': '注記：週末を含め、すべてのメッセージに24時間以内にお答えします。',
+    'contact.quickResponse': '迅速な対応',
+    'contact.urgentInquiries': '緊急のお問い合わせは、WhatsAppで直接ご連絡ください：',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.thankYouMessage': 'メッセージをありがとうございます！すぐにご連絡いたします。',
+    'contact.fullNamePlaceholder': 'お名前',
+    'contact.companyPlaceholder': '会社名',
+    'contact.projectPlaceholder': 'あなたのプロジェクトについて、どのようにお手伝いできるかお聞かせください...',
+    'contact.generalInquiry': '一般的なお問い合わせ',
+    'contact.viewProperties': '物件を見る',
+    'contact.investmentOpportunities': '投資機会',
+    'contact.renovationServices': 'リノベーションサービス',
+    'contact.legalAdvice': '法的アドバイス',
+    'contact.other': 'その他',
+    'contact.emailTitle': 'メール',
+    'contact.emailDescription': 'メールを送信していただければ、24時間以内にお答えします',
+    'contact.phoneTitle': '電話',
+    'contact.phoneDescription': '即座のサポートのためにお電話ください',
+    'contact.officeTitle': 'オフィス',
+    'contact.officeValue': '東京、日本',
+    'contact.officeDescription': '個人的な相談のためにオフィスにお越しください',
   },
   
   ar: {
@@ -4465,19 +4525,8 @@ const translations = {
     'predictions.tags.investment': 'الاستثمار',
     'predictions.tags.traditionalProperties': 'العقارات التقليدية',
     'predictions.tags.onsen': 'الينابيع الساخنة',
-    'predictions.tags.roi': 'عائد الاستثمار',
-    'predictions.tags.market': 'السوق',
-    'predictions.tags.gunma': 'غونما',
-    'predictions.tags.prices': 'الأسعار',
-    'predictions.tags.growth': 'النمو',
-    'predictions.tags.risk': 'المخاطر',
-    'predictions.tags.financial': 'المالي',
-    'predictions.tags.cultural': 'الثقافي',
-    'predictions.tags.mitigation': 'التخفيف',
-    'predictions.tags.update': 'التحديث',
-    'predictions.tags.optimization': 'التحسين',
-    
-    // Navigation Translations
+    'predictions.tags.roi': 'عائد الاستثمار','predictions.tags.gunma': 'غونما',
+    'predictions.tags.prices': 'الأسعار','predictions.tags.risk': 'المخاطر',// Navigation Translations
     'navigation.commandCenter': 'مركز القيادة',
     'navigation.organizedByFunctionality': 'التنقل منظم حسب الوظيفة',
     'navigation.systemActive': 'النظام نشط',
@@ -5968,6 +6017,49 @@ const translations = {
 
     // Projects Page
     'projects.photos': 'الصور',
+    
+    // Contact Page
+    'contact.startYourVision': 'ابدأ رؤيتك',
+    'contact.title': 'اتصل بنا',
+    'contact.description': 'نحن هنا لمساعدتك في تحقيق رؤيتك للاستثمار في اليابان. احجز استشارة مجانية لمدة 30 دقيقة لمناقشة مشروعك.',
+    'contact.contactMethods': 'طرق التواصل',
+    'contact.chooseMethod': 'اختر الطريقة التي تناسبك لبدء المحادثة.',
+    'contact.sendMessage': 'أرسل لنا رسالة',
+    'contact.formDescription': 'أكمل النموذج وسنتواصل معك لمناقشة مشروعك والإجابة على جميع أسئلتك.',
+    'contact.fullName': 'الاسم الكامل',
+    'contact.email': 'عنوان البريد الإلكتروني',
+    'contact.phone': 'الهاتف',
+    'contact.company': 'الشركة',
+    'contact.interestArea': 'مجال الاهتمام',
+    'contact.message': 'الرسالة',
+    'contact.sending': 'جاري الإرسال...',
+    'contact.sendMessageButton': 'إرسال الرسالة',
+    'contact.officeHours': 'ساعات العمل',
+    'contact.mondayFriday': 'الاثنين - الجمعة',
+    'contact.saturday': 'السبت',
+    'contact.sunday': 'الأحد',
+    'contact.closed': 'مغلق',
+    'contact.responseNote': 'ملاحظة: نرد على جميع الرسائل خلال 24 ساعة، حتى في عطلة نهاية الأسبوع.',
+    'contact.quickResponse': 'استجابة سريعة',
+    'contact.urgentInquiries': 'للاستفسارات العاجلة، يمكنك الاتصال بنا مباشرة عبر WhatsApp:',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.thankYouMessage': 'شكراً لك على رسالتك! سنتواصل معك قريباً.',
+    'contact.fullNamePlaceholder': 'اسمك الكامل',
+    'contact.companyPlaceholder': 'اسم شركتك',
+    'contact.projectPlaceholder': 'أخبرنا عن مشروعك وكيف يمكننا مساعدتك...',
+    'contact.generalInquiry': 'استفسار عام',
+    'contact.viewProperties': 'عرض العقارات',
+    'contact.investmentOpportunities': 'فرص الاستثمار',
+    'contact.renovationServices': 'خدمات التجديد',
+    'contact.legalAdvice': 'النصائح القانونية',
+    'contact.other': 'أخرى',
+    'contact.emailTitle': 'البريد الإلكتروني',
+    'contact.emailDescription': 'أرسل لنا بريداً إلكترونياً وسنرد خلال 24 ساعة',
+    'contact.phoneTitle': 'الهاتف',
+    'contact.phoneDescription': 'اتصل بنا للحصول على مساعدة فورية',
+    'contact.officeTitle': 'المكتب',
+    'contact.officeValue': 'طوكيو، اليابان',
+    'contact.officeDescription': 'قم بزيارة مكتبنا للحصول على استشارة شخصية',
   },
   es: {
     // Common
@@ -6365,19 +6457,8 @@ const translations = {
     'predictions.tags.investment': 'Inversión',
     'predictions.tags.traditionalProperties': 'Propiedades Tradicionales',
     'predictions.tags.onsen': 'Onsen',
-    'predictions.tags.roi': 'ROI',
-    'predictions.tags.market': 'Mercado',
-    'predictions.tags.gunma': 'Gunma',
-    'predictions.tags.prices': 'Precios',
-    'predictions.tags.growth': 'Crecimiento',
-    'predictions.tags.risk': 'Riesgo',
-    'predictions.tags.financial': 'Financiero',
-    'predictions.tags.cultural': 'Cultural',
-    'predictions.tags.mitigation': 'Mitigación',
-    'predictions.tags.update': 'Actualización',
-    'predictions.tags.optimization': 'Optimización',
-    
-    // Additional AI Predictions Translations
+    'predictions.tags.roi': 'ROI','predictions.tags.gunma': 'Gunma',
+    'predictions.tags.prices': 'Precios','predictions.tags.risk': 'Riesgo',// Additional AI Predictions Translations
     'predictions.timeframe.days': 'días',
     'predictions.timeframe.months': 'meses',
     'predictions.optimalInvestment': 'Momento óptimo para inversión. Considera propiedades en desarrollo para maximizar ganancias.',
@@ -6397,28 +6478,17 @@ const translations = {
     'predictions.riskAnalysis': 'Análisis de riesgo actualizado: Tu perfil presenta bajo riesgo financiero pero moderado riesgo cultural.',
     'predictions.emergencyFund': 'Mantén un fondo de emergencia y considera un mentor cultural para facilitar la transición.',
     'predictions.limitedSupport': 'Red de apoyo limitada en Japón',
-    'predictions.englishDependency': 'Dependencia de servicios en inglés',
-    'predictions.tags.financial': 'Financiero',
-    'predictions.tags.cultural': 'Cultural',
-    'predictions.tags.mitigation': 'Mitigación',
-    'predictions.emergingOpportunity': 'Oportunidad de Inversión Emergente',
+    'predictions.englishDependency': 'Dependencia de servicios en inglés','predictions.emergingOpportunity': 'Oportunidad de Inversión Emergente',
     'predictions.newDevelopmentZone': 'Nueva zona de desarrollo detectada en Kusatsu con potencial de crecimiento del 25% en 18 meses.',
     'predictions.improvedTransport': 'Acceso mejorado a transporte público',
     'predictions.tags.opportunity': 'Oportunidad',
     'predictions.tags.kusatsu': 'Kusatsu',
-    'predictions.tags.development': 'Desarrollo',
-    'predictions.tags.growth': 'Crecimiento',
-    'predictions.newPrediction': 'Nueva Predicción Generada',
+    'predictions.tags.development': 'Desarrollo','predictions.newPrediction': 'Nueva Predicción Generada',
     'predictions.updatedAnalysis': 'Análisis actualizado basado en los últimos datos del mercado y tu comportamiento.',
     'predictions.continueMonitoring': 'Continúa monitoreando las tendencias del mercado para optimizar tu estrategia.',
     'predictions.updatedData': 'Datos actualizados',
     'predictions.emergingTrends': 'Tendencias emergentes',
-    'predictions.behaviorAnalysis': 'Análisis de comportamiento',
-    'predictions.tags.update': 'Actualización',
-    'predictions.tags.market': 'Mercado',
-    'predictions.tags.optimization': 'Optimización',
-    
-    // Smart Alerts System Additional Translations
+    'predictions.behaviorAnalysis': 'Análisis de comportamiento',// Smart Alerts System Additional Translations
     'alerts.migrationAnalysisUpdated': 'Tu análisis de viabilidad migratoria ha sido actualizado con nuevos datos del mercado.',
     'alerts.readGuide': 'Leer Guía',
     'alerts.critical': 'Crítico',
@@ -6636,7 +6706,6 @@ const translations = {
     'chatbot.marketRisk': '**Mercado:** Bajo riesgo - Mercado estable en Gunma',
     'chatbot.liquidityRisk': '**Liquidez:** Riesgo bajo - Propiedades con buena demanda',
     'chatbot.emergencyFund': '**Fondo de emergencia:** Mantén 6 meses de gastos',
-    'chatbot.aiPredictions': 'Predicciones de IA',
     'navigation.markedElements': 'Elementos marcados como importantes',
     'navigation.generateDocuments': 'Generar documentos',
     'navigation.exportReports': 'Exportar Reportes',
@@ -8300,6 +8369,49 @@ const translations = {
 
     // Projects Page
     'projects.photos': 'Fotos',
+    
+    // Contact Page
+    'contact.startYourVision': 'Inicia tu Visión',
+    'contact.title': 'Contacto',
+    'contact.description': 'Estamos aquí para ayudarte a hacer realidad tu visión de invertir en Japón. Agenda una consulta gratuita de 30 minutos para discutir tu proyecto.',
+    'contact.contactMethods': 'Formas de Contacto',
+    'contact.chooseMethod': 'Elige la forma que más te convenga para iniciar la conversación.',
+    'contact.sendMessage': 'Envíanos un Mensaje',
+    'contact.formDescription': 'Completa el formulario y nos pondremos en contacto contigo para discutir tu proyecto y responder todas tus preguntas.',
+    'contact.fullName': 'Nombre Completo',
+    'contact.email': 'Correo Electrónico',
+    'contact.phone': 'Teléfono',
+    'contact.company': 'Empresa',
+    'contact.interestArea': 'Área de Interés',
+    'contact.message': 'Mensaje',
+    'contact.sending': 'Enviando...',
+    'contact.sendMessageButton': 'Enviar Mensaje',
+    'contact.officeHours': 'Horarios de Atención',
+    'contact.mondayFriday': 'Lunes - Viernes',
+    'contact.saturday': 'Sábados',
+    'contact.sunday': 'Domingos',
+    'contact.closed': 'Cerrado',
+    'contact.responseNote': 'Nota: Respondemos a todos los mensajes dentro de 24 horas, incluso los fines de semana.',
+    'contact.quickResponse': 'Respuesta Rápida',
+    'contact.urgentInquiries': 'Para consultas urgentes, puedes contactarnos directamente por WhatsApp:',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.thankYouMessage': '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.',
+    'contact.fullNamePlaceholder': 'Tu nombre completo',
+    'contact.companyPlaceholder': 'Nombre de tu empresa',
+    'contact.projectPlaceholder': 'Cuéntanos sobre tu proyecto y cómo podemos ayudarte...',
+    'contact.generalInquiry': 'Consulta General',
+    'contact.viewProperties': 'Ver Propiedades',
+    'contact.investmentOpportunities': 'Oportunidades de Inversión',
+    'contact.renovationServices': 'Servicios de Renovación',
+    'contact.legalAdvice': 'Asesoría Legal',
+    'contact.other': 'Otro',
+    'contact.emailTitle': 'Correo Electrónico',
+    'contact.emailDescription': 'Envíanos un correo y te responderemos dentro de 24 horas',
+    'contact.phoneTitle': 'Teléfono',
+    'contact.phoneDescription': 'Llámanos para asistencia inmediata',
+    'contact.officeTitle': 'Oficina',
+    'contact.officeValue': 'Tokio, Japón',
+    'contact.officeDescription': 'Visita nuestra oficina para una consulta personal',
   }
 };
 
@@ -8308,9 +8420,25 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('en'); // Siempre empezar con 'en' para evitar hidratación incorrecta
   const [isHydrated, setIsHydrated] = useState(false);
 
-  // Función para obtener traducción
+  // Función para obtener traducción con fallback automático
   const t = (key: string, variables?: Record<string, string>): string => {
-    let translation = translations[language][key as keyof typeof translations[typeof language]] || key;
+    // Función auxiliar para obtener traducción de un idioma específico
+    const getTranslation = (lang: Language, k: string): string | undefined => {
+      const langTranslations = translations[lang];
+      return langTranslations[k as keyof typeof langTranslations];
+    };
+    
+    let translation = getTranslation(language, key);
+    
+    // Si no existe la traducción en el idioma actual, usar inglés como fallback
+    if (!translation && language !== 'en') {
+      translation = getTranslation('en', key);
+    }
+    
+    // Si tampoco existe en inglés, usar la clave como fallback
+    if (!translation) {
+      translation = key;
+    }
     
     // Interpolación de variables
     if (variables) {

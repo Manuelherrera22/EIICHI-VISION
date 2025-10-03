@@ -504,26 +504,34 @@ function generateSmartAlerts(data: EnhancedOnboardingData) {
   const alerts = [];
   
   // Alertas basadas en completitud del perfil
-  if (data.professionDemand && data.professionDemand < 60) {
-    alerts.push({
-      type: 'risk' as const,
-      priority: 'high' as const,
-      title: 'Profesión con baja demanda',
-      message: 'Tu profesión actual tiene baja demanda en Japón. Considera especialización o certificaciones.',
-      actionRequired: true
-    });
+  if (data.profession && data.profession.length > 0) {
+    // Check if profession is in a list of low-demand professions in Japan
+    const lowDemandProfessions = ['agriculture', 'manufacturing', 'retail'];
+    if (lowDemandProfessions.some(prof => data.profession?.toLowerCase().includes(prof))) {
+      alerts.push({
+        type: 'risk' as const,
+        priority: 'high' as const,
+        title: 'Profesión con baja demanda',
+        message: 'Tu profesión actual tiene baja demanda en Japón. Considera especialización o certificaciones.',
+        actionRequired: true
+      });
+    }
   }
   
   // Alertas de timeline
-  if (data.timeline === '6-months' && data.documentationComplete && data.documentationComplete < 50) {
-    alerts.push({
-      type: 'deadline' as const,
-      priority: 'high' as const,
-      title: 'Timeline agresivo',
-      message: 'Tu timeline de 6 meses requiere documentación completa inmediatamente.',
-      actionRequired: true,
-      deadline: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 días
-    });
+  if (data.timeline === '6-months') {
+    // Check if documents are uploaded
+    const docsUploaded = data.documentsUploaded?.length || 0;
+    if (docsUploaded < 3) { // Assuming 3 is minimum required docs
+      alerts.push({
+        type: 'deadline' as const,
+        priority: 'high' as const,
+        title: 'Timeline agresivo',
+        message: 'Tu timeline de 6 meses requiere documentación completa inmediatamente.',
+        actionRequired: true,
+        deadline: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 días
+      });
+    }
   }
   
   // Alertas de oportunidades

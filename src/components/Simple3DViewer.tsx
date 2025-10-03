@@ -9,6 +9,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 // Componente simplificado de casa japonesa
 const SimpleJapaneseHouse = () => {
   const meshRef = useRef<THREE.Group>(null);
+  const { t } = useLanguage();
 
   useFrame((state) => {
     if (meshRef.current) {

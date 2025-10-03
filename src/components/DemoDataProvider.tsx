@@ -211,7 +211,7 @@ const DemoDataProvider: React.FC<DemoDataProviderProps> = ({ children, userProfi
   // Proporcionar datos de demostración a través de contexto
   return (
     <div className="demo-data-provider">
-      {React.cloneElement(children as React.ReactElement, { demoData })}
+      {React.cloneElement(children as React.ReactElement<any>, { demoData })}
     </div>
   )
 }

@@ -331,12 +331,19 @@ function calculateISE(data: OnboardingData): ISEScore {
 }
 
 // Función para obtener recomendaciones específicas basadas en las puntuaciones
+interface Recommendation {
+  dashboard: string;
+  priority: 'high' | 'medium' | 'low';
+  action: string;
+  modules: string[];
+}
+
 export function getPersonalizedRecommendations(scores: {
   ivi: IVIScore;
   ivm: IVMScore;
   ise: ISEScore;
-}) {
-  const recommendations = [];
+}): Recommendation[] {
+  const recommendations: Recommendation[] = [];
 
   // Recomendaciones basadas en IVI
   if (scores.ivi.opportunities.length > 0) {
@@ -370,6 +377,8 @@ export function getPersonalizedRecommendations(scores: {
 
   return recommendations;
 }
+
+
 
 
 

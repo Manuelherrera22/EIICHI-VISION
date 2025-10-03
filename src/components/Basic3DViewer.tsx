@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente básico de casa japonesa
 const BasicHouse = () => {
@@ -73,6 +74,7 @@ const BasicHouse = () => {
 const Basic3DViewer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const timer = setTimeout(() => {

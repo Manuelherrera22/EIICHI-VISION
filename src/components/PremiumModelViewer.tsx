@@ -3,8 +3,9 @@
 import React, { useRef, useState, useEffect, Suspense } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { OrbitControls, Environment, Html, Text, Sky, ContactShadows } from '@react-three/drei';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as THREE from 'three';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Play, 
   Pause, 
@@ -23,7 +24,6 @@ import {
   Eye,
   EyeOff
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 // Componente del modelo con efectos avanzados
 const PremiumModel = ({ url }: { url: string }) => {
@@ -111,6 +111,7 @@ const PremiumControls = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
   const [lightMode, setLightMode] = useState<'day' | 'night'>('day');
+  const { t } = useLanguage();
 
   return (
     <Html position={[0, 0, 0]} center>
@@ -158,6 +159,7 @@ const PremiumControls = () => {
 
 // Panel de información premium
 const PremiumInfo = () => {
+  const { t } = useLanguage();
   return (
     <Html position={[0, 0, 0]} center>
       <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20 max-w-sm">
@@ -287,17 +289,11 @@ const PremiumModelViewer = ({
         style={{ background: 'transparent' }}
         onError={(error) => {
           setHasError(true);
-          setErrorMessage(error.message || 'Error al cargar el modelo premium');
+          setErrorMessage('Error al cargar el modelo premium');
         }}
         gl={{ 
           antialias: true, 
-          alpha: true,
-          shadowMap: {
-            enabled: true,
-            type: THREE.PCFSoftShadowMap
-          },
-          toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.2
+          alpha: true
         }}
       >
         {/* Iluminación premium */}
