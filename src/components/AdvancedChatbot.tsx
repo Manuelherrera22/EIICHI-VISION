@@ -358,7 +358,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                   <h3 className="font-semibold text-sm text-black">
                     {t('chatbot.title')}
                   </h3>
-                  <p className="text-xs text-black opacity-90">
+                  <p className="text-xs text-black">
                     {t('chatbot.subtitle')}
                   </p>
                 </div>
@@ -406,7 +406,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                     >
                       <div className="space-y-3">
                         <div>
-                          <label className="text-xs font-medium text-gray-800">
+                          <label className="text-xs font-medium text-black">
                             {t('chatbot.aiModel')}
                           </label>
                           <select
@@ -420,7 +420,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                           </select>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-xs text-gray-800">
+                          <span className="text-xs text-black">
                             {t('chatbot.voiceEnabled')}
                           </span>
                           <button
@@ -450,7 +450,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                     >
                       <div className="p-3">
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-sm font-medium text-gray-800">
+                          <h4 className="text-sm font-medium text-black">
                             {t('chatbot.chatHistory')}
                           </h4>
                           <button
@@ -466,11 +466,11 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                               key={session.id}
                               onClick={() => loadChatSession(session.id)}
                               className={`w-full text-left p-2 rounded text-xs hover:bg-gray-200 transition-colors ${
-                                currentSession === session.id ? 'bg-primary/10 text-primary' : 'text-gray-800'
+                                currentSession === session.id ? 'bg-primary/10 text-primary' : 'text-black'
                               }`}
                             >
                               <div className="font-medium truncate">{session.title}</div>
-                              <div className="text-gray-500">
+                              <div className="text-black/70">
                                 {session.updatedAt.toLocaleDateString()}
                               </div>
                             </button>
@@ -504,7 +504,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                           <div className={`rounded-2xl px-4 py-2 ${
                             message.type === 'user'
                               ? 'bg-primary text-black'
-                              : 'bg-gray-100 text-gray-800'
+                              : 'bg-gray-100 text-black'
                           }`}>
                             <div className="text-sm whitespace-pre-wrap">{message.content}</div>
                             {message.metadata?.actionType && (
@@ -576,7 +576,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                 {/* Suggestions */}
                 {showSuggestions && messages.length === 1 && (
                   <div className="p-4 border-t border-gray-200">
-                    <div className="text-xs font-medium text-gray-700 mb-2">
+                    <div className="text-xs font-medium text-black mb-2">
                       {t('chatbot.suggestions.title')}
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -584,7 +584,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                         <button
                           key={index}
                           onClick={() => handleSuggestionClick(suggestion)}
-                          className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-full transition-colors"
+                          className="text-xs bg-gray-100 hover:bg-gray-200 text-black px-3 py-1 rounded-full transition-colors"
                         >
                           {suggestion}
                         </button>
@@ -604,7 +604,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                         placeholder={t('chatbot.inputPlaceholder')}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 text-gray-900 text-sm"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 text-black text-sm"
                         disabled={isTyping}
                       />
                       {voiceEnabled && (
