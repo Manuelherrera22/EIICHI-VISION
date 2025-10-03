@@ -6,8 +6,10 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ArquitectoProvider } from "@/contexts/ArquitectoContext";
 import { ModalProvider } from "@/contexts/ModalContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import DynamicMetadata from "@/components/DynamicMetadata";
 import TitleManager from "@/components/TitleManager";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,18 +63,21 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageProvider>
-          <AuthProvider>
-            <ArquitectoProvider>
-              <ModalProvider>
-                <TitleManager />
-                <DynamicMetadata />
-                <Analytics gaId="G-XXXXXXXXXX" />
-                {children}
-              </ModalProvider>
-            </ArquitectoProvider>
-          </AuthProvider>
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <AuthProvider>
+              <ArquitectoProvider>
+                <ModalProvider>
+                  <TitleManager />
+                  <DynamicMetadata />
+                  <Analytics gaId="G-XXXXXXXXXX" />
+                  <ServiceWorkerRegistration />
+                  {children}
+                </ModalProvider>
+              </ArquitectoProvider>
+            </AuthProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

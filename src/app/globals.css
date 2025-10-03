@@ -13,7 +13,7 @@
 }
 
 :root {
-  /* Japanese Minimalist Color Palette */
+  /* Japanese Minimalist Color Palette - Light Mode */
   --background: #fefefe; /* White bone */
   --foreground: #2c3e50; /* Slate gray */
   --primary: #1a365d; /* Deep indigo blue */
@@ -26,6 +26,17 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
+}
+
+.dark {
+  /* Japanese Minimalist Color Palette - Dark Mode */
+  --background: #0f172a; /* Deep slate */
+  --foreground: #f1f5f9; /* Light gray */
+  --primary: #3b82f6; /* Bright blue */
+  --secondary: #94a3b8; /* Medium gray */
+  --accent: #f59e0b; /* Golden accent */
+  --muted: #1e293b; /* Dark gray for backgrounds */
+  --border: #334155; /* Dark borders */
 }
 
 /* Custom CSS variables for Japanese design */
@@ -45,6 +56,19 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
 }
 

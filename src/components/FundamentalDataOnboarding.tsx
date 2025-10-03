@@ -357,11 +357,12 @@ export default function FundamentalDataOnboarding() {
             personalValues
           }
         }),
-        fundamentalDataCompleted: true
+        fundamentalDataCompleted: true,
+        onboardingCompleted: true
       }
       
       setUserProfile(finalProfile)
-      setOnboardingStep(3) // Ir al dashboard
+      setOnboardingStep(0) // Resetear step para ir al dashboard
     }
   }
 

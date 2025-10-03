@@ -5,6 +5,7 @@ import { useAuth } from '@/contexts/AuthContext'
 import { ArquitectoProvider, useArquitecto } from '@/contexts/ArquitectoContext'
 import ArquitectoOnboarding from '@/components/ArquitectoOnboarding'
 import ModularDashboard from '@/components/ModularDashboard'
+import OnboardingStatus from '@/components/OnboardingStatus'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import Layout from '@/components/Layout'
 
@@ -43,5 +44,10 @@ function DashboardContent() {
   }
 
   // Si el onboarding está completo, mostrar el dashboard modular
-  return <ModularDashboard />
+  return (
+    <>
+      <OnboardingStatus />
+      <ModularDashboard />
+    </>
+  )
 }

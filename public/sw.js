@@ -1,372 +1,318 @@
-// Service Worker para Tabiji House PWA
-// Versión: 1.0.0
-// Funcionalidades: Cache, Offline, Push Notifications, Background Sync
+// Service Worker for Tabiji House PWA
+const CACHE_NAME = 'tabiji-house-v1';
+const STATIC_CACHE = 'tabiji-house-static-v1';
+const DYNAMIC_CACHE = 'tabiji-house-dynamic-v1';
 
-const CACHE_NAME = 'tabiji-house-v1.0.0';
-const STATIC_CACHE_NAME = 'tabiji-static-v1.0.0';
-const DYNAMIC_CACHE_NAME = 'tabiji-dynamic-v1.0.0';
-
-// Archivos estáticos para cache
-const STATIC_ASSETS = [
+// Files to cache for offline functionality
+const STATIC_FILES = [
   '/',
   '/dashboard',
   '/projects',
   '/about',
   '/manifest.json',
-  '/icon-192x192.png',
-  '/icon-512x512.png',
-  '/offline.html',
-  // CSS y JS serán agregados dinámicamente
+  '/tabijihouse-removebg-preview.png',
+  '/favicon.ico',
+  '/favicon.svg'
 ];
 
-// URLs que siempre deben ir a la red
-const NETWORK_FIRST_URLS = [
-  '/api/',
-  '/auth/',
-  '/supabase/',
+// API endpoints to cache
+const API_CACHE_PATTERNS = [
+  /\/api\/ai\/chat/,
+  /\/api\/properties/,
+  /\/api\/market/,
+  /\/api\/analytics/
 ];
 
-// URLs que pueden usar cache primero
-const CACHE_FIRST_URLS = [
-  '/static/',
-  '/images/',
-  '/icons/',
-];
-
-// Instalación del Service Worker
+// Install event - cache static files
 self.addEventListener('install', (event) => {
-  console.log('[SW] Instalando Service Worker...');
+  console.log('Service Worker installing...');
   
   event.waitUntil(
-    Promise.all([
-      // Cache de archivos estáticos
-      caches.open(STATIC_CACHE_NAME).then((cache) => {
-        console.log('[SW] Cacheando archivos estáticos...');
-        return cache.addAll(STATIC_ASSETS);
-      }),
-      
-      // Cache de recursos dinámicos
-      caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
-        console.log('[SW] Cache dinámico listo');
-        return Promise.resolve();
+    caches.open(STATIC_CACHE)
+      .then((cache) => {
+        console.log('Caching static files...');
+        return cache.addAll(STATIC_FILES);
       })
-    ]).then(() => {
-      console.log('[SW] Instalación completada');
-      return self.skipWaiting();
-    })
+      .then(() => {
+        console.log('Static files cached successfully');
+        return self.skipWaiting();
+      })
+      .catch((error) => {
+        console.error('Error caching static files:', error);
+      })
   );
 });
 
-// Activación del Service Worker
+// Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activando Service Worker...');
+  console.log('Service Worker activating...');
   
   event.waitUntil(
-    Promise.all([
-      // Limpiar caches antiguos
-      caches.keys().then((cacheNames) => {
+    caches.keys()
+      .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE_NAME && cacheName !== DYNAMIC_CACHE_NAME) {
-              console.log('[SW] Eliminando cache antiguo:', cacheName);
+            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
-      }),
-      
-      // Tomar control de todas las páginas
-      self.clients.claim()
-    ]).then(() => {
-      console.log('[SW] Activación completada');
-    })
+      })
+      .then(() => {
+        console.log('Service Worker activated');
+        return self.clients.claim();
+      })
   );
 });
 
-// Interceptar requests
+// Fetch event - serve from cache or network
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
-  
-  // Solo interceptar requests HTTP/HTTPS
-  if (!request.url.startsWith('http')) {
+
+  // Skip non-GET requests
+  if (request.method !== 'GET') {
     return;
   }
-  
-  // Estrategia Network First para APIs
-  if (NETWORK_FIRST_URLS.some(pattern => url.pathname.startsWith(pattern))) {
-    event.respondWith(networkFirstStrategy(request));
+
+  // Skip chrome-extension and other non-http requests
+  if (!url.protocol.startsWith('http')) {
     return;
   }
-  
-  // Estrategia Cache First para recursos estáticos
-  if (CACHE_FIRST_URLS.some(pattern => url.pathname.startsWith(pattern))) {
-    event.respondWith(cacheFirstStrategy(request));
-    return;
-  }
-  
-  // Estrategia Stale While Revalidate para páginas
-  if (request.method === 'GET') {
-    event.respondWith(staleWhileRevalidateStrategy(request));
-  }
+
+  event.respondWith(
+    handleRequest(request)
+  );
 });
 
-// Estrategia: Network First
-async function networkFirstStrategy(request) {
+async function handleRequest(request) {
+  const url = new URL(request.url);
+  
   try {
-    // Intentar red primero
-    const networkResponse = await fetch(request);
-    
-    // Si es exitoso, actualizar cache
-    if (networkResponse.ok) {
-      const cache = await caches.open(DYNAMIC_CACHE_NAME);
-      cache.put(request, networkResponse.clone());
+    // Try network first for API requests
+    if (url.pathname.startsWith('/api/')) {
+      return await networkFirst(request);
     }
     
-    return networkResponse;
+    // Try cache first for static assets
+    if (isStaticAsset(request)) {
+      return await cacheFirst(request);
+    }
+    
+    // For pages, try network first with cache fallback
+    return await networkFirst(request);
+    
   } catch (error) {
-    console.log('[SW] Red falló, intentando cache:', request.url);
+    console.error('Error handling request:', error);
     
-    // Si falla la red, usar cache
-    const cachedResponse = await caches.match(request);
-    if (cachedResponse) {
-      return cachedResponse;
-    }
-    
-    // Si no hay cache, mostrar página offline
-    if (request.destination === 'document') {
-      return caches.match('/offline.html');
+    // Return offline page for navigation requests
+    if (request.mode === 'navigate') {
+      return await caches.match('/offline.html') || 
+             new Response('Offline - Please check your connection', {
+               status: 503,
+               statusText: 'Service Unavailable'
+             });
     }
     
     throw error;
   }
 }
 
-// Estrategia: Cache First
-async function cacheFirstStrategy(request) {
+async function networkFirst(request) {
+  try {
+    // Try network first
+    const networkResponse = await fetch(request);
+    
+    // Cache successful responses
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    
+    return networkResponse;
+    
+  } catch (error) {
+    // Network failed, try cache
+    const cachedResponse = await caches.match(request);
+    
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    // Return offline response for API requests
+    if (request.url.includes('/api/')) {
+      return new Response(JSON.stringify({
+        error: 'Offline',
+        message: 'Please check your internet connection'
+      }), {
+        status: 503,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
+    throw error;
+  }
+}
+
+async function cacheFirst(request) {
+  // Try cache first
   const cachedResponse = await caches.match(request);
   
   if (cachedResponse) {
     return cachedResponse;
   }
   
+  // Cache miss, try network
   try {
     const networkResponse = await fetch(request);
     
     if (networkResponse.ok) {
-      const cache = await caches.open(STATIC_CACHE_NAME);
+      const cache = await caches.open(STATIC_CACHE);
       cache.put(request, networkResponse.clone());
     }
     
     return networkResponse;
+    
   } catch (error) {
-    console.log('[SW] Error en cache first:', error);
     throw error;
   }
 }
 
-// Estrategia: Stale While Revalidate
-async function staleWhileRevalidateStrategy(request) {
-  const cache = await caches.open(DYNAMIC_CACHE_NAME);
-  const cachedResponse = await cache.match(request);
-  
-  // Actualizar en background
-  const fetchPromise = fetch(request).then((networkResponse) => {
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
-    }
-    return networkResponse;
-  }).catch(() => {
-    // Si falla la red, mantener cache
-    return cachedResponse;
-  });
-  
-  // Devolver cache inmediatamente si existe
-  return cachedResponse || fetchPromise;
+function isStaticAsset(request) {
+  const url = new URL(request.url);
+  return url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/);
 }
 
-// Manejar mensajes del cliente
-self.addEventListener('message', (event) => {
-  const { type, payload } = event.data;
+// Background sync for offline actions
+self.addEventListener('sync', (event) => {
+  console.log('Background sync triggered:', event.tag);
   
-  switch (type) {
-    case 'SKIP_WAITING':
-      self.skipWaiting();
-      break;
-      
-    case 'GET_VERSION':
-      event.ports[0].postMessage({ version: CACHE_NAME });
-      break;
-      
-    case 'CLEAR_CACHE':
-      clearAllCaches().then(() => {
-        event.ports[0].postMessage({ success: true });
-      });
-      break;
-      
-    case 'CACHE_URLS':
-      cacheUrls(payload.urls).then(() => {
-        event.ports[0].postMessage({ success: true });
-      });
-      break;
+  if (event.tag === 'background-sync') {
+    event.waitUntil(doBackgroundSync());
   }
 });
 
-// Limpiar todos los caches
-async function clearAllCaches() {
-  const cacheNames = await caches.keys();
-  await Promise.all(
-    cacheNames.map(cacheName => caches.delete(cacheName))
-  );
+async function doBackgroundSync() {
+  try {
+    // Get pending actions from IndexedDB
+    const pendingActions = await getPendingActions();
+    
+    for (const action of pendingActions) {
+      try {
+        await syncAction(action);
+        await removePendingAction(action.id);
+      } catch (error) {
+        console.error('Failed to sync action:', action, error);
+      }
+    }
+    
+    console.log('Background sync completed');
+    
+  } catch (error) {
+    console.error('Background sync failed:', error);
+  }
 }
 
-// Cachear URLs específicas
-async function cacheUrls(urls) {
-  const cache = await caches.open(DYNAMIC_CACHE_NAME);
-  await Promise.all(
-    urls.map(url => cache.add(url))
-  );
+async function getPendingActions() {
+  // This would typically use IndexedDB
+  // For now, return empty array
+  return [];
 }
 
-// Push Notifications
-self.addEventListener('push', (event) => {
-  console.log('[SW] Push recibido:', event);
+async function syncAction(action) {
+  // Sync individual action to server
+  const response = await fetch(action.url, {
+    method: action.method,
+    headers: action.headers,
+    body: action.body
+  });
   
-  let notificationData = {
-    title: 'Tabiji House',
-    body: 'Tienes una nueva notificación',
-    icon: '/icon-192x192.png',
-    badge: '/icon-96x96.png',
-    tag: 'tabiji-notification',
+  if (!response.ok) {
+    throw new Error(`Sync failed: ${response.status}`);
+  }
+  
+  return response;
+}
+
+async function removePendingAction(actionId) {
+  // Remove action from IndexedDB
+  console.log('Removing pending action:', actionId);
+}
+
+// Push notification handling
+self.addEventListener('push', (event) => {
+  console.log('Push notification received:', event);
+  
+  const options = {
+    body: event.data ? event.data.text() : 'New notification from Tabiji House',
+    icon: '/tabijihouse-removebg-preview.png',
+    badge: '/tabijihouse-removebg-preview.png',
+    vibrate: [200, 100, 200],
     data: {
       url: '/dashboard'
     },
     actions: [
       {
         action: 'open',
-        title: 'Abrir Dashboard',
-        icon: '/action-open.png'
+        title: 'Open Dashboard',
+        icon: '/tabijihouse-removebg-preview.png'
       },
       {
-        action: 'dismiss',
-        title: 'Descartar',
-        icon: '/action-dismiss.png'
+        action: 'close',
+        title: 'Close',
+        icon: '/tabijihouse-removebg-preview.png'
       }
-    ],
-    requireInteraction: true,
-    silent: false
+    ]
   };
   
-  // Si hay datos en el push
-  if (event.data) {
-    try {
-      const pushData = event.data.json();
-      notificationData = { ...notificationData, ...pushData };
-    } catch (error) {
-      console.log('[SW] Error parseando push data:', error);
-    }
-  }
-  
   event.waitUntil(
-    self.registration.showNotification(notificationData.title, notificationData)
+    self.registration.showNotification('Tabiji House', options)
   );
 });
 
-// Manejar clics en notificaciones
+// Notification click handling
 self.addEventListener('notificationclick', (event) => {
-  console.log('[SW] Click en notificación:', event);
+  console.log('Notification clicked:', event);
   
   event.notification.close();
   
-  if (event.action === 'dismiss') {
-    return;
-  }
-  
-  const urlToOpen = event.notification.data?.url || '/dashboard';
-  
-  event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
-      // Si ya hay una ventana abierta, enfocarla
-      for (const client of clientList) {
-        if (client.url.includes(urlToOpen) && 'focus' in client) {
-          return client.focus();
-        }
-      }
-      
-      // Si no hay ventana abierta, abrir una nueva
-      if (clients.openWindow) {
-        return clients.openWindow(urlToOpen);
-      }
-    })
-  );
-});
-
-// Background Sync
-self.addEventListener('sync', (event) => {
-  console.log('[SW] Background sync:', event.tag);
-  
-  switch (event.tag) {
-    case 'background-sync':
-      event.waitUntil(doBackgroundSync());
-      break;
-      
-    case 'analytics-sync':
-      event.waitUntil(syncAnalytics());
-      break;
-      
-    case 'favorites-sync':
-      event.waitUntil(syncFavorites());
-      break;
+  if (event.action === 'open' || !event.action) {
+    event.waitUntil(
+      clients.openWindow(event.notification.data.url || '/dashboard')
+    );
   }
 });
 
-// Sincronización en background
-async function doBackgroundSync() {
-  try {
-    // Sincronizar datos pendientes
-    console.log('[SW] Ejecutando sincronización en background...');
-    
-    // Aquí iría la lógica de sincronización
-    // Por ejemplo, enviar datos offline al servidor
-    
-    return Promise.resolve();
-  } catch (error) {
-    console.log('[SW] Error en background sync:', error);
-    throw error;
+// Message handling from main thread
+self.addEventListener('message', (event) => {
+  console.log('Message received in service worker:', event.data);
+  
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
   }
-}
-
-// Sincronizar analytics
-async function syncAnalytics() {
-  try {
-    // Enviar analytics offline al servidor
-    console.log('[SW] Sincronizando analytics...');
-    return Promise.resolve();
-  } catch (error) {
-    console.log('[SW] Error sincronizando analytics:', error);
-    throw error;
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
   }
-}
+});
 
-// Sincronizar favoritos
-async function syncFavorites() {
-  try {
-    // Sincronizar favoritos con el servidor
-    console.log('[SW] Sincronizando favoritos...');
-    return Promise.resolve();
-  } catch (error) {
-    console.log('[SW] Error sincronizando favoritos:', error);
-    throw error;
+// Periodic background sync (if supported)
+self.addEventListener('periodicsync', (event) => {
+  console.log('Periodic sync triggered:', event.tag);
+  
+  if (event.tag === 'content-sync') {
+    event.waitUntil(doBackgroundSync());
   }
-}
+});
 
-// Manejar errores
+// Error handling
 self.addEventListener('error', (event) => {
-  console.log('[SW] Error:', event.error);
+  console.error('Service Worker error:', event.error);
 });
 
 self.addEventListener('unhandledrejection', (event) => {
-  console.log('[SW] Unhandled rejection:', event.reason);
+  console.error('Service Worker unhandled rejection:', event.reason);
 });
 
-console.log('[SW] Service Worker cargado correctamente');
+console.log('Service Worker loaded successfully');

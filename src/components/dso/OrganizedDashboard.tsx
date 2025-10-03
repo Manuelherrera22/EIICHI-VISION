@@ -10,10 +10,14 @@ import SmartAlertsSystem from './SmartAlertsSystem';
 import AIPredictions from './AIPredictions';
 import ReportExport from './ReportExport';
 import Chatbot from './Chatbot';
+import AdvancedChatbot from '../AdvancedChatbot';
 import GlobalSearch from '../GlobalSearch';
+import AdvancedSearch from '../AdvancedSearch';
+import PushNotificationSystem from '../PushNotificationSystem';
 import FavoritesManager from '../FavoritesManager';
 import CustomizableDashboard from '../CustomizableDashboard';
 import PWAManager from '../PWAManager';
+import AdvancedPWAManager from '../AdvancedPWAManager';
 import AdvancedAI from '../AdvancedAI';
 import SecurityManager from '../SecurityManager';
 import QuickAccess from '../QuickAccess';
@@ -86,6 +90,7 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
   const [showAdvancedAI, setShowAdvancedAI] = useState(false);
   const [showSecurityManager, setShowSecurityManager] = useState(false);
   const [showTopoExport, setShowTopoExport] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   const sections: Section[] = [
     // === GRUPO PRINCIPAL: ANÁLISIS CORE ===
@@ -409,13 +414,16 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
       case 'search':
         return (
           <div className="flex items-center justify-center h-96">
-            <button
-              onClick={() => setShowGlobalSearch(true)}
-              className="px-6 py-3 bg-primary text-black rounded-xl hover:bg-primary/90 transition-colors flex items-center space-x-2"
-            >
-              <Search className="w-5 h-5" />
-              <span>{t('dashboard.intelligent.openGlobalSearch')}</span>
-            </button>
+            <div className="flex items-center space-x-4">
+              <PushNotificationSystem />
+              <button
+                onClick={() => setShowGlobalSearch(true)}
+                className="px-6 py-3 bg-primary text-black rounded-xl hover:bg-primary/90 transition-colors flex items-center space-x-2"
+              >
+                <Search className="w-5 h-5" />
+                <span>{t('dashboard.intelligent.openGlobalSearch')}</span>
+              </button>
+            </div>
           </div>
         );
 
@@ -608,8 +616,11 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
         </div>
       </div>
 
-      {/* Chatbot */}
-      <Chatbot userId="demo-user" analysis={analysis} userName={userName} />
+      {/* Advanced Chatbot */}
+      <AdvancedChatbot 
+        isOpen={isChatbotOpen} 
+        onToggle={() => setIsChatbotOpen(!isChatbotOpen)} 
+      />
 
       {/* Quick Access */}
       <QuickAccess
@@ -628,13 +639,9 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
       />
 
       {/* Modals */}
-      <GlobalSearch
+      <AdvancedSearch
         isOpen={showGlobalSearch}
         onClose={() => setShowGlobalSearch(false)}
-        onNavigate={(url) => {
-          console.log('Navigate to:', url);
-          setShowGlobalSearch(false);
-        }}
       />
 
       <FavoritesManager
@@ -655,7 +662,7 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
         }}
       />
 
-      <PWAManager
+      <AdvancedPWAManager
         isOpen={showPWAManager}
         onClose={() => setShowPWAManager(false)}
       />

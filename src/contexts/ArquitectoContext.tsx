@@ -14,6 +14,8 @@ interface ArquitectoContextType {
   enabledModules: any[]
   completeOnboarding: () => void
   resetOnboarding: () => void
+  updateUserProfile: (updates: Partial<UserProfile>) => void
+  isProfileComplete: () => boolean
 }
 
 const ArquitectoContext = createContext<ArquitectoContextType | undefined>(undefined)
@@ -38,19 +40,7 @@ export function ArquitectoProvider({ children }: { children: React.ReactNode }) 
 
   const isOnboardingComplete = userProfile.onboardingCompleted
 
-  // Sincronizar con datos de autenticación
-  useEffect(() => {
-    if (user) {
-      setUserProfile(prev => ({
-        ...prev,
-        id: user.id,
-        email: user.email || '',
-        name: user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0] || 'Usuario'
-      }))
-    }
-  }, [user])
-
-  // Persistir en localStorage
+  // Cargar datos guardados del localStorage al inicializar
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('tabiji-user-profile')
@@ -70,6 +60,38 @@ export function ArquitectoProvider({ children }: { children: React.ReactNode }) 
           console.error('Error parsing saved profile:', error)
         }
       }
+    }
+  }, []) // Solo ejecutar una vez al montar el componente
+
+  // Sincronizar con datos de autenticación sin sobrescribir datos guardados
+  useEffect(() => {
+    if (user) {
+      setUserProfile(prev => {
+        // Solo actualizar si no hay datos guardados o si los datos de auth son más recientes
+        const saved = localStorage.getItem('tabiji-user-profile')
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved)
+            // Si ya hay datos guardados, solo actualizar campos de autenticación
+            return {
+              ...prev,
+              id: user.id,
+              email: user.email || prev.email,
+              name: user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0] || prev.name
+            }
+          } catch (error) {
+            console.error('Error parsing saved profile:', error)
+          }
+        }
+        
+        // Si no hay datos guardados, usar datos de autenticación
+        return {
+          ...prev,
+          id: user.id,
+          email: user.email || '',
+          name: user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0] || 'Usuario'
+        }
+      })
     }
   }, [user])
 
@@ -96,6 +118,17 @@ export function ArquitectoProvider({ children }: { children: React.ReactNode }) 
     }
   }
 
+  const updateUserProfile = (updates: Partial<UserProfile>) => {
+    setUserProfile(prev => ({
+      ...prev,
+      ...updates
+    }))
+  }
+
+  const isProfileComplete = () => {
+    return userProfile.onboardingCompleted && userProfile.primaryGoal !== null
+  }
+
   const value: ArquitectoContextType = {
     userProfile,
     setUserProfile,
@@ -105,7 +138,9 @@ export function ArquitectoProvider({ children }: { children: React.ReactNode }) 
     blueprint,
     enabledModules,
     completeOnboarding,
-    resetOnboarding
+    resetOnboarding,
+    updateUserProfile,
+    isProfileComplete
   }
 
   return (

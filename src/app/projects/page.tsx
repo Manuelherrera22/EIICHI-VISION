@@ -252,8 +252,8 @@ export default function Projects() {
                   key={property.id}
                   property={property}
                   onViewDetails={(property) => {
-                    // TODO: Navigate to property detail page
-                    console.log('View details for:', property.name);
+                    // Navigate to property detail page
+                    window.location.href = `/property/${property.id}`;
                   }}
                 />
               ))
