@@ -7028,13 +7028,13 @@ const translations = {
     
     // Dashboard translations
     'dashboard.investor.title': 'Investment Opportunity Command Center',
-    'dashboard.migration.title': 'Tu Ruta Migratoria a Japón',
-    'dashboard.lifestyle.title': 'Tu Santuario Personal',
+    'dashboard.migration.title': 'Your Migration Route to Japan',
+    'dashboard.lifestyle.title': 'Your Personal Sanctuary',
     'dashboard.default.title': 'Dashboard',
-    'dashboard.investor.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Proyecto de Inversión.',
-    'dashboard.migration.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Ruta Migratoria.',
-    'dashboard.lifestyle.welcome': 'Buenos días, {userName}. Aquí está el resumen de tu Santuario Personal.',
-    'dashboard.default.welcome': 'Buenos días, {userName}.',
+    'dashboard.investor.welcome': 'Good morning, {userName}. Here is the summary of your Investment Project.',
+    'dashboard.migration.welcome': 'Good morning, {userName}. Here is the summary of your Migration Route.',
+    'dashboard.lifestyle.welcome': 'Good morning, {userName}. Here is the summary of your Personal Sanctuary.',
+    'dashboard.default.welcome': 'Good morning, {userName}.',
     'dashboard.description': 'Tu experiencia personalizada está lista. Explora los módulos especializados para tu objetivo.',
     'dashboard.nextSteps.title': 'Próximos Pasos Clave',
     'dashboard.nextSteps.dueDate': 'Vence',
@@ -7084,13 +7084,13 @@ const translations = {
     'onboarding.options.live.description': 'Deseo encontrar un segundo hogar, una casa de vacaciones o un refugio para disfrutar del estilo de vida, la cultura y la naturaleza.',
     'onboarding.options.live.target': 'Dirigido a perfiles Europeo y Árabe',
     
-    'onboarding.complete.title': '¡Perfecto!',
-    'onboarding.complete.description': 'Hemos creado tu "Blueprint" inicial. Tu dashboard ha sido personalizado para acelerar tu objetivo.',
-    'onboarding.complete.blueprintTitle': 'Tu Blueprint',
+    'onboarding.complete.title': 'Perfect!',
+    'onboarding.complete.description': 'We have created your initial "Blueprint". Your dashboard has been customized to accelerate your goal.',
+    'onboarding.complete.blueprintTitle': 'Your Blueprint',
     'onboarding.complete.finalButton': 'Welcome to your Japan Command Center',
     
     // Question progress
-    'onboarding.question.progress': 'Pregunta {current} de {total}',
+    'onboarding.question.progress': 'Question {current} of {total}',
     
     // Investment questions
     'onboarding.questions.invest.businessType.question': '¿Qué tipo de oportunidad de negocio te interesa más?',
