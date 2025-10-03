@@ -98,7 +98,7 @@ const AIChat = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary">{t('ai.assistantName')}</h3>
-                  <p className="text-xs text-secondary">{t('ai.online')}</p>
+                  <p className="text-xs text-black">{t('ai.online')}</p>
                 </div>
               </div>
               <button
