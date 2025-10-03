@@ -68,6 +68,11 @@ const translations = {
     'navigation.login': 'Login',
     'navigation.dashboard': 'Dashboard',
     
+    // User dropdown menu
+    'user.dropdown.dashboard': 'Dashboard',
+    'user.dropdown.myProfile': 'My Profile',
+    'user.dropdown.logout': 'Logout',
+    
     // Dashboard translations
     'dashboard.investor.title': 'Investment Opportunities Command Center',
     'dashboard.migration.title': 'Your Migration Route to Japan',
@@ -2182,6 +2187,11 @@ const translations = {
     'navigation.login': 'ログイン',
     'navigation.dashboard': 'ダッシュボード',
     
+    // User dropdown menu
+    'user.dropdown.dashboard': 'ダッシュボード',
+    'user.dropdown.myProfile': 'マイプロフィール',
+    'user.dropdown.logout': 'ログアウト',
+    
     // Dashboard translations
     'dashboard.investor.title': '投資機会コマンドセンター',
     'dashboard.migration.title': '日本への移住ルート',
@@ -4007,6 +4017,11 @@ const translations = {
     'navigation.terms': 'الشروط',
     'navigation.login': 'تسجيل الدخول',
     'navigation.dashboard': 'لوحة التحكم',
+    
+    // User dropdown menu
+    'user.dropdown.dashboard': 'لوحة التحكم',
+    'user.dropdown.myProfile': 'ملفي الشخصي',
+    'user.dropdown.logout': 'تسجيل الخروج',
     
     // Dashboard translations
     'dashboard.investor.title': 'مركز قيادة فرص الاستثمار',
@@ -5854,6 +5869,11 @@ const translations = {
     'navigation.terms': 'Términos',
     'navigation.login': 'Iniciar Sesión',
     'navigation.dashboard': 'Dashboard',
+    
+    // User dropdown menu
+    'user.dropdown.dashboard': 'Panel de Control',
+    'user.dropdown.myProfile': 'Mi Perfil',
+    'user.dropdown.logout': 'Cerrar Sesión',
     
     // Dashboard translations
     'dashboard.investor.title': 'Centro de Mando de Oportunidades',
