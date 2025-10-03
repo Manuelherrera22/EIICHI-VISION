@@ -210,7 +210,7 @@ NEXT_PUBLIC_SITE_URL=https://www.eiichivision.com
 ## 📞 Support
 
 For questions or support:
-- **Email**: info@eiichivision.com
+- **Email**: susumumuguruma@gmail.com, info@tabijihouse.com
 - **Phone**: +81 90-1234-5678
 - **Location**: Kusatsu, Gunma, Japan
 

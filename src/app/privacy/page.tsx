@@ -124,7 +124,7 @@ const PrivacyPage = () => {
                 tu información personal, no dudes en contactarnos.
               </p>
               <div className="space-y-2 text-white/90">
-                <p><strong>Email:</strong> privacy@komorebihouse.com</p>
+                <p><strong>Email:</strong> susumumuguruma@gmail.com, info@tabijihouse.com</p>
                 <p><strong>Teléfono:</strong> +81 90-1234-5678</p>
                 <p><strong>{t('privacy.address')}</strong></p>
               </div>

@@ -1,0 +1,13 @@
+# Archivos que Cursor no debe monitorear para cambios automáticos
+src/components/AIChat.tsx
+src/components/AdvancedChatbot.tsx
+src/components/dso/Chatbot.tsx
+
+# Archivos de configuración que pueden causar restauraciones automáticas
+.vscode/
+.cursor/
+*.log
+node_modules/
+.next/
+out/
+

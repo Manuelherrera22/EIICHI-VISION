@@ -73,7 +73,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: t('contact.emailTitle'),
-      value: "info@komorebihouse.com",
+      value: "susumumuguruma@gmail.com\ninfo@tabijihouse.com",
       description: t('contact.emailDescription'),
       color: "primary"
     },
@@ -145,7 +145,12 @@ export default function Contact() {
                   {method.title}
                 </h3>
                 <p className="text-lg font-semibold text-foreground mb-2">
-                  {method.value}
+                  {method.value.split('\n').map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      {idx < method.value.split('\n').length - 1 && <br />}
+                    </span>
+                  ))}
                 </p>
                 <p className="text-sm text-secondary">
                   {method.description}
