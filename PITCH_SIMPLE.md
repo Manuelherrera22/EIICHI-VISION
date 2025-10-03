@@ -196,8 +196,8 @@ Una página web que te permite **ver y diseñar casas japonesas** desde tu compu
 
 - **🌐 Página web:** [URL de la página]
 - **💬 Chat:** Disponible 24/7
-- **📧 Email:** susumumuguruma@gmail.com, info@tabijihouse.com
-- **📱 Teléfono:** +81 90-1234-5678
+- **📧 Email:** info@tabijihouse.com
+- **📱 Teléfono:** +81-3-6380-3901 / +81-3-6380-3902
 
 ---
 

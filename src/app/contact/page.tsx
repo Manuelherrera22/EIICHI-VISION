@@ -73,14 +73,14 @@ export default function Contact() {
     {
       icon: Mail,
       title: t('contact.emailTitle'),
-      value: "susumumuguruma@gmail.com\ninfo@tabijihouse.com",
+      value: "info@tabijihouse.com",
       description: t('contact.emailDescription'),
       color: "primary"
     },
     {
       icon: Phone,
       title: t('contact.phoneTitle'),
-      value: "+81 90-1234-5678",
+      value: "+81-3-6380-3901\n+81-3-6380-3902",
       description: t('contact.phoneDescription'),
       color: "accent"
     },

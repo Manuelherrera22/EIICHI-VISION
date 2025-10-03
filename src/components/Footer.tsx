@@ -75,14 +75,14 @@ const Footer = () => {
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm text-foreground">
                 <Mail size={14} className="w-4 h-4 text-primary flex-shrink-0" />
-                <div className="flex flex-col">
-                  <span className="break-all">susumumuguruma@gmail.com</span>
-                  <span className="break-all">info@tabijihouse.com</span>
-                </div>
+                <span className="break-all">info@tabijihouse.com</span>
               </div>
               <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm text-foreground">
                 <Phone size={14} className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>+81 90-1234-5678</span>
+                <div className="flex flex-col">
+                  <span>+81-3-6380-3901</span>
+                  <span>+81-3-6380-3902</span>
+                </div>
               </div>
               <div className="flex items-center space-x-2 sm:space-x-3 text-xs sm:text-sm text-foreground">
                 <MapPin size={14} className="w-4 h-4 text-primary flex-shrink-0" />

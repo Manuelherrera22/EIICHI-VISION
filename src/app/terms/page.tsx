@@ -156,8 +156,8 @@ const TermsPage = () => {
                 nuestro equipo legal está disponible para ayudarte.
               </p>
               <div className="space-y-2 text-white/90">
-                <p><strong>Email Legal:</strong> susumumuguruma@gmail.com, info@tabijihouse.com</p>
-                <p><strong>Teléfono:</strong> +81 90-1234-5678</p>
+                <p><strong>Email Legal:</strong> info@tabijihouse.com</p>
+                <p><strong>Teléfono:</strong> +81-3-6380-3901 / +81-3-6380-3902</p>
                 <p><strong>{t('terms.address')}</strong></p>
               </div>
             </div>
