@@ -366,10 +366,16 @@ const JNIPartnership: React.FC = () => {
               Join our network of successful investors and benefit from our proven track record in Japan's real estate market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button 
+                onClick={() => window.location.href = '/about'}
+                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
                 Learn More About Partnership
               </button>
-              <button className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              <button 
+                onClick={() => window.location.href = 'mailto:partnerships@tabijihouse.com?subject=JNI Partnership Inquiry&body=Hello, I am interested in learning more about partnership opportunities with JNI Properties. Please contact me to discuss potential collaboration.'}
+                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              >
                 Contact Our Team
               </button>
             </div>
