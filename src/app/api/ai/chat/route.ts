@@ -109,21 +109,21 @@ Would you like me to analyze a specific property in detail or adjust the search 
       };
     }
     
-    // Default Spanish
+    // Default English
     return {
-      response: `Basándome en tu perfil de inversión, he encontrado algunas propiedades que podrían interesarte:
+      response: `Based on your investment profile, I've found some properties that might interest you:
 
-🏠 **Propiedades Recomendadas:**
-• Casa en Shibuya - ¥45M (ROI: 8.2%)
-• Apartamento en Roppongi - ¥32M (ROI: 7.8%)
-• Casa tradicional en Kyoto - ¥28M (ROI: 6.5%)
+🏠 **Recommended Properties:**
+• House in Shibuya - ¥45M (ROI: 8.2%)
+• Apartment in Roppongi - ¥32M (ROI: 7.8%)
+• Traditional house in Kyoto - ¥28M (ROI: 6.5%)
 
-¿Te gustaría que analice alguna en particular o que ajuste los criterios de búsqueda?`,
+Would you like me to analyze any particular one or adjust the search criteria?`,
       suggestions: [
-        'Mostrar detalles de la casa en Shibuya',
-        'Calcular ROI detallado',
-        'Ver propiedades similares',
-        'Ajustar presupuesto'
+        'Show details of the house in Shibuya',
+        'Calculate detailed ROI',
+        'View similar properties',
+        'Adjust budget'
       ],
       confidence: 0.9,
       source: 'property_database',
@@ -284,14 +284,14 @@ How can I help you today?`,
     };
   }
   
-  // Default Spanish
+  // Default English
   return {
-    response: `¡Hola! Soy tu asistente de IA especializado en inversiones inmobiliarias japonesas. ¿Cómo puedo ayudarte hoy?`,
+    response: `Hello! I'm your AI assistant specialized in Japanese real estate investments. How can I help you today?`,
     suggestions: [
-      'Buscar Propiedades',
-      'Calcular ROI',
-      'Análisis de Mercado',
-      'Consejos de Inversión'
+      'Search Properties',
+      'Calculate ROI',
+      'Market Analysis',
+      'Investment Tips'
     ],
     confidence: 0.7,
     source: 'general_assistant',
