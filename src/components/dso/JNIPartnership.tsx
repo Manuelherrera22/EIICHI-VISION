@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Building2,
@@ -366,18 +367,18 @@ const JNIPartnership: React.FC = () => {
               Join our network of successful investors and benefit from our proven track record in Japan's real estate market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.location.href = '/about'}
-                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              <Link 
+                href="/about"
+                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
               >
                 Learn More About Partnership
-              </button>
-              <button 
-                onClick={() => window.location.href = '/contact'}
-                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center"
               >
                 Contact Our Team
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>
