@@ -237,7 +237,7 @@ const Footer = () => {
                   </div>
                   <div>
                     <span className="font-semibold text-primary">Representative:</span><br />
-                    Toshinori Shibusawa
+                    Norisuke Shibusawa
                   </div>
                 </div>
               </div>

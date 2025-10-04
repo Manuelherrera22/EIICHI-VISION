@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Translations</title>
+</head>
+<body>
+    <h1>Test Translations</h1>
+    <div id="results"></div>
+    
+    <script src="/check-language.js"></script>
+    <script>
+        // Simular las traducciones que agregamos
+        const translations = {
+            en: {
+                'onboarding.welcome': 'Welcome to Tabiji House',
+                'onboarding.description': 'We are here to build your future in Japan. Let\'s start designing your path.',
+                'onboarding.startButton': 'Start My Master Route',
+                'onboarding.instruction': 'Click the button to continue'
+            },
+            es: {
+                'onboarding.welcome': 'Bienvenido a Tabiji House',
+                'onboarding.description': 'Estamos aquí para construir tu futuro en Japón. Empecemos a diseñar tu camino.',
+                'onboarding.startButton': 'Comenzar Mi Ruta Maestra',
+                'onboarding.instruction': 'Haz clic en el botón para continuar'
+            }
+        };
+        
+        function testTranslations() {
+            const results = document.getElementById('results');
+            const currentLanguage = localStorage.getItem('language') || 'en';
+            
+            results.innerHTML = `
+                <h2>Current Language: ${currentLanguage}</h2>
+                <div>
+                    <h3>Onboarding Translations:</h3>
+                    <p><strong>Welcome:</strong> ${translations[currentLanguage]?.['onboarding.welcome'] || 'NOT FOUND'}</p>
+                    <p><strong>Description:</strong> ${translations[currentLanguage]?.['onboarding.description'] || 'NOT FOUND'}</p>
+                    <p><strong>Start Button:</strong> ${translations[currentLanguage]?.['onboarding.startButton'] || 'NOT FOUND'}</p>
+                    <p><strong>Instruction:</strong> ${translations[currentLanguage]?.['onboarding.instruction'] || 'NOT FOUND'}</p>
+                </div>
+                
+                <div>
+                    <h3>Actions:</h3>
+                    <button onclick="localStorage.setItem('language', 'en'); location.reload();">Set English</button>
+                    <button onclick="localStorage.setItem('language', 'es'); location.reload();">Set Spanish</button>
+                    <button onclick="clearAllStorage()">Clear All</button>
+                </div>
+            `;
+        }
+        
+        // Ejecutar al cargar
+        testTranslations();
+    </script>
+</body>
+</html>

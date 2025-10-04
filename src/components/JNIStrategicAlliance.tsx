@@ -252,7 +252,7 @@ const JNIStrategicAlliance: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Leadership Section - Toshinori Shibusawa */}
+        {/* Leadership Section - Norisuke Shibusawa */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ const JNIStrategicAlliance: React.FC = () => {
                 <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/澁澤写真.jpg"
-                    alt="Toshinori Shibusawa - Representative, JNI Properties Co., Ltd."
+                    alt="Norisuke Shibusawa - Representative, JNI Properties Co., Ltd."
                     fill
                     className="object-cover"
                     priority

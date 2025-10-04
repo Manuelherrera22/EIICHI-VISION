@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Simple Translation Test</h1>
+    <div id="test-results"></div>
+    
+    <script>
+        function testSimpleTranslations() {
+            const results = document.getElementById('test-results');
+            
+            // Simular traducciones simples
+            const simpleTranslations = {
+                en: {
+                    'onboarding.welcome': 'Welcome to Tabiji House',
+                    'onboarding.description': 'We are here to build your future in Japan.',
+                    'onboarding.startButton': 'Start My Master Route',
+                    'onboarding.instruction': 'Click the button to continue'
+                },
+                es: {
+                    'onboarding.welcome': 'Bienvenido a Tabiji House',
+                    'onboarding.description': 'Estamos aqui para construir tu futuro en Japon.',
+                    'onboarding.startButton': 'Comenzar Mi Ruta Maestra',
+                    'onboarding.instruction': 'Haz clic en el boton para continuar'
+                }
+            };
+            
+            const currentLanguage = localStorage.getItem('language') || 'en';
+            
+            results.innerHTML = `
+                <h2>Current Language: ${currentLanguage}</h2>
+                <div style="border: 1px solid #ccc; padding: 20px; margin: 10px 0;">
+                    <h3>Onboarding Test:</h3>
+                    <p><strong>Welcome:</strong> ${simpleTranslations[currentLanguage]?.['onboarding.welcome'] || 'NOT FOUND'}</p>
+                    <p><strong>Description:</strong> ${simpleTranslations[currentLanguage]?.['onboarding.description'] || 'NOT FOUND'}</p>
+                    <p><strong>Start Button:</strong> ${simpleTranslations[currentLanguage]?.['onboarding.startButton'] || 'NOT FOUND'}</p>
+                    <p><strong>Instruction:</strong> ${simpleTranslations[currentLanguage]?.['onboarding.instruction'] || 'NOT FOUND'}</p>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <button onclick="localStorage.setItem('language', 'en'); location.reload();" style="margin: 5px; padding: 10px;">Set English</button>
+                    <button onclick="localStorage.setItem('language', 'es'); location.reload();" style="margin: 5px; padding: 10px;">Set Spanish</button>
+                    <button onclick="localStorage.clear(); location.reload();" style="margin: 5px; padding: 10px;">Clear Storage</button>
+                </div>
+                
+                <div style="border: 1px solid #999; padding: 10px; margin: 10px 0;">
+                    <h4>Debug Info:</h4>
+                    <p>LocalStorage language: ${localStorage.getItem('language') || 'null'}</p>
+                    <p>SessionStorage language: ${sessionStorage.getItem('language') || 'null'}</p>
+                    <p>Cookies: ${document.cookie || 'none'}</p>
+                </div>
+            `;
+        }
+        
+        // Ejecutar al cargar
+        testSimpleTranslations();
+    </script>
+</body>
+</html>

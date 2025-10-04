@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Language</title>
+</head>
+<body>
+    <h1>Debug Language State</h1>
+    <div id="debug-info"></div>
+    
+    <script>
+        function debugLanguage() {
+            const info = document.getElementById('debug-info');
+            
+            // Verificar localStorage
+            const storedLanguage = localStorage.getItem('language');
+            const storedTabijiLanguage = localStorage.getItem('tabiji-language');
+            
+            // Verificar sessionStorage
+            const sessionLanguage = sessionStorage.getItem('language');
+            const sessionTabijiLanguage = sessionStorage.getItem('tabiji-language');
+            
+            // Verificar cookies
+            const cookies = document.cookie;
+            
+            info.innerHTML = `
+                <h2>LocalStorage:</h2>
+                <p>language: ${storedLanguage || 'null'}</p>
+                <p>tabiji-language: ${storedTabijiLanguage || 'null'}</p>
+                
+                <h2>SessionStorage:</h2>
+                <p>language: ${sessionLanguage || 'null'}</p>
+                <p>tabiji-language: ${sessionTabijiLanguage || 'null'}</p>
+                
+                <h2>Cookies:</h2>
+                <p>${cookies || 'No cookies found'}</p>
+                
+                <h2>Actions:</h2>
+                <button onclick="clearAll()">Clear All Storage</button>
+                <button onclick="setEnglish()">Set English</button>
+                <button onclick="location.reload()">Reload Page</button>
+            `;
+        }
+        
+        function clearAll() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.cookie = 'language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'tabiji-language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            alert('All storage cleared!');
+            debugLanguage();
+        }
+        
+        function setEnglish() {
+            localStorage.setItem('language', 'en');
+            localStorage.setItem('tabiji-language', 'en');
+            alert('Language set to English!');
+            debugLanguage();
+        }
+        
+        // Ejecutar al cargar
+        debugLanguage();
+    </script>
+</body>
+</html>
