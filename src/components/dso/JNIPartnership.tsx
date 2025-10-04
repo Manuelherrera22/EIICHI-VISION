@@ -373,7 +373,7 @@ const JNIPartnership: React.FC = () => {
                 Learn More About Partnership
               </button>
               <button 
-                onClick={() => window.location.href = 'mailto:partnerships@tabijihouse.com?subject=JNI Partnership Inquiry&body=Hello, I am interested in learning more about partnership opportunities with JNI Properties. Please contact me to discuss potential collaboration.'}
+                onClick={() => window.location.href = '/contact'}
                 className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
                 Contact Our Team
