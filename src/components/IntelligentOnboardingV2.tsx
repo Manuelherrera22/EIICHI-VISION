@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   User, 
   DollarSign, 
@@ -87,6 +88,7 @@ interface CalculatedIndices {
 }
 
 const IntelligentOnboardingV2: React.FC = () => {
+  const { t } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
   const [userData, setUserData] = useState({
     basicInfo: {} as BasicInfo,
@@ -99,12 +101,12 @@ const IntelligentOnboardingV2: React.FC = () => {
   const [isComplete, setIsComplete] = useState(false);
 
   const steps = [
-    { id: 'basic', title: 'Información Básica', icon: User },
-    { id: 'intent', title: 'Objetivo Principal', icon: Target },
-    { id: 'financial', title: 'Situación Financiera', icon: DollarSign },
-    { id: 'family', title: 'Situación Familiar', icon: Users },
-    { id: 'cultural', title: 'Afinidad Cultural', icon: Heart },
-    { id: 'results', title: 'Análisis Inteligente', icon: Brain },
+    { id: 'basic', title: t('onboarding.steps.basicInfo'), icon: User },
+    { id: 'intent', title: t('onboarding.steps.primaryGoal'), icon: Target },
+    { id: 'financial', title: t('onboarding.steps.financialSituation'), icon: DollarSign },
+    { id: 'family', title: t('onboarding.steps.familySituation'), icon: Users },
+    { id: 'cultural', title: t('onboarding.steps.culturalAffinity'), icon: Heart },
+    { id: 'results', title: t('onboarding.steps.intelligentAnalysis'), icon: Brain },
   ];
 
   const calculateIndices = (data: any): CalculatedIndices => {
@@ -343,7 +345,7 @@ const IntelligentOnboardingV2: React.FC = () => {
               onClick={handleNext}
               className="flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
             >
-              {currentStep === steps.length - 1 ? 'Ver Análisis' : 'Siguiente'}
+              {currentStep === steps.length - 1 ? t('onboarding.viewAnalysis') : t('onboarding.next')}
               <ArrowRight size={20} className="ml-2" />
             </button>
           </div>
@@ -405,7 +407,7 @@ const BasicInfoStep: React.FC<{ data: BasicInfo; onUpdate: (data: Partial<BasicI
             value={data.currentCountry || ''}
             onChange={(e) => onUpdate({ currentCountry: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="País donde vives actualmente"
+            placeholder={t('onboarding.placeholders.currentCountry')}
           />
         </div>
       </div>
@@ -414,11 +416,12 @@ const BasicInfoStep: React.FC<{ data: BasicInfo; onUpdate: (data: Partial<BasicI
 };
 
 const PrimaryIntentStep: React.FC<{ data: PrimaryIntent; onUpdate: (data: Partial<PrimaryIntent>) => void }> = ({ data, onUpdate }) => {
+  const { t } = useLanguage();
   const goals = [
-    { id: 'invest', title: 'Invertir en Propiedades', description: 'Busco oportunidades de inversión inmobiliaria en Japón', icon: DollarSign },
-    { id: 'migrate', title: 'Migrar a Japón', description: 'Quiero mudarme permanentemente con mi familia', icon: Plane },
-    { id: 'live', title: 'Vivir Temporalmente', description: 'Necesito vivienda para trabajo o estudios', icon: Home },
-    { id: 'explore', title: 'Explorar Opciones', description: 'Estoy investigando posibilidades', icon: Target },
+    { id: 'invest', title: t('onboarding.goals.invest'), description: t('onboarding.goals.investDescription'), icon: DollarSign },
+    { id: 'migrate', title: t('onboarding.goals.migrate'), description: t('onboarding.goals.migrateDescription'), icon: Plane },
+    { id: 'live', title: t('onboarding.goals.live'), description: t('onboarding.goals.liveDescription'), icon: Home },
+    { id: 'explore', title: t('onboarding.goals.explore'), description: t('onboarding.goals.exploreDescription'), icon: Target },
   ];
 
   return (
@@ -496,7 +499,7 @@ const FinancialSituationStep: React.FC<{ data: FinancialSituation; onUpdate: (da
                 } 
               })}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-              placeholder="Mínimo"
+              placeholder={t('onboarding.placeholders.minimum')}
             />
             <input
               type="number"
@@ -508,7 +511,7 @@ const FinancialSituationStep: React.FC<{ data: FinancialSituation; onUpdate: (da
                 } 
               })}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-              placeholder="Máximo"
+              placeholder={t('onboarding.placeholders.maximum')}
             />
           </div>
         </div>
@@ -575,7 +578,7 @@ const FamilySituationStep: React.FC<{ data: FamilySituation; onUpdate: (data: Pa
             value={data.familySize || ''}
             onChange={(e) => onUpdate({ familySize: parseInt(e.target.value) || 0 })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="Número de personas"
+            placeholder={t('onboarding.placeholders.numberOfPeople')}
           />
         </div>
         <div>
@@ -590,7 +593,7 @@ const FamilySituationStep: React.FC<{ data: FamilySituation; onUpdate: (data: Pa
               } 
             })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-            placeholder="Número de hijos"
+            placeholder={t('onboarding.placeholders.numberOfChildren')}
           />
         </div>
         <div>
@@ -635,9 +638,10 @@ const FamilySituationStep: React.FC<{ data: FamilySituation; onUpdate: (data: Pa
 };
 
 const CulturalAffinityStep: React.FC<{ data: CulturalAffinity; onUpdate: (data: Partial<CulturalAffinity>) => void }> = ({ data, onUpdate }) => {
+  const { t } = useLanguage();
   const interests = [
-    'Arte y Cultura', 'Deportes', 'Gastronomía', 'Naturaleza', 'Tecnología',
-    'Música', 'Literatura', 'Cine', 'Historia', 'Filosofía'
+    t('onboarding.interests.artCulture'), t('onboarding.interests.sports'), t('onboarding.interests.gastronomy'), t('onboarding.interests.nature'), t('onboarding.interests.technology'),
+    t('onboarding.interests.music'), t('onboarding.interests.literature'), t('onboarding.interests.cinema'), t('onboarding.interests.history'), t('onboarding.interests.philosophy')
   ];
 
   return (
