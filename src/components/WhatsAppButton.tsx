@@ -18,7 +18,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const { t } = useLanguage();
   
   // Use translated message or fallback to default
-  const defaultMessage = message || t.whatsapp.defaultMessage || "¡Hola! Me interesa saber más sobre las propiedades en Japón.";
+  const defaultMessage = message || t('whatsapp.defaultMessage') || "¡Hola! Me interesa saber más sobre las propiedades en Japón.";
   const handleWhatsAppClick = () => {
     // Clean phone number (remove spaces, dashes, parentheses)
     const cleanNumber = phoneNumber.replace(/[\s\-\(\)]/g, '');
@@ -43,8 +43,8 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         group backdrop-blur-sm
         ${className}
       `}
-      aria-label={t.whatsapp.ariaLabel || "Contactar por WhatsApp"}
-      title={t.whatsapp.title || "Contactar por WhatsApp"}
+      aria-label={t('whatsapp.ariaLabel') || "Contactar por WhatsApp"}
+      title={t('whatsapp.title') || "Contactar por WhatsApp"}
     >
       <FaWhatsapp 
         size={24} 
@@ -63,7 +63,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       ">
         <span className="flex items-center gap-2">
           <FaWhatsapp size={14} className="text-green-400" />
-          {t.whatsapp.tooltip || "¡Escríbenos por WhatsApp!"}
+          {t('whatsapp.tooltip') || "¡Escríbenos por WhatsApp!"}
         </span>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
       </div>
