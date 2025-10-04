@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { useTranslation } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -15,7 +15,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   message,
   className = ""
 }) => {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   
   // Use translated message or fallback to default
   const defaultMessage = message || t.whatsapp.defaultMessage || "¡Hola! Me interesa saber más sobre las propiedades en Japón.";
