@@ -15,7 +15,7 @@ export default function Journal() {
     // Usar un pequeño delay para asegurar que se ejecute después de DynamicMetadata
     const timer = setTimeout(() => {
       // Actualizar título
-        document.title = 'Journal - Tabiji House | Historias y Conocimiento de Japón';
+        document.title = `${t('journal.title')} - Tabiji House | ${t('journal.subtitle')}`;
       
       // Actualizar meta description
       const metaDescription = document.querySelector('meta[name="description"]');
@@ -179,7 +179,7 @@ export default function Journal() {
               {t('journal.subtitle')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              Journal
+              {t('journal.title')}
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
               {t('journal.description')}
