@@ -4142,7 +4142,7 @@ const translations = {
     'philosophy.profitableSustainability': '収益性のある持続可能性',
     'philosophy.profitableSustainabilityDescription': 'クライアントとコミュニティの両方にとって持続可能で収益性のあるビジョンを確保します。',
     'philosophy.joinVision': 'ビジョンに参加',
-    'philosophy.joinVisionDescription': '渋沢栄一の哲学が不動産投資とビジネス目的に対するあなたの視点をどのように変革できるかを発見してください。',
+    'philosophy.joinVisionDescription': '私たちの理念に触れることで、不動産投資やビジネスの在り方に対する新たな視点を見出していただけます。',
     'philosophy.emailPlaceholder': 'メールアドレス',
     'philosophy.subscribeNewsletter': 'ニュースレターを購読',
     'philosophy.newsletterDescription': 'インスピレーションを与えるストーリーと新しい物件を直接メールで受け取ります。',
