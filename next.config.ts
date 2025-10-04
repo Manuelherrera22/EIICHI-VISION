@@ -117,7 +117,20 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Configuración de Turbopack se maneja automáticamente
+  // Configuración de Turbopack
+  turbopack: {
+    // Deshabilitar Fast Refresh completamente
+    fastRefresh: false,
+    // Configurar directorio raíz
+    root: process.cwd(),
+  },
+  
+  // Configuración de desarrollo
+  onDemandEntries: {
+    // Deshabilitar hot reload
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
   
 };
 
