@@ -1596,7 +1596,9 @@ const translations = {
     'journal.emailPlaceholder': 'Your email',
     'journal.subscribeButton': 'Subscribe',
     'journal.readArticle': 'Read Article',
+    'journal.readArticleButton': 'Read Article →',
     'journal.categories': 'Categories',
+    'journal.december2023': 'December 27, 2023',
     
     // Privacy
     'privacy.title': 'Privacy Policy',
@@ -1636,6 +1638,7 @@ const translations = {
     'booking.legalAdvice': 'Legal Advice',
     'booking.propertyRenovation': 'Property Renovation',
     'booking.selectInterest': 'Select your area of interest',
+    'booking.selectAreaOfInterest': 'Select your area of interest',
     'booking.additionalMessage': 'Additional Message',
     'booking.messagePlaceholder': 'Tell us more about your project, budget, timeline and any specific questions...',
     'booking.submitBooking': 'Schedule Visit',
@@ -1723,6 +1726,8 @@ const translations = {
     'contact.interests.vacation': 'Vacation Home',
     'contact.interests.business': 'Business/Tourism',
     'contact.interests.consultation': 'General Consultation',
+    'contact.generalInquiry': 'General Inquiry',
+    'contact.messagePlaceholder': 'Please tell us about your project, budget, timeline and any specific questions...',
     
     // AI Chat
     'ai.welcomeMessage': 'Hello! I\'m your Tabiji House assistant. How can I help you with your Japanese property investment?',
@@ -3952,6 +3957,7 @@ const translations = {
     'booking.legalAdvice': '法的アドバイス',
     'booking.propertyRenovation': '物件リノベーション',
     'booking.selectInterest': '関心分野を選択',
+    'booking.selectAreaOfInterest': '関心分野を選択',
     'booking.additionalMessage': '追加メッセージ',
     'booking.messagePlaceholder': 'プロジェクト、予算、タイムライン、具体的な質問について詳しく教えてください...',
     'booking.submitBooking': '訪問を予約',
@@ -4039,6 +4045,8 @@ const translations = {
     'contact.interests.vacation': 'バケーション用住宅',
     'contact.interests.business': 'ビジネス/観光',
     'contact.interests.consultation': '一般的な相談',
+    'contact.generalInquiry': '一般的なお問い合わせ',
+    'contact.messagePlaceholder': 'プロジェクト、予算、タイムライン、具体的なご質問についてお聞かせください...',
     
     // AI Chat
     'ai.welcomeMessage': 'こんにちは！私はこもれびハウスのアシスタントです。日本の不動産投資についてどのようにお手伝いできますか？',
@@ -4337,6 +4345,8 @@ const translations = {
     // Journal Page
     'journal.searchPlaceholder': '記事を検索...',
     'journal.emailPlaceholder': 'あなたのメール',
+    'journal.readArticleButton': '記事を読む →',
+    'journal.december2023': '2023年12月27日',
     'journal.philosophyGapponshugi': '21世紀の合本主義哲学',
     'journal.philosophyExcerpt': '伝統的な日本建築の原則が現代デザインでどのように関連性を保ち、Tabiji Houseでどのように適用しているか。',
     'journal.philosophyAuthor': '田中博志博士',
@@ -8568,6 +8578,7 @@ const translations = {
     'booking.propertyRenovation': 'Renovación de Propiedad',
     'booking.interests': 'Área de Interés',
     'booking.selectInterest': 'Selecciona tu área de interés',
+    'booking.selectAreaOfInterest': 'Selecciona tu área de interés',
     'booking.additionalMessage': 'Mensaje Adicional',
     'booking.messagePlaceholder': 'Cuéntanos más sobre tus objetivos...',
 
@@ -8907,6 +8918,8 @@ const translations = {
     'journal.stayUpdated': 'Mantente Actualizado',
     'journal.newsletterDescription': 'Suscríbete a nuestro boletín para recibir los últimos artículos sobre cultura japonesa, artesanía y vida en Gunma directamente en tu correo.',
     'journal.subscribeButton': 'Suscribirse',
+    'journal.readArticleButton': 'Leer artículo →',
+    'journal.december2023': '27 de diciembre de 2023',
     'journal.searchPlaceholder': 'Buscar artículos...',
     'journal.emailPlaceholder': 'Tu correo electrónico',
     'journal.philosophyGapponshugi': 'Filosofía Gapponshugi en el Siglo XXI',
@@ -9517,6 +9530,7 @@ const translations = {
     'contact.whatsapp': 'WhatsApp',
     'contact.thankYouMessage': '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.',
     'contact.generalInquiry': 'Consulta General',
+    'contact.messagePlaceholder': 'Por favor, cuéntanos sobre tu proyecto, presupuesto, cronograma y cualquier pregunta específica...',
     'contact.viewProperties': 'Ver Propiedades',
     'contact.investmentOpportunities': 'Oportunidades de Inversión',
     'contact.renovationServices': 'Servicios de Renovación',
