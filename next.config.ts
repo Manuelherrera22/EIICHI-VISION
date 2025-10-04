@@ -135,6 +135,16 @@ const nextConfig: NextConfig = {
   // Deshabilitar Fast Refresh completamente
   reactStrictMode: false,
   
+  // Configuración adicional para deshabilitar completamente Fast Refresh
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      // Deshabilitar Fast Refresh en webpack
+      config.optimization = config.optimization || {};
+      config.optimization.splitChunks = false;
+    }
+    return config;
+  },
+  
   
 };
 

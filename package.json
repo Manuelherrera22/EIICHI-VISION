@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "set FAST_REFRESH=false && next dev",
     "build": "next build",
     "build:force": "next build",
     "build:netlify": "next build && next export",
