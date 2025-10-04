@@ -4532,8 +4532,8 @@ const translations = {
     
     // About Page
     'about.heroSubtitle': '産業から復興へ',
-    'about.heroTitle': 'こもれびハウス',
-    'about.heroTitleAccent': 'の物語',
+    'about.heroTitle': 'たびじ ハウスの物語',
+    'about.heroTitleAccent': '',
     'about.heroDescription': '新世代が伝統的な日本建築の遺産を継承し、文化的遺産とビジョナリーなグローバル市民を結びつけています。',
     'about.visionaryPart': '私たちの遺産',
     'about.visionaryTitle': '伝統的な日本の価値観',
