@@ -171,7 +171,7 @@ export default function About() {
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/澁澤写真.jpg" 
+                  src="/Shibusawa.jpeg" 
                   alt={`${t('about.toshinoriName')} - ${t('about.toshinoriTitle')}`}
                   className="w-full h-full object-cover"
                 />

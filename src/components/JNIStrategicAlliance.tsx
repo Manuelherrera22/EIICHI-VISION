@@ -266,7 +266,7 @@ const JNIStrategicAlliance: React.FC = () => {
               <div className="flex-shrink-0">
                 <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/澁澤写真.jpg"
+                    src="/Shibusawa.jpeg"
                     alt="Toshinori Shibusawa - Representative, JNI Properties Co., Ltd."
                     fill
                     className="object-cover"
