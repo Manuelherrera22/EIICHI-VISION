@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Building2,
@@ -27,6 +27,15 @@ import {
 
 const JNIPartnership: React.FC = () => {
   const { t } = useLanguage();
+  const router = useRouter();
+
+  const handleContactClick = () => {
+    router.push('/contact');
+  };
+
+  const handleLearnMoreClick = () => {
+    router.push('/about');
+  };
 
   const achievements = [
     {
@@ -367,18 +376,20 @@ const JNIPartnership: React.FC = () => {
               Join our network of successful investors and benefit from our proven track record in Japan's real estate market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/about"
-                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
+              <button 
+                onClick={handleLearnMoreClick}
+                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+                type="button"
               >
                 Learn More About Partnership
-              </Link>
-              <Link 
-                href="/contact"
-                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center"
+              </button>
+              <button 
+                onClick={handleContactClick}
+                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
+                type="button"
               >
                 Contact Our Team
-              </Link>
+              </button>
             </div>
           </div>
         </motion.div>
