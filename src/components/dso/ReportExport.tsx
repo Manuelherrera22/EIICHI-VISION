@@ -101,7 +101,7 @@ const ReportExport: React.FC<ReportExportProps> = ({
       // Header
       pdf.setFontSize(20);
       pdf.setFont('helvetica', 'bold');
-      pdf.text('Reporte de Análisis Inteligente', pageWidth / 2, 20, { align: 'center' });
+      pdf.text(t('export.reportTitle'), pageWidth / 2, 20, { align: 'center' });
       
       pdf.setFontSize(12);
       pdf.setFont('helvetica', 'normal');
@@ -118,13 +118,13 @@ const ReportExport: React.FC<ReportExportProps> = ({
         pdf.setFontSize(10);
         pdf.setFont('helvetica', 'normal');
         const overviewText = `
-Análisis de Perfil Inteligente:
-• Completitud del Perfil: ${analysis.profileCompleteness}%
+${t('export.profileAnalysis')}:
+• ${t('export.profileCompleteness')}: ${analysis.profileCompleteness}%
 • ${t('export.successProbability')}: ${analysis.successProbability.overall}%
 • ${t('export.riskCategory')}: ${analysis.riskCategory}
 • ${t('export.userEngagement')}: ${analysis.engagementLevel}
 
-Métricas Principales:
+${t('export.mainMetrics')}:
 • ${t('export.investmentReadiness')}: ${analysis.investmentReadiness.score}%
 • ${t('export.migrationReadiness')}: ${analysis.migrationReadiness.score}%
 • ${t('export.lifestyleAlignment')}: ${analysis.lifestyleAlignment.score}%
@@ -182,7 +182,7 @@ Métricas Principales:
       // Footer
       pdf.setFontSize(8);
       pdf.setFont('helvetica', 'italic');
-      pdf.text('Generado por Tabiji House - Sistema de Análisis Inteligente', pageWidth / 2, pageHeight - 10, { align: 'center' });
+      pdf.text(t('export.generatedBy'), pageWidth / 2, pageHeight - 10, { align: 'center' });
       
       const fileName = `reporte-analisis-${userName.replace(/\s+/g, '-').toLowerCase()}-${new Date().toISOString().split('T')[0]}.pdf`;
       pdf.save(fileName);

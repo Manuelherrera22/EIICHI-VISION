@@ -35,7 +35,7 @@ const BlueprintPortal = () => {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="text-3xl font-serif font-bold text-gray-900 mb-4"
         >
-          Bienvenido a Tabiji House
+          {t('onboarding.welcome')}
         </motion.h1>
 
         {/* Descriptive Paragraph */}
@@ -45,7 +45,7 @@ const BlueprintPortal = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-gray-600 text-base leading-relaxed mb-8"
         >
-          Estamos aquí para construir tu futuro en Japón. Empecemos a diseñar tu camino.
+          {t('onboarding.description')}
         </motion.p>
 
         {/* Call-to-Action Button */}
@@ -62,7 +62,7 @@ const BlueprintPortal = () => {
             }}
             className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-4 px-6 rounded-xl shadow-sm transition-all duration-300 flex items-center justify-center space-x-2"
           >
-            <span>Comenzar Mi Ruta Maestra</span>
+            <span>{t('onboarding.startButton')}</span>
             <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
@@ -74,7 +74,7 @@ const BlueprintPortal = () => {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="text-sm text-gray-400"
         >
-          Haz clic en el botón para continuar
+          {t('onboarding.instruction')}
         </motion.p>
       </motion.div>
     </div>
