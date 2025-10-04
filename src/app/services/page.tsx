@@ -157,9 +157,9 @@ export default function Services() {
 
   const getAvailabilityText = (availability: string) => {
     switch (availability) {
-      case 'always': return 'Always Available';
-      case 'seasonal': return 'Seasonal';
-      case 'by_request': return 'By Request';
+      case 'always': return t('services.alwaysAvailable');
+      case 'seasonal': return t('services.seasonal');
+      case 'by_request': return t('services.byRequest');
       default: return availability;
     }
   };
@@ -171,16 +171,15 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Premium Lifestyle Services
+              {t('services.premiumLifestyleServices')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              Complete Support for Your
+              {t('services.completeSupportTitle')}
               <br />
-              <span className="text-accent">Gunma Lifestyle</span>
+              <span className="text-accent">{t('services.gunmaLifestyle')}</span>
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              From daily living support to cultural experiences, we provide everything you need 
-              to fully enjoy your Japanese property investment.
+              {t('services.description')}
             </p>
             
             {/* Search Bar */}
@@ -188,7 +187,7 @@ export default function Services() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" size={20} />
               <input
                 type="text"
-                placeholder="Search services..."
+                placeholder={t('services.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
@@ -210,7 +209,7 @@ export default function Services() {
                   : 'bg-muted text-foreground hover:bg-muted/80'
               }`}
             >
-              Overview
+{t('services.overview')}
             </button>
             {serviceCategories.map((category) => {
               const stats = getCategoryStats(category);
@@ -243,10 +242,10 @@ export default function Services() {
               {/* Overview Content */}
               <div className="text-center mb-16">
                 <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-                  {gunmaServices.length} Premium Services
+                  {gunmaServices.length} {t('services.premiumServices')}
                 </h2>
                 <p className="text-lg text-foreground">
-                  Comprehensive lifestyle support organized into {serviceCategories.length} specialized categories
+                  {t('services.comprehensiveSupport').replace('{count}', serviceCategories.length.toString())}
                 </p>
               </div>
 
@@ -284,11 +283,11 @@ export default function Services() {
                       </p>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-accent mb-1">{stats.count}</div>
-                        <div className="text-sm text-secondary">Services</div>
+                        <div className="text-sm text-secondary">{t('services.services')}</div>
                       </div>
                       <div className="mt-4 flex justify-center space-x-4 text-xs text-secondary">
-                        <span>Always: {stats.alwaysAvailable}</span>
-                        <span>Seasonal: {stats.seasonal}</span>
+                        <span>{t('services.always')}: {stats.alwaysAvailable}</span>
+                        <span>{t('services.seasonal')}: {stats.seasonal}</span>
                       </div>
                     </div>
                   );
@@ -305,7 +304,7 @@ export default function Services() {
                       {selectedCategory}
                     </h2>
                     <p className="text-lg text-foreground">
-                      {filteredServices.length} services in this category
+                      {t('services.servicesInCategory').replace('{count}', filteredServices.length.toString())}
                     </p>
                   </div>
 
