@@ -2226,7 +2226,7 @@ const translations = {
     
     // Aesthetic Map Section
     'map.strategicLocation': 'Strategic Location',
-    'map.inTheHeartOf': 'In the Heart of',
+    'map.inTheHeartOf': 'In the Heart of Japan',
     'map.japan': 'Japan',
     'map.gunmaDescription': 'Gunma Prefecture, where tradition meets modernity. A privileged location that connects the past with the future.',
     'map.gunmaPrefecture': 'Gunma Prefecture',
@@ -6735,7 +6735,7 @@ const translations = {
     
     // Aesthetic Map Section
     'map.strategicLocation': 'الموقع الاستراتيجي',
-    'map.inTheHeartOf': 'في قلب',
+    'map.inTheHeartOf': 'في قلب اليابان',
     'map.japan': 'اليابان',
     'map.gunmaDescription': 'محافظة غونما، حيث يلتقي التقليد بالحداثة. موقع مميز يربط الماضي بالمستقبل.',
     'map.gunmaPrefecture': 'محافظة غونما',
@@ -9343,7 +9343,7 @@ const translations = {
 
     // Map Section
     'map.strategicLocation': 'Ubicación Estratégica',
-    'map.inTheHeartOf': 'En el Corazón de',
+    'map.inTheHeartOf': 'En el Corazón de Japón',
     'map.japan': 'Japón',
     'map.gunmaDescription': 'La prefectura de Gunma, donde la tradición se encuentra con la modernidad. Una ubicación privilegiada que conecta el pasado con el futuro.',
     'map.gunmaPrefecture': 'Prefectura de Gunma',

@@ -21,8 +21,6 @@ const AestheticMapSection = () => {
           
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-primary mb-6">
             {t('map.inTheHeartOf')}
-            <br />
-            <span className="text-accent">{t('map.japan')}</span>
           </h2>
           
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
