@@ -9052,7 +9052,7 @@ const translations = {
     'guide.subtitle': 'Todo lo que necesitas saber sobre comprar propiedades en Japón',
 
     // Journal Page
-    'journal.title': 'Journal',
+    'journal.title': 'Diario',
     'journal.subtitle': 'Historias y Conocimiento de Japón',
     'journal.description': 'Contenidos que aportan valor y refuerzan la marca: legado, artesanía, vida y cultura japonesa.',
     'journal.stayUpdated': 'Mantente Actualizado',
