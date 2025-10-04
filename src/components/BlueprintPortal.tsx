@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useSafeLanguage } from '@/hooks/useSafeLanguage';
 import { Building, ArrowRight } from 'lucide-react';
 
 const BlueprintPortal = () => {
-  const { t } = useLanguage();
+  const { t } = useSafeLanguage();
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">

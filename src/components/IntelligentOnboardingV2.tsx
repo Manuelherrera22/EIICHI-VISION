@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useSafeLanguage } from '@/hooks/useSafeLanguage';
 import { 
   User, 
   DollarSign, 
@@ -88,7 +88,7 @@ interface CalculatedIndices {
 }
 
 const IntelligentOnboardingV2: React.FC = () => {
-  const { t } = useLanguage();
+  const { t } = useSafeLanguage();
   const [currentStep, setCurrentStep] = useState(0);
   const [userData, setUserData] = useState({
     basicInfo: {} as BasicInfo,
@@ -416,7 +416,7 @@ const BasicInfoStep: React.FC<{ data: BasicInfo; onUpdate: (data: Partial<BasicI
 };
 
 const PrimaryIntentStep: React.FC<{ data: PrimaryIntent; onUpdate: (data: Partial<PrimaryIntent>) => void }> = ({ data, onUpdate }) => {
-  const { t } = useLanguage();
+  const { t } = useSafeLanguage();
   const goals = [
     { id: 'invest', title: t('onboarding.goals.invest'), description: t('onboarding.goals.investDescription'), icon: DollarSign },
     { id: 'migrate', title: t('onboarding.goals.migrate'), description: t('onboarding.goals.migrateDescription'), icon: Plane },
@@ -638,7 +638,7 @@ const FamilySituationStep: React.FC<{ data: FamilySituation; onUpdate: (data: Pa
 };
 
 const CulturalAffinityStep: React.FC<{ data: CulturalAffinity; onUpdate: (data: Partial<CulturalAffinity>) => void }> = ({ data, onUpdate }) => {
-  const { t } = useLanguage();
+  const { t } = useSafeLanguage();
   const interests = [
     t('onboarding.interests.artCulture'), t('onboarding.interests.sports'), t('onboarding.interests.gastronomy'), t('onboarding.interests.nature'), t('onboarding.interests.technology'),
     t('onboarding.interests.music'), t('onboarding.interests.literature'), t('onboarding.interests.cinema'), t('onboarding.interests.history'), t('onboarding.interests.philosophy')

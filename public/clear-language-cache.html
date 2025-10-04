@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Language Cache</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f5f5f5; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            font-weight: bold; 
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        button { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin: 5px; 
+            font-size: 14px; 
+        }
+        button:hover { background: #0056b3; }
+        button.danger { background: #dc3545; }
+        button.danger:hover { background: #c82333; }
+        button.success { background: #28a745; }
+        button.success:hover { background: #218838; }
+        pre { 
+            background: #f8f9fa; 
+            padding: 10px; 
+            border-radius: 4px; 
+            overflow-x: auto; 
+            font-size: 12px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Language Cache Manager</h1>
+        
+        <div id="current-status" class="status info">
+            Checking current language settings...
+        </div>
+        
+        <div id="actions">
+            <h3>Actions:</h3>
+            <button onclick="checkStatus()">🔄 Refresh Status</button>
+            <button onclick="clearAllStorage()" class="danger">🗑️ Clear All Storage</button>
+            <button onclick="setEnglish()" class="success">🇺🇸 Set English</button>
+            <button onclick="setJapanese()">🇯🇵 Set Japanese</button>
+            <button onclick="setArabic()">🇸🇦 Set Arabic</button>
+            <button onclick="setSpanish()">🇪🇸 Set Spanish</button>
+            <button onclick="goToApp()">🚀 Go to App</button>
+        </div>
+        
+        <div id="debug-info">
+            <h3>Debug Information:</h3>
+            <pre id="debug-content">Loading...</pre>
+        </div>
+    </div>
+
+    <script>
+        function updateStatus() {
+            const statusDiv = document.getElementById('current-status');
+            const debugDiv = document.getElementById('debug-content');
+            
+            // Check localStorage
+            const storedLanguage = localStorage.getItem('language');
+            const storedTabijiLanguage = localStorage.getItem('tabiji-language');
+            
+            // Check sessionStorage
+            const sessionLanguage = sessionStorage.getItem('language');
+            const sessionTabijiLanguage = sessionStorage.getItem('tabiji-language');
+            
+            // Check cookies
+            const cookies = document.cookie;
+            
+            // Check navigator language
+            const navigatorLanguage = navigator.language;
+            const navigatorLanguages = navigator.languages;
+            
+            let statusText = '';
+            let statusClass = 'info';
+            
+            if (storedLanguage === 'es' || storedTabijiLanguage === 'es') {
+                statusText = '⚠️ Spanish language detected in storage - this may cause hardcoded text to appear';
+                statusClass = 'warning';
+            } else if (storedLanguage === 'en' || storedTabijiLanguage === 'en' || (!storedLanguage && !storedTabijiLanguage)) {
+                statusText = '✅ English language or no language preference detected';
+                statusClass = 'success';
+            } else {
+                statusText = `ℹ️ Language set to: ${storedLanguage || storedTabijiLanguage || 'default (en)'}`;
+                statusClass = 'info';
+            }
+            
+            statusDiv.textContent = statusText;
+            statusDiv.className = `status ${statusClass}`;
+            
+            // Debug info
+            debugDiv.textContent = `LocalStorage:
+  language: ${storedLanguage || 'null'}
+  tabiji-language: ${storedTabijiLanguage || 'null'}
+
+SessionStorage:
+  language: ${sessionLanguage || 'null'}
+  tabiji-language: ${sessionTabijiLanguage || 'null'}
+
+Cookies:
+  ${cookies || 'No cookies found'}
+
+Navigator:
+  language: ${navigatorLanguage}
+  languages: ${navigatorLanguages.join(', ')}
+
+Current URL: ${window.location.href}`;
+        }
+        
+        function clearAllStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Clear language-related cookies
+            document.cookie = 'language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'tabiji-language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            
+            alert('✅ All storage cleared! The app should now use the default language (English).');
+            updateStatus();
+        }
+        
+        function setEnglish() {
+            localStorage.setItem('language', 'en');
+            localStorage.setItem('tabiji-language', 'en');
+            alert('✅ Language set to English!');
+            updateStatus();
+        }
+        
+        function setJapanese() {
+            localStorage.setItem('language', 'ja');
+            localStorage.setItem('tabiji-language', 'ja');
+            alert('✅ Language set to Japanese!');
+            updateStatus();
+        }
+        
+        function setArabic() {
+            localStorage.setItem('language', 'ar');
+            localStorage.setItem('tabiji-language', 'ar');
+            alert('✅ Language set to Arabic!');
+            updateStatus();
+        }
+        
+        function setSpanish() {
+            localStorage.setItem('language', 'es');
+            localStorage.setItem('tabiji-language', 'es');
+            alert('✅ Language set to Spanish!');
+            updateStatus();
+        }
+        
+        function goToApp() {
+            window.location.href = '/';
+        }
+        
+        function checkStatus() {
+            updateStatus();
+        }
+        
+        // Initialize on load
+        updateStatus();
+    </script>
+</body>
+</html>
