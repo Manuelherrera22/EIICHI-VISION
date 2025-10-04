@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Language Debug</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f5f5f5; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            font-weight: bold; 
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin: 5px; 
+            font-size: 14px; 
+        }
+        button:hover { background: #0056b3; }
+        button.danger { background: #dc3545; }
+        button.danger:hover { background: #c82333; }
+        button.success { background: #28a745; }
+        button.success:hover { background: #218838; }
+        pre { 
+            background: #f8f9fa; 
+            padding: 10px; 
+            border-radius: 4px; 
+            overflow-x: auto; 
+            font-size: 12px; 
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Advanced Language Debug Tool</h1>
+        
+        <div id="current-status" class="status info">
+            Initializing debug session...
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Language Persistence Test</h3>
+            <button onclick="testLanguagePersistence()">Test Language Changes</button>
+            <button onclick="simulatePageRefresh()">Simulate Page Refresh</button>
+            <div id="persistence-results"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🗑️ Storage Management</h3>
+            <button onclick="clearAllStorage()" class="danger">Clear All Storage</button>
+            <button onclick="setEnglish()" class="success">Set English</button>
+            <button onclick="setJapanese()">Set Japanese</button>
+            <button onclick="setArabic()">Set Arabic</button>
+            <button onclick="setSpanish()">Set Spanish</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔄 Real-time Monitoring</h3>
+            <button onclick="startMonitoring()">Start Monitoring</button>
+            <button onclick="stopMonitoring()">Stop Monitoring</button>
+            <div id="monitoring-results"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Current Status</h3>
+            <button onclick="updateStatus()">Refresh Status</button>
+            <pre id="debug-content">Loading...</pre>
+        </div>
+        
+        <div class="test-section">
+            <h3>🚀 Quick Actions</h3>
+            <button onclick="goToApp()">Go to App</button>
+            <button onclick="goToDashboard()">Go to Dashboard</button>
+            <button onclick="goToBlueprint()">Go to Blueprint</button>
+        </div>
+    </div>
+
+    <script>
+        let monitoringInterval = null;
+        
+        function updateStatus() {
+            const statusDiv = document.getElementById('current-status');
+            const debugDiv = document.getElementById('debug-content');
+            
+            // Check localStorage
+            const storedLanguage = localStorage.getItem('language');
+            const storedTabijiLanguage = localStorage.getItem('tabiji-language');
+            
+            // Check sessionStorage
+            const sessionLanguage = sessionStorage.getItem('language');
+            const sessionTabijiLanguage = sessionStorage.getItem('tabiji-language');
+            
+            // Check cookies
+            const cookies = document.cookie;
+            
+            // Check navigator language
+            const navigatorLanguage = navigator.language;
+            const navigatorLanguages = navigator.languages;
+            
+            // Check all localStorage keys
+            const allLocalStorage = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                allLocalStorage[key] = localStorage.getItem(key);
+            }
+            
+            // Check all sessionStorage keys
+            const allSessionStorage = {};
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                allSessionStorage[key] = sessionStorage.getItem(key);
+            }
+            
+            let statusText = '';
+            let statusClass = 'info';
+            
+            if (storedLanguage === 'es' || storedTabijiLanguage === 'es') {
+                statusText = '⚠️ Spanish language detected in storage - this may cause forced Spanish text';
+                statusClass = 'warning';
+            } else if (storedLanguage === 'en' || storedTabijiLanguage === 'en' || (!storedLanguage && !storedTabijiLanguage)) {
+                statusText = '✅ English language or no language preference detected';
+                statusClass = 'success';
+            } else {
+                statusText = `ℹ️ Language set to: ${storedLanguage || storedTabijiLanguage || 'default (en)'}`;
+                statusClass = 'info';
+            }
+            
+            statusDiv.textContent = statusText;
+            statusDiv.className = `status ${statusClass}`;
+            
+            // Debug info
+            debugDiv.innerHTML = `LocalStorage (${Object.keys(allLocalStorage).length} items):
+${JSON.stringify(allLocalStorage, null, 2)}
+
+SessionStorage (${Object.keys(allSessionStorage).length} items):
+${JSON.stringify(allSessionStorage, null, 2)}
+
+Cookies:
+${cookies || 'No cookies found'}
+
+Navigator:
+  language: ${navigatorLanguage}
+  languages: ${navigatorLanguages.join(', ')}
+
+Current URL: ${window.location.href}
+Timestamp: ${new Date().toISOString()}`;
+        }
+        
+        function clearAllStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Clear language-related cookies
+            document.cookie = 'language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'tabiji-language=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            
+            alert('✅ All storage cleared! The app should now use the default language (English).');
+            updateStatus();
+        }
+        
+        function setEnglish() {
+            localStorage.setItem('language', 'en');
+            localStorage.setItem('tabiji-language', 'en');
+            alert('✅ Language set to English!');
+            updateStatus();
+        }
+        
+        function setJapanese() {
+            localStorage.setItem('language', 'ja');
+            localStorage.setItem('tabiji-language', 'ja');
+            alert('✅ Language set to Japanese!');
+            updateStatus();
+        }
+        
+        function setArabic() {
+            localStorage.setItem('language', 'ar');
+            localStorage.setItem('tabiji-language', 'ar');
+            alert('✅ Language set to Arabic!');
+            updateStatus();
+        }
+        
+        function setSpanish() {
+            localStorage.setItem('language', 'es');
+            localStorage.setItem('tabiji-language', 'es');
+            alert('✅ Language set to Spanish!');
+            updateStatus();
+        }
+        
+        function testLanguagePersistence() {
+            const resultsDiv = document.getElementById('persistence-results');
+            resultsDiv.innerHTML = '<p>🧪 Testing language persistence...</p>';
+            
+            // Set a test language
+            const testLang = 'ja';
+            localStorage.setItem('language', testLang);
+            localStorage.setItem('tabiji-language', testLang);
+            
+            setTimeout(() => {
+                const currentLang = localStorage.getItem('language');
+                if (currentLang === testLang) {
+                    resultsDiv.innerHTML = `<p class="success">✅ Language persistence test PASSED - Language maintained as ${currentLang}</p>`;
+                } else {
+                    resultsDiv.innerHTML = `<p class="error">❌ Language persistence test FAILED - Expected ${testLang}, got ${currentLang}</p>`;
+                }
+                updateStatus();
+            }, 1000);
+        }
+        
+        function simulatePageRefresh() {
+            const resultsDiv = document.getElementById('persistence-results');
+            resultsDiv.innerHTML = '<p>🔄 Simulating page refresh...</p>';
+            
+            // Store current language
+            const currentLang = localStorage.getItem('language') || 'en';
+            
+            setTimeout(() => {
+                // Simulate what happens on page refresh
+                const afterRefresh = localStorage.getItem('language');
+                if (afterRefresh === currentLang) {
+                    resultsDiv.innerHTML += `<p class="success">✅ Page refresh simulation PASSED - Language maintained as ${afterRefresh}</p>`;
+                } else {
+                    resultsDiv.innerHTML += `<p class="error">❌ Page refresh simulation FAILED - Expected ${currentLang}, got ${afterRefresh}</p>`;
+                }
+                updateStatus();
+            }, 500);
+        }
+        
+        function startMonitoring() {
+            if (monitoringInterval) {
+                clearInterval(monitoringInterval);
+            }
+            
+            const resultsDiv = document.getElementById('monitoring-results');
+            resultsDiv.innerHTML = '<p>🔍 Starting real-time monitoring...</p>';
+            
+            let previousLanguage = localStorage.getItem('language');
+            let changeCount = 0;
+            
+            monitoringInterval = setInterval(() => {
+                const currentLanguage = localStorage.getItem('language');
+                
+                if (currentLanguage !== previousLanguage) {
+                    changeCount++;
+                    resultsDiv.innerHTML += `<p class="warning">⚠️ Language changed from ${previousLanguage} to ${currentLanguage} (Change #${changeCount})</p>`;
+                    previousLanguage = currentLanguage;
+                }
+                
+                // Update status every 5 seconds
+                if (changeCount % 10 === 0) {
+                    updateStatus();
+                }
+            }, 500);
+            
+            setTimeout(() => {
+                resultsDiv.innerHTML += `<p class="info">ℹ️ Monitoring started. Check console for any automatic language changes.</p>`;
+            }, 1000);
+        }
+        
+        function stopMonitoring() {
+            if (monitoringInterval) {
+                clearInterval(monitoringInterval);
+                monitoringInterval = null;
+                document.getElementById('monitoring-results').innerHTML += '<p>⏹️ Monitoring stopped.</p>';
+            }
+        }
+        
+        function goToApp() {
+            window.location.href = '/';
+        }
+        
+        function goToDashboard() {
+            window.location.href = '/dashboard';
+        }
+        
+        function goToBlueprint() {
+            window.location.href = '/blueprint';
+        }
+        
+        // Initialize on load
+        updateStatus();
+        
+        // Monitor for storage changes
+        window.addEventListener('storage', function(e) {
+            console.log('Storage changed:', e.key, e.newValue, e.oldValue);
+            updateStatus();
+        });
+    </script>
+</body>
+</html>

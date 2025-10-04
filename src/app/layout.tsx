@@ -29,12 +29,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tabiji House | Construye tu Futuro. Honra el Pasado.",
-  description: "Invierte en casas patrimoniales japonesas, guiado por el legado de la arquitectura tradicional. Transforma propiedades akiya en Gunma en activos valiosos y hogares de ensueño.",
-  keywords: "bienes raíces Japón, akiya, casas patrimoniales, Gunma, casas tradicionales, inversión, renovación, tabiji",
+  title: "Tabiji House | Build Your Future. Honor the Past.",
+  description: "Invest in Japanese heritage houses, guided by traditional architecture legacy. Transform akiya properties in Gunma into valuable assets and dream homes.",
+  keywords: "Japanese real estate, akiya, heritage houses, Gunma, traditional houses, investment, renovation, tabiji",
   openGraph: {
-    title: "Tabiji House | Construye tu Futuro. Honra el Pasado.",
-    description: "Invierte en casas patrimoniales japonesas, guiado por el legado de la arquitectura tradicional.",
+    title: "Tabiji House | Build Your Future. Honor the Past.",
+    description: "Invest in Japanese heritage houses, guided by traditional architecture legacy.",
     type: "website",
   },
 };
@@ -53,8 +53,8 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Establecer el título inmediatamente para evitar mostrar "localhost"
-              document.title = "Tabiji House | Construye tu Futuro. Honra el Pasado.";
+              // Set title immediately to avoid showing "localhost"
+              document.title = "Tabiji House | Build Your Future. Honor the Past.";
             `,
           }}
         />
