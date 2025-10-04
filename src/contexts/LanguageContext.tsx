@@ -7003,6 +7003,30 @@ const translations = {
     'contact.legalAdvice': 'النصائح القانونية',
     'contact.other': 'أخرى',
 
+    // Services Page
+    'services.premiumLifestyleServices': 'خدمات نمط الحياة المتميزة',
+    'services.completeSupportTitle': 'دعم شامل ل',
+    'services.gunmaLifestyle': 'نمط الحياة في غونما',
+    'services.description': 'من دعم الحياة اليومية إلى التجارب الثقافية، نوفر كل ما تحتاجه للاستمتاع الكامل باستثمارك العقاري الياباني.',
+    'services.searchPlaceholder': 'البحث في الخدمات...',
+    'services.overview': 'نظرة عامة',
+    'services.premiumServices': 'خدمات متميزة',
+    'services.comprehensiveSupport': 'دعم شامل لنمط الحياة منظم في {count} فئات متخصصة',
+    'services.services': 'الخدمات',
+    'services.always': 'دائماً',
+    'services.seasonal': 'موسمي',
+    'services.servicesInCategory': '{count} خدمة في هذه الفئة',
+    'services.alwaysAvailable': 'متاح دائماً',
+    'services.byRequest': 'عند الطلب',
+    'services.daily': 'يومي',
+    'services.transportation': 'النقل',
+    'services.safety': 'الأمان',
+    'services.pets': 'الحيوانات الأليفة',
+    'services.children': 'الأطفال',
+    'services.food': 'الطعام',
+    'services.cultural': 'ثقافي',
+    'services.lifestyle': 'نمط الحياة',
+
     // Common Navigation
     'common.backToHome': 'العودة للصفحة الرئيسية',
 
