@@ -132,6 +132,9 @@ const nextConfig: NextConfig = {
     pagesBufferLength: 2,
   },
   
+  // Deshabilitar Fast Refresh completamente
+  reactStrictMode: false,
+  
 };
 
 export default nextConfig;
