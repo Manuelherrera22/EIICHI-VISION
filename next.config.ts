@@ -135,6 +135,7 @@ const nextConfig: NextConfig = {
   // Deshabilitar Fast Refresh completamente
   reactStrictMode: false,
   
+  
 };
 
 export default nextConfig;

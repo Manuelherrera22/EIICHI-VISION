@@ -22,3 +22,4 @@ const JNIPartnershipButtons: React.FC = () => {
 };
 
 export default JNIPartnershipButtons;
+
