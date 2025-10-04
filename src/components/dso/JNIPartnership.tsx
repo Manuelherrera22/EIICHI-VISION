@@ -30,12 +30,10 @@ const JNIPartnership: React.FC = () => {
   const router = useRouter();
 
   const handleContactClick = () => {
-    console.log('Contact button clicked!');
     router.push('/contact');
   };
 
   const handleLearnMoreClick = () => {
-    console.log('Learn More button clicked!');
     router.push('/about');
   };
 
@@ -375,21 +373,15 @@ const JNIPartnership: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
               <button 
                 onClick={handleLearnMoreClick}
-                onMouseDown={handleLearnMoreClick}
-                onTouchStart={handleLearnMoreClick}
-                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer relative z-50"
+                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 type="button"
-                style={{ pointerEvents: 'auto', position: 'relative' }}
               >
                 Learn More About Partnership
               </button>
               <button 
                 onClick={handleContactClick}
-                onMouseDown={handleContactClick}
-                onTouchStart={handleContactClick}
-                className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer relative z-50"
+                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 type="button"
-                style={{ pointerEvents: 'auto', position: 'relative' }}
               >
                 Contact Our Team
               </button>
