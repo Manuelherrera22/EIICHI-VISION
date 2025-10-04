@@ -34,10 +34,10 @@ export default function Journal() {
   }, []);
 
   const categories = [
-    { id: 'all', name: 'Todos', count: 24 },
-    { id: 'legacy', name: 'Legado', count: 6 },
-    { id: 'craftsmanship', name: 'Artesanía', count: 8 },
-    { id: 'lifestyle', name: 'Vida', count: 10 }
+    { id: 'all', name: t('journal.allArticles'), count: 24 },
+    { id: 'legacy', name: t('journal.legacy'), count: 6 },
+    { id: 'craftsmanship', name: t('journal.craftsmanship'), count: 8 },
+    { id: 'lifestyle', name: t('journal.lifestyle'), count: 10 }
   ];
 
   const articles = [
@@ -162,10 +162,10 @@ export default function Journal() {
 
   const getCategoryName = (category: string) => {
     switch (category) {
-      case 'legacy': return 'Legado';
-      case 'craftsmanship': return 'Artesanía';
-      case 'lifestyle': return 'Vida';
-      default: return 'General';
+      case 'legacy': return t('journal.legacy');
+      case 'craftsmanship': return t('journal.craftsmanship');
+      case 'lifestyle': return t('journal.lifestyle');
+      default: return t('journal.allArticles');
     }
   };
 
@@ -230,10 +230,10 @@ export default function Journal() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
               <div className="text-sm text-accent font-mono tracking-wider uppercase mb-2">
-                Artículo Destacado
+                {t('journal.featuredArticle')}
               </div>
               <h2 className="text-3xl font-serif font-bold text-primary">
-                En Portada
+                {t('journal.onCover')}
               </h2>
             </div>
 
@@ -249,7 +249,7 @@ export default function Journal() {
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getCategoryColor(featuredArticle.category)}`}>
                       {getCategoryName(featuredArticle.category)}
                     </span>
-                    <span className="text-sm text-secondary">Artículo destacado</span>
+                    <span className="text-sm text-secondary">{t('journal.featuredArticle')}</span>
                   </div>
                   
                   <h3 className="text-2xl lg:text-3xl font-serif font-bold text-primary mb-4 leading-tight">
@@ -274,7 +274,7 @@ export default function Journal() {
                     </div>
                     
                     <button className="flex items-center space-x-2 text-primary hover:text-accent transition-colors duration-200 font-semibold">
-                      <span>Leer más</span>
+                      <span>{t('journal.readMore')}</span>
                       <ArrowRight size={16} />
                     </button>
                   </div>
@@ -290,10 +290,10 @@ export default function Journal() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-3xl font-serif font-bold text-primary mb-2">
-              {filteredArticles.length} Artículos Encontrados
+              {filteredArticles.length} {t('journal.articlesFound')}
             </h2>
             <p className="text-foreground">
-              {selectedCategory === 'all' ? 'Todos los artículos' : `Categoría: ${categories.find(c => c.id === selectedCategory)?.name}`}
+              {selectedCategory === 'all' ? t('journal.allArticlesLabel') : `${t('journal.categoryLabel')}: ${categories.find(c => c.id === selectedCategory)?.name}`}
             </p>
           </div>
 
@@ -341,7 +341,7 @@ export default function Journal() {
                   
                   <div className="mt-4 pt-4 border-t border-border">
                     <button className="flex items-center space-x-2 text-primary hover:text-accent transition-colors duration-200 font-semibold text-sm">
-                      <span>Leer artículo</span>
+                      <span>{t('journal.readArticleButton')}</span>
                       <ArrowRight size={14} />
                     </button>
                   </div>
@@ -354,10 +354,10 @@ export default function Journal() {
             <div className="text-center py-16">
               <div className="text-6xl mb-4">📚</div>
               <h3 className="text-2xl font-serif font-bold text-primary mb-4">
-                No se encontraron artículos
+                {t('journal.noArticlesFound')}
               </h3>
               <p className="text-foreground mb-8">
-                Intenta ajustar tus filtros de búsqueda para encontrar más contenido.
+                {t('journal.adjustFilters')}
               </p>
               <button
                 onClick={() => {
@@ -366,7 +366,7 @@ export default function Journal() {
                 }}
                 className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold"
               >
-                Limpiar Filtros
+                {t('journal.clearFilters')}
               </button>
             </div>
           )}
