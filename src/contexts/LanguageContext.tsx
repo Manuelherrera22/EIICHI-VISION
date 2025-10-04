@@ -9570,14 +9570,20 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Forzar inglés por defecto al cargar (solo en el cliente)
+  // Cargar idioma del localStorage al hidratar (solo en el cliente)
   useEffect(() => {
     setIsHydrated(true);
     
-    // Siempre usar inglés por defecto, ignorar localStorage
-    setLanguage('en');
+    // Cargar idioma del localStorage, usar inglés como fallback
     if (typeof window !== 'undefined') {
-      localStorage.setItem('language', 'en');
+      const savedLanguage = localStorage.getItem('language') as Language;
+      if (savedLanguage && ['en', 'es', 'ja', 'ar'].includes(savedLanguage)) {
+        setLanguage(savedLanguage);
+      } else {
+        // Solo establecer inglés si no hay idioma guardado
+        setLanguage('en');
+        localStorage.setItem('language', 'en');
+      }
     }
   }, []);
 
