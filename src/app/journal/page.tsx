@@ -176,14 +176,13 @@ export default function Journal() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              Historias y Conocimiento
+              {t('journal.subtitle')}
             </div>
             <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
               Journal
             </h1>
             <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              Contenidos que aportan valor y refuerzan la marca: legado, artesanía, 
-              vida y cultura japonesa.
+              {t('journal.description')}
             </p>
           </div>
         </div>
@@ -378,11 +377,10 @@ export default function Journal() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-            Mantente Actualizado
+            {t('journal.stayUpdated')}
           </h2>
           <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-            Suscríbete a nuestro boletín para recibir los últimos artículos sobre 
-            cultura japonesa, artesanía y vida en Gunma directamente en tu correo.
+            {t('journal.newsletterDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
             <input
@@ -391,7 +389,7 @@ export default function Journal() {
               className="flex-1 px-6 py-3 border-2 border-gray-300 rounded-full text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder-gray-500"
             />
             <button className="bg-primary text-black px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold shadow-lg border border-primary/30 ring-1 ring-primary/20">
-              Suscribirse
+              {t('journal.subscribeButton')}
             </button>
           </div>
         </div>

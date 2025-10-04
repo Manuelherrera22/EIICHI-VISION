@@ -208,10 +208,10 @@ const BookingSystem = () => {
           <Calendar size={32} className="text-accent" />
         </div>
         <h3 className="text-3xl font-serif font-bold text-primary mb-2">
-          Agenda tu Consulta Gratuita
+          {t('booking.title')}
         </h3>
         <p className="text-secondary">
-          Una llamada de 30 minutos para entender tus objetivos y mostrarte las oportunidades disponibles
+          {t('booking.subtitle')}
         </p>
       </div>
 
@@ -220,7 +220,7 @@ const BookingSystem = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
-              Nombre Completo *
+              {t('booking.fullName')} *
             </label>
             <div className="relative">
               <User size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -246,7 +246,7 @@ const BookingSystem = () => {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-              Email *
+              {t('booking.email')} *
             </label>
             <div className="relative">
               <Mail size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -274,7 +274,7 @@ const BookingSystem = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
-              Teléfono *
+              {t('booking.phone')} *
             </label>
             <div className="relative">
               <Phone size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
@@ -300,7 +300,7 @@ const BookingSystem = () => {
 
           <div>
             <label htmlFor="timezone" className="block text-sm font-medium text-primary mb-2">
-              Zona Horaria *
+              {t('booking.timezone')} *
             </label>
             <select
               id="timezone"
@@ -311,7 +311,7 @@ const BookingSystem = () => {
                 errors.timezone ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
-              <option value="">Selecciona tu zona horaria</option>
+              <option value="">{t('booking.timezonePlaceholder')}</option>
               {timezones.map((tz) => (
                 <option key={tz.value} value={tz.value}>
                   {tz.label}
@@ -331,7 +331,7 @@ const BookingSystem = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="preferredDate" className="block text-sm font-medium text-primary mb-2">
-              Fecha Preferida *
+              {t('booking.preferredDate')} *
             </label>
             <input
               type="date"
@@ -354,7 +354,7 @@ const BookingSystem = () => {
 
           <div>
             <label htmlFor="preferredTime" className="block text-sm font-medium text-primary mb-2">
-              Hora Preferida *
+              {t('booking.preferredTime')} *
             </label>
             <select
               id="preferredTime"
@@ -365,7 +365,7 @@ const BookingSystem = () => {
                 errors.preferredTime ? 'border-red-300 bg-red-50' : 'border-border'
               }`}
             >
-              <option value="">Selecciona una hora</option>
+              <option value="">{t('booking.preferredTimePlaceholder')}</option>
               {timeSlots.map((time) => (
                 <option key={time} value={time}>
                   {time}
@@ -422,7 +422,7 @@ const BookingSystem = () => {
             onChange={handleInputChange}
             rows={4}
             className="w-full px-4 py-3 border border-border rounded-xl text-gray-900 bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-            placeholder={t('booking.messagePlaceholder')}
+            placeholder={t('booking.additionalMessagePlaceholder')}
           />
         </div>
 
@@ -440,7 +440,7 @@ const BookingSystem = () => {
           ) : (
             <>
               <Calendar size={20} />
-              <span>Agendar Consulta Gratuita</span>
+              <span>{t('booking.scheduleButton')}</span>
             </>
           )}
         </button>
