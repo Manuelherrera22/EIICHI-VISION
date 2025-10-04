@@ -64,7 +64,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="text-xs sm:text-sm text-secondary font-mono mb-3 sm:mb-4">
-                こもれび・ハウス
+                たびじ ハウス
               </div>
               <p className="text-foreground text-xs sm:text-sm leading-relaxed">
                 {isClient ? t('footer.companyDescription') : "Discover Japan's unique heritage through traditional properties where sunlight filters through leaves, creating a magical atmosphere of peace and tranquility."}
