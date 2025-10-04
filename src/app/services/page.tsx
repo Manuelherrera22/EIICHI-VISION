@@ -446,18 +446,17 @@ export default function Services() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-            Ready to Experience Premium Gunma Lifestyle?
+            {t('services.ctaTitle')}
           </h2>
           <p className="text-xl text-foreground mb-8 leading-relaxed">
-            Let us help you create the perfect lifestyle experience in your Japanese property. 
-            Contact us to discuss your specific needs and preferences.
+            {t('services.ctaDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg">
-              Contact Our Service Team
+              {t('services.contactServiceTeam')}
             </button>
             <button className="border border-primary text-primary px-8 py-4 rounded-full hover:bg-primary/5 transition-colors duration-300 font-semibold text-lg">
-              View Property Portfolio
+              {t('services.viewPropertyPortfolio')}
             </button>
           </div>
         </div>

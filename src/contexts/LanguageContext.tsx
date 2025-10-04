@@ -2591,6 +2591,10 @@ const translations = {
     'services.food': 'Food',
     'services.cultural': 'Cultural',
     'services.lifestyle': 'Lifestyle',
+    'services.ctaTitle': 'Ready to Experience Premium Gunma Lifestyle?',
+    'services.ctaDescription': 'Let us help you create the perfect lifestyle experience in your Japanese property. Contact us to discuss your specific needs and preferences.',
+    'services.contactServiceTeam': 'Contact Our Service Team',
+    'services.viewPropertyPortfolio': 'View Property Portfolio',
 
     // Common Navigation
     'common.backToHome': 'Back to Home',
@@ -4936,6 +4940,10 @@ const translations = {
     'services.food': '食事',
     'services.cultural': '文化',
     'services.lifestyle': 'ライフスタイル',
+    'services.ctaTitle': '群馬のプレミアムライフスタイルを体験する準備はできていますか？',
+    'services.ctaDescription': '日本の不動産で完璧なライフスタイル体験を創造するお手伝いをさせてください。あなたの具体的なニーズとご希望について相談するためにお問い合わせください。',
+    'services.contactServiceTeam': 'サービスチームに連絡',
+    'services.viewPropertyPortfolio': '物件ポートフォリオを見る',
 
     // Common Navigation
     'common.backToHome': 'ホームに戻る',
@@ -7026,6 +7034,10 @@ const translations = {
     'services.food': 'الطعام',
     'services.cultural': 'ثقافي',
     'services.lifestyle': 'نمط الحياة',
+    'services.ctaTitle': 'هل أنت مستعد لتجربة نمط الحياة المتميز في غونما؟',
+    'services.ctaDescription': 'دعنا نساعدك في إنشاء تجربة نمط الحياة المثالية في ممتلكاتك اليابانية. اتصل بنا لمناقشة احتياجاتك وتفضيلاتك المحددة.',
+    'services.contactServiceTeam': 'اتصل بفريق الخدمة',
+    'services.viewPropertyPortfolio': 'عرض محفظة العقارات',
 
     // Common Navigation
     'common.backToHome': 'العودة للصفحة الرئيسية',
@@ -9632,6 +9644,10 @@ const translations = {
     'services.food': 'Comida',
     'services.cultural': 'Cultural',
     'services.lifestyle': 'Estilo de Vida',
+    'services.ctaTitle': '¿Listo para Experimentar el Estilo de Vida Premium de Gunma?',
+    'services.ctaDescription': 'Permítenos ayudarte a crear la experiencia de estilo de vida perfecta en tu propiedad japonesa. Contáctanos para discutir tus necesidades y preferencias específicas.',
+    'services.contactServiceTeam': 'Contactar a Nuestro Equipo de Servicio',
+    'services.viewPropertyPortfolio': 'Ver Portafolio de Propiedades',
 
     // Common Navigation
     'common.backToHome': 'Volver al Inicio',
