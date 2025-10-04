@@ -276,7 +276,11 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onNavigate
         filtered.sort((a, b) => a.title.localeCompare(b.title));
         break;
       case 'recent':
-        filtered.sort((a, b) => (b.lastAccessed?.getTime() || 0) - (a.lastAccessed?.getTime() || 0));
+        filtered.sort((a, b) => {
+          const dateA = a.lastAccessed instanceof Date ? a.lastAccessed : (a.lastAccessed ? new Date(a.lastAccessed) : null);
+          const dateB = b.lastAccessed instanceof Date ? b.lastAccessed : (b.lastAccessed ? new Date(b.lastAccessed) : null);
+          return (dateB?.getTime() || 0) - (dateA?.getTime() || 0);
+        });
         break;
       case 'relevance':
       default:

@@ -386,7 +386,11 @@ const AdvancedAI: React.FC<AdvancedAIProps> = ({ isOpen, onClose, onPredictionSe
         filtered.sort((a, b) => impactOrder[b.impact] - impactOrder[a.impact]);
         break;
       case 'recent':
-        filtered.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+        filtered.sort((a, b) => {
+          const dateA = a.createdAt instanceof Date ? a.createdAt : new Date(a.createdAt);
+          const dateB = b.createdAt instanceof Date ? b.createdAt : new Date(b.createdAt);
+          return dateB.getTime() - dateA.getTime();
+        });
         break;
       case 'confidence':
       default:
