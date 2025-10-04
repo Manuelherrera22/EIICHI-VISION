@@ -4596,7 +4596,7 @@ const translations = {
     
     // Aesthetic Map Section
     'map.strategicLocation': '戦略的位置',
-    'map.inTheHeartOf': 'の中心に',
+    'map.inTheHeartOf': '日本の中心に',
     'map.japan': '日本',
     'map.gunmaDescription': '群馬県、伝統と現代が出会う場所。過去と未来を結ぶ特権的な場所。',
     'map.gunmaPrefecture': '群馬県',
