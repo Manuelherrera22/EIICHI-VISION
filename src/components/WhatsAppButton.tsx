@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -41,7 +41,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       aria-label="Contactar por WhatsApp"
       title="Contactar por WhatsApp"
     >
-      <MessageCircle 
+      <FaWhatsapp 
         size={24} 
         className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" 
       />
@@ -57,7 +57,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         shadow-xl border border-gray-700/50
       ">
         <span className="flex items-center gap-2">
-          <MessageCircle size={14} className="text-green-400" />
+          <FaWhatsapp size={14} className="text-green-400" />
           ¡Escríbenos por WhatsApp!
         </span>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
