@@ -1506,7 +1506,7 @@ const translations = {
     'footer.newsletterDescription': 'Stay updated with our latest projects and insights.',
     'footer.subscribe': 'Subscribe',
     'footer.emailPlaceholder': 'Enter your email',
-    'footer.copyright': '© 2024 Tabiji House. All rights reserved.',
+    'footer.copyright': 'All rights reserved.',
     
     // Onboarding
     'onboarding.welcome': 'Welcome to Tabiji House',
@@ -8744,7 +8744,7 @@ const translations = {
     'footer.newsletterDescription': 'Mantente al día con las últimas propiedades y oportunidades de inversión.',
     'footer.emailPlaceholder': 'Tu correo electrónico',
     'footer.subscribe': 'Suscribirse',
-    'footer.copyright': '© 2024 Tabiji House. Todos los derechos reservados.',
+    'footer.copyright': 'Todos los derechos reservados.',
     
     // Onboarding
     'onboarding.welcome': 'Bienvenido a Tabiji House',

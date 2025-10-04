@@ -248,7 +248,7 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
           className="text-center mt-8"
         >
           <p className="text-sm text-gray-500">
-            © 2024 Tabiji House. Todos los derechos reservados.
+            © 2025 Tabiji House. Todos los derechos reservados.
           </p>
         </motion.div>
       </div>
