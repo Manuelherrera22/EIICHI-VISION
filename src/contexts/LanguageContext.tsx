@@ -4421,7 +4421,7 @@ const translations = {
     'about.strategicAllianceSubtitle': '私たちの戦略的提携',
     'about.strategicAllianceTitle': 'グローバルビジョンと日本の信頼性',
     'about.strategicAllianceDescription': 'タビジハウスの技術的機動性がJNIプロパティーズの堅実性と信頼性と結びつき、革新と日本のビジネス伝統を組み合わせた提携を創出しています。',
-    'about.toshinoriName': '渋澤憲輔',
+    'about.toshinoriName': '澁澤 亨典',
     'about.toshinoriTitle': '代表取締役、JNIプロパティーズ株式会社',
     'about.alliancePhilosophy': '私の故郷である群馬には、四季折々の美しい自然や豊富な資源、そして恵まれた温泉があります。',
     'about.leadershipVision': '日本にはまだ世界に十分知られていない魅力が数多く存在します。私は、群馬、そして日本全体の魅力を世界の皆さまに発信していきたいと考えています。',
@@ -4617,7 +4617,7 @@ const translations = {
     'jni.cta.description': '成功した投資家のネットワークに参加し、日本の不動産市場での実績あるトラックレコードの恩恵を受けましょう',
     'jni.cta.viewProperties': 'パートナーシップについて詳しく学ぶ',
     'jni.cta.learnMore': 'チームに連絡する',
-    'jni.leadership.name': '渋澤俊徳',
+    'jni.leadership.name': '澁澤 亨典',
     'jni.leadership.title': '代表取締役、JNIプロパティーズ株式会社',
     'jni.leadership.message': '私の故郷である群馬には、四季折々の美しい自然や豊富な資源、そして恵まれた温泉があります。これらは豊かな暮らしを支えており、日本にはまだ世界に十分知られていない魅力が数多く存在します。私は、群馬、そして日本全体の魅力を世界の皆さまに発信していきたいと考えています。不動産の単なる売買にとどまらず、「日本で暮らすことで実現できる新しいライフスタイル」を体験していただく機会を創出し、その独自の魅力をできるだけ多くの方に感じていただきたいと思っています。',
 
