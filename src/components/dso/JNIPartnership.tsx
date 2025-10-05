@@ -1,8 +1,10 @@
 'use client';
+// @refresh reset
 
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import JNIPartnershipButtons from './JNIPartnershipButtons';
 import {
   Building2,
   MapPin,
@@ -352,12 +354,7 @@ const JNIPartnership: React.FC = () => {
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-center"
-        >
+        <div className="text-center relative z-10" style={{ pointerEvents: 'auto' }}>
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white">
             <h3 className="text-xl sm:text-2xl font-bold mb-4">
               Ready to Partner with JNI Properties?
@@ -365,16 +362,9 @@ const JNIPartnership: React.FC = () => {
             <p className="text-sm sm:text-base text-blue-100 mb-6 max-w-2xl mx-auto">
               Join our network of successful investors and benefit from our proven track record in Japan's real estate market.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Learn More About Partnership
-              </button>
-              <button className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                Contact Our Team
-              </button>
-            </div>
+            <JNIPartnershipButtons />
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

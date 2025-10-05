@@ -117,7 +117,34 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Configuración de Turbopack se maneja automáticamente
+  // Configuración de Turbopack (deshabilitado)
+  // turbopack: {
+  //   // Deshabilitar Fast Refresh completamente
+  //   fastRefresh: false,
+  //   // Configurar directorio raíz
+  //   root: process.cwd(),
+  // },
+  
+  // Configuración de desarrollo
+  onDemandEntries: {
+    // Deshabilitar hot reload
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+  
+  // Deshabilitar Fast Refresh completamente
+  reactStrictMode: false,
+  
+  // Configuración adicional para deshabilitar completamente Fast Refresh
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      // Deshabilitar Fast Refresh en webpack
+      config.optimization = config.optimization || {};
+      config.optimization.splitChunks = false;
+    }
+    return config;
+  },
+  
   
 };
 

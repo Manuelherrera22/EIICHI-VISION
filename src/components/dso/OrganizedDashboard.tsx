@@ -609,6 +609,7 @@ const OrganizedDashboard: React.FC<OrganizedDashboardProps> = ({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
+              style={{ pointerEvents: 'auto' }}
             >
               {renderActiveSection()}
             </motion.div>

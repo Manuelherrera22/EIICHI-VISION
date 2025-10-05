@@ -54,6 +54,12 @@ const translations = {
     'common.showLess': 'Show Less',
     'common.changeLanguage': 'Change Language',
     
+    // WhatsApp
+    'whatsapp.defaultMessage': 'Hello! I am interested in learning more about properties in Japan.',
+    'whatsapp.ariaLabel': 'Contact us via WhatsApp',
+    'whatsapp.title': 'Contact us via WhatsApp',
+    'whatsapp.tooltip': 'Write to us on WhatsApp!',
+    
     // Navigation
     'navigation.home': 'Home',
     'navigation.about': 'About',
@@ -2683,6 +2689,12 @@ const translations = {
     'common.showLess': '折りたたむ',
     'common.changeLanguage': '言語を変更',
     
+    // WhatsApp
+    'whatsapp.defaultMessage': 'こんにちは！日本の不動産についてもっと詳しく知りたいです。',
+    'whatsapp.ariaLabel': 'WhatsAppでお問い合わせ',
+    'whatsapp.title': 'WhatsAppでお問い合わせ',
+    'whatsapp.tooltip': 'WhatsAppでメッセージを送信！',
+    
     // Navigation
     'navigation.home': 'ホーム',
     'navigation.about': '会社概要',
@@ -5055,6 +5067,12 @@ const translations = {
     'common.showLess': 'عرض أقل',
     'common.changeLanguage': 'تغيير اللغة',
     
+    // WhatsApp
+    'whatsapp.defaultMessage': 'مرحباً! أنا مهتم بمعرفة المزيد عن العقارات في اليابان.',
+    'whatsapp.ariaLabel': 'تواصل معنا عبر واتساب',
+    'whatsapp.title': 'تواصل معنا عبر واتساب',
+    'whatsapp.tooltip': 'اكتب لنا على واتساب!',
+    
     // Navigation
     'navigation.home': 'الرئيسية',
     'navigation.about': 'حولنا',
@@ -7195,6 +7213,12 @@ const translations = {
     'common.terms': 'Términos',
     'common.legal': 'Legal',
     'common.copyright': 'Derechos de autor',
+    
+    // WhatsApp
+    'whatsapp.defaultMessage': '¡Hola! Me interesa saber más sobre las propiedades en Japón.',
+    'whatsapp.ariaLabel': 'Contáctanos por WhatsApp',
+    'whatsapp.title': 'Contáctanos por WhatsApp',
+    'whatsapp.tooltip': '¡Escríbenos por WhatsApp!',
 
     // Navigation
     'navigation.home': 'Inicio',
