@@ -16,8 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       <Footer />
       <WhatsAppButton 
-        phoneNumber="+57 3222345650"
-        message="¡Hola! Me interesa saber más sobre las propiedades en Japón. ¿Podrían ayudarme con información sobre los proyectos disponibles?"
+        phoneNumber="+81-3-6380-3901"
       />
     </div>
   );

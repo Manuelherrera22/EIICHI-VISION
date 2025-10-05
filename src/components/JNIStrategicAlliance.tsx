@@ -331,9 +331,12 @@ const JNIStrategicAlliance: React.FC = () => {
               >
                 {t('jni.cta.viewProperties')}
               </Link>
-              <button className="px-8 py-4 bg-white border-2 border-gray-600 text-gray-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300">
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-white border-2 border-gray-600 text-gray-600 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 text-center"
+              >
                 {t('jni.cta.learnMore')}
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>

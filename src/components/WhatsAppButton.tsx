@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -11,15 +12,19 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   phoneNumber,
-  message = "¡Hola! Me interesa saber más sobre las propiedades en Japón.",
+  message,
   className = ""
 }) => {
+  const { t } = useLanguage();
+  
+  // Use provided message or fallback to translated message
+  const whatsappMessage = message || t('whatsapp.message');
   const handleWhatsAppClick = () => {
     // Clean phone number (remove spaces, dashes, parentheses)
     const cleanNumber = phoneNumber.replace(/[\s\-\(\)]/g, '');
     
     // Create WhatsApp URL
-    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
@@ -38,8 +43,8 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
         group backdrop-blur-sm
         ${className}
       `}
-      aria-label="Contactar por WhatsApp"
-      title="Contactar por WhatsApp"
+      aria-label={t('whatsapp.tooltip')}
+      title={t('whatsapp.tooltip')}
     >
       <FaWhatsapp 
         size={24} 
@@ -58,7 +63,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       ">
         <span className="flex items-center gap-2">
           <FaWhatsapp size={14} className="text-green-400" />
-          ¡Escríbenos por WhatsApp!
+          {t('whatsapp.tooltip')}
         </span>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
       </div>
