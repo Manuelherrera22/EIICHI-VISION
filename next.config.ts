@@ -9,6 +9,13 @@ const nextConfig: NextConfig = {
   // trailingSlash: true,
   // skipTrailingSlashRedirect: true,
   
+  // Configuración de variables de entorno para build
+  env: {
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://kbqxdsqklqdsvfrwawjj.supabase.co',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImticXhkc3FrbHFkc3Zmcndhd2pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkxMTYyNTUsImV4cCI6MjA3NDY5MjI1NX0.XheHxxVayJukawFGR6iUoCh2W_03kguWU973rZT--Ao',
+    NEXT_PUBLIC_SUPABASE_PROJECT_ID: process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || 'kbqxdsqklqdsvfrwawjj',
+  },
+  
   // Deshabilitar overlay de desarrollo
   devIndicators: {
     position: 'bottom-right',
@@ -51,20 +58,7 @@ const nextConfig: NextConfig = {
       const JavaScriptObfuscator = require('webpack-obfuscator');
       
       config.plugins.push(
-        new JavaScriptObfuscator(obfuscationConfig, {
-          // Solo ofuscar archivos JavaScript específicos
-          include: [
-            /\.js$/,
-            /\.tsx?$/
-          ],
-          // Excluir archivos críticos
-          exclude: [
-            /node_modules/,
-            /\.min\./,
-            /vendor/,
-            /chunk/
-          ]
-        })
+        new JavaScriptObfuscator(obfuscationConfig)
       );
     }
     

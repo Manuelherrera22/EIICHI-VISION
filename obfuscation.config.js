@@ -6,23 +6,28 @@
  */
 
 const obfuscationConfig = {
-  // Configuración básica de ofuscación
+  // Configuración AGRESIVA de ofuscación para ocultar código en F12
   rotateStringArray: true,
   stringArray: true,
-  stringArrayThreshold: 0.75,
-  stringArrayEncoding: ['base64'],
+  stringArrayThreshold: 1.0, // 100% de strings ofuscados
+  stringArrayEncoding: ['base64', 'rc4'],
+  stringArrayIndexShift: true,
+  stringArrayShuffle: true,
+  stringArrayWrappersCount: 10,
+  stringArrayWrappersChainedCalls: true,
+  stringArrayWrappersParametersMaxCount: 10,
   
-  // Transformaciones de código
+  // Transformaciones de código MÁS AGRESIVAS
   transformObjectKeys: true,
-  unicodeEscapeSequence: false,
+  unicodeEscapeSequence: true,
   compact: true,
   
-  // Control de variables y funciones
-  identifierNamesGenerator: 'hexadecimal',
-  renameGlobals: false,
-  renameProperties: false,
+  // Control de variables y funciones - MÁS AGRESIVO
+  identifierNamesGenerator: 'mangled-shuffled',
+  renameGlobals: true,
+  renameProperties: true,
   
-  // Configuración de debugging
+  // Configuración de debugging - DESHABILITADO COMPLETAMENTE
   sourceMap: false,
   sourceMapMode: 'separate',
   
@@ -117,11 +122,11 @@ const obfuscationConfig = {
     'Authorization'
   ],
   
-  // Configuración de control de flujo
+  // Configuración de control de flujo - MÁS AGRESIVA
   controlFlowFlattening: true,
-  controlFlowFlatteningThreshold: 0.75,
+  controlFlowFlatteningThreshold: 1.0, // 100% de control de flujo ofuscado
   deadCodeInjection: true,
-  deadCodeInjectionThreshold: 0.4,
+  deadCodeInjectionThreshold: 0.8, // 80% de código muerto inyectado
   
   // Configuración de números
   numbersToExpressions: true,
@@ -134,10 +139,12 @@ const obfuscationConfig = {
   stringArrayWrappersChainedCalls: true,
   stringArrayWrappersParametersMaxCount: 5,
   
-  // Configuración de debugging (deshabilitado en producción)
+  // Configuración de debugging - MÁS AGRESIVA
   debugProtection: true,
-  debugProtectionInterval: 2000,
+  debugProtectionInterval: 1000, // Más frecuente
   disableConsoleOutput: true,
+  debugProtection: true,
+  debugProtectionInterval: 500, // Aún más frecuente para dificultar debugging
   
   // Configuración de rendimiento
   splitStrings: true,
@@ -150,19 +157,15 @@ const obfuscationConfig = {
   // Configuración de variables
   variableNamesGenerator: 'mangled-shuffled',
   
-  // Configuración de self-defending
+  // Configuración de self-defending - MÁS AGRESIVA
   selfDefending: true,
+  selfDefending: true, // Doble protección
   
   // Configuración de dominio (opcional)
   domainLock: [], // Agregar dominios específicos si es necesario
   
-  // Configuración de exclusión de archivos
-  exclude: [
-    'node_modules/**/*',
-    '**/*.min.js',
-    '**/vendor/**/*',
-    '**/chunks/**/*'
-  ]
+  // Configuración de exclusión de archivos (simplificada)
+  exclude: []
 };
 
 module.exports = obfuscationConfig;

@@ -7,8 +7,8 @@
     "build": "next build",
     "build:force": "next build",
     "build:netlify": "next build && next export",
-    "build:obfuscated": "NODE_ENV=production next build",
-    "build:production": "NODE_ENV=production next build",
+    "build:obfuscated": "node scripts/build-obfuscated.js",
+    "build:production": "node scripts/build-obfuscated.js",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -16,7 +16,8 @@
     "analyze": "ANALYZE=true next build",
     "clean": "rm -rf .next out",
     "preview": "next build && next start",
-    "test:obfuscation": "NODE_ENV=production npm run build:obfuscated"
+    "test:obfuscation": "npm run build:obfuscated",
+    "verify:obfuscation": "node scripts/test-obfuscation.js"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
