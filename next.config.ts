@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+// Importar configuración de ofuscación
+const obfuscationConfig = require('./obfuscation.config.js');
+
 const nextConfig: NextConfig = {
   // Configuración para producción
   // output: 'export', // Comentado para desarrollo
@@ -22,8 +25,8 @@ const nextConfig: NextConfig = {
     tsconfigPath: './tsconfig.build.json',
   },
   
-  // Configuración de webpack para ignorar errores de TypeScript
-  webpack: (config, { isServer }) => {
+  // Configuración de webpack unificada
+  webpack: (config, { dev, isServer }) => {
     // Ignorar errores de TypeScript
     config.ignoreWarnings = [
       /Module not found/,
@@ -41,6 +44,34 @@ const nextConfig: NextConfig = {
         path: false,
         crypto: false,
       };
+    }
+    
+    // Ofuscación solo en producción y para archivos del cliente
+    if (!dev && !isServer && process.env.NODE_ENV === 'production') {
+      const JavaScriptObfuscator = require('webpack-obfuscator');
+      
+      config.plugins.push(
+        new JavaScriptObfuscator(obfuscationConfig, {
+          // Solo ofuscar archivos JavaScript específicos
+          include: [
+            /\.js$/,
+            /\.tsx?$/
+          ],
+          // Excluir archivos críticos
+          exclude: [
+            /node_modules/,
+            /\.min\./,
+            /vendor/,
+            /chunk/
+          ]
+        })
+      );
+    }
+    
+    // Deshabilitar Fast Refresh en desarrollo
+    if (dev && !isServer) {
+      config.optimization = config.optimization || {};
+      config.optimization.splitChunks = false;
     }
     
     return config;
@@ -109,6 +140,8 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     // Política de seguridad de contenido
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Configurar calidades para evitar warnings
+    qualities: [25, 50, 75, 85, 100],
   },
   
   
@@ -134,16 +167,6 @@ const nextConfig: NextConfig = {
   
   // Deshabilitar Fast Refresh completamente
   reactStrictMode: false,
-  
-  // Configuración adicional para deshabilitar completamente Fast Refresh
-  webpack: (config, { dev, isServer }) => {
-    if (dev && !isServer) {
-      // Deshabilitar Fast Refresh en webpack
-      config.optimization = config.optimization || {};
-      config.optimization.splitChunks = false;
-    }
-    return config;
-  },
   
   
 };
