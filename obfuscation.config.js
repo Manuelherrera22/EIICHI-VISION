@@ -6,28 +6,28 @@
  */
 
 const obfuscationConfig = {
-  // Configuración AGRESIVA de ofuscación para ocultar código en F12
+  // Configuración CONSERVADORA de ofuscación para producción estable
   rotateStringArray: true,
   stringArray: true,
-  stringArrayThreshold: 1.0, // 100% de strings ofuscados
-  stringArrayEncoding: ['base64', 'rc4'],
+  stringArrayThreshold: 0.75, // 75% de strings ofuscados
+  stringArrayEncoding: ['base64'],
   stringArrayIndexShift: true,
   stringArrayShuffle: true,
-  stringArrayWrappersCount: 10,
+  stringArrayWrappersCount: 5,
   stringArrayWrappersChainedCalls: true,
-  stringArrayWrappersParametersMaxCount: 10,
+  stringArrayWrappersParametersMaxCount: 5,
   
-  // Transformaciones de código MÁS AGRESIVAS
+  // Transformaciones de código CONSERVADORAS
   transformObjectKeys: true,
-  unicodeEscapeSequence: true,
+  unicodeEscapeSequence: false,
   compact: true,
   
-  // Control de variables y funciones - MÁS AGRESIVO
-  identifierNamesGenerator: 'mangled-shuffled',
-  renameGlobals: true,
-  renameProperties: true,
+  // Control de variables y funciones - CONSERVADOR
+  identifierNamesGenerator: 'hexadecimal',
+  renameGlobals: false,
+  renameProperties: false,
   
-  // Configuración de debugging - DESHABILITADO COMPLETAMENTE
+  // Configuración de debugging - CONSERVADOR
   sourceMap: false,
   sourceMapMode: 'separate',
   
@@ -122,11 +122,11 @@ const obfuscationConfig = {
     'Authorization'
   ],
   
-  // Configuración de control de flujo - MÁS AGRESIVA
+  // Configuración de control de flujo - CONSERVADOR
   controlFlowFlattening: true,
-  controlFlowFlatteningThreshold: 1.0, // 100% de control de flujo ofuscado
+  controlFlowFlatteningThreshold: 0.5, // 50% de control de flujo ofuscado
   deadCodeInjection: true,
-  deadCodeInjectionThreshold: 0.8, // 80% de código muerto inyectado
+  deadCodeInjectionThreshold: 0.3, // 30% de código muerto inyectado
   
   // Configuración de números
   numbersToExpressions: true,
@@ -139,12 +139,10 @@ const obfuscationConfig = {
   stringArrayWrappersChainedCalls: true,
   stringArrayWrappersParametersMaxCount: 5,
   
-  // Configuración de debugging - MÁS AGRESIVA
+  // Configuración de debugging - CONSERVADOR
   debugProtection: true,
-  debugProtectionInterval: 1000, // Más frecuente
-  disableConsoleOutput: true,
-  debugProtection: true,
-  debugProtectionInterval: 500, // Aún más frecuente para dificultar debugging
+  debugProtectionInterval: 2000, // Más conservador
+  disableConsoleOutput: false, // Permitir console en desarrollo
   
   // Configuración de rendimiento
   splitStrings: true,
@@ -157,9 +155,8 @@ const obfuscationConfig = {
   // Configuración de variables
   variableNamesGenerator: 'mangled-shuffled',
   
-  // Configuración de self-defending - MÁS AGRESIVA
-  selfDefending: true,
-  selfDefending: true, // Doble protección
+  // Configuración de self-defending - CONSERVADOR
+  selfDefending: true
   
   // Configuración de dominio (opcional)
   domainLock: [], // Agregar dominios específicos si es necesario
