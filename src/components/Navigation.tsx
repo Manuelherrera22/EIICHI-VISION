@@ -71,14 +71,14 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden md:flex items-center space-x-3 md:space-x-4 lg:space-x-6 xl:space-x-8">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`${
                   isScrolled ? 'text-gray-900' : 'text-white'
-                } hover:text-primary transition-colors duration-200 font-medium text-sm xl:text-base`}
+                } hover:text-primary transition-colors duration-200 font-medium text-xs md:text-sm xl:text-base whitespace-nowrap`}
               >
                 {item.name}
               </Link>
@@ -97,7 +97,8 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher isScrolled={isScrolled} />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`${
@@ -112,7 +113,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 mb-2 shadow-lg border border-gray-200">
               {navigationItems.map((item) => (
                 <Link
