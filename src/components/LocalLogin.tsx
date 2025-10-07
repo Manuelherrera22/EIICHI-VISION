@@ -64,7 +64,7 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
         }, 1500);
       }
     } catch (err) {
-      setError('Error inesperado. Por favor intenta de nuevo.');
+      setError('Unexpected error. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -99,8 +99,8 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
           className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
         >
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Iniciar Sesión</h2>
-            <p className="text-gray-600">Accede a tu dashboard inteligente</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Sign In</h2>
+            <p className="text-gray-600">Access your intelligent dashboard</p>
           </div>
 
           {/* Demo Credentials Info */}
@@ -127,7 +127,7 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
               className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm flex items-center space-x-2"
             >
               <Zap className="w-4 h-4" />
-              <span>Usar Credenciales Demo</span>
+              <span>Use Demo Credentials</span>
             </button>
           </div>
 
@@ -154,7 +154,7 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
             {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Contraseña
+                Password
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -212,7 +212,7 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
               ) : (
                 <LogIn className="w-5 h-5" />
               )}
-              <span>{isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}</span>
+              <span>{isLoading ? 'Signing in...' : 'Sign In'}</span>
             </button>
           </form>
 
@@ -220,20 +220,20 @@ const LocalLogin: React.FC<LocalLoginProps> = ({ onLoginSuccess }) => {
           <div className="mt-6 pt-6 border-t border-gray-200">
             <div className="text-center">
               <p className="text-sm text-gray-600 mb-3">
-                ¿No tienes cuenta? Las credenciales demo están disponibles arriba.
+                Don't have an account? Demo credentials are available above.
               </p>
               <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
                 <div className="flex items-center space-x-1">
                   <Shield className="w-3 h-3" />
-                  <span>Seguro</span>
+                  <span>Secure</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Zap className="w-3 h-3" />
-                  <span>Rápido</span>
+                  <span>Fast</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Sparkles className="w-3 h-3" />
-                  <span>Inteligente</span>
+                  <span>Smart</span>
                 </div>
               </div>
             </div>

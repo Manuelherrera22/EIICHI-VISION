@@ -145,7 +145,7 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
           title: 'Oportunidad Limitada',
           message: 'Propiedad en Takasaki con descuento del 20% - Solo 48 horas restantes.',
           timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000),
-          category: 'Propiedades',
+          category: 'Properties',
           actionRequired: true,
           actionText: 'Actuar Ahora',
           actionUrl: '/properties/takasaki-limited',
@@ -180,11 +180,11 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
     setAlerts(generateSmartAlerts());
   }, [analysis]);
 
-  // Filtrar alertas
+  // Filter alerts
   useEffect(() => {
     let filtered = alerts;
 
-    // Filtrar por tipo
+    // Filter by type
     if (activeFilter !== 'all') {
       if (activeFilter === 'unread') {
         filtered = filtered.filter(alert => !alert.isRead);
@@ -197,7 +197,7 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
       }
     }
 
-    // Filtrar por búsqueda
+    // Filter by search
     if (searchQuery) {
       filtered = filtered.filter(alert => 
         alert.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -206,7 +206,7 @@ const SmartAlertsSystem: React.FC<SmartAlertsSystemProps> = ({ userId, analysis 
       );
     }
 
-    // Filtrar archivadas
+    // Filter archived
     if (!showArchived) {
       filtered = filtered.filter(alert => !alert.isArchived);
     }

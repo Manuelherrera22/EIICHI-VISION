@@ -35,12 +35,12 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
         if (error) {
           setMessage({ type: 'error', text: error.message })
         } else {
-          setMessage({ type: 'success', text: 'Inicio de sesión exitoso' })
+          setMessage({ type: 'success', text: 'Sign in successful' })
           onSuccess?.()
         }
       } else if (mode === 'register') {
         if (formData.password !== formData.confirmPassword) {
-          setMessage({ type: 'error', text: 'Las contraseñas no coinciden' })
+          setMessage({ type: 'error', text: 'Passwords do not match' })
           setLoading(false)
           return
         }
@@ -78,14 +78,14 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-primary mb-2">
-            {mode === 'login' && 'Iniciar Sesión'}
-            {mode === 'register' && 'Crear Cuenta'}
-            {mode === 'reset' && 'Restablecer Contraseña'}
+            {mode === 'login' && 'Sign In'}
+            {mode === 'register' && 'Create Account'}
+            {mode === 'reset' && 'Reset Password'}
           </h2>
           <p className="text-secondary">
-            {mode === 'login' && 'Accede a tu cuenta de Tabiji House'}
-            {mode === 'register' && 'Únete a la comunidad Tabiji House'}
-            {mode === 'reset' && 'Ingresa tu email para restablecer tu contraseña'}
+            {mode === 'login' && 'Access your Tabiji House account'}
+            {mode === 'register' && 'Join the Tabiji House community'}
+            {mode === 'reset' && 'Enter your email to reset your password'}
           </p>
         </div>
 
@@ -187,7 +187,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
           {(mode === 'login' || mode === 'register') && (
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-primary mb-2">
-                Contraseña
+                Password
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary w-5 h-5" />
@@ -216,7 +216,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
           {mode === 'register' && (
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-primary mb-2">
-                Confirmar Contraseña
+                Confirm Password
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary w-5 h-5" />
@@ -250,15 +250,15 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
             {loading ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                {mode === 'login' && 'Iniciando sesión...'}
-                {mode === 'register' && 'Creando cuenta...'}
-                {mode === 'reset' && 'Enviando...'}
+                {mode === 'login' && 'Signing in...'}
+                {mode === 'register' && 'Creating account...'}
+                {mode === 'reset' && 'Sending...'}
               </div>
             ) : (
               <>
-                {mode === 'login' && 'Iniciar Sesión'}
-                {mode === 'register' && 'Crear Cuenta'}
-                {mode === 'reset' && 'Enviar Enlace'}
+                {mode === 'login' && 'Sign In'}
+                {mode === 'register' && 'Create Account'}
+                {mode === 'reset' && 'Send Link'}
               </>
             )}
           </button>

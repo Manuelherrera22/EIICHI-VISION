@@ -29,7 +29,7 @@ export default function AuthPage() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-            <span className="text-primary">Cargando...</span>
+            <span className="text-primary">Loading...</span>
           </div>
         </div>
       </Layout>
@@ -46,8 +46,8 @@ export default function AuthPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-primary mb-2">¡Bienvenido!</h2>
-            <p className="text-secondary mb-4">Ya estás autenticado. Redirigiendo...</p>
+            <h2 className="text-2xl font-bold text-primary mb-2">Welcome!</h2>
+            <p className="text-secondary mb-4">You are already authenticated. Redirecting...</p>
           </div>
         </div>
       </Layout>

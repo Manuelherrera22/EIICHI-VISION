@@ -64,7 +64,7 @@ const ReportExport: React.FC<ReportExportProps> = ({
   metrics = [],
   alerts = [],
   predictions = [],
-  userName = "Usuario Demo",
+  userName = "Demo User",
   userEmail = "demo@tabijihouse.com"
 }) => {
   const { t } = useLanguage();
@@ -188,7 +188,7 @@ ${t('export.mainMetrics')}:
       pdf.save(fileName);
       
     } catch (error) {
-      console.error('Error generando PDF:', error);
+      console.error('Error generating PDF:', error);
     } finally {
       setIsGenerating(false);
     }
@@ -202,8 +202,8 @@ ${t('export.mainMetrics')}:
       // Overview Sheet
       const overviewData = [
         ['Métrica', 'Valor', 'Descripción'],
-        ['Completitud del Perfil', `${analysis.profileCompleteness}%`, 'Porcentaje de completitud del perfil de usuario'],
-        ['Probabilidad de Éxito', `${analysis.successProbability.overall}%`, 'Probabilidad general de éxito'],
+        ['Profile Completeness', `${analysis.profileCompleteness}%`, 'User profile completion percentage'],
+        ['Success Probability', `${analysis.successProbability.overall}%`, 'Overall success probability'],
         ['Categoría de Riesgo', analysis.riskCategory, 'Categorización del perfil de riesgo'],
         ['Nivel de Engagement', analysis.engagementLevel, 'Nivel de participación del usuario'],
         ['IVI', `${analysis.investmentReadiness.score}%`, 'Índice de Viabilidad de Inversión'],
@@ -275,7 +275,7 @@ ${t('export.mainMetrics')}:
       XLSX.writeFile(workbook, fileName);
       
     } catch (error) {
-      console.error('Error generando Excel:', error);
+      console.error('Error generating Excel:', error);
     } finally {
       setIsGenerating(false);
     }
@@ -294,14 +294,14 @@ ${t('export.mainMetrics')}:
         const imgData = canvas.toDataURL('image/png');
         const fileName = `dashboard-screenshot-${userName.replace(/\s+/g, '-').toLowerCase()}-${new Date().toISOString().split('T')[0]}.png`;
         
-        // Crear enlace de descarga
+        // Create download link
         const link = document.createElement('a');
         link.download = fileName;
         link.href = imgData;
         link.click();
       }
     } catch (error) {
-      console.error('Error generando imagen:', error);
+      console.error('Error generating image:', error);
     } finally {
       setIsGenerating(false);
     }
@@ -323,7 +323,7 @@ ${t('export.mainMetrics')}:
           break;
       }
     } catch (error) {
-      console.error('Error en exportación:', error);
+      console.error('Error in export:', error);
     } finally {
       setIsExporting(false);
     }
