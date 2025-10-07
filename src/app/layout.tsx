@@ -9,6 +9,7 @@ import { ModalProvider } from "@/contexts/ModalContext";
 import DynamicMetadata from "@/components/DynamicMetadata";
 import TitleManager from "@/components/TitleManager";
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
+import ServiceWorkerCleanup from "@/components/ServiceWorkerCleanup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,6 +71,7 @@ export default function RootLayout({
                 <DynamicMetadata />
                 <Analytics gaId="G-XXXXXXXXXX" />
                 <ServiceWorkerRegistration />
+                <ServiceWorkerCleanup />
                 {children}
               </ModalProvider>
             </ArquitectoProvider>

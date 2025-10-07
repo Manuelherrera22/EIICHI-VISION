@@ -1,7 +1,7 @@
 // Service Worker for Tabiji House PWA
-const CACHE_NAME = 'tabiji-house-v1';
-const STATIC_CACHE = 'tabiji-house-static-v1';
-const DYNAMIC_CACHE = 'tabiji-house-dynamic-v1';
+const CACHE_NAME = 'tabiji-house-v2';
+const STATIC_CACHE = 'tabiji-house-static-v2';
+const DYNAMIC_CACHE = 'tabiji-house-dynamic-v2';
 
 // Files to cache for offline functionality
 const STATIC_FILES = [
@@ -10,9 +10,16 @@ const STATIC_FILES = [
   '/projects',
   '/about',
   '/manifest.json',
-  '/tabijihouse-removebg-preview.png',
+  '/eiitico.ico'
+];
+
+// Skip these paths from caching
+const SKIP_PATHS = [
   '/favicon.ico',
-  '/favicon.svg'
+  '/blueprint',
+  '/_next/',
+  '/api/',
+  '/test/'
 ];
 
 // API endpoints to cache
@@ -81,15 +88,33 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip certain paths that cause issues
+  if (shouldSkipRequest(url)) {
+    return;
+  }
+
   event.respondWith(
-    handleRequest(request)
+    handleRequest(request).catch((error) => {
+      console.warn('Service Worker fetch failed:', url.pathname, error);
+      // Don't throw, just let the browser handle it
+      return fetch(request);
+    })
   );
 });
+
+function shouldSkipRequest(url) {
+  return SKIP_PATHS.some(path => url.pathname.startsWith(path));
+}
 
 async function handleRequest(request) {
   const url = new URL(request.url);
   
   try {
+    // Skip favicon and other problematic requests
+    if (shouldSkipRequest(url)) {
+      return fetch(request);
+    }
+
     // Try network first for API requests
     if (url.pathname.startsWith('/api/')) {
       return await networkFirst(request);
@@ -115,14 +140,27 @@ async function handleRequest(request) {
              });
     }
     
-    throw error;
+    // For other requests, try to fetch directly
+    try {
+      return await fetch(request);
+    } catch (fetchError) {
+      console.error('Direct fetch also failed:', fetchError);
+      throw error;
+    }
   }
 }
 
 async function networkFirst(request) {
   try {
-    // Try network first
-    const networkResponse = await fetch(request);
+    // Try network first with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
+    const networkResponse = await fetch(request, { 
+      signal: controller.signal 
+    });
+    
+    clearTimeout(timeoutId);
     
     // Cache successful responses
     if (networkResponse.ok) {
@@ -151,7 +189,9 @@ async function networkFirst(request) {
       });
     }
     
-    throw error;
+    // Don't throw, let the browser handle the error
+    console.warn('Network first failed, no cache available:', request.url);
+    return new Response('Network error', { status: 503 });
   }
 }
 
@@ -163,9 +203,16 @@ async function cacheFirst(request) {
     return cachedResponse;
   }
   
-  // Cache miss, try network
+  // Cache miss, try network with timeout
   try {
-    const networkResponse = await fetch(request);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
+    const networkResponse = await fetch(request, { 
+      signal: controller.signal 
+    });
+    
+    clearTimeout(timeoutId);
     
     if (networkResponse.ok) {
       const cache = await caches.open(STATIC_CACHE);
@@ -175,7 +222,9 @@ async function cacheFirst(request) {
     return networkResponse;
     
   } catch (error) {
-    throw error;
+    // Don't throw, return a basic response
+    console.warn('Cache first failed:', request.url, error);
+    return new Response('Resource not available', { status: 404 });
   }
 }
 

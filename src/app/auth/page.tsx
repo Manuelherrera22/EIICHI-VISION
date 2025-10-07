@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/contexts/AuthContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import AuthForm from '@/components/AuthForm'
 import Layout from '@/components/Layout'
 
 export default function AuthPage() {
   const [mode, setMode] = useState<'login' | 'register' | 'reset'>('login')
   const { user, loading } = useAuth()
+  const { t } = useLanguage()
   const router = useRouter()
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function AuthPage() {
         <div className="min-h-screen flex items-center justify-center">
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-            <span className="text-primary">Loading...</span>
+            <span className="text-primary">{t('auth.loading')}</span>
           </div>
         </div>
       </Layout>
@@ -46,8 +48,8 @@ export default function AuthPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-primary mb-2">Welcome!</h2>
-            <p className="text-secondary mb-4">You are already authenticated. Redirecting...</p>
+            <h2 className="text-2xl font-bold text-primary mb-2">{t('auth.welcome')}</h2>
+            <p className="text-secondary mb-4">{t('auth.alreadyAuthenticated')}</p>
           </div>
         </div>
       </Layout>
@@ -66,7 +68,7 @@ export default function AuthPage() {
               </svg>
             </div>
             <h1 className="text-3xl font-bold text-primary">Tabiji House</h1>
-            <p className="text-secondary mt-2">Tu puerta de entrada a Japón</p>
+            <p className="text-secondary mt-2">{t('auth.gatewayToJapan')}</p>
           </div>
 
           {/* Auth Form */}
@@ -79,14 +81,7 @@ export default function AuthPage() {
           {/* Additional Info */}
           <div className="mt-8 text-center">
             <p className="text-xs text-secondary/70">
-              Al registrarte, aceptas nuestros{' '}
-              <a href="/terms" className="text-primary hover:underline">
-                Términos de Servicio
-              </a>{' '}
-              y{' '}
-              <a href="/privacy" className="text-primary hover:underline">
-                Política de Privacidad
-              </a>
+              {t('auth.termsAndPrivacy')}
             </p>
           </div>
         </div>

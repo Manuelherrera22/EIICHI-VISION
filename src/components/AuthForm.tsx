@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { supabase } from '@/lib/supabase'
 import { Eye, EyeOff, Mail, Lock, User, AlertCircle, CheckCircle } from 'lucide-react'
 
@@ -13,6 +14,7 @@ interface AuthFormProps {
 
 export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProps) {
   const { signIn, signUp, resetPassword } = useAuth()
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -35,12 +37,12 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
         if (error) {
           setMessage({ type: 'error', text: error.message })
         } else {
-          setMessage({ type: 'success', text: 'Sign in successful' })
+          setMessage({ type: 'success', text: t('auth.signInSuccessful') })
           onSuccess?.()
         }
       } else if (mode === 'register') {
         if (formData.password !== formData.confirmPassword) {
-          setMessage({ type: 'error', text: 'Passwords do not match' })
+          setMessage({ type: 'error', text: t('auth.passwordsDoNotMatch') })
           setLoading(false)
           return
         }
@@ -78,14 +80,14 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-primary mb-2">
-            {mode === 'login' && 'Sign In'}
-            {mode === 'register' && 'Create Account'}
-            {mode === 'reset' && 'Reset Password'}
+            {mode === 'login' && t('auth.signIn')}
+            {mode === 'register' && t('auth.createAccount')}
+            {mode === 'reset' && t('auth.resetPassword')}
           </h2>
           <p className="text-secondary">
-            {mode === 'login' && 'Access your Tabiji House account'}
-            {mode === 'register' && 'Join the Tabiji House community'}
-            {mode === 'reset' && 'Enter your email to reset your password'}
+            {mode === 'login' && t('auth.accessAccount')}
+            {mode === 'register' && t('auth.joinCommunity')}
+            {mode === 'reset' && t('auth.enterEmailReset')}
           </p>
         </div>
 
@@ -125,7 +127,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            Continuar con Google
+            {t('auth.continueWithGoogle')}
           </button>
         </div>
 
@@ -135,7 +137,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-500">o continúa con email</span>
+            <span className="px-2 bg-white text-gray-500">{t('auth.orContinueWithEmail')}</span>
           </div>
         </div>
 
@@ -145,7 +147,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
           {mode === 'register' && (
             <div>
               <label htmlFor="fullName" className="block text-sm font-medium text-primary mb-2">
-                Nombre Completo
+                {t('auth.fullName')}
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary w-5 h-5" />
@@ -157,7 +159,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
                   onChange={handleInputChange}
                   required
                   className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-muted"
-                  placeholder="Tu nombre completo"
+                  placeholder={t('auth.fullNamePlaceholder')}
                 />
               </div>
             </div>
@@ -166,7 +168,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
           {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-              Email
+              {t('auth.email')}
             </label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary w-5 h-5" />
@@ -178,7 +180,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
                 onChange={handleInputChange}
                 required
                 className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-muted"
-                placeholder="tu@email.com"
+                placeholder={t('auth.emailPlaceholder')}
               />
             </div>
           </div>
@@ -187,7 +189,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
           {(mode === 'login' || mode === 'register') && (
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-primary mb-2">
-                Password
+                {t('auth.password')}
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary w-5 h-5" />
@@ -199,7 +201,7 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
                   onChange={handleInputChange}
                   required
                   className="w-full pl-10 pr-12 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-muted"
-                  placeholder="Tu contraseña"
+                  placeholder={t('auth.passwordPlaceholder')}
                 />
                 <button
                   type="button"
@@ -250,15 +252,15 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
             {loading ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                {mode === 'login' && 'Signing in...'}
-                {mode === 'register' && 'Creating account...'}
-                {mode === 'reset' && 'Sending...'}
+                {mode === 'login' && t('auth.signingIn')}
+                {mode === 'register' && t('auth.creatingAccount')}
+                {mode === 'reset' && t('auth.sending')}
               </div>
             ) : (
               <>
-                {mode === 'login' && 'Sign In'}
-                {mode === 'register' && 'Create Account'}
-                {mode === 'reset' && 'Send Link'}
+                {mode === 'login' && t('auth.signIn')}
+                {mode === 'register' && t('auth.createAccount')}
+                {mode === 'reset' && t('auth.sendLink')}
               </>
             )}
           </button>
@@ -272,15 +274,15 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
                 onClick={() => onModeChange('reset')}
                 className="text-sm text-primary hover:underline"
               >
-                ¿Olvidaste tu contraseña?
+                {t('auth.forgotPassword')}
               </button>
               <div className="text-sm text-secondary">
-                ¿No tienes cuenta?{' '}
+                {t('auth.noAccount')}{' '}
                 <button
                   onClick={() => onModeChange('register')}
                   className="text-primary hover:underline font-medium"
                 >
-                  Regístrate aquí
+                  {t('auth.registerHere')}
                 </button>
               </div>
             </>
@@ -288,24 +290,24 @@ export default function AuthForm({ mode, onModeChange, onSuccess }: AuthFormProp
 
           {mode === 'register' && (
             <div className="text-sm text-secondary">
-              ¿Ya tienes cuenta?{' '}
+              {t('auth.alreadyHaveAccount')}{' '}
               <button
                 onClick={() => onModeChange('login')}
                 className="text-primary hover:underline font-medium"
               >
-                Inicia sesión aquí
+                {t('auth.signInHere')}
               </button>
             </div>
           )}
 
           {mode === 'reset' && (
             <div className="text-sm text-secondary">
-              ¿Recordaste tu contraseña?{' '}
+              {t('auth.rememberPassword')}{' '}
               <button
                 onClick={() => onModeChange('login')}
                 className="text-primary hover:underline font-medium"
               >
-                Volver al login
+                {t('auth.backToLogin')}
               </button>
             </div>
           )}

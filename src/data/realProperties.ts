@@ -14,6 +14,8 @@ export interface RealProperty {
     district: string;
     village: string;
     area: string;
+    lat: number;
+    lng: number;
   };
   access: {
     stations: {
@@ -72,7 +74,9 @@ export const realProperties: RealProperty[] = [
       prefecture: 'Gunma',
       district: 'Agatsuma',
       village: 'Tsumagoi',
-      area: 'Kambara'
+      area: 'Kambara',
+      lat: 36.5208,
+      lng: 138.5317
     },
     access: {
       stations: [
@@ -171,7 +175,9 @@ export const realProperties: RealProperty[] = [
       prefecture: 'Gunma',
       district: 'Agatsuma',
       village: 'Tsumagoi',
-      area: 'Kambara'
+      area: 'Kambara',
+      lat: 36.5215,
+      lng: 138.5325
     },
     access: {
       stations: [
