@@ -2792,6 +2792,7 @@ const translations = {
     // Navigation
     'navigation.home': 'ホーム',
     'navigation.about': '会社概要',
+    'navigation.properties': 'プロパティ',
     'navigation.projects': 'プロジェクト',
     'navigation.contact': 'お問い合わせ',
     'navigation.guide': 'ガイド',
@@ -5263,6 +5264,7 @@ const translations = {
     // Navigation
     'navigation.home': 'الرئيسية',
     'navigation.about': 'حولنا',
+    'navigation.properties': 'العقارات',
     'navigation.projects': 'المشاريع',
     'navigation.contact': 'اتصل بنا',
     'navigation.guide': 'الدليل',
@@ -7472,6 +7474,7 @@ const translations = {
     // Navigation
     'navigation.home': 'Inicio',
     'navigation.about': 'Acerca de',
+    'navigation.properties': 'Propiedades',
     'navigation.projects': 'Proyectos',
     'navigation.process': 'Proceso',
     'navigation.services': 'Servicios',
