@@ -618,17 +618,17 @@ const PropertiesPage: React.FC = () => {
                   {/* Renovations */}
                   {selectedProperty.renovations && (
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Renovaciones Recomendadas</h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('recommended_renovations')}</h3>
                       <div className="bg-blue-50 rounded-lg p-4">
                         <div className="flex items-center space-x-2 mb-2">
                           <Zap className="w-4 h-4 text-blue-600" />
-                          <span className="font-medium text-gray-900">Renovaciones Realizadas</span>
+                          <span className="font-medium text-gray-900">{t('completed_renovations')}</span>
                         </div>
                         <p className="text-sm text-gray-600 mb-2">
-                          Fecha: {selectedProperty.renovations.date}
+                          {t('date')}: {selectedProperty.renovations.date}
                         </p>
                         <div className="text-sm text-gray-700">
-                          <strong>Items renovados:</strong>
+                          <strong>{t('renovated_items')}:</strong>
                           <ul className="list-disc list-inside mt-1">
                             {(selectedProperty.renovations.items || []).map((item, index) => (
                               <li key={index}>{item}</li>
