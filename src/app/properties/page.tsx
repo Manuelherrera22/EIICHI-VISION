@@ -643,15 +643,15 @@ const PropertiesPage: React.FC = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button variant="primary" size="lg" className="flex-1">
                       <Phone className="w-5 h-5 mr-2" />
-                      Contactar Agente
+                      {t('contact_agent')}
                     </Button>
                     <Button variant="outline" size="lg" className="flex-1">
                       <Calendar className="w-5 h-5 mr-2" />
-                      Programar Visita
+                      {t('schedule_visit')}
                     </Button>
                     <Button variant="secondary" size="lg">
                       <Share2 className="w-5 h-5 mr-2" />
-                      Compartir
+                      {t('share')}
                     </Button>
                   </div>
                 </div>
