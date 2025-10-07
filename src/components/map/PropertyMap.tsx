@@ -374,33 +374,33 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
           }}
           className="bg-white shadow-lg hover:bg-gray-50"
         >
-          🏠 Ver Todas
+          🏠 {t('properties.viewAll')}
         </Button>
       </div>
 
       {/* Legend */}
       <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 z-10">
-        <h3 className="font-semibold text-gray-900 mb-2 text-sm">Tipos de Propiedades</h3>
+        <h3 className="font-semibold text-gray-900 mb-2 text-sm">{t('property_types')}</h3>
         <div className="space-y-1 text-xs">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-purple-500"></div>
-            <span>Lujo</span>
+            <span>{t('property_type_luxury')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-orange-500"></div>
-            <span>Tradicional</span>
+            <span>{t('property_type_traditional')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-green-500"></div>
-            <span>Renovado</span>
+            <span>{t('property_type_renovated')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-blue-500"></div>
-            <span>Villa</span>
+            <span>{t('property_type_villa')}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-red-500"></div>
-            <span>Cluster</span>
+            <span>{t('property_type_cluster')}</span>
           </div>
         </div>
       </div>
