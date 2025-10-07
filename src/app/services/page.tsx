@@ -164,6 +164,33 @@ export default function Services() {
     }
   };
 
+  // Translate category names
+  const translateCategory = (category: string): string => {
+    const categoryMap: { [key: string]: string } = {
+      'Daily Living & Home Care': t('services.categories.dailyLiving'),
+      'Transportation Services': t('services.categories.transportation'),
+      'Safety & Healthcare': t('services.categories.safety'),
+      'Pets & Housekeeping': t('services.categories.pets'),
+      'Children & Education': t('services.categories.children'),
+      'Food & Culinary Experiences': t('services.categories.food'),
+      'Cultural & Outdoor Experiences': t('services.categories.cultural'),
+      'Lifestyle & Leisure': t('services.categories.lifestyle'),
+    };
+    return categoryMap[category] || category;
+  };
+
+  // Translate service title and description
+  const translateService = (serviceId: number, field: 'title' | 'description'): string => {
+    const key = `services.service${serviceId}.${field}`;
+    const translated = t(key);
+    // If translation key doesn't exist, return original text
+    if (translated === key) {
+      const service = gunmaServices.find(s => s.id === serviceId);
+      return service ? service[field] : '';
+    }
+    return translated;
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -226,7 +253,7 @@ export default function Services() {
                       : 'bg-muted text-foreground hover:bg-muted/80'
                   }`}
                 >
-                  {category.split(' ')[0]} ({stats.count})
+                  {translateCategory(category).split(' ')[0]} ({stats.count})
                 </button>
               );
             })}
@@ -276,10 +303,10 @@ export default function Services() {
                         <IconComponent size={32} className="text-primary" />
                       </div>
                       <h3 className="text-xl font-serif font-bold text-primary mb-2 text-center">
-                        {category.split(' ')[0]}
+                        {translateCategory(category).split(' ')[0]}
                       </h3>
                       <p className="text-sm text-secondary text-center mb-4">
-                        {category}
+                        {translateCategory(category)}
                       </p>
                       <div className="text-center">
                         <div className="text-2xl font-bold text-accent mb-1">{stats.count}</div>
@@ -301,7 +328,7 @@ export default function Services() {
                 <>
                   <div className="text-center mb-16">
                     <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-                      {selectedCategory}
+                      {translateCategory(selectedCategory)}
                     </h2>
                     <p className="text-lg text-foreground">
                       {t('services.servicesInCategory').replace('{count}', filteredServices.length.toString())}
@@ -329,7 +356,7 @@ export default function Services() {
                             #{service.id.toString().padStart(2, '0')}
                           </span>
                           <div className="text-xs text-secondary">
-                            {service.category}
+                            {translateCategory(service.category)}
                           </div>
                         </div>
                       </div>
@@ -339,16 +366,16 @@ export default function Services() {
                     </div>
 
                     <h3 className="text-xl font-serif font-bold text-primary mb-3 leading-tight">
-                      {service.title}
+                      {translateService(service.id, 'title')}
                     </h3>
 
                     <p className="text-foreground leading-relaxed mb-4 line-clamp-3">
-                      {service.description}
+                      {translateService(service.id, 'description')}
                     </p>
 
                     {service.priceRange && (
                       <div className="flex items-center space-x-2 mb-4">
-                        <span className="text-sm font-medium text-accent">Price:</span>
+                        <span className="text-sm font-medium text-accent">{t('services.price')}:</span>
                         <span className="text-sm text-foreground">{service.priceRange}</span>
                       </div>
                     )}

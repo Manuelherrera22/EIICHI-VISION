@@ -2741,6 +2741,29 @@ const translations = {
     'services.ctaDescription': 'Let us help you create the perfect lifestyle experience in your Japanese property. Contact us to discuss your specific needs and preferences.',
     'services.contactServiceTeam': 'Contact Our Service Team',
     'services.viewPropertyPortfolio': 'View Property Portfolio',
+    'services.price': 'Price',
+
+    // Service Categories
+    'services.categories.dailyLiving': 'Daily Living & Home Care',
+    'services.categories.transportation': 'Transportation Services',
+    'services.categories.safety': 'Safety & Healthcare',
+    'services.categories.pets': 'Pets & Housekeeping',
+    'services.categories.children': 'Children & Education',
+    'services.categories.food': 'Food & Culinary Experiences',
+    'services.categories.cultural': 'Cultural & Outdoor Experiences',
+    'services.categories.lifestyle': 'Lifestyle & Leisure',
+
+    // Individual Services (Services 1-5 as examples)
+    'services.service1.title': 'Support for electricity, gas, water, and Wi-Fi issues',
+    'services.service1.description': 'Comprehensive technical support for all home utilities and internet connectivity issues.',
+    'services.service2.title': 'House cleaning (garden maintenance, pest control, etc.)',
+    'services.service2.description': 'Complete home maintenance including garden care and pest management services.',
+    'services.service3.title': 'Regular cleaning & bed-making (once or twice a week)',
+    'services.service3.description': 'Professional housekeeping services with regular cleaning and bed-making.',
+    'services.service4.title': 'Rental of premium tableware and cooking utensils',
+    'services.service4.description': 'High-quality Japanese tableware and cooking equipment rental service.',
+    'services.service5.title': 'Furniture and art rental service',
+    'services.service5.description': 'Curated selection of furniture and artwork to enhance your living space.',
 
     // Common Navigation
     'common.backToHome': 'Back to Home',
@@ -5243,6 +5266,29 @@ const translations = {
     'services.ctaDescription': '日本の不動産で完璧なライフスタイル体験を創造するお手伝いをさせてください。あなたの具体的なニーズとご希望について相談するためにお問い合わせください。',
     'services.contactServiceTeam': 'サービスチームに連絡',
     'services.viewPropertyPortfolio': '物件ポートフォリオを見る',
+    'services.price': '料金',
+
+    // Service Categories
+    'services.categories.dailyLiving': '日常生活・ホームケア',
+    'services.categories.transportation': '交通サービス',
+    'services.categories.safety': '安全・医療',
+    'services.categories.pets': 'ペット・家事代行',
+    'services.categories.children': '子供・教育',
+    'services.categories.food': '食事・料理体験',
+    'services.categories.cultural': '文化・アウトドア体験',
+    'services.categories.lifestyle': 'ライフスタイル・レジャー',
+
+    // Individual Services (Services 1-5 as examples)
+    'services.service1.title': '電気・ガス・水道・Wi-Fiのサポート',
+    'services.service1.description': 'すべての家庭用ユーティリティとインターネット接続の問題に対する包括的な技術サポート。',
+    'services.service2.title': 'ハウスクリーニング（庭の手入れ、害虫駆除など）',
+    'services.service2.description': '庭の手入れや害虫管理サービスを含む完全な住宅メンテナンス。',
+    'services.service3.title': '定期清掃・ベッドメイキング（週1〜2回）',
+    'services.service3.description': '定期的な清掃とベッドメイキングを含むプロのハウスキーピングサービス。',
+    'services.service4.title': 'プレミアム食器・調理器具のレンタル',
+    'services.service4.description': '高品質な日本の食器と調理器具のレンタルサービス。',
+    'services.service5.title': '家具・アートのレンタルサービス',
+    'services.service5.description': 'あなたの生活空間を向上させるための厳選された家具とアートワーク。',
 
     // Common Navigation
     'common.backToHome': 'ホームに戻る',
@@ -7464,6 +7510,29 @@ const translations = {
     'services.ctaDescription': 'دعنا نساعدك في إنشاء تجربة نمط الحياة المثالية في ممتلكاتك اليابانية. اتصل بنا لمناقشة احتياجاتك وتفضيلاتك المحددة.',
     'services.contactServiceTeam': 'اتصل بفريق الخدمة',
     'services.viewPropertyPortfolio': 'عرض محفظة العقارات',
+    'services.price': 'السعر',
+
+    // Service Categories
+    'services.categories.dailyLiving': 'الحياة اليومية والرعاية المنزلية',
+    'services.categories.transportation': 'خدمات النقل',
+    'services.categories.safety': 'السلامة والرعاية الصحية',
+    'services.categories.pets': 'الحيوانات الأليفة والتدبير المنزلي',
+    'services.categories.children': 'الأطفال والتعليم',
+    'services.categories.food': 'الطعام والتجارب الطهوية',
+    'services.categories.cultural': 'التجارب الثقافية والخارجية',
+    'services.categories.lifestyle': 'نمط الحياة والترفيه',
+
+    // Individual Services (Services 1-5 as examples)
+    'services.service1.title': 'دعم الكهرباء والغاز والماء والواي فاي',
+    'services.service1.description': 'دعم فني شامل لجميع المرافق المنزلية ومشاكل الاتصال بالإنترنت.',
+    'services.service2.title': 'تنظيف المنزل (صيانة الحديقة، مكافحة الآفات، إلخ)',
+    'services.service2.description': 'صيانة منزلية كاملة تشمل رعاية الحديقة وخدمات إدارة الآفات.',
+    'services.service3.title': 'التنظيف المنتظم وترتيب الأسرة (مرة أو مرتين في الأسبوع)',
+    'services.service3.description': 'خدمات تدبير منزلي احترافية مع تنظيف منتظم وترتيب الأسرة.',
+    'services.service4.title': 'تأجير أدوات المائدة والطهي الفاخرة',
+    'services.service4.description': 'خدمة تأجير أدوات المائدة اليابانية عالية الجودة ومعدات الطهي.',
+    'services.service5.title': 'خدمة تأجير الأثاث والفن',
+    'services.service5.description': 'مجموعة مختارة من الأثاث والأعمال الفنية لتحسين مساحة معيشتك.',
 
     // Common Navigation
     'common.backToHome': 'العودة للصفحة الرئيسية',
@@ -10219,6 +10288,29 @@ const translations = {
     'services.ctaDescription': 'Permítenos ayudarte a crear la experiencia de estilo de vida perfecta en tu propiedad japonesa. Contáctanos para discutir tus necesidades y preferencias específicas.',
     'services.contactServiceTeam': 'Contactar a Nuestro Equipo de Servicio',
     'services.viewPropertyPortfolio': 'Ver Portafolio de Propiedades',
+    'services.price': 'Precio',
+
+    // Service Categories
+    'services.categories.dailyLiving': 'Vida Diaria y Cuidado del Hogar',
+    'services.categories.transportation': 'Servicios de Transporte',
+    'services.categories.safety': 'Seguridad y Salud',
+    'services.categories.pets': 'Mascotas y Servicio Doméstico',
+    'services.categories.children': 'Niños y Educación',
+    'services.categories.food': 'Comida y Experiencias Culinarias',
+    'services.categories.cultural': 'Experiencias Culturales y al Aire Libre',
+    'services.categories.lifestyle': 'Estilo de Vida y Ocio',
+
+    // Individual Services (Services 1-5 as examples)
+    'services.service1.title': 'Soporte para electricidad, gas, agua y Wi-Fi',
+    'services.service1.description': 'Soporte técnico integral para todos los servicios del hogar y problemas de conectividad a internet.',
+    'services.service2.title': 'Limpieza del hogar (mantenimiento de jardín, control de plagas, etc.)',
+    'services.service2.description': 'Mantenimiento completo del hogar incluyendo cuidado del jardín y servicios de control de plagas.',
+    'services.service3.title': 'Limpieza regular y tendido de camas (una o dos veces por semana)',
+    'services.service3.description': 'Servicios profesionales de limpieza con limpieza regular y tendido de camas.',
+    'services.service4.title': 'Alquiler de vajilla y utensilios de cocina premium',
+    'services.service4.description': 'Servicio de alquiler de vajilla japonesa de alta calidad y equipos de cocina.',
+    'services.service5.title': 'Servicio de alquiler de muebles y arte',
+    'services.service5.description': 'Selección curada de muebles y obras de arte para mejorar tu espacio de vida.',
 
     // Common Navigation
     'common.backToHome': 'Volver al Inicio',
