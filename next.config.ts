@@ -1,7 +1,38 @@
 import type { NextConfig } from "next";
 
-// Importar configuración de ofuscación
-const obfuscationConfig = require('./obfuscation.config.js');
+// Importar configuración de ofuscación (con manejo de errores)
+let obfuscationConfig = {};
+try {
+  obfuscationConfig = require('./obfuscation.config.js');
+} catch (error) {
+  console.warn('Warning: Could not load obfuscation config:', error.message);
+  // Configuración de fallback básica
+  obfuscationConfig = {
+    compact: true,
+    controlFlowFlattening: false,
+    deadCodeInjection: false,
+    debugProtection: false,
+    debugProtectionInterval: false,
+    disableConsoleOutput: false,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    renameGlobals: false,
+    rotateStringArray: true,
+    selfDefending: false,
+    stringArray: true,
+    stringArrayEncoding: false,
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 1,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 2,
+    stringArrayWrappersType: 'variable',
+    stringArrayThreshold: 0.75,
+    transformObjectKeys: false,
+    unicodeEscapeSequence: false
+  };
+}
 
 const nextConfig: NextConfig = {
   // Configuración para producción
@@ -54,13 +85,14 @@ const nextConfig: NextConfig = {
     }
     
     // Ofuscación solo en producción y para archivos del cliente
-    if (!dev && !isServer && process.env.NODE_ENV === 'production') {
-      const JavaScriptObfuscator = require('webpack-obfuscator');
-      
-      config.plugins.push(
-        new JavaScriptObfuscator(obfuscationConfig)
-      );
-    }
+    // TEMPORALMENTE DESHABILITADO PARA DEBUGGING
+    // if (!dev && !isServer && process.env.NODE_ENV === 'production') {
+    //   const JavaScriptObfuscator = require('webpack-obfuscator');
+    //   
+    //   config.plugins.push(
+    //     new JavaScriptObfuscator(obfuscationConfig)
+    //   );
+    // }
     
     // Deshabilitar Fast Refresh en desarrollo
     if (dev && !isServer) {
