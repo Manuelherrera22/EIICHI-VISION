@@ -156,10 +156,7 @@ const obfuscationConfig = {
   variableNamesGenerator: 'mangled-shuffled',
   
   // Configuración de self-defending - CONSERVADOR
-  selfDefending: true
-  
-  // Configuración de dominio (opcional)
-  domainLock: [], // Agregar dominios específicos si es necesario
+  selfDefending: true,
   
   // Configuración de exclusión de archivos (simplificada)
   exclude: []
