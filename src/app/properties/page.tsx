@@ -160,15 +160,15 @@ const PropertiesPage: React.FC = () => {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-200">{stats.total}</div>
-                <div className="text-sm text-blue-300">Propiedades</div>
+                <div className="text-sm text-blue-300">{t('properties.title')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-200">{stats.available}</div>
-                <div className="text-sm text-blue-300">Disponibles</div>
+                <div className="text-sm text-blue-300">{t('properties.available')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-200">{stats.featured}</div>
-                <div className="text-sm text-blue-300">Destacadas</div>
+                <div className="text-sm text-blue-300">{t('properties.featured')}</div>
               </div>
             </motion.div>
 
@@ -185,7 +185,7 @@ const PropertiesPage: React.FC = () => {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                     <input
                       type="text"
-                      placeholder="Buscar propiedades..."
+                      placeholder={t('properties.search')}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full pl-10 pr-4 py-3 border-0 rounded-lg focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white text-gray-900 placeholder-gray-500"
@@ -197,7 +197,7 @@ const PropertiesPage: React.FC = () => {
                     className="bg-white/20 border-white/30 text-white hover:bg-white/30"
                   >
                     <Filter className="w-4 h-4 mr-2" />
-                    Filtros
+                    {t('properties.filters')}
                   </Button>
                 </div>
               </div>
@@ -228,10 +228,10 @@ const PropertiesPage: React.FC = () => {
               <div className="flex items-center justify-between mb-2 lg:mb-4">
                 <div>
                   <h2 className="text-lg lg:text-xl font-bold text-gray-900">
-                    Propiedades
+                    {t('properties.title')}
                   </h2>
                   <p className="text-xs lg:text-sm text-gray-600">
-                    {sortedProperties.length} encontradas
+                    {sortedProperties.length} {t('properties.found')}
                   </p>
                 </div>
                 <div className="flex bg-gray-100 rounded-lg p-1">
@@ -244,7 +244,7 @@ const PropertiesPage: React.FC = () => {
                     }`}
                   >
                     <List className="w-3 h-3 mr-1 inline" />
-                    <span className="hidden sm:inline">Lista</span>
+                    <span className="hidden sm:inline">{t('properties.list')}</span>
                   </button>
                   <button
                     onClick={() => setViewMode('grid')}
@@ -255,7 +255,7 @@ const PropertiesPage: React.FC = () => {
                     }`}
                   >
                     <Grid className="w-3 h-3 mr-1 inline" />
-                    <span className="hidden sm:inline">Grid</span>
+                    <span className="hidden sm:inline">{t('properties.grid')}</span>
                   </button>
                 </div>
               </div>
@@ -537,7 +537,7 @@ const PropertiesPage: React.FC = () => {
                   {/* Key Details */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="font-semibold text-gray-900 mb-3">Características</h3>
+                      <h3 className="font-semibold text-gray-900 mb-3">{t('properties.characteristics')}</h3>
                       <div className="space-y-2 text-sm text-gray-600">
                         <div className="flex justify-between">
                           <span>Área construida:</span>
@@ -604,7 +604,7 @@ const PropertiesPage: React.FC = () => {
 
                   {/* Features */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Características Destacadas</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('properties.featuredCharacteristics')}</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       {(selectedProperty.features || []).map((feature, index) => (
                         <div key={index} className="flex items-center space-x-2">
