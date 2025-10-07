@@ -62,7 +62,9 @@ const Navigation = () => {
                 className="h-10 sm:h-12 w-auto"
                 priority
               />
-              <span className="text-xl sm:text-2xl font-serif font-bold text-primary">
+              <span className={`text-xl sm:text-2xl font-serif font-bold ${
+                isScrolled ? 'text-primary' : 'text-white'
+              }`}>
                 Tabiji House
               </span>
             </Link>
@@ -74,7 +76,9 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-sm xl:text-base"
+                className={`${
+                  isScrolled ? 'text-gray-900' : 'text-white'
+                } hover:text-primary transition-colors duration-200 font-medium text-sm xl:text-base`}
               >
                 {item.name}
               </Link>
@@ -96,7 +100,9 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors duration-200 p-2"
+              className={`${
+                isScrolled ? 'text-gray-900' : 'text-white'
+              } hover:text-primary transition-colors duration-200 p-2`}
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
