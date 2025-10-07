@@ -330,7 +330,7 @@ const PropertiesPage: React.FC = () => {
                                   </div>
                                   <div className="flex items-center">
                                     <Building2 className="w-3 h-3 mr-1" />
-                                    <span>{property.age} años</span>
+                                    <span>{property.age} {t('years')}</span>
                                   </div>
                                 </div>
                                 <button
@@ -435,7 +435,7 @@ const PropertiesPage: React.FC = () => {
                             </div>
                             <div className="flex items-center">
                               <Building2 className="w-3 h-3 mr-1" />
-                              <span>{property.age}años</span>
+                              <span>{property.age} {t('years')}</span>
                             </div>
                           </div>
                         </div>
@@ -524,12 +524,12 @@ const PropertiesPage: React.FC = () => {
                         </div>
                         <div className="flex items-center text-gray-600">
                           <Building2 className="w-5 h-5 mr-2" />
-                          <span>{selectedProperty.age} años</span>
+                          <span>{selectedProperty.age} {t('years')}</span>
                         </div>
                       </div>
                       <div className="flex items-center text-gray-600">
                         <TrendingUp className="w-5 h-5 mr-2" />
-                        <span>ROI estimado: {selectedProperty.investment.roi || 8}%</span>
+                        <span>{t('estimated_roi')}: {selectedProperty.investment.roi || 8}%</span>
                       </div>
                     </div>
                   </div>
@@ -540,63 +540,63 @@ const PropertiesPage: React.FC = () => {
                       <h3 className="font-semibold text-gray-900 mb-3">{t('properties.characteristics')}</h3>
                       <div className="space-y-2 text-sm text-gray-600">
                         <div className="flex justify-between">
-                          <span>Área construida:</span>
+                          <span>{t('built_area')}:</span>
                           <span>{selectedProperty.floorArea}m²</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Área terreno:</span>
+                          <span>{t('land_area')}:</span>
                           <span>{selectedProperty.landArea}m²</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Construcción:</span>
+                          <span>{t('construction')}:</span>
                           <span>{selectedProperty.completion?.year || 'N/A'}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Tipo:</span>
+                          <span>{t('type')}:</span>
                           <span>{selectedProperty.category}</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="font-semibold text-gray-900 mb-3">Potencial de Inversión</h3>
+                      <h3 className="font-semibold text-gray-900 mb-3">{t('investment_potential')}</h3>
                       <div className="space-y-2 text-sm text-gray-600">
                         <div className="flex justify-between">
                           <span>ROI:</span>
                           <span className="text-green-600 font-semibold">{selectedProperty.investment?.roi || 8}%</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Potencial de renta:</span>
-                          <span>{selectedProperty.investment?.rentalPotential || 'Alto'}</span>
+                          <span>{t('rental_potential')}:</span>
+                          <span>{selectedProperty.investment?.rentalPotential || t('high')}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Valorización:</span>
-                          <span className="text-green-600">{selectedProperty.investment?.appreciation || '+8% anual'}</span>
+                          <span>{t('appreciation')}:</span>
+                          <span className="text-green-600">{selectedProperty.investment?.appreciation || '+8% ' + t('annual')}</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h3 className="font-semibold text-gray-900 mb-3">Acceso</h3>
+                      <h3 className="font-semibold text-gray-900 mb-3">{t('access')}</h3>
                       <div className="space-y-2 text-sm text-gray-600">
                         {selectedProperty.access?.stations?.map((station, index) => (
                           <div key={index} className="flex justify-between">
-                            <span>Estación {index + 1}:</span>
+                            <span>{t('station')} {index + 1}:</span>
                             <span>{station.name} - {station.distance}</span>
                           </div>
                         )) || (
                           <div className="flex justify-between">
-                            <span>Estación:</span>
-                            <span>Información no disponible</span>
+                            <span>{t('station')}:</span>
+                            <span>{t('info_not_available')}</span>
                           </div>
                         )}
                         <div className="flex justify-between">
-                          <span>Estructura:</span>
+                          <span>{t('structure')}:</span>
                           <span>{selectedProperty.structure || 'N/A'}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Estacionamiento:</span>
-                          <span>{selectedProperty.parking?.spaces || 0} espacios</span>
+                          <span>{t('parking')}:</span>
+                          <span>{selectedProperty.parking?.spaces || 0} {t('spaces')}</span>
                         </div>
                       </div>
                     </div>
