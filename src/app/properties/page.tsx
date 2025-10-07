@@ -96,6 +96,19 @@ const PropertiesPage: React.FC = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
   const { t } = useLanguage();
 
+  // Function to translate renovation items
+  const translateRenovationItem = (item: string): string => {
+    const renovationMap: { [key: string]: string } = {
+      'Modern system kitchen': t('property.features.modernSystemKitchen'),
+      'Premium bidet toilet': t('property.features.premiumBidetToilet'),
+      'Roof refurbishment': t('property.features.roofRefurbishment'),
+      'New water heater and faucets': t('property.features.newWaterHeater'),
+      'Tatami renewal in main Japanese room': t('property.features.tatamiRenewal'),
+      'Newly built deck and exterior stairs': t('property.features.newDeck'),
+    };
+    return renovationMap[item] || item;
+  };
+
   // Calculate stats
   const stats = {
     total: properties.length,
@@ -631,7 +644,7 @@ const PropertiesPage: React.FC = () => {
                           <strong>{t('renovated_items')}:</strong>
                           <ul className="list-disc list-inside mt-1">
                             {(selectedProperty.renovations.items || []).map((item, index) => (
-                              <li key={index}>{item}</li>
+                              <li key={index}>{translateRenovationItem(item)}</li>
                             ))}
                           </ul>
                         </div>
