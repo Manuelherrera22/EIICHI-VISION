@@ -140,7 +140,7 @@ const PropertiesPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
             >
-              Tabiji Properties
+              {t('tabiji_properties')}
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ const PropertiesPage: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl text-blue-100 mb-8 font-light"
             >
-              Descubre tu oportunidad en Japón
+              {t('discover_your_opportunity_in_japan')}
             </motion.p>
             
             {/* Simple Stats */}
