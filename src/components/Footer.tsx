@@ -213,30 +213,30 @@ const Footer = () => {
           <div className="mt-8 pt-6 border-t border-border">
             <div className="text-center">
               <h4 className="font-serif text-sm font-semibold text-primary mb-4">
-                Información Legal - JNI Properties Co., Ltd.
+                {isClient ? t('footer.legalInfo') : 'Legal Information'} - JNI Properties Co., Ltd.
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-secondary">
                 <div className="space-y-2">
                   <div>
-                    <span className="font-semibold text-primary">Real Estate Transaction License:</span><br />
-                    Minister of Land, Infrastructure, Transport and Tourism (2) No. 9062
+                    <span className="font-semibold text-primary">{isClient ? t('footer.realEstateLicense') : 'Real Estate Transaction License'}:</span><br />
+                    {isClient ? t('footer.licenseNumber') : 'Minister of Land, Infrastructure, Transport and Tourism (2) No. 9062'}
                   </div>
                   <div>
-                    <span className="font-semibold text-primary">Trade Name:</span><br />
+                    <span className="font-semibold text-primary">{isClient ? t('footer.tradeName') : 'Trade Name'}:</span><br />
                     JNI Properties Co., Ltd.
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div>
-                    <span className="font-semibold text-primary">Principal Office Address:</span><br />
-                    6th Floor, Shinjuku Eastside Square, 6-27-30 Shinjuku, Shinjuku-ku, Tokyo
+                    <span className="font-semibold text-primary">{isClient ? t('footer.principalOffice') : 'Principal Office Address'}:</span><br />
+                    {isClient ? t('footer.officeAddress') : '6th Floor, Shinjuku Eastside Square, 6-27-30 Shinjuku, Shinjuku-ku, Tokyo'}
                   </div>
                   <div>
-                    <span className="font-semibold text-primary">Telephone:</span><br />
+                    <span className="font-semibold text-primary">{isClient ? t('footer.telephone') : 'Telephone'}:</span><br />
                     +81-3-6380-3901
                   </div>
                   <div>
-                    <span className="font-semibold text-primary">Representative:</span><br />
+                    <span className="font-semibold text-primary">{isClient ? t('footer.representative') : 'Representative'}:</span><br />
                     Toshinori Shibusawa
                   </div>
                 </div>

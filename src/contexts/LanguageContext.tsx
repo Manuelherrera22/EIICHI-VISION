@@ -1637,6 +1637,14 @@ const translations = {
     'footer.subscribe': 'Subscribe',
     'footer.emailPlaceholder': 'Enter your email',
     'footer.copyright': 'All rights reserved.',
+    'footer.legalInfo': 'Legal Information',
+    'footer.realEstateLicense': 'Real Estate Transaction License',
+    'footer.licenseNumber': 'Minister of Land, Infrastructure, Transport and Tourism (2) No. 9062',
+    'footer.tradeName': 'Trade Name',
+    'footer.principalOffice': 'Principal Office Address',
+    'footer.officeAddress': '6th Floor, Shinjuku Eastside Square, 6-27-30 Shinjuku, Shinjuku-ku, Tokyo',
+    'footer.telephone': 'Telephone',
+    'footer.representative': 'Representative',
     
     // Onboarding
     'onboarding.welcome': 'Welcome to Tabiji House',
@@ -4256,6 +4264,14 @@ const translations = {
     'footer.subscribe': '購読',
     'footer.emailPlaceholder': 'メールアドレスを入力',
     'footer.copyright': '© 2024 タビジハウス。全著作権所有。',
+    'footer.legalInfo': '法的情報',
+    'footer.realEstateLicense': '宅地建物取引業免許',
+    'footer.licenseNumber': '国土交通大臣(2) 第9062号',
+    'footer.tradeName': '商号',
+    'footer.principalOffice': '本社住所',
+    'footer.officeAddress': '東京都新宿区新宿6-27-30 新宿イーストサイドスクエア6階',
+    'footer.telephone': '電話番号',
+    'footer.representative': '代表者',
     
     // Onboarding
     'onboarding.welcome': 'タビジハウスへようこそ',
@@ -6609,6 +6625,14 @@ const translations = {
     'footer.subscribe': 'اشترك',
     'footer.emailPlaceholder': 'أدخل بريدك الإلكتروني',
     'footer.copyright': '© 2024 بيت تابيجي. جميع الحقوق محفوظة.',
+    'footer.legalInfo': 'المعلومات القانونية',
+    'footer.realEstateLicense': 'ترخيص المعاملات العقارية',
+    'footer.licenseNumber': 'وزير الأراضي والبنية التحتية والنقل والسياحة (2) رقم 9062',
+    'footer.tradeName': 'الاسم التجاري',
+    'footer.principalOffice': 'عنوان المكتب الرئيسي',
+    'footer.officeAddress': 'الطابق السادس، ساحة شينجوكو إيستسايد، 6-27-30 شينجوكو، شينجوكو-كو، طوكيو',
+    'footer.telephone': 'الهاتف',
+    'footer.representative': 'الممثل',
     
     // Onboarding
     'onboarding.welcome': 'مرحباً بك في بيت تابيجي',
@@ -9554,6 +9578,14 @@ const translations = {
     'footer.emailPlaceholder': 'Tu correo electrónico',
     'footer.subscribe': 'Suscribirse',
     'footer.copyright': 'Todos los derechos reservados.',
+    'footer.legalInfo': 'Información Legal',
+    'footer.realEstateLicense': 'Licencia de Transacciones Inmobiliarias',
+    'footer.licenseNumber': 'Ministerio de Tierras, Infraestructura, Transporte y Turismo (2) No. 9062',
+    'footer.tradeName': 'Nombre Comercial',
+    'footer.principalOffice': 'Dirección de Oficina Principal',
+    'footer.officeAddress': 'Piso 6, Shinjuku Eastside Square, 6-27-30 Shinjuku, Shinjuku-ku, Tokio',
+    'footer.telephone': 'Teléfono',
+    'footer.representative': 'Representante',
     
     // Onboarding
     'onboarding.welcome': 'Bienvenido a Tabiji House',
