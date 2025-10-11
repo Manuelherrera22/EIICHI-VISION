@@ -93,7 +93,7 @@ const TourismSection = () => {
       id: 3,
       name: t('tourism.zenkojiTemple'),
       description: t('tourism.zenkojiTempleDescription'),
-      image: "/images/cheung-gnaiq-GXXSL9dkwis-unsplash.jpg", // Traditional Japanese architecture
+      image: "/images/yuika-takamura-di44CIiUE5k-unsplash.jpg", // Zenkoji Temple specific
       fallbackImage: "/images/cheung-gnaiq-GXXSL9dkwis-unsplash.jpg",
       type: t('tourism.culture'),
       rating: 4.7,
