@@ -73,8 +73,8 @@ const TourismSection = () => {
       id: 1,
       name: t('tourism.kusatsuOnsen'),
       description: t('tourism.kusatsuOnsenDescription'),
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/kouji-tsuru-TSzPcfyZd_M-unsplash.jpg", // Beautiful onsen image
+      fallbackImage: "/images/kouji-tsuru-X_pyDqpHIsw-unsplash.jpg",
       type: t('tourism.onsen'),
       rating: 4.9,
       distance: "5 min"
@@ -83,8 +83,8 @@ const TourismSection = () => {
       id: 2,
       name: t('tourism.mountShirane'),
       description: t('tourism.mountShiraneDescription'),
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1464822759844-d150baec5b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg", // Beautiful mountain landscape
+      fallbackImage: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.8,
       distance: "30 min"
@@ -93,8 +93,8 @@ const TourismSection = () => {
       id: 3,
       name: t('tourism.zenkojiTemple'),
       description: t('tourism.zenkojiTempleDescription'),
-      image: "https://images.unsplash.com/photo-1542640244-a3d2c4b0a0a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/cheung-gnaiq-GXXSL9dkwis-unsplash.jpg", // Traditional Japanese architecture
+      fallbackImage: "/images/cheung-gnaiq-GXXSL9dkwis-unsplash.jpg",
       type: t('tourism.culture'),
       rating: 4.7,
       distance: "15 min"
@@ -103,8 +103,8 @@ const TourismSection = () => {
       id: 4,
       name: t('tourism.joshinetsukogenPark'),
       description: t('tourism.joshinetsukogenParkDescription'),
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg", // Beautiful forest/nature scene
+      fallbackImage: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.9,
       distance: "45 min"
