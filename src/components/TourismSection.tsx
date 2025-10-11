@@ -73,8 +73,8 @@ const TourismSection = () => {
       id: 1,
       name: t('tourism.kusatsuOnsen'),
       description: t('tourism.kusatsuOnsenDescription'),
-      image: "/images/kouji-tsuru-KdkXttOEaYg-unsplash.jpg", // Real onsen image
-      fallbackImage: "/images/kouji-tsuru-TSzPcfyZd_M-unsplash.jpg",
+      image: "/images/onsen.jpg", // Real Kusatsu Onsen
+      fallbackImage: "/images/kouji-tsuru-KdkXttOEaYg-unsplash.jpg",
       type: t('tourism.onsen'),
       rating: 4.9,
       distance: "5 min"
