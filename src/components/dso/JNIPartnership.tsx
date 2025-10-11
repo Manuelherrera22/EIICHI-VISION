@@ -51,8 +51,8 @@ const JNIPartnership: React.FC = () => {
     {
       icon: Home,
       title: '年間取扱物件',
-      subtitle: '1000件以上',
-      description: '1,000+ properties annually'
+      subtitle: '450件以上',
+      description: '450+ properties annually'
     },
     {
       icon: TrendingUp,
