@@ -197,12 +197,12 @@ export default function Process() {
                       }`}></div>
                       <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 ${
                         step.number === 1 
-                          ? "bg-[url('/images/gunmatravel_pixta_24414724_M.jpg.webp')]" // Beautiful Gunma discovery landscape
+                          ? "bg-[url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]" // Beautiful Gunma discovery landscape
                           : step.number === 2
-                          ? "bg-[url('/images/gunmatravel_pixta_43229989_M.jpg.webp')]" // Gunma acquisition scene
+                          ? "bg-[url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]" // Traditional Japanese architecture
                           : step.number === 3
-                          ? "bg-[url('/images/gunmatravel_pixta_45949835_M.jpg.webp')]" // Gunma creation/renovation
-                          : "bg-[url('/images/kawagoespot_pixta_53607652_M-172x115.jpg.webp')]" // Gunma onsen community
+                          ? "bg-[url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]" // Modern renovation
+                          : "bg-[url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')]" // Traditional onsen
                       }`}></div>
                       
                       {/* Step Number Overlay */}
@@ -348,7 +348,7 @@ export default function Process() {
             <div className="relative">
               <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
-                <div className="absolute inset-0 bg-[url('/images/yamanashitravel_pixta_58415576_M-172x115.jpg.webp')] bg-cover bg-center bg-no-repeat opacity-80"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center bg-no-repeat opacity-80"></div>
               </div>
             </div>
           </div>
