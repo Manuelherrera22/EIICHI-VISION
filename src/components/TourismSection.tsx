@@ -73,8 +73,8 @@ const TourismSection = () => {
       id: 1,
       name: t('tourism.kusatsuOnsen'),
       description: t('tourism.kusatsuOnsenDescription'),
-      image: "/images/kouji-tsuru-TSzPcfyZd_M-unsplash.jpg", // Beautiful onsen image
-      fallbackImage: "/images/kouji-tsuru-X_pyDqpHIsw-unsplash.jpg",
+      image: "/images/kouji-tsuru-KdkXttOEaYg-unsplash.jpg", // Real onsen image
+      fallbackImage: "/images/kouji-tsuru-TSzPcfyZd_M-unsplash.jpg",
       type: t('tourism.onsen'),
       rating: 4.9,
       distance: "5 min"
@@ -83,7 +83,7 @@ const TourismSection = () => {
       id: 2,
       name: t('tourism.mountShirane'),
       description: t('tourism.mountShiraneDescription'),
-      image: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg", // Beautiful mountain landscape
+      image: "/images/monte shirane.jpg", // Real Monte Shirane with snow
       fallbackImage: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.8,
@@ -103,7 +103,7 @@ const TourismSection = () => {
       id: 4,
       name: t('tourism.joshinetsukogenPark'),
       description: t('tourism.joshinetsukogenParkDescription'),
-      image: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg", // Beautiful forest/nature scene
+      image: "/images/parque nacional.jpg", // Real Parque Nacional Joshinetsu Kogen
       fallbackImage: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.9,
