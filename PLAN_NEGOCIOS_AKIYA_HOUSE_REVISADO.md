@@ -79,28 +79,80 @@
 
 ## MODELO DE NEGOCIO DETALLADO REVISADO
 
-### 🔄 **PROCESO OPERATIVO REALISTA**
+### 🎯 **DOS ESTRATEGIAS DE NEGOCIO DISTINTAS**
 
-#### **Fase 1: Identificación y Evaluación (4-6 semanas)**
-- **Scouting local:** Red de 10+ agentes en prefecturas objetivo
-- **Filtro sísmico:** Solo propiedades post-1981 inicialmente
+#### **ESTRATEGIA A: COMPRA DE PROPIEDADES YA REMODELADAS**
+**Enfoque:** Adquirir akiya que ya han sido renovadas por otros operadores o propietarios
+
+**Ventajas:**
+- **Riesgo reducido:** Sin costos de renovación imprevistos
+- **ROI inmediato:** Ingresos por alquiler desde el primer mes
+- **Menor capital inicial:** Solo costo de compra + comisiones
+- **Escalabilidad rápida:** Mayor volumen de transacciones
+
+**Desventajas:**
+- **Margen menor:** Menor ganancia de capital vs. renovación propia
+- **Competencia alta:** Otros operadores también buscan estas oportunidades
+- **Calidad variable:** Dependencia de estándares de renovación de terceros
+
+#### **ESTRATEGIA B: REMODELACIÓN PROPIA**
+**Enfoque:** Adquirir akiya sin renovar y realizar renovaciones internas
+
+**Ventajas:**
+- **Control total:** Estándares de calidad garantizados
+- **Mayor margen:** Valor agregado significativo post-renovación
+- **Diferenciación:** Propiedades únicas con diseño propio
+- **Apreciación de valor:** Mayor ganancia de capital
+
+**Desventajas:**
+- **Riesgo alto:** Costos y tiempos imprevistos
+- **Capital intensivo:** Mayor inversión inicial requerida
+- **Timeline largo:** 12-20 semanas sin ingresos
+- **Complejidad operativa:** Gestión de construcción y contratistas
+
+### 🔄 **PROCESO OPERATIVO POR ESTRATEGIA**
+
+#### **ESTRATEGIA A: Compra de Propiedades Remodeladas**
+
+**Fase 1: Identificación y Evaluación (2-3 semanas)**
+- **Scouting especializado:** Red enfocada en propiedades ya renovadas
+- **Evaluación de calidad:** Inspección de renovaciones existentes
+- **Due diligence:** Verificación de permisos y certificaciones
+- **Modelado financiero:** ROI basado en ingresos por alquiler
+
+**Fase 2: Adquisición (4-6 semanas)**
+- **Negociación:** Precios basados en valor de mercado post-renovación
+- **Procesamiento legal:** Manejo de trámites para extranjeros
+- **Financiamiento:** Opciones de pago para propiedades terminadas
+- **Cierre:** Transferencia inmediata con ingresos desde el primer mes
+
+**Fase 3: Monetización Inmediata (Ongoing)**
+- **Alquiler inmediato:** Gestión de propiedades listas para uso
+- **Gestión remota:** Servicios de administración optimizados
+- **Mantenimiento preventivo:** Mantenimiento de estándares de calidad
+
+#### **ESTRATEGIA B: Remodelación Propia**
+
+**Fase 1: Identificación y Evaluación (4-6 semanas)**
+- **Scouting de oportunidades:** Red enfocada en akiya sin renovar
+- **Análisis de potencial:** Evaluación de ubicación y estructura
 - **Due diligence:** Verificación legal, ambiental, estructural
-- **Modelado financiero:** Proyección conservadora de ROI
+- **Modelado financiero:** ROI basado en valor post-renovación
 
-#### **Fase 2: Adquisición (8-12 semanas)**
-- **Negociación:** Obtener precios 30-50% bajo valor de mercado
+**Fase 2: Adquisición (8-12 semanas)**
+- **Negociación:** Precios 30-50% bajo valor de mercado
 - **Procesamiento legal:** Manejo completo de trámites para extranjeros
-- **Financiamiento:** Estructuración de opciones de pago
-- **Cierre:** Transferencia de propiedad y documentación
+- **Financiamiento:** Estructuración de capital para compra + renovación
+- **Cierre:** Transferencia de propiedad con plan de renovación
 
-#### **Fase 3: Renovación (12-20 semanas)**
-- **Diseño conservador:** Planificación para alquiler a largo plazo
+**Fase 3: Renovación (12-20 semanas)**
+- **Diseño estratégico:** Planificación para maximizar valor de alquiler
 - **Gestión de construcción:** Coordinación con contratistas verificados
 - **Control de calidad:** Supervisión bilingüe de trabajos
 - **Certificaciones:** Obtención de permisos y certificaciones
 
-#### **Fase 4: Monetización (Ongoing)**
-- **Alquiler a largo plazo:** Gestión de propiedades residenciales
+**Fase 4: Monetización (Ongoing)**
+- **Alquiler post-renovación:** Gestión de propiedades renovadas
 - **Gestión remota:** Servicios de administración para inversionistas
 - **Mantenimiento:** Servicios de mantenimiento y reparación
 
@@ -125,35 +177,116 @@
 
 ## PROYECCIONES FINANCIERAS REALISTAS
 
-### 📊 **MODELO FINANCIERO CORREGIDO**
+### 📊 **MODELO FINANCIERO POR ESTRATEGIA**
 
-#### **Métricas Clave por Propiedad (REALISTAS):**
-- **Precio promedio de compra:** $35,000
-- **Costo promedio de renovación:** $85,000 (no $45,000)
+#### **ESTRATEGIA A: Compra de Propiedades Remodeladas**
+
+**Métricas Clave por Propiedad:**
+- **Precio promedio de compra:** $120,000 (propiedad ya renovada)
+- **Costos de transacción:** $8,000
+- **Seguros anuales:** $500
+- **Inversión total:** $128,500
+- **Valor de mercado:** $120,000-140,000
+- **ROI por propiedad:** 8-12% anual (solo ingresos por alquiler)
+- **Timeline:** 2-3 meses hasta primer ingreso
+
+**Proyección de Ingresos por Alquiler:**
+- **Alquiler mensual promedio:** $800-1,200 USD
+- **Ingresos anuales:** $9,600-14,400 USD
+- **ROI anual:** 7.5-11.2%
+- **Tasa de ocupación:** 85-90%
+- **Ingresos netos anuales:** $8,160-12,240 USD
+
+#### **ESTRATEGIA B: Remodelación Propia**
+
+**Métricas Clave por Propiedad:**
+- **Precio promedio de compra:** $35,000 (akiya sin renovar)
+- **Costo promedio de renovación:** $85,000
 - **Costo de modernización sísmica:** $0 (solo post-1981)
 - **Costos de transacción:** $8,000
 - **Seguros anuales:** $500
-- **Valor post-renovación:** $140,000
-- **ROI por propiedad:** 12% anual (no 49.3%)
-- **Timeline promedio:** 12-18 meses por ciclo completo
+- **Inversión total:** $128,500
+- **Valor post-renovación:** $140,000-160,000
+- **ROI por propiedad:** 12-18% anual (ingresos + apreciación)
+- **Timeline:** 12-20 meses hasta primer ingreso
 
-#### **Proyección de Volumen CONSERVADORA (Años 1-3):**
+**Proyección de Ingresos por Alquiler:**
+- **Alquiler mensual promedio:** $1,000-1,400 USD (propiedad renovada)
+- **Ingresos anuales:** $12,000-16,800 USD
+- **ROI anual:** 9.3-13.1%
+- **Tasa de ocupación:** 85-90%
+- **Ingresos netos anuales:** $10,200-14,280 USD
+
+### 🏠 **PROYECCIONES DETALLADAS DE ALQUILER**
+
+#### **Análisis de Mercado de Alquiler por Ubicación:**
+
+**Áreas Suburbanas (Estrategia A - Propiedades Remodeladas):**
+- **Alquiler mensual:** $800-1,200 USD
+- **ROI mensual:** 0.6-0.9% (6.2-11.2% anual)
+- **Tasa de ocupación:** 90-95%
+- **Demanda:** Familias locales y expatriados
+- **Estacionalidad:** Baja (mercado estable)
+
+**Áreas Rurales Cerca de Turismo (Estrategia B - Remodelación):**
+- **Alquiler mensual:** $1,000-1,400 USD
+- **ROI mensual:** 0.8-1.1% (9.3-13.1% anual)
+- **Tasa de ocupación:** 85-90%
+- **Demanda:** Turistas y trabajadores remotos
+- **Estacionalidad:** Media (variación estacional)
+
+#### **Proyecciones Mensuales Detalladas (30-40% del valor de propiedad):**
+
+**Propiedad Valor $120,000 (Estrategia A):**
+- **30% del valor anual:** $36,000 / 12 = $3,000/mes
+- **35% del valor anual:** $42,000 / 12 = $3,500/mes
+- **40% del valor anual:** $48,000 / 12 = $4,000/mes
+- **ROI objetivo realista:** $800-1,200/mes (8-12% anual)
+
+**Propiedad Valor $140,000 (Estrategia B):**
+- **30% del valor anual:** $42,000 / 12 = $3,500/mes
+- **35% del valor anual:** $49,000 / 12 = $4,083/mes
+- **40% del valor anual:** $56,000 / 12 = $4,667/mes
+- **ROI objetivo realista:** $1,000-1,400/mes (8.6-12% anual)
+
+**Nota:** Los porcentajes del 30-40% representan el potencial teórico máximo, pero los ingresos reales están limitados por:
+- **Capacidad de pago del mercado local**
+- **Competencia con otras propiedades**
+- **Costos operativos** (gestión, mantenimiento, seguros)
+- **Tasa de ocupación** real (85-90%)
+
+#### **Proyección de Volumen POR ESTRATEGIA (Años 1-3):**
+
+**ESTRATEGIA A: Compra de Propiedades Remodeladas**
 
 | Métrica | Año 1 | Año 2 | Año 3 |
 |---------|-------|-------|-------|
-| **Propiedades identificadas** | 100 | 200 | 300 |
-| **Propiedades adquiridas** | 15 | 35 | 60 |
-| **Propiedades renovadas** | 12 | 30 | 50 |
-| **Propiedades en gestión** | 8 | 25 | 45 |
+| **Propiedades identificadas** | 60 | 120 | 180 |
+| **Propiedades adquiridas** | 10 | 25 | 45 |
+| **Propiedades en gestión** | 8 | 20 | 40 |
+| **Ingresos por alquiler (anual)** | $76,800 | $204,000 | $408,000 |
 
-#### **Proyección de Ingresos REALISTA (Años 1-3):**
+**ESTRATEGIA B: Remodelación Propia**
+
+| Métrica | Año 1 | Año 2 | Año 3 |
+|---------|-------|-------|-------|
+| **Propiedades identificadas** | 40 | 80 | 120 |
+| **Propiedades adquiridas** | 5 | 15 | 25 |
+| **Propiedades renovadas** | 3 | 10 | 20 |
+| **Propiedades en gestión** | 2 | 8 | 18 |
+| **Ingresos por alquiler (anual)** | $24,000 | $96,000 | $216,000 |
+
+#### **Proyección de Ingresos TOTALES (Años 1-3):**
 
 | Fuente de Ingreso | Año 1 | Año 2 | Año 3 |
 |-------------------|-------|-------|-------|
-| **Comisiones de Adquisición** | $120,000 | $280,000 | $480,000 |
-| **Servicios de Renovación** | $168,000 | $420,000 | $700,000 |
-| **Gestión de Propiedades** | $96,000 | $300,000 | $540,000 |
-| **TOTAL INGRESOS** | **$384,000** | **$1,000,000** | **$1,720,000** |
+| **Comisiones de Adquisición (Estrategia A)** | $60,000 | $150,000 | $270,000 |
+| **Comisiones de Adquisición (Estrategia B)** | $30,000 | $90,000 | $150,000 |
+| **Servicios de Renovación (Estrategia B)** | $45,000 | $150,000 | $300,000 |
+| **Ingresos por Alquiler (Estrategia A)** | $76,800 | $204,000 | $408,000 |
+| **Ingresos por Alquiler (Estrategia B)** | $24,000 | $96,000 | $216,000 |
+| **Gestión de Propiedades (10% fee)** | $10,080 | $30,000 | $62,400 |
+| **TOTAL INGRESOS** | **$245,880** | **$720,000** | **$1,406,400** |
 
 #### **Proyección de Gastos REALISTA (Años 1-3):**
 
@@ -177,20 +310,83 @@
 | **Margen EBITDA** | -9.4% | 29.5% | 41.6% |
 | **Cash Flow** | -$50,000 | $250,000 | $650,000 |
 
-### 🎯 **MÉTRICAS DE ROI REALISTAS PARA INVERSIONISTAS**
+### 🎯 **ANÁLISIS DETALLADO DE ROI POR ESTRATEGIA**
 
-#### **ROI por Inversión Inmobiliaria Individual:**
-- **Inversión total promedio:** $128,000 (compra + renovación + costos)
-- **Valor post-renovación:** $140,000
-- **Ingresos anuales por alquiler:** $12,000
-- **ROI anual:** 9.4% (ingresos por alquiler)
-- **Timeline:** 12-18 meses para renovación, luego ingresos recurrentes
+#### **ESTRATEGIA A: ROI por Propiedad Remodelada**
+
+**Inversión por Propiedad:**
+- **Precio de compra:** $120,000
+- **Costos de transacción:** $8,000
+- **Inversión total:** $128,000
+
+**Ingresos Anuales:**
+- **Alquiler mensual:** $800-1,200
+- **Ingresos anuales:** $9,600-14,400
+- **Tasa de ocupación:** 90%
+- **Ingresos netos anuales:** $8,640-12,960
+
+**ROI Anual:**
+- **ROI mínimo:** 6.75% ($8,640 / $128,000)
+- **ROI máximo:** 10.1% ($12,960 / $128,000)
+- **ROI promedio:** 8.4%
+
+**Timeline de Recuperación:**
+- **Meses hasta primer ingreso:** 2-3
+- **Break-even:** 15-18 meses
+- **ROI acumulado (Año 3):** 25.2%
+
+#### **ESTRATEGIA B: ROI por Propiedad Remodelada**
+
+**Inversión por Propiedad:**
+- **Precio de compra:** $35,000
+- **Costo de renovación:** $85,000
+- **Costos de transacción:** $8,000
+- **Inversión total:** $128,000
+
+**Ingresos Anuales:**
+- **Alquiler mensual:** $1,000-1,400
+- **Ingresos anuales:** $12,000-16,800
+- **Tasa de ocupación:** 87%
+- **Ingresos netos anuales:** $10,440-14,616
+
+**ROI Anual:**
+- **ROI mínimo:** 8.2% ($10,440 / $128,000)
+- **ROI máximo:** 11.4% ($14,616 / $128,000)
+- **ROI promedio:** 9.8%
+
+**Timeline de Recuperación:**
+- **Meses hasta primer ingreso:** 12-20
+- **Break-even:** 18-24 meses
+- **ROI acumulado (Año 3):** 29.4%
+
+**Apreciación de Valor:**
+- **Valor post-renovación:** $140,000-160,000
+- **Ganancia de capital:** $12,000-32,000
+- **ROI total (ingresos + apreciación):** 17.5-36.4%
+
+#### **COMPARACIÓN DE ESTRATEGIAS:**
+
+| Métrica | Estrategia A (Remodeladas) | Estrategia B (Remodelación) |
+|---------|---------------------------|----------------------------|
+| **Inversión inicial** | $128,000 | $128,000 |
+| **Timeline hasta ingresos** | 2-3 meses | 12-20 meses |
+| **ROI anual promedio** | 8.4% | 9.8% |
+| **Riesgo** | Bajo | Medio-Alto |
+| **Escalabilidad** | Alta | Media |
+| **Control de calidad** | Limitado | Total |
+| **Potencial de apreciación** | Bajo | Alto |
 
 #### **ROI para Inversionistas en la Empresa:**
 - **Inversión inicial (Ronda Semilla):** $3.2M
 - **Valoración objetivo (Año 3):** $8-12M
 - **ROI para inversionistas:** 2.5x - 3.75x en 3 años
 - **IRR:** 35-55% anual (conservador)
+
+#### **Estrategia Híbrida Recomendada:**
+- **70% Estrategia A:** Propiedades remodeladas para flujo de caja inmediato
+- **30% Estrategia B:** Remodelación propia para mayor margen y apreciación
+- **ROI combinado esperado:** 8.8% anual
+- **Balance óptimo:** Riesgo vs. retorno
 
 ---
 
