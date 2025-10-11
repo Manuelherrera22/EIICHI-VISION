@@ -49,7 +49,7 @@ const JNIStrategicAlliance: React.FC = () => {
   ];
 
   const stats = [
-    { number: '1000+', label: t('jni.stats.propertiesAvailable') },
+    { number: '450+', label: t('jni.stats.propertiesAvailable') },
     { number: '15+', label: t('jni.stats.yearsExperience') },
     { number: '98.3%', label: t('jni.stats.clientSatisfaction') },
     { number: '¥100B+', label: t('jni.stats.totalTransactions') }
@@ -73,8 +73,8 @@ const JNIStrategicAlliance: React.FC = () => {
     },
     {
       title: '年間取扱物件',
-      subtitle: '1000件以上',
-      description: '1,000+ properties annually'
+      subtitle: '450件以上',
+      description: '450+ properties annually'
     }
   ];
 
