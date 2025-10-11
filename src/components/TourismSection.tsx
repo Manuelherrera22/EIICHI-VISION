@@ -83,7 +83,7 @@ const TourismSection = () => {
       id: 2,
       name: t('tourism.mountShirane'),
       description: t('tourism.mountShiraneDescription'),
-      image: "/images/monte shirane.jpg", // Real Monte Shirane with snow
+      image: "/images/monte-shirane.jpg", // Real Monte Shirane with snow
       fallbackImage: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.8,
@@ -103,7 +103,7 @@ const TourismSection = () => {
       id: 4,
       name: t('tourism.joshinetsukogenPark'),
       description: t('tourism.joshinetsukogenParkDescription'),
-      image: "/images/parque nacional.jpg", // Real Parque Nacional Joshinetsu Kogen
+      image: "/images/parque-nacional.jpg", // Real Parque Nacional Joshinetsu Kogen
       fallbackImage: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.9,
