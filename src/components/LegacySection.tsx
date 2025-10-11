@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import OptimizedImage from './OptimizedImage';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const LegacySection = () => {
@@ -13,7 +13,7 @@ const LegacySection = () => {
           {/* Image */}
           <div className="relative">
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <OptimizedImage
+              <Image
                 src="/images/cal-gao-UKKDT1od3uw-unsplash.jpg"
                 alt="Beautiful Japanese tradition and heritage"
                 fill
