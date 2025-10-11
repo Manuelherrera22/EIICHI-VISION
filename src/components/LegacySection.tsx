@@ -14,15 +14,15 @@ const LegacySection = () => {
           <div className="relative">
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <OptimizedImage
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Shibusawa Eiichi portrait"
+                src="/images/cal-gao-UKKDT1od3uw-unsplash.jpg"
+                alt="Beautiful Japanese tradition and heritage"
                 fill
                 className="object-cover opacity-80"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
               <div className="absolute bottom-6 left-6 text-white">
-                <div className="text-sm font-mono opacity-80">Portrait, 1910</div>
+                <div className="text-sm font-mono opacity-80">Japanese Heritage</div>
               </div>
             </div>
             
