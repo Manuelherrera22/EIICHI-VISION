@@ -63,20 +63,6 @@ const nextConfig: NextConfig = {
     tsconfigPath: './tsconfig.build.json',
   },
   
-  // Excluir páginas de test del build
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'].map(ext => {
-    return `page.${ext}`;
-  }).concat(['tsx', 'ts', 'jsx', 'js']),
-  
-  // Configuración para excluir rutas de test
-  async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: []
-    };
-  },
-  
   // Configuración de webpack unificada
   webpack: (config, { dev, isServer }) => {
     // Ignorar errores de TypeScript
