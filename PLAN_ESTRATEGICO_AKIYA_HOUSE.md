@@ -241,28 +241,32 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 ### OKRs Trimestrales
 
 #### **Q1 2025: FUNDACIÓN**
-**Objetivo:** Establecer operaciones y primera propiedad piloto
-- **KR1:** Adquirir y renovar 1 propiedad en 90 días
-- **KR2:** Generar primer ingreso por alquiler
-- **KR3:** Mantener burn rate <$12K/mes
+**Objetivo:** Establecer operaciones base y primera propiedad piloto
+- **KR1:** Completar estructura legal, Pacto de Socios y cuentas bancarias
+- **KR2:** Adquirir primera propiedad piloto
+- **KR3:** Iniciar renovación con contratista seleccionado
+- **KR4:** Mantener burn rate <$15K/mes
 
-#### **Q2 2025: VALIDACIÓN**
-**Objetivo:** Validar modelo y alcanzar 5 propiedades
-- **KR1:** Gestionar 5 propiedades activas
-- **KR2:** Generar $10K MRR
-- **KR3:** LTV/CAC >2.5:1
+#### **Q2 2025: PRIMERA MONETIZACIÓN**
+**Objetivo:** Generar primeros ingresos y adquirir segunda propiedad
+- **KR1:** Completar renovación propiedad #1 y generar primer ingreso
+- **KR2:** Adquirir segunda propiedad piloto
+- **KR3:** Generar $3K-5K en ingresos totales Q2
+- **KR4:** Alcanzar tasa de ocupación >80% en propiedad #1
 
-#### **Q3 2025: OPTIMIZACIÓN**
-**Objetivo:** Optimizar procesos y alcanzar 10 propiedades
-- **KR1:** Gestionar 10 propiedades activas
-- **KR2:** Generar $20K MRR
-- **KR3:** Automatizar 50% de procesos
+#### **Q3 2025: VALIDACIÓN DEL MODELO**
+**Objetivo:** Validar economía unitaria con 2 propiedades operativas
+- **KR1:** Completar renovación propiedad #2 y comenzar generación de ingresos
+- **KR2:** Generar $8K-12K en ingresos totales Q3
+- **KR3:** Validar ROI real >10% en al menos 1 propiedad
+- **KR4:** Documentar procesos replicables para escalamiento
 
-#### **Q4 2025: ESCALAMIENTO**
-**Objetivo:** Preparar crecimiento sostenido con 15 propiedades
-- **KR1:** Gestionar 15 propiedades activas
-- **KR2:** Generar $30K MRR
-- **KR3:** Flujo de caja positivo sostenido
+#### **Q4 2025: VALIDACIÓN Y PREPARACIÓN**
+**Objetivo:** Validar modelo con 2 propiedades piloto y preparar financiación Año 2
+- **KR1:** Tener 2 propiedades piloto completamente operativas generando ingresos
+- **KR2:** Validar economía unitaria real con ROI >10% en propiedades piloto
+- **KR3:** Finalizar decisión de estrategia de financiación (Opción A, B, C o D)
+- **KR4:** Documentar procesos escalables y pipeline de 10+ propiedades para Año 2
 
 ---
 
@@ -434,79 +438,80 @@ Alcanzar 15 propiedades activas y flujo de caja positivo sostenido mediante fina
 - Diversificar tipos de propiedad
 - Establecer presencia en 2-3 prefecturas
 
-#### **Hitos de Éxito Fase 2:**
-- ✅ 15 propiedades activas
-- ✅ $30K MRR sostenido
-- ✅ Flujo de caja positivo mensual
-- ✅ LTV/CAC >3:1
-- ✅ Procesos documentados
+#### **Hitos de Éxito Fase 2 (Final de Año 2):**
+- ✅ 15 propiedades activas generando ingresos completos
+- ✅ $23.5K MRR sostenido (15 × $1,570/mes)
+- ✅ Flujo de caja positivo mensual alcanzado
+- ✅ LTV/CAC >3:1 validado
+- ✅ Procesos completamente documentados y replicables
+- ✅ Operaciones en 2-3 prefecturas
+- ✅ Equipo de 5 personas operando eficientemente
 
-### FASE 3: ESCALABILIDAD CONTROLADA (Año 2)
+### FASE 3: ESCALABILIDAD CONTROLADA (Año 3 - Meses 25-36)
 
 #### **Objetivo:**
-Crecer a 35 propiedades manteniendo rentabilidad y calidad.
+Crecer de 15 a 60 propiedades manteniendo rentabilidad y calidad del servicio.
 
-#### **Q1 (Año 2): Expansión Incremental**
+#### **H1 (Año 3): Expansión Acelerada**
+
+**Q1 2027: Expansión Incremental**
 **Acciones:**
-- Adquirir 5-6 propiedades adicionales
-- Expandir a tercera prefectura
+- Adquirir 10-12 propiedades adicionales (total: 25-27)
+- Expandir a tercera y cuarta prefectura
 - Desarrollar servicios complementarios (consultoría)
-- Implementar programa de referidos
+- Implementar programa de referidos estructurado
 
 **Equipo:**
-- Contratar CTO (desarrollo de plataforma)
+- Contratar Head of Operations
 - Contratar 2 gestores de propiedades adicionales
+- Total equipo: 8 personas
 
-#### **Q2 (Año 2): Automatización**
+**Q2 2027: Automatización Avanzada**
 **Acciones:**
-- Automatizar 60% de procesos
-- Desarrollar algoritmo de optimización Minpaku
-- Implementar IA para análisis de propiedades
-- Establecer métricas de calidad
+- Automatizar 70% de procesos operativos
+- Desarrollar algoritmo de optimización Minpaku con IA
+- Implementar análisis predictivo de propiedades
+- Establecer métricas de calidad y SLAs
 
 **Adquisiciones:**
-- 7-8 propiedades adicionales
+- 8-10 propiedades adicionales (total: 35-37)
 - Enfoque en zonas económicas especiales
 
-#### **Q3 (Año 2): Diversificación**
+#### **H2 (Año 3): Consolidación y Diversificación**
+
+**Q3 2027: Diversificación de Servicios**
 **Acciones:**
-- Lanzar servicios de consultoría premium
-- Desarrollar cursos online sobre inversión
+- Lanzar servicios de consultoría premium ($500-1,000/sesión)
+- Desarrollar cursos online sobre inversión en akiya
 - Establecer afiliaciones con servicios complementarios
-- Optimizar estructura de costos
+- Optimizar estructura de costos y margen EBITDA
 
 **Adquisiciones:**
-- 6-7 propiedades adicionales
+- 10-12 propiedades adicionales (total: 47-49)
 - Explorar nichos de kominka premium
 
-#### **Q4 (Año 2): Consolidación**
+**Q4 2027: Consolidación Regional**
 **Acciones:**
-- Alcanzar 35 propiedades activas
-- Generar $700K ingresos anuales
-- Establecer procesos para expansión regional
-- Preparar infraestructura para crecimiento
+- Alcanzar 60 propiedades activas
+- Generar $1.2M ingresos anuales
+- Establecer procesos para expansión a nuevas regiones
+- Preparar infraestructura tecnológica para 100+ propiedades
 
-#### **Hitos de Éxito Fase 3:**
-- ✅ 35 propiedades activas
-- ✅ $60K MRR
-- ✅ Margen EBITDA >50%
+**Adquisiciones:**
+- 11-13 propiedades adicionales (total: 60)
+- Distribución: 5 prefecturas
+
+#### **Hitos de Éxito Fase 3 (Final de Año 3):**
+- ✅ 60 propiedades activas
+- ✅ $94K MRR (60 × $1,570/mes promedio)
+- ✅ Ingresos anuales: $1.2M
+- ✅ EBITDA: $660K (55% margen)
 - ✅ NPS >50
-- ✅ Operaciones en 3 prefecturas
+- ✅ Operaciones en 5 prefecturas
+- ✅ Equipo de 8 personas
+- ✅ Procesos completamente automatizados
 
-### FASE 4: LIDERAZGO DE MERCADO (Años 3-5)
-
-#### **Año 3: Consolidación Regional**
-**Objetivos:**
-- 60 propiedades activas
-- $1.2M ingresos anuales
-- Operaciones en 5 prefecturas
-- 8 empleados
-
-**Estrategia:**
-- Desarrollar marca reconocida
-- Establecer partnerships estratégicos
-- Implementar tecnología avanzada
-- Optimizar modelo de negocio
+### FASE 4: LIDERAZGO DE MERCADO (Años 4-5 - Meses 37-60)
 
 #### **Año 4: Expansión Estratégica**
 **Objetivos:**
