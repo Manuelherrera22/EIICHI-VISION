@@ -88,13 +88,6 @@ const QASection = () => {
         t('qa.ldk.kitchen'),
         t('qa.ldk.example')
       ]
-    },
-    {
-      icon: HelpCircle,
-      title: t('qa.contact.title'),
-      answer: '',
-      description: t('qa.contact.description'),
-      details: []
     }
   ];
 
