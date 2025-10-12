@@ -16,7 +16,8 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 **Modelo Híbrido Inteligente:** Combinación de alquiler a largo plazo (70%) y corto plazo (30%, máximo 180 días) que maximiza ROI mientras cumple regulaciones japonesas, optimizando ingresos mediante gestión estacional adaptativa.
 
 ### Objetivos Estratégicos (5 Años)
-- **Año 1:** 15 propiedades activas, $95K ingresos reales, flujo de caja positivo mes 8
+- **Año 1:** 2 propiedades piloto adquiridas, $95K ingresos reales, validación del modelo
+- **Año 2:** 15 propiedades activas, flujo de caja positivo mes 10-12
 - **Año 3:** 60 propiedades activas, $1.2M ingresos, operaciones en 3 prefecturas
 - **Año 5:** 100+ propiedades, liderazgo de mercado, $2M+ ingresos anuales
 
@@ -24,7 +25,7 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 - **ROI por Propiedad:** 11-13% anual (modelo híbrido)
 - **CAC:** <$5,000 por cliente
 - **LTV/CAC Ratio:** >3:1
-- **Punto de Equilibrio:** Mes 10-12
+- **Punto de Equilibrio:** Mes 10-12 del Año 2
 
 ---
 
@@ -149,9 +150,10 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 - **Capital inicial:** $360,000
 - **Ingresos operativos:** $95,000
 - **Gastos operativos:** -$180,000
-- **Inversión en propiedades:** -$200,000 (solo 1-2 propiedades piloto con capital inicial)
-- **Flujo de caja neto:** -$285,000
-- **Nota:** Propiedades 3-15 serán financiadas con ingresos de Año 2 o requerirán capital adicional
+- **Inversión en propiedades:** -$257,000 (2 propiedades piloto: 2 × $128,500)
+- **Flujo de caja neto:** -$342,000
+- **Capital remanente al fin de Año 1:** $18,000
+- **Nota Crítica:** Propiedades 3-15 requerirán financiación externa o capital adicional de socios
 
 **Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
@@ -192,8 +194,8 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 #### **Métricas de Supervivencia:**
 - **Burn Rate Inicial:** $15,000/mes (Meses 1-6)
 - **Runway:** 18 meses con capital inicial
-- **Punto de Equilibrio:** Mes 8 (con 5 propiedades activas)
-- **Flujo de Caja Positivo:** Mes 8 en adelante
+- **Punto de Equilibrio:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
+- **Flujo de Caja Positivo:** Mes 10-12 del Año 2 en adelante
 
 #### **Estrategias de Optimización:**
 1. **Cobros Adelantados:** 50% al inicio, 50% al cierre
@@ -330,10 +332,10 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 
 ## 🚀 HOJA DE RUTA DE EJECUCIÓN
 
-### FASE 1: FUNDACIÓN Y VALIDACIÓN (Meses 1-6)
+### FASE 1: FUNDACIÓN Y VALIDACIÓN (Meses 1-12 - Todo el Año 1)
 
 #### **Objetivo:**
-Validar modelo de negocio con propiedad piloto y alcanzar flujo de caja positivo.
+Validar modelo de negocio con 2 propiedades piloto, generar $95K ingresos, y establecer procesos escalables para crecimiento en Año 2.
 
 #### **Mes 1-2: Establecimiento**
 **Semana 1-2:**
@@ -380,41 +382,57 @@ Validar modelo de negocio con propiedad piloto y alcanzar flujo de caja positivo
 - Optimización de procesos
 - Preparación para escalamiento
 
-#### **Hitos de Éxito Fase 1:**
-- ✅ Propiedad piloto adquirida y renovada
-- ✅ Primer ingreso generado
-- ✅ Burn rate <$15K/mes
+#### **Hitos de Éxito Fase 1 (Año 1 Completo):**
+- ✅ 2 propiedades piloto adquiridas y renovadas
+- ✅ Ingresos totales: $95K (promedio ponderado)
+- ✅ Burn rate <$15K/mes mantenido
 - ✅ NPS >30 con primeros clientes
+- ✅ Procesos documentados y optimizados
+- ✅ Pipeline de 10+ propiedades evaluadas para Año 2
+- ✅ Decisión sobre funding gap (Mes 3): Opción A, B, C o D
+- ✅ Capital remanente: ~$18K para contingencias
 
-### FASE 2: OPTIMIZACIÓN Y CRECIMIENTO (Meses 7-12)
+### FASE 2: OPTIMIZACIÓN Y CRECIMIENTO (Año 2 - Meses 13-24)
 
 #### **Objetivo:**
-Alcanzar 15 propiedades activas y flujo de caja positivo sostenido.
+Alcanzar 15 propiedades activas y flujo de caja positivo sostenido mediante financiación definida en Mes 3.
 
-#### **Mes 7-9: Optimización**
+#### **Mes 13-15: Análisis y Financiación**
 **Acciones Clave:**
-- Analizar datos de propiedad piloto
-- Documentar procesos validados
-- Desarrollar red de contratistas verificados
-- Automatizar gestión de alquileres
-- Implementar sistema de CRM
+- Analizar rendimiento completo de 2 propiedades piloto
+- Validar economía unitaria real vs proyectada
+- Implementar decisión de funding gap (Opción A/B/C/D)
+- Si Opción B/D: Solicitar financiación bancaria
+- Si Opción C: Confirmar aporte adicional de socios
+- Documentar procesos validados y lecciones aprendidas
 
 **Adquisiciones:**
-- 3-4 propiedades adicionales (Modelo A)
-- Enfoque en akiya post-1981
-- Pipeline de 10+ propiedades evaluadas
+- 0-2 propiedades (depende de opción de financiación)
+- Enfoque en replicar éxito de piloto
 
-#### **Mes 10-12: Escalamiento Inicial**
+#### **Mes 16-18: Escalamiento Inicial**
 **Acciones Clave:**
 - Contratar primer empleado (Gestor de Propiedades)
-- Desarrollar dashboard de KPIs
+- Desarrollar dashboard de KPIs en tiempo real
 - Implementar sistema de reservas inteligente
 - Establecer partnerships con gobiernos locales
 
 **Adquisiciones:**
-- 5-6 propiedades adicionales (70% A, 30% B)
-- Expansión a segunda prefectura
+- 3-5 propiedades adicionales (70% A, 30% B)
+- Expansión a segunda prefectura si capital disponible
 - Optimización de canales de marketing
+
+#### **Mes 19-24: Consolidación**
+**Acciones Clave:**
+- Alcanzar 15 propiedades activas
+- Optimizar gestión de cartera
+- Automatizar procesos operativos
+- Preparar expansión a Año 3
+
+**Adquisiciones:**
+- 5-8 propiedades adicionales
+- Diversificar tipos de propiedad
+- Establecer presencia en 2-3 prefecturas
 
 #### **Hitos de Éxito Fase 2:**
 - ✅ 15 propiedades activas
@@ -1019,9 +1037,10 @@ Este plan estratégico se basa en una serie de supuestos que deben ser validados
 
 #### **3. SUPUESTO: Proyecciones de Año 1 Alcanzables**
 **Asumimos que:**
-- Podemos adquirir y poner en operación 15 propiedades en 12 meses
-- Los ingresos reales serán $95,000 (no los $300,000 teóricos)
+- Podemos adquirir 2 propiedades piloto en Año 1 (con capital inicial)
+- Los ingresos reales serán $95,000 (promedio ponderado)
 - Aceptamos pérdida operativa de -$85,000 en Año 1
+- Capital remanente: $18,000 al final de Año 1
 
 **Riesgo si es falso:**
 - Adquisición más lenta → ingresos <$95K
@@ -1032,6 +1051,59 @@ Este plan estratégico se basa en una serie de supuestos que deben ser validados
 - Revisión mensual de pipeline de propiedades
 - Ajuste de runway si ingresos <proyecciones
 - Decision point en Mes 6: continuar o pivotar
+
+#### **3.1. FUNDING GAP CRÍTICO: Propiedades 3-15 del Año 1**
+
+**El Desafío Financiero Central:**
+El plan proyecta 15 propiedades activas al final del Año 1, pero el capital inicial de $360,000 solo permite adquirir 2 propiedades piloto ($257,000 invertidos). Las propiedades 3-15 (13 adicionales × $128,500 = $1,670,500) requieren financiación que no está incluida en el capital inicial.
+
+**Opciones para Cerrar el Funding Gap:**
+
+**OPCIÓN A: Crecimiento Orgánico Conservador (RECOMENDADA)**
+- **Estrategia:** Enfocarse en 2 propiedades piloto en Año 1
+- **Objetivo Año 1:** Validar modelo, optimizar procesos, generar $95K ingresos
+- **Objetivo Año 2:** Usar ingresos y refinanciación para adquirir propiedades 3-15
+- **Ventajas:** Sin dilución, sin deuda, riesgo controlado
+- **Desventajas:** Crecimiento más lento que proyección original
+- **Timeline ajustado:** 15 propiedades en Mes 18 (no Mes 12)
+
+**OPCIÓN B: Financiación Bancaria (MODERADO RIESGO)**
+- **Estrategia:** Solicitar línea de crédito con propiedades como colateral
+- **Monto:** $500K-1M a tasa 4-6% anual
+- **Ventajas:** Permite acelerar crecimiento a 8-10 propiedades Año 1
+- **Desventajas:** Servicio de deuda, requiere garantías personales
+- **Viabilidad:** Depende de historial crediticio y equity en propiedades
+
+**OPCIÓN C: Capital Adicional de Socios (ALTO COMPROMISO)**
+- **Estrategia:** Socios aportan $800K-1M adicionales
+- **Distribución:** Mantener ratio 60/40
+- **Ventajas:** Control total, sin deuda externa
+- **Desventajas:** Mayor riesgo personal, liquidez necesaria
+- **Requisito:** Confirmar disponibilidad real de capital adicional
+
+**OPCIÓN D: Modelo Híbrido (EQUILIBRADO)**
+- **Estrategia:** 2 propiedades con capital inicial + 3-5 con financiación bancaria
+- **Total Año 1:** 5-7 propiedades (no 15)
+- **Ventajas:** Balance entre crecimiento y riesgo
+- **Desventajas:** Complejidad de gestión de deuda
+
+**DECISIÓN ESTRATÉGICA REQUERIDA:**
+
+Los socios deben decidir explícitamente en el **Mes 3** cuál opción seguir, basándose en:
+1. Rendimiento de propiedades piloto
+2. Disponibilidad real de capital adicional
+3. Apetito de riesgo personal
+4. Oportunidades de financiación disponibles
+
+**RECOMENDACIÓN:**
+Adoptar **Opción A (Crecimiento Orgánico)** como estrategia base, con flexibilidad para evaluar **Opción D (Híbrida)** si:
+- Propiedades piloto superan proyecciones (ROI >13%)
+- Tasa de ocupación >90%
+- Financiación bancaria disponible a <5% tasa
+- Socios tienen capacidad para garantías personales
+
+**NOTA CRÍTICA:** 
+El objetivo de "15 propiedades en Año 1" es aspiracional pero probablemente no alcanzable con $360K de capital inicial. Un objetivo más realista sería **2-5 propiedades en Año 1, 15 propiedades en Mes 18-24**.
 
 #### **4. SUPUESTO: Costos de Renovación Controlados**
 **Asumimos que:**
