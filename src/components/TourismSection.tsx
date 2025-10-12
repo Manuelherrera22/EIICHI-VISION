@@ -77,7 +77,8 @@ const TourismSection = () => {
       fallbackImage: "/images/kouji-tsuru-KdkXttOEaYg-unsplash.jpg",
       type: t('tourism.onsen'),
       rating: 4.9,
-      distance: "5 min"
+      distance: "5 min",
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 2,
@@ -87,7 +88,8 @@ const TourismSection = () => {
       fallbackImage: "/images/geoff-oliver-6KNPp4ifLn4-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.8,
-      distance: "30 min"
+      distance: "30 min",
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 3,
@@ -97,7 +99,8 @@ const TourismSection = () => {
       fallbackImage: "/images/yuika-takamura-di44CIiUE5k-unsplash.jpg",
       type: t('tourism.culture'),
       rating: 4.7,
-      distance: "15 min"
+      distance: "15 min",
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 4,
@@ -107,7 +110,8 @@ const TourismSection = () => {
       fallbackImage: "/images/ikarovski-rld1TAi9gpc-unsplash.jpg",
       type: t('tourism.nature'),
       rating: 4.9,
-      distance: "45 min"
+      distance: "45 min",
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     }
   ];
 
@@ -119,25 +123,28 @@ const TourismSection = () => {
       description: t('tourism.kusatsuOnsenFestivalDescription'),
       image: "https://images.unsplash.com/photo-1550951109-c317990b7e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1550951109-c317990b7e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: t('tourism.festival')
+      type: t('tourism.festival'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 2,
       name: t('tourism.teaCeremony'),
       description: t('tourism.teaCeremonyDescription'),
-      image: "/images/Te ceremony.jpg",
+      image: "/images/TeCeremony-new.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.culture'),
-      date: t('tourism.allYear')
+      date: t('tourism.allYear'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 3,
       name: t('tourism.traditionalMarket'),
       description: t('tourism.traditionalMarketDescription'),
-      image: "/images/traditional Markert.jpg",
+      image: "/images/traditionalMarket-new.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.market'),
-      date: t('tourism.weekends')
+      date: t('tourism.weekends'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     }
   ];
 
@@ -148,7 +155,8 @@ const TourismSection = () => {
       description: t('tourism.gunmaSobaDescription'),
       image: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: t('tourism.mainDish')
+      type: t('tourism.mainDish'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 2,
@@ -156,7 +164,8 @@ const TourismSection = () => {
       description: t('tourism.kusatsuManjuDescription'),
       image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: t('tourism.dessert')
+      type: t('tourism.dessert'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     },
     {
       id: 3,
@@ -164,7 +173,8 @@ const TourismSection = () => {
       description: t('tourism.localSakeDescription'),
       image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
-      type: t('tourism.drink')
+      type: t('tourism.drink'),
+      link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
     }
   ];
 
@@ -182,12 +192,28 @@ const TourismSection = () => {
             {attractions.map((attraction) => (
               <div key={attraction.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <OptimizedImage 
-                    src={attraction.image} 
-                    fallbackSrc={attraction.fallbackImage}
-                    alt={attraction.name}
-                    className="w-full h-full group-hover:scale-110 transition-transform duration-300"
-                  />
+                  {attraction.link ? (
+                    <a 
+                      href={attraction.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <OptimizedImage 
+                        src={attraction.image} 
+                        fallbackSrc={attraction.fallbackImage}
+                        alt={attraction.name}
+                        className="w-full h-full group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      />
+                    </a>
+                  ) : (
+                    <OptimizedImage 
+                      src={attraction.image} 
+                      fallbackSrc={attraction.fallbackImage}
+                      alt={attraction.name}
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary">
                     {attraction.type}
                   </div>
@@ -221,12 +247,28 @@ const TourismSection = () => {
             {culturalEvents.map((event) => (
               <div key={event.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="relative h-40 overflow-hidden">
-                  <OptimizedImage 
-                    src={event.image} 
-                    fallbackSrc={event.fallbackImage}
-                    alt={event.name}
-                    className="w-full h-full group-hover:scale-110 transition-transform duration-300"
-                  />
+                  {event.link ? (
+                    <a 
+                      href={event.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <OptimizedImage 
+                        src={event.image} 
+                        fallbackSrc={event.fallbackImage}
+                        alt={event.name}
+                        className="w-full h-full group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      />
+                    </a>
+                  ) : (
+                    <OptimizedImage 
+                      src={event.image} 
+                      fallbackSrc={event.fallbackImage}
+                      alt={event.name}
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary">
                     {event.type}
                   </div>
@@ -254,12 +296,28 @@ const TourismSection = () => {
             {localCuisine.map((food) => (
               <div key={food.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className="relative h-40 overflow-hidden">
-                  <OptimizedImage 
-                    src={food.image} 
-                    fallbackSrc={food.fallbackImage}
-                    alt={food.name}
-                    className="w-full h-full group-hover:scale-110 transition-transform duration-300"
-                  />
+                  {food.link ? (
+                    <a 
+                      href={food.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <OptimizedImage 
+                        src={food.image} 
+                        fallbackSrc={food.fallbackImage}
+                        alt={food.name}
+                        className="w-full h-full group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      />
+                    </a>
+                  ) : (
+                    <OptimizedImage 
+                      src={food.image} 
+                      fallbackSrc={food.fallbackImage}
+                      alt={food.name}
+                      className="w-full h-full group-hover:scale-110 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary">
                     {food.type}
                   </div>
