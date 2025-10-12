@@ -319,7 +319,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
   };
 
   return (
-    <div className={`fixed bottom-20 right-4 z-50 ${className}`}>
+    <div className={`fixed bottom-20 right-24 z-50 ${className}`}>
       {/* Chat Button */}
       {!isOpen && (
         <motion.button

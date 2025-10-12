@@ -28,9 +28,6 @@ const VirtualTour = dynamic(() => import('@/components/VirtualTour'), {
   loading: () => <div className="h-96 bg-muted rounded-2xl animate-pulse"></div>
 });
 
-const AIChat = dynamic(() => import('@/components/AIChat'), {
-  loading: () => <div className="h-32 bg-muted rounded-2xl animate-pulse"></div>
-});
 
 
 export default function Home() {
@@ -138,8 +135,6 @@ export default function Home() {
         <PhilosophySection />
       </AnimatedSection>
       
-      {/* Chat de IA */}
-      <AIChat />
       
       {/* Blueprint Digital Ecosystem */}
       <AnimatedSection delay={1.8}>
