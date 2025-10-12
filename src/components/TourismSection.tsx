@@ -125,7 +125,7 @@ const TourismSection = () => {
       id: 2,
       name: t('tourism.teaCeremony'),
       description: t('tourism.teaCeremonyDescription'),
-      image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/Te ceremony.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.culture'),
       date: t('tourism.allYear')
@@ -134,7 +134,7 @@ const TourismSection = () => {
       id: 3,
       name: t('tourism.traditionalMarket'),
       description: t('tourism.traditionalMarketDescription'),
-      image: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/traditional Markert.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.market'),
       date: t('tourism.weekends')
