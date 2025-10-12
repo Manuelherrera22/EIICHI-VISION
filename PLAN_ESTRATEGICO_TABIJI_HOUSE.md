@@ -1184,11 +1184,11 @@ El plan proyecta 15 propiedades activas al final del Año 1, pero el capital ini
 
 **OPCIÓN A: Crecimiento Orgánico Conservador (RECOMENDADA)**
 - **Estrategia:** Enfocarse en 2 propiedades piloto en Año 1
-- **Objetivo Año 1:** Validar modelo, optimizar procesos, generar $95K ingresos
+- **Objetivo Año 1:** Validar modelo, optimizar procesos, generar $17K ingresos
 - **Objetivo Año 2:** Usar ingresos y refinanciación para adquirir propiedades 3-15
 - **Ventajas:** Sin dilución, sin deuda, riesgo controlado
 - **Desventajas:** Crecimiento más lento que proyección original
-- **Timeline ajustado:** 15 propiedades en Mes 18 (no Mes 12)
+- **Timeline ajustado:** 15 propiedades en Mes 18-24 (no Mes 12)
 
 **OPCIÓN B: Financiación Bancaria (MODERADO RIESGO)**
 - **Estrategia:** Solicitar línea de crédito con propiedades como colateral
