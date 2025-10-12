@@ -16,13 +16,13 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 **Modelo Híbrido Inteligente:** Combinación de alquiler a largo plazo (70%) y corto plazo (30%, máximo 180 días) que maximiza ROI mientras cumple regulaciones japonesas, optimizando ingresos mediante gestión estacional adaptativa.
 
 ### Objetivos Estratégicos (5 Años - Escenario Base)
-- **Año 1:** 2 propiedades piloto, $95K ingresos, validación del modelo, decisión de financiación
+- **Año 1:** 2 propiedades piloto, $17K ingresos, validación del modelo, ajuste de gastos a $10K/mes
 - **Año 2:** 15 propiedades activas, $282K ingresos, flujo de caja positivo mes 22-24
 - **Año 3:** 40-50 propiedades, $750K-940K ingresos, operaciones en 3-4 prefecturas
 - **Año 4:** 60-80 propiedades, $1.1M-1.5M ingresos, consolidación de procesos
 - **Año 5:** 80-100+ propiedades, $1.5M-2M+ ingresos, liderazgo de mercado
 
-**Nota:** Escenario Acelerado (con financiación) puede alcanzar 60-70 propiedades en Año 3
+**Nota Crítica:** Capital inicial de $360K requiere ajuste de gastos operativos a $10K/mes (vs $15K proyectado) para evitar déficit en Año 1. Escenario Acelerado requiere financiación adicional.
 
 ### Métricas de Éxito Críticas
 - **ROI por Propiedad:** 11-13% anual (modelo híbrido)
@@ -52,17 +52,42 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 ## 💰 MODELO FINANCIERO Y PROYECCIONES
 
 ### Capital Inicial Requerido (Aportado por Socios Fundadores)
-**Total:** $360,000 (Comprometido y disponible)
-- **Reserva Operativa:** $180,000 (18 meses de runway)
-- **Primera Propiedad Piloto:** $130,000
-- **Marketing y Tecnología:** $30,000
-- **Legal y Seguros:** $20,000
+
+**ANÁLISIS CRÍTICO DE CAPITAL:**
+
+**Escenario Original (INSUFICIENTE):**
+- **Total:** $360,000
+- **Resultado:** Déficit de -$59,730 al final de Año 1
+- **Conclusión:** Capital inicial es INSUFICIENTE para 2 propiedades piloto con gastos proyectados
+
+**Escenario Ajustado A (Reducción de Gastos - RECOMENDADO):**
+- **Total:** $360,000 (sin cambios)
+- **Ajuste:** Reducir gastos operativos de $15K/mes a $10K/mes
+- **Gastos Año 1:** $120,000 (vs $180,000)
+- **Flujo de caja neto:** -$359,730
+- **Capital remanente:** $270 (ajustado)
+- **Viabilidad:** VIABLE con disciplina extrema de gastos
+
+**Escenario Ajustado B (Capital Adicional):**
+- **Total:** $420,000-$440,000 (aporte adicional de $60-80K)
+- **Gastos:** $180,000 (sin reducción)
+- **Flujo de caja neto:** -$419,730
+- **Capital remanente:** $270-$20,270
+- **Viabilidad:** VIABLE con capital adicional
+
+**Distribución Recomendada (Escenario A - $360K):**
+- **Reserva Operativa:** $120,000 (12 meses × $10K/mes)
+- **2 Propiedades Piloto:** $257,000 (2 × $128,500)
+- **Marketing (mínimo):** $15,000
+- **Legal y Seguros:** $10,000
+- **Contingencia:** -$42,000 (déficit a cubrir con ingresos)
 
 **Fuente de Capital:**
-- **Socio A (CEO):** $216,000 (60% = aporte de capital)
-- **Socio B (CTO):** $144,000 (40% = aporte de capital)
+- **Socio A (CEO):** $216,000 (60%)
+- **Socio B (CTO):** $144,000 (40%)
+- **Adicional (si Escenario B):** $60-80K (mantener ratio 60/40)
 
-**Nota Importante:** Este plan se basa en un modelo de crecimiento autofinanciado a partir de capital comprometido por los socios fundadores. No se busca inversión externa. El crecimiento futuro será financiado mediante reinversión del 100% de beneficios durante los primeros 24 meses.
+**Nota Crítica:** El plan requiere DISCIPLINA EXTREMA en gastos operativos. Salarios de fundadores deben ser mínimos ($2-3K/mes cada uno) durante Año 1. Alternativa: generar ingresos complementarios (consultoría, cursos) por $5-7K/mes.
 
 ### Economía por Propiedad - Dos Modelos
 
@@ -123,40 +148,45 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 
 ### Proyecciones de Crecimiento (5 Años)
 
-#### **AÑO 1 (2025) - PROYECCIÓN REALISTA CON ADQUISICIÓN GRADUAL**
+#### **AÑO 1 (2025) - PROYECCIÓN REALISTA CON 2 PROPIEDADES PILOTO**
 
-**Calendario de Adquisiciones y Generación de Ingresos:**
-- **Mes 5:** 1 propiedad activa (8 meses generando ingresos)
-- **Mes 7:** 3 propiedades activas (6 meses para 2 nuevas)
-- **Mes 9:** 7 propiedades activas (4 meses para 4 nuevas)
-- **Mes 11:** 12 propiedades activas (2 meses para 5 nuevas)
-- **Mes 12:** 15 propiedades activas (1 mes para 3 nuevas)
+**Calendario de Adquisiciones Real:**
+- **Mes 3:** Adquisición de Propiedad Piloto #1
+- **Mes 3-5:** Renovación de Propiedad #1 (3 meses)
+- **Mes 6:** Propiedad #1 lista para alquiler (genera ingresos 7 meses: Jun-Dic)
+- **Mes 5:** Adquisición de Propiedad Piloto #2
+- **Mes 5-8:** Renovación de Propiedad #2 (3 meses)
+- **Mes 9:** Propiedad #2 lista para alquiler (genera ingresos 4 meses: Sep-Dic)
 
 **Cálculo de Ingresos Reales Año 1:**
 ```
-Prop 1: $1,570/mes × 8 meses = $12,560
-Props 2-3: $1,570/mes × 6 meses × 2 = $18,840
-Props 4-7: $1,570/mes × 4 meses × 4 = $25,120
-Props 8-12: $1,570/mes × 2 meses × 5 = $15,700
-Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
+Propiedad #1: $1,570/mes × 7 meses = $10,990
+Propiedad #2: $1,570/mes × 4 meses = $6,280
+Total Ingresos Año 1: $17,270
 ```
 
-- **Propiedades al final del año:** 15 (10 Modelo A, 5 Modelo B)
-- **Ingresos totales reales:** $95,000 (promedio ponderado por meses activos)
+- **Propiedades al final del año:** 2 (1 Modelo A, 1 Modelo B)
+- **Ingresos totales reales:** $17,270 (no $95,000)
 - **Gastos operativos:** $180,000 (salarios, oficina, marketing, legal)
-- **EBITDA:** -$85,000 (pérdida operativa esperada)
-- **Margen:** Negativo (inversión en crecimiento)
-- **Empleados:** 3
-- **Inversión en propiedades:** $1,927,500 (15 × $128,500)
+- **EBITDA:** -$162,730 (pérdida operativa real)
+- **Margen:** Negativo (fase de validación)
+- **Empleados:** 3 (2 fundadores + 1 gestor)
+- **Inversión en propiedades:** $257,000 (2 × $128,500)
 
 **Flujo de Caja Año 1:**
 - **Capital inicial:** $360,000
-- **Ingresos operativos:** $95,000
+- **Ingresos operativos:** $17,270
 - **Gastos operativos:** -$180,000
 - **Inversión en propiedades:** -$257,000 (2 propiedades piloto: 2 × $128,500)
-- **Flujo de caja neto:** -$342,000
-- **Capital remanente al fin de Año 1:** $18,000
-- **Nota Crítica:** Propiedades 3-15 requerirán financiación externa o capital adicional de socios
+- **Flujo de caja neto:** -$419,730
+- **Capital remanente al fin de Año 1:** -$59,730 (DÉFICIT)
+- **Nota Crítica:** Se requiere ajuste inmediato de gastos operativos o aporte adicional de capital
+
+**ALERTA DE RUNWAY:**
+Con estos números reales, el capital inicial de $360K es INSUFICIENTE. Opciones:
+1. **Reducir gastos operativos a $120K/año** ($10K/mes vs $15K/mes proyectado)
+2. **Aportar capital adicional de $60-80K** para cubrir déficit
+3. **Generar ingresos complementarios** (consultoría, cursos) por $5-7K/mes
 
 **Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
@@ -464,6 +494,8 @@ Alcanzar 15 propiedades activas y flujo de caja positivo sostenido mediante fina
 - Establecer presencia en 2-3 prefecturas
 
 #### **Hitos de Éxito Fase 2 (Final de Año 2):**
+
+**Escenario Base (Opción A - Crecimiento Orgánico):**
 - ✅ 15 propiedades activas generando ingresos completos
 - ✅ $23.5K MRR sostenido (15 × $1,570/mes)
 - ✅ Flujo de caja positivo mensual alcanzado
@@ -471,6 +503,36 @@ Alcanzar 15 propiedades activas y flujo de caja positivo sostenido mediante fina
 - ✅ Procesos completamente documentados y replicables
 - ✅ Operaciones en 2-3 prefecturas
 - ✅ Equipo de 5 personas operando eficientemente
+
+**Escenario Acelerado (Opción B/D - Con Financiación):**
+Si en Mes 3 se decide seguir Opción B (financiación bancaria) o D (modelo híbrido), la hoja de ruta se modifica:
+
+**Mes 13-15: Obtención de Financiación**
+- Solicitar línea de crédito bancaria ($500K-1M) o confirmar aporte adicional de socios
+- Acelerar pipeline de propiedades a 15-20 candidatas evaluadas
+- Contratar 2 gestores de propiedades adicionales (total: 4)
+- Establecer procesos de adquisición acelerada
+
+**Mes 16-18: Expansión Acelerada**
+- Adquirir 8-10 propiedades adicionales (total: 10-12)
+- Implementar sistema de gestión para múltiples propiedades simultáneas
+- Expandir a 3 prefecturas
+- Desarrollar partnerships con bancos locales
+
+**Mes 19-24: Consolidación Acelerada**
+- Adquirir 13-18 propiedades adicionales (total: 25-30)
+- Alcanzar $39K-47K MRR (25-30 × $1,570/mes)
+- Generar $470K-564K ingresos anuales
+- Equipo de 5-7 personas
+- Flujo de caja positivo (después de servicio de deuda)
+
+**Hitos Escenario Acelerado:**
+- ✅ 25-30 propiedades activas
+- ✅ $39K-47K MRR
+- ✅ $470K-564K ingresos anuales
+- ✅ Operaciones en 3-4 prefecturas
+- ✅ 5-7 empleados
+- ✅ Servicio de deuda manejable (<30% de ingresos)
 
 ### FASE 3: ESCALABILIDAD CONTROLADA (Año 3 - Meses 25-36)
 
