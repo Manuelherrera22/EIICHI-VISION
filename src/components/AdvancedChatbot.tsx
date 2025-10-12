@@ -328,7 +328,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={onToggle}
-          className="w-14 h-14 bg-primary text-black rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+          className="w-14 h-14 bg-white text-gray-800 border-2 border-gray-300 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
         >
           <MessageCircle size={24} />
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold">
@@ -503,7 +503,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                           </div>
                           <div className={`rounded-2xl px-4 py-2 ${
                             message.type === 'user'
-                              ? 'bg-primary text-black'
+                              ? 'bg-white text-gray-800 border-2 border-gray-300'
                               : 'bg-gray-100 text-black'
                           }`}>
                             <div className="text-sm whitespace-pre-wrap">{message.content}</div>
@@ -623,7 +623,7 @@ const AdvancedChatbot: React.FC<AdvancedChatbotProps> = ({
                     <button
                       onClick={() => handleSendMessage()}
                       disabled={!inputValue.trim() || isTyping}
-                      className="w-10 h-10 bg-primary text-black rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+                      className="w-10 h-10 bg-white text-gray-800 border-2 border-gray-300 rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
                     >
                       <Send size={16} />
                     </button>
