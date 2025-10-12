@@ -262,10 +262,12 @@ Con estos números reales, el capital inicial de $360K es INSUFICIENTE. Opciones
 ### Gestión de Flujo de Caja
 
 #### **Métricas de Supervivencia:**
-- **Burn Rate Inicial:** $15,000/mes (Meses 1-6)
-- **Runway:** 18 meses con capital inicial
-- **Punto de Equilibrio:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
-- **Flujo de Caja Positivo:** Mes 10-12 del Año 2 en adelante
+- **Burn Rate Objetivo:** $10,000/mes (Escenario A - Reducción obligatoria)
+- **Burn Rate Máximo:** $15,000/mes (Escenario B - Con capital adicional)
+- **Runway:** 36 meses con Escenario A ($360K + $17K ingresos / $10K/mes)
+- **Runway:** 24 meses con Escenario B ($420K / $15K/mes)
+- **Punto de Equilibrio:** Mes 22-24 del Año 2 (cuando 15+ propiedades generen ingresos completos)
+- **Flujo de Caja Positivo:** Mes 22-24 del Año 2 en adelante
 
 #### **Estrategias de Optimización:**
 1. **Cobros Adelantados:** 50% al inicio, 50% al cierre
@@ -305,7 +307,7 @@ Con estos números reales, el capital inicial de $360K es INSUFICIENTE. Opciones
 #### **Supervivencia**
 | KPI | Fórmula | Objetivo | Frecuencia |
 |-----|---------|----------|------------|
-| **Burn Rate** | (Efectivo Inicial - Final) / Meses | <$15K/mes | Semanal |
+| **Burn Rate** | (Efectivo Inicial - Final) / Meses | <$10K/mes (Escenario A) | Semanal |
 | **Runway** | Efectivo Disponible / Burn Rate | >12 meses | Semanal |
 
 ### OKRs Trimestrales
