@@ -181,27 +181,27 @@ Total Ingresos Año 1: $17,270
 ```
 
 - **Propiedades al final del año:** 2 (1 Modelo A, 1 Modelo B)
-- **Ingresos totales reales:** $17,270 (no $95,000)
-- **Gastos operativos:** $180,000 (salarios, oficina, marketing, legal)
-- **EBITDA:** -$162,730 (pérdida operativa real)
+- **Ingresos totales reales:** $17,270
+- **Gastos operativos:** $120,000 (reducidos a $10K/mes - Escenario A)
+- **EBITDA:** -$102,730 (pérdida operativa con gastos reducidos)
 - **Margen:** Negativo (fase de validación)
-- **Empleados:** 3 (2 fundadores + 1 gestor)
+- **Empleados:** 3 (2 fundadores + 1 gestor part-time)
 - **Inversión en propiedades:** $257,000 (2 × $128,500)
 
-**Flujo de Caja Año 1:**
+**Flujo de Caja Año 1 (Escenario A - Recomendado):**
 - **Capital inicial:** $360,000
 - **Ingresos operativos:** $17,270
-- **Gastos operativos:** -$180,000
+- **Gastos operativos:** -$120,000 (reducidos a $10K/mes)
 - **Inversión en propiedades:** -$257,000 (2 propiedades piloto: 2 × $128,500)
-- **Flujo de caja neto:** -$419,730
-- **Capital remanente al fin de Año 1:** -$59,730 (DÉFICIT)
-- **Nota Crítica:** Se requiere ajuste inmediato de gastos operativos o aporte adicional de capital
+- **Flujo de caja neto:** -$359,730
+- **Capital remanente al fin de Año 1:** $270 (VIABLE con disciplina extrema)
+- **Nota Crítica:** Plan VIABLE con reducción de gastos a $10K/mes. Requiere disciplina extrema.
 
-**ALERTA DE RUNWAY:**
-Con estos números reales, el capital inicial de $360K es INSUFICIENTE. Opciones:
-1. **Reducir gastos operativos a $120K/año** ($10K/mes vs $15K/mes proyectado)
-2. **Aportar capital adicional de $60-80K** para cubrir déficit
-3. **Generar ingresos complementarios** (consultoría, cursos) por $5-7K/mes
+**CONFIRMACIÓN DE VIABILIDAD:**
+Con gastos reducidos a $10K/mes, el capital inicial de $360K ES SUFICIENTE:
+- Capital + Ingresos: $377,270
+- Gastos + Inversión: $377,000
+- Remanente: $270 ✅
 
 **Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
@@ -1158,11 +1158,11 @@ Este plan estratégico se basa en una serie de supuestos que deben ser validados
 
 #### **3. SUPUESTO: Proyecciones de Año 1 Alcanzables**
 **Asumimos que:**
-- Podemos adquirir 2 propiedades piloto en Año 1 (con capital inicial)
+- Podemos adquirir 2 propiedades piloto en Año 1 (con capital inicial $360K)
 - Los ingresos reales serán $17,270 (2 propiedades operando 7 y 4 meses respectivamente)
-- Aceptamos pérdida operativa de -$162,730 en Año 1
-- Podemos reducir gastos operativos a $10K/mes ($120K/año vs $180K proyectado)
-- Capital remanente: $270 al final de Año 1
+- Podemos reducir gastos operativos a $10K/mes ($120K/año total)
+- Aceptamos pérdida operativa de -$102,730 en Año 1 (con gastos reducidos)
+- Capital remanente: $270 al final de Año 1 (extremadamente ajustado pero VIABLE)
 
 **Riesgo si es falso:**
 - Adquisición más lenta → ingresos <$17K
