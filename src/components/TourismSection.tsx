@@ -153,7 +153,7 @@ const TourismSection = () => {
       id: 1,
       name: t('tourism.gunmaSoba'),
       description: t('tourism.gunmaSobaDescription'),
-      image: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/gumna-soba.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1582210256130-6d2f001f7d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.mainDish'),
       link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
@@ -162,7 +162,7 @@ const TourismSection = () => {
       id: 2,
       name: t('tourism.kusatsuManju'),
       description: t('tourism.kusatsuManjuDescription'),
-      image: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/kutasu-manju.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.dessert'),
       link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
@@ -171,7 +171,7 @@ const TourismSection = () => {
       id: 3,
       name: t('tourism.localSake'),
       description: t('tourism.localSakeDescription'),
-      image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/Localsake.jpg",
       fallbackImage: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60",
       type: t('tourism.drink'),
       link: "https://www.hankyu-travel.com/guide/kanto/gunma/kusatsu.php"
