@@ -75,12 +75,27 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 - **Capital remanente:** $270-$20,270
 - **Viabilidad:** VIABLE con capital adicional
 
-**Distribución Recomendada (Escenario A - $360K):**
-- **Reserva Operativa:** $120,000 (12 meses × $10K/mes)
+**Distribución Real del Capital (Escenario A - $360K):**
+
+**Asignación de Fondos:**
 - **2 Propiedades Piloto:** $257,000 (2 × $128,500)
-- **Marketing (mínimo):** $15,000
-- **Legal y Seguros:** $10,000
-- **Contingencia:** -$42,000 (déficit a cubrir con ingresos)
+- **Gastos Operativos Año 1:** $120,000 (12 meses × $10K/mes)
+- **Total Salidas Presupuestadas:** $377,000
+
+**Fuentes de Financiamiento:**
+- **Capital inicial:** $360,000
+- **Ingresos operativos Año 1:** $17,270
+- **Total Fondos Disponibles:** $377,270
+
+**Balance Final Año 1:**
+- **Capital remanente:** $270 (extremadamente ajustado)
+
+**Desglose de Gastos Operativos ($10K/mes):**
+- Salarios fundadores: $6,000/mes ($3K cada uno)
+- Gestor de propiedades: $2,500/mes (part-time)
+- Marketing mínimo: $500/mes
+- Legal y seguros: $500/mes
+- Oficina/Coworking: $500/mes
 
 **Fuente de Capital:**
 - **Socio A (CEO):** $216,000 (60%)
@@ -394,7 +409,7 @@ Con estos números reales, el capital inicial de $360K es INSUFICIENTE. Opciones
 ### FASE 1: FUNDACIÓN Y VALIDACIÓN (Meses 1-12 - Todo el Año 1)
 
 #### **Objetivo:**
-Validar modelo de negocio con 2 propiedades piloto, generar $95K ingresos, y establecer procesos escalables para crecimiento en Año 2.
+Validar modelo de negocio con 2 propiedades piloto, generar $17K ingresos reales, y establecer procesos escalables para crecimiento en Año 2 con gastos operativos ajustados a $10K/mes.
 
 #### **Mes 1-2: Establecimiento**
 **Semana 1-2:**
@@ -443,13 +458,13 @@ Validar modelo de negocio con 2 propiedades piloto, generar $95K ingresos, y est
 
 #### **Hitos de Éxito Fase 1 (Año 1 Completo):**
 - ✅ 2 propiedades piloto adquiridas y renovadas
-- ✅ Ingresos totales: $95K (promedio ponderado)
-- ✅ Burn rate <$15K/mes mantenido
+- ✅ Ingresos totales: $17,270 (2 propiedades operando parcialmente)
+- ✅ Gastos operativos reducidos a $10K/mes ($120K/año)
 - ✅ NPS >30 con primeros clientes
 - ✅ Procesos documentados y optimizados
 - ✅ Pipeline de 10+ propiedades evaluadas para Año 2
 - ✅ Decisión sobre funding gap (Mes 3): Opción A, B, C o D
-- ✅ Capital remanente: ~$18K para contingencias
+- ✅ Capital remanente: ~$270 (ajustado con disciplina extrema)
 
 ### FASE 2: OPTIMIZACIÓN Y CRECIMIENTO (Año 2 - Meses 13-24)
 
@@ -1142,19 +1157,21 @@ Este plan estratégico se basa en una serie de supuestos que deben ser validados
 #### **3. SUPUESTO: Proyecciones de Año 1 Alcanzables**
 **Asumimos que:**
 - Podemos adquirir 2 propiedades piloto en Año 1 (con capital inicial)
-- Los ingresos reales serán $95,000 (promedio ponderado)
-- Aceptamos pérdida operativa de -$85,000 en Año 1
-- Capital remanente: $18,000 al final de Año 1
+- Los ingresos reales serán $17,270 (2 propiedades operando 7 y 4 meses respectivamente)
+- Aceptamos pérdida operativa de -$162,730 en Año 1
+- Podemos reducir gastos operativos a $10K/mes ($120K/año vs $180K proyectado)
+- Capital remanente: $270 al final de Año 1
 
 **Riesgo si es falso:**
-- Adquisición más lenta → ingresos <$95K
-- Burn rate mayor → runway agotado antes de equilibrio
-- Necesidad de capital adicional no planificado
+- Adquisición más lenta → ingresos <$17K
+- Incapacidad de reducir gastos → déficit de capital
+- Burn rate no controlado → runway agotado en Mes 9-10
+- Necesidad urgente de capital adicional ($60-80K)
 
 **Validación:**
-- Revisión mensual de pipeline de propiedades
-- Ajuste de runway si ingresos <proyecciones
-- Decision point en Mes 6: continuar o pivotar
+- Revisión mensual estricta de gastos vs presupuesto
+- Ajuste inmediato si burn rate >$10K/mes
+- Decision point en Mes 6: continuar, pivotar, o buscar capital adicional
 
 #### **3.1. FUNDING GAP CRÍTICO: Propiedades 3-15 del Año 1**
 
