@@ -5,7 +5,8 @@
     "noEmitOnError": false,
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": false,
-    "strict": false
+    "strict": false,
+    "strictNullChecks": true
   },
   "exclude": [
     "node_modules",

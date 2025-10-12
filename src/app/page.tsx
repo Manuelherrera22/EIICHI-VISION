@@ -12,6 +12,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 import DebugModelViewer from '@/components/DebugModelViewer';
 import RealPropertiesSection from '@/components/RealPropertiesSection';
 import JNIStrategicAlliance from '@/components/JNIStrategicAlliance';
+import QASection from '@/components/QASection';
 import { Sparkles, Camera, Settings, Home as HomeIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
@@ -225,6 +226,9 @@ export default function Home() {
           </div>
         </section>
       </AnimatedSection>
+
+      {/* Q&A Section */}
+      <QASection />
     </Layout>
   );
 }
