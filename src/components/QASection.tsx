@@ -31,13 +31,15 @@ const QASection = () => {
       icon: Home,
       title: t('qa.visaRequired.title'),
       answer: t('qa.visaRequired.answer'),
-      description: t('qa.visaRequired.description')
+      description: t('qa.visaRequired.description'),
+      details: [t('qa.visaRequired.note')]
     },
     {
       icon: Briefcase,
       title: t('qa.visaByProperty.title'),
       answer: t('qa.visaByProperty.answer'),
-      description: t('qa.visaByProperty.description')
+      description: t('qa.visaByProperty.description'),
+      details: [t('qa.visaByProperty.note')]
     },
     {
       icon: DollarSign,
@@ -53,9 +55,21 @@ const QASection = () => {
     },
     {
       icon: Building,
+      title: t('qa.taxRepresentative.title'),
+      answer: '',
+      description: t('qa.taxRepresentative.description'),
+      details: [
+        t('qa.taxRepresentative.submit'),
+        t('qa.taxRepresentative.designate'),
+        t('qa.taxRepresentative.procedures'),
+        t('qa.taxRepresentative.partner')
+      ]
+    },
+    {
+      icon: Building,
       title: t('qa.rental.title'),
       answer: '',
-      description: '',
+      description: t('qa.rental.description'),
       details: [
         t('qa.rental.longTerm'),
         t('qa.rental.shortTerm'),
@@ -74,6 +88,13 @@ const QASection = () => {
         t('qa.ldk.kitchen'),
         t('qa.ldk.example')
       ]
+    },
+    {
+      icon: HelpCircle,
+      title: t('qa.contact.title'),
+      answer: '',
+      description: t('qa.contact.description'),
+      details: []
     }
   ];
 
