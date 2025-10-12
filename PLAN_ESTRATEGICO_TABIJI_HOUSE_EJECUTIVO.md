@@ -23,7 +23,7 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 - **Año 5:** 80-100+ propiedades, liderazgo de mercado
 
 ### Métricas de Éxito
-- **ROI por Propiedad:** 11-13% anual
+- **ROI por Propiedad:** 10.5-12.5% anual (modelo híbrido 70/30)
 - **CAC:** <$5,000 por cliente
 - **LTV/CAC Ratio:** >3:1
 - **Punto de Equilibrio:** Mes 22-24 del Año 2
@@ -33,7 +33,7 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 ## 📋 VISIÓN, MISIÓN Y VALORES
 
 ### Visión
-"Ser la plataforma líder en Japón para inversión inmobiliaria extranjera, transformando propiedades tradicionales en activos rentables que generen retornos sostenibles del 11-13% anual."
+"Ser la plataforma líder en Japón para inversión inmobiliaria extranjera, transformando propiedades tradicionales en activos rentables que generen retornos sostenibles del 10.5-12.5% anual."
 
 ### Misión
 "Simplificar la inversión inmobiliaria japonesa para extranjeros mediante servicios integrales, transparencia total y modelo de negocio comprobado."
@@ -367,7 +367,7 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 | Desarrollo de Plataforma | C | R | I |
 | Relaciones con Clientes | R | I | C |
 | Gestión de Propiedades | A | I | R |
-| Finanzas y Presupuesto | R | C | I |
+| Finanzas y Presupuesto | A | C | I |
 | Marketing y Leads | R | C | C |
 | Contratistas y Renovación | A | I | R |
 | Cumplimiento Legal | R | C | I |
