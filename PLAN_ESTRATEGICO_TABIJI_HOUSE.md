@@ -317,19 +317,19 @@ Con gastos reducidos a $10K/mes, el capital inicial de $360K ES SUFICIENTE:
 - **KR1:** Completar estructura legal, Pacto de Socios y cuentas bancarias
 - **KR2:** Adquirir primera propiedad piloto
 - **KR3:** Iniciar renovación con contratista seleccionado
-- **KR4:** Mantener burn rate <$15K/mes
+- **KR4:** Mantener burn rate <$10K/mes (Escenario A)
 
 #### **Q2 2025: PRIMERA MONETIZACIÓN**
 **Objetivo:** Generar primeros ingresos y adquirir segunda propiedad
 - **KR1:** Completar renovación propiedad #1 y generar primer ingreso
 - **KR2:** Adquirir segunda propiedad piloto
-- **KR3:** Generar $3K-5K en ingresos totales Q2
+- **KR3:** Generar ~$1.5K en ingresos Q2 (propiedad #1 operando 1 mes)
 - **KR4:** Alcanzar tasa de ocupación >80% en propiedad #1
 
 #### **Q3 2025: VALIDACIÓN DEL MODELO**
 **Objetivo:** Validar economía unitaria con 2 propiedades operativas
 - **KR1:** Completar renovación propiedad #2 y comenzar generación de ingresos
-- **KR2:** Generar $8K-12K en ingresos totales Q3
+- **KR2:** Generar ~$6.3K en ingresos totales Q3 (prop #1: 3 meses, prop #2: 1 mes)
 - **KR3:** Validar ROI real >10% en al menos 1 propiedad
 - **KR4:** Documentar procesos replicables para escalamiento
 
@@ -1031,13 +1031,28 @@ El reparto de equity (60/40) se basa en la siguiente valoración de aportaciones
 
 ### Presupuesto de Marketing
 
-**Año 1:** $60,000 ($5,000/mes)
-- Marketing de Contenidos: $18,000
-- Paid Advertising: $24,000
-- Referidos y Partnerships: $12,000
-- Eventos y Networking: $6,000
+**Año 1 (Escenario A - Gastos Reducidos):** $6,000 ($500/mes)
+- Marketing de Contenidos (SEO + Blog): $3,000 (50%)
+- Redes Sociales Orgánicas: $1,200 (20%)
+- Referidos y Networking: $1,200 (20%)
+- Herramientas y Software: $600 (10%)
 
-**Objetivo:** 1,200 leads/año → 60 clientes (5% conversión) → 15 propiedades
+**Objetivo Año 1:** 80-100 leads/año → 4-6 clientes (5% conversión) → 2 propiedades piloto
+
+**Tácticas con Presupuesto Mínimo:**
+- Contenido SEO optimizado (blogs, guías)
+- Presencia orgánica en redes sociales
+- Networking en comunidades de expatriados
+- Programa de referidos (sin costo hasta conversión)
+- Webinars gratuitos con captación de leads
+
+**Año 2 (Con Mayor Presupuesto):** $30,000-$60,000 ($2.5K-5K/mes)
+- Escalar canales validados en Año 1
+- Incorporar publicidad pagada (Google Ads, Facebook)
+- Eventos y conferencias
+- Marketing de contenidos avanzado
+
+**Objetivo Año 2:** 400-800 leads/año → 20-40 clientes (5% conversión) → 15 propiedades
 
 ---
 
