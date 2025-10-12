@@ -15,11 +15,14 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 ### Propuesta de Valor Única
 **Modelo Híbrido Inteligente:** Combinación de alquiler a largo plazo (70%) y corto plazo (30%, máximo 180 días) que maximiza ROI mientras cumple regulaciones japonesas, optimizando ingresos mediante gestión estacional adaptativa.
 
-### Objetivos Estratégicos (5 Años)
-- **Año 1:** 2 propiedades piloto adquiridas, $95K ingresos reales, validación del modelo
-- **Año 2:** 15 propiedades activas, flujo de caja positivo mes 10-12
-- **Año 3:** 60 propiedades activas, $1.2M ingresos, operaciones en 3 prefecturas
-- **Año 5:** 100+ propiedades, liderazgo de mercado, $2M+ ingresos anuales
+### Objetivos Estratégicos (5 Años - Escenario Base)
+- **Año 1:** 2 propiedades piloto, $95K ingresos, validación del modelo, decisión de financiación
+- **Año 2:** 15 propiedades activas, $282K ingresos, flujo de caja positivo mes 22-24
+- **Año 3:** 40-50 propiedades, $750K-940K ingresos, operaciones en 3-4 prefecturas
+- **Año 4:** 60-80 propiedades, $1.1M-1.5M ingresos, consolidación de procesos
+- **Año 5:** 80-100+ propiedades, $1.5M-2M+ ingresos, liderazgo de mercado
+
+**Nota:** Escenario Acelerado (con financiación) puede alcanzar 60-70 propiedades en Año 3
 
 ### Métricas de Éxito Críticas
 - **ROI por Propiedad:** 11-13% anual (modelo híbrido)
@@ -157,21 +160,43 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 
 **Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
-#### **AÑO 2 (2026)**
-- **Propiedades:** 35 (25 Modelo A, 10 Modelo B)
-- **Ingresos totales:** $700,000
-- **Gastos operativos:** $350,000
-- **EBITDA:** $350,000
-- **Margen:** 50%
-- **Empleados:** 5
+#### **AÑO 2 (2026) - PROYECCIÓN REALISTA CON CRECIMIENTO FINANCIADO**
 
-#### **AÑO 3 (2027)**
-- **Propiedades:** 60 (42 Modelo A, 18 Modelo B)
-- **Ingresos totales:** $1,200,000
-- **Gastos operativos:** $540,000
-- **EBITDA:** $660,000
-- **Margen:** 55%
-- **Empleados:** 8
+**Escenario Base (Opción A - Crecimiento Orgánico):**
+- **Propiedades al final del año:** 15 (10 Modelo A, 5 Modelo B)
+- **Ingresos totales:** $282,000 (15 propiedades × $18,800 promedio anual)
+- **Gastos operativos:** $240,000 (salarios aumentados, 5 empleados)
+- **EBITDA:** $42,000
+- **Margen:** 15%
+- **Empleados:** 5
+- **Flujo de caja:** Positivo desde Mes 22-24
+
+**Escenario Acelerado (Opción B/D - Con Financiación):**
+- **Propiedades al final del año:** 25-30 (depende de financiación obtenida)
+- **Ingresos totales:** $470,000-$564,000
+- **Gastos operativos:** $280,000 (incluye servicio de deuda si aplica)
+- **EBITDA:** $190,000-$284,000
+- **Margen:** 40-50%
+- **Empleados:** 5-7
+- **Nota:** Requiere financiación de $1-2M adicionales
+
+#### **AÑO 3 (2027) - ESCALABILIDAD DESDE BASE DE 15 PROPIEDADES**
+
+**Escenario Base (Desde Opción A):**
+- **Propiedades al final del año:** 40-50 (crecimiento desde 15)
+- **Ingresos totales:** $752,000-$940,000
+- **Gastos operativos:** $376,000-$470,000
+- **EBITDA:** $376,000-$470,000
+- **Margen:** 50%
+- **Empleados:** 6-8
+
+**Escenario Acelerado (Desde Opción B/D):**
+- **Propiedades al final del año:** 60-70 (crecimiento desde 25-30)
+- **Ingresos totales:** $1,128,000-$1,316,000
+- **Gastos operativos:** $540,000-$630,000
+- **EBITDA:** $588,000-$686,000
+- **Margen:** 52-55%
+- **Empleados:** 8-10
 
 #### **AÑO 4 (2028)**
 - **Propiedades:** 80 (56 Modelo A, 24 Modelo B)
@@ -215,7 +240,7 @@ Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
 | **CAC** | Gastos Mkt+Ventas / Nuevos Clientes | <$5,000 | Mensual |
 | **LTV** | Ingreso Promedio × Vida Cliente | >$15,000 | Trimestral |
 | **LTV/CAC** | LTV / CAC | >3:1 | Trimestral |
-| **MRR** | Propiedades × Ingreso Mensual | $25K (Año 1) | Mensual |
+| **MRR** | Propiedades × Ingreso Mensual | $3K (Año 1), $23.5K (Año 2) | Mensual |
 
 #### **Retención y Satisfacción**
 | KPI | Fórmula | Objetivo | Frecuencia |
@@ -450,7 +475,7 @@ Alcanzar 15 propiedades activas y flujo de caja positivo sostenido mediante fina
 ### FASE 3: ESCALABILIDAD CONTROLADA (Año 3 - Meses 25-36)
 
 #### **Objetivo:**
-Crecer de 15 a 60 propiedades manteniendo rentabilidad y calidad del servicio.
+Crecer de 15 a 40-50 propiedades (Escenario Base) o 60-70 propiedades (Escenario Acelerado) manteniendo rentabilidad y calidad del servicio.
 
 #### **H1 (Año 3): Expansión Acelerada**
 
@@ -502,13 +527,25 @@ Crecer de 15 a 60 propiedades manteniendo rentabilidad y calidad del servicio.
 - Distribución: 5 prefecturas
 
 #### **Hitos de Éxito Fase 3 (Final de Año 3):**
-- ✅ 60 propiedades activas
-- ✅ $94K MRR (60 × $1,570/mes promedio)
-- ✅ Ingresos anuales: $1.2M
-- ✅ EBITDA: $660K (55% margen)
+
+**Escenario Base (Crecimiento Orgánico):**
+- ✅ 40-50 propiedades activas
+- ✅ $63K-79K MRR (40-50 × $1,570/mes promedio)
+- ✅ Ingresos anuales: $750K-940K
+- ✅ EBITDA: $376K-470K (50% margen)
+- ✅ NPS >50
+- ✅ Operaciones en 3-4 prefecturas
+- ✅ Equipo de 6-8 personas
+- ✅ Procesos completamente automatizados
+
+**Escenario Acelerado (Con Financiación):**
+- ✅ 60-70 propiedades activas
+- ✅ $94K-110K MRR (60-70 × $1,570/mes promedio)
+- ✅ Ingresos anuales: $1.1M-1.3M
+- ✅ EBITDA: $588K-686K (52-55% margen)
 - ✅ NPS >50
 - ✅ Operaciones en 5 prefecturas
-- ✅ Equipo de 8 personas
+- ✅ Equipo de 8-10 personas
 - ✅ Procesos completamente automatizados
 
 ### FASE 4: LIDERAZGO DE MERCADO (Años 4-5 - Meses 37-60)
