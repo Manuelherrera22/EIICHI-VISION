@@ -28,7 +28,7 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 - **ROI por Propiedad:** 11-13% anual (modelo híbrido)
 - **CAC:** <$5,000 por cliente
 - **LTV/CAC Ratio:** >3:1
-- **Punto de Equilibrio:** Mes 10-12 del Año 2
+- **Punto de Equilibrio:** Mes 22-24 del Año 2
 
 ---
 
@@ -203,7 +203,7 @@ Con gastos reducidos a $10K/mes, el capital inicial de $360K ES SUFICIENTE:
 - Gastos + Inversión: $377,000
 - Remanente: $270 ✅
 
-**Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
+**Punto de Equilibrio Real:** Mes 22-24 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
 #### **AÑO 2 (2026) - PROYECCIÓN REALISTA CON CRECIMIENTO FINANCIADO**
 
@@ -1265,7 +1265,7 @@ El objetivo de "15 propiedades en Año 1" es aspiracional pero probablemente no 
 #### **ESCENARIO PESIMISTA: Ocupación 70%, Costos +20%**
 ```
 ROI real: 7.5% (vs 11-13% proyectado)
-Punto de equilibrio: Mes 18 (vs Mes 10-12)
+Punto de equilibrio: Mes 30-32 (vs Mes 22-24 base)
 Capital adicional necesario: +$150K
 Decisión: Pivotar o buscar inversión
 ```
@@ -1273,7 +1273,7 @@ Decisión: Pivotar o buscar inversión
 #### **ESCENARIO CONSERVADOR: Ocupación 80%, Costos +10%**
 ```
 ROI real: 9.5% (vs 11-13% proyectado)
-Punto de equilibrio: Mes 14 (vs Mes 10-12)
+Punto de equilibrio: Mes 26-28 (vs Mes 22-24 base)
 Capital adicional necesario: +$75K
 Decisión: Ajustar crecimiento, mantener curso
 ```
@@ -1281,26 +1281,34 @@ Decisión: Ajustar crecimiento, mantener curso
 #### **ESCENARIO OPTIMISTA: Ocupación 95%, Costos según plan**
 ```
 ROI real: 13.0% (vs 11-13% proyectado)
-Punto de equilibrio: Mes 8 (vs Mes 10-12)
+Punto de equilibrio: Mes 18-20 (vs Mes 22-24 base)
 Capital adicional necesario: $0
 Decisión: Acelerar crecimiento
 ```
 
 ### Decision Points Críticos
 
-**MES 6:**
-- Si ingresos <$20K → Evaluar viabilidad
-- Si ocupación <70% → Revisar modelo híbrido
-- Si runway <12 meses → Buscar capital o reducir burn
+**MES 6 (Mitad de Año 1):**
+- Si propiedad #1 no está generando ingresos → Evaluar viabilidad
+- Si burn rate >$10K/mes → Reducir gastos urgentemente
+- Si ocupación <70% en propiedad piloto → Revisar modelo híbrido
+- Si runway <6 meses → Buscar capital adicional inmediato
 
-**MES 12:**
-- Si propiedades activas <10 → Replantear timeline
-- Si EBITDA <-$100K → Revisar estructura de costos
-- Si CAC >$7K → Optimizar marketing
+**MES 12 (Final de Año 1):**
+- Si propiedades activas <2 → Replantear timeline completo
+- Si ingresos totales <$15K → Revisar estrategia de alquiler
+- Si EBITDA <-$120K → Revisar estructura de costos
+- Si capital remanente <$0 → Decisión crítica (capital o salida)
 
-**MES 18:**
+**MES 18 (Mitad de Año 2):**
+- Si propiedades activas <8 → Reevaluar plan de crecimiento
+- Si MRR <$12K → Ajustar proyecciones
+- Si no hay progreso hacia equilibrio → Evaluar opciones de financiación
+
+**MES 24 (Final de Año 2):**
 - Si no hay flujo de caja positivo → Decisión crítica
-- Opciones: Capital adicional, pivote, o salida ordenada
+- Si propiedades <15 → Extender timeline a Año 3
+- Opciones: Capital adicional, pivote, refinanciación, o salida ordenada
 
 ### Compromiso con la Transparencia
 
