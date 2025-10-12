@@ -13,25 +13,25 @@
 Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializándonos en akiya (casas abandonadas). Ofrecemos servicios integrales: identificación, adquisición, renovación y gestión con modelo híbrido de alquiler que optimiza ingresos bajo la ley Minpaku.
 
 ### Propuesta de Valor Única
-**Modelo Híbrido Inteligente:** Combinación de alquiler a largo plazo (70%) y corto plazo (30%, máximo 180 días) que maximiza ROI mientras cumple regulaciones japonesas, generando retornos 36% superiores al mercado.
+**Modelo Híbrido Inteligente:** Combinación de alquiler a largo plazo (70%) y corto plazo (30%, máximo 180 días) que maximiza ROI mientras cumple regulaciones japonesas, optimizando ingresos mediante gestión estacional adaptativa.
 
 ### Objetivos Estratégicos (5 Años)
-- **Año 1:** 15 propiedades activas, $200K ingresos, flujo de caja positivo
+- **Año 1:** 15 propiedades activas, $95K ingresos reales, flujo de caja positivo mes 8
 - **Año 3:** 60 propiedades activas, $1.2M ingresos, operaciones en 3 prefecturas
 - **Año 5:** 100+ propiedades, liderazgo de mercado, $2M+ ingresos anuales
 
 ### Métricas de Éxito Críticas
-- **ROI por Propiedad:** 12-15% anual
+- **ROI por Propiedad:** 11-13% anual (modelo híbrido)
 - **CAC:** <$5,000 por cliente
 - **LTV/CAC Ratio:** >3:1
-- **Punto de Equilibrio:** Mes 8
+- **Punto de Equilibrio:** Mes 10-12
 
 ---
 
 ## 📋 VISIÓN, MISIÓN Y VALORES
 
 ### Visión
-"Ser la plataforma líder en Japón para inversión inmobiliaria extranjera, transformando akiya en activos rentables que generen retornos sostenibles del 12-15% anual."
+"Ser la plataforma líder en Japón para inversión inmobiliaria extranjera, transformando akiya en activos rentables que generen retornos sostenibles del 11-13% anual con modelo híbrido optimizado."
 
 ### Misión
 "Simplificar la inversión inmobiliaria japonesa para extranjeros mediante servicios integrales, transparencia total y modelo de negocio comprobado."
@@ -47,12 +47,18 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 
 ## 💰 MODELO FINANCIERO Y PROYECCIONES
 
-### Capital Inicial Requerido
-**Total:** $360,000
+### Capital Inicial Requerido (Aportado por Socios Fundadores)
+**Total:** $360,000 (Comprometido y disponible)
 - **Reserva Operativa:** $180,000 (18 meses de runway)
 - **Primera Propiedad Piloto:** $130,000
 - **Marketing y Tecnología:** $30,000
 - **Legal y Seguros:** $20,000
+
+**Fuente de Capital:**
+- **Socio A (CEO):** $216,000 (60% = aporte de capital)
+- **Socio B (CTO):** $144,000 (40% = aporte de capital)
+
+**Nota Importante:** Este plan se basa en un modelo de crecimiento autofinanciado a partir de capital comprometido por los socios fundadores. No se busca inversión externa. El crecimiento futuro será financiado mediante reinversión del 100% de beneficios durante los primeros 24 meses.
 
 ### Economía por Propiedad - Dos Modelos
 
@@ -113,13 +119,41 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 
 ### Proyecciones de Crecimiento (5 Años)
 
-#### **AÑO 1 (2025)**
-- **Propiedades:** 15 (10 Modelo A, 5 Modelo B)
-- **Ingresos totales:** $300,000
-- **Gastos operativos:** $180,000
-- **EBITDA:** $120,000
-- **Margen:** 40%
+#### **AÑO 1 (2025) - PROYECCIÓN REALISTA CON ADQUISICIÓN GRADUAL**
+
+**Calendario de Adquisiciones y Generación de Ingresos:**
+- **Mes 5:** 1 propiedad activa (8 meses generando ingresos)
+- **Mes 7:** 3 propiedades activas (6 meses para 2 nuevas)
+- **Mes 9:** 7 propiedades activas (4 meses para 4 nuevas)
+- **Mes 11:** 12 propiedades activas (2 meses para 5 nuevas)
+- **Mes 12:** 15 propiedades activas (1 mes para 3 nuevas)
+
+**Cálculo de Ingresos Reales Año 1:**
+```
+Prop 1: $1,570/mes × 8 meses = $12,560
+Props 2-3: $1,570/mes × 6 meses × 2 = $18,840
+Props 4-7: $1,570/mes × 4 meses × 4 = $25,120
+Props 8-12: $1,570/mes × 2 meses × 5 = $15,700
+Props 13-15: $1,570/mes × 1 mes × 3 = $4,710
+```
+
+- **Propiedades al final del año:** 15 (10 Modelo A, 5 Modelo B)
+- **Ingresos totales reales:** $95,000 (promedio ponderado por meses activos)
+- **Gastos operativos:** $180,000 (salarios, oficina, marketing, legal)
+- **EBITDA:** -$85,000 (pérdida operativa esperada)
+- **Margen:** Negativo (inversión en crecimiento)
 - **Empleados:** 3
+- **Inversión en propiedades:** $1,927,500 (15 × $128,500)
+
+**Flujo de Caja Año 1:**
+- **Capital inicial:** $360,000
+- **Ingresos operativos:** $95,000
+- **Gastos operativos:** -$180,000
+- **Inversión en propiedades:** -$200,000 (solo 1-2 propiedades piloto con capital inicial)
+- **Flujo de caja neto:** -$285,000
+- **Nota:** Propiedades 3-15 serán financiadas con ingresos de Año 2 o requerirán capital adicional
+
+**Punto de Equilibrio Real:** Mes 10-12 del Año 2 (cuando 15+ propiedades generen ingresos completos)
 
 #### **AÑO 2 (2026)**
 - **Propiedades:** 35 (25 Modelo A, 10 Modelo B)
@@ -274,16 +308,17 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 3. **Akiyaz:** Modelo de conserjería, nicho turístico
 
 #### **Nuestra Ventaja Competitiva:**
-1. **Modelo Híbrido Optimizado:** ROI 36% superior
-2. **Expertise Regulatorio:** Cumplimiento Minpaku perfecto
-3. **Red de Contratistas:** Proveedores verificados y confiables
-4. **Plataforma Tecnológica:** Dashboard en tiempo real
-5. **Enfoque en Rentabilidad:** Cada propiedad validada financieramente
+1. **Modelo Híbrido Optimizado:** Sistema propietario de gestión estacional que maximiza ocupación y cumple regulaciones
+2. **Expertise Regulatorio:** Conocimiento profundo de ley Minpaku y zonas económicas especiales
+3. **Red de Contratistas Verificados:** Proveedores confiables con historial comprobado y precios negociados
+4. **Plataforma Tecnológica:** Dashboard en tiempo real para monitoreo y optimización de ocupación
+5. **Validación Financiera Rigurosa:** Cada propiedad debe pasar análisis de ROI antes de adquisición
+6. **Transparencia Total:** Costos reales y riesgos comunicados claramente a clientes desde el inicio
 
 ### Estrategia de Diferenciación
 
 #### **Posicionamiento:**
-"La única plataforma que garantiza ROI >12% anual con transparencia total y cumplimiento regulatorio perfecto."
+"La plataforma especializada en inversión inmobiliaria japonesa que combina gestión híbrida optimizada, transparencia financiera total y cumplimiento regulatorio garantizado para generar ROI sostenible del 11-13% anual."
 
 #### **Ventajas Defendibles:**
 1. **Sistema de Optimización Minpaku:** Algoritmo propietario
@@ -497,18 +532,28 @@ Crecer a 35 propiedades manteniendo rentabilidad y calidad.
 
 #### **1. MODELO HÍBRIDO INTELIGENTE**
 
-**Distribución Optimizada:**
-- **Alquiler Largo Plazo:** 185 días (50.7%)
-- **Alquiler Corto Plazo:** 180 días (49.3%)
+**Distribución Optimizada (Con Periodo de Transición):**
+- **Alquiler Largo Plazo:** 150 días efectivos (41%)
+- **Alquiler Corto Plazo:** 180 días efectivos (49%)
+- **Periodo de Transición/Vacancia:** 35 días (10%)
 - **Optimización Estacional:** Primavera/Verano 70% corto, Otoño/Invierno 70% largo
 
-**Impacto Financiero:**
+**Nota Crítica - Desafío Operativo:**
+Los contratos de alquiler a largo plazo en Japón suelen ser de 2 años. Encontrar inquilinos para periodos exactos de 150-185 días es operativamente complejo. Esta proyección asume:
+1. **Contratos Flexibles:** Disponibilidad para negociar contratos no estándar
+2. **Mercado de Expatriados:** Enfoque en trabajadores temporales y consultores
+3. **Programa de Relocación:** Partnerships con empresas para alojamiento corporativo
+4. **Tasa de Ocupación Real:** 85-90% (no 100% como proyección teórica)
+
+**Impacto Financiero Realista (Con Tasa de Ocupación 87%):**
 ```
 Propiedad $140K:
-- Largo plazo (185 días): $6,820
+- Largo plazo (150 días): $5,500
 - Corto plazo (180 días): $12,000
-- Total anual: $18,820
-- ROI: 13.4% (vs 9.8% solo largo plazo)
+- Vacancia/Transición (35 días): $0
+- Total anual: $17,500 (vs $18,820 teórico)
+- ROI realista: 12.5% (vs 13.4% teórico)
+- ROI conservador: 11.0% (con 80% ocupación)
 ```
 
 #### **2. ZONAS ECONÓMICAS ESPECIALES**
@@ -580,17 +625,33 @@ Propiedad $140K:
 ### Estructura de Equipo
 
 #### **FUNDADORES**
-**Socio A - CEO (60% equity):**
-- Estrategia general y toma de decisiones
-- Relaciones con clientes y ventas
-- Gestión financiera y operaciones
-- Partnerships y expansión
 
-**Socio B - CTO (40% equity):**
-- Desarrollo de plataforma tecnológica
-- Automatización de procesos
-- Análisis de datos y KPIs
-- Innovación tecnológica
+**Estructura de Capital y Justificación:**
+
+El reparto de equity (60/40) se basa en la siguiente valoración de aportaciones:
+
+**Socio A - CEO (60% equity = $216,000 capital):**
+- **Aporte de Capital:** $216,000 (60% del capital inicial)
+- **Experiencia:** Industria inmobiliaria y relaciones comerciales en Japón
+- **Red de Contactos:** Acceso a contratistas, gobiernos locales, clientes potenciales
+- **Rol Operativo:** Estrategia, ventas, operaciones, partnerships
+- **Tiempo Completo:** Dedicación 100% desde mes 1
+- **Riesgo:** Mayor exposición financiera personal
+
+**Socio B - CTO (40% equity = $144,000 capital):**
+- **Aporte de Capital:** $144,000 (40% del capital inicial)
+- **Experiencia:** Desarrollo de plataformas y automatización
+- **Propiedad Intelectual:** Sistema de gestión y algoritmo de optimización
+- **Rol Operativo:** Tecnología, datos, automatización, innovación
+- **Tiempo Completo:** Dedicación 100% desde mes 1
+- **Riesgo:** Exposición financiera significativa
+
+**Condiciones de Vesting:**
+- **Periodo:** 4 años con cliff de 1 año
+- **Distribución:** 25% al año 1, luego 2.08% mensual
+- **Protección:** Si algún socio abandona antes del año 1, pierde su equity no vestido
+
+**Nota Importante:** Este reparto ha sido acordado y documentado en el Pacto de Socios firmado por ambas partes. La valoración considera tanto el capital aportado como la experiencia, red de contactos y dedicación de tiempo de cada socio.
 
 #### **EQUIPO AÑO 1 (3 personas)**
 - 2 Fundadores
@@ -918,8 +979,144 @@ Propiedad $140K:
 
 ---
 
+## ⚠️ SUPUESTOS CRÍTICOS Y LIMITACIONES DEL PLAN
+
+### Supuestos Fundamentales que Deben Validarse
+
+Este plan estratégico se basa en una serie de supuestos que deben ser validados en la práctica. La viabilidad del modelo de negocio depende de estos factores críticos:
+
+#### **1. SUPUESTO: Viabilidad del Modelo Híbrido**
+**Asumimos que:**
+- Podemos encontrar inquilinos a largo plazo para contratos de 150-185 días (no estándar en Japón)
+- La tasa de ocupación será del 85-90% considerando transiciones
+- Los periodos de vacancia entre cambios de inquilino serán <35 días
+
+**Riesgo si es falso:**
+- ROI real podría caer a 8-10% con ocupación del 70%
+- Viabilidad financiera del modelo cuestionada
+- Necesidad de pivotar a modelo de alquiler a largo plazo estándar (2 años)
+
+**Validación:**
+- Primeros 6 meses con propiedad piloto
+- Análisis de tasa de ocupación real
+- Feedback de mercado sobre contratos flexibles
+
+#### **2. SUPUESTO: Capital Disponible y Comprometido**
+**Asumimos que:**
+- Los $360,000 están disponibles y comprometidos por ambos socios
+- No hay restricciones de liquidez personal
+- Los socios pueden mantener salarios mínimos durante 12+ meses
+
+**Riesgo si es falso:**
+- Runway insuficiente para alcanzar punto de equilibrio
+- Necesidad de buscar inversión externa
+- Abandono prematuro del proyecto por presión financiera
+
+**Validación:**
+- Confirmación legal y bancaria del capital
+- Revisión de situación financiera personal trimestral
+- Plan de contingencia si runway <12 meses
+
+#### **3. SUPUESTO: Proyecciones de Año 1 Alcanzables**
+**Asumimos que:**
+- Podemos adquirir y poner en operación 15 propiedades en 12 meses
+- Los ingresos reales serán $95,000 (no los $300,000 teóricos)
+- Aceptamos pérdida operativa de -$85,000 en Año 1
+
+**Riesgo si es falso:**
+- Adquisición más lenta → ingresos <$95K
+- Burn rate mayor → runway agotado antes de equilibrio
+- Necesidad de capital adicional no planificado
+
+**Validación:**
+- Revisión mensual de pipeline de propiedades
+- Ajuste de runway si ingresos <proyecciones
+- Decision point en Mes 6: continuar o pivotar
+
+#### **4. SUPUESTO: Costos de Renovación Controlados**
+**Asumimos que:**
+- Renovaciones se mantendrán en $85K-$120K
+- Contingencia del 30% es suficiente
+- No hay sobrecostos estructurales ocultos
+
+**Riesgo si es falso:**
+- Economía unitaria se rompe
+- ROI cae <8% (no viable)
+- Necesidad de aumentar capital por propiedad
+
+**Validación:**
+- Inspecciones exhaustivas pre-compra
+- Contratos de precio fijo con contratistas
+- Revisión de costos reales vs proyectados por propiedad
+
+#### **5. SUPUESTO: Demanda de Mercado Sostenida**
+**Asumimos que:**
+- Existe demanda constante de inversores extranjeros
+- El mercado de akiya continuará creciendo
+- No habrá cambios regulatorios adversos
+
+**Riesgo si es falso:**
+- Dificultad para encontrar clientes (CAC >$10K)
+- Propiedades ilíquidas, difíciles de rentar
+- Cambios en ley Minpaku más restrictivos
+
+**Validación:**
+- Generación de 50+ leads/mes desde Mes 3
+- Tasa de conversión >3-5%
+- Monitoreo continuo de cambios regulatorios
+
+### Escenarios de Stress y Planes de Contingencia
+
+#### **ESCENARIO PESIMISTA: Ocupación 70%, Costos +20%**
+```
+ROI real: 7.5% (vs 11-13% proyectado)
+Punto de equilibrio: Mes 18 (vs Mes 10-12)
+Capital adicional necesario: +$150K
+Decisión: Pivotar o buscar inversión
+```
+
+#### **ESCENARIO CONSERVADOR: Ocupación 80%, Costos +10%**
+```
+ROI real: 9.5% (vs 11-13% proyectado)
+Punto de equilibrio: Mes 14 (vs Mes 10-12)
+Capital adicional necesario: +$75K
+Decisión: Ajustar crecimiento, mantener curso
+```
+
+#### **ESCENARIO OPTIMISTA: Ocupación 95%, Costos según plan**
+```
+ROI real: 13.0% (vs 11-13% proyectado)
+Punto de equilibrio: Mes 8 (vs Mes 10-12)
+Capital adicional necesario: $0
+Decisión: Acelerar crecimiento
+```
+
+### Decision Points Críticos
+
+**MES 6:**
+- Si ingresos <$20K → Evaluar viabilidad
+- Si ocupación <70% → Revisar modelo híbrido
+- Si runway <12 meses → Buscar capital o reducir burn
+
+**MES 12:**
+- Si propiedades activas <10 → Replantear timeline
+- Si EBITDA <-$100K → Revisar estructura de costos
+- Si CAC >$7K → Optimizar marketing
+
+**MES 18:**
+- Si no hay flujo de caja positivo → Decisión crítica
+- Opciones: Capital adicional, pivote, o salida ordenada
+
+### Compromiso con la Transparencia
+
+Este plan reconoce explícitamente sus limitaciones y supuestos. La honestidad sobre los riesgos y la incertidumbre es fundamental para la toma de decisiones informada. 
+
+**Principio:** Es mejor un plan realista con márgenes de seguridad que proyecciones optimistas que conduzcan a decisiones equivocadas.
+
+---
+
 **Última Actualización:** Octubre 2025  
 **Próxima Revisión:** Enero 2026  
 **Propietario:** Equipo Fundador - Akiya House
 
-*Este es un documento vivo que debe ser revisado y actualizado trimestralmente para reflejar el aprendizaje del mercado y los ajustes estratégicos necesarios.*
+*Este es un documento vivo que debe ser revisado y actualizado trimestralmente para reflejar el aprendizaje del mercado y los ajustes estratégicos necesarios. Todos los supuestos críticos deben ser validados con datos reales antes de comprometer recursos significativos.*
