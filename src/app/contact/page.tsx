@@ -2,18 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import BookingSystem from '@/components/BookingSystem';
-import { Mail, Phone, MapPin, Clock, Send, Calendar, MessageCircle, User, Building } from 'lucide-react';
+import { Mail, Phone, Send, MessageCircle, User } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    company: '',
-    message: '',
-    interest: 'general'
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,308 +58,131 @@ export default function Contact() {
     setFormData({
       name: '',
       email: '',
-      phone: '',
-      company: '',
-      message: '',
-      interest: 'general'
+      message: ''
     });
   };
 
-  const contactMethods = [
-    {
-      icon: Mail,
-      title: t('contact.emailTitle'),
-      value: "info@tabijihouse.com",
-      description: t('contact.emailDescription'),
-      color: "primary"
-    },
-    {
-      icon: Phone,
-      title: t('contact.phoneTitle'),
-      value: "+81-3-6380-3901\n+81-3-6380-3902",
-      description: t('contact.phoneDescription'),
-      color: "accent"
-    },
-    {
-      icon: MapPin,
-      title: t('contact.officeTitle'),
-      value: t('contact.officeValue'),
-      description: t('contact.officeDescription'),
-      color: "primary"
-    }
-  ];
-
-  const interests = [
-    { value: 'general', label: t('contact.generalInquiry') },
-    { value: 'property', label: t('contact.viewProperties') },
-    { value: 'investment', label: t('contact.investmentOpportunities') },
-    { value: 'renovation', label: t('contact.renovationServices') },
-    { value: 'legal', label: t('contact.legalAdvice') },
-    { value: 'other', label: t('contact.other') }
-  ];
 
   return (
     <Layout>
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
-              {t('contact.startYourVision')}
-            </div>
-            <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
-              {t('contact.title')}
-            </h1>
-            <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              {t('contact.description')}
-            </p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-sm text-accent font-mono tracking-wider uppercase mb-4">
+            {t('contact.startYourVision')}
           </div>
+          <h1 className="text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
+            {t('contact.title')}
+          </h1>
+          <p className="text-xl text-foreground max-w-2xl mx-auto leading-relaxed mb-8">
+            {t('contact.description')}
+          </p>
         </div>
       </section>
 
-      {/* Contact Methods */}
+      {/* Simple Contact Form */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-primary mb-6">
-              {t('contact.contactMethods')}
-            </h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed">
-              {t('contact.chooseMethod')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {contactMethods.map((method, index) => (
-              <div key={index} className="text-center p-8 bg-muted rounded-2xl hover:shadow-lg transition-shadow duration-300">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
-                  method.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'
-                }`}>
-                  <method.icon size={32} className={method.color === 'primary' ? 'text-primary' : 'text-accent'} />
-                </div>
-                <h3 className="text-xl font-serif font-bold text-primary mb-2">
-                  {method.title}
-                </h3>
-                <p className="text-lg font-semibold text-foreground mb-2">
-                  {method.value.split('\n').map((line, idx) => (
-                    <span key={idx}>
-                      {line}
-                      {idx < method.value.split('\n').length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-                <p className="text-sm text-secondary">
-                  {method.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Main Contact Form */}
-      <section className="py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Form */}
-            <div>
-              <div className="mb-8">
-                <h2 className="text-4xl font-serif font-bold text-primary mb-4">
-                  {t('contact.sendMessage')}
-                </h2>
-                <p className="text-lg text-foreground leading-relaxed">
-                  {t('contact.formDescription')}
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
-                      {t('contact.fullName')} *
-                    </label>
-                    <div className="relative">
-                      <User size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder={t('contact.fullNamePlaceholder')}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">
-                      {t('contact.email')} *
-                    </label>
-                    <div className="relative">
-                      <Mail size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder="tu@email.com"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-primary mb-2">
-                      {t('contact.phone')}
-                    </label>
-                    <div className="relative">
-                      <Phone size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-primary mb-2">
-                      {t('contact.company')}
-                    </label>
-                    <div className="relative">
-                      <Building size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                        placeholder={t('contact.companyPlaceholder')}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-semibold text-primary mb-2">
-                    {t('contact.interestArea')}
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    value={formData.interest}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                  >
-                    {interests.map((interest) => (
-                      <option key={interest.value} value={interest.value}>
-                        {interest.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
-                    {t('contact.message')} *
-                  </label>
-                  <div className="relative">
-                    <MessageCircle size={20} className="absolute left-3 top-3 text-secondary" />
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
-                      placeholder={t('contact.projectPlaceholder')}
-                    />
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>{t('contact.sending')}</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={20} />
-                      <span>{t('contact.sendMessageButton')}</span>
-                    </>
-                  )}
-                </button>
-              </form>
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-muted rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-serif font-bold text-primary mb-4">
+                {t('contact.sendMessage')}
+              </h2>
+              <p className="text-lg text-foreground">
+                Cuéntanos sobre tu proyecto y te contactaremos en 24 horas
+              </p>
             </div>
 
-            {/* Info Panel */}
-            <div className="space-y-8">
-              {/* Booking System */}
-              <BookingSystem />
-
-              {/* Office Hours */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Clock size={24} className="text-primary" />
-                  <h3 className="text-xl font-serif font-bold text-primary">
-                    {t('contact.officeHours')}
-                  </h3>
-                </div>
-                
-                <div className="space-y-3 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-secondary">{t('contact.mondayFriday')}</span>
-                    <span className="text-foreground font-semibold">9:00 AM - 6:00 PM JST</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary">{t('contact.saturday')}</span>
-                    <span className="text-foreground font-semibold">10:00 AM - 2:00 PM JST</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary">{t('contact.sunday')}</span>
-                    <span className="text-foreground font-semibold">{t('contact.closed')}</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-muted rounded-lg">
-                  <p className="text-sm text-foreground">
-                    <strong>Nota:</strong> {t('contact.responseNote')}
-                  </p>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
+                  {t('contact.fullName')} *
+                </label>
+                <div className="relative">
+                  <User size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    placeholder={t('contact.fullNamePlaceholder')}
+                  />
                 </div>
               </div>
 
-              {/* Quick Response */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-border">
-                <h3 className="text-xl font-serif font-bold text-primary mb-4">
-                  {t('contact.quickResponse')}
-                </h3>
-                <p className="text-sm text-foreground mb-4">
-                  {t('contact.urgentInquiries')}
-                </p>
-                <a
-                  href="https://wa.me/819012345678"
-                  className="inline-flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-300"
-                >
-                  <span>💬</span>
-                  <span>{t('contact.whatsapp')}</span>
-                </a>
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">
+                  {t('contact.email')} *
+                </label>
+                <div className="relative">
+                  <Mail size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary" />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">
+                  {t('contact.message')} *
+                </label>
+                <div className="relative">
+                  <MessageCircle size={20} className="absolute left-3 top-3 text-secondary" />
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={5}
+                    className="w-full pl-10 pr-4 py-3 border border-border rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
+                    placeholder="Describe tu proyecto de inversión en Japón..."
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors duration-300 font-semibold text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>{t('contact.sending')}</span>
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    <span>{t('contact.sendMessageButton')}</span>
+                  </>
+                )}
+              </button>
+            </form>
+
+            {/* Contact Info */}
+            <div className="mt-12 pt-8 border-t border-border">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                <div>
+                  <Mail size={24} className="text-primary mx-auto mb-2" />
+                  <p className="text-sm text-secondary mb-1">Email</p>
+                  <p className="text-foreground font-semibold">info@tabijihouse.com</p>
+                </div>
+                <div>
+                  <Phone size={24} className="text-primary mx-auto mb-2" />
+                  <p className="text-sm text-secondary mb-1">Teléfono</p>
+                  <p className="text-foreground font-semibold">+81-3-6380-3901</p>
+                </div>
               </div>
             </div>
           </div>
