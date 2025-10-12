@@ -47,6 +47,99 @@ Facilitamos la inversión inmobiliaria en Japón para extranjeros, especializán
 
 ---
 
+## 💪 FORTALEZAS COMPETITIVAS Y JUSTIFICACIÓN DE AUTOFINANCIACIÓN
+
+### Por Qué Autofinanciación con $360K es Nuestra Ventaja
+
+**1. EXPERIENCIA DEMOSTRADA DEL EQUIPO FUNDADOR**
+
+**Socio A - CEO:**
+- Experiencia comprobada en mercado inmobiliario japonés
+- Red de contactos establecida con actores clave del sector
+- Relaciones directas con gobiernos prefecturales
+- Conocimiento profundo de regulaciones y procesos locales
+
+**Socio B - CTO:**
+- Experiencia en desarrollo de plataformas tecnológicas
+- Capacidad de automatización que reduce costos operativos
+- Visión de escalabilidad mediante tecnología
+
+**2. PARTNERSHIP ESTRATÉGICO CON JNI PROPERTIES**
+
+**Ventaja Competitiva Decisiva:**
+- Acceso directo a cartera de 450+ propiedades anuales
+- Conocimiento del mercado de primera mano
+- Procesos ya establecidos y probados
+- Red de contratistas verificada
+- Credibilidad inmediata en el mercado
+
+**Esta alianza nos da:**
+- Pipeline constante de propiedades pre-evaluadas
+- Reducción dramática de tiempo de búsqueda
+- Acceso a financiación preferencial con bancos locales
+- Reputación establecida que reduce CAC
+
+**3. AUTOFINANCIACIÓN COMO DEMOSTRACIÓN DE CAPACIDAD**
+
+**Filosofía Estratégica:**
+La decisión de autofinanciarnos con $360K NO es por falta de acceso a capital, sino una ESTRATEGIA DELIBERADA para:
+
+✅ **Demostrar Viabilidad del Modelo:** Validar economía unitaria con capital propio antes de escalar con capital externo
+
+✅ **Mantener Control Total:** Tomar decisiones ágiles sin interferencia de inversores externos durante fase crítica de validación
+
+✅ **Construir Track Record:** Generar datos reales de ROI, ocupación, CAC para futuras rondas de financiación
+
+✅ **Negociar Desde Fortaleza:** Si decidimos buscar Serie A en Año 3, lo haremos con:
+- 40-50 propiedades operativas
+- ROI comprobado de 10.5-12.5%
+- Procesos documentados y escalables
+- Valoración mucho más alta ($15-25M vs $3-5M pre-revenue)
+
+**4. CAPACIDAD DE EJECUCIÓN CON $360K**
+
+**Por Qué Es Suficiente:**
+
+**Experiencia del Equipo:**
+- Conocemos el mercado (no hay curva de aprendizaje costosa)
+- Tenemos los contactos (no gastamos en construir red)
+- Partnership con JNI (acceso a pipeline)
+- Procesos ya conocidos (no gastamos en descubrimiento)
+
+**Disciplina Operativa:**
+- Salarios mínimos Año 1 porque creemos en el proyecto
+- Marketing orgánico mediante red existente
+- Oficina: coworking/home office
+- Cada yen gastado genera valor directo
+
+**Ventaja de Ser Fundadores con Experiencia:**
+Startups sin experiencia gastan 50-70% del capital en "aprender el mercado". Nosotros YA lo conocemos. Nuestro capital va 100% a ejecución, no a educación.
+
+### Por Qué NO Buscamos Financiación Externa Temprana
+
+**1. Dilución Innecesaria:**
+- Con track record de Año 1-2, podemos levantar Serie A con valoración 3-5x superior
+- Mantener 100% equity hasta demostrar modelo = máximo retorno para fundadores
+
+**2. Agilidad de Decisión:**
+- Sin board de directores = decisiones en 24 horas
+- Sin reportes a inversores = enfoque total en ejecución
+- Sin presión de crecimiento = validación rigurosa antes de escalar
+
+**3. Estrategia de Bootstrapping Como Señal de Mercado:**
+- Demuestra confianza absoluta en el modelo
+- Genera credibilidad con clientes (founders have skin in the game)
+- Atrae talento de alta calidad (quieren unirse a ganadores)
+
+**4. Evaluación Financiera Post-Validación:**
+Si en Año 2-3 identificamos oportunidad de acelerar crecimiento y los números lo justifican:
+- Habremos validado modelo con datos reales
+- Tendremos pipeline probado de propiedades
+- Podremos levantar $3-5M Serie A con términos favorables
+- Pero será NUESTRA decisión, no una necesidad por falta de capital
+
+---
+
 ## 💰 MODELO FINANCIERO
 
 ### Capital Inicial
