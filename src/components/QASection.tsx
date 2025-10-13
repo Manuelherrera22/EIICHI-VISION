@@ -10,7 +10,10 @@ import {
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  Info
+  Info,
+  FileText,
+  Shield,
+  Settings
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -87,6 +90,62 @@ const QASection = () => {
         t('qa.ldk.dining'),
         t('qa.ldk.kitchen'),
         t('qa.ldk.example')
+      ]
+    },
+    {
+      icon: FileText,
+      title: t('qa.documentsRequired.title'),
+      answer: '',
+      description: t('qa.documentsRequired.description'),
+      details: [
+        t('qa.documentsRequired.passport'),
+        t('qa.documentsRequired.postContract'),
+        t('qa.documentsRequired.proofOfFunds'),
+        t('qa.documentsRequired.taxAdmin'),
+        t('qa.documentsRequired.identity'),
+        t('qa.documentsRequired.powerOfAttorney'),
+        t('qa.documentsRequired.note')
+      ]
+    },
+    {
+      icon: Shield,
+      title: t('qa.affidavit.title'),
+      answer: '',
+      description: t('qa.affidavit.description'),
+      details: [
+        t('qa.affidavit.notary'),
+        t('qa.affidavit.embassy'),
+        t('qa.affidavit.requirements'),
+        t('qa.affidavit.draft'),
+        t('qa.affidavit.identity'),
+        t('qa.affidavit.note')
+      ]
+    },
+    {
+      icon: Building,
+      title: t('qa.taxAdministrator.title'),
+      answer: '',
+      description: t('qa.taxAdministrator.description'),
+      details: [
+        t('qa.taxAdministrator.restriction'),
+        t('qa.taxAdministrator.role'),
+        t('qa.taxAdministrator.legal')
+      ]
+    },
+    {
+      icon: Settings,
+      title: t('qa.houseManagement.title'),
+      answer: '',
+      description: t('qa.houseManagement.description'),
+      details: [
+        t('qa.houseManagement.services'),
+        t('qa.houseManagement.cleaning'),
+        t('qa.houseManagement.patrols'),
+        t('qa.houseManagement.caretaker'),
+        t('qa.houseManagement.emergency'),
+        t('qa.houseManagement.example'),
+        t('qa.houseManagement.villaServices'),
+        t('qa.houseManagement.cost')
       ]
     }
   ];
