@@ -1700,6 +1700,8 @@ const translations = {
     'qa.taxAdministrator.restriction': 'Appointment is restricted to an individual or corporation with an address in Japan',
     'qa.taxAdministrator.role': 'A tax administrator acts as an agent managing tax procedures in Japan on behalf of overseas residents',
     'qa.taxAdministrator.legal': 'Overseas residents who own real estate in Japan are legally obligated to appoint a tax administrator',
+    'qa.taxAdministrator.additional': 'Additional',
+    'qa.taxAdministrator.jniPartner': 'Our partner, JNI Properties Co., Ltd., will introduce the most suitable tax representative.',
     
     'qa.houseManagement.title': '10) Can I entrust the management of my house while I am overseas?',
     'qa.houseManagement.description': 'Yes, this is permissible. JNI Properties offers comprehensive management services:',
@@ -4407,6 +4409,8 @@ const translations = {
     'qa.taxAdministrator.restriction': '任命は日本国内に住所を有する個人または法人に限定されます',
     'qa.taxAdministrator.role': '税務代理人は海外居住者の代わりに日本で税務手続きを管理する代理人として機能します',
     'qa.taxAdministrator.legal': '日本で不動産を所有する海外居住者は税務代理人の任命が法的義務です',
+    'qa.taxAdministrator.additional': '追加情報',
+    'qa.taxAdministrator.jniPartner': 'パートナーであるJNI Properties Co., Ltd.が最も適切な税務代理人を紹介します。',
     
     'qa.houseManagement.title': '10) 海外にいる間、家の管理を委託できますか？',
     'qa.houseManagement.description': 'はい、可能です。JNI Propertiesは包括的な管理サービスを提供：',
@@ -8139,6 +8143,8 @@ const translations = {
     'qa.taxAdministrator.restriction': 'El nombramiento está restringido a un individuo o corporación con dirección en Japón',
     'qa.taxAdministrator.role': 'Un administrador fiscal actúa como agente manejando procedimientos fiscales en Japón en nombre de residentes en el extranjero',
     'qa.taxAdministrator.legal': 'Los residentes en el extranjero que poseen bienes raíces en Japón están legalmente obligados a nombrar un administrador fiscal',
+    'qa.taxAdministrator.additional': 'Información adicional',
+    'qa.taxAdministrator.jniPartner': 'Nuestro socio, JNI Properties Co., Ltd., introducirá el representante fiscal más adecuado.',
     
     'qa.houseManagement.title': '10) ¿Puedo confiar la gestión de mi casa mientras estoy en el extranjero?',
     'qa.houseManagement.description': 'Sí, esto es permisible. JNI Properties ofrece servicios de gestión integral:',

@@ -130,7 +130,11 @@ const QASection = () => {
         t('qa.taxAdministrator.restriction'),
         t('qa.taxAdministrator.role'),
         t('qa.taxAdministrator.legal')
-      ]
+      ],
+      additional: {
+        title: t('qa.taxAdministrator.additional'),
+        content: t('qa.taxAdministrator.jniPartner')
+      }
     },
     {
       icon: Settings,
@@ -228,6 +232,17 @@ const QASection = () => {
                               </li>
                             ))}
                           </ul>
+                        </div>
+                      )}
+                      
+                      {item.additional && (
+                        <div className="mt-6">
+                          <h4 className="text-lg font-bold text-primary mb-3">
+                            {item.additional.title}
+                          </h4>
+                          <p className="text-secondary leading-relaxed">
+                            {item.additional.content}
+                          </p>
                         </div>
                       )}
                     </div>
