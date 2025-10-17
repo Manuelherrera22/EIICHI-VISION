@@ -5101,7 +5101,7 @@ const translations = {
     'about.longTermVision': '長期的なビジョン',
     'about.sharedMission': '共有された使命',
     'about.commonPurpose': '共通の目的',
-    'about.missionDescription': '私たちの使命は、渋沢栄一によって開始されたコミュニティ復興の仕事を継続し、それを21世紀のニーズに適応させ、不動産遺産を通じて文化を結びつけることです。',
+    'about.missionDescription': '私たちの使命は、コミュニティ復興の仕事を継続し、それを21世紀のニーズに適応させ、不動産遺産を通じて文化を結びつけることです。',
     'about.sustainableRevitalization': '持続可能な復興',
     'about.globalCulturalConnection': 'グローバルな文化的つながり',
     'about.communityDevelopment': 'コミュニティ開発',

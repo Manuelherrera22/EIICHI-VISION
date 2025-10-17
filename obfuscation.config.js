@@ -106,7 +106,7 @@ const obfuscationConfig = {
     
     // URLs y dominios
     'wa.me',
-    'eiichivision.com',
+    'tabijihouse.com',
     'localhost',
     
     // Configuración de idiomas

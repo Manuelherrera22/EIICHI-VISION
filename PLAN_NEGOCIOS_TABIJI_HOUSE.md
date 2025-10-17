@@ -267,7 +267,7 @@ Más allá de la tecnología avanzada, lo que realmente define a Tabiji House es
 - **Herramientas de networking incluidas** (competencia: no disponible)
 
 **3. Expertise Cultural (10/10):**
-- **Legado Shibusawa Eiichi** (competencia: sin legado cultural)
+- **Herencia Cultural Japonesa** (competencia: sin legado cultural)
 - **Alianza JNI Properties** (competencia: sin alianzas locales)
 - **Embajadoras culturales** (competencia: sin representación cultural)
 
@@ -315,7 +315,7 @@ Más allá de la tecnología avanzada, lo que realmente define a Tabiji House es
 **Fortalezas:**
 - Tecnología PropTech de vanguardia (2-3 visores 3D, AR, IA)
 - Alianza estratégica con JNI Properties (licencia oficial)
-- Legado de confianza de Shibusawa Eiichi
+- Herencia de confianza empresarial japonesa
 - Modelo de negocio enfocado y escalable
 - Equipo bicultural y multilingüe
 
