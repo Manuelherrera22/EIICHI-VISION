@@ -1058,6 +1058,14 @@ const translations = {
     'fractional.cta.startInvestment': 'Start Investment',
     'fractional.cta.joinVision': 'Join the Vision',
     
+    // Hero Section
+    'fractional.hero.badge': 'New Way to Invest in Japan',
+    'fractional.cta.readyTitle': 'Ready to Invest in Japan?',
+    'fractional.cta.readyDescription': 'Join the new generation of investors democratizing access to Japanese real estate heritage',
+    
+    // Status
+    'fractional.status.completed': 'Completed',
+    
     // Benefits Section
     'fractional.benefits.title': 'Why Fractional Investment?',
     'fractional.benefits.subtitle': 'Break traditional barriers of Japanese real estate investment',
@@ -1105,6 +1113,8 @@ const translations = {
     'fractional.property.fundingProgress': 'Funding Progress',
     'fractional.property.documentsAvailable': 'Documents available',
     'fractional.property.download': 'Download',
+    'fractional.property.of': 'of',
+    'fractional.property.tbd': 'TBD',
     
     // How It Works Section
     'fractional.howItWorks.title': 'How It Works?',
@@ -3094,6 +3104,14 @@ const translations = {
     'fractional.cta.startInvestment': '投資を開始',
     'fractional.cta.joinVision': 'ビジョンに参加',
     
+    // Hero Section
+    'fractional.hero.badge': '日本への新しい投資方法',
+    'fractional.cta.readyTitle': '日本への投資準備はできましたか？',
+    'fractional.cta.readyDescription': '日本の不動産遺産へのアクセスを民主化する新しい世代の投資家に参加',
+    
+    // Status
+    'fractional.status.completed': '完了',
+    
     // Benefits Section
     'fractional.benefits.title': 'なぜフラクショナル投資？',
     'fractional.benefits.subtitle': '日本の不動産投資の伝統的な障壁を破る',
@@ -3127,6 +3145,34 @@ const translations = {
     'fractional.metrics.capitalPerProperty': '物件あたりの平均資本',
     'fractional.metrics.investorsPerProperty': '物件あたりの投資家数',
     'fractional.metrics.vsTraditional': 'ROI vs 従来市場',
+    
+    // Properties Section
+    'fractional.properties.title': '利用可能な物件',
+    'fractional.properties.subtitle': 'あなたの投資プロファイルに最も適した物件を選択',
+    'fractional.property.viewDetails': '詳細を見る',
+    'fractional.property.invest': '投資',
+    'fractional.property.sharesAvailable': '利用可能なシェア',
+    'fractional.property.pricePerShare': 'シェアあたりの価格',
+    'fractional.property.expectedROI': '期待ROI',
+    'fractional.property.completed': '完了',
+    'fractional.property.characteristics': '特徴',
+    'fractional.property.fundingProgress': '資金調達進捗',
+    'fractional.property.documentsAvailable': '利用可能な文書',
+    'fractional.property.download': 'ダウンロード',
+    'fractional.property.of': 'の',
+    'fractional.property.tbd': '未定',
+    
+    // How It Works Section
+    'fractional.howItWorks.title': '仕組みは？',
+    'fractional.howItWorks.subtitle': '4つのステップでシンプルで透明なプロセス',
+    'fractional.howItWorks.step1.title': '選択',
+    'fractional.howItWorks.step1.description': '最も気に入った物件を選び、投資を計算',
+    'fractional.howItWorks.step2.title': '投資',
+    'fractional.howItWorks.step2.description': '$6,000から安全な支払いでシェアを購入',
+    'fractional.howItWorks.step3.title': 'リノベーション',
+    'fractional.howItWorks.step3.description': 'リノベーションとプロフェッショナル管理を担当',
+    'fractional.howItWorks.step4.title': '収益',
+    'fractional.howItWorks.step4.description': '月次収入と長期価値上昇を受け取る',
     
     // Authentication
     'auth.signIn': 'サインイン',
@@ -5832,6 +5878,14 @@ const translations = {
     'fractional.cta.startInvestment': 'بدء الاستثمار',
     'fractional.cta.joinVision': 'انضم إلى الرؤية',
     
+    // Hero Section
+    'fractional.hero.badge': 'طريقة جديدة للاستثمار في اليابان',
+    'fractional.cta.readyTitle': 'مستعد للاستثمار في اليابان؟',
+    'fractional.cta.readyDescription': 'انضم إلى الجيل الجديد من المستثمرين الذين يديمقراطون الوصول إلى التراث العقاري الياباني',
+    
+    // Status
+    'fractional.status.completed': 'مكتمل',
+    
     // Benefits Section
     'fractional.benefits.title': 'لماذا الاستثمار الجزئي؟',
     'fractional.benefits.subtitle': 'كسر الحواجز التقليدية للاستثمار العقاري الياباني',
@@ -5865,6 +5919,34 @@ const translations = {
     'fractional.metrics.capitalPerProperty': 'متوسط رأس المال لكل عقار',
     'fractional.metrics.investorsPerProperty': 'مستثمرون لكل عقار',
     'fractional.metrics.vsTraditional': 'عائد الاستثمار مقابل السوق التقليدي',
+    
+    // Properties Section
+    'fractional.properties.title': 'العقارات المتاحة',
+    'fractional.properties.subtitle': 'اختر العقار الذي يناسب ملفك الاستثماري بشكل أفضل',
+    'fractional.property.viewDetails': 'عرض التفاصيل',
+    'fractional.property.invest': 'استثمر',
+    'fractional.property.sharesAvailable': 'الأسهم المتاحة',
+    'fractional.property.pricePerShare': 'السعر لكل سهم',
+    'fractional.property.expectedROI': 'عائد الاستثمار المتوقع',
+    'fractional.property.completed': 'مكتمل',
+    'fractional.property.characteristics': 'الخصائص',
+    'fractional.property.fundingProgress': 'تقدم التمويل',
+    'fractional.property.documentsAvailable': 'الوثائق متاحة',
+    'fractional.property.download': 'تحميل',
+    'fractional.property.of': 'من',
+    'fractional.property.tbd': 'لم يتم تحديده',
+    
+    // How It Works Section
+    'fractional.howItWorks.title': 'كيف يعمل؟',
+    'fractional.howItWorks.subtitle': 'عملية بسيطة وشفافة في 4 خطوات',
+    'fractional.howItWorks.step1.title': 'اختر',
+    'fractional.howItWorks.step1.description': 'اختر العقار الذي يعجبك أكثر واحسب استثمارك',
+    'fractional.howItWorks.step2.title': 'استثمر',
+    'fractional.howItWorks.step2.description': 'اشتر أسهم من $6,000 مع مدفوعات آمنة',
+    'fractional.howItWorks.step3.title': 'نحن نجدّد',
+    'fractional.howItWorks.step3.description': 'نتعامل مع التجديد والإدارة المهنية',
+    'fractional.howItWorks.step4.title': 'اكسب',
+    'fractional.howItWorks.step4.description': 'احصل على دخل شهري وتقدير طويل الأجل',
     
     // Authentication
     'auth.signIn': 'تسجيل الدخول',
@@ -11105,6 +11187,14 @@ const translations = {
     'fractional.cta.viewProperties': 'Ver Propiedades',
     'fractional.cta.startInvestment': 'Comenzar Inversión',
     'fractional.cta.joinVision': 'Únete a la Visión',
+    
+    // Hero Section
+    'fractional.hero.badge': 'Nueva Forma de Invertir en Japón',
+    'fractional.cta.readyTitle': '¿Listo para Invertir en Japón?',
+    'fractional.cta.readyDescription': 'Únete a la nueva generación de inversores que democratiza el acceso al patrimonio inmobiliario japonés',
+    
+    // Status
+    'fractional.status.completed': 'Completado',
     
     // Benefits Section
     'fractional.benefits.title': '¿Por qué Inversión Fraccionada?',

@@ -117,7 +117,7 @@ export default function FractionalPropertyCard({
               <div className="text-sm font-semibold text-gray-900">
                 {formatPercentage(property.fundingProgress)}
               </div>
-              <div className="text-xs text-gray-600">Completado</div>
+              <div className="text-xs text-gray-600">{t('fractional.status.completed')}</div>
             </div>
           </div>
         ) : (
@@ -171,7 +171,7 @@ export default function FractionalPropertyCard({
               <span className="text-sm font-medium text-gray-600">{t('fractional.property.sharesAvailable')}</span>
             </div>
             <div className="text-lg font-bold text-gray-900">
-              {property.availableShares} de {property.totalShares}
+              {property.availableShares} {t('fractional.property.of')} {property.totalShares}
             </div>
           </div>
 
@@ -185,7 +185,7 @@ export default function FractionalPropertyCard({
                 new Date(property.expectedCompletionDate).toLocaleDateString('es-ES', { 
                   month: 'short', 
                   year: 'numeric' 
-                }) : 'TBD'
+                }) : t('fractional.property.tbd')
               }
             </div>
           </div>

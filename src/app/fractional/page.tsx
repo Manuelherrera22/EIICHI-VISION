@@ -160,7 +160,7 @@ export default function FractionalPage() {
           >
             <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-6">
               <Zap className="w-4 h-4 mr-2" />
-              Nueva Forma de Invertir en Japón
+              {t('fractional.hero.badge')}
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -362,11 +362,10 @@ export default function FractionalPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">
-              ¿Listo para Invertir en Japón?
+              {t('fractional.cta.readyTitle')}
             </h2>
             <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
-              Únete a la nueva generación de inversores que democratiza el acceso 
-              al patrimonio inmobiliario japonés
+              {t('fractional.cta.readyDescription')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
