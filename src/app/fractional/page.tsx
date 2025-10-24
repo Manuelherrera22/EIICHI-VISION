@@ -82,9 +82,9 @@ const sampleProperties: FractionalProperty[] = [
     availableShares: 6,
     soldShares: 4,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&auto=format'
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format'
     ],
     features: ['Modern Design', 'Mountain View', 'Large Windows', 'Energy Efficient', '2LDK', 'Land 307m²', 'Floor 55.48m²'],
     renovationStatus: 'original',
