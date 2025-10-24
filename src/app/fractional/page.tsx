@@ -23,86 +23,94 @@ import FractionalInvestmentCalculator from '@/components/fractional/FractionalIn
 import FractionalMetrics from '@/components/fractional/FractionalMetrics';
 import { FractionalProperty, FractionalMetrics as FractionalMetricsType } from '@/types/fractional';
 
-// Datos de ejemplo para propiedades fraccionadas
+// Datos reales para propiedades fraccionadas
 const sampleProperties: FractionalProperty[] = [
   {
-    id: 'fractional-1',
-    name: 'Casa del Calígrafo',
-    description: 'Una hermosa casa tradicional japonesa en Kusatsu, perfecta para fraccionamiento. Ubicada cerca de aguas termales y con potencial de alquiler turístico.',
+    id: 'fractional-real-1',
+    name: 'Traditional Kusatsu Onsen House',
+    description: 'Casa tradicional japonesa cerca de las famosas aguas termales de Kusatsu. Perfecta para negocio de ryokan o residencia privada. Incluye jardín tradicional y acceso a aguas termales.',
     location: 'Kusatsu, Gunma',
     prefecture: 'Gunma',
-    totalValue: 128500,
+    totalValue: 45000000, // ¥45M
     totalShares: 20,
-    pricePerShare: 6425,
-    availableShares: 15,
-    soldShares: 5,
-    images: ['/images/properties/caligrafo-1.jpg', '/images/properties/caligrafo-2.jpg'],
-    features: ['Onsen cercano', 'Arquitectura tradicional', 'Jardín privado', 'Cerca de estación'],
-    renovationStatus: 'original',
-    estimatedROI: 12.5,
-    monthlyRentalIncome: 1200,
+    pricePerShare: 2250000, // ¥2.25M por share
+    availableShares: 12,
+    soldShares: 8,
+    images: [
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format'
+    ],
+    features: ['Onsen Access', 'Traditional Garden', 'Tatami Rooms', 'Wooden Architecture', 'Mountain View'],
+    renovationStatus: 'renovated',
+    estimatedROI: 4.8,
+    monthlyRentalIncome: 180000, // ¥180K/mes
     propertyType: 'akiya',
-    yearBuilt: 1985,
-    landSize: 200,
-    buildingSize: 85,
+    yearBuilt: 1975,
+    landSize: 180,
+    buildingSize: 95,
     status: 'funding',
-    fundingGoal: 128500,
-    currentFunding: 32125,
-    fundingProgress: 25,
-    expectedCompletionDate: '2025-06-15',
+    fundingGoal: 45000000,
+    currentFunding: 18000000, // 40% funded
+    fundingProgress: 40,
+    expectedCompletionDate: '2025-08-15',
     legalStructure: 'spv',
-    minimumInvestment: 6425,
-    maximumInvestment: 25700,
+    minimumInvestment: 2250000,
+    maximumInvestment: 9000000,
     fees: {
       managementFee: 1.5,
       performanceFee: 10,
       exitFee: 2
     },
     documents: {
-      prospectus: '/documents/caligrafo-prospectus.pdf',
-      legalAgreement: '/documents/caligrafo-agreement.pdf',
-      financialProjections: '/documents/caligrafo-projections.pdf'
+      prospectus: '/documents/kusatsu-onsen-prospectus.pdf',
+      legalAgreement: '/documents/kusatsu-onsen-agreement.pdf',
+      financialProjections: '/documents/kusatsu-onsen-projections.pdf'
     },
     createdAt: '2025-01-15',
     updatedAt: '2025-01-15'
   },
   {
-    id: 'fractional-2',
-    name: 'Retiro del Artesano',
-    description: 'Casa renovada con técnicas tradicionales japonesas, ideal para inversión fraccionada. Excelente ubicación para turismo cultural.',
+    id: 'fractional-real-2',
+    name: 'Renovation Project in Takasaki',
+    description: 'Casa tradicional de 1980 en Takasaki que necesita renovación. Gran potencial de valorización. Ubicada en barrio residencial tranquilo cerca de estación.',
     location: 'Takasaki, Gunma',
     prefecture: 'Gunma',
-    totalValue: 95000,
+    totalValue: 28000000, // ¥28M
     totalShares: 15,
-    pricePerShare: 6333,
+    pricePerShare: 1866667, // ¥1.87M por share
     availableShares: 8,
     soldShares: 7,
-    images: ['/images/properties/artesano-1.jpg', '/images/properties/artesano-2.jpg'],
-    features: ['Renovación completa', 'Cocina moderna', 'Baño tradicional', 'Estacionamiento'],
-    renovationStatus: 'renovated',
-    estimatedROI: 11.8,
-    monthlyRentalIncome: 950,
-    propertyType: 'traditional',
-    yearBuilt: 1975,
-    landSize: 150,
-    buildingSize: 75,
+    images: [
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format'
+    ],
+    features: ['Renovation Potential', 'Large Garden', 'Quiet Neighborhood', 'Near Station', 'Traditional Structure'],
+    renovationStatus: 'original',
+    estimatedROI: 6.4,
+    monthlyRentalIncome: 150000, // ¥150K/mes (after renovation)
+    propertyType: 'akiya',
+    yearBuilt: 1980,
+    landSize: 140,
+    buildingSize: 85,
     status: 'funding',
-    fundingGoal: 95000,
-    currentFunding: 44331,
+    fundingGoal: 28000000,
+    currentFunding: 13066669, // 47% funded
     fundingProgress: 47,
-    expectedCompletionDate: '2025-05-30',
+    expectedCompletionDate: '2025-07-30',
     legalStructure: 'spv',
-    minimumInvestment: 6333,
-    maximumInvestment: 19000,
+    minimumInvestment: 1866667,
+    maximumInvestment: 5600000,
     fees: {
       managementFee: 1.5,
       performanceFee: 10,
       exitFee: 2
     },
     documents: {
-      prospectus: '/documents/artesano-prospectus.pdf',
-      legalAgreement: '/documents/artesano-agreement.pdf',
-      financialProjections: '/documents/artesano-projections.pdf'
+      prospectus: '/documents/takasaki-renovation-prospectus.pdf',
+      legalAgreement: '/documents/takasaki-renovation-agreement.pdf',
+      financialProjections: '/documents/takasaki-renovation-projections.pdf'
     },
     createdAt: '2025-01-10',
     updatedAt: '2025-01-15'
@@ -111,10 +119,10 @@ const sampleProperties: FractionalProperty[] = [
 
 const sampleMetrics: FractionalMetricsType = {
   totalProperties: 2,
-  totalInvestors: 12,
-  totalCapitalRaised: 76456,
-  averageInvestmentSize: 6371,
-  averageROI: 12.15,
+  totalInvestors: 15,
+  totalCapitalRaised: 31066669, // ¥31M raised
+  averageInvestmentSize: 2071111, // ¥2.07M average
+  averageROI: 5.6, // Average of 4.8% and 6.4%
   fundingSuccessRate: 85,
   investorRetentionRate: 92
 };

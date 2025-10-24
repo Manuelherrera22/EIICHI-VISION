@@ -33,9 +33,9 @@ export default function FractionalPropertyCard({
   const [imageIndex, setImageIndex] = useState(0);
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ja-JP', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'JPY',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
