@@ -3112,6 +3112,13 @@ const translations = {
     // Status
     'fractional.status.completed': '完了',
     
+    // Property Status
+    'fractional.status.funding': '資金調達中',
+    'fractional.status.funded': '資金調達完了',
+    'fractional.status.renovating': 'リノベーション中',
+    'fractional.status.completed': '完了',
+    'fractional.status.available': '利用可能',
+    
     // Benefits Section
     'fractional.benefits.title': 'なぜフラクショナル投資？',
     'fractional.benefits.subtitle': '日本の不動産投資の伝統的な障壁を破る',
@@ -5885,6 +5892,13 @@ const translations = {
     
     // Status
     'fractional.status.completed': 'مكتمل',
+    
+    // Property Status
+    'fractional.status.funding': 'جمع الأموال',
+    'fractional.status.funded': 'اكتمل التمويل',
+    'fractional.status.renovating': 'تحت التجديد',
+    'fractional.status.completed': 'مكتمل',
+    'fractional.status.available': 'متاح',
     
     // Benefits Section
     'fractional.benefits.title': 'لماذا الاستثمار الجزئي؟',

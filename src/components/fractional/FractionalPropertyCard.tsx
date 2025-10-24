@@ -182,7 +182,7 @@ export default function FractionalPropertyCard({
             </div>
             <div className="text-lg font-bold text-gray-900">
               {property.expectedCompletionDate ? 
-                new Date(property.expectedCompletionDate).toLocaleDateString('es-ES', { 
+                new Date(property.expectedCompletionDate).toLocaleDateString('en-US', { 
                   month: 'short', 
                   year: 'numeric' 
                 }) : t('fractional.property.tbd')
