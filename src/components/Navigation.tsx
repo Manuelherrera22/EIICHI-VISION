@@ -34,7 +34,7 @@ const Navigation = () => {
     { name: isClient ? t('navigation.about') : 'Acerca', href: '/about' },
     { name: isClient ? t('navigation.properties') : 'Propiedades', href: '/properties' },
     { name: isClient ? t('navigation.projects') : 'Proyectos', href: '/projects' },
-    { name: isClient ? t('navigation.fractional') : 'Fractional', href: '/fractional', highlight: true },
+    { name: isClient ? t('navigation.fractional') : 'Fractional', href: '/fractional' },
     { name: isClient ? t('navigation.process') : 'Proceso', href: '/process' },
     { name: isClient ? t('navigation.services') : 'Servicios', href: '/services' },
     { name: isClient ? t('navigation.journal') : 'Diario', href: '/journal' },
