@@ -10,12 +10,14 @@ import {
   PieChart
 } from 'lucide-react';
 import { FractionalMetrics as FractionalMetricsType } from '@/types/fractional';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FractionalMetricsProps {
   metrics: FractionalMetricsType;
 }
 
 export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
+  const { t } = useLanguage();
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -36,44 +38,44 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
   const metricCards = [
     {
       icon: <Building2 className="w-8 h-8 text-indigo-600" />,
-      title: "Propiedades Activas",
+      title: t('fractional.metrics.properties.title'),
       value: formatNumber(metrics.totalProperties),
-      subtitle: "En cartera",
+      subtitle: t('fractional.metrics.properties.subtitle'),
       color: "bg-indigo-50 border-indigo-200"
     },
     {
       icon: <Users className="w-8 h-8 text-green-600" />,
-      title: "Inversores Activos",
+      title: t('fractional.metrics.investors.title'),
       value: formatNumber(metrics.totalInvestors),
-      subtitle: "Participando",
+      subtitle: t('fractional.metrics.investors.subtitle'),
       color: "bg-green-50 border-green-200"
     },
     {
       icon: <DollarSign className="w-8 h-8 text-blue-600" />,
-      title: "Capital Recaudado",
+      title: t('fractional.metrics.capital.title'),
       value: formatCurrency(metrics.totalCapitalRaised),
-      subtitle: "Total movilizado",
+      subtitle: t('fractional.metrics.capital.subtitle'),
       color: "bg-blue-50 border-blue-200"
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-purple-600" />,
-      title: "ROI Promedio",
+      title: t('fractional.metrics.roi.title'),
       value: formatPercentage(metrics.averageROI),
-      subtitle: "Retorno anual",
+      subtitle: t('fractional.metrics.roi.subtitle'),
       color: "bg-purple-50 border-purple-200"
     },
     {
       icon: <PieChart className="w-8 h-8 text-orange-600" />,
-      title: "Inversión Promedio",
+      title: t('fractional.metrics.averageInvestment.title'),
       value: formatCurrency(metrics.averageInvestmentSize),
-      subtitle: "Por inversor",
+      subtitle: t('fractional.metrics.averageInvestment.subtitle'),
       color: "bg-orange-50 border-orange-200"
     },
     {
       icon: <Target className="w-8 h-8 text-red-600" />,
-      title: "Tasa de Éxito",
+      title: t('fractional.metrics.successRate.title'),
       value: formatPercentage(metrics.fundingSuccessRate),
-      subtitle: "Financiación exitosa",
+      subtitle: t('fractional.metrics.successRate.subtitle'),
       color: "bg-red-50 border-red-200"
     }
   ];
@@ -87,10 +89,10 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-          Nuestros Resultados
+          {t('fractional.metrics.title')}
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Datos reales de nuestro sistema de inversión fraccionada
+          {t('fractional.metrics.subtitle')}
         </p>
       </motion.div>
 
@@ -132,24 +134,24 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
       >
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Rendimiento del Sistema
+            {t('fractional.metrics.performance.title')}
           </h3>
           <p className="text-gray-600">
-            Métricas clave de nuestro modelo de inversión fraccionada
+            {t('fractional.metrics.performance.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-medium text-gray-700">Tasa de Retención de Inversores</span>
+              <span className="font-medium text-gray-700">{t('fractional.metrics.retentionRate')}</span>
               <span className="text-2xl font-bold text-green-600">
                 {formatPercentage(metrics.investorRetentionRate)}
               </span>
             </div>
             
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-medium text-gray-700">Capital Promedio por Propiedad</span>
+              <span className="font-medium text-gray-700">{t('fractional.metrics.capitalPerProperty')}</span>
               <span className="text-2xl font-bold text-blue-600">
                 {formatCurrency(metrics.totalCapitalRaised / metrics.totalProperties)}
               </span>
@@ -158,14 +160,14 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
 
           <div className="space-y-4">
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-medium text-gray-700">Inversores por Propiedad</span>
+              <span className="font-medium text-gray-700">{t('fractional.metrics.investorsPerProperty')}</span>
               <span className="text-2xl font-bold text-purple-600">
                 {Math.round(metrics.totalInvestors / metrics.totalProperties)}
               </span>
             </div>
             
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-medium text-gray-700">ROI vs Mercado Tradicional</span>
+              <span className="font-medium text-gray-700">{t('fractional.metrics.vsTraditional')}</span>
               <span className="text-2xl font-bold text-indigo-600">
                 +{formatPercentage(metrics.averageROI - 8)}
               </span>
