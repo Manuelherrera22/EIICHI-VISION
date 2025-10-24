@@ -26,91 +26,91 @@ import { FractionalProperty, FractionalMetrics as FractionalMetricsType } from '
 // Datos reales para propiedades fraccionadas
 const sampleProperties: FractionalProperty[] = [
   {
-    id: 'fractional-real-1',
-    name: 'Traditional Kusatsu Onsen House',
-    description: 'Casa tradicional japonesa cerca de las famosas aguas termales de Kusatsu. Perfecta para negocio de ryokan o residencia privada. Incluye jardín tradicional y acceso a aguas termales.',
-    location: 'Kusatsu, Gunma',
+    id: 'fractional-image-1',
+    name: 'Traditional Japanese Villa',
+    description: 'A traditional Japanese villa with classic architecture, mountain views, and a private garden, located in Tsumagoi Village. Recently renovated in 2025, offering a serene retreat.',
+    location: 'Kambara, Tsumagoi Village',
     prefecture: 'Gunma',
-    totalValue: 45000000, // ¥45M
-    totalShares: 20,
-    pricePerShare: 2250000, // ¥2.25M por share
-    availableShares: 12,
-    soldShares: 8,
+    totalValue: 15000000, // ¥15M
+    totalShares: 10,
+    pricePerShare: 1500000, // ¥1.5M por share
+    availableShares: 7,
+    soldShares: 3,
     images: [
       'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format',
       'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format',
       'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format'
     ],
-    features: ['Onsen Access', 'Traditional Garden', 'Tatami Rooms', 'Wooden Architecture', 'Mountain View'],
+    features: ['Traditional Architecture', 'Mountain View', 'Private Garden', '2LDK', 'Land 471m²', 'Floor 74.14m²'],
     renovationStatus: 'renovated',
-    estimatedROI: 4.8,
-    monthlyRentalIncome: 180000, // ¥180K/mes
+    estimatedROI: 8.5,
+    monthlyRentalIncome: 120000, // ¥120K/mes estimado
     propertyType: 'akiya',
-    yearBuilt: 1975,
-    landSize: 180,
-    buildingSize: 95,
+    yearBuilt: 1989,
+    landSize: 471,
+    buildingSize: 74.14,
     status: 'funding',
-    fundingGoal: 45000000,
-    currentFunding: 18000000, // 40% funded
-    fundingProgress: 40,
+    fundingGoal: 15000000,
+    currentFunding: 4500000, // 30% funded (3 shares sold)
+    fundingProgress: 30,
     expectedCompletionDate: '2025-08-15',
     legalStructure: 'spv',
-    minimumInvestment: 2250000,
-    maximumInvestment: 9000000,
+    minimumInvestment: 1500000,
+    maximumInvestment: 6000000,
     fees: {
       managementFee: 1.5,
       performanceFee: 10,
       exitFee: 2
     },
     documents: {
-      prospectus: '/documents/kusatsu-onsen-prospectus.pdf',
-      legalAgreement: '/documents/kusatsu-onsen-agreement.pdf',
-      financialProjections: '/documents/kusatsu-onsen-projections.pdf'
+      prospectus: '/documents/traditional-villa-prospectus.pdf',
+      legalAgreement: '/documents/traditional-villa-agreement.pdf',
+      financialProjections: '/documents/traditional-villa-projections.pdf'
     },
     createdAt: '2025-01-15',
     updatedAt: '2025-01-15'
   },
   {
-    id: 'fractional-real-2',
-    name: 'Renovation Project in Takasaki',
-    description: 'Casa tradicional de 1980 en Takasaki que necesita renovación. Gran potencial de valorización. Ubicada en barrio residencial tranquilo cerca de estación.',
-    location: 'Takasaki, Gunma',
+    id: 'fractional-image-2',
+    name: 'Modern Mountain Retreat',
+    description: 'A modern mountain retreat featuring contemporary design, large windows, and energy-efficient features, nestled in Tsumagoi Village. Perfect for a stylish getaway with mountain views.',
+    location: 'Kambara, Tsumagoi Village',
     prefecture: 'Gunma',
-    totalValue: 28000000, // ¥28M
-    totalShares: 15,
-    pricePerShare: 1866667, // ¥1.87M por share
-    availableShares: 8,
-    soldShares: 7,
+    totalValue: 10000000, // ¥10M
+    totalShares: 10,
+    pricePerShare: 1000000, // ¥1M por share
+    availableShares: 6,
+    soldShares: 4,
     images: [
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format'
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format'
     ],
-    features: ['Renovation Potential', 'Large Garden', 'Quiet Neighborhood', 'Near Station', 'Traditional Structure'],
+    features: ['Modern Design', 'Mountain View', 'Large Windows', 'Energy Efficient', '2LDK', 'Land 307m²', 'Floor 55.48m²'],
     renovationStatus: 'original',
-    estimatedROI: 6.4,
-    monthlyRentalIncome: 150000, // ¥150K/mes (after renovation)
+    estimatedROI: 7.2,
+    monthlyRentalIncome: 80000, // ¥80K/mes estimado
     propertyType: 'akiya',
-    yearBuilt: 1980,
-    landSize: 140,
-    buildingSize: 85,
+    yearBuilt: 1989,
+    landSize: 307,
+    buildingSize: 55.48,
     status: 'funding',
-    fundingGoal: 28000000,
-    currentFunding: 13066669, // 47% funded
-    fundingProgress: 47,
+    fundingGoal: 10000000,
+    currentFunding: 4000000, // 40% funded (4 shares sold)
+    fundingProgress: 40,
     expectedCompletionDate: '2025-07-30',
     legalStructure: 'spv',
-    minimumInvestment: 1866667,
-    maximumInvestment: 5600000,
+    minimumInvestment: 1000000,
+    maximumInvestment: 4000000,
     fees: {
       managementFee: 1.5,
       performanceFee: 10,
       exitFee: 2
     },
     documents: {
-      prospectus: '/documents/takasaki-renovation-prospectus.pdf',
-      legalAgreement: '/documents/takasaki-renovation-agreement.pdf',
-      financialProjections: '/documents/takasaki-renovation-projections.pdf'
+      prospectus: '/documents/modern-retreat-prospectus.pdf',
+      legalAgreement: '/documents/modern-retreat-agreement.pdf',
+      financialProjections: '/documents/modern-retreat-projections.pdf'
     },
     createdAt: '2025-01-10',
     updatedAt: '2025-01-15'
@@ -119,10 +119,10 @@ const sampleProperties: FractionalProperty[] = [
 
 const sampleMetrics: FractionalMetricsType = {
   totalProperties: 2,
-  totalInvestors: 15,
-  totalCapitalRaised: 31066669, // ¥31M raised
-  averageInvestmentSize: 2071111, // ¥2.07M average
-  averageROI: 5.6, // Average of 4.8% and 6.4%
+  totalInvestors: 7, // 3 + 4 investors
+  totalCapitalRaised: 8500000, // ¥8.5M raised (3×1.5M + 4×1M)
+  averageInvestmentSize: 1214286, // ¥1.21M average
+  averageROI: 7.85, // Average of 8.5% and 7.2%
   fundingSuccessRate: 85,
   investorRetentionRate: 92
 };
