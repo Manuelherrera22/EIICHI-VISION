@@ -23,7 +23,7 @@ import FractionalInvestmentCalculator from '@/components/fractional/FractionalIn
 import FractionalMetrics from '@/components/fractional/FractionalMetrics';
 import { FractionalProperty, FractionalMetrics as FractionalMetricsType } from '@/types/fractional';
 
-// Datos reales para propiedades fraccionadas
+// Datos reales para propiedades fraccionadas - Exactos de las imágenes
 const sampleProperties: FractionalProperty[] = [
   {
     id: 'fractional-image-1',
