@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
@@ -11,6 +11,19 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [showChatButton, setShowChatButton] = useState(true);
+
+  useEffect(() => {
+    // Ocultar botón de chat después de 10 segundos solo en móvil
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        setShowChatButton(false);
+      }, 10000); // 10 segundos
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const toggleChatbot = () => {
     setIsChatbotOpen(!isChatbotOpen);
@@ -26,10 +39,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <WhatsAppButton 
         phoneNumber="+81-3-6380-3901"
       />
-      <AdvancedChatbot 
-        isOpen={isChatbotOpen}
-        onToggle={toggleChatbot}
-      />
+      {showChatButton && (
+        <AdvancedChatbot 
+          isOpen={isChatbotOpen}
+          onToggle={toggleChatbot}
+        />
+      )}
       <CookieBanner />
     </div>
   );

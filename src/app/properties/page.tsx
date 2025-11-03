@@ -39,7 +39,7 @@ const Button: React.FC<{
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
 }> = ({ children, onClick, className = '', variant = 'primary', size = 'md', disabled = false }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]';
   
   const variants = {
     primary: 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
@@ -51,7 +51,7 @@ const Button: React.FC<{
   const sizes = {
     sm: 'px-3 py-2 text-sm rounded-lg',
     md: 'px-6 py-3 text-base rounded-xl',
-    lg: 'px-8 py-4 text-lg rounded-xl',
+    lg: 'px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-xl',
   };
 
   return (
@@ -232,19 +232,19 @@ const PropertiesPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex justify-center space-x-8 mb-8"
+              className="flex justify-center flex-wrap gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">{stats.total}</div>
-                <div className="text-sm text-foreground/70">{t('properties.title')}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary">{stats.total}</div>
+                <div className="text-xs sm:text-sm text-foreground/70">{t('properties.title')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">{stats.available}</div>
-                <div className="text-sm text-foreground/70">{t('properties.available')}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent">{stats.available}</div>
+                <div className="text-xs sm:text-sm text-foreground/70">{t('properties.available')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-secondary">{stats.featured}</div>
-                <div className="text-sm text-foreground/70">{t('properties.featured')}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-secondary">{stats.featured}</div>
+                <div className="text-xs sm:text-sm text-foreground/70">{t('properties.featured')}</div>
               </div>
             </motion.div>
 
@@ -283,10 +283,10 @@ const PropertiesPage: React.FC = () => {
       </div>
 
       {/* Main Content - Map with Sidebar */}
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row gap-6 h-[75vh]">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 h-[85vh] sm:h-[80vh] lg:h-[75vh]">
           {/* Map Section - Takes most of the space */}
-          <div className="flex-1 h-[50vh] lg:h-full">
+          <div className="flex-1 h-[45vh] sm:h-[35vh] lg:h-full min-h-[300px]">
             <div className="h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
               <PropertyMap
                 properties={mapProperties}
@@ -300,9 +300,9 @@ const PropertiesPage: React.FC = () => {
           </div>
 
           {/* Properties Sidebar */}
-          <div className="w-full lg:w-96 h-[25vh] lg:h-full bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+          <div className="w-full lg:w-96 h-[40vh] sm:h-[45vh] lg:h-full bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden flex flex-col">
             {/* Sidebar Header */}
-            <div className="p-4 lg:p-6 border-b border-gray-200 bg-gray-50">
+            <div className="p-4 lg:p-6 border-b border-gray-200 bg-gray-50 flex-shrink-0">
               <div className="flex items-center justify-between mb-2 lg:mb-4">
                 <div>
                   <h2 className="text-lg lg:text-xl font-bold text-gray-900">
@@ -340,7 +340,7 @@ const PropertiesPage: React.FC = () => {
             </div>
 
             {/* Properties List */}
-            <div className="flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto min-h-0 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-500">
               <AnimatePresence mode="wait">
                 {(viewMode === 'list' || viewMode === 'map') && (
                   <motion.div
@@ -552,11 +552,11 @@ const PropertiesPage: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               style={{ zIndex: 101 }}
-              className="relative z-[101] bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+              className="relative z-[101] bg-white rounded-2xl max-w-4xl w-full mx-4 max-h-[95vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="sticky top-0 bg-white border-b border-gray-200 p-6 z-10">
+              <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-6 z-10">
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900">{selectedProperty.name}</h2>
@@ -595,10 +595,10 @@ const PropertiesPage: React.FC = () => {
               </div>
 
               {/* Modal Content */}
-              <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
-                <div className="p-6">
+              <div className="overflow-y-auto max-h-[calc(95vh-140px)]">
+                <div className="p-4 sm:p-6 pb-16 sm:pb-20">
                   {/* Image Gallery */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div className="relative h-64 md:h-80 rounded-xl overflow-hidden">
                       <Image
                         src={selectedProperty.images?.[0] || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop&crop=center'}
@@ -632,7 +632,7 @@ const PropertiesPage: React.FC = () => {
                   </div>
 
                   {/* Key Details */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div className="bg-gray-50 rounded-xl p-6">
                       <h3 className="font-semibold text-gray-900 mb-3">{t('properties.characteristics')}</h3>
                       <div className="space-y-2 text-sm text-gray-600">
@@ -737,32 +737,33 @@ const PropertiesPage: React.FC = () => {
                   )}
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8">
                     <Button 
                       variant="primary" 
                       size="lg" 
-                      className="flex-1"
+                      className="w-full sm:flex-1 justify-center items-center"
                       onClick={handleContactAgent}
                     >
-                      <Phone className="w-5 h-5 mr-2" />
-                      {t('contact_agent')}
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                      <span className="text-sm sm:text-base whitespace-nowrap">{t('contact_agent')}</span>
                     </Button>
                     <Button 
                       variant="outline" 
                       size="lg" 
-                      className="flex-1"
+                      className="w-full sm:flex-1 justify-center items-center"
                       onClick={handleScheduleVisit}
                     >
-                      <Calendar className="w-5 h-5 mr-2" />
-                      {t('schedule_visit')}
+                      <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                      <span className="text-sm sm:text-base whitespace-nowrap">{t('schedule_visit')}</span>
                     </Button>
                     <Button 
                       variant="secondary" 
                       size="lg"
+                      className="w-full sm:flex-1 justify-center items-center"
                       onClick={handleShare}
                     >
-                      <Share2 className="w-5 h-5 mr-2" />
-                      {t('share')}
+                      <Share2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                      <span className="text-sm sm:text-base whitespace-nowrap">{t('share')}</span>
                     </Button>
                   </div>
                 </div>

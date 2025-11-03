@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -16,6 +16,19 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   className = ""
 }) => {
   const { t } = useLanguage();
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    // Ocultar después de 10 segundos solo en móvil
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 10000); // 10 segundos
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
   
   // Use provided message or fallback to translated message
   const whatsappMessage = message || t('whatsapp.message');
@@ -29,6 +42,8 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
     // Open WhatsApp
     window.open(whatsappUrl, '_blank');
   };
+
+  if (!isVisible) return null;
 
   return (
     <button
