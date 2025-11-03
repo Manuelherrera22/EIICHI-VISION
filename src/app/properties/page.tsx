@@ -97,15 +97,21 @@ const PropertiesPage: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'map'>('map');
   const [showFilters, setShowFilters] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Función para compartir propiedad
   const handleShare = async () => {
     if (!selectedProperty) return;
 
+    // Generar mensaje en el idioma actual
+    const shareMessage = t('share.message', {
+      address: selectedProperty.location.address,
+      name: selectedProperty.name
+    });
+
     const shareData = {
       title: `${selectedProperty.name} - ${selectedProperty.location.address}`,
-      text: `Echa un vistazo a esta propiedad en ${selectedProperty.location.address}: ${selectedProperty.name}`,
+      text: shareMessage,
       url: typeof window !== 'undefined' ? `${window.location.origin}/properties?property=${selectedProperty.id}` : '',
     };
 
@@ -116,7 +122,7 @@ const PropertiesPage: React.FC = () => {
         // Fallback: copiar al portapapeles
         const url = shareData.url;
         await navigator.clipboard.writeText(url);
-        alert(t('share.copied') || 'Enlace copiado al portapapeles');
+        alert(t('share.copied'));
       }
     } catch (error) {
       // Si el usuario cancela, no hacer nada
@@ -124,7 +130,7 @@ const PropertiesPage: React.FC = () => {
         // Fallback: copiar al portapapeles
         const url = shareData.url;
         await navigator.clipboard.writeText(url);
-        alert(t('share.copied') || 'Enlace copiado al portapapeles');
+        alert(t('share.copied'));
       }
     }
   };
