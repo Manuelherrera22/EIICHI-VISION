@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { FractionalProperty, InvestmentCalculation } from '@/types/fractional';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface FractionalPaymentFlowProps {
   property: FractionalProperty;
@@ -29,10 +30,12 @@ export default function FractionalPaymentFlow({
   onCancel 
 }: FractionalPaymentFlowProps) {
   const { t } = useLanguage();
+  const { user } = useAuth();
   const [step, setStep] = useState<'review' | 'payment' | 'processing' | 'success'>('review');
   const [paymentMethod, setPaymentMethod] = useState<'stripe' | 'bank_transfer'>('stripe');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [processing, setProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -47,16 +50,73 @@ export default function FractionalPaymentFlow({
     setStep('processing');
     setProcessing(true);
 
-    // Simular procesamiento de pago
-    setTimeout(() => {
+    try {
+      setError(null);
+
+      // Verificar que el usuario esté autenticado
+      if (!user?.id) {
+        throw new Error('Debes iniciar sesión para realizar una inversión');
+      }
+
+      // Crear inversión en la base de datos
+      const investmentResponse = await fetch('/api/fractional/investments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          propertyId: property.id,
+          investorId: user.id,
+          sharesPurchased: calculation.sharesToPurchase,
+          totalAmount: calculation.totalCost,
+          paymentMethod: paymentMethod
+        }),
+      });
+
+      if (!investmentResponse.ok) {
+        const errorData = await investmentResponse.json();
+        throw new Error(errorData.error || 'Failed to create investment');
+      }
+
+      const investmentData = await investmentResponse.json();
+      const investmentId = investmentData.data.id;
+
+      // Simular procesamiento de pago (aquí se integraría con Stripe, etc.)
+      // En producción, esto sería una llamada real a Stripe
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Simular transaction ID (en producción vendría de Stripe)
+      const transactionId = `txn_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+      // Confirmar inversión después del pago exitoso
+      const confirmResponse = await fetch('/api/fractional/investments/confirm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          investmentId: investmentId,
+          transactionId: transactionId
+        }),
+      });
+
+      if (!confirmResponse.ok) {
+        throw new Error('Failed to confirm investment');
+      }
+
       setProcessing(false);
       setStep('success');
       
-      // Simular éxito después de 2 segundos
+      // Notificar éxito después de mostrar mensaje
       setTimeout(() => {
-        onSuccess('payment_' + Date.now());
+        onSuccess(investmentId);
       }, 2000);
-    }, 3000);
+    } catch (err: any) {
+      console.error('Payment error:', err);
+      setError(err.message || 'Error al procesar el pago');
+      setProcessing(false);
+      setStep('payment'); // Volver al paso de pago
+    }
   };
 
   const steps = [
@@ -75,7 +135,7 @@ export default function FractionalPaymentFlow({
             <div key={stepItem.id} className="flex items-center">
               <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
                 step === stepItem.id 
-                  ? 'bg-indigo-600 text-white' 
+                  ? 'bg-primary text-black' 
                   : steps.indexOf(steps.find(s => s.id === step)!) > index
                     ? 'bg-green-500 text-white'
                     : 'bg-gray-300 text-gray-600'
@@ -83,7 +143,7 @@ export default function FractionalPaymentFlow({
                 {stepItem.icon}
               </div>
               <span className={`ml-2 text-sm font-medium ${
-                step === stepItem.id ? 'text-indigo-600' : 'text-gray-600'
+                step === stepItem.id ? 'text-primary' : 'text-gray-600'
               }`}>
                 {stepItem.name}
               </span>
@@ -156,7 +216,7 @@ export default function FractionalPaymentFlow({
                 <div className="border-t pt-3">
                   <div className="flex justify-between text-lg font-semibold">
                     <span>{t('fractional.payment.totalToPay')}</span>
-                    <span className="text-indigo-600">{formatCurrency(calculation.totalCost)}</span>
+                    <span className="text-primary">{formatCurrency(calculation.totalCost)}</span>
                   </div>
                 </div>
               </div>
@@ -174,11 +234,11 @@ export default function FractionalPaymentFlow({
                 />
                 <label htmlFor="terms" className="text-sm text-gray-600">
                   Acepto los{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-700 underline">
+                  <a href="#" className="text-primary hover:text-primary/80 underline">
                     términos y condiciones
                   </a>{' '}
                   y el{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-700 underline">
+                  <a href="#" className="text-primary hover:text-primary/80 underline">
                     acuerdo de inversión
                   </a>
                 </label>
@@ -209,7 +269,7 @@ export default function FractionalPaymentFlow({
               <button
                 onClick={() => setStep('payment')}
                 disabled={!agreedToTerms}
-                className="flex-1 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 px-6 py-3 bg-primary text-black rounded-lg hover:bg-primary/90 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
               >
                 Proceder al Pago
               </button>
@@ -238,7 +298,7 @@ export default function FractionalPaymentFlow({
               <div 
                 className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                   paymentMethod === 'stripe' 
-                    ? 'border-indigo-600 bg-indigo-50' 
+                    ? 'border-primary bg-primary/10' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => setPaymentMethod('stripe')}
@@ -260,7 +320,7 @@ export default function FractionalPaymentFlow({
               <div 
                 className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                   paymentMethod === 'bank_transfer' 
-                    ? 'border-indigo-600 bg-indigo-50' 
+                    ? 'border-primary bg-primary/10' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
                 onClick={() => setPaymentMethod('bank_transfer')}
@@ -284,11 +344,24 @@ export default function FractionalPaymentFlow({
             <div className="bg-gray-50 rounded-lg p-4">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-medium text-gray-900">Total a pagar</span>
-                <span className="text-2xl font-bold text-indigo-600">
+                <span className="text-2xl font-bold text-primary">
                   {formatCurrency(calculation.totalCost)}
                 </span>
               </div>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="flex items-start space-x-3">
+                  <AlertCircle className="w-5 h-5 text-red-600 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-medium text-red-800">Error</p>
+                    <p className="text-sm text-red-600 mt-1">{error}</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Security Notice */}
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
@@ -311,7 +384,7 @@ export default function FractionalPaymentFlow({
               </button>
               <button
                 onClick={handlePayment}
-                className="flex-1 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
+                className="flex-1 px-6 py-3 bg-primary text-black rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center shadow-lg"
               >
                 <Lock className="w-4 h-4 mr-2" />
                 {t('fractional.payment.pay', { amount: formatCurrency(calculation.totalCost) })}
@@ -327,7 +400,7 @@ export default function FractionalPaymentFlow({
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-12"
           >
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-6"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-6"></div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('fractional.payment.processing')}
               </h2>

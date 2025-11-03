@@ -23,133 +23,69 @@ import FractionalInvestmentCalculator from '@/components/fractional/FractionalIn
 import FractionalMetrics from '@/components/fractional/FractionalMetrics';
 import { FractionalProperty, FractionalMetrics as FractionalMetricsType } from '@/types/fractional';
 
-// Datos reales para propiedades fraccionadas - Exactos de las imágenes - Updated 2025-01-16
-const sampleProperties: FractionalProperty[] = [
-  {
-    id: 'fractional-image-1',
-    name: 'Traditional Japanese Villa',
-    description: 'A traditional Japanese villa with classic architecture, mountain views, and a private garden, located in Tsumagoi Village. Recently renovated in 2025, offering a serene retreat.',
-    location: 'Kambara, Tsumagoi Village',
-    prefecture: 'Gunma',
-    totalValue: 15000000, // ¥15M
-    totalShares: 10,
-    pricePerShare: 1500000, // ¥1.5M por share
-    availableShares: 7,
-    soldShares: 3,
-    images: [
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format'
-    ],
-    features: ['Traditional Architecture', 'Mountain View', 'Private Garden', '2LDK', 'Land 471m²', 'Floor 74.14m²'],
-    renovationStatus: 'renovated',
-    estimatedROI: 8.5,
-    monthlyRentalIncome: 120000, // ¥120K/mes estimado
-    propertyType: 'akiya',
-    yearBuilt: 1989,
-    landSize: 471,
-    buildingSize: 74.14,
-    status: 'funding',
-    fundingGoal: 15000000,
-    currentFunding: 4500000, // 30% funded (3 shares sold)
-    fundingProgress: 30,
-    expectedCompletionDate: '2025-08-15',
-    legalStructure: 'spv',
-    minimumInvestment: 1500000,
-    maximumInvestment: 6000000,
-    fees: {
-      managementFee: 1.5,
-      performanceFee: 10,
-      exitFee: 2
-    },
-    documents: {
-      prospectus: '/documents/traditional-villa-prospectus.pdf',
-      legalAgreement: '/documents/traditional-villa-agreement.pdf',
-      financialProjections: '/documents/traditional-villa-projections.pdf'
-    },
-    createdAt: '2025-01-15',
-    updatedAt: '2025-01-15'
-  },
-  {
-    id: 'fractional-image-2',
-    name: 'Modern Mountain Retreat',
-    description: 'A modern mountain retreat featuring contemporary design, large windows, and energy-efficient features, nestled in Tsumagoi Village. Perfect for a stylish getaway with mountain views.',
-    location: 'Kambara, Tsumagoi Village',
-    prefecture: 'Gunma',
-    totalValue: 10000000, // ¥10M
-    totalShares: 10,
-    pricePerShare: 1000000, // ¥1M por share
-    availableShares: 6,
-    soldShares: 4,
-    images: [
-      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1580582932707-5205c5f20e53?w=800&h=600&fit=crop&auto=format'
-    ],
-    features: ['Modern Design', 'Mountain View', 'Large Windows', 'Energy Efficient', '2LDK', 'Land 307m²', 'Floor 55.48m²'],
-    renovationStatus: 'original',
-    estimatedROI: 7.2,
-    monthlyRentalIncome: 80000, // ¥80K/mes estimado
-    propertyType: 'akiya',
-    yearBuilt: 1989,
-    landSize: 307,
-    buildingSize: 55.48,
-    status: 'funding',
-    fundingGoal: 10000000,
-    currentFunding: 4000000, // 40% funded (4 shares sold)
-    fundingProgress: 40,
-    expectedCompletionDate: '2025-07-30',
-    legalStructure: 'spv',
-    minimumInvestment: 1000000,
-    maximumInvestment: 4000000,
-    fees: {
-      managementFee: 1.5,
-      performanceFee: 10,
-      exitFee: 2
-    },
-    documents: {
-      prospectus: '/documents/modern-retreat-prospectus.pdf',
-      legalAgreement: '/documents/modern-retreat-agreement.pdf',
-      financialProjections: '/documents/modern-retreat-projections.pdf'
-    },
-    createdAt: '2025-01-10',
-    updatedAt: '2025-01-15'
-  }
-];
-
-const sampleMetrics: FractionalMetricsType = {
-  totalProperties: 2,
-  totalInvestors: 7, // 3 + 4 investors
-  totalCapitalRaised: 8500000, // ¥8.5M raised (3×1.5M + 4×1M)
-  averageInvestmentSize: 1214286, // ¥1.21M average
-  averageROI: 7.85, // Average of 8.5% and 7.2%
-  fundingSuccessRate: 85,
-  investorRetentionRate: 92
-};
-
 export default function FractionalPage() {
   const { t } = useLanguage();
   const [selectedProperty, setSelectedProperty] = useState<FractionalProperty | null>(null);
   const [showCalculator, setShowCalculator] = useState(false);
+  const [properties, setProperties] = useState<FractionalProperty[]>([]);
+  const [metrics, setMetrics] = useState<FractionalMetricsType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Cargar propiedades y métricas desde la API
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setLoading(true);
+        setError(null);
+
+        // Cargar propiedades
+        const propertiesResponse = await fetch('/api/fractional/properties');
+        if (!propertiesResponse.ok) {
+          throw new Error('Failed to fetch properties');
+        }
+        const propertiesData = await propertiesResponse.json();
+        setProperties(propertiesData.data || []);
+
+        // Cargar métricas
+        const metricsResponse = await fetch('/api/fractional/metrics');
+        if (!metricsResponse.ok) {
+          throw new Error('Failed to fetch metrics');
+        }
+        const metricsData = await metricsResponse.json();
+        setMetrics(metricsData.data || null);
+      } catch (err: any) {
+        console.error('Error loading fractional data:', err);
+        setError(err.message || 'Failed to load data');
+        // Fallback a datos vacíos
+        setProperties([]);
+        setMetrics(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
 
   const benefits = [
     {
-      icon: <DollarSign className="w-8 h-8 text-indigo-600" />,
+      icon: <DollarSign className="w-8 h-8 text-primary" />,
       title: t('fractional.benefits.accessibility.title'),
       description: t('fractional.benefits.accessibility.description')
     },
     {
-      icon: <PieChart className="w-8 h-8 text-indigo-600" />,
+      icon: <PieChart className="w-8 h-8 text-primary" />,
       title: t('fractional.benefits.diversification.title'),
       description: t('fractional.benefits.diversification.description')
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-indigo-600" />,
+      icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: t('fractional.benefits.roi.title'),
       description: t('fractional.benefits.roi.description')
     },
     {
-      icon: <Shield className="w-8 h-8 text-indigo-600" />,
+      icon: <Shield className="w-8 h-8 text-primary" />,
       title: t('fractional.benefits.management.title'),
       description: t('fractional.benefits.management.description')
     }
@@ -158,7 +94,7 @@ export default function FractionalPage() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-blue-50">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-white to-muted">
         <div className="container mx-auto px-4 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -166,16 +102,16 @@ export default function FractionalPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
               <Zap className="w-4 h-4 mr-2" />
               {t('fractional.hero.badge')}
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              {t('fractional.title')} <span className="text-indigo-600">{t('navigation.fractional')}</span>
+            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">
+              {t('fractional.title')} <span className="text-secondary">{t('navigation.fractional')}</span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-secondary mb-8 leading-relaxed">
               {t('fractional.description')}
             </p>
 
@@ -183,8 +119,14 @@ export default function FractionalPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setShowCalculator(true)}
-                className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold text-lg hover:bg-indigo-700 transition-colors"
+                onClick={() => {
+                  // Si hay propiedades, seleccionar la primera por defecto
+                  if (properties.length > 0 && !selectedProperty) {
+                    setSelectedProperty(properties[0]);
+                  }
+                  setShowCalculator(true);
+                }}
+                className="px-8 py-4 bg-primary text-black rounded-xl font-semibold text-lg hover:bg-primary/90 transition-colors shadow-lg"
               >
                 {t('fractional.cta.calculate')}
                 <ArrowRight className="w-5 h-5 ml-2 inline" />
@@ -194,7 +136,7 @@ export default function FractionalPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-xl font-semibold text-lg hover:bg-indigo-50 transition-colors"
+                className="px-8 py-4 border-2 border-primary text-primary rounded-xl font-semibold text-lg hover:bg-primary/10 transition-colors"
               >
                 {t('fractional.cta.viewProperties')}
               </motion.button>
@@ -212,10 +154,10 @@ export default function FractionalPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-primary mb-4">
               {t('fractional.benefits.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary max-w-3xl mx-auto">
               {t('fractional.benefits.subtitle')}
             </p>
           </motion.div>
@@ -227,15 +169,15 @@ export default function FractionalPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-gray-50 hover:bg-indigo-50 transition-colors"
+                className="text-center p-6 rounded-2xl bg-muted hover:bg-primary/10 transition-colors"
               >
                 <div className="flex justify-center mb-4">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-primary mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -245,9 +187,9 @@ export default function FractionalPage() {
       </section>
 
       {/* Metrics Section */}
-      <section className="py-20 bg-indigo-50">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <FractionalMetrics metrics={sampleMetrics} />
+          {metrics && <FractionalMetrics metrics={metrics} />}
         </div>
       </section>
 
@@ -260,16 +202,35 @@ export default function FractionalPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-primary mb-4">
               {t('fractional.properties.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary max-w-3xl mx-auto">
               {t('fractional.properties.subtitle')}
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {sampleProperties.map((property, index) => (
+          {loading ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            </div>
+          ) : error ? (
+            <div className="text-center py-20">
+              <p className="text-red-600 mb-4">{error}</p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-primary text-black rounded-lg hover:bg-primary/90"
+              >
+                Reintentar
+              </button>
+            </div>
+          ) : properties.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="text-gray-600">No hay propiedades disponibles en este momento.</p>
+            </div>
+          ) : (
+            <div className="grid lg:grid-cols-2 gap-8">
+              {properties.map((property, index) => (
               <motion.div
                 key={property.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -285,8 +246,9 @@ export default function FractionalPage() {
                   }}
                 />
               </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -299,10 +261,10 @@ export default function FractionalPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-primary mb-4">
               {t('fractional.howItWorks.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary max-w-3xl mx-auto">
               {t('fractional.howItWorks.subtitle')}
             </p>
           </motion.div>
@@ -342,17 +304,17 @@ export default function FractionalPage() {
                 className="text-center"
               >
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-primary text-black rounded-full flex items-center justify-center mx-auto mb-4">
                     {step.icon}
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/20 text-primary rounded-full flex items-center justify-center text-sm font-bold">
                     {step.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-primary mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary">
                   {step.description}
                 </p>
               </motion.div>
@@ -362,24 +324,30 @@ export default function FractionalPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-indigo-600">
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-black mb-6">
               {t('fractional.cta.readyTitle')}
             </h2>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary mb-8 max-w-3xl mx-auto">
               {t('fractional.cta.readyDescription')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setShowCalculator(true)}
-              className="px-8 py-4 bg-white text-indigo-600 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors"
+              onClick={() => {
+                // Si hay propiedades, seleccionar la primera por defecto
+                if (properties.length > 0 && !selectedProperty) {
+                  setSelectedProperty(properties[0]);
+                }
+                setShowCalculator(true);
+              }}
+              className="px-8 py-4 bg-black text-white rounded-xl font-semibold text-lg hover:bg-secondary transition-colors shadow-lg"
             >
               {t('fractional.cta.startInvestment')}
               <ArrowRight className="w-5 h-5 ml-2 inline" />
@@ -391,10 +359,13 @@ export default function FractionalPage() {
       {/* Investment Calculator Modal */}
       {showCalculator && (
         <FractionalInvestmentCalculator
-          property={selectedProperty}
+          property={selectedProperty || (properties.length > 0 ? properties[0] : null)}
           onClose={() => {
             setShowCalculator(false);
-            setSelectedProperty(null);
+            // No resetear selectedProperty si fue seleccionada desde una tarjeta
+            if (!selectedProperty) {
+              setSelectedProperty(null);
+            }
           }}
         />
       )}

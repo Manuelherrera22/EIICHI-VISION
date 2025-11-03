@@ -33,12 +33,6 @@ export default function FractionalInvestmentCalculator({
   const [showDetails, setShowDetails] = useState(false);
   const [showPayment, setShowPayment] = useState(false);
 
-  useEffect(() => {
-    if (property) {
-      calculateInvestment();
-    }
-  }, [shares, property]);
-
   const calculateInvestment = () => {
     if (!property) return;
 
@@ -65,10 +59,25 @@ export default function FractionalInvestmentCalculator({
     });
   };
 
+  useEffect(() => {
+    if (property) {
+      // Inicializar shares con el mínimo requerido
+      const minShares = Math.ceil(property.minimumInvestment / property.pricePerShare);
+      setShares(Math.max(1, minShares));
+    }
+  }, [property]);
+
+  useEffect(() => {
+    if (property) {
+      calculateInvestment();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shares, property]);
+
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ja-JP', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'JPY',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
@@ -92,7 +101,45 @@ export default function FractionalInvestmentCalculator({
     setShares(newShares);
   };
 
-  if (!property || !calculation) {
+  if (!property) {
+    return (
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center">
+              <AlertCircle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {t('fractional.calculator.noProperty') || 'No Property Selected'}
+              </h3>
+              <p className="text-gray-600 mb-4">
+                {t('fractional.calculator.selectPropertyFirst') || 'Please select a property first to use the investment calculator.'}
+              </p>
+              <button
+                onClick={onClose}
+                className="px-6 py-3 bg-primary text-black rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+              >
+                {t('fractional.calculator.close') || 'Close'}
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+    );
+  }
+
+  if (!calculation) {
     return null;
   }
 
@@ -116,8 +163,8 @@ export default function FractionalInvestmentCalculator({
           <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="p-2 bg-indigo-100 rounded-lg">
-                  <Calculator className="w-6 h-6 text-indigo-600" />
+                <div className="p-2 bg-primary/10 rounded-lg">
+                  <Calculator className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                 <h2 className="text-2xl font-bold text-gray-900">
@@ -321,7 +368,7 @@ export default function FractionalInvestmentCalculator({
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setShowPayment(true)}
-                  className="w-full py-4 bg-indigo-600 text-white rounded-xl font-semibold text-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
+                  className="w-full py-4 bg-primary text-black rounded-xl font-semibold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center shadow-lg"
                 >
                   {t('fractional.calculator.proceedInvestment')}
                   <ArrowRight className="w-5 h-5 ml-2" />

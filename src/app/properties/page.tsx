@@ -27,6 +27,8 @@ import {
 import { useLanguage } from '@/contexts/LanguageContext';
 import { realProperties, type RealProperty, formatPrice } from '@/data/realProperties';
 import { getMapProperties } from '@/lib/data/property-map-converter';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 // Modern Button component
 const Button: React.FC<{
@@ -86,6 +88,7 @@ const Badge: React.FC<{
 };
 
 const PropertiesPage: React.FC = () => {
+  const router = useRouter();
   const [selectedProperty, setSelectedProperty] = useState<RealProperty | null>(null);
   const [properties] = useState<RealProperty[]>(realProperties);
   const [mapProperties] = useState(getMapProperties(realProperties));
@@ -95,6 +98,66 @@ const PropertiesPage: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
   const { t } = useLanguage();
+
+  // Función para compartir propiedad
+  const handleShare = async () => {
+    if (!selectedProperty) return;
+
+    const shareData = {
+      title: `${selectedProperty.name} - ${selectedProperty.location.address}`,
+      text: `Echa un vistazo a esta propiedad en ${selectedProperty.location.address}: ${selectedProperty.name}`,
+      url: typeof window !== 'undefined' ? `${window.location.origin}/properties?property=${selectedProperty.id}` : '',
+    };
+
+    try {
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copiar al portapapeles
+        const url = shareData.url;
+        await navigator.clipboard.writeText(url);
+        alert(t('share.copied') || 'Enlace copiado al portapapeles');
+      }
+    } catch (error) {
+      // Si el usuario cancela, no hacer nada
+      if (error instanceof Error && error.name !== 'AbortError') {
+        // Fallback: copiar al portapapeles
+        const url = shareData.url;
+        await navigator.clipboard.writeText(url);
+        alert(t('share.copied') || 'Enlace copiado al portapapeles');
+      }
+    }
+  };
+
+  // Función para contactar agente
+  const handleContactAgent = () => {
+    if (!selectedProperty) return;
+    // Guardar información de la propiedad en sessionStorage para la página de contacto
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('propertyInquiry', JSON.stringify({
+        propertyId: selectedProperty.id,
+        propertyName: selectedProperty.name,
+        propertyAddress: selectedProperty.location.address,
+        propertyPrice: selectedProperty.price,
+      }));
+    }
+    router.push('/contact');
+  };
+
+  // Función para programar visita
+  const handleScheduleVisit = () => {
+    if (!selectedProperty) return;
+    // Guardar información de la propiedad para el booking
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('visitProperty', JSON.stringify({
+        propertyId: selectedProperty.id,
+        propertyName: selectedProperty.name,
+        propertyAddress: selectedProperty.location.address,
+        propertyPrice: selectedProperty.price,
+      }));
+    }
+    router.push('/contact?tab=booking');
+  };
 
   // Function to translate renovation items
   const translateRenovationItem = (item: string): string => {
@@ -143,15 +206,15 @@ const PropertiesPage: React.FC = () => {
   return (
     <Layout>
       {/* Hero Section - Simplified */}
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="bg-gradient-to-br from-background via-muted to-background border-b border-muted text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
           <div className="text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
+              className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
             >
               {t('tabiji_properties')}
             </motion.h1>
@@ -159,7 +222,7 @@ const PropertiesPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-blue-100 mb-8 font-light"
+              className="text-xl md:text-2xl text-foreground/80 mb-8 font-light"
             >
               {t('discover_your_opportunity_in_japan')}
             </motion.p>
@@ -172,16 +235,16 @@ const PropertiesPage: React.FC = () => {
               className="flex justify-center space-x-8 mb-8"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-200">{stats.total}</div>
-                <div className="text-sm text-blue-300">{t('properties.title')}</div>
+                <div className="text-3xl font-bold text-primary">{stats.total}</div>
+                <div className="text-sm text-foreground/70">{t('properties.title')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-200">{stats.available}</div>
-                <div className="text-sm text-blue-300">{t('properties.available')}</div>
+                <div className="text-3xl font-bold text-accent">{stats.available}</div>
+                <div className="text-sm text-foreground/70">{t('properties.available')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-200">{stats.featured}</div>
-                <div className="text-sm text-blue-300">{t('properties.featured')}</div>
+                <div className="text-3xl font-bold text-secondary">{stats.featured}</div>
+                <div className="text-sm text-foreground/70">{t('properties.featured')}</div>
               </div>
             </motion.div>
 
@@ -192,16 +255,16 @@ const PropertiesPage: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="max-w-2xl mx-auto"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="bg-background/80 backdrop-blur-md rounded-xl p-4 border border-muted shadow-lg">
                 <div className="flex gap-2">
                   <div className="flex-1 relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-foreground/50" />
                     <input
                       type="text"
                       placeholder={t('properties.search')}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border-0 rounded-lg focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white text-gray-900 placeholder-gray-500"
+                      className="w-full pl-10 pr-4 py-3 border-0 rounded-lg focus:ring-2 focus:ring-primary focus:outline-none bg-background text-foreground placeholder-foreground/50"
                     />
                   </div>
                   <Button
@@ -227,7 +290,9 @@ const PropertiesPage: React.FC = () => {
             <div className="h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
               <PropertyMap
                 properties={mapProperties}
-                onSelectProperty={setSelectedProperty}
+                onSelectProperty={(property) => {
+                  setSelectedProperty(property);
+                }}
                 selectedPropertyId={selectedProperty?.id}
                 className="w-full h-full"
               />
@@ -251,7 +316,7 @@ const PropertiesPage: React.FC = () => {
                   <button
                     onClick={() => setViewMode('list')}
                     className={`px-2 lg:px-3 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
-                      viewMode === 'list' 
+                      (viewMode === 'list' || viewMode === 'map')
                         ? 'bg-white text-blue-600 shadow-sm' 
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
@@ -277,7 +342,7 @@ const PropertiesPage: React.FC = () => {
             {/* Properties List */}
             <div className="flex-1 overflow-y-auto">
               <AnimatePresence mode="wait">
-                {viewMode === 'list' && (
+                {(viewMode === 'list' || viewMode === 'map') && (
                   <motion.div
                     key="list"
                     initial={{ opacity: 0 }}
@@ -286,7 +351,12 @@ const PropertiesPage: React.FC = () => {
                     transition={{ duration: 0.2 }}
                     className="p-2 lg:p-4 space-y-2 lg:space-y-3"
                   >
-                    {sortedProperties.map((property, index) => (
+                    {sortedProperties.length === 0 ? (
+                      <div className="text-center py-8 text-gray-500">
+                        <p>{t('properties.noProperties')}</p>
+                      </div>
+                    ) : (
+                      sortedProperties.map((property, index) => (
                       <motion.div
                         key={property.id}
                         initial={{ opacity: 0, x: 20 }}
@@ -366,7 +436,8 @@ const PropertiesPage: React.FC = () => {
                           </div>
                         </div>
                       </motion.div>
-                    ))}
+                      ))
+                    )}
                   </motion.div>
                 )}
 
@@ -467,14 +538,21 @@ const PropertiesPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedProperty(null)}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+            onClick={() => {
+              setSelectedProperty(null);
+              // Forzar re-render del mapa para restaurar marcadores
+              setTimeout(() => {
+                window.dispatchEvent(new Event('restore-markers'));
+              }, 100);
+            }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+              style={{ zIndex: 101 }}
+              className="relative z-[101] bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -501,7 +579,13 @@ const PropertiesPage: React.FC = () => {
                       />
                     </button>
                     <button
-                      onClick={() => setSelectedProperty(null)}
+                      onClick={() => {
+                        setSelectedProperty(null);
+                        // Forzar re-render del mapa para restaurar marcadores
+                        setTimeout(() => {
+                          window.dispatchEvent(new Event('restore-markers'));
+                        }, 100);
+                      }}
                       className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                     >
                       <X className="w-5 h-5" />
@@ -654,15 +738,29 @@ const PropertiesPage: React.FC = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="primary" size="lg" className="flex-1">
+                    <Button 
+                      variant="primary" 
+                      size="lg" 
+                      className="flex-1"
+                      onClick={handleContactAgent}
+                    >
                       <Phone className="w-5 h-5 mr-2" />
                       {t('contact_agent')}
                     </Button>
-                    <Button variant="outline" size="lg" className="flex-1">
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="flex-1"
+                      onClick={handleScheduleVisit}
+                    >
                       <Calendar className="w-5 h-5 mr-2" />
                       {t('schedule_visit')}
                     </Button>
-                    <Button variant="secondary" size="lg">
+                    <Button 
+                      variant="secondary" 
+                      size="lg"
+                      onClick={handleShare}
+                    >
                       <Share2 className="w-5 h-5 mr-2" />
                       {t('share')}
                     </Button>

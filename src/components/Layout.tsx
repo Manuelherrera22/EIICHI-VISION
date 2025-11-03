@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
 import AdvancedChatbot from './AdvancedChatbot';
+import CookieBanner from './CookieBanner';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         isOpen={isChatbotOpen}
         onToggle={toggleChatbot}
       />
+      <CookieBanner />
     </div>
   );
 };

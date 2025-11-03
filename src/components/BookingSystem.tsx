@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Mail, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { CRMService, NotificationService } from '@/lib/crm';
@@ -36,6 +36,31 @@ const BookingSystem = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBooked, setIsBooked] = useState(false);
   const { t } = useLanguage();
+
+  // Cargar información de la propiedad desde sessionStorage si viene desde properties
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const visitProperty = sessionStorage.getItem('visitProperty');
+      if (visitProperty) {
+        try {
+          const property = JSON.parse(visitProperty);
+          setBookingData(prev => ({
+            ...prev,
+            interest: t('booking.propertyVisit') || 'Visita a Propiedad',
+            message: t('booking.propertyVisitMessage', {
+              propertyName: property.propertyName,
+              propertyAddress: property.propertyAddress,
+              propertyPrice: property.propertyPrice.toLocaleString()
+            })
+          }));
+          // Limpiar sessionStorage después de usarlo
+          sessionStorage.removeItem('visitProperty');
+        } catch (error) {
+          console.error('Error parsing visit property:', error);
+        }
+      }
+    }
+  }, [t]);
 
   const timeSlots = [
     '09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',

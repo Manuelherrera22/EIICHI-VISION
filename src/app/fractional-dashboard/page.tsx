@@ -37,3 +37,4 @@ export default function FractionalDashboardPage() {
 
   return <FractionalInvestorDashboard investorId={user.id || 'demo-user'} />;
 }
+

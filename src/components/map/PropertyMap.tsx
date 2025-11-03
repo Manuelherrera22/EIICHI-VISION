@@ -183,7 +183,7 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       border: 3px solid white;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 0.2s ease, height 0.2s ease, border-width 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -193,6 +193,9 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       z-index: 1000;
       position: relative;
     `;
+
+    // Guardar referencia al elemento para poder ocultarlo
+    (el as any).__markerPropertyId = property.id;
 
     // Add property icon based on category
     const getPropertyIcon = (category: string) => {
@@ -207,23 +210,30 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
 
     el.innerHTML = `<div style="font-size: 20px;">${getPropertyIcon(property.category)}</div>`;
 
-    // Add hover effects
+    // Add hover effects - solo cambiar sombra y z-index, sin transform para evitar movimiento
     el.addEventListener('mouseenter', () => {
-      el.style.transform = 'scale(1.3)';
-      el.style.boxShadow = '0 12px 30px rgba(0,0,0,0.4)';
+      el.style.boxShadow = '0 12px 30px rgba(0,0,0,0.5)';
       el.style.zIndex = '1001';
+      // Aumentar tamaño sin transform para evitar que Mapbox recalcule posición
+      el.style.width = '48px';
+      el.style.height = '48px';
+      el.style.borderWidth = '4px';
     });
 
     el.addEventListener('mouseleave', () => {
-      el.style.transform = 'scale(1)';
       el.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)';
       el.style.zIndex = '1000';
+      // Restaurar tamaño original
+      el.style.width = '40px';
+      el.style.height = '40px';
+      el.style.borderWidth = '3px';
     });
 
     el.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log('Marker clicked:', property.name);
+      // Marker clicked - property selected
       
+      // Ocultar todos los marcadores al hacer click (se ocultarán automáticamente con el useEffect)
       onSelectProperty?.(property);
       
       map.current?.flyTo({
@@ -234,7 +244,10 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       });
     });
 
-    const marker = new mapboxgl.Marker(el)
+    const marker = new mapboxgl.Marker({
+      element: el,
+      anchor: 'center' // Asegurar que el anclaje esté en el centro
+    })
       .setLngLat([property.location.lng, property.location.lat])
       .addTo(map.current);
 
@@ -254,7 +267,7 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       border: 4px solid white;
       cursor: pointer;
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 0.2s ease, height 0.2s ease, border-width 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -265,28 +278,42 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       position: relative;
     `;
 
+    // Guardar referencia al elemento para poder ocultarlo
+    (el as any).__markerPropertyId = property.id;
+
     el.innerHTML = `<div style="font-size: 18px;">${properties.length}</div>`;
 
-    // Add hover effects
+    // Add hover effects - solo cambiar sombra y z-index, sin transform para evitar movimiento
     el.addEventListener('mouseenter', () => {
-      el.style.transform = 'scale(1.2)';
-      el.style.boxShadow = '0 15px 35px rgba(0,0,0,0.5)';
+      el.style.boxShadow = '0 15px 35px rgba(0,0,0,0.6)';
       el.style.zIndex = '1001';
+      // Aumentar tamaño sin transform para evitar que Mapbox recalcule posición
+      el.style.width = '58px';
+      el.style.height = '58px';
+      el.style.borderWidth = '5px';
     });
 
     el.addEventListener('mouseleave', () => {
-      el.style.transform = 'scale(1)';
       el.style.boxShadow = '0 10px 30px rgba(0,0,0,0.4)';
       el.style.zIndex = '1000';
+      // Restaurar tamaño original
+      el.style.width = '50px';
+      el.style.height = '50px';
+      el.style.borderWidth = '4px';
     });
 
     el.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log('Cluster clicked:', properties.length, 'properties');
+      // Cluster clicked - zooming to properties
       
-      // Calculate center of cluster
+      // Calcular centro del cluster y seleccionar primera propiedad del grupo
       const centerLat = properties.reduce((sum, p) => sum + p.location.lat, 0) / properties.length;
       const centerLng = properties.reduce((sum, p) => sum + p.location.lng, 0) / properties.length;
+      
+      // Seleccionar la primera propiedad del cluster
+      if (properties.length > 0 && onSelectProperty) {
+        onSelectProperty(properties[0]);
+      }
       
       map.current?.flyTo({
         center: [centerLng, centerLat],
@@ -300,7 +327,10 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
     const centerLat = properties.reduce((sum, p) => sum + p.location.lat, 0) / properties.length;
     const centerLng = properties.reduce((sum, p) => sum + p.location.lng, 0) / properties.length;
 
-    const marker = new mapboxgl.Marker(el)
+    const marker = new mapboxgl.Marker({
+      element: el,
+      anchor: 'center' // Asegurar que el anclaje esté en el centro
+    })
       .setLngLat([centerLng, centerLat])
       .addTo(map.current);
 
@@ -319,7 +349,7 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
     if (selectedPropertyId && map.current) {
       const selectedProperty = properties.find(p => p.id === selectedPropertyId);
       if (selectedProperty) {
-        console.log('Flying to property:', selectedProperty.name, selectedProperty.location);
+        // Flying to selected property
         map.current.flyTo({
           center: [selectedProperty.location.lng, selectedProperty.location.lat],
           zoom: 12,
@@ -329,6 +359,56 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
       }
     }
   }, [selectedPropertyId, properties]);
+
+  // Ocultar/restaurar marcadores cuando se selecciona/deselecciona una propiedad
+  useEffect(() => {
+    if (isLoaded && map.current) {
+      markers.current.forEach(marker => {
+        const element = (marker as any).getElement();
+        if (element) {
+          if (selectedPropertyId) {
+            // Ocultar todos los marcadores cuando hay una propiedad seleccionada
+            element.style.display = 'none';
+            element.style.visibility = 'hidden';
+            element.style.pointerEvents = 'none';
+            element.style.zIndex = '-1';
+            element.style.opacity = '0';
+          } else {
+            // Restaurar todos los marcadores cuando no hay propiedad seleccionada
+            element.style.display = 'flex';
+            element.style.visibility = 'visible';
+            element.style.pointerEvents = 'auto';
+            element.style.zIndex = '1000';
+            element.style.opacity = '1';
+          }
+        }
+      });
+    }
+  }, [selectedPropertyId, isLoaded]);
+
+  // Escuchar evento global para restaurar marcadores
+  useEffect(() => {
+    const handleRestoreMarkers = () => {
+      if (isLoaded && map.current) {
+        markers.current.forEach(marker => {
+          const element = (marker as any).getElement();
+          if (element) {
+            // Restaurar todas las propiedades de estilo
+            element.style.display = 'flex';
+            element.style.visibility = 'visible';
+            element.style.pointerEvents = 'auto';
+            element.style.zIndex = '1000';
+            element.style.opacity = '1';
+          }
+        });
+      }
+    };
+
+    window.addEventListener('restore-markers', handleRestoreMarkers);
+    return () => {
+      window.removeEventListener('restore-markers', handleRestoreMarkers);
+    };
+  }, [isLoaded]);
 
   return (
     <div className={`relative w-full h-full ${className}`}>

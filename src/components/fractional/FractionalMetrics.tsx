@@ -37,11 +37,11 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
 
   const metricCards = [
     {
-      icon: <Building2 className="w-8 h-8 text-indigo-600" />,
+      icon: <Building2 className="w-8 h-8 text-primary" />,
       title: t('fractional.metrics.properties.title'),
       value: formatNumber(metrics.totalProperties),
       subtitle: t('fractional.metrics.properties.subtitle'),
-      color: "bg-indigo-50 border-indigo-200"
+      color: "bg-primary/10 border-primary/20"
     },
     {
       icon: <Users className="w-8 h-8 text-green-600" />,
@@ -168,7 +168,7 @@ export default function FractionalMetrics({ metrics }: FractionalMetricsProps) {
             
             <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
               <span className="font-medium text-gray-700">{t('fractional.metrics.vsTraditional')}</span>
-              <span className="text-2xl font-bold text-indigo-600">
+                <span className="text-2xl font-bold text-primary">
                 +{formatPercentage(metrics.averageROI - 8)}
               </span>
             </div>

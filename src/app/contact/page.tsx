@@ -2,10 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
-import { Mail, Phone, Send, MessageCircle, User } from 'lucide-react';
+import { Mail, Phone, Send, MessageCircle, User, Calendar } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSearchParams } from 'next/navigation';
+import BookingSystem from '@/components/BookingSystem';
 
 export default function Contact() {
+  const searchParams = useSearchParams();
+  const activeTab = searchParams?.get('tab') || 'contact';
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +19,30 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useLanguage();
+
+  // Cargar información de la propiedad desde sessionStorage si viene desde properties
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const propertyInquiry = sessionStorage.getItem('propertyInquiry');
+      if (propertyInquiry) {
+        try {
+          const property = JSON.parse(propertyInquiry);
+          setFormData(prev => ({
+            ...prev,
+            message: t('contact.propertyInquiryMessage', {
+              propertyName: property.propertyName,
+              propertyAddress: property.propertyAddress,
+              propertyPrice: property.propertyPrice.toLocaleString()
+            })
+          }));
+          // Limpiar sessionStorage después de usarlo
+          sessionStorage.removeItem('propertyInquiry');
+        } catch (error) {
+          console.error('Error parsing property inquiry:', error);
+        }
+      }
+    }
+  }, []);
 
   // Actualizar el título y metadatos de la página
   useEffect(() => {
@@ -80,20 +109,53 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Simple Contact Form */}
-      <section className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-muted rounded-3xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-serif font-bold text-primary mb-4">
-                {t('contact.sendMessage')}
-              </h2>
-              <p className="text-lg text-foreground">
-                Cuéntanos sobre tu proyecto y te contactaremos en 24 horas
-              </p>
-            </div>
+      {/* Tabs Navigation */}
+      <section className="py-8 bg-white border-b">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-4 justify-center">
+            <a
+              href="/contact"
+              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+                activeTab === 'contact' || activeTab === null
+                  ? 'bg-primary text-black'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              <Mail className="w-5 h-5 inline mr-2" />
+              {t('contact.title')}
+            </a>
+            <a
+              href="/contact?tab=booking"
+              className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
+                activeTab === 'booking'
+                  ? 'bg-primary text-black'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              <Calendar className="w-5 h-5 inline mr-2" />
+              {t('booking.title') || 'Programar Visita'}
+            </a>
+          </div>
+        </div>
+      </section>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Contact Form or Booking System */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {activeTab === 'booking' ? (
+            <BookingSystem />
+          ) : (
+            <div className="bg-muted rounded-3xl p-8 md:p-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-serif font-bold text-primary mb-4">
+                  {t('contact.sendMessage')}
+                </h2>
+                <p className="text-lg text-foreground">
+                  Cuéntanos sobre tu proyecto y te contactaremos en 24 horas
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-primary mb-2">
                   {t('contact.fullName')} *
@@ -168,24 +230,25 @@ export default function Contact() {
                   </>
                 )}
               </button>
-            </form>
+              </form>
 
-            {/* Contact Info */}
-            <div className="mt-12 pt-8 border-t border-border">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-                <div>
-                  <Mail size={24} className="text-primary mx-auto mb-2" />
-                  <p className="text-sm text-secondary mb-1">Email</p>
-                  <p className="text-foreground font-semibold">info@tabijihouse.com</p>
-                </div>
-                <div>
-                  <Phone size={24} className="text-primary mx-auto mb-2" />
-                  <p className="text-sm text-secondary mb-1">Teléfono</p>
-                  <p className="text-foreground font-semibold">+81-3-6380-3901</p>
+              {/* Contact Info */}
+              <div className="mt-12 pt-8 border-t border-border">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                  <div>
+                    <Mail size={24} className="text-primary mx-auto mb-2" />
+                    <p className="text-sm text-secondary mb-1">Email</p>
+                    <p className="text-foreground font-semibold">info@tabijihouse.com</p>
+                  </div>
+                  <div>
+                    <Phone size={24} className="text-primary mx-auto mb-2" />
+                    <p className="text-sm text-secondary mb-1">Teléfono</p>
+                    <p className="text-foreground font-semibold">+81-3-6380-3901</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
     </Layout>

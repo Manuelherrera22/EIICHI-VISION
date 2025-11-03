@@ -122,3 +122,4 @@ export interface FractionalMetrics {
   fundingSuccessRate: number;
   investorRetentionRate: number;
 }
+

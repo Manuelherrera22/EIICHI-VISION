@@ -198,7 +198,7 @@ export default function FractionalPropertyCard({
             {property.features.map((feature, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium"
+                className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
               >
                 {feature}
               </span>
@@ -214,7 +214,7 @@ export default function FractionalPropertyCard({
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div
-              className="bg-indigo-600 h-2 rounded-full transition-all duration-500"
+              className="bg-primary h-2 rounded-full transition-all duration-500"
               style={{ width: `${property.fundingProgress}%` }}
             />
           </div>
@@ -226,7 +226,7 @@ export default function FractionalPropertyCard({
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onSelect}
-            className="flex-1 px-4 py-3 border-2 border-indigo-600 text-indigo-600 rounded-xl font-semibold hover:bg-indigo-50 transition-colors flex items-center justify-center"
+            className="flex-1 px-4 py-3 border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary/10 transition-colors flex items-center justify-center"
           >
             <Eye className="w-4 h-4 mr-2" />
             {t('fractional.property.viewDetails')}
@@ -237,7 +237,7 @@ export default function FractionalPropertyCard({
             whileTap={{ scale: 0.98 }}
             onClick={onInvest}
             disabled={property.availableShares === 0}
-            className="flex-1 px-4 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center"
+            className="flex-1 px-4 py-3 bg-primary text-black rounded-xl font-semibold hover:bg-primary/90 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center shadow-lg"
           >
             <DollarSign className="w-4 h-4 mr-2" />
             {t('fractional.property.invest')}
@@ -249,7 +249,7 @@ export default function FractionalPropertyCard({
         <div className="mt-4 pt-4 border-t border-gray-200">
           <div className="flex justify-between items-center">
             <span className="text-sm text-gray-600">{t('fractional.property.documentsAvailable')}</span>
-            <button className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
+            <button className="text-primary hover:text-primary/80 text-sm font-medium flex items-center">
               <Download className="w-4 h-4 mr-1" />
               {t('fractional.property.download')}
             </button>

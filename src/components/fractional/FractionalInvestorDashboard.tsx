@@ -115,9 +115,9 @@ export default function FractionalInvestorDashboard({ investorId }: FractionalIn
   }, [investorId]);
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('ja-JP', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'JPY',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
@@ -139,7 +139,7 @@ export default function FractionalInvestorDashboard({ investorId }: FractionalIn
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-gray-600">Cargando dashboard...</p>
         </div>
       </div>
@@ -202,7 +202,7 @@ export default function FractionalInvestorDashboard({ investorId }: FractionalIn
                   onClick={() => setSelectedTab(tab.id as any)}
                   className={`flex items-center space-x-2 py-2 px-1 border-b-2 font-medium text-sm ${
                     selectedTab === tab.id
-                      ? 'border-indigo-500 text-indigo-600'
+                      ? 'border-primary text-primary'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -326,8 +326,8 @@ export default function FractionalInvestorDashboard({ investorId }: FractionalIn
                 {dashboard.recentInvestments.map((investment) => (
                   <div key={investment.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-4">
-                      <div className="p-2 bg-indigo-100 rounded-lg">
-                        <Building2 className="w-5 h-5 text-indigo-600" />
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <Building2 className="w-5 h-5 text-primary" />
                       </div>
                       <div>
                         <p className="font-medium text-gray-900">
@@ -503,7 +503,7 @@ export default function FractionalInvestorDashboard({ investorId }: FractionalIn
                         </p>
                       </div>
                       <div className="flex space-x-2">
-                        <button className="px-4 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center">
+                        <button className="px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 flex items-center">
                           <Download className="w-4 h-4 mr-2" />
                           Descargar
                         </button>
