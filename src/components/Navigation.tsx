@@ -40,10 +40,6 @@ const Navigation = () => {
     { name: isClient ? t('navigation.journal') : 'Diario', href: '/journal' },
     { name: isClient ? t('navigation.qa') : 'Q&A', href: '/#qa' },
     { name: isClient ? t('navigation.contact') : 'Contacto', href: '/contact' },
-    ...(user ? [
-      { name: 'Dashboard', href: '/dashboard' },
-      { name: isClient ? t('navigation.fractional') : 'Fractional', href: '/fractional-dashboard' }
-    ] : []),
   ];
 
   return (

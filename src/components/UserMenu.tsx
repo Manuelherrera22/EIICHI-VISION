@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { User, LogOut, Settings, ChevronDown, Home } from 'lucide-react'
+import { User, LogOut, Settings, ChevronDown, Home, PieChart } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function UserMenu() {
@@ -74,7 +74,18 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <Home className="w-4 h-4" />
-{t('user.dropdown.dashboard')}
+                  {t('user.dropdown.dashboard')}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setIsOpen(false)
+                    window.location.href = '/fractional-dashboard'
+                  }}
+                  className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
+                >
+                  <PieChart className="w-4 h-4" />
+                  {t('navigation.fractional')} Dashboard
                 </button>
                 
                 <button
@@ -85,7 +96,7 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <Settings className="w-4 h-4" />
-{t('user.dropdown.myProfile')}
+                  {t('user.dropdown.myProfile')}
                 </button>
                 
                 <button
@@ -93,7 +104,7 @@ export default function UserMenu() {
                   className="w-full flex items-center gap-3 px-3 py-2 text-sm text-secondary hover:bg-muted hover:text-primary transition-colors"
                 >
                   <LogOut className="w-4 h-4" />
-{t('user.dropdown.logout')}
+                  {t('user.dropdown.logout')}
                 </button>
               </div>
             </div>
