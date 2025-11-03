@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Layout from '@/components/Layout';
 import { Mail, Phone, Send, MessageCircle, User, Calendar } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSearchParams } from 'next/navigation';
 import BookingSystem from '@/components/BookingSystem';
 
-export default function Contact() {
+function ContactContent() {
   const searchParams = useSearchParams();
   const activeTab = searchParams?.get('tab') || 'contact';
   
@@ -252,5 +252,13 @@ export default function Contact() {
         </div>
       </section>
     </Layout>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 }

@@ -91,7 +91,7 @@ const PropertiesPage: React.FC = () => {
   const router = useRouter();
   const [selectedProperty, setSelectedProperty] = useState<RealProperty | null>(null);
   const [properties] = useState<RealProperty[]>(realProperties);
-  const [mapProperties] = useState(getMapProperties(realProperties));
+  const [mapProperties] = useState(getMapProperties());
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'map'>('map');
